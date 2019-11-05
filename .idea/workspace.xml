@@ -7,26 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82470d25-d020-4a7c-91cb-0ef3fed2e16b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/Home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/Home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/Home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/Home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/login.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/shop-list.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/git/database/GetConnectDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/git/database/GetConnectDatabase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/Contact.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/Contact.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/Home.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/Home.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/git/database/GetConnectDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/git/database/GetConnectDatabase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/Contact.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/Contact.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/Home.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/Home.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Public/Home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Public/Home.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +41,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BOOKSTOREJSP1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/Public/pages" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
