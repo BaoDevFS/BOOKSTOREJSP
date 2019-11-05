@@ -44,7 +44,7 @@
 <!-- Main wrapper -->
 <div class="wrapper" id="wrapper">
     <!-- Header -->
-<%--    <%@ include file="include/header.jsp"%>--%>
+    <%@ include file="pages/include/header.jsp"%>
     <header id="wn__header" class="header__area header__absolute sticky__header">
         <div class="container-fluid">
             <div class="row">

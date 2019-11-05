@@ -5,7 +5,7 @@
   Time: 10:56 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+  <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -44,6 +44,7 @@
 <!-- Main wrapper -->
 <div class="wrapper" id="wrapper">
     <!-- Header -->
+    <%@ include file="pages/include/header.jsp"%>
     <header id="wn__header" class="header__area header__absolute sticky__header">
         <div class="container-fluid">
             <div class="row">

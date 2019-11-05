@@ -6,7 +6,39 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82470d25-d020-4a7c-91cb-0ef3fed2e16b" name="Default Changelist" comment="" />
+    <list default="true" id="82470d25-d020-4a7c-91cb-0ef3fed2e16b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/Home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/Home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/about.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/cart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/checkout.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/contact.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/error404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/faq.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/my-account.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/shop-grid.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/shop-list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/shop-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/shop-list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/single-product.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/wishlist.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Public/pages/Home.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Public/pages/about.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Public/pages/cart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Public/pages/checkout.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Public/pages/contact.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Public/pages/error404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Public/pages/faq.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Public/pages/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Public/pages/login.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Public/pages/my-account.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Public/pages/shop-grid.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Public/pages/shop-list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Public/pages/shop-list.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Public/pages/single-product.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Public/pages/wishlist.html" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,10 +78,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\00_HK1_3\LTW\BOOKSTOREJSP\web\Public\pages" />
+      <recent name="D:\00_HK1_3\LTW\BOOKSTOREJSP\web\Public" />
       <recent name="D:\00_HK1_3\LTW\BOOKSTOREJSP\web\WEB-INF\views" />
       <recent name="D:\00_HK1_3\LTW\BOOKSTOREJSP\web\WEB-INF" />
       <recent name="D:\00_HK1_3\LTW\BOOKSTOREJSP\web\WEB-INF\Public" />
-      <recent name="D:\00_HK1_3\LTW\BOOKSTOREJSP\web\lib" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\00_HK1_3\LTW\BOOKSTOREJSP\web\Public\pages" />
@@ -158,6 +191,8 @@
       <workItem from="1572490310966" duration="27000" />
       <workItem from="1572921846163" duration="3190000" />
       <workItem from="1572926282331" duration="3152000" />
+      <workItem from="1572940243902" duration="4029000" />
+      <workItem from="1572953414804" duration="2318000" />
     </task>
     <servers />
   </component>
@@ -169,7 +204,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
