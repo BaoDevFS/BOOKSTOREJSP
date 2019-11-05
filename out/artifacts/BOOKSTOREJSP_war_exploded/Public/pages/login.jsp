@@ -13,9 +13,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="/Public/images/icons/favicon.ico"/>
+    <link rel="icon" type="image/png" href="Public/images/icons/favicon.ico"/>
     <!--===============================================================================================-->
-    <link rel="stylesheet" href="/WEB-INF/Public/css/bootstrap.min.css">
     <!--===============================================================================================-->
     <!--===============================================================================================-->
     <!--	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">-->
@@ -25,10 +24,10 @@
     <!--	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">-->
     <!--===============================================================================================-->
     <!--	<link rel="stylesheet" type="text/css" href="css/util.css">-->
-    <link rel="stylesheet" type="text/css" href="/WEB-INF/Public/css/main.css">
+    <link rel="stylesheet" type="text/css" href="Public/css/main.css">
     <!--	<link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.css">-->
-    <link rel="stylesheet" href="/WEB-INF/Public/css/plugins/font-awesome.min.css">
-    <script src="/WEB-INF/Public/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="Public/css/plugins/font-awesome.min.css">
+    <script src="Public/css/bootstrap.min.css"></script>
 
 
     <!--===============================================================================================-->
@@ -39,7 +38,7 @@
     <div class="container-login100">
         <div class="wrap-login100">
             <div class="login100-pic js-tilt" data-tilt>
-                <img src="../images/img-01.png" alt="IMG">
+                <img src="Public/images/img-01.png" alt="IMG">
             </div>
 
             <form class="login100-form validate-form">
@@ -93,10 +92,10 @@
 
 
 <!--===============================================================================================-->
-<script src="../js/vendor/jquery-3.2.1.min.js"></script>
+<script src="Public/js/vendor/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
-<script src="../js/popper.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
+<script src="Public/js/popper.min.js"></script>
+<script src="Public/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
 <!--	<script src="../vendor/select2/select2.min.js"></script>-->
 <!--===============================================================================================-->

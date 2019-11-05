@@ -21,7 +21,7 @@ public class Home extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
-        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/Home.jsp");
+        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/Home.jsp");
         requestDispatcher.forward(request,response);
     }
 }

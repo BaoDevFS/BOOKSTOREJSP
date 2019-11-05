@@ -49,7 +49,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-6 col-lg-2">
                     <div class="logo">
-                        <a href="index.html">
+                        <a href="../index.html">
                             <img src="Public/images/logo/logo.png" alt="logo Public/images">
                         </a>
                     </div>
@@ -57,7 +57,7 @@
                 <div class="col-lg-8 d-none d-lg-block">
                     <nav class="mainmenu__nav">
                         <ul class="meninmenu d-flex justify-content-start">
-                            <li class="drop with--one--item"><a href="index.html">Home</a>
+                            <li class="drop with--one--item"><a href="../index.html">Home</a>
                             </li>
                             <li class="drop"><a href="Public/pages/shop-grid.html">Shop</a>
 
@@ -222,7 +222,7 @@
                 <div class="col-lg-12 d-none">
                     <nav class="mobilemenu__nav">
                         <ul class="meninmenu">
-                            <li><a href="index.html">Home</a>
+                            <li><a href="../index.html">Home</a>
                             </li>
                             <li><a href="Public/pages/shop-grid.html">Shop</a>
                             </li>
@@ -2939,7 +2939,7 @@
                     <div class="col-lg-12">
                         <div class="footer__widget footer__menu">
                             <div class="ft__logo">
-                                <a href="index.html">
+                                <a href="../index.html">
                                     <img src="Public/images/logo/3.png" alt="logo">
                                 </a>
                                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered duskam alteration variations of passages</p>
@@ -2953,12 +2953,12 @@
                                     <li><a href="#"><i class="bi bi-youtube"></i></a></li>
                                 </ul>
                                 <ul class="mainmenu d-flex justify-content-center">
-                                    <li><a href="index.html">Trending</a></li>
-                                    <li><a href="index.html">Best Seller</a></li>
-                                    <li><a href="index.html">All Product</a></li>
-                                    <li><a href="index.html">Wishlist</a></li>
-                                    <li><a href="index.html">Blog</a></li>
-                                    <li><a href="index.html">Contact</a></li>
+                                    <li><a href="../index.html">Trending</a></li>
+                                    <li><a href="../index.html">Best Seller</a></li>
+                                    <li><a href="../index.html">All Product</a></li>
+                                    <li><a href="../index.html">Wishlist</a></li>
+                                    <li><a href="../index.html">Blog</a></li>
+                                    <li><a href="../index.html">Contact</a></li>
                                 </ul>
                             </div>
                         </div>
