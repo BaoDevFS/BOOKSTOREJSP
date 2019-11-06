@@ -42,7 +42,7 @@
                                     <span>$66.00</span>
                                 </div>
                                 <div class="mini_action checkout">
-                                    <a class="checkout__btn" href="http://localhost:8080/BookStore/Cart"Go to Checkout</a>
+                                    <a class="checkout__btn" href="http://localhost:8080/BookStore/Checkout">Go to Checkout</a>
                                 </div>
                                 <div class="single__items">
                                     <div class="miniproduct">
