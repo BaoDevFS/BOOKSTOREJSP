@@ -7,9 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82470d25-d020-4a7c-91cb-0ef3fed2e16b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/login.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/about.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/about.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/contact.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/contact.jsp" afterDir="false" />
@@ -39,6 +38,10 @@
       <change beforePath="$PROJECT_DIR$/web/Public/pages/my-account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Public/pages/myAccount.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/Public/pages/shop-grid.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Public/pages/shopGrid.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/Public/pages/single-product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Public/pages/singleProduct.jsp" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/Login.class" afterDir="false" />
+>>>>>>> 800f4248700c0a8a29b434291d0f7fe4a4ea3fd8
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +74,11 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/vn/edu/nlu/servlet" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/Public/pages" />
+>>>>>>> 800f4248700c0a8a29b434291d0f7fe4a4ea3fd8
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
