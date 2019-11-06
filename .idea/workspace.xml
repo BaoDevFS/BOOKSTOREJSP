@@ -7,17 +7,78 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82470d25-d020-4a7c-91cb-0ef3fed2e16b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/web/Public/pages/Home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/cart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/checkout.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BOOKSTOREJSP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BOOKSTOREJSP.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/myAccount.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/myAccount.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/shopGrid.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/shopGrid.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/singleProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/singleProduct.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/wishlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/Public/pages/wishlist.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Authors.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Authors.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Book_authors.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Book_authors.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Booktypes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Booktypes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Detailimports.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Detailimports.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Detailorders.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Detailorders.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Distributors.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Distributors.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Icons.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Icons.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Images.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Images.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Importcoupons.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Importcoupons.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Invoices.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Invoices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Orders.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Orders.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Products.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Products.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Sliders.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Sliders.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Suppliers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Suppliers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/model/Users.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/git/database/GetConnectDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/git/database/GetConnectDatabase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/About.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/About.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/Cart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/Checkout.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/Checkout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/Contact.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/Contact.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/DoLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/DoLogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/Error404.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/Error404.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/Faq.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/Faq.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/Home.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/Home.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/MyAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/MyAccount.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/ShopGrid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/ShopGrid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/SingleProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/SingleProduct.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/WishList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOOKSTOREJSP_war_exploded/WEB-INF/classes/vn/edu/nlu/servlet/WishList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/META-INF/BOOKSTOREJSP.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Authors.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Authors.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Book_authors.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Book_authors.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Booktypes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Booktypes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Detailimports.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Detailimports.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Detailorders.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Detailorders.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Distributors.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Distributors.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Icons.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Icons.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Images.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Images.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Importcoupons.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Importcoupons.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Invoices.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Invoices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Orders.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Orders.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Products.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Products.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Sliders.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Sliders.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Suppliers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Suppliers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/fit/model/Users.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/git/database/GetConnectDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/git/database/GetConnectDatabase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/About.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/About.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/Cart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/Checkout.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/Checkout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/Contact.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/Contact.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/DoLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/DoLogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/Error404.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/Error404.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/Faq.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/Faq.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/Home.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/Home.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/MyAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/MyAccount.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/ShopGrid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/ShopGrid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/SingleProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/SingleProduct.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/WishList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOOKSTOREJSP/vn/edu/nlu/servlet/WishList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/servlet/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/servlet/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/servlet/WishList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/servlet/WishList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Public/pages/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Public/pages/cart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Public/pages/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Public/pages/checkout.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Public/pages/faq.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Public/pages/faq.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Public/pages/myAccount.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Public/pages/myAccount.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Public/pages/shopGrid.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Public/pages/shopGrid.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Public/pages/singleProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Public/pages/singleProduct.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Public/pages/wishlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Public/pages/wishlist.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +111,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/Public/pages" />
+    <property name="last_opened_file_path" value="D:/software/apache-tomcat-9.0.27/lib" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -58,7 +119,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.26032543" />
     <property name="project.structure.side.proportion" value="0.16949153" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
@@ -185,6 +246,7 @@
       <workItem from="1572961426409" duration="7666000" />
       <workItem from="1573016189436" duration="10304000" />
       <workItem from="1573034034897" duration="4281000" />
+      <workItem from="1573048728289" duration="1495000" />
     </task>
     <servers />
   </component>

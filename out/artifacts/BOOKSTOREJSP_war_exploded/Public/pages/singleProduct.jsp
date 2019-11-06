@@ -10,8 +10,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- Favicons -->
-	<link rel="shortcut icon" href="../images/favicon.ico">
-	<link rel="apple-touch-icon" href="../images/icon.png">
+	<link rel="shortcut icon" href="Public/images/favicon.ico">
+	<link rel="apple-touch-icon" href="Public/images/icon.png">
 
 	<!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet"> 
@@ -19,15 +19,15 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="../css/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/plugins.css">
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="Public/css/bootstrap.min.css">
+	<link rel="stylesheet" href="Public/css/plugins.css">
+	<link rel="stylesheet" href="Public/css/style.css">
 
 	<!-- Cusom css -->
-   <link rel="stylesheet" href="../css/custom.css">
+   <link rel="stylesheet" href="Public/css/custom.css">
 
 	<!-- Modernizer js -->
-	<script src="../js/vendor/modernizr-3.5.0.min.js"></script>
+	<script src="Public/js/vendor/modernizr-3.5.0.min.js"></script>
 </head>
 <body>
 	<!--[if lte IE 9]>
@@ -44,7 +44,7 @@
 		<div class="box-search-content search_active block-bg close__top">
 			<form id="search_mini_form" class="minisearch" action="#">
 				<div class="field__search">
-					<input type="text" placeholder="Search entire store here...">
+					<input type="text" placeholder="Search entire store herePublic.">
 					<div class="action">
 						<a href="#"><i class="zmdi zmdi-search"></i></a>
 					</div>
@@ -63,7 +63,7 @@
                         <div class="bradcaump__inner text-center">
                         	<h2 class="bradcaump-title">Shop Single</h2>
                             <nav class="bradcaump-content">
-                              <a class="breadcrumb_item" href="../index.html">Home</a>
+                              <a class="breadcrumb_item" href="Public/index.html">Home</a>
                               <span class="brd-separetor">/</span>
                               <span class="breadcrumb_item active">Shop Single</span>
                             </nav>
@@ -83,14 +83,14 @@
         						<div class="col-lg-6 col-12">
         							<div class="wn__fotorama__wrapper">
 	        							<div class="fotorama wn__fotorama__action" data-nav="thumbs">
-		        							  <a href="../images/1.html"><img src="../images/product/1.jpg" alt=""></a>
-		        							  <a href="../images/2.jpg"><img src="../images/product/2.jpg" alt=""></a>
-		        							  <a href="../images/3.jpg"><img src="../images/product/3.jpg" alt=""></a>
-		        							  <a href="../images/4.jpg"><img src="../images/product/4.jpg" alt=""></a>
-		        							  <a href="../images/5.jpg"><img src="../images/product/5.jpg" alt=""></a>
-		        							  <a href="../images/6.jpg"><img src="../images/product/6.jpg" alt=""></a>
-		        							  <a href="../images/7.jpg"><img src="../images/product/7.jpg" alt=""></a>
-		        							  <a href="../images/8.jpg"><img src="../images/product/8.jpg" alt=""></a>
+		        							  <a href="Public/images/1.html"><img src="Public/images/product/1.jpg" alt=""></a>
+		        							  <a href="Public/images/2.jpg"><img src="Public/images/product/2.jpg" alt=""></a>
+		        							  <a href="Public/images/3.jpg"><img src="Public/images/product/3.jpg" alt=""></a>
+		        							  <a href="Public/images/4.jpg"><img src="Public/images/product/4.jpg" alt=""></a>
+		        							  <a href="Public/images/5.jpg"><img src="Public/images/product/5.jpg" alt=""></a>
+		        							  <a href="Public/images/6.jpg"><img src="Public/images/product/6.jpg" alt=""></a>
+		        							  <a href="Public/images/7.jpg"><img src="Public/images/product/7.jpg" alt=""></a>
+		        							  <a href="Public/images/8.jpg"><img src="Public/images/product/8.jpg" alt=""></a>
 	        							</div>
         							</div>
         						</div>
@@ -291,8 +291,8 @@
 									<!-- Start Single Product -->
 									<div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
 										<div class="product__thumb">
-											<a class="first__img" href="singleProduct.html"><img src="../images/books/1.jpg" alt="product image"></a>
-											<a class="second__img animation1" href="singleProduct.html"><img src="../images/books/2.jpg" alt="product image"></a>
+											<a class="first__img" href="singleProduct.html"><img src="Public/images/books/1.jpg" alt="product image"></a>
+											<a class="second__img animation1" href="singleProduct.html"><img src="Public/images/books/2.jpg" alt="product image"></a>
 											<div class="hot__box">
 												<span class="hot-label">BEST SALLER</span>
 											</div>
@@ -328,8 +328,8 @@
 									<!-- Start Single Product -->
 									<div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
 										<div class="product__thumb">
-											<a class="first__img" href="singleProduct.html"><img src="../images/books/3.jpg" alt="product image"></a>
-											<a class="second__img animation1" href="singleProduct.html"><img src="../images/books/4.jpg" alt="product image"></a>
+											<a class="first__img" href="singleProduct.html"><img src="Public/images/books/3.jpg" alt="product image"></a>
+											<a class="second__img animation1" href="singleProduct.html"><img src="Public/images/books/4.jpg" alt="product image"></a>
 											<div class="hot__box color--2">
 												<span class="hot-label">HOT</span>
 											</div>
@@ -365,8 +365,8 @@
 									<!-- Start Single Product -->
 									<div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
 										<div class="product__thumb">
-											<a class="first__img" href="singleProduct.html"><img src="../images/books/7.jpg" alt="product image"></a>
-											<a class="second__img animation1" href="singleProduct.html"><img src="../images/books/8.jpg" alt="product image"></a>
+											<a class="first__img" href="singleProduct.html"><img src="Public/images/books/7.jpg" alt="product image"></a>
+											<a class="second__img animation1" href="singleProduct.html"><img src="Public/images/books/8.jpg" alt="product image"></a>
 											<div class="hot__box">
 												<span class="hot-label">HOT</span>
 											</div>
@@ -402,8 +402,8 @@
 									<!-- Start Single Product -->
 									<div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
 										<div class="product__thumb">
-											<a class="first__img" href="singleProduct.html"><img src="../images/books/9.jpg" alt="product image"></a>
-											<a class="second__img animation1" href="singleProduct.html"><img src="../images/books/10.jpg" alt="product image"></a>
+											<a class="first__img" href="singleProduct.html"><img src="Public/images/books/9.jpg" alt="product image"></a>
+											<a class="second__img animation1" href="singleProduct.html"><img src="Public/images/books/10.jpg" alt="product image"></a>
 											<div class="hot__box">
 												<span class="hot-label">HOT</span>
 											</div>
@@ -439,8 +439,8 @@
 									<!-- Start Single Product -->
 									<div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
 										<div class="product__thumb">
-											<a class="first__img" href="singleProduct.html"><img src="../images/books/11.jpg" alt="product image"></a>
-											<a class="second__img animation1" href="singleProduct.html"><img src="../images/books/2.jpg" alt="product image"></a>
+											<a class="first__img" href="singleProduct.html"><img src="Public/images/books/11.jpg" alt="product image"></a>
+											<a class="second__img animation1" href="singleProduct.html"><img src="Public/images/books/2.jpg" alt="product image"></a>
 											<div class="hot__box">
 												<span class="hot-label">BEST SALER</span>
 											</div>
@@ -476,8 +476,8 @@
 									<!-- Start Single Product -->
 									<div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
 										<div class="product__thumb">
-											<a class="first__img" href="singleProduct.html"><img src="../images/books/1.jpg" alt="product image"></a>
-											<a class="second__img animation1" href="singleProduct.html"><img src="../images/books/6.jpg" alt="product image"></a>
+											<a class="first__img" href="singleProduct.html"><img src="Public/images/books/1.jpg" alt="product image"></a>
+											<a class="second__img animation1" href="singleProduct.html"><img src="Public/images/books/6.jpg" alt="product image"></a>
 											<div class="hot__box">
 												<span class="hot-label">BEST SALER</span>
 											</div>
@@ -522,8 +522,8 @@
 									<!-- Start Single Product -->
 									<div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
 										<div class="product__thumb">
-											<a class="first__img" href="singleProduct.html"><img src="../images/books/1.jpg" alt="product image"></a>
-											<a class="second__img animation1" href="singleProduct.html"><img src="../images/books/2.jpg" alt="product image"></a>
+											<a class="first__img" href="singleProduct.html"><img src="Public/images/books/1.jpg" alt="product image"></a>
+											<a class="second__img animation1" href="singleProduct.html"><img src="Public/images/books/2.jpg" alt="product image"></a>
 											<div class="hot__box">
 												<span class="hot-label">BEST SALLER</span>
 											</div>
@@ -559,8 +559,8 @@
 									<!-- Start Single Product -->
 									<div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
 										<div class="product__thumb">
-											<a class="first__img" href="singleProduct.html"><img src="../images/books/3.jpg" alt="product image"></a>
-											<a class="second__img animation1" href="singleProduct.html"><img src="../images/books/4.jpg" alt="product image"></a>
+											<a class="first__img" href="singleProduct.html"><img src="Public/images/books/3.jpg" alt="product image"></a>
+											<a class="second__img animation1" href="singleProduct.html"><img src="Public/images/books/4.jpg" alt="product image"></a>
 											<div class="hot__box color--2">
 												<span class="hot-label">HOT</span>
 											</div>
@@ -596,8 +596,8 @@
 									<!-- Start Single Product -->
 									<div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
 										<div class="product__thumb">
-											<a class="first__img" href="singleProduct.html"><img src="../images/books/7.jpg" alt="product image"></a>
-											<a class="second__img animation1" href="singleProduct.html"><img src="../images/books/8.jpg" alt="product image"></a>
+											<a class="first__img" href="singleProduct.html"><img src="Public/images/books/7.jpg" alt="product image"></a>
+											<a class="second__img animation1" href="singleProduct.html"><img src="Public/images/books/8.jpg" alt="product image"></a>
 											<div class="hot__box">
 												<span class="hot-label">HOT</span>
 											</div>
@@ -633,8 +633,8 @@
 									<!-- Start Single Product -->
 									<div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
 										<div class="product__thumb">
-											<a class="first__img" href="singleProduct.html"><img src="../images/books/9.jpg" alt="product image"></a>
-											<a class="second__img animation1" href="singleProduct.html"><img src="../images/books/10.jpg" alt="product image"></a>
+											<a class="first__img" href="singleProduct.html"><img src="Public/images/books/9.jpg" alt="product image"></a>
+											<a class="second__img animation1" href="singleProduct.html"><img src="Public/images/books/10.jpg" alt="product image"></a>
 											<div class="hot__box">
 												<span class="hot-label">HOT</span>
 											</div>
@@ -670,8 +670,8 @@
 									<!-- Start Single Product -->
 									<div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
 										<div class="product__thumb">
-											<a class="first__img" href="singleProduct.html"><img src="../images/books/11.jpg" alt="product image"></a>
-											<a class="second__img animation1" href="singleProduct.html"><img src="../images/books/2.jpg" alt="product image"></a>
+											<a class="first__img" href="singleProduct.html"><img src="Public/images/books/11.jpg" alt="product image"></a>
+											<a class="second__img animation1" href="singleProduct.html"><img src="Public/images/books/2.jpg" alt="product image"></a>
 											<div class="hot__box">
 												<span class="hot-label">BEST SALER</span>
 											</div>
@@ -707,8 +707,8 @@
 									<!-- Start Single Product -->
 									<div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
 										<div class="product__thumb">
-											<a class="first__img" href="singleProduct.html"><img src="../images/books/1.jpg" alt="product image"></a>
-											<a class="second__img animation1" href="singleProduct.html"><img src="../images/books/6.jpg" alt="product image"></a>
+											<a class="first__img" href="singleProduct.html"><img src="Public/images/books/1.jpg" alt="product image"></a>
+											<a class="second__img animation1" href="singleProduct.html"><img src="Public/images/books/6.jpg" alt="product image"></a>
 											<div class="hot__box">
 												<span class="hot-label">BEST SALER</span>
 											</div>
@@ -815,7 +815,7 @@
         						</ul>
         					</aside>
         					<aside class="wedget__categories sidebar--banner">
-								<img src="../images/others/banner_left.jpg" alt="banner images">
+								<img src="Public/images/others/banner_left.jpg" alt="banner images">
 								<div class="text">
 									<h2>new products</h2>
 									<h6>save up to <br> <strong>40%</strong>off</h6>
@@ -831,7 +831,7 @@
 		<div class="box-search-content search_active block-bg close__top">
 			<form id="search_mini_form--2" class="minisearch" action="#">
 				<div class="field__search">
-					<input type="text" placeholder="Search entire store here...">
+					<input type="text" placeholder="Search entire store herePublic.">
 					<div class="action">
 						<a href="#"><i class="zmdi zmdi-search"></i></a>
 					</div>
@@ -859,7 +859,7 @@
 		                        <!-- Start product images -->
 		                        <div class="product-images">
 		                            <div class="main-image images">
-		                                <img alt="big images" src="../images/product/big-img/1.jpg">
+		                                <img alt="big images" src="Public/images/product/big-img/1.jpg">
 		                            </div>
 		                        </div>
 		                        <!-- end product images -->
@@ -935,11 +935,11 @@
 	
 
 	<!-- JS Files -->
-	<script src="../js/vendor/jquery-3.2.1.min.js"></script>
-	<script src="../js/popper.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
-	<script src="../js/plugins.js"></script>
-	<script src="../js/active.js"></script>
+	<script src="Public/js/vendor/jquery-3.2.1.min.js"></script>
+	<script src="Public/js/popper.min.js"></script>
+	<script src="Public/js/bootstrap.min.js"></script>
+	<script src="Public/js/plugins.js"></script>
+	<script src="Public/js/active.js"></script>
 	
 </body>
 
