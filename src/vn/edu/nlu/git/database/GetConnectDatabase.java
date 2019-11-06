@@ -6,10 +6,15 @@ import java.sql.SQLException;
 
 public class GetConnectDatabase {
     public Connection getConnectionSql() throws SQLException {
+        try {
+            Class.forName("com.mysql.jdbc.Driver"   );
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
         String hostName ="localhost";
-        String dbName ="bqg";
+        String dbName ="book";
         String userName="root";
-        String password="special45";
+        String password="";
         String connectionURL = "jdbc:mysql://" + hostName + ":3306/" + dbName;
         Connection conn = DriverManager.getConnection(connectionURL, userName, password);
         return conn;

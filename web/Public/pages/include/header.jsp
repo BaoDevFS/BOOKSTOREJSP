@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-4 col-sm-4 col-7 col-lg-2">
                 <div class="logo">
-                    <a href="Public/index.html">
+                    <a href="http://localhost:8080/BookStore/ ">
                         <img src="Public/images/logo/logo.png" alt="logo images">
                     </a>
                 </div>
@@ -13,20 +13,20 @@
             <div class="col-lg-8 d-none d-lg-block">
                 <nav class="mainmenu__nav">
                     <ul class="meninmenu d-flex justify-content-start">
-                        <li class="drop with--one--item"><a href="Public/index.html">Home</a>
+                        <li class="drop with--one--item"><a href="http://localhost:8080/BookStore/">Home</a>
 
                         </li>
-                        <li class="drop"><a href="shop-grid.html">Shop</a>
+                        <li class="drop"><a href="http://localhost:8080/BookStore/ShopGrid">Shop</a>
 
                         </li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="http://localhost:8080/BookStore/Contact">Contact</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="col-md-8 col-sm-8 col-5 col-lg-2">
                 <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
                     <li class="shop_search"><a class="search__active" href="#"></a></li>
-                    <li class="wishlist"><a href="wishlist.html"></a></li>
+                    <li class="wishlist"><a href="http://localhost:8080/BookStore/WishList"></a></li>
                     <li class="shopcart"><a class="cartbox_active" href="#"><span class="product_qun">3</span></a>
                         <!-- Start Shopping Cart -->
                         <div class="block-minicart minicart__active">
@@ -42,16 +42,16 @@
                                     <span>$66.00</span>
                                 </div>
                                 <div class="mini_action checkout">
-                                    <a class="checkout__btn" href="cart.html">Go to Checkout</a>
+                                    <a class="checkout__btn" href="http://localhost:8080/BookStore/Cart"Go to Checkout</a>
                                 </div>
                                 <div class="single__items">
                                     <div class="miniproduct">
                                         <div class="item01 d-flex">
                                             <div class="thumb">
-                                                <a href="product-details.html"><img src="Public/images/product/sm-img/1.jpg" alt="product images"></a>
+                                                <a href="http://localhost:8080/BookStore/SingleProduct"><img src="Public/images/product/sm-img/1.jpg" alt="product images"></a>
                                             </div>
                                             <div class="content">
-                                                <h6><a href="product-details.html">Voyage Yoga Bag</a></h6>
+                                                <h6><a href="http://localhost:8080/BookStore/SingleProduct">Voyage Yoga Bag</a></h6>
                                                 <span class="prize">$30.00</span>
                                                 <div class="product_prize d-flex justify-content-between">
                                                     <span class="qun">Qty: 01</span>
@@ -64,10 +64,10 @@
                                         </div>
                                         <div class="item01 d-flex mt--20">
                                             <div class="thumb">
-                                                <a href="product-details.html"><img src="Public/images/product/sm-img/3.jpg" alt="product images"></a>
+                                                <a href="http://localhost:8080/BookStore/SingleProduct"><img src="Public/images/product/sm-img/3.jpg" alt="product images"></a>
                                             </div>
                                             <div class="content">
-                                                <h6><a href="product-details.html">Impulse Duffle</a></h6>
+                                                <h6><a href="http://localhost:8080/BookStore/SingleProduct">Impulse Duffle</a></h6>
                                                 <span class="prize">$40.00</span>
                                                 <div class="product_prize d-flex justify-content-between">
                                                     <span class="qun">Qty: 03</span>
@@ -80,10 +80,10 @@
                                         </div>
                                         <div class="item01 d-flex mt--20">
                                             <div class="thumb">
-                                                <a href="product-details.html"><img src="Public/images/product/sm-img/2.jpg" alt="product images"></a>
+                                                <a href="http://localhost:8080/BookStore/SingleProduct"><img src="Public/images/product/sm-img/2.jpg" alt="product images"></a>
                                             </div>
                                             <div class="content">
-                                                <h6><a href="product-details.html">Compete Track Tote</a></h6>
+                                                <h6><a href="http://localhost:8080/BookStore/SingleProduct">Compete Track Tote</a></h6>
                                                 <span class="prize">$40.00</span>
                                                 <div class="product_prize d-flex justify-content-between">
                                                     <span class="qun">Qty: 03</span>
@@ -97,7 +97,7 @@
                                     </div>
                                 </div>
                                 <div class="mini_action cart">
-                                    <a class="cart__btn" href="cart.html">View and edit cart</a>
+                                    <a class="cart__btn" href="http://localhost:8080/BookStore/Cart">View and edit cart</a>
                                 </div>
                             </div>
                         </div>
@@ -159,11 +159,10 @@
                                     <div class="switcher-options">
                                         <div class="switcher-currency-trigger">
                                             <div class="setting__menu">
-                                                <span><a href="#">Compare Product</a></span>
-                                                <span><a href="#">My Account</a></span>
-                                                <span><a href="#">My Wishlist</a></span>
-                                                <span><a href="Public/pages/login.html">Sign In</a></span>
-                                                <span><a href="#">Create An Account</a></span>
+                                                <span><a href="http://localhost:8080/BookStore/Account">My Account</a></span>
+                                                <span><a href="http://localhost:8080/BookStore/Wishlist">My Wishlist</a></span>
+                                                <span><a href="http://localhost:8080/BookStore/Login">Sign In</a></span>
+                                                <span><a href="http://localhost:8080/BookStore/Login">Create An Account</a></span>
                                             </div>
                                         </div>
                                     </div>
@@ -179,13 +178,13 @@
             <div class="col-lg-12 d-none">
                 <nav class="mobilemenu__nav">
                     <ul class="meninmenu">
-                        <li><a href="Public/index.html">Home</a>
+                        <li><a href="http://localhost:8080/BookStore/">Home</a>
 
                         </li>
-                        <li><a href="shop-grid.html">Shop</a>
+                        <li><a href="http://localhost:8080/BookStore/ShopGrid">Shop</a>
 
                         </li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="http://localhost:8080/BookStore/Contact">Contact</a></li>
                     </ul>
                 </nav>
             </div>
