@@ -10,8 +10,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- Favicons -->
-	<link rel="shortcut icon" href="../images/favicon.ico">
-	<link rel="apple-touch-icon" href="../images/icon.png">
+	<link rel="shortcut icon" href="Public/images/favicon.ico">
+	<link rel="apple-touch-icon" href="Public/images/icon.png">
 
 	<!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet"> 
@@ -19,15 +19,15 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet"> 
 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="../css/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/plugins.css">
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="Public/css/bootstrap.min.css">
+	<link rel="stylesheet" href="Public/css/plugins.css">
+	<link rel="stylesheet" href="Public/css/style.css">
 
 	<!-- Cusom css -->
-   <link rel="stylesheet" href="../css/custom.css">
+   <link rel="stylesheet" href="Public/css/custom.css">
 
 	<!-- Modernizer js -->
-	<script src="../js/vendor/modernizr-3.5.0.min.js"></script>
+	<script src="Public/js/vendor/modernizr-3.5.0.min.js"></script>
 </head>
 <body>
 	<!--[if lte IE 9]>
@@ -63,7 +63,7 @@
                         <div class="bradcaump__inner text-center">
                         	<h2 class="bradcaump-title">Checkout</h2>
                             <nav class="bradcaump-content">
-                              <a class="breadcrumb_item" href="../index.html">Home</a>
+                              <a class="breadcrumb_item" href="Public/index.html">Home</a>
                               <span class="brd-separetor">/</span>
                               <span class="breadcrumb_item active">Checkout</span>
                             </nav>
@@ -334,7 +334,7 @@
 						    <div class="payment">
 						        <div class="che__header" role="tab" id="headingFour">
 						          	<a class="collapsed checkout__title" data-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-							            <span>PayPal <img src="../images/icons/payment.png" alt="payment images"> </span>
+							            <span>PayPal <img src="Public/images/icons/payment.png" alt="payment images"> </span>
 						          	</a>
 						        </div>
 						        <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordion">
@@ -356,13 +356,12 @@
 	<!-- //Main wrapper -->
 
 	<!-- JS Files -->
-	<script src="../js/vendor/jquery-3.2.1.min.js"></script>
-	<script src="../js/popper.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
-	<script src="../js/plugins.js"></script>
-	<script src="../js/active.js"></script>
+	<script src="Public/js/vendor/jquery-3.2.1.min.js"></script>
+	<script src="Public/js/popper.min.js"></script>
+	<script src="Public/js/bootstrap.min.js"></script>
+	<script src="Public/js/plugins.js"></script>
+	<script src="Public/js/active.js"></script>
 	
 </body>
-
 <!-- Mirrored from demo.hasthemes.com/boighor-preview/boighor-v3/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Sep 2019 08:49:15 GMT -->
 </html>

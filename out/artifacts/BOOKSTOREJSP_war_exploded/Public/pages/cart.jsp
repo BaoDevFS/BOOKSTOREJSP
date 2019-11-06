@@ -10,8 +10,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- Favicons -->
-	<link rel="shortcut icon" href="../images/favicon.ico">
-	<link rel="apple-touch-icon" href="../images/icon.png">
+	<link rel="shortcut icon" href="Public/images/favicon.ico">
+	<link rel="apple-touch-icon" href="Public/images/icon.png">
 
 	<!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet"> 
@@ -19,15 +19,15 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="../css/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/plugins.css">
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="Public/css/bootstrap.min.css">
+	<link rel="stylesheet" href="Public/css/plugins.css">
+	<link rel="stylesheet" href="Public/css/style.css">
 
 	<!-- Cusom css -->
-   <link rel="stylesheet" href="../css/custom.css">
+   <link rel="stylesheet" href="Public/css/custom.css">
 
 	<!-- Modernizer js -->
-	<script src="../js/vendor/modernizr-3.5.0.min.js"></script>
+	<script src="Public/js/vendor/modernizr-3.5.0.min.js"></script>
 </head>
 <body>
 	<!--[if lte IE 9]>
@@ -63,7 +63,7 @@
                         <div class="bradcaump__inner text-center">
                         	<h2 class="bradcaump-title">Shopping Cart</h2>
                             <nav class="bradcaump-content">
-                              <a class="breadcrumb_item" href="../index.html">Home</a>
+                              <a class="breadcrumb_item" href="Public/index.html">Home</a>
                               <span class="brd-separetor">/</span>
                               <span class="breadcrumb_item active">Shopping Cart</span>
                             </nav>
@@ -93,7 +93,7 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td class="product-thumbnail"><a href="#"><img src="../images/product/sm-3/1.jpg" alt="product img"></a></td>
+                                            <td class="product-thumbnail"><a href="#"><img src="Public/images/product/sm-3/1.jpg" alt="product img"></a></td>
                                             <td class="product-name"><a href="#">Natoque penatibus</a></td>
                                             <td class="product-price"><span class="amount">$165.00</span></td>
                                             <td class="product-quantity"><input type="number" value="1"></td>
@@ -101,7 +101,7 @@
                                             <td class="product-remove"><a href="#">X</a></td>
                                         </tr>
                                         <tr>
-                                            <td class="product-thumbnail"><a href="#"><img src="../images/product/sm-3/2.jpg" alt="product img"></a></td>
+                                            <td class="product-thumbnail"><a href="#"><img src="Public/images/product/sm-3/2.jpg" alt="product img"></a></td>
                                             <td class="product-name"><a href="#">Quisque fringilla</a></td>
                                             <td class="product-price"><span class="amount">$50.00</span></td>
                                             <td class="product-quantity"><input type="number" value="1"></td>
@@ -109,7 +109,7 @@
                                             <td class="product-remove"><a href="#">X</a></td>
                                         </tr>
                                         <tr>
-                                            <td class="product-thumbnail"><a href="#"><img src="../images/product/sm-3/3.jpg" alt="product img"></a></td>
+                                            <td class="product-thumbnail"><a href="#"><img src="Public/images/product/sm-3/3.jpg" alt="product img"></a></td>
                                             <td class="product-name"><a href="#">Vestibulum suscipit</a></td>
                                             <td class="product-price"><span class="amount">$50.00</span></td>
                                             <td class="product-quantity"><input type="number" value="1"></td>
@@ -123,9 +123,9 @@
                         <div class="cartbox__btn">
                             <ul class="cart__btn__list d-flex flex-wrap flex-md-nowrap flex-lg-nowrap justify-content-between">
                                 <li><a href="#">Coupon Code</a></li>
-                                <li><a href="#">Apply Code</a></li>
-                                <li><a href="#">Update Cart</a></li>
-                                <li><a href="#">Check Out</a></li>
+                                <li><a href="http://localhost:8080/BookStore/SingleProduct">Apply Code</a></li>
+                                <li><a href="http://localhost:8080/BookStore/ShopGrid">Update Cart</a></li>
+                                <li><a href="http://localhost:8080/BookStore/Checkout">Check Out</a></li>
                             </ul>
                         </div>
                     </div>
@@ -161,11 +161,11 @@
 	<!-- //Main wrapper -->
 
 	<!-- JS Files -->
-	<script src="../js/vendor/jquery-3.2.1.min.js"></script>
-	<script src="../js/popper.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
-	<script src="../js/plugins.js"></script>
-	<script src="../js/active.js"></script>
+	<script src="Public/js/vendor/jquery-3.2.1.min.js"></script>
+	<script src="Public/js/popper.min.js"></script>
+	<script src="Public/js/bootstrap.min.js"></script>
+	<script src="Public/js/plugins.js"></script>
+	<script src="Public/js/active.js"></script>
 	
 </body>
 
