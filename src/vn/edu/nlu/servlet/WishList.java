@@ -19,7 +19,7 @@ public class WishList extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/wishlist.jsp");
+        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/wishList.jsp");
         requestDispatcher.forward(request,response);
     }
 }
