@@ -1,11 +1,11 @@
-<!doctype html>
+﻿<!doctype html>
 <html class="no-js" lang="zxx">
 
-<!-- Mirrored from demo.hasthemes.com/boighor-preview/boighor-v3/shopGrid.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Sep 2019 08:49:14 GMT -->
+<!-- Mirrored from demo.hasthemes.com/boighor-preview/boighor-v3/shopList.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Sep 2019 08:49:15 GMT -->
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Shop-Grid | Bookshop Responsive Bootstrap4 Template</title>
+	<title>Shop-List | Bookshop Responsive Bootstrap4 Template</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -56,16 +56,16 @@
 		</div>
 		<!-- End Search Popup -->
         <!-- Start Bradcaump area -->
-        <div class="ht__bradcaump__area bg-image--6">
+        <div class="ht__bradcaump__area bg-image--5">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="bradcaump__inner text-center">
-                        	<h2 class="bradcaump-title">Shop Grid</h2>
+                        	<h2 class="bradcaump-title">Shop List</h2>
                             <nav class="bradcaump-content">
                               <a class="breadcrumb_item" href="../index.html">Home</a>
                               <span class="brd-separetor">/</span>
-                              <span class="breadcrumb_item active">Shop Grid</span>
+                              <span class="breadcrumb_item active">Shop List</span>
                             </nav>
                         </div>
                     </div>
@@ -152,8 +152,8 @@
         					<div class="col-lg-12">
 								<div class="shop__list__wrapper d-flex flex-wrap flex-md-nowrap justify-content-between">
 									<div class="shop__list nav justify-content-center" role="tablist">
-			                            <a class="nav-item nav-link active" data-toggle="tab" href="#nav-grid" role="tab"><i class="fa fa-th"></i></a>
-			                            <a class="nav-item nav-link" data-toggle="tab" href="#nav-list" role="tab"><i class="fa fa-list"></i></a>
+			                            <a class="nav-item nav-link" data-toggle="tab" href="#nav-grid" role="tab"><i class="fa fa-th"></i></a>
+			                            <a class="nav-item nav-link active" data-toggle="tab" href="#nav-list" role="tab"><i class="fa fa-list"></i></a>
 			                        </div>
 			                        <p>Showing 1–12 of 40 results</p>
 			                        <div class="orderby__wrapper">
@@ -171,7 +171,7 @@
         					</div>
         				</div>
         				<div class="tab__container">
-	        				<div class="shop-grid tab-pane fade show active" id="nav-grid" role="tabpanel">
+	        				<div class="shop-grid tab-pane fade" id="nav-grid" role="tabpanel">
 	        					<div class="row">
 	        						<!-- Start Single Product -->
 		        					<div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
@@ -331,7 +331,7 @@
 											</div>
 										</div>
 										<div class="product__content content--center content--center">
-											<h4><a href="singleProduct.html">Animals Life</a></h4>
+											<h4><a href="singleProduct.html">Olio Madu</a></h4>
 											<ul class="prize d-flex">
 												<li>$50.00</li>
 												<li class="old_prize">$35.00</li>
@@ -359,7 +359,7 @@
 		        					</div>
 		        					<!-- End Single Product -->
 	        						<!-- Start Single Product -->
-		        					<div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
+		        					<div class="product product__style--3col-lg-4 col-md-4 col-sm-6 col-12">
 			        					<div class="product__thumb">
 											<a class="first__img" href="singleProduct.html"><img src="../images/books/1.jpg" alt="product image"></a>
 											<a class="second__img animation1" href="singleProduct.html"><img src="../images/books/6.jpg" alt="product image"></a>
@@ -368,7 +368,7 @@
 											</div>
 										</div>
 										<div class="product__content content--center content--center">
-											<h4><a href="singleProduct.html">Olio Madu</a></h4>
+											<h4><a href="singleProduct.html">Ghost</a></h4>
 											<ul class="prize d-flex">
 												<li>$50.00</li>
 												<li class="old_prize">$35.00</li>
@@ -553,7 +553,7 @@
 											</div>
 										</div>
 										<div class="product__content content--center content--center">
-											<h4><a href="singleProduct.html">New World</a></h4>
+											<h4><a href="singleProduct.html">New Wear</a></h4>
 											<ul class="prize d-flex">
 												<li>$50.00</li>
 												<li class="old_prize">$35.00</li>
@@ -590,7 +590,7 @@
 											</div>
 										</div>
 										<div class="product__content content--center content--center">
-											<h4><a href="singleProduct.html">Our World</a></h4>
+											<h4><a href="singleProduct.html">Our Wear</a></h4>
 											<ul class="prize d-flex">
 												<li>$50.00</li>
 												<li class="old_prize">$35.00</li>
@@ -626,7 +626,7 @@
 	        						<li><a href="#"><i class="zmdi zmdi-chevron-right"></i></a></li>
 	        					</ul>
 	        				</div>
-	        				<div class="shop-grid tab-pane fade" id="nav-list" role="tabpanel">
+	        				<div class="shop-grid tab-pane fade show active" id="nav-list" role="tabpanel">
 	        					<div class="list__view__wrapper">
 	        						<!-- Start Single Product -->
 	        						<div class="list__view">
@@ -744,7 +744,6 @@
 	        									<li class="wishlist"><a href="cart.html"></a></li>
 	        									<li class="compare"><a href="cart.html"></a></li>
 	        								</ul>
-
 	        							</div>
 	        						</div>
 	        						<!-- End Single Product -->
@@ -774,6 +773,7 @@
 	        									<li class="wishlist"><a href="cart.html"></a></li>
 	        									<li class="compare"><a href="cart.html"></a></li>
 	        								</ul>
+
 	        							</div>
 	        						</div>
 	        						<!-- End Single Product -->
@@ -870,6 +870,7 @@
 		    </div>
 		</div>
 		<!-- END QUICKVIEW PRODUCT -->
+
 		</div>
 		<!-- //Main wrapper -->
 
@@ -882,5 +883,5 @@
 		
 	</body>
 	
-<!-- Mirrored from demo.hasthemes.com/boighor-preview/boighor-v3/shopGrid.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Sep 2019 08:49:14 GMT -->
+<!-- Mirrored from demo.hasthemes.com/boighor-preview/boighor-v3/shopList.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Sep 2019 08:49:15 GMT -->
 </html>
