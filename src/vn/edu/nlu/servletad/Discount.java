@@ -16,6 +16,7 @@ import java.sql.Statement;
 @WebServlet("/Discount")
 public class Discount extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//    sadas
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
