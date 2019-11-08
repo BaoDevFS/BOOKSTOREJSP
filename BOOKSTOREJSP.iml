@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+a<?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="web" name="Web">
@@ -13,7 +13,7 @@
     </facet>
   </component>
   <component name="NewModuleRootManager">
-    <output url="file://$MODULE_DIR$/out/production/BOOKSTOREJSP" />
+    <output url="file://$MODULE_DIR$/out/production/BOOKSTOREJSP" dwa
     <output-test url="file://$MODULE_DIR$/out/test/BOOKSTOREJSP" />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
