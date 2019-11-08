@@ -6,31 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="586b0b10-ce8a-4c99-be8c-a90e821af3ab" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/web/admin/pages/discount.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/pages/discount.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/pages/discount.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/pages/discountAdd.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/pages/discountEdit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/pages/forgot.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/pages/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/pages/index2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/pages/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/pages/packageAdd.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/pages/packageAdd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/pages/packageAdd.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/pages/packageAll.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/pages/packageBookingAll.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/pages/packageCatAdd.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/pages/packageCatAll.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/pages/packageCatEdit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/pages/packageEdit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/pages/setting.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/pages/socialMedia.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/pages/userAdd.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/pages/userAdd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/pages/userAdd.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/pages/userAll.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/pages/userEdit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/pages/userView.html" beforeDir="false" />
-    </list>
+    <list default="true" id="586b0b10-ce8a-4c99-be8c-a90e821af3ab" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,8 +34,8 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../apache-tomcat-9.0.27/lib" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="D:/software/apache-tomcat-9.0.27/lib" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.26032543" />
     <property name="project.structure.side.proportion" value="0.32760897" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -172,6 +148,7 @@
       <workItem from="1573202262307" duration="3100000" />
       <workItem from="1573223355231" duration="329000" />
       <workItem from="1573223878243" duration="81000" />
+      <workItem from="1573229247377" duration="123000" />
     </task>
     <servers />
   </component>
