@@ -10,25 +10,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!--== FAV ICON ==-->
-    <link rel="shortcut icon" href="images/fav.ico">
+    <link rel="shortcut icon" href="admin/images/fav.ico">
 
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Quicksand:300,400,500" rel="stylesheet">
 
     <!-- FONT-AWESOME ICON CSS -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="admin/css/font-awesome.min.css">
 
     <!--== ALL CSS FILES ==-->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/mob.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/materialize.css" />
+    <link rel="stylesheet" href="admin/css/style.css">
+    <link rel="stylesheet" href="admin/css/mob.css">
+    <link rel="stylesheet" href="admin/css/bootstrap.css">
+    <link rel="stylesheet" href="admin/css/materialize.css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-	<script src="js/html5shiv.js"></script>
-	<script src="js/respond.min.js"></script>
+	<script src="admin/js/html5shiv.js"></script>
+	<script src="admin/js/respond.min.js"></script>
 	<![endif]-->
 </head>
 
@@ -40,7 +40,7 @@
             <div class="col-md-2 col-sm-3 col-xs-6 sb1-1">
                 <a href="#" class="btn-close-menu"><i class="fa fa-times" aria-hidden="true"></i></a>
                 <a href="#" class="atab-menu"><i class="fa fa-bars tab-menu" aria-hidden="true"></i></a>
-                <a href="index.html" class="logo"><img src="images/logo1.png" alt="" />
+                <a href="index.html" class="logo"><img src="admin/images/logo1.png" alt="" />
                 </a>
             </div>
             <!--== SEARCH ==-->
@@ -61,24 +61,24 @@
             <!--== MY ACCCOUNT ==-->
             <div class="col-md-2 col-sm-3 col-xs-6">
                 <!-- Dropdown Trigger -->
-                <a class='waves-effect dropdown-button top-user-pro' href='#' data-activates='top-menu'><img src="images/user/6.png" alt="" />My Account <i class="fa fa-angle-down" aria-hidden="true"></i>
+                <a class='waves-effect dropdown-button top-user-pro' href='#' data-activates='top-menu'><img src="admin/images/user/6.png" alt="" />My Account <i class="fa fa-angle-down" aria-hidden="true"></i>
                 </a>
 
                 <!-- Dropdown Structure -->
                 <ul id='top-menu' class='dropdown-content top-menu-sty'>
-                    <li><a href="pages/setting.html" class="waves-effect"><i class="fa fa-cogs" aria-hidden="true"></i>Admin Setting</a>
+                    <li><a href="admin/pages/setting.html" class="waves-effect"><i class="fa fa-cogs" aria-hidden="true"></i>Admin Setting</a>
                     </li>
-                    <li><a href="pages/listing-all.html" class="waves-effect"><i class="fa fa-list-ul" aria-hidden="true"></i> Listings</a>
+                    <li><a href="admin/pages/listing-all.html" class="waves-effect"><i class="fa fa-list-ul" aria-hidden="true"></i> Listings</a>
                     </li>
-                    <li><a href="pages/hotel-all.html" class="waves-effect"><i class="fa fa-building-o" aria-hidden="true"></i> Hotels</a>
+                    <li><a href="admin/pages/hotel-all.html" class="waves-effect"><i class="fa fa-building-o" aria-hidden="true"></i> Hotels</a>
                     </li>
-                    <li><a href="pages/package-all.html" class="waves-effect"><i class="fa fa-umbrella" aria-hidden="true"></i> Tour Packages</a>
+                    <li><a href="admin/pages/package-all.html" class="waves-effect"><i class="fa fa-umbrella" aria-hidden="true"></i> Tour Packages</a>
                     </li>
-                    <li><a href="pages/event-all.html" class="waves-effect"><i class="fa fa-flag-checkered" aria-hidden="true"></i> Events</a>
+                    <li><a href="admin/pages/event-all.html" class="waves-effect"><i class="fa fa-flag-checkered" aria-hidden="true"></i> Events</a>
                     </li>
-                    <li><a href="pages/offers.html" class="waves-effect"><i class="fa fa-tags" aria-hidden="true"></i> Offers</a>
+                    <li><a href="admin/pages/offers.html" class="waves-effect"><i class="fa fa-tags" aria-hidden="true"></i> Offers</a>
                     </li>
-                    <li><a href="pages/user-add.html" class="waves-effect"><i class="fa fa-user-plus" aria-hidden="true"></i> Add New User</a>
+                    <li><a href="admin/pages/user-add.html" class="waves-effect"><i class="fa fa-user-plus" aria-hidden="true"></i> Add New User</a>
                     </li>
                     <li><a href="#" class="waves-effect"><i class="fa fa-undo" aria-hidden="true"></i> Backup Data</a>
                     </li>
@@ -97,7 +97,7 @@
                 <!--== USER INFO ==-->
                 <div class="sb2-12">
                     <ul>
-                        <li><img src="images/placeholder.jpg" alt="">
+                        <li><img src="admin/images/placeholder.jpg" alt="">
                         </li>
                         <li>
                             <h5>Victoria Baker <span> Santa Ana, CA</span></h5>
@@ -113,9 +113,9 @@
                         <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-user" aria-hidden="true"></i> Users</a>
                             <div class="collapsible-body left-sub-menu">
                                 <ul>
-                                    <li><a href="pages/user-all.html">All Users</a>
+                                    <li><a href="admin/pages/user-all.html">All Users</a>
                                     </li>
-                                    <li><a href="pages/user-add.html">Add New user</a>
+                                    <li><a href="admin/pages/user-add.html">Add New user</a>
                                     </li>
                                 </ul>
                             </div>
@@ -123,13 +123,13 @@
                         <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-umbrella" aria-hidden="true"></i> Tour Packages</a>
                             <div class="collapsible-body left-sub-menu">
                                 <ul>
-                                    <li><a href="pages/package-all.html">All Packages</a>
+                                    <li><a href="admin/pages/package-all.html">All Packages</a>
                                     </li>
-                                    <li><a href="pages/package-add.html">Add New Package</a>
+                                    <li><a href="admin/pages/package-add.html">Add New Package</a>
                                     </li>
-                                    <li><a href="pages/package-cat-all.html">All Package Categories</a>
+                                    <li><a href="admin/pages/package-cat-all.html">All Package Categories</a>
                                     </li>
-                                    <li><a href="pages/package-cat-add.html">Add Package Categories</a>
+                                    <li><a href="admin/pages/package-cat-add.html">Add Package Categories</a>
                                     </li>
                                 </ul>
                             </div>
@@ -137,9 +137,9 @@
                         <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-usd" aria-hidden="true"></i> Discounts</a>
                             <div class="collapsible-body left-sub-menu">
                                 <ul>
-                                    <li><a href="pages/discount.html">All Discounts</a>
+                                    <li><a href="admin/pages/discount.html">All Discounts</a>
                                     </li>
-                                    <li><a href="pages/discount-add.html">Add New Discounts</a>
+                                    <li><a href="admin/pages/discount-add.html">Add New Discounts</a>
                                     </li>
                                 </ul>
                             </div>
@@ -147,16 +147,16 @@
                         <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-ticket" aria-hidden="true"></i> Booking & Enquiry</a>
                             <div class="collapsible-body left-sub-menu">
                                 <ul>
-                                    <li><a href="pages/package-booking-all.html">Book</a>
+                                    <li><a href="admin/pages/package-booking-all.html">Book</a>
                                     </li>
-<!--                                    <li><a href="pages/sight-see-booking-all.html">Sight Seeings</a>-->
+<!--                                    <li><a href="admin/pages/sight-see-booking-all.html">Sight Seeings</a>-->
 <!--                                    </li>-->
-<!--                                    <li><a href="pages/event-booking-all.html">Events</a>-->
+<!--                                    <li><a href="admin/pages/event-booking-all.html">Events</a>-->
 <!--                                    </li>-->
                                 </ul>
                             </div>
                         </li>
-                        <li><a href="pages/login.html" target="_blank"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a>
+                        <li><a href="admin/pages/login.html" target="_blank"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a>
                         </li>
                     </ul>
                 </div>
@@ -167,11 +167,11 @@
                 <!--== breadcrumbs ==-->
                 <div class="sb2-2-2">
                     <ul>
-                        <li><a href="pages/index-2.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                        <li><a href="admin/pages/index-2.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
                         </li>
                         <li class="active-bre"><a href="#"> Dashboard</a>
                         </li>
-                        <li class="page-back"><a href="pages/index-2.html"><i class="fa fa-backward" aria-hidden="true"></i> Back</a>
+                        <li class="page-back"><a href="admin/pages/index-2.html"><i class="fa fa-backward" aria-hidden="true"></i> Back</a>
                         </li>
                     </ul>
                 </div>
@@ -485,7 +485,7 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="images/user/1.png" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/user/1.png" alt=""></span>
                                                     </td>
                                                     <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
                                                     </td>
@@ -506,7 +506,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="images/user/2.png" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/user/2.png" alt=""></span>
                                                     </td>
                                                     <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
                                                     </td>
@@ -527,7 +527,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="images/user/3.png" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/user/3.png" alt=""></span>
                                                     </td>
                                                     <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
                                                     </td>
@@ -548,7 +548,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="images/user/4.png" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/user/4.png" alt=""></span>
                                                     </td>
                                                     <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
                                                     </td>
@@ -569,7 +569,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="images/user/5.png" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/user/5.png" alt=""></span>
                                                     </td>
                                                     <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
                                                     </td>
@@ -643,7 +643,7 @@
                                                         <input type="checkbox" class="filled-in" id="filled-in-box-1" checked="checked" />
                                                         <label for="filled-in-box-1"></label>
                                                     </td>
-                                                    <td><span class="list-img"><img src="images/listing/1.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/listing/1.jpg" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">Taaj Club House</span><span class="list-enq-city">Illunois, United States</span>
                                                     </td>
@@ -658,7 +658,7 @@
                                                         <input type="checkbox" class="filled-in" id="filled-in-box-2" checked="checked" />
                                                         <label for="filled-in-box-2"></label>
                                                     </td>
-                                                    <td><span class="list-img"><img src="images/listing/2.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/listing/2.jpg" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">Grand Hotel</span><span class="list-enq-city">Rio,Brazil</span>
                                                     </td>
@@ -673,7 +673,7 @@
                                                         <input type="checkbox" class="filled-in" id="filled-in-box-3" checked="checked" />
                                                         <label for="filled-in-box-3"></label>
                                                     </td>
-                                                    <td><span class="list-img"><img src="images/listing/3.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/listing/3.jpg" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">Grand Pales</span><span class="list-enq-city">Chennai,India</span>
                                                     </td>
@@ -688,7 +688,7 @@
                                                         <input type="checkbox" class="filled-in" id="filled-in-box-4" />
                                                         <label for="filled-in-box-4"></label>
                                                     </td>
-                                                    <td><span class="list-img"><img src="images/listing/4.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/listing/4.jpg" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">Lake Palace Hotel</span><span class="list-enq-city">Beijing,China</span>
                                                     </td>
@@ -703,7 +703,7 @@
                                                         <input type="checkbox" class="filled-in" id="filled-in-box-5" />
                                                         <label for="filled-in-box-5"></label>
                                                     </td>
-                                                    <td><span class="list-img"><img src="images/listing/5.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/listing/5.jpg" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">First Class Hotel</span><span class="list-enq-city">Berlin,Germany</span>
                                                     </td>
@@ -764,7 +764,7 @@
                                                         <input type="checkbox" id="ch2-1" />
                                                         <label for="ch2-1"></label>
                                                     </td>
-                                                    <td><span class="list-img"><img src="images/listing/1.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/listing/1.jpg" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">Taaj Club House</span><span class="list-enq-city">Illunois, United States</span>
                                                     </td>
@@ -779,7 +779,7 @@
                                                         <input type="checkbox" id="ch2-2" />
                                                         <label for="ch2-2"></label>
                                                     </td>
-                                                    <td><span class="list-img"><img src="images/listing/2.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/listing/2.jpg" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">Grand Hotel</span><span class="list-enq-city">Rio,Brazil</span>
                                                     </td>
@@ -794,7 +794,7 @@
                                                         <input type="checkbox" id="ch2-3" />
                                                         <label for="ch2-3"></label>
                                                     </td>
-                                                    <td><span class="list-img"><img src="images/listing/3.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/listing/3.jpg" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">Grand Pales</span><span class="list-enq-city">Chennai,India</span>
                                                     </td>
@@ -809,7 +809,7 @@
                                                         <input type="checkbox" id="ch2-4" />
                                                         <label for="ch2-4"></label>
                                                     </td>
-                                                    <td><span class="list-img"><img src="images/listing/4.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/listing/4.jpg" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">Lake Palace Hotel</span><span class="list-enq-city">Beijing,China</span>
                                                     </td>
@@ -824,7 +824,7 @@
                                                         <input type="checkbox" id="ch2-5" />
                                                         <label for="ch2-5"></label>
                                                     </td>
-                                                    <td><span class="list-img"><img src="images/listing/5.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/listing/5.jpg" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">First Class Hotel</span><span class="list-enq-city">Berlin,Germany</span>
                                                     </td>
@@ -942,7 +942,7 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="images/sm/1.png" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/sm/1.png" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">Linked In</span><span class="list-enq-city">Illunois, United States</span>
                                                     </td>
@@ -953,7 +953,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="images/sm/2.png" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/sm/2.png" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">Twitter</span><span class="list-enq-city">Illunois, United States</span>
                                                     </td>
@@ -964,7 +964,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="images/sm/3.png" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/sm/3.png" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">Facebook</span><span class="list-enq-city">Illunois, United States</span>
                                                     </td>
@@ -975,7 +975,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="images/sm/4.png" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/sm/4.png" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">Google Plus</span><span class="list-enq-city">Illunois, United States</span>
                                                     </td>
@@ -986,7 +986,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="images/sm/5.png" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/sm/5.png" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">YouTube</span><span class="list-enq-city">Illunois, United States</span>
                                                     </td>
@@ -997,7 +997,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="images/sm/6.png" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/sm/6.png" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">WhatsApp</span><span class="list-enq-city">Illunois, United States</span>
                                                     </td>
@@ -1008,7 +1008,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="images/sm/7.png" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/sm/7.png" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">VK</span><span class="list-enq-city">Illunois, United States</span>
                                                     </td>
@@ -1019,7 +1019,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="images/sm/2.png" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/sm/2.png" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">Twitter</span><span class="list-enq-city">Illunois, United States</span>
                                                     </td>
@@ -1098,10 +1098,10 @@
     </section>
 
     <!--======== SCRIPT FILES =========-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/materialize.min.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="admin/js/jquery.min.js"></script>
+    <script src="admin/js/bootstrap.min.js"></script>
+    <script src="admin/js/materialize.min.js"></script>
+    <script src="admin/js/custom.js"></script>
 </body>
 
 

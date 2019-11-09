@@ -50,6 +50,8 @@ public class Login extends HttpServlet {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/login.jsp");
+            requestDispatcher.forward(request,response);
         }
     }
 

@@ -10,19 +10,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!--== FAV ICON ==-->
-    <link rel="shortcut icon" href="../images/fav.ico">
+    <link rel="shortcut icon" href="admin/images/fav.ico">
 
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Quicksand:300,400,500" rel="stylesheet">
 
     <!-- FONT-AWESOME ICON CSS -->
-    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="admin/css/font-awesome.min.css">
 
     <!--== ALL CSS FILES ==-->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/mob.css">
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/materialize.css" />
+    <link rel="stylesheet" href="admin/css/style.css">
+    <link rel="stylesheet" href="admin/css/mob.css">
+    <link rel="stylesheet" href="admin/css/bootstrap.css">
+    <link rel="stylesheet" href="admin/css/materialize.css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -40,7 +40,7 @@
             <div class="col-md-2 col-sm-3 col-xs-6 sb1-1">
                 <a href="#" class="btn-close-menu"><i class="fa fa-times" aria-hidden="true"></i></a>
                 <a href="#" class="atab-menu"><i class="fa fa-bars tab-menu" aria-hidden="true"></i></a>
-                <a href="index2.html" class="logo"><img src="../images/logo1.png" alt="" />
+                <a href="index2.html" class="logo"><img src="admin/images/logo1.png" alt="" />
                 </a>
             </div>
             <!--== SEARCH ==-->
@@ -61,7 +61,7 @@
             <!--== MY ACCCOUNT ==-->
             <div class="col-md-2 col-sm-3 col-xs-6">
                 <!-- Dropdown Trigger -->
-                <a class='waves-effect dropdown-button top-user-pro' href='#' data-activates='top-menu'><img src="../images/user/6.png" alt="" />My Account <i class="fa fa-angle-down" aria-hidden="true"></i>
+                <a class='waves-effect dropdown-button top-user-pro' href='#' data-activates='top-menu'><img src="admin/images/user/6.png" alt="" />My Account <i class="fa fa-angle-down" aria-hidden="true"></i>
                 </a>
 
                 <!-- Dropdown Structure -->
@@ -97,7 +97,7 @@
                 <!--== USER INFO ==-->
                 <div class="sb2-12">
                     <ul>
-                        <li><img src="../images/placeholder.jpg" alt="">
+                        <li><img src="admin/images/placeholder.jpg" alt="">
                         </li>
                         <li>
                             <h5>Victoria Baker <span> Santa Ana, CA</span></h5>
@@ -577,7 +577,7 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="../images/user/1.png" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/user/1.png" alt=""></span>
                                                     </td>
                                                     <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
                                                     </td>
@@ -598,7 +598,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="../images/user/2.png" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/user/2.png" alt=""></span>
                                                     </td>
                                                     <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
                                                     </td>
@@ -619,7 +619,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="../images/user/3.png" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/user/3.png" alt=""></span>
                                                     </td>
                                                     <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
                                                     </td>
@@ -640,7 +640,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="../images/user/4.png" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/user/4.png" alt=""></span>
                                                     </td>
                                                     <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
                                                     </td>
@@ -661,7 +661,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="../images/user/5.png" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/user/5.png" alt=""></span>
                                                     </td>
                                                     <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
                                                     </td>
@@ -735,7 +735,7 @@
                                                         <input type="checkbox" class="filled-in" id="filled-in-box-1" checked="checked" />
                                                         <label for="filled-in-box-1"></label>
                                                     </td>
-                                                    <td><span class="list-img"><img src="../images/listing/1.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/listing/1.jpg" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">Taaj Club House</span><span class="list-enq-city">Illunois, United States</span>
                                                     </td>
@@ -750,7 +750,7 @@
                                                         <input type="checkbox" class="filled-in" id="filled-in-box-2" checked="checked" />
                                                         <label for="filled-in-box-2"></label>
                                                     </td>
-                                                    <td><span class="list-img"><img src="../images/listing/2.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/listing/2.jpg" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">Grand Hotel</span><span class="list-enq-city">Rio,Brazil</span>
                                                     </td>
@@ -765,7 +765,7 @@
                                                         <input type="checkbox" class="filled-in" id="filled-in-box-3" checked="checked" />
                                                         <label for="filled-in-box-3"></label>
                                                     </td>
-                                                    <td><span class="list-img"><img src="../images/listing/3.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/listing/3.jpg" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">Grand Pales</span><span class="list-enq-city">Chennai,India</span>
                                                     </td>
@@ -780,7 +780,7 @@
                                                         <input type="checkbox" class="filled-in" id="filled-in-box-4" />
                                                         <label for="filled-in-box-4"></label>
                                                     </td>
-                                                    <td><span class="list-img"><img src="../images/listing/4.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/listing/4.jpg" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">Lake Palace Hotel</span><span class="list-enq-city">Beijing,China</span>
                                                     </td>
@@ -795,7 +795,7 @@
                                                         <input type="checkbox" class="filled-in" id="filled-in-box-5" />
                                                         <label for="filled-in-box-5"></label>
                                                     </td>
-                                                    <td><span class="list-img"><img src="../images/listing/5.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/listing/5.jpg" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">First Class Hotel</span><span class="list-enq-city">Berlin,Germany</span>
                                                     </td>
@@ -856,7 +856,7 @@
                                                         <input type="checkbox" id="ch2-1" />
                                                         <label for="ch2-1"></label>
                                                     </td>
-                                                    <td><span class="list-img"><img src="../images/listing/1.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/listing/1.jpg" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">Taaj Club House</span><span class="list-enq-city">Illunois, United States</span>
                                                     </td>
@@ -871,7 +871,7 @@
                                                         <input type="checkbox" id="ch2-2" />
                                                         <label for="ch2-2"></label>
                                                     </td>
-                                                    <td><span class="list-img"><img src="../images/listing/2.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/listing/2.jpg" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">Grand Hotel</span><span class="list-enq-city">Rio,Brazil</span>
                                                     </td>
@@ -886,7 +886,7 @@
                                                         <input type="checkbox" id="ch2-3" />
                                                         <label for="ch2-3"></label>
                                                     </td>
-                                                    <td><span class="list-img"><img src="../images/listing/3.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/listing/3.jpg" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">Grand Pales</span><span class="list-enq-city">Chennai,India</span>
                                                     </td>
@@ -901,7 +901,7 @@
                                                         <input type="checkbox" id="ch2-4" />
                                                         <label for="ch2-4"></label>
                                                     </td>
-                                                    <td><span class="list-img"><img src="../images/listing/4.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/listing/4.jpg" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">Lake Palace Hotel</span><span class="list-enq-city">Beijing,China</span>
                                                     </td>
@@ -916,7 +916,7 @@
                                                         <input type="checkbox" id="ch2-5" />
                                                         <label for="ch2-5"></label>
                                                     </td>
-                                                    <td><span class="list-img"><img src="../images/listing/5.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/listing/5.jpg" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">First Class Hotel</span><span class="list-enq-city">Berlin,Germany</span>
                                                     </td>
@@ -1034,7 +1034,7 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="../images/sm/1.png" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/sm/1.png" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">Linked In</span><span class="list-enq-city">Illunois, United States</span>
                                                     </td>
@@ -1045,7 +1045,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="../images/sm/2.png" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/sm/2.png" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">Twitter</span><span class="list-enq-city">Illunois, United States</span>
                                                     </td>
@@ -1056,7 +1056,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="../images/sm/3.png" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/sm/3.png" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">Facebook</span><span class="list-enq-city">Illunois, United States</span>
                                                     </td>
@@ -1067,7 +1067,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="../images/sm/4.png" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/sm/4.png" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">Google Plus</span><span class="list-enq-city">Illunois, United States</span>
                                                     </td>
@@ -1078,7 +1078,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="../images/sm/5.png" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/sm/5.png" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">YouTube</span><span class="list-enq-city">Illunois, United States</span>
                                                     </td>
@@ -1089,7 +1089,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="../images/sm/6.png" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/sm/6.png" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">WhatsApp</span><span class="list-enq-city">Illunois, United States</span>
                                                     </td>
@@ -1100,7 +1100,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="../images/sm/7.png" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/sm/7.png" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">VK</span><span class="list-enq-city">Illunois, United States</span>
                                                     </td>
@@ -1111,7 +1111,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="../images/sm/2.png" alt=""></span>
+                                                    <td><span class="list-img"><img src="admin/images/sm/2.png" alt=""></span>
                                                     </td>
                                                     <td><span class="list-enq-name">Twitter</span><span class="list-enq-city">Illunois, United States</span>
                                                     </td>
@@ -1190,10 +1190,10 @@
     </section>
 
     <!--======== SCRIPT FILES =========-->
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/materialize.min.js"></script>
-    <script src="../js/custom.js"></script>
+    <script src="admin/js/jquery.min.js"></script>
+    <script src="admin/js/bootstrap.min.js"></script>
+    <script src="admin/js/materialize.min.js"></script>
+    <script src="admin/js/custom.js"></script>
 </body>
 
 

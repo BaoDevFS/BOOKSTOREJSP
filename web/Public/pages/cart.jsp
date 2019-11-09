@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html class="no-js" lang="zxx">
 
 <!-- Mirrored from demo.hasthemes.com/boighor-preview/boighor-v3/cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Sep 2019 08:49:15 GMT -->

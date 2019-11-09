@@ -16,6 +16,7 @@ import java.sql.Statement;
 @WebServlet("/UserAdd")
 public class UserAdd extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
