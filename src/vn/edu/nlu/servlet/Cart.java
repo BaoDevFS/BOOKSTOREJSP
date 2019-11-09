@@ -16,7 +16,8 @@ import java.sql.Statement;
 @WebServlet("/Cart")
 public class Cart extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    }
+//    Giang oc chos
+    }   
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/cart.jsp");
