@@ -16,6 +16,7 @@ import java.sql.Statement;
 @WebServlet("/About")
 public class About extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        giang oc chos
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
