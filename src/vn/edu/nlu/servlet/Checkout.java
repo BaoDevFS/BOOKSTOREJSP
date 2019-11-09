@@ -16,8 +16,8 @@ import java.sql.Statement;
 @WebServlet("/Checkout")
 public class Checkout extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        
     }
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/checkout.jsp");
         requestDispatcher.forward(request,response);
