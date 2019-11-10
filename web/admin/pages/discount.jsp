@@ -3,26 +3,26 @@
 <html lang="en">
 
 
-<!-- Mirrored from rn53themes.net/themes/demo/lava-admin/discount.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Oct 2019 13:21:53 GMT -->
+<!-- Mirrored from rn53themes.net/themes/demo/lava-../discount.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Oct 2019 13:21:53 GMT -->
 <head>
-    <title>Lava Material - Web Application and Website Multipurpose Admin Panel Template</title>
+    <title>Lava Material - Web Application and Website Multipurpose .. Panel Template</title>
     <!--== META TAGS ==-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!--== FAV ICON ==-->
-    <link rel="shortcut icon" href="admin/images/fav.ico">
+    <link rel="shortcut icon" href="../images/fav.ico">
 
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700" rel="stylesheet">
 
     <!-- FONT-AWESOME ICON CSS -->
-    <link rel="stylesheet" href="admin/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
 
     <!--== ALL CSS FILES ==-->
-    <link rel="stylesheet" href="admin/css/style.css">
-    <link rel="stylesheet" href="admin/css/mob.css">
-    <link rel="stylesheet" href="admin/css/bootstrap.css">
-    <link rel="stylesheet" href="admin/css/materialize.css" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/mob.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/materialize.css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,7 +42,7 @@
                 <!--== USER INFO ==-->
                 <div class="sb2-12">
                     <ul>
-                        <li><img src="admin/images/placeholder.jpg" alt="">
+                        <li><img src="../images/placeholder.jpg" alt="">
                         </li>
                         <li>
                             <h5>Victoria Baker <span> Santa Ana, CA</span></h5>
@@ -53,7 +53,7 @@
                 <!--== LEFT MENU ==-->
                 <div class="sb2-13">
                     <ul class="collapsible" data-collapsible="accordion">
-                        <li><a href="admin/index.html" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a>
+                        <li><a href="../index.html" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a>
                         </li>
                         <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-user" aria-hidden="true"></i> Users</a>
                             <div class="collapsible-body left-sub-menu">
@@ -65,16 +65,16 @@
                                 </ul>
                             </div>
                         </li>
-                        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-umbrella" aria-hidden="true"></i> Tour Packages</a>
+                        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-umbrella" aria-hidden="true"></i> Product</a>
                             <div class="collapsible-body left-sub-menu">
                                 <ul>
-                                    <li><a href="packageAll.html">All Packages</a>
+                                    <li><a href="packageAll.html">All Product</a>
                                     </li>
-                                    <li><a href="packageAdd.html">Add New Package</a>
+                                    <li><a href="packageAdd.html">Add New Product</a>
                                     </li>
-                                    <li><a href="packageCatAll.html">All Package Categories</a>
+                                    <li><a href="packageCatAll.html">All Product Categories</a>
                                     </li>
-                                    <li><a href="packageCatAdd.html">Add Package Categories</a>
+                                    <li><a href="packageCatAdd.html">Add Product Categories</a>
                                     </li>
                                 </ul>
                             </div>
@@ -82,7 +82,7 @@
                         <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-usd" aria-hidden="true"></i> Discounts</a>
                             <div class="collapsible-body left-sub-menu">
                                 <ul>
-                                    <li><a href="admin/pages/discount.html">All Discounts</a>
+                                    <li><a href="../pages/discount.html">All Discounts</a>
                                     </li>
                                     <li><a href="discountAdd.html">Add New Discounts</a>
                                     </li>
@@ -92,18 +92,18 @@
                         <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-ticket" aria-hidden="true"></i> Booking & Enquiry</a>
                             <div class="collapsible-body left-sub-menu">
                                 <ul>
-                                    <li><a href="admin/pages/hotel-booking-all.html">Hotel</a>
+                                    <li><a href="../pages/hotel-booking-all.html">Hotel</a>
                                     </li>
-                                    <li><a href="packageBookingAll.html">Package</a>
+                                    <li><a href="packageBookingAll.html">Product</a>
                                     </li>
-                                    <li><a href="admin/pages/sight-see-booking-all.html">Sight Seeings</a>
+                                    <li><a href="../pages/sight-see-booking-all.html">Sight Seeings</a>
                                     </li>
-                                    <li><a href="admin/pages/event-booking-all.html">Events</a>
+                                    <li><a href="../pages/event-booking-all.html">Events</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-                        <li><a href="admin/pages/login.html" target="_blank"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a>
+                        <li><a href="../pages/login.html" target="_blank"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a>
                         </li>
                     </ul>
                 </div>
@@ -158,7 +158,7 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="admin/images/listing/1.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="../images/listing/1.jpg" alt=""></span>
                                                     </td>
                                                     <td><a href="#"><span class="list-enq-name">Domestic Help Services</span><span class="list-enq-city">Illunois, United States</span></a>
                                                     </td>
@@ -173,7 +173,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="admin/images/listing/1.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="../images/listing/1.jpg" alt=""></span>
                                                     </td>
                                                     <td><a href="#"><span class="list-enq-name">Domestic Help Services</span><span class="list-enq-city">Illunois, United States</span></a>
                                                     </td>
@@ -188,7 +188,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="admin/images/listing/1.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="../images/listing/1.jpg" alt=""></span>
                                                     </td>
                                                     <td><a href="#"><span class="list-enq-name">Domestic Help Services</span><span class="list-enq-city">Illunois, United States</span></a>
                                                     </td>
@@ -203,7 +203,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="admin/images/listing/1.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="../images/listing/1.jpg" alt=""></span>
                                                     </td>
                                                     <td><a href="#"><span class="list-enq-name">Domestic Help Services</span><span class="list-enq-city">Illunois, United States</span></a>
                                                     </td>
@@ -218,7 +218,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="admin/images/listing/1.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="../images/listing/1.jpg" alt=""></span>
                                                     </td>
                                                     <td><a href="#"><span class="list-enq-name">Domestic Help Services</span><span class="list-enq-city">Illunois, United States</span></a>
                                                     </td>
@@ -233,7 +233,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="admin/images/listing/1.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="../images/listing/1.jpg" alt=""></span>
                                                     </td>
                                                     <td><a href="#"><span class="list-enq-name">Domestic Help Services</span><span class="list-enq-city">Illunois, United States</span></a>
                                                     </td>
@@ -248,7 +248,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="admin/images/listing/1.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="../images/listing/1.jpg" alt=""></span>
                                                     </td>
                                                     <td><a href="#"><span class="list-enq-name">Domestic Help Services</span><span class="list-enq-city">Illunois, United States</span></a>
                                                     </td>
@@ -263,7 +263,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="admin/images/listing/1.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="../images/listing/1.jpg" alt=""></span>
                                                     </td>
                                                     <td><a href="#"><span class="list-enq-name">Domestic Help Services</span><span class="list-enq-city">Illunois, United States</span></a>
                                                     </td>
@@ -278,7 +278,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="admin/images/listing/1.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="../images/listing/1.jpg" alt=""></span>
                                                     </td>
                                                     <td><a href="#"><span class="list-enq-name">Domestic Help Services</span><span class="list-enq-city">Illunois, United States</span></a>
                                                     </td>
@@ -293,7 +293,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="admin/images/listing/1.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="../images/listing/1.jpg" alt=""></span>
                                                     </td>
                                                     <td><a href="#"><span class="list-enq-name">Domestic Help Services</span><span class="list-enq-city">Illunois, United States</span></a>
                                                     </td>
@@ -308,7 +308,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="admin/images/listing/1.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="../images/listing/1.jpg" alt=""></span>
                                                     </td>
                                                     <td><a href="#"><span class="list-enq-name">Domestic Help Services</span><span class="list-enq-city">Illunois, United States</span></a>
                                                     </td>
@@ -323,7 +323,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="admin/images/listing/1.jpg" alt=""></span>
+                                                    <td><span class="list-img"><img src="../images/listing/1.jpg" alt=""></span>
                                                     </td>
                                                     <td><a href="#"><span class="list-enq-name">Domestic Help Services</span><span class="list-enq-city">Illunois, United States</span></a>
                                                     </td>
@@ -369,12 +369,12 @@
     </section>
 
     <!--======== SCRIPT FILES =========-->
-    <script src="admin/js/jquery.min.js"></script>
-    <script src="admin/js/bootstrap.min.js"></script>
-    <script src="admin/js/materialize.min.js"></script>
-    <script src="admin/js/custom.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/materialize.min.js"></script>
+    <script src="../js/custom.js"></script>
 </body>
 
 
-<!-- Mirrored from rn53themes.net/themes/demo/lava-admin/discount.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Oct 2019 13:21:53 GMT -->
+<!-- Mirrored from rn53themes.net/themes/demo/lava-../discount.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Oct 2019 13:21:53 GMT -->
 </html>
