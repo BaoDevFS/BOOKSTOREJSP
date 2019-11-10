@@ -1,65 +1,41 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>﻿
-<!DOCTYPE html>
-<html lang="en">
-
-
-<!-- Mirrored from rn53themes.net/themes/demo/lava-admin/forgot.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Oct 2019 13:22:03 GMT -->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-    <title>Lava Material - Web Application and Website Multipurpose Admin Panel Template</title>
-    <!--== META TAGS ==-->
+    <title>Login</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <!--== FAV ICON ==-->
-    <link rel="shortcut icon" href="admin/images/fav.ico">
-
-    <!-- GOOGLE FONTS -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700" rel="stylesheet">
-
-    <!-- FONT-AWESOME ICON CSS -->
-    <link rel="stylesheet" href="admin/css/font-awesome.min.css">
-
-    <!--== ALL CSS FILES ==-->
-    <link rel="stylesheet" href="admin/css/style.css">
-    <link rel="stylesheet" href="admin/css/mob.css">
-    <link rel="stylesheet" href="admin/css/bootstrap.css">
-    <link rel="stylesheet" href="admin/css/materialize.css" />
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-	<script src="js/html5shiv.js"></script>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <style type="text/css">
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
-
 <body>
-    <div class="blog-login">
-        <div class="blog-login-in">
-            <form>
-                <img src="admin/images/logo.png" alt="" />
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="first_name1" type="text" class="validate">
-                        <label for="first_name1">User Name</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <a class="waves-effect waves-light btn-large btn-log-in" href="#">Login</a>
-                    </div>
-                </div>
-                <a href="login.html" class="for-pass">Login</a>
-            </form>
-        </div>
+<div class="container center well" style="margin-top: 50px;">
+    <div class="modal-header">
+        <h4 class="modal-title">Quên mật khẩu</h4>
     </div>
+    <div class="modal-body">
+        <form role="form" action="Serv_ForgotPassword" method="post">
+            <div class="form-group">
+                <label for="email">Tên đăng nhập:</label>
+                <input name="username"  type="text" class="form-control" id="text" placeholder="Tên đăng nhập">
+            </div>
+            <div class="form-group">
+                <label for="mail">Email:</label>
+                <input name="email"  type="email" class="form-control" id="email" placeholder="Nhập email">
+            </div>
+            <div class="checkbox">
+            </div>
+            <button type="submit" class="btn btn-default">Gửi</button>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <a href="trangchu.jsp"><button type="button" class="btn btn-default" >Close</button></a>
+    </div>
+</div>
 
-    <!--======== SCRIPT FILES =========-->
-    <script src="admin/js/jquery.min.js"></script>
-    <script src="admin/js/bootstrap.min.js"></script>
-    <script src="admin/js/materialize.min.js"></script>
-    <script src="admin/js/custom.js"></script>
 </body>
-
-
-<!-- Mirrored from rn53themes.net/themes/demo/lava-admin/forgot.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Oct 2019 13:22:03 GMT -->
 </html>
