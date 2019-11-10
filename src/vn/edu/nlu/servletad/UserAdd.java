@@ -15,8 +15,31 @@ import java.sql.SQLException;
 import java.sql.Statement;
 @WebServlet("/UserAdd")
 public class UserAdd extends HttpServlet {
+    GetConnectDatabase database;
+    int level =1;
+    public UserAdd(){
+        database  = new GetConnectDatabase();
+    }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        String firstName = request.getParameter("firstname");
+        String lastName = request.getParameter("lastname");
+        String moblie = request.getParameter("mobile");
+        String gender = request.getParameter("gender");
+        String city = request.getParameter("city");
+        String country = request.getParameter("country");
+        String password = request.getParameter("password");
+        String confirmpassword = request.getParameter("confirmpassword");
+        String email = request.getParameter("email");
+        String confirmemail = request.getParameter("confirmemail");
+        try {
+            Connection connection = database.getConnectionSql();
+            Statement statement =connection.createStatement();
+            String sql ="INSERT INTO users(id,fullname,gender, email)\n" +
+                    "VALUES()" ;
+            int status =statement.executeUpdate(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
