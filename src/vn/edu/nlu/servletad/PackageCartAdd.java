@@ -13,13 +13,13 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-@WebServlet("/PackageCatEdit")
-public class PackageCatEdit extends HttpServlet {
+@WebServlet("/PackageCartAdd")
+public class PackageCartAdd extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/packageCatEdit.jsp");
+        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/packageCatAdd.jsp");
         requestDispatcher.forward(request,response);
     }
 }
