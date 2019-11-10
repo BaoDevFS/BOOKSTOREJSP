@@ -137,7 +137,7 @@
                                 <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
                             </div>
                             <div class="tab-inn">
-                                <form action="<% PathAbsolute.getPath("UserAdd");%>" method="post" >
+                                <form action="<% PathAbsolute.getPath("UserAdd");%>" method="get" >
                                     <div class="row">
                                         <div class="input-field col s6">
                                             <input id="first_name" name="firstname" type="text" class="validate">
@@ -155,8 +155,8 @@
                                         </div>
                                         <div class="input-field col s6">
                                             <select name="gender">
-                                                <option value="volvo">Male</option>
-                                                <option value="saab">FeMale</option>
+                                                <option value="Male">Male</option>
+                                                <option value="FeMale">FeMale</option>
                                             </select>
                                             <label for="phone">Gender</label>
                                         </div>
@@ -172,14 +172,11 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="input-field col s6">
-                                            <input id="city" type="text" name="city"class="validate">
-                                            <label for="city">City</label>
+                                        <div class="input-field col s12">
+                                            <input id="city" type="text" name="address"class="validate">
+                                            <label for="city">Address</label>
                                         </div>
-                                        <div class="input-field col s6">
-                                            <input id="country" type="text" name="country" class="validate">
-                                            <label for="country">Country</label>
-                                        </div>
+
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s6">
