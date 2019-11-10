@@ -92,7 +92,7 @@
                         <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-ticket" aria-hidden="true"></i> Booking & Enquiry</a>
                             <div class="collapsible-body left-sub-menu">
                                 <ul>
-                                    <li><a href="../pages/hotel-booking-all.html">Hotel</a>
+                                    <li><a href="../pages/hotel-booking-all.html">Book</a>
                                     </li>
                                     <li><a href="packageBookingAll.html">Product</a>
                                     </li>
@@ -123,7 +123,7 @@
                             <div class="box-inn-sp">
                                 <div class="inn-title">
                                     <h4>All Discounts</h4>
-                                    <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
+                                    <p>Airtport Books The Right Way To Start A Short Break Holiday</p>
                                     <a class="dropdown-button drop-down-meta" href="#" data-activates="dr-users"><i class="material-icons">more_vert</i></a>
                                     <ul id="dr-users" class="dropdown-content">
                                         <li><a href="#!">Add New</a>
