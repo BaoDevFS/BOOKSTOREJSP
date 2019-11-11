@@ -19,7 +19,7 @@ public class PackageCartAdd extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/packageCatAdd.jsp");
+        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/packageCartAdd.jsp");
         requestDispatcher.forward(request,response);
     }
 }

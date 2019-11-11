@@ -13,13 +13,14 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-@WebServlet("/Discount")
-public class Discount extends HttpServlet {
+@WebServlet("/InforAndLeftMenu")
+public class InforAndLeftMenu extends HttpServlet {
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/discount.jsp");
+        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/inforAndLeftMenu.jsp");
         requestDispatcher.forward(request,response);
     }
 }
