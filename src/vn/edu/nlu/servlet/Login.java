@@ -1,13 +1,10 @@
 package vn.edu.nlu.servlet;
-<<<<<<< HEAD
 
 import vn.edu.nlu.fit.model.Users;
 import vn.edu.nlu.git.database.GetConnectDatabase;
-=======
 import vn.edu.nlu.fit.model.Users;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
->>>>>>> 2cc95158dd22742c4307044db1913c02a664441d
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
