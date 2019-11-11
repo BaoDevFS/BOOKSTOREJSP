@@ -74,7 +74,7 @@ public class Register extends HttpServlet {
     public boolean checkRegister_email(String email) {
         Connection cn = null;
         boolean result = false;
-        String sql = "SELECT * FROM account WHERE account.email =?";
+        String sql = "SELECT * FROM users WHERE users.email =?";
         try {
             cn = getConnectDatabase.getConnectionSql();
             PreparedStatement pre = cn.prepareStatement(sql);

@@ -39,7 +39,7 @@ public class SendMail {
             // To get the array of addresses
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(mailTo));
             message.setSubject("Verify acount");
-            message.setText("Click to link verify account: "+"http://localhost:8080/BookStore/VerifyAcount?token="+enCodeBase64.enCode(mailTo));
+            message.setText("Click to link verify account: "+"http://localhost:8080/BookStore/VerifyAccount?token="+enCodeBase64.enCode(mailTo));
             Transport.send(message);
         }
         catch(Exception e){
