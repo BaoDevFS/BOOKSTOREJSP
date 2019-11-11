@@ -130,7 +130,7 @@
                                                 <span><a href="http://localhost:8080/BookStore/Account">My Account</a></span>
                                                 <span><a href="http://localhost:8080/BookStore/Wishlist">My Wishlist</a></span>
                                                 <span><a href="http://localhost:8080/BookStore/Login">Sign In</a></span>
-                                                <span><a href="http://localhost:8080/BookStore/Login">Create An Account</a></span>
+                                                <span><a href="http://localhost:8080/BookStore/Register">Create An Account</a></span>
                                             </div>
                                         </div>
                                     </div>

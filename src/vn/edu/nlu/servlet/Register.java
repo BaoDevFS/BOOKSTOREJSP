@@ -1,5 +1,6 @@
 package vn.edu.nlu.servlet;
 
+import vn.edu.nlu.control.SendMail;
 import vn.edu.nlu.dao.HashCode;
 import vn.edu.nlu.fit.model.Users;
 import vn.edu.nlu.git.database.GetConnectDatabase;
@@ -49,16 +50,21 @@ public class Register extends HttpServlet {
 //        }
         try {
 //            password = HashCode.hashCode(password);
-            user = new Users(userName, password, email, phone);
+            user = new Users(userName, email,password , phone);
             user.setId(9);
+            user.setActive(0);
 //            chech username
             boolean isExistEmail = checkRegister_email(email);
             if (isExistEmail) {
                 RequestDispatcher rp = getServletContext().getRequestDispatcher("/Public/pages/register.jsp");
                 rp.forward(request, response);
             } else {
-                register(user);
-                response.sendRedirect(request.getContextPath() + "/Home");
+                if(register(user)){
+                    SendMail sendMail = new SendMail(user.getEmail());
+                    response.getWriter().print("Check email verify acccount");
+                }else {
+                    response.sendRedirect(request.getContextPath() + "/Login");
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -96,7 +102,7 @@ public class Register extends HttpServlet {
         Connection cn = null;
         boolean result = false;
 //        String sql = "INSERT INTO users( id,name,  email,  password,  phone) values(?, ?, ?, ?)";
-        String sql ="INSERT INTO users( id,name,  email,  passwork,  phone) VALUES ("+acc.getId()+","+"'"+acc.getName()+"',"+"'"+acc.getEmail()+"',"+"'"+acc.getPasswork()+"',"+"'"+acc.getPhone()+"'"+")";
+        String sql ="INSERT INTO users( name,  email,  password,  phone) VALUES ("+"'"+acc.getName()+"',"+"'"+acc.getEmail()+"',"+"'"+acc.getPasswork()+"',"+"'"+acc.getPhone()+"'"+")";
         System.out.println(sql);
         try {
             cn = getConnectDatabase.getConnectionSql();

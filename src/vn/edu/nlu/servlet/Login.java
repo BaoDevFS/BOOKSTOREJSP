@@ -32,14 +32,14 @@ public class Login extends HttpServlet {
         try {
             connection = getConnectDatabase.getConnectionSql();
             Statement statement = connection.createStatement();
-            String sql = "SELECT * FROM users WHERE users.email="+"'"+userName+"'"+" AND users.passwork="+"'"+passWord+"'";
+            String sql = "SELECT * FROM users WHERE users.email="+"'"+userName+"'"+" AND users.password="+"'"+passWord+"'";
             System.out.println(sql);
             ResultSet set =statement.executeQuery(sql);
             while (set.next()){
                 user = new Users();
                 user.setActive(set.getInt("active"));
                 user.setEmail(set.getString("email"));
-                user.setPasswork(set.getString("passwork"));
+                user.setPasswork(set.getString("password"));
             }
             set.close();
             connection.close();

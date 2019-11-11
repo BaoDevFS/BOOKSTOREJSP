@@ -39,7 +39,10 @@ public class VerifyAccount extends HttpServlet {
             connection= connectDatabase.getConnectionSql();
             String changeActiveAccount ="UPDATE users SET active=1 WHERE email='"+mail+"'";
             statement = connection.createStatement();
-            statement.executeUpdate(changeActiveAccount);
+            int num =statement.executeUpdate(changeActiveAccount);
+            if(num>0){
+                response.sendRedirect("http://localhost:8080/BookStore/Login");
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }

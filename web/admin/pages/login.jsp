@@ -1,3 +1,4 @@
+<%@ page import="vn.edu.nlu.control.PathAbsolute" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>﻿
 <!DOCTYPE html>
 <html lang="en">
@@ -54,7 +55,7 @@
                         <a class="waves-effect waves-light btn-large btn-log-in" href="admin/index.html">Login</a>
                     </div>
                 </div>
-                <a href="forgot.html" class="for-pass">Forgot Password?</a>
+                <a href="<%PathAbsolute.getPath("ForgotPassword");%>" class="for-pass">Forgot Password?</a>
             </form>
         </div>
     </div>
