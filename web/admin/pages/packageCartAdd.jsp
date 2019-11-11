@@ -1,8 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>﻿
 <!DOCTYPE html>
 <html lang="en">
-
-
 <!-- Mirrored from rn53themes.net/themes/demo/lava-admin/packageCatAdd.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Oct 2019 13:21:52 GMT -->
 <head>
     <title>Lava Material - Web Application and Website Multipurpose Admin Panel Template</title>
