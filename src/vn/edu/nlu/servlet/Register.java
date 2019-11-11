@@ -43,14 +43,16 @@ public class Register extends HttpServlet {
         String phone = request.getParameter("phone");
         try {
             password = HashCode.hashCode(password);
-        } catch (NoSuchAlgorithmException e) {
+            user = new Users(userName, password, email, phone);
+        }
+        catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
-        user = new Users(userName, password, email, phone);
         try {
+            connection =getConnectDatabase.getConnectionSql();
+        } catch (SQLException b) {
 
-        } catch (SQLException e) {
-            e.printStackTrace();
+            b.printStackTrace();
             RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/login.jsp");
             requestDispatcher.forward(request, response);
         }
