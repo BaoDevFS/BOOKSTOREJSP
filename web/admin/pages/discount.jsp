@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="admin/css/style.css">
     <link rel="stylesheet" href="admin/css/mob.css">
     <link rel="stylesheet" href="admin/css/bootstrap.css">
-    <link rel="stylesheet" href="admin/css/materialize.css" />
+    <link rel="stylesheet" href="admin/css/materialize.css"/>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

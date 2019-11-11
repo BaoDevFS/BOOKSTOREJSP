@@ -65,7 +65,7 @@
 						<span class="txt1">
 							Forgot
 						</span>
-						<a class="txt2" href="#">
+						<a class="txt2" href="http://localhost:8080/BookStore/ForgotPassword">
 							Username / Password?
 						</a>
 					</div>

@@ -22,9 +22,11 @@ public class DoLogin extends HttpServlet {
     GetConnectDatabase getConnectDatabase;
     Connection connection;
     Users user;
+
     public DoLogin() {
-       getConnectDatabase = new GetConnectDatabase();
+        getConnectDatabase = new GetConnectDatabase();
     }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
@@ -34,20 +36,20 @@ public class DoLogin extends HttpServlet {
         try {
             connection = getConnectDatabase.getConnectionSql();
             Statement statement = connection.createStatement();
-            String sql = "SELECT * FROM users WHERE users.email="+"'"+userName+"'"+" AND users.passwork="+"'"+passWord+"'";
-            ResultSet set =statement.executeQuery(sql);
+            String sql = "SELECT * FROM users WHERE users.email=" + "'" + userName + "'" + " AND users.password=" + "'" + passWord + "'";
+            ResultSet set = statement.executeQuery(sql);
             user = new Users();
-            while (set.next()){
+            while (set.next()) {
                 user.setActive(set.getInt("active"));
-            user.setEmail(set.getString("email"));
-            user.setPasswork(set.getString("passwork"));
+                user.setEmail(set.getString("email"));
+                user.setPasswork(set.getString("password"));
             }
             set.close();
             connection.close();
             System.out.println(user.toString());
             HttpSession session = request.getSession();
-            session.setAttribute("user",user);
-            response.sendRedirect(request.getContextPath()+"/Home");
+            session.setAttribute("user", user);
+            response.sendRedirect(request.getContextPath() + "/Home");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -58,6 +60,6 @@ public class DoLogin extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
-        doPost(request,response);
+        doPost(request, response);
     }
 }
