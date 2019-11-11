@@ -49,6 +49,14 @@ public class Register extends HttpServlet {
         }
         try {
             connection = getConnectDatabase.getConnectionSql();
+
+        }
+        catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        try {
+            connection =getConnectDatabase.getConnectionSql();
+
         } catch (SQLException b) {
 
             b.printStackTrace();
