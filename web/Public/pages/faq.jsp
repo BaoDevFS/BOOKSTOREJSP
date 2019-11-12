@@ -14,7 +14,7 @@
 	<link rel="apple-touch-icon" href="Public/images/icon.png">
 
 	<!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,600i,700,700i,800" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
 
@@ -36,7 +36,7 @@
 
 	<!-- Main wrapper -->
 	<div class="wrapper" id="wrapper">
-		
+
 		<!-- Header -->
 <%@ include file="include/header.jsp" %>
 		<!-- //Header -->
@@ -171,9 +171,9 @@
 						        </div>
 						    </div>
 						</div>
-					</div> 
-				</div> 
-			</div> 
+					</div>
+				</div>
+			</div>
 		</section>
 		<!-- End Faq Area -->
 		<!-- Footer Area -->
@@ -189,7 +189,7 @@
 	<script src="Public/js/bootstrap.min.js"></script>
 	<script src="Public/js/plugins.js"></script>
 	<script src="Public/js/active.js"></script>
-	
+
 </body>
 
 <!-- Mirrored from demo.hasthemes.com/boighor-preview/boighor-v3/faq.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Sep 2019 08:49:15 GMT -->

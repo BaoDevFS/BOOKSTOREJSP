@@ -14,7 +14,7 @@
 	<link rel="apple-touch-icon" href="Public/images/icon.png">
 
 	<!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,600i,700,700i,800" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
 
@@ -36,7 +36,7 @@
 
 	<!-- Main wrapper -->
 	<div class="wrapper" id="wrapper">
-		
+
 		<!-- Header -->
 <%@ include file="include/header.jsp" %>
 		<!-- //Header -->
@@ -78,7 +78,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 ol-lg-12">
-                        <form action="#">               
+                        <form action="#">
                             <div class="table-content wnro__table table-responsive">
                                 <table>
                                     <thead>
@@ -119,7 +119,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                        </form> 
+                        </form>
                         <div class="cartbox__btn">
                             <ul class="cart__btn__list d-flex flex-wrap flex-md-nowrap flex-lg-nowrap justify-content-between">
                                 <li><a href="#">Coupon Code</a></li>
@@ -150,7 +150,7 @@
                         </div>
                     </div>
                 </div>
-            </div>  
+            </div>
         </div>
         <!-- cart-main-area end -->
 		<!-- Footer Area -->
@@ -166,7 +166,7 @@
 	<script src="Public/js/bootstrap.min.js"></script>
 	<script src="Public/js/plugins.js"></script>
 	<script src="Public/js/active.js"></script>
-	
+
 </body>
 
 <!-- Mirrored from demo.hasthemes.com/boighor-preview/boighor-v3/cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Sep 2019 08:49:15 GMT -->
