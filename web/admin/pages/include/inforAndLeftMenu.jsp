@@ -5,7 +5,8 @@
   Time: 15:20 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+         pageEncoding="utf-8" %>
 <div class="sb2-1">
     <!--== USER INFO ==-->
     <div class="sb2-12">
