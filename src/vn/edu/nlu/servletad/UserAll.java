@@ -15,11 +15,28 @@ import java.sql.SQLException;
 import java.sql.Statement;
 @WebServlet("/UserAll")
 public class UserAll extends HttpServlet {
+    GetConnectDatabase getConnectDatabase;
+    Connection connection;
+    public UserAll() {
+        getConnectDatabase = new GetConnectDatabase();
+    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/userAll.jsp");
-        requestDispatcher.forward(request,response);
+        String sql = "Select * from users";
+        try {
+            connection =getConnectDatabase.getConnectionSql();
+            Statement statement =connection.createStatement();
+            ResultSet resultSet= statement.executeQuery(sql);
+            request.setAttribute("list",resultSet);
+            RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/userAll.jsp");
+            requestDispatcher.forward(request,response);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 }
