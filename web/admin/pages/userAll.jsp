@@ -1,3 +1,5 @@
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="vn.edu.nlu.control.PathAbsolute" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>﻿
 <!DOCTYPE html>
 <html lang="en">
@@ -80,245 +82,33 @@
                                                     <th>Name</th>
                                                     <th>Phone</th>
                                                     <th>Email</th>
-                                                    <th>Country</th>
-                                                    <th>Listings</th>
                                                     <th>View</th>
                                                     <th>Edit</th>
                                                     <th>Delete</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                            <% ResultSet resultSet = (ResultSet) request.getAttribute("list");
+                                                while (resultSet.next()){
+                                            %>
                                                 <tr>
-                                                    <td><span class="list-img"><img src="admin/images/user/1.png" alt=""></span>
+                                                    <td><span class="list-img"><img src="<%= resultSet.getString("avatar")%>" alt=""></span>
                                                     </td>
-                                                    <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
+                                                    <td><a href="#"><span class="list-enq-name"><%= resultSet.getString("name")%></span><span class="list-enq-city"><%= resultSet.getString("address")%></span></a>
                                                     </td>
-                                                    <td>+01 3214 6522</td>
-                                                    <td>chadengle@dummy.com</td>
-                                                    <td>Australia</td>
+                                                    <td><%= resultSet.getString("phone")%></td>
+                                                    <td><%= resultSet.getString("email")%></td>
                                                     <td>
-                                                        <span class="label label-primary">02</span>
-                                                    </td>
-                                                    <td>
-                                                        <a href="userView.html"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                        <a href="<%= PathAbsolute.getPath("UserView")%>"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                                     </td>
                                                     <td>
-                                                        <a href="userEdit.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                                        <a href="<%= PathAbsolute.getPath("UserEdit")%>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                                     </td>
                                                     <td>
                                                         <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td><span class="list-img"><img src="admin/images/user/2.png" alt=""></span>
-                                                    </td>
-                                                    <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
-                                                    </td>
-                                                    <td>+01 3214 6522</td>
-                                                    <td>chadengle@dummy.com</td>
-                                                    <td>Australia</td>
-                                                    <td>
-                                                        <span class="label label-primary">02</span>
-                                                    </td>
-                                                    <td>
-                                                        <a href="userView.html"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="userEdit.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="list-img"><img src="admin/images/user/3.png" alt=""></span>
-                                                    </td>
-                                                    <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
-                                                    </td>
-                                                    <td>+01 3214 6522</td>
-                                                    <td>chadengle@dummy.com</td>
-                                                    <td>Australia</td>
-                                                    <td>
-                                                        <span class="label label-primary">02</span>
-                                                    </td>
-                                                    <td>
-                                                        <a href="userView.html"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="userEdit.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="list-img"><img src="admin/images/user/4.png" alt=""></span>
-                                                    </td>
-                                                    <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
-                                                    </td>
-                                                    <td>+01 3214 6522</td>
-                                                    <td>chadengle@dummy.com</td>
-                                                    <td>Australia</td>
-                                                    <td>
-                                                        <span class="label label-primary">02</span>
-                                                    </td>
-                                                    <td>
-                                                        <a href="userView.html"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="userEdit.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="list-img"><img src="admin/images/user/5.png" alt=""></span>
-                                                    </td>
-                                                    <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
-                                                    </td>
-                                                    <td>+01 3214 6522</td>
-                                                    <td>chadengle@dummy.com</td>
-                                                    <td>Australia</td>
-                                                    <td>
-                                                        <span class="label label-primary">02</span>
-                                                    </td>
-                                                    <td>
-                                                        <a href="userView.html"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="userEdit.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="list-img"><img src="admin/images/user/6.png" alt=""></span>
-                                                    </td>
-                                                    <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
-                                                    </td>
-                                                    <td>+01 3214 6522</td>
-                                                    <td>chadengle@dummy.com</td>
-                                                    <td>Australia</td>
-                                                    <td>
-                                                        <span class="label label-primary">02</span>
-                                                    </td>
-                                                    <td>
-                                                        <a href="userView.html"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="userEdit.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="list-img"><img src="admin/images/user/1.png" alt=""></span>
-                                                    </td>
-                                                    <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
-                                                    </td>
-                                                    <td>+01 3214 6522</td>
-                                                    <td>chadengle@dummy.com</td>
-                                                    <td>Australia</td>
-                                                    <td>
-                                                        <span class="label label-primary">02</span>
-                                                    </td>
-                                                    <td>
-                                                        <a href="userView.html"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="userEdit.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="list-img"><img src="admin/images/user/2.png" alt=""></span>
-                                                    </td>
-                                                    <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
-                                                    </td>
-                                                    <td>+01 3214 6522</td>
-                                                    <td>chadengle@dummy.com</td>
-                                                    <td>Australia</td>
-                                                    <td>
-                                                        <span class="label label-primary">02</span>
-                                                    </td>
-                                                    <td>
-                                                        <a href="userView.html"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="userEdit.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="list-img"><img src="admin/images/user/1.png" alt=""></span>
-                                                    </td>
-                                                    <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
-                                                    </td>
-                                                    <td>+01 3214 6522</td>
-                                                    <td>chadengle@dummy.com</td>
-                                                    <td>Australia</td>
-                                                    <td>
-                                                        <span class="label label-primary">02</span>
-                                                    </td>
-                                                    <td>
-                                                        <a href="userView.html"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="userEdit.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="list-img"><img src="admin/images/user/3.png" alt=""></span>
-                                                    </td>
-                                                    <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
-                                                    </td>
-                                                    <td>+01 3214 6522</td>
-                                                    <td>chadengle@dummy.com</td>
-                                                    <td>Australia</td>
-                                                    <td>
-                                                        <span class="label label-primary">02</span>
-                                                    </td>
-                                                    <td>
-                                                        <a href="userView.html"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="userEdit.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="list-img"><img src="admin/images/user/4.png" alt=""></span>
-                                                    </td>
-                                                    <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
-                                                    </td>
-                                                    <td>+01 3214 6522</td>
-                                                    <td>chadengle@dummy.com</td>
-                                                    <td>Australia</td>
-                                                    <td>
-                                                        <span class="label label-primary">02</span>
-                                                    </td>
-                                                    <td>
-                                                        <a href="userView.html"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="userEdit.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                                    </td>
-                                                </tr>
+                                            <%}%>
                                             </tbody>
                                         </table>
                                     </div>

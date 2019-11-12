@@ -1,8 +1,9 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>﻿
 <%@ page import="vn.edu.nlu.control.PathAbsolute" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V1</title>
+	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -21,31 +22,36 @@
 	<link rel="stylesheet" type="text/css" href="Public/css/main.css">
 <!--	<link rel="stylesheet" href="Public/font-awesome-4.7.0/css/font-awesome.css">-->
 	<link rel="stylesheet" href="Public/css/plugins/font-awesome.min.css">
-	<script src="Public/js/bootstrap.min.js"></script>
-
 
 	<!--===============================================================================================-->
 </head>
 <body>
-	
+<%! public String getStatus(int i) {
+	System.out.println(i);
+	if(i!=0){
+		return "gelet();";
+	}else{
+		return "";
+	}
+}%>
+
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
 					<img src="Public/images/img-01.png" alt="IMG">
 				</div>
-
 				<form class="login100-form validate-form"  method="post" action="http://localhost:8080/BookStore/Login">
 					<span class="login100-form-title">
 						Member Login
 					</span>
-
+					<p class="invalid" id="invalid" >Email or password invalid!</p>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz" >
 						<input class="input100" type="text" name="email" placeholder="Email" >
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-envelope" aria-hidden="true"></i>
+							<i class="fa fa-envelope" aria-hidden="true" ></i>
 						</span>
 					</div>
 
@@ -73,7 +79,7 @@
 					</div>
 
 					<div class="text-center p-t-136">
-						<a class="txt2" href="<%PathAbsolute.getPath("Register");%>">
+						<a class="txt2" href="<%= PathAbsolute.getPath("Register")%>">
 							Create your Account
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
@@ -92,16 +98,16 @@
 	<script src="Public/js/popper.min.js"></script>
 	<script src="Public/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
-	<!--	<script src="Public/vendor/select2/select2.min.js"></script>-->
+	<script src="Public/vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->
-<!--	<script src="Public/vendor/tilt/tilt.jquery.min.js"></script>-->
-<!--	<script >-->
-<!--		$('.js-tilt').tilt({-->
-<!--			scale: 1.1-->
-<!--		})-->
-<!--	</script>-->
+	<script src="Public/vendor/tilt/tilt.jquery.min.js"></script>
+
 <!--===============================================================================================-->
 	<script src="Public/js/main.js"></script>
+	<script  src="Public/js/show.js"></script>
+<script >
+	 <%= getStatus((int)request.getAttribute("status"))%>
 
+</script>
 </body>
 </html>

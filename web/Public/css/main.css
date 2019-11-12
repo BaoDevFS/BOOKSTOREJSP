@@ -529,3 +529,8 @@ iframe {
 .mysignup{
     padding: 80px 130px 30px 86px;
 }
+.invalid{
+    color: red !important;
+    display: none;
+    margin-left: 20%;
+}
