@@ -90,29 +90,20 @@
                             <ul>
                                 <% ResultSet rs = (ResultSet) request.getAttribute("rs");
                                     ResultSet rs1 = (ResultSet) request.getAttribute("rsCount");
-                                    while (rs.next()) {
-                                        rs1.next();
+
+                                    while (rs.next() && rs1.next()) {
                                 %>
+<%--                                <% --%>
+<%--                                    while (rs1.next()) {--%>
+<%--                                %>--%>
                                 <li><a href="<%=PathAbsolute.getPath("ShopGrid?type="+rs.getInt(1))%>">
-                                    <%--                                    <span>(<%=rs1.getInt(3) %>)</span>--%>
                                     <%=rs.getString(2) %>
+
+                                    <span>(<%=rs1.getInt(3) %>)</span>
+<%--                                    <% } %>--%>
                                 </a></li>
+
                                 <% } %>
-                                <%--                                                                <li><a href="#">Business <span>(4)</span></a></li>--%>
-                                <%--                                                                <li><a href="#">Cookbooks <span>(6)</span></a></li>--%>
-                                <%--                                                                <li><a href="#">Health & Fitness <span>(7)</span></a></li>--%>
-                                <%--                                                                <li><a href="#">History <span>(8)</span></a></li>--%>
-                                <%--                                                                <li><a href="#">Mystery <span>(9)</span></a></li>--%>
-                                <%--                                                                <li><a href="#">Inspiration <span>(13)</span></a></li>--%>
-                                <%--                                                                <li><a href="#">Romance <span>(20)</span></a></li>--%>
-                                <%--                                                                <li><a href="#">Fiction/Fantasy <span>(22)</span></a></li>--%>
-                                <%--                                                                <li><a href="#">Self-Improvement <span>(13)</span></a></li>--%>
-                                <%--                                                                <li><a href="#">Humor Books <span>(17)</span></a></li>--%>
-                                <%--                                                                <li><a href="#">Harry Potter <span>(20)</span></a></li>--%>
-                                <%--                                                                <li><a href="#">Land of Stories <span>(34)</span></a></li>--%>
-                                <%--                                                                <li><a href="#">Kids' Music <span>(60)</span></a></li>--%>
-                                <%--                                                                <li><a href="#">Toys & Games <span>(3)</span></a></li>--%>
-                                <%--                                                                <li><a href="#">hoodies <span>(3)</span></a></li>--%>
                             </ul>
                         </aside>
                         <aside class="wedget__categories pro--range">
@@ -145,8 +136,6 @@
                                 <li><a href="<%=PathAbsolute.getPath("ShopGrid?type="+rsTag.getInt(1))%>">
                                     <%=rsTag.getString(2) %>
                                 </a></li>
-
-
                                 <%--                                <li><a href="#">Business</a></li>--%>
                                 <%--                                <li><a href="#">Cookbooks</a></li>--%>
                                 <%--                                <li><a href="#">Health & Fitness</a></li>--%>
