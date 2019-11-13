@@ -1,11 +1,5 @@
-<%@ page import="vn.edu.nlu.control.PathAbsolute" %><%--
-  Created by IntelliJ IDEA.
-  User: GiangOggy
-  Date: 10/11/2019
-  Time: 15:20 PM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>﻿
+<%@ page import="vn.edu.nlu.control.PathAbsolute" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="sb2-1">
     <!--== USER INFO ==-->
     <div class="sb2-12">
@@ -22,9 +16,12 @@
     <div class="sb2-13">
         <ul class="collapsible" data-collapsible="accordion">
 
-            <li><a href="<%= PathAbsolute.getPath("LoginAdmin")%>" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a>
+            <li><a href="<%= PathAbsolute.getPath("Index")%>" class="menu-active"><i class="fa fa-bar-chart"
+                                                                                          aria-hidden="true"></i>
+                Dashboard</a>
             </li>
-            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-user" aria-hidden="true"></i> Users</a>
+            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-user" aria-hidden="true"></i>
+                Users</a>
                 <div class="collapsible-body left-sub-menu">
                     <ul>
                         <li><a href="<%= PathAbsolute.getPath("UserAll")%>">All Users</a>
@@ -34,7 +31,9 @@
                     </ul>
                 </div>
             </li>
-            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-umbrella" aria-hidden="true"></i> Productss</a>
+            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-umbrella"
+                                                                           aria-hidden="true"></i>
+                Productss</a>
                 <div class="collapsible-body left-sub-menu">
                     <ul>
                         <li><a href="<%= PathAbsolute.getPath("PackageAll")%>">All Products</a>
@@ -48,7 +47,8 @@
                     </ul>
                 </div>
             </li>
-            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-usd" aria-hidden="true"></i> Discounts</a>
+            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-usd" aria-hidden="true"></i>
+                Discounts</a>
                 <div class="collapsible-body left-sub-menu">
                     <ul>
                         <li><a href="<%= PathAbsolute.getPath("Discount")%>">All Discounts</a>
@@ -58,7 +58,8 @@
                     </ul>
                 </div>
             </li>
-            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-ticket" aria-hidden="true"></i> Booking & Enquiry</a>
+            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-ticket" aria-hidden="true"></i>
+                Booking & Enquiry</a>
                 <div class="collapsible-body left-sub-menu">
                     <ul>
                         <li><a href="<%= PathAbsolute.getPath("PackageBookingAll")%>">Product</a>
@@ -66,7 +67,8 @@
                     </ul>
                 </div>
             </li>
-            <li><a href="<%= PathAbsolute.getPath("LoginAdmin")%>" target="_blank"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a>
+            <li><a href="<%= PathAbsolute.getPath("LoginAdmin")%>" target="_blank"><i class="fa fa-sign-in"
+                                                                                      aria-hidden="true"></i>Login</a>
             </li>
         </ul>
     </div>

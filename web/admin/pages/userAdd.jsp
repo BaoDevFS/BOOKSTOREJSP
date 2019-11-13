@@ -1,14 +1,8 @@
-<%@ page import="vn.edu.nlu.control.PathAbsolute" %><%--
-  Created by IntelliJ IDEA.
-  User: WATERMELON
-  Date: 11/9/2019
-  Time: 7:41 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
-<!-- Mirrored from rn53themes.net/themes/demo/lava-admin/userAdd.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Oct 2019 13:21:50 GMT -->
+<!-- Mirrored from rn53themes.net/themes/demo/lava-admin/userAdd.html by HTTrack Website Copier/3.x
+[XR&CO'2014], Wed, 23 Oct 2019 13:21:50 GMT -->
 <head>
     <title>Lava Material - Web Application and Website Multipurpose Admin Panel Template</title>
     <!--== META TAGS ==-->
@@ -61,20 +55,20 @@
                                 <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
                             </div>
                             <div class="tab-inn">
-                                <form action="<% PathAbsolute.getPath("UserAdd");%>" method="get" >
+                                <form action="<% PathAbsolute.getPath("UserAdd");%>" method="get">
                                     <div class="row">
                                         <div class="input-field col s6">
                                             <input id="first_name" name="firstname" type="text" class="validate">
                                             <label for="first_name">First Name</label>
                                         </div>
                                         <div class="input-field col s6">
-                                            <input id="last_name" type="text"name="lastname" class="validate">
+                                            <input id="last_name" type="text" name="lastname" class="validate">
                                             <label for="last_name">Last Name</label>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s6">
-                                            <input id="phone" type="number" name="mobile"class="validate">
+                                            <input id="phone" type="number" name="mobile" class="validate">
                                             <label for="phone">Mobile</label>
                                         </div>
                                         <div class="input-field col s6">
@@ -97,24 +91,25 @@
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <input id="city" type="text" name="address"class="validate">
+                                            <input id="city" type="text" name="address" class="validate">
                                             <label for="city">Address</label>
                                         </div>
 
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s6">
-                                            <input id="password" type="password"name="password" class="validate">
+                                            <input id="password" type="password" name="password" class="validate">
                                             <label for="password">Password</label>
                                         </div>
                                         <div class="input-field col s6">
-                                            <input id="password1" type="password" name="confirmpassword" class="validate">
+                                            <input id="password1" type="password" name="confirmpassword"
+                                                   class="validate">
                                             <label for="password1">Confirm Password</label>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <input id="email" type="email"name="email"  class="validate">
+                                            <input id="email" type="email" name="email" class="validate">
                                             <label for="email">Email</label>
                                         </div>
                                         <div class="input-field col s12">
@@ -163,5 +158,6 @@
 </body>
 
 
-<!-- Mirrored from rn53themes.net/themes/demo/lava-admin/userAdd.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Oct 2019 13:21:50 GMT -->
+<!-- Mirrored from rn53themes.net/themes/demo/lava-admin/userAdd.html by HTTrack Website Copier/3.x
+[XR&CO'2014], Wed, 23 Oct 2019 13:21:50 GMT -->
 </html>
