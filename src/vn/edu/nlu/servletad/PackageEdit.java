@@ -1,5 +1,6 @@
 package vn.edu.nlu.servletad;
 
+import vn.edu.nlu.control.GetListProductType;
 import vn.edu.nlu.fit.model.Products;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
@@ -34,10 +35,7 @@ public class PackageEdit extends HttpServlet {
             ResultSet resultSet = statement.executeQuery(sql);
             request.setAttribute("rs", resultSet);
 
-            String sql2 = "SELECT * from booktypes";
-            connection = getConnectDatabase.getConnectionSql();
-            Statement statement2 = connection.createStatement();
-            ResultSet resultSet2 = statement2.executeQuery(sql2);
+            ResultSet resultSet2 =GetListProductType.getListProductType();
             request.setAttribute("booktype", resultSet2);
             while (resultSet2.next()){
                 if(resultSet2.getInt(1)==id){

@@ -1,5 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
 <html lang="en">
 <!-- Mirrored from rn53themes.net/themes/demo/lava-admin/userAdd.html by HTTrack Website Copier/3.x
 [XR&CO'2014], Wed, 23 Oct 2019 13:21:50 GMT -->
@@ -37,6 +36,16 @@
 <div class="container-fluid sb2">
     <div class="row">
         <%@ include file="include/inforAndLeftMenu.jsp" %>
+        <%! public String getStatus(int i) {
+            System.out.println(i);
+            if(i==1){
+                return "show(1);";
+            }else if(i==0){
+                return "show(0);";
+            }else {
+                return "";
+            }
+        }%>
         <div class="sb2-2">
             <div class="sb2-2-2">
                 <ul>
@@ -55,7 +64,7 @@
                                 <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
                             </div>
                             <div class="tab-inn">
-                                <form action="<% PathAbsolute.getPath("UserAdd");%>" method="get">
+                                <form action="<% PathAbsolute.getPath("UserAdd");%>"  method="post">
                                     <div class="row">
                                         <div class="input-field col s6">
                                             <input id="first_name" name="firstname" type="text" class="validate">
@@ -155,6 +164,10 @@
 <script src="admin/js/bootstrap.min.js"></script>
 <script src="admin/js/materialize.min.js"></script>
 <script src="admin/js/custom.js"></script>
+<script src="admin/js/show.js"></script>
+<script >
+    <%= getStatus((int)request.getAttribute("status"))%>
+</script>
 </body>
 
 

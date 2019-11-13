@@ -1,3 +1,4 @@
+<%@ page import="java.sql.ResultSet" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <!-- Mirrored from rn53themes.net/themes/demo/lava-admin/packageAdd.html by HTTrack Website Copier/3.x
@@ -56,9 +57,11 @@
                     </div>
                     <div class="bor">
                         <form action="<%PathAbsolute.getPath("PackageAdd");%>" method="post">
+                            <%ResultSet rs = (ResultSet) request.getAttribute("booktype");
+                                System.out.println(request.getAttribute("status"));%>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="list-title" type="text" class="validate">
+                                    <input id="list-title" type="text" name="name" class="validate">
                                     <label for="list-title">Product Name</label>
                                 </div>
                                 <div class="input-field col s12">
@@ -76,26 +79,28 @@
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                    <textarea id="textarea1" name="description" class="materialize-textarea"></textarea>
                                     <label for="textarea1">Product Descriptions:</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <select multiple>
-                                        <option value="" disabled selected>Choose Category</option>
-                                        <option value="1">Hotels</option>
+                                    <select >
+                                        <option value="" name="booktype" disabled selected>Choose Category</option>
+                                        <%while (rs.next()){%>
+                                        <option value="<%=rs.getInt("id")%>"><%=rs.getString("name")%></option>
+                                        <%}%>
                                     </select>
                                     <label>Select Category</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input id="Package-auth" type="text" class="validate">
-                                    <label for="Package-auth">Author Name</label>
+                                    <input id="Package-auth" name="year" type="text" class="validate">
+                                    <label for="Package-auth">Public Year</label>
                                 </div>
                                 <div class="input-field col s6">
-                                    <input id="price" type="text" class="validate">
+                                    <input id="price" type="text" name="price" class="validate">
                                     <label for="Package-auth">Price</label>
                                 </div>
                             </div>

@@ -152,7 +152,7 @@
                             <div class="row">
                                 <div class="input-field col s12">
                                     <select multiple>
-                                            <option value="<%=resultSet.getInt("id_type")%>" disabled selected><%=typeName%></option>
+                                        <option value="<%=resultSet.getInt("id_type")%>" disabled selected><%=typeName%></option>
                                         <%while (resultSet2.next()){%>
                                         <option value="<%=resultSet2.getInt("id")%>"><%=resultSet2.getString("name")%></option>
                                         <%}%>
