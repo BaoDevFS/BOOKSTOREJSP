@@ -48,17 +48,17 @@
             </div>
             <div class="sb2-2-add-blog sb2-2-1">
                 <h2>Add New Product Categories</h2>
-<%--                <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>--%>
-                <form>
+                <%--                <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>--%>
+                <form action="<%=PathAbsolute.getPath("Admin/PackageCartAdd")%>" method="post">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="list-title" type="text" value="" class="validate">
+                            <input id="list-title" type="text" name="name" value="" class="validate">
                             <label for="list-title">Enter Product Category</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input type="submit" class="waves-effect waves-light btn-large" value="Submit">
+                            <input type="submit"  class="waves-effect waves-light btn-large" value="Submit">
                         </div>
                     </div>
                 </form>

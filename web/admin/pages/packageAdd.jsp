@@ -55,7 +55,7 @@
 <%--                        <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>--%>
                     </div>
                     <div class="bor">
-                        <form action="<%PathAbsolute.getPath("PackageAdd");%>" method="post">
+                        <form action="<%PathAbsolute.getPath("Admin/PackageAdd");%>" method="post">
                             <%ResultSet rs = (ResultSet) request.getAttribute("booktype");
                                 System.out.println(request.getAttribute("status"));%>
                             <div class="row">

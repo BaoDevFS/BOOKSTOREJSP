@@ -15,11 +15,33 @@ import java.sql.SQLException;
 import java.sql.Statement;
 @WebServlet("/Admin/PackageCartAll")
 public class PackageCartAll extends HttpServlet {
+    GetConnectDatabase database;
+    Connection connection;
+    public static int EMAIL_EXITS = 0;
+    public static int SIGNIN_SUCCESS = 1;
+    public static int NOTHING = 2;
+    int level = 1;
+
+    public PackageCartAll() {
+        database = new GetConnectDatabase();
+    }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/packageCartAll.jsp");
-        requestDispatcher.forward(request,response);
+        String sql = "Select * from booktypes";
+        try {
+            connection =database.getConnectionSql();
+            Statement statement =connection.createStatement();
+            ResultSet resultSet= statement.executeQuery(sql);
+            request.setAttribute("list",resultSet);
+            RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/packageCartAll.jsp");
+            requestDispatcher.forward(request,response);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/packageCartAll.jsp");
+            requestDispatcher.forward(request,response);
+        }
+
     }
 }

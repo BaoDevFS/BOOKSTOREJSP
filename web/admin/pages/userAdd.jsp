@@ -64,7 +64,7 @@
                                 <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
                             </div>
                             <div class="tab-inn">
-                                <form action="<% PathAbsolute.getPath("UserAdd");%>"  method="post">
+                                <form action="<% PathAbsolute.getPath("Admin/UserAdd");%>"  method="post">
                                     <div class="row">
                                         <div class="input-field col s6">
                                             <input id="first_name" name="firstname" type="text" class="validate">

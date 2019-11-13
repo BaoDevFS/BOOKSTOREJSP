@@ -1,3 +1,4 @@
+<%@ page import="java.sql.ResultSet" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
@@ -46,7 +47,8 @@
             <div class="sb2-2-1">
                 <div class="inn-title">
                     <h4>All Package Categories</h4>
-                    <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
+<%--                    <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>--%>
+                    <%ResultSet rs = (ResultSet) request.getAttribute("list");%>
                 </div>
                 <div class="bor">
                     <table class="table">
@@ -60,16 +62,20 @@
                         </tr>
                         </thead>
                         <tbody>
+                        <%int i=0;%>
+                        <%while (rs.next()){i++;%>
+
                         <tr>
-                            <td>1</td>
-                            <td>Package Name Here</td>
-                            <td>24 may, 2017</td>
-                            <td><a href="<%= PathAbsolute.getPath("PackageCartEdit")%>" class="sb2-2-1-edit"><i class="fa fa-pencil-square-o"
+                            <td><%=i%></td>
+                            <td><%=rs.getString("name")%></td>
+                            <td><%=rs.getString("created_at")%></td>
+                            <td><a href="<%= PathAbsolute.getPath("Admin/PackageCartEdit?id="+rs.getInt("id"))%>" class="sb2-2-1-edit"><i class="fa fa-pencil-square-o"
                                                                                       aria-hidden="true"></i></a>
                             </td>
                             <td><a href="#" class="sb2-2-1-edit"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                             </td>
                         </tr>
+                        <%}%>
                         </tbody>
                     </table>
                 </div>

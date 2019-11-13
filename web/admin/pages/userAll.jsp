@@ -101,11 +101,11 @@
                                             <td><%= resultSet.getString("email")%>
                                             </td>
                                             <td>
-                                                <a href="<%= PathAbsolute.getPath("UserView")%>"><i class="fa fa-eye"
+                                                <a href="<%= PathAbsolute.getPath("Admin/UserView")%>"><i class="fa fa-eye"
                                                                                                     aria-hidden="true"></i></a>
                                             </td>
                                             <td>
-                                                <a href="<%= PathAbsolute.getPath("UserEdit")%>"><i
+                                                <a href="<%= PathAbsolute.getPath("Admin/UserEdit")%>"><i
                                                         class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                             </td>
                                             <td>
