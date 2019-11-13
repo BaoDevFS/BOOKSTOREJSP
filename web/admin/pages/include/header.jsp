@@ -1,11 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: WATERMELON
-  Date: 11/6/2019
-  Time: 10:57 PM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>﻿
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="container-fluid sb1">
     <div class="row">
         <!--== LOGO ==-->
@@ -24,18 +17,20 @@
         </div>
         <!--== NOTIFICATION ==-->
         <div class="col-md-2 tab-hide">
-            <!--                <div class="top-not-cen">-->
-            <!--                    <a class='waves-effect btn-noti' href='#'><i class="fa fa-commenting-o" aria-hidden="true"></i><span>5</span></a>-->
-            <!--                    <a class='waves-effect btn-noti' href='#'><i class="fa fa-envelope-o" aria-hidden="true"></i><span>5</span></a>-->
-            <!--                    <a class='waves-effect btn-noti' href='#'><i class="fa fa-tag" aria-hidden="true"></i><span>5</span></a>-->
-            <!--                </div>-->
+            <!-- <div class="top-not-cen">-->
+            <!-- <a class='waves-effect btn-noti' href='#'><i class="fa fa-commenting-o"
+            aria-hidden="true"></i><span>5</span></a>-->
+            <!-- <a class='waves-effect btn-noti' href='#'><i class="fa fa-envelope-o"
+            aria-hidden="true"></i><span>5</span></a>-->
+            <!-- <a class='waves-effect btn-noti' href='#'><i class="fa fa-tag" aria-hidden="true"></i><span>5</span></a>-->
+            <!-- </div>-->
         </div>
         <!--== MY ACCCOUNT ==-->
         <div class="col-md-2 col-sm-3 col-xs-6">
             <!-- Dropdown Trigger -->
             <a class='waves-effect dropdown-button top-user-pro' href='#' data-activates='top-menu'><img
-                    src="adm   in/images/user/6.png" alt=""/>My Account <i class="fa fa-angle-down"
-                                                                           aria-hidden="true"></i>
+                    src="adm in/images/user/6.png" alt=""/>My Account <i class="fa fa-angle-down"
+                                                                         aria-hidden="true"></i>
             </a>
 
             <!-- Dropdown Structure -->

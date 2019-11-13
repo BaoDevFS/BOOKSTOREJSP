@@ -1,10 +1,8 @@
 <%@ page import="vn.edu.nlu.control.PathAbsolute" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>﻿
-<!DOCTYPE html>
-<html lang="en">
-
-
-<!-- Mirrored from rn53themes.net/themes/demo/lava-admin/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Oct 2019 13:21:54 GMT -->
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+﻿
+<html lang="en"><!-- Mirrored from rn53themes.net/themes/demo/lava-admin/login.html by HTTrack Website
+        Copier/3.x [XR&CO'2014], Wed, 23 Oct 2019 13:21:54 GMT -->
 <head>
     <title>Lava Material - Web Application and Website Multipurpose Admin Panel Template</title>
     <!--== META TAGS ==-->
@@ -23,50 +21,51 @@
     <link rel="stylesheet" href="admin/css/style.css">
     <link rel="stylesheet" href="admin/css/mob.css">
     <link rel="stylesheet" href="admin/css/bootstrap.css">
-    <link rel="stylesheet" href="admin/css/materialize.css" />
+    <link rel="stylesheet" href="admin/css/materialize.css"/>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-	<script src="js/html5shiv.js"></script>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
 </head>
 
 <body>
-    <div class="blog-login">
-        <div class="blog-login-in">
-            <form>
-                <img src="admin/images/logo.png" alt="" />
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="first_name1" type="text" class="validate">
-                        <label for="first_name1">User Name</label>
-                    </div>
+<div class="blog-login">
+    <div class="blog-login-in">
+        <form>
+            <img src="admin/images/logo.png" alt=""/>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="first_name1" type="text" class="validate">
+                    <label for="first_name1">User Name</label>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="last_name" type="password" class="validate">
-                        <label for="last_name">Password</label>
-                    </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="last_name" type="password" class="validate">
+                    <label for="last_name">Password</label>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <a class="waves-effect waves-light btn-large btn-log-in" href="admin/index.html">Login</a>
-                    </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <a class="waves-effect waves-light btn-large btn-log-in" href="admin/index.html">Login</a>
                 </div>
-                <a href="<%PathAbsolute.getPath("ForgotPassword");%>" class="for-pass">Forgot Password?</a>
-            </form>
-        </div>
+            </div>
+            <a href="<%PathAbsolute.getPath("ForgotPassword");%>" class="for-pass">Forgot Password?</a>
+        </form>
     </div>
+</div>
 
-    <!--======== SCRIPT FILES =========-->
-    <script src="admin/js/jquery.min.js"></script>
-    <script src="admin/js/bootstrap.min.js"></script>
-    <script src="admin/js/materialize.min.js"></script>
-    <script src="admin/js/custom.js"></script>
+<!--======== SCRIPT FILES =========-->
+<script src="admin/js/jquery.min.js"></script>
+<script src="admin/js/bootstrap.min.js"></script>
+<script src="admin/js/materialize.min.js"></script>
+<script src="admin/js/custom.js"></script>
 </body>
 
 
-<!-- Mirrored from rn53themes.net/themes/demo/lava-admin/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Oct 2019 13:21:55 GMT -->
+<!-- Mirrored from rn53themes.net/themes/demo/lava-admin/login.html by HTTrack Website Copier/3.x [XR&CO'2014],
+Wed, 23 Oct 2019 13:21:55 GMT -->
 </html>

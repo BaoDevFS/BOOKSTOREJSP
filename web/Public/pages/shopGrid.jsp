@@ -1,9 +1,10 @@
-<%@ page import="java.sql.ResultSet" %>
 <%@ page import="vn.edu.nlu.control.PathAbsolute" %>
+<%@ page import="java.sql.ResultSet" %>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
-<!-- Mirrored from demo.hasthemes.com/boighor-preview/boighor-v3/shopGrid.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Sep 2019 08:49:14 GMT -->
+<!-- Mirrored from demo.hasthemes.com/boighor-preview/boighor-v3/shopGrid.html by HTTrack Website Copier/3.x
+[XR&CO'2014], Thu, 12 Sep 2019 08:49:14 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -34,7 +35,8 @@
 </head>
 <body>
 <!--[if lte IE 9]>
-<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
+        href="https://browsehappy.com/">upgrade
     your browser</a> to improve your experience and security.</p>
 <![endif]-->
 
@@ -1012,5 +1014,6 @@
 
 </body>
 
-<!-- Mirrored from demo.hasthemes.com/boighor-preview/boighor-v3/shopGrid.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Sep 2019 08:49:14 GMT -->
+<!-- Mirrored from demo.hasthemes.com/boighor-preview/boighor-v3/shopGrid.html by HTTrack Website Copier/3.x
+[XR&CO'2014], Thu, 12 Sep 2019 08:49:14 GMT -->
 </html>
