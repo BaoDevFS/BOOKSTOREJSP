@@ -13,7 +13,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-@WebServlet("/UserAdd")
+@WebServlet("/Admin/UserAdd")
 public class UserAdd extends HttpServlet {
     GetConnectDatabase database;
     public static int EMAIL_EXITS=0;

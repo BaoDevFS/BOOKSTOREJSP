@@ -13,7 +13,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-@WebServlet("/UserAll")
+@WebServlet("/Admin/UserAll")
 public class UserAll extends HttpServlet {
     GetConnectDatabase getConnectDatabase;
     Connection connection;

@@ -4,7 +4,7 @@
     <!--== USER INFO ==-->
     <div class="sb2-12">
         <ul>
-            <li><img src="admin/images/placeholder.jpg" alt="">
+            <li><img src="<%=PathAbsolute.getPath("admin/images/placeholder.jpg")%>" alt="">
             </li>
             <li>
                 <h5>Victoria Baker <span> Santa Ana, CA</span></h5>

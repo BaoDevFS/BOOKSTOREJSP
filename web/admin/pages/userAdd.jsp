@@ -8,19 +8,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!--== FAV ICON ==-->
-    <link rel="shortcut icon" href="admin/images/fav.ico">
+    <link rel="shortcut icon" href="<%=PathAbsolute.getPath("admin/images/fav.ico")%>">
 
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700" rel="stylesheet">
 
     <!-- FONT-AWESOME ICON CSS -->
-    <link rel="stylesheet" href="admin/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/font-awesome.min.css")%>">
 
     <!--== ALL CSS FILES ==-->
-    <link rel="stylesheet" href="admin/css/style.css">
-    <link rel="stylesheet" href="admin/css/mob.css">
-    <link rel="stylesheet" href="admin/css/bootstrap.css">
-    <link rel="stylesheet" href="admin/css/materialize.css"/>
+    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/style.css")%>">
+    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/mob.css")%>">
+    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/bootstrap.css")%>">
+    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/materialize.css")%>"/>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -160,6 +160,7 @@
 </section>
 
 <!--======== SCRIPT FILES =========-->
+<<<<<<< HEAD
 <script src="admin/js/jquery.min.js"></script>
 <script src="admin/js/bootstrap.min.js"></script>
 <script src="admin/js/materialize.min.js"></script>
@@ -168,6 +169,13 @@
 <script >
     <%= getStatus((int)request.getAttribute("status"))%>
 </script>
+=======
+<script src="<%=PathAbsolute.getPath("admin/js/jquery.min.js")%>"></script>
+<script src="<%=PathAbsolute.getPath("admin/js/bootstrap.min.js")%>"></script>
+<script src="<%=PathAbsolute.getPath("admin/js/materialize.min.js")%>"></script>
+<script src="<%=PathAbsolute.getPath("admin/js/custom.js")%>"></script>
+
+>>>>>>> f1eef547853cc5d79691386e40f0cf039be00947
 </body>
 
 
