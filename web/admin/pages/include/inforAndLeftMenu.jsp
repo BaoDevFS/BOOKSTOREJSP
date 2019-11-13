@@ -4,7 +4,7 @@
     <!--== USER INFO ==-->
     <div class="sb2-12">
         <ul>
-            <li><img src="<%=PathAbsolute.getPath("/Admin/admin/images/placeholder.jpg")%>" alt="">
+            <li><img src="<%=PathAbsolute.getPath("AdminAdmin/images/placeholder.jpg")%>" alt="">
             </li>
             <li>
                 <h5>Victoria Baker <span> Santa Ana, CA</span></h5>
@@ -16,7 +16,7 @@
     <div class="sb2-13">
         <ul class="collapsible" data-collapsible="accordion">
 
-            <li><a href="<%= PathAbsolute.getPath("/Admin/Index")%>" class="menu-active"><i class="fa fa-bar-chart"
+            <li><a href="<%= PathAbsolute.getPath("Admin/Index")%>" class="menu-active"><i class="fa fa-bar-chart"
                                                                                           aria-hidden="true"></i>
                 Dashboard</a>
             </li>
@@ -24,9 +24,9 @@
                 Users</a>
                 <div class="collapsible-body left-sub-menu">
                     <ul>
-                        <li><a href="<%= PathAbsolute.getPath("/Admin/UserAll")%>">All Users</a>
+                        <li><a href="<%= PathAbsolute.getPath("Admin/UserAll")%>">All Users</a>
                         </li>
-                        <li><a href="<%= PathAbsolute.getPath("/Admin/UserAdd")%>">Add New user</a>
+                        <li><a href="<%= PathAbsolute.getPath("Admin/UserAdd")%>">Add New user</a>
                         </li>
                     </ul>
                 </div>
@@ -36,13 +36,13 @@
                 Productss</a>
                 <div class="collapsible-body left-sub-menu">
                     <ul>
-                        <li><a href="<%= PathAbsolute.getPath("/Admin/PackageAll")%>">All Products</a>
+                        <li><a href="<%= PathAbsolute.getPath("Admin/PackageAll")%>">All Products</a>
                         </li>
-                        <li><a href="<%= PathAbsolute.getPath("/Admin/PackageAdd")%>">Add New Product</a>
+                        <li><a href="<%= PathAbsolute.getPath("Admin/PackageAdd")%>">Add New Product</a>
                         </li>
-                        <li><a href="<%= PathAbsolute.getPath("/Admin/PackageCartAll")%>">All Product Categories</a>
+                        <li><a href="<%= PathAbsolute.getPath("Admin/PackageCartAll")%>">All Product Categories</a>
                         </li>
-                        <li><a href="<%= PathAbsolute.getPath("/Admin/PackageCartAdd")%>">Add Product Categories</a>
+                        <li><a href="<%= PathAbsolute.getPath("Admin/PackageCartAdd")%>">Add Product Categories</a>
                         </li>
                     </ul>
                 </div>
@@ -51,9 +51,9 @@
                 Discounts</a>
                 <div class="collapsible-body left-sub-menu">
                     <ul>
-                        <li><a href="<%= PathAbsolute.getPath("/Admin/Discount")%>">All Discounts</a>
+                        <li><a href="<%= PathAbsolute.getPath("Admin/Discount")%>">All Discounts</a>
                         </li>
-                        <li><a href="<%= PathAbsolute.getPath("/Admin/DiscountAdd")%>">Add New Discounts</a>
+                        <li><a href="<%= PathAbsolute.getPath("Admin/DiscountAdd")%>">Add New Discounts</a>
                         </li>
                     </ul>
                 </div>
@@ -62,12 +62,12 @@
                 Booking & Enquiry</a>
                 <div class="collapsible-body left-sub-menu">
                     <ul>
-                        <li><a href="<%= PathAbsolute.getPath("/Admin/PackageBookingAll")%>">Product</a>
+                        <li><a href="<%= PathAbsolute.getPath("Admin/PackageBookingAll")%>">Product</a>
                         </li>
                     </ul>
                 </div>
             </li>
-            <li><a href="<%= PathAbsolute.getPath("/Admin/LoginAdmin")%>" target="_blank"><i class="fa fa-sign-in"
+            <li><a href="<%= PathAbsolute.getPath("Admin/LoginAdmin")%>" target="_blank"><i class="fa fa-sign-in"
                                                                                       aria-hidden="true"></i>Login</a>
             </li>
         </ul>
