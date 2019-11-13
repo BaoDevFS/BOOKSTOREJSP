@@ -160,7 +160,6 @@
 </section>
 
 <!--======== SCRIPT FILES =========-->
-<<<<<<< HEAD
 <script src="admin/js/jquery.min.js"></script>
 <script src="admin/js/bootstrap.min.js"></script>
 <script src="admin/js/materialize.min.js"></script>
@@ -169,13 +168,10 @@
 <script >
     <%= getStatus((int)request.getAttribute("status"))%>
 </script>
-=======
 <script src="<%=PathAbsolute.getPath("admin/js/jquery.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/bootstrap.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/materialize.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/custom.js")%>"></script>
-
->>>>>>> f1eef547853cc5d79691386e40f0cf039be00947
 </body>
 
 

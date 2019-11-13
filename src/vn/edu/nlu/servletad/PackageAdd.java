@@ -14,12 +14,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
-<<<<<<< HEAD
 
-@WebServlet("/PackageAdd")
-=======
 @WebServlet("/Admin/PackageAdd")
->>>>>>> f1eef547853cc5d79691386e40f0cf039be00947
 public class PackageAdd extends HttpServlet {
     GetConnectDatabase database;
     public static int EMAIL_EXITS = 0;
