@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.*;
 
-@WebServlet("/PackageEdit")
+@WebServlet("/Admin/PackageEdit")
 public class PackageEdit extends HttpServlet {
     GetConnectDatabase getConnectDatabase;
     Connection connection;
