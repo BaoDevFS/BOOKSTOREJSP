@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
-    <title>Lava Material - Web Application and Website Multipurpose Admin Panel Template</title>
+    <title>ListCategories</title>
     <!--== META TAGS ==-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -53,7 +53,7 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>Package Categories</th>
+                            <th>Product Categories</th>
                             <th>Date</th>
                             <th>Edit</th>
                             <th>Delete</th>
@@ -64,97 +64,7 @@
                             <td>1</td>
                             <td>Package Name Here</td>
                             <td>24 may, 2017</td>
-                            <td><a href="packageCatEdit.html" class="sb2-2-1-edit"><i class="fa fa-pencil-square-o"
-                                                                                      aria-hidden="true"></i></a>
-                            </td>
-                            <td><a href="#" class="sb2-2-1-edit"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Package Name Here</td>
-                            <td>24 may, 2017</td>
-                            <td><a href="packageCatEdit.html" class="sb2-2-1-edit"><i class="fa fa-pencil-square-o"
-                                                                                      aria-hidden="true"></i></a>
-                            </td>
-                            <td><a href="#" class="sb2-2-1-edit"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Package Name Here</td>
-                            <td>24 may, 2017</td>
-                            <td><a href="packageCatEdit.html" class="sb2-2-1-edit"><i class="fa fa-pencil-square-o"
-                                                                                      aria-hidden="true"></i></a>
-                            </td>
-                            <td><a href="#" class="sb2-2-1-edit"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Package Name Here</td>
-                            <td>24 may, 2017</td>
-                            <td><a href="packageCatEdit.html" class="sb2-2-1-edit"><i class="fa fa-pencil-square-o"
-                                                                                      aria-hidden="true"></i></a>
-                            </td>
-                            <td><a href="#" class="sb2-2-1-edit"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Package Name Here</td>
-                            <td>24 may, 2017</td>
-                            <td><a href="packageCatEdit.html" class="sb2-2-1-edit"><i class="fa fa-pencil-square-o"
-                                                                                      aria-hidden="true"></i></a>
-                            </td>
-                            <td><a href="#" class="sb2-2-1-edit"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Package Name Here</td>
-                            <td>24 may, 2017</td>
-                            <td><a href="packageCatEdit.html" class="sb2-2-1-edit"><i class="fa fa-pencil-square-o"
-                                                                                      aria-hidden="true"></i></a>
-                            </td>
-                            <td><a href="#" class="sb2-2-1-edit"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Package Name Here</td>
-                            <td>24 may, 2017</td>
-                            <td><a href="packageCatEdit.html" class="sb2-2-1-edit"><i class="fa fa-pencil-square-o"
-                                                                                      aria-hidden="true"></i></a>
-                            </td>
-                            <td><a href="#" class="sb2-2-1-edit"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Package Name Here</td>
-                            <td>24 may, 2017</td>
-                            <td><a href="packageCatEdit.html" class="sb2-2-1-edit"><i class="fa fa-pencil-square-o"
-                                                                                      aria-hidden="true"></i></a>
-                            </td>
-                            <td><a href="#" class="sb2-2-1-edit"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>Package Name Here</td>
-                            <td>24 may, 2017</td>
-                            <td><a href="packageCatEdit.html" class="sb2-2-1-edit"><i class="fa fa-pencil-square-o"
-                                                                                      aria-hidden="true"></i></a>
-                            </td>
-                            <td><a href="#" class="sb2-2-1-edit"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>Package Name Here</td>
-                            <td>24 may, 2017</td>
-                            <td><a href="packageCatEdit.html" class="sb2-2-1-edit"><i class="fa fa-pencil-square-o"
+                            <td><a href="<%= PathAbsolute.getPath("PackageCartEdit")%>" class="sb2-2-1-edit"><i class="fa fa-pencil-square-o"
                                                                                       aria-hidden="true"></i></a>
                             </td>
                             <td><a href="#" class="sb2-2-1-edit"><i class="fa fa-trash-o" aria-hidden="true"></i></a>

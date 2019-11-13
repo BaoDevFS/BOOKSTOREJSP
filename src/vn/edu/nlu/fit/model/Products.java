@@ -15,6 +15,33 @@ public class Products {
     Date created_at;
     Date updated_at;
     int id_type;
+    String category;
+    String author;
+    String nameType;
+
+    public String getNameType() {
+        return nameType;
+    }
+
+    public void setNameType(String nameType) {
+        this.nameType = nameType;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
     public Products(int id, String name, String image, String description, float price, String note, int quantum, int year, int active, Date created_at, Date updated_at, int id_type) {
         this.id = id;

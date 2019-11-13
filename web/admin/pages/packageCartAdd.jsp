@@ -3,7 +3,7 @@
 <!-- Mirrored from rn53themes.net/themes/demo/lava-admin/packageCatAdd.html by HTTrack Website Copier/3.x
 [XR&CO'2014], Wed, 23 Oct 2019 13:21:52 GMT -->
 <head>
-    <title>Lava Material - Web Application and Website Multipurpose Admin Panel Template</title>
+    <title>AddCategories</title>
     <!--== META TAGS ==-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -42,18 +42,18 @@
                 <ul>
                     <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
                     </li>
-                    <li class="active-bre"><a href="#"> Add New Package Categories</a>
+                    <li class="active-bre"><a href="#"> Add New Product Categories</a>
                     </li>
                 </ul>
             </div>
             <div class="sb2-2-add-blog sb2-2-1">
-                <h2>Add New Package Categories</h2>
-                <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>
+                <h2>Add New Product Categories</h2>
+<%--                <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>--%>
                 <form>
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="list-title" type="text" value="" class="validate">
-                            <label for="list-title">Enter Package Category</label>
+                            <label for="list-title">Enter Product Category</label>
                         </div>
                     </div>
                     <div class="row">

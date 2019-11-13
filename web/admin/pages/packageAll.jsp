@@ -1,9 +1,10 @@
+<%@ page import="java.sql.ResultSet" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <!-- Mirrored from rn53themes.net/themes/demo/lava-admin/packageAll.html by HTTrack Website Copier/3.x
 [XR&CO'2014], Wed, 23 Oct 2019 13:21:49 GMT -->
 <head>
-    <title>Lava Material - Web Application and Website Multipurpose Admin Panel Template</title>
+    <title>ListProduct</title>
     <!--== META TAGS ==-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -51,8 +52,7 @@
                     <div class="col-md-12">
                         <div class="box-inn-sp">
                             <div class="inn-title">
-                                <h4>All package</h4>
-                                <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
+                                <h4>All Product</h4>
                                 <a class="dropdown-button drop-down-meta" href="#" data-activates="dr-users"><i
                                         class="material-icons">more_vert</i></a>
                                 <ul id="dr-users" class="dropdown-content">
@@ -77,353 +77,45 @@
                                     <table class="table table-hover">
                                         <thead>
                                         <tr>
-                                            <th>User</th>
-                                            <th>package</th>
-                                            <th>Phone</th>
-                                            <th>Email</th>
-                                            <th>Country</th>
+                                            <th>Id</th>
+                                            <th>Img</th>
+                                            <th>ProductName</th>
+                                            <th>Price</th>
+                                            <th>Author</th>
                                             <th>View</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        <% ResultSet rs = (ResultSet) request.getAttribute("rs"); int i=0;
+                                        %>
+                                        <% while (rs.next()){
+                                        i++;%>
                                         <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/1.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name">Domestic Help Services</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>+01 3214 6522</td>
-                                            <td>chadengle@dummy.com</td>
-                                            <td>Australia</td>
-                                            <td>
-                                                <a href="packageEdit.html"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            <td><%= i%></td>
+                                            <td><span class="list-img"><img src="<%=rs.getString("image")%>" alt=""></span>
                                             </td>
                                             <td>
-                                                <a href="packageEdit.html"><i class="fa fa-pencil-square-o"
-                                                                              aria-hidden="true"></i></a>
+                                                <a href="#">
+                                                <span class="list-enq-name"><%=rs.getString("name")%></span>
+                                                </a>
+                                            </td>
+                                            <td><%=rs.getString("price")%></td>
+                                            <td><%=rs.getString(4)%></td>
+                                            <td>
+                                                <a href="<%=PathAbsolute.getPath("PackageEdit?id="+rs.getString("id"))%>"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                             </td>
                                             <td>
-                                                <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                                <a href="<%=PathAbsolute.getPath("PackageEdit?id="+rs.getString("id"))%>">
+                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="<%=PathAbsolute.getPath("PackageEdit?id="+rs.getString("id"))%>"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/2.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span class="list-enq-name">Home Appliances Repair & Services</span><span
-                                                    class="list-enq-city">Illunois, United States</span></a>
-                                            </td>
-                                            <td>+01 3214 6522</td>
-                                            <td>chadengle@dummy.com</td>
-                                            <td>Australia</td>
-                                            <td>
-                                                <a href="packageEdit.html"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="packageEdit.html"><i class="fa fa-pencil-square-o"
-                                                                              aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/3.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span class="list-enq-name">Packers and Movers</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>+01 3214 6522</td>
-                                            <td>chadengle@dummy.com</td>
-                                            <td>Australia</td>
-                                            <td>
-                                                <a href="packageEdit.html"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="packageEdit.html"><i class="fa fa-pencil-square-o"
-                                                                              aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/4.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name">Security System Dealers</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>+01 3214 6522</td>
-                                            <td>chadengle@dummy.com</td>
-                                            <td>Australia</td>
-                                            <td>
-                                                <a href="packageEdit.html"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="packageEdit.html"><i class="fa fa-pencil-square-o"
-                                                                              aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/5.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name">Skin Care & Treatment</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>+01 3214 6522</td>
-                                            <td>chadengle@dummy.com</td>
-                                            <td>Australia</td>
-                                            <td>
-                                                <a href="packageEdit.html"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="packageEdit.html"><i class="fa fa-pencil-square-o"
-                                                                              aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/1.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name">Domestic Help Services</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>+01 3214 6522</td>
-                                            <td>chadengle@dummy.com</td>
-                                            <td>Australia</td>
-                                            <td>
-                                                <a href="packageEdit.html"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="packageEdit.html"><i class="fa fa-pencil-square-o"
-                                                                              aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/2.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span class="list-enq-name">Home Appliances Repair & Services</span><span
-                                                    class="list-enq-city">Illunois, United States</span></a>
-                                            </td>
-                                            <td>+01 3214 6522</td>
-                                            <td>chadengle@dummy.com</td>
-                                            <td>Australia</td>
-                                            <td>
-                                                <a href="packageEdit.html"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="packageEdit.html"><i class="fa fa-pencil-square-o"
-                                                                              aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/3.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span class="list-enq-name">Packers and Movers</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>+01 3214 6522</td>
-                                            <td>chadengle@dummy.com</td>
-                                            <td>Australia</td>
-                                            <td>
-                                                <a href="packageEdit.html"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="packageEdit.html"><i class="fa fa-pencil-square-o"
-                                                                              aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/4.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name">Security System Dealers</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>+01 3214 6522</td>
-                                            <td>chadengle@dummy.com</td>
-                                            <td>Australia</td>
-                                            <td>
-                                                <a href="packageEdit.html"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="packageEdit.html"><i class="fa fa-pencil-square-o"
-                                                                              aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/5.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name">Skin Care & Treatment</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>+01 3214 6522</td>
-                                            <td>chadengle@dummy.com</td>
-                                            <td>Australia</td>
-                                            <td>
-                                                <a href="packageEdit.html"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="packageEdit.html"><i class="fa fa-pencil-square-o"
-                                                                              aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/1.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name">Domestic Help Services</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>+01 3214 6522</td>
-                                            <td>chadengle@dummy.com</td>
-                                            <td>Australia</td>
-                                            <td>
-                                                <a href="packageEdit.html"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="packageEdit.html"><i class="fa fa-pencil-square-o"
-                                                                              aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/2.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span class="list-enq-name">Home Appliances Repair & Services</span><span
-                                                    class="list-enq-city">Illunois, United States</span></a>
-                                            </td>
-                                            <td>+01 3214 6522</td>
-                                            <td>chadengle@dummy.com</td>
-                                            <td>Australia</td>
-                                            <td>
-                                                <a href="packageEdit.html"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="packageEdit.html"><i class="fa fa-pencil-square-o"
-                                                                              aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/3.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span class="list-enq-name">Packers and Movers</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>+01 3214 6522</td>
-                                            <td>chadengle@dummy.com</td>
-                                            <td>Australia</td>
-                                            <td>
-                                                <a href="packageEdit.html"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="packageEdit.html"><i class="fa fa-pencil-square-o"
-                                                                              aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/4.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name">Security System Dealers</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>+01 3214 6522</td>
-                                            <td>chadengle@dummy.com</td>
-                                            <td>Australia</td>
-                                            <td>
-                                                <a href="packageEdit.html"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="packageEdit.html"><i class="fa fa-pencil-square-o"
-                                                                              aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/5.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name">Skin Care & Treatment</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>+01 3214 6522</td>
-                                            <td>chadengle@dummy.com</td>
-                                            <td>Australia</td>
-                                            <td>
-                                                <a href="packageEdit.html"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="packageEdit.html"><i class="fa fa-pencil-square-o"
-                                                                              aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                            </td>
-                                        </tr>
+                                        <%}%>
                                         </tbody>
                                     </table>
                                 </div>

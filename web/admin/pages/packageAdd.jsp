@@ -51,15 +51,15 @@
             <div class="sb2-2-add-blog sb2-2-1">
                 <div class="box-inn-sp">
                     <div class="inn-title">
-                        <h4>Add New Package</h4>
-                        <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
+                        <h4>Add New Product</h4>
+<%--                        <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>--%>
                     </div>
                     <div class="bor">
                         <form action="<%PathAbsolute.getPath("PackageAdd");%>" method="post">
                             <div class="row">
                                 <div class="input-field col s12">
                                     <input id="list-title" type="text" class="validate">
-                                    <label for="list-title">Package Name</label>
+                                    <label for="list-title">Product Name</label>
                                 </div>
                                 <div class="input-field col s12">
                                     <div class="file-field">
@@ -69,7 +69,7 @@
                                         </div>
                                         <div class="file-path-wrapper">
                                             <input class="file-path validate" type="text"
-                                                   placeholder="Upload Blog Banner">
+                                                   placeholder="Upload image book">
                                         </div>
                                     </div>
                                 </div>
@@ -77,7 +77,7 @@
                             <div class="row">
                                 <div class="input-field col s12">
                                     <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                    <label for="textarea1">Package Descriptions:</label>
+                                    <label for="textarea1">Product Descriptions:</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -85,39 +85,18 @@
                                     <select multiple>
                                         <option value="" disabled selected>Choose Category</option>
                                         <option value="1">Hotels</option>
-                                        <option value="2">Educations</option>
-                                        <option value="3">Medical</option>
-                                        <option value="3">Health</option>
-                                        <option value="3">Fitness</option>
-                                        <option value="3">Tution</option>
-                                        <option value="3">Software</option>
-                                        <option value="3">Wedding</option>
-                                        <option value="3">Party</option>
-                                        <option value="3">Spa/Club</option>
                                     </select>
                                     <label>Select Category</label>
                                 </div>
-                                <div class="input-field col s12">
-                                    <select multiple>
-                                        <option value="" disabled selected>Choose Category</option>
-                                        <option value="1">Hotels</option>
-                                        <option value="2">Educations</option>
-                                        <option value="3">Medical</option>
-                                        <option value="3">Health</option>
-                                        <option value="3">Fitness</option>
-                                        <option value="3">Tution</option>
-                                        <option value="3">Software</option>
-                                        <option value="3">Wedding</option>
-                                        <option value="3">Party</option>
-                                        <option value="3">Spa/Club</option>
-                                    </select>
-                                    <label>Select Sub Category</label>
-                                </div>
                             </div>
                             <div class="row">
-                                <div class="input-field col s12">
+                                <div class="input-field col s6">
                                     <input id="Package-auth" type="text" class="validate">
                                     <label for="Package-auth">Author Name</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="price" type="text" class="validate">
+                                    <label for="Package-auth">Price</label>
                                 </div>
                             </div>
                             <div class="row">
