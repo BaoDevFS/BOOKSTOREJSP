@@ -38,7 +38,7 @@
         <div class="col-md-2 col-sm-3 col-xs-6 sb1-1">
             <a href="#" class="btn-close-menu"><i class="fa fa-times" aria-hidden="true"></i></a>
             <a href="#" class="atab-menu"><i class="fa fa-bars tab-menu" aria-hidden="true"></i></a>
-            <a href="index.html" class="logo"><img src="admin/images/logo1.png" alt=""/>
+            <a href="<%= PathAbsolute.getPath("Index")%>" class="logo"><img src="admin/images/logo1.png" alt=""/>
             </a>
         </div>
         <!--== SEARCH ==-->
@@ -61,40 +61,27 @@
         <!--== MY ACCCOUNT ==-->
         <div class="col-md-2 col-sm-3 col-xs-6">
             <!-- Dropdown Trigger -->
-            <a class='waves-effect dropdown-button top-user-pro' href='#' data-activates='top-menu'><img
-                    src="admin/images/user/6.png" alt=""/>My Account <i class="fa fa-angle-down" aria-hidden="true"></i>
+            <a class='waves-effect dropdown-button top-user-pro' href='#' data-activates='top-menu'>
+                <img src="admin/images/user/6.png" alt=""/>My Account <i class="fa fa-angle-down" aria-hidden="true"></i>
             </a>
 
             <!-- Dropdown Structure -->
             <ul id='top-menu' class='dropdown-content top-menu-sty'>
-                <li><a href="admin/pages/setting.html" class="waves-effect"><i class="fa fa-cogs"
+                <li><a href="<%= PathAbsolute.getPath("Setting")%>" class="waves-effect"><i class="fa fa-cogs"
                                                                                aria-hidden="true"></i>Admin
                     Setting</a>
                 </li>
-                <li><a href="admin/pages/listing-all.html" class="waves-effect"><i class="fa fa-list-ul"
-                                                                                   aria-hidden="true"></i>
-                    Listings</a>
-                </li>
-                <li><a href="admin/pages/hotel-all.html" class="waves-effect"><i class="fa fa-building-o"
-                                                                                 aria-hidden="true"></i> Hotels</a>
-                </li>
-                <li><a href="admin/pages/package-all.html" class="waves-effect"><i class="fa fa-umbrella"
+
+                <li><a href="<%= PathAbsolute.getPath("PackageAll")%>" class="waves-effect"><i class="fa fa-umbrella"
                                                                                    aria-hidden="true"></i> Tour Packages</a>
                 </li>
-                <li><a href="admin/pages/event-all.html" class="waves-effect"><i class="fa fa-flag-checkered"
-                                                                                 aria-hidden="true"></i> Events</a>
-                </li>
-                <li><a href="admin/pages/offers.html" class="waves-effect"><i class="fa fa-tags" aria-hidden="true"></i>
-                    Offers</a>
-                </li>
-                <li><a href="admin/pages/user-add.html" class="waves-effect"><i class="fa fa-user-plus"
+
+                <li><a href="<%= PathAbsolute.getPath("UserAdd")%>" class="waves-effect"><i class="fa fa-user-plus"
                                                                                 aria-hidden="true"></i>
                     Add New User</a>
                 </li>
-                <li><a href="#" class="waves-effect"><i class="fa fa-undo" aria-hidden="true"></i> Backup Data</a>
-                </li>
                 <li class="divider"></li>
-                <li><a href="#" class="ho-dr-con-last waves-effect"><i class="fa fa-sign-in" aria-hidden="true"></i>
+                <li><a href="<%= PathAbsolute.getPath("LoginAdmin")%>" class="ho-dr-con-last waves-effect"><i class="fa fa-sign-in" aria-hidden="true"></i>
                     Logout</a>
                 </li>
             </ul>
@@ -112,11 +99,11 @@
             <!--== breadcrumbs ==-->
             <div class="sb2-2-2">
                 <ul>
-                    <li><a href="admin/pages/index-2.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                    <li><a href="<%= PathAbsolute.getPath("Index")%>"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
                     </li>
                     <li class="active-bre"><a href="#"> Dashboard</a>
                     </li>
-                    <li class="page-back"><a href="admin/pages/index-2.html"><i class="fa fa-backward"
+                    <li class="page-back"><a href="<%= PathAbsolute.getPath("Index")%>"><i class="fa fa-backward"
                                                                                 aria-hidden="true"></i>
                         Back</a>
                     </li>

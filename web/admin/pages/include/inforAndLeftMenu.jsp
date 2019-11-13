@@ -16,7 +16,7 @@
     <div class="sb2-13">
         <ul class="collapsible" data-collapsible="accordion">
 
-            <li><a href="<%= PathAbsolute.getPath("LoginAdmin")%>" class="menu-active"><i class="fa fa-bar-chart"
+            <li><a href="<%= PathAbsolute.getPath("Index")%>" class="menu-active"><i class="fa fa-bar-chart"
                                                                                           aria-hidden="true"></i>
                 Dashboard</a>
             </li>
