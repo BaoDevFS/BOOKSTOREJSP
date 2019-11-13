@@ -19,7 +19,7 @@ public class Header extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/header.jsp");
+        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/include/header.jsp");
         requestDispatcher.forward(request,response);
     }
 }
