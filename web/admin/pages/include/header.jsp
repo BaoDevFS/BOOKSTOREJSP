@@ -5,8 +5,7 @@
   Time: 10:57 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page language="java" contentType="text/html; charset=utf-8"
-         pageEncoding="utf-8" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>﻿
 <div class="container-fluid sb1">
     <div class="row">
         <!--== LOGO ==-->
