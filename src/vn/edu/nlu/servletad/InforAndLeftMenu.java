@@ -20,7 +20,7 @@ public class InforAndLeftMenu extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/inforAndLeftMenu.jsp");
+        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("admin/pages/include/inforAndLeftMenu.jsp");
         requestDispatcher.forward(request,response);
     }
 }

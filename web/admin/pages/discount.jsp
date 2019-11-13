@@ -10,19 +10,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!--== FAV ICON ==-->
-    <link rel="shortcut icon" href="admin/images/fav.ico">
+    <link rel="shortcut icon" href="http://localhost:8080/BookStore/admin/images/fav.ico">
 
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700" rel="stylesheet">
 
     <!-- FONT-AWESOME ICON CSS -->
-    <link rel="stylesheet" href="admin/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://localhost:8080/BookStore/admin/css/font-awesome.min.css">
 
     <!--== ALL CSS FILES ==-->
-    <link rel="stylesheet" href="admin/css/style.css">
-    <link rel="stylesheet" href="admin/css/mob.css">
-    <link rel="stylesheet" href="admin/css/bootstrap.css">
-    <link rel="stylesheet" href="admin/css/materialize.css"/>
+    <link rel="stylesheet" href="http://localhost:8080/BookStore/admin/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://localhost:8080/BookStore/admin/css/mob.css">
+    <link rel="stylesheet" href="http://localhost:8080/BookStore/admin/css/bootstrap.css">
+    <link rel="stylesheet" href="http://localhost:8080/BookStore/admin/css/materialize.css"/>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -64,7 +64,7 @@
                                         <li><a href="#!">Update</a>
                                         </li>
                                         <li class="divider"></li>
-                                        <li><a href="#!"><i class="material-icons">delete</i>Delete</a>
+                                        <li><a href="#"><i class="material-icons">delete</i>Delete</a>
                                         </li>
                                         <li><a href="#!"><i class="material-icons">subject</i>View All</a>
                                         </li>
@@ -300,10 +300,10 @@
     </section>
 
     <!--======== SCRIPT FILES =========-->
-    <script src="admin/js/jquery.min.js"></script>
-    <script src="admin/js/bootstrap.min.js"></script>
-    <script src="admin/js/materialize.min.js"></script>
-    <script src="admin/js/custom.js"></script>
+    <script src="http://localhost:8080/BookStore/admin/js/jquery.min.js"></script>
+    <script src="http://localhost:8080/BookStore/admin/js/bootstrap.min.js"></script>
+    <script src="http://localhost:8080/BookStore/admin/js/materialize.min.js"></script>
+    <script src="http://localhost:8080/BookStore/admin/js/custom.js"></script>
 </body>
 
 
