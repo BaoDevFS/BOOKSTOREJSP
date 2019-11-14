@@ -24,21 +24,21 @@ public class PackageCartEdit extends HttpServlet {
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-//        String name = (String) request.getAttribute("name");
-//        try {
-//            con = getConnect.getConnectionSql();
-//        Statement statement = con.createStatement();
-//        String sql = "INSERT INTO booktypes(name) values ("+name+")where id="+id;
-//        int a=statement.executeUpdate(sql);
-//        if(a>0){
-//            request.setAttribute("status",SIGNIN_SUCCESS);
-//        }else{
-//            request.setAttribute("status",EMAIL_EXITS);
-//        }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//            response.sendRedirect(request.getContextPath()+"/Error404");
-//        }
+        String name = (String) request.getAttribute("name");
+        try {
+            con = getConnect.getConnectionSql();
+        Statement statement = con.createStatement();
+        String sql = "INSERT INTO booktypes(name) values ("+name+")where id="+id;
+        int a=statement.executeUpdate(sql);
+        if(a>0){
+            request.setAttribute("status",SIGNIN_SUCCESS);
+        }else{
+            request.setAttribute("status",EMAIL_EXITS);
+        }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            response.sendRedirect(request.getContextPath()+"/Error404");
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -51,9 +51,7 @@ public class PackageCartEdit extends HttpServlet {
             PreparedStatement pre1 = con2.prepareStatement(sql2);
             pre1.setString(1,id);
             ResultSet rs1 = pre1.executeQuery();
-//            ResultSet rs = st2.executeQuery(sql2);
             request.setAttribute("booktype",rs1);
-//            response.getWriter().write(pre1.toString());
             RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/packageCartEdit.jsp");
             requestDispatcher.forward(request,response);
         } catch (SQLException e) {
