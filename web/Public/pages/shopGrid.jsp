@@ -1,14 +1,15 @@
 <%@ page import="vn.edu.nlu.control.PathAbsolute" %>
 <%@ page import="java.sql.ResultSet" %>
+<%@ page import="vn.edu.nlu.control.GetListProductType" %>
+<%@ page import="vn.edu.nlu.fit.model.Products" %>
+<%@ page import="java.util.ArrayList" %>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
-<!-- Mirrored from demo.hasthemes.com/boighor-preview/boighor-v3/shopGrid.html by HTTrack Website Copier/3.x
-[XR&CO'2014], Thu, 12 Sep 2019 08:49:14 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Shop-Grid | Bookshop Responsive Bootstrap4 Template</title>
+    <title>Shop-Grid | BookBGQ Store</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -34,6 +35,11 @@
     <script src="Public/js/vendor/modernizr-3.5.0.min.js"></script>
 </head>
 <body>
+<%
+    GetListProductType listPr = new GetListProductType();
+    TacGiaDAOImpl tgDAO = new TacGiaDAOImpl();
+    ArrayList<Products> arr = listPr.getList();
+%>
 <!--[if lte IE 9]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
         href="https://browsehappy.com/">upgrade
@@ -93,14 +99,14 @@
 
                                     while (rs.next() && rs1.next()) {
                                 %>
-<%--                                <% --%>
-<%--                                    while (rs1.next()) {--%>
-<%--                                %>--%>
+                                <%--                                <% --%>
+                                <%--                                    while (rs1.next()) {--%>
+                                <%--                                %>--%>
                                 <li><a href="<%=PathAbsolute.getPath("ShopGrid?type="+rs.getInt(1))%>">
                                     <%=rs.getString(2) %>
 
                                     <span>(<%=rs1.getInt(3) %>)</span>
-<%--                                    <% } %>--%>
+                                    <%--                                    <% } %>--%>
                                 </a></li>
 
                                 <% } %>
@@ -241,11 +247,25 @@
                                 <% } %>
                             </div>
                             <ul class="wn__pagination">
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#"><i class="zmdi zmdi-chevron-right"></i></a></li>
+                                <%--                                <li class="active"><a href="#">1</a></li>--%>
+                                <%--                                <li><a href="#">2</a></li>--%>
+                                <%--                                <li><a href="#">3</a></li>--%>
+                                <%--                                <li><a href="#">4</a></li>--%>
+                                <%--                                <li><a href="#"><i class="zmdi zmdi-chevron-right"></i></a></li>--%>
+
+                                    <%
+                                        int soTrang = arr.size() / 8;
+                                        if (arr.size() % 8 != 0) {
+                                            soTrang++;
+                                        }
+                                        for (int i = 1; i <= soTrang; i++) {
+                                    %>
+                                    <li><a class="active" href="trangchu.jsp?page=<%=i%>"><%=i%>
+                                    </a></li>
+                                    <%
+                                        }
+                                    %>
+
                             </ul>
                         </div>
                         <div class="shop-grid tab-pane fade" id="nav-list" role="tabpanel">
@@ -535,6 +555,4 @@
 
 </body>
 
-<!-- Mirrored from demo.hasthemes.com/boighor-preview/boighor-v3/shopGrid.html by HTTrack Website Copier/3.x
-[XR&CO'2014], Thu, 12 Sep 2019 08:49:14 GMT -->
 </html>

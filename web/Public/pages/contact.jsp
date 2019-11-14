@@ -1,12 +1,9 @@
     <!doctype html>
         <html class="no-js" lang="zxx">
-
-        <!-- Mirrored from demo.hasthemes.com/boighor-preview/boighor-v3/contact.html by HTTrack Website Copier/3.x
-        [XR&CO'2014], Thu, 12 Sep 2019 08:49:15 GMT -->
         <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Contact | Bookshop Responsive Bootstrap4 Template</title>
+        <title>Contact | BookBGG</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 

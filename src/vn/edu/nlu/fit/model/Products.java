@@ -6,7 +6,9 @@ public class Products {
     int id;
     String name;
     String image;
+    String image_hover;
     String description;
+    float price_old;
     float price;
     String note;
     int quantum;
@@ -18,6 +20,42 @@ public class Products {
     String category;
     String author;
     String nameType;
+
+    public String getImage_hover() {
+        return image_hover;
+    }
+
+    public void setImage_hover(String image_hover) {
+        this.image_hover = image_hover;
+    }
+
+    public float getPrice_old() {
+        return price_old;
+    }
+
+    public void setPrice_old(float price_old) {
+        this.price_old = price_old;
+    }
+
+    public Products(int id, String name, String image, String image_hover, String description, float price_old, float price, String note, int quantum, int year, int active, Date created_at, Date updated_at, int id_type, String category, String author, String nameType) {
+        this.id = id;
+        this.name = name;
+        this.image = image;
+        this.image_hover = image_hover;
+        this.description = description;
+        this.price_old = price_old;
+        this.price = price;
+        this.note = note;
+        this.quantum = quantum;
+        this.year = year;
+        this.active = active;
+        this.created_at = created_at;
+        this.updated_at = updated_at;
+        this.id_type = id_type;
+        this.category = category;
+        this.author = author;
+        this.nameType = nameType;
+    }
 
     public String getNameType() {
         return nameType;
