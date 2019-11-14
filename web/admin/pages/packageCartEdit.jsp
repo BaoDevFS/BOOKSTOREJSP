@@ -53,7 +53,7 @@
                     <%ResultSet rs = (ResultSet) request.getAttribute("booktype");%>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="list-title" type="text" name="name" value="<%=rs.getString("name")%>" class="validate">
+                            <input id="list-title" type="text" name="name" value="<%=rs.getString(2)%>" class="validate">
                             <label for="list-title">Enter Package Category</label>
                         </div>
                     </div>

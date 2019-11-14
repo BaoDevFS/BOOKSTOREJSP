@@ -120,7 +120,7 @@
                         <%--                        <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>--%>
                     </div>
                     <div class="bor">
-                        <form action="<%=PathAbsolute.getPath("PackageEdit")%>" method="post">
+                        <form action="<%=PathAbsolute.getPath("Admin/PackageEdit")%>" method="post">
                             <%ResultSet resultSet = (ResultSet) request.getAttribute("rs");%>
                             <%ResultSet resultSet2 = (ResultSet) request.getAttribute("booktype");
                             String typeName = (String) request.getAttribute("nametype");%>
