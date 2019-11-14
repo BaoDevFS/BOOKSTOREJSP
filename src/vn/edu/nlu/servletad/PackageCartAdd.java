@@ -19,7 +19,6 @@ public class PackageCartAdd extends HttpServlet {
     public static int EMAIL_EXITS = 0;
     public static int SIGNIN_SUCCESS = 1;
     public static int NOTHING = 2;
-    int level = 1;
 
     public PackageCartAdd() {
         database = new GetConnectDatabase();
@@ -43,9 +42,10 @@ public class PackageCartAdd extends HttpServlet {
                 requestDispatcher.forward(request, response);
             }
         } catch (SQLException e) {
-            request.setAttribute("status", EMAIL_EXITS);
-            RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/packageCartAdd.jsp");
-            requestDispatcher.forward(request, response);
+//            request.setAttribute("status", EMAIL_EXITS);
+//            RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/packageCartAdd.jsp");
+//            requestDispatcher.forward(request, response);
+            response.sendRedirect(request.getContextPath()+"/Error404");
             e.printStackTrace();
         }
     }
