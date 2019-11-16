@@ -36,6 +36,16 @@
 <div class="container-fluid sb2">
     <div class="row">
         <%@ include file="include/inforAndLeftMenu.jsp" %>
+        <%! public String getStatus(int i) {
+            System.out.println(i);
+            if(i==1){
+                return "show(1);";
+            }else if(i==0){
+                return "show(0);";
+            }else {
+                return "";
+            }
+        }%>
         <div class="sb2-2">
             <div class="sb2-2-2">
                 <ul>
@@ -139,7 +149,10 @@
 <script src="<%=PathAbsolute.getPath("admin/js/bootstrap.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/materialize.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/custom.js")%>"></script>
-
+<script src="<%=PathAbsolute.getPath("admin/js/show.js")%>"></script>
+<script >
+    <%= getStatus((int)request.getAttribute("status"))%>
+</script>
 </body>
 
 

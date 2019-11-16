@@ -26,7 +26,6 @@ public class UserAdd extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
-        response.setContentType("text/html; charset=UTF-8");
         String firstName = request.getParameter("firstname");
         String lastName = request.getParameter("lastname");
         String moblie = request.getParameter("mobile");
@@ -41,8 +40,9 @@ public class UserAdd extends HttpServlet {
             Statement statement =connection.createStatement();
             String checkeMail = "SELECT users.email FROM users WHERE email="+"'"+email+"'";
             ResultSet resultSet =statement.executeQuery(checkeMail);
+            System.out.println(firstName+lastName+address);
             if(!resultSet.next()) {
-                String sql = "INSERT INTO users(name,fullname,email,phone,gender,address,password,active )" +
+                String sql = "INSERT INTO users(name,fullname,email,phone,gender,address,password,active)" +
                         "VALUES(" + "'" + firstName + "','" + firstName + lastName + "','" + email + "','" + moblie + "','" + gender + "','" + address + "','" + password + "'," + 1 + ")";
                 int status = statement.executeUpdate(sql);
                 System.out.println(status);
@@ -63,6 +63,9 @@ public class UserAdd extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
         request.setAttribute("status",NOTHING);
         RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/userAdd.jsp");
         requestDispatcher.forward(request,response);

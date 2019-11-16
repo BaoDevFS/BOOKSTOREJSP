@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <html lang="en">
 <!-- Mirrored from rn53themes.net/themes/demo/lava-admin/userAdd.html by HTTrack Website Copier/3.x
 [XR&CO'2014], Wed, 23 Oct 2019 13:21:50 GMT -->
@@ -64,7 +64,7 @@
                                 <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
                             </div>
                             <div class="tab-inn">
-                                <form action="<% PathAbsolute.getPath("Admin/UserAdd");%>"  method="post">
+                                <form action="<% PathAbsolute.getPath("Admin/UserAdd");%>"  accept-charset="UTF-8"  method="post">
                                     <div class="row">
                                         <div class="input-field col s6">
                                             <input id="first_name" name="firstname" type="text" class="validate">
@@ -164,14 +164,15 @@
 <script src="admin/js/bootstrap.min.js"></script>
 <script src="admin/js/materialize.min.js"></script>
 <script src="admin/js/custom.js"></script>
-<script src="admin/js/show.js"></script>
-<script >
-    <%= getStatus((int)request.getAttribute("status"))%>
-</script>
+
 <script src="<%=PathAbsolute.getPath("admin/js/jquery.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/bootstrap.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/materialize.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/custom.js")%>"></script>
+<script src="<%=PathAbsolute.getPath("admin/js/show.js")%>"></script>
+<script >
+    <%= getStatus((int)request.getAttribute("status"))%>
+</script>
 </body>
 
 

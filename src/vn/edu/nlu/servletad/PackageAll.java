@@ -24,6 +24,9 @@ public class PackageAll extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
         String sql = "SELECT t.id,t.image,t.name,t.price,a.name,t.id_type FROM products t JOIN book_authors b ON t.id=b.id_book JOIN authors a ON b.id_author= a.id";
         try {
             connection =getConnectDatabase.getConnectionSql();

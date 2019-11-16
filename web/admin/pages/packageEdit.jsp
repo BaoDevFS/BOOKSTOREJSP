@@ -127,7 +127,7 @@
                             <%while (resultSet.next()){%>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="list-title" type="text" value="<%=resultSet.getString("name")%>" class="validate">
+                                    <input id="list-title" type="text" name="name" value="<%=resultSet.getString("name")%>" class="validate">
                                     <label for="list-title">Product Name</label>
                                 </div>
                                 <div class="input-field col s12">
@@ -145,14 +145,14 @@
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <textarea id="textarea1"  content="<%=resultSet.getString(6)%>" value="<%=resultSet.getString(6)%>"class="materialize-textarea"><%=resultSet.getString(6)%></textarea>
+                                    <textarea id="textarea1" name="description" content="<%=resultSet.getString(6)%>" value="<%=resultSet.getString(6)%>"class="materialize-textarea"><%=resultSet.getString(6)%></textarea>
                                     <label for="textarea1">Product Descriptions:</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <select multiple>
-                                        <option value="<%=resultSet.getInt("id_type")%>" disabled selected><%=typeName%></option>
+                                    <select name="id_type" >
+                                        <option   value="<%=resultSet.getInt("id_type")%>"  selected><%=typeName%></option>
                                         <%while (resultSet2.next()){%>
                                         <option value="<%=resultSet2.getInt("id")%>"><%=resultSet2.getString("name")%></option>
                                         <%}%>
@@ -162,11 +162,11 @@
                             </div>
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input id="Package-auth" type="text" value="<%=resultSet.getString(5)%>" class="validate">
-                                    <label for="Package-auth">Author Name</label>
+                                    <input id="Package-auth" name="year" type="text" value="<%=resultSet.getInt(8)%>" class="validate">
+                                    <label for="Package-auth">Public Year</label>
                                 </div>
                                 <div class="input-field col s6">
-                                    <input id="price" type="text" value="<%=resultSet.getString(4)%>"class="validate">
+                                    <input id="price" name="price" type="text" value="<%=resultSet.getString(4)%>"class="validate">
                                     <label for="Package-auth">Price</label>
                                 </div>
                             </div>

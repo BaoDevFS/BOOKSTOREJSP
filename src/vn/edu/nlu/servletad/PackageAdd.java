@@ -28,6 +28,9 @@ public class PackageAdd extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
         String name = request.getParameter("name");
         String description = request.getParameter("description");
         String booktype = request.getParameter("booktype");
@@ -35,26 +38,31 @@ public class PackageAdd extends HttpServlet {
         String price = request.getParameter("price");
         try {
             request.setAttribute("booktype", GetListProductType.getListProductType());
-            String sql = "INSERT INTO products (name, image ,description, price, year, id_type, active)" +
-                    "VALUES(name =?,image=?,description=?,price=?,year=?,id_type=?,active=?)";
+            String sql = "INSERT INTO products (name, image ,description, price, year, id_type, active) VALUES (? , ?, ?, ?, ?, ?, ?)";
+            System.out.println(sql);
             Connection con = database.getConnectionSql();
             PreparedStatement pre = con.prepareStatement(sql);
+            System.out.println(pre.toString());
             pre.setString(1, name);
-            pre.setString(2, "155151");
+            pre.setString(2, "");
             pre.setString(3, description);
-            pre.setFloat(4, Float.parseFloat(price));
-            pre.setInt(5, Integer.parseInt(year));
+            pre.setString(4, price);
+            pre.setString(5, year);
             pre.setString(6, booktype);
             pre.setInt(7, 1);
-            pre.executeUpdate();
+            int a=pre.executeUpdate();
+            if(a==1){
             request.setAttribute("status", SIGNIN_SUCCESS);
             RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/packageAdd.jsp");
             requestDispatcher.forward(request, response);
+            }else{
+                request.setAttribute("status", EMAIL_EXITS);
+                RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/packageAdd.jsp");
+                requestDispatcher.forward(request, response);
+            }
         } catch (SQLException e) {
             e.printStackTrace();
-            request.setAttribute("status", EMAIL_EXITS);
-            RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/packageAdd.jsp");
-            requestDispatcher.forward(request, response);
+            response.sendRedirect(request.getContextPath()+"/Error404");
         }
     }
 
@@ -64,6 +72,7 @@ public class PackageAdd extends HttpServlet {
             request.setAttribute("booktype", GetListProductType.getListProductType());
         } catch (SQLException e) {
             e.printStackTrace();
+            response.sendRedirect(request.getContextPath()+"/Error404");
         }
         RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/packageAdd.jsp");
         requestDispatcher.forward(request, response);

@@ -1,8 +1,9 @@
+<%@ page import="java.sql.ResultSet" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en"><!-- Mirrored from rn53themes.net/themes/demo/lava-admin/userView.html by HTTrack Website
         Copier/3.x [XR&CO'2014], Wed, 23 Oct 2019 13:22:03 GMT -->
 <head>
-    <title>Lava Material - Web Application and Website Multipurpose Admin Panel Template</title>
+    <title>User View</title>
     <!--== META TAGS ==-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -52,65 +53,63 @@
                                 <h4>View User Details</h4>
                                 <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
                             </div>
+                            <%ResultSet rs = (ResultSet) request.getAttribute("users");
+                            while (rs.next()){%>
                             <div class="tab-inn">
                                 <form>
                                     <div class="row">
                                         <div class="input-field col s6">
-                                            <input id="first_name" type="text" value="Marsha" class="validate">
+                                            <input id="first_name" type="text" value="<%=rs.getString("name")%>" class="validate">
                                             <label for="first_name">First Name</label>
                                         </div>
                                         <div class="input-field col s6">
-                                            <input id="last_name" type="text" value="Hogen" class="validate">
-                                            <label for="last_name">Last Name</label>
+                                            <input id="last_name" type="text" value="<%=rs.getString("fullname")%>" class="validate">
+                                            <label for="last_name">Full Name</label>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s6">
-                                            <input id="phone" type="text" value="+01 1234 4654" class="validate">
-                                            <label for="phone">Mobile</label>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <input id="cphone" type="text" value="+01 6541 32145" class="validate">
+                                            <input id="cphone" type="text" value="<%=rs.getString("phone")%>" class="validate">
                                             <label for="cphone">Phone</label>
                                         </div>
-                                    </div>
-                                    <div class="row">
                                         <div class="input-field col s6">
-                                            <input id="city" type="text" value="Illunois" class="validate">
-                                            <label for="city">City</label>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <input id="country" type="text" value="United States" class="validate">
-                                            <label for="country">Country</label>
+                                            <select name="gender">
+                                                <option value="<%=rs.getString("gender")%>" disabled selected><%=rs.getString("gender")%></option>
+                                            </select>
+                                            <label for="cphone">Gender</label>
                                         </div>
                                     </div>
                                     <div class="row">
+                                        <div class="input-field col s12">
+                                            <input id="city" type="text" value="<%=rs.getString("address")%>" name="address" class="validate">
+                                            <label for="city">Address</label>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
                                         <div class="input-field col s6">
-                                            <input id="password" type="password" value="aksdjfhasdf" class="validate">
+                                            <input id="password" type="password" value="<%=rs.getString("password")%>" class="validate">
                                             <label for="password">Password</label>
                                         </div>
                                         <div class="input-field col s6">
-                                            <input id="password1" type="password" value="asdfaefrerfg" class="validate">
+                                            <input id="password1" type="password" value="<%=rs.getString("password")%>" class="validate">
                                             <label for="password1">Confirm Password</label>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <input id="email" type="email" value="marshahi@mail.com" class="validate">
+                                            <input id="email" type="email" value="<%=rs.getString("email")%>" class="validate">
                                             <label for="email">Email</label>
                                         </div>
                                         <div class="input-field col s12">
-                                            <input id="email1" type="email" value="marshahi@mail.com" class="validate">
+                                            <input id="email1" type="email" value="<%=rs.getString("email")%>" class="validate">
                                             <label for="email1">Alternate Email</label>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <input type="submit" class="waves-effect waves-light btn-large">
-                                        </div>
-                                    </div>
+
                                 </form>
                             </div>
+                            <%}%>
                         </div>
                     </div>
                 </div>
