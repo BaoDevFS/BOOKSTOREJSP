@@ -1,21 +1,30 @@
 package vn.edu.nlu.servletad;
 
 import vn.edu.nlu.control.GetListProductType;
+import vn.edu.nlu.control.PathAbsolute;
+import vn.edu.nlu.fit.model.Images;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
+import javax.imageio.ImageIO;
+import javax.imageio.stream.FileImageOutputStream;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import javax.servlet.http.Part;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 @WebServlet("/Admin/PackageAdd")
+@MultipartConfig
 public class PackageAdd extends HttpServlet {
     GetConnectDatabase database;
     public static int EMAIL_EXITS = 0;
@@ -26,11 +35,32 @@ public class PackageAdd extends HttpServlet {
     public PackageAdd() {
         database = new GetConnectDatabase();
     }
-
+    private void saveImage(BufferedImage inp,String filename) throws IOException {
+        File file = new File(getServletContext().getRealPath("Public")+"/images/"+filename);
+        System.out.println(file.getAbsolutePath());
+       if(!file.exists()) file.createNewFile();
+        ImageIO.write(inp,"png",new FileOutputStream(file));
+    }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
+        //
+        Part image = request.getPart("image");
+        String fileNameImg=PathAbsolute.getPath("Public/images/product/"+ Paths.get(image.getSubmittedFileName()).getFileName().toString());
+        System.out.println(fileNameImg);
+        BufferedImage imgBuff = ImageIO.read(image.getInputStream());
+        saveImage(imgBuff,Paths.get(image.getSubmittedFileName()).getFileName().toString());
+       //get file from form
+        Part imagehover = request.getPart("imagehover");
+        BufferedImage imghoverBuff = ImageIO.read(imagehover.getInputStream());
+
+        //get path file save to server
+        String fileNameImgHover=PathAbsolute.getPath("Public/images/product/"+ Paths.get(imagehover.getSubmittedFileName()).getFileName().toString());
+        System.out.println(fileNameImgHover);
+        //save file
+        saveImage(imghoverBuff,Paths.get(imagehover.getSubmittedFileName()).getFileName().toString());
+
         String name = request.getParameter("name");
         String description = request.getParameter("description");
         String booktype = request.getParameter("booktype");
@@ -38,18 +68,19 @@ public class PackageAdd extends HttpServlet {
         String price = request.getParameter("price");
         try {
             request.setAttribute("booktype", GetListProductType.getListProductType());
-            String sql = "INSERT INTO products (name, image ,description, price, year, id_type, active) VALUES (? , ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO books (name, image ,image_hover,description, price, year, id_type, active) VALUES (? , ? , ?, ?, ?, ?, ?, ?)";
             System.out.println(sql);
             Connection con = database.getConnectionSql();
             PreparedStatement pre = con.prepareStatement(sql);
             System.out.println(pre.toString());
             pre.setString(1, name);
-            pre.setString(2, "");
-            pre.setString(3, description);
-            pre.setString(4, price);
-            pre.setString(5, year);
-            pre.setString(6, booktype);
-            pre.setInt(7, 1);
+            pre.setString(2, fileNameImg);
+            pre.setString(3, fileNameImgHover);
+            pre.setString(4, description);
+            pre.setString(5, price);
+            pre.setString(6, year);
+            pre.setString(7, booktype);
+            pre.setInt(8, 1);
             int a=pre.executeUpdate();
             if(a==1){
             request.setAttribute("status", SIGNIN_SUCCESS);

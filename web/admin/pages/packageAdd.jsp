@@ -4,7 +4,7 @@
 <!-- Mirrored from rn53themes.net/themes/demo/lava-admin/packageAdd.html by HTTrack Website Copier/3.x
 [XR&CO'2014], Wed, 23 Oct 2019 13:21:52 GMT -->
 <head>
-    <title>Lava Material - Web Application and Website Multipurpose Admin Panel Template</title>
+    <title>Add Book</title>
     <!--== META TAGS ==-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -65,7 +65,7 @@
 <%--                        <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>--%>
                     </div>
                     <div class="bor">
-                        <form action="<%PathAbsolute.getPath("Admin/PackageAdd");%>" method="post">
+                        <form action="<%PathAbsolute.getPath("Admin/PackageAdd");%>" method="post" enctype="multipart/form-data">
                             <%ResultSet rs = (ResultSet) request.getAttribute("booktype");
                                 System.out.println(request.getAttribute("status"));%>
                             <div class="row">
@@ -73,17 +73,31 @@
                                     <input id="list-title" type="text" name="name" class="validate">
                                     <label for="list-title">Product Name</label>
                                 </div>
-                                <div class="input-field col s12">
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
                                     <div class="file-field">
                                         <div class="btn">
                                             <span>File</span>
-                                            <input type="file" accept="image/*">
+                                            <input type="file" name="image" accept="image/*">
                                         </div>
                                         <div class="file-path-wrapper">
                                             <input class="file-path validate" type="text"
                                                    placeholder="Upload image book">
                                         </div>
                                     </div>
+                                </div>
+                                <div class="input-field col s6">
+                                <div class="file-field">
+                                    <div class="btn">
+                                        <span>File</span>
+                                        <input type="file" name="imagehover" accept="image/*">
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate" type="text"
+                                               placeholder="Upload image when hover">
+                                    </div>
+                                </div>
                                 </div>
                             </div>
                             <div class="row">
@@ -94,8 +108,8 @@
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <select >
-                                        <option value="" name="booktype" disabled selected>Choose Category</option>
+                                    <select name="booktype" >
+                                        <option    disabled selected>Choose Category</option>
                                         <%while (rs.next()){%>
                                         <option value="<%=rs.getInt("id")%>"><%=rs.getString("name")%></option>
                                         <%}%>

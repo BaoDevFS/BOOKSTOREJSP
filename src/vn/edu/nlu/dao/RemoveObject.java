@@ -36,7 +36,7 @@ public class RemoveObject {
     public boolean removeProduct(String id) throws SQLException {
         Connection con = database.getConnectionSql();
         Statement st = con.createStatement();
-        String sql="DELETE FROM products WHERE id="+id;
+        String sql="DELETE FROM books WHERE id="+id;
         int a=st.executeUpdate(sql);
         if(a==1){
             return true;

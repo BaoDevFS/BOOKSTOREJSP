@@ -37,7 +37,7 @@
 <body>
 <%
     GetListProductType listPr = new GetListProductType();
-    TacGiaDAOImpl tgDAO = new TacGiaDAOImpl();
+//    TacGiaDAOImpl tgDAO = new TacGiaDAOImpl();
     ArrayList<Products> arr = listPr.getList();
 %>
 <!--[if lte IE 9]>
@@ -201,9 +201,9 @@
                                 <div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
                                     <div class="product__thumb">
                                         <a class="first__img" href="singleProduct.html"><img
-                                                src="<%= p.getString(3)%>" alt="product image"></a>
+                                                src="<%=p.getString(3)%>" alt="product image"></a>
                                         <a class="second__img animation1" href="singleProduct.html"><img
-                                                src="<%= p.getString(4)%>" alt="product image"></a>
+                                                src="<%=p.getString(4)%>" alt="product image"></a>
                                         <div class="hot__box">
                                             <span class="hot-label">BEST SALLER</span>
                                         </div>
