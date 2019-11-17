@@ -3,6 +3,7 @@ package vn.edu.nlu.servletad;
 import vn.edu.nlu.control.GetListProductType;
 import vn.edu.nlu.control.PathAbsolute;
 import vn.edu.nlu.control.ResizeImage;
+import vn.edu.nlu.control.SaveImage;
 import vn.edu.nlu.fit.model.Images;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
@@ -37,23 +38,18 @@ public class PackageAdd extends HttpServlet {
         database = new GetConnectDatabase();
        resizeImage = new ResizeImage();
     }
-    private void saveImage(BufferedImage inp,String filename) throws IOException {
-        File file = new File(getServletContext().getRealPath("Public")+"/images/books/"+filename);
-        System.out.println(file.getAbsolutePath());
-       if(!file.exists()) file.createNewFile();
-        ImageIO.write(resizeImage.resizeImageForBook(inp),"jpg",new FileOutputStream(file));
-    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
         //
-
+        SaveImage saveImage = new SaveImage();
         Part image = request.getPart("image");
         String fileNameImg=PathAbsolute.getPath("Public/images/books/"+ Paths.get(image.getSubmittedFileName()).getFileName().toString());
         System.out.println(fileNameImg);
         BufferedImage imgBuff = ImageIO.read(image.getInputStream());
-        saveImage(imgBuff,Paths.get(image.getSubmittedFileName()).getFileName().toString());
+        saveImage.saveImageForBook(imgBuff,Paths.get(image.getSubmittedFileName()).getFileName().toString(),request);
        //get file from form
         Part imagehover = request.getPart("imagehover");
         BufferedImage imghoverBuff = ImageIO.read(imagehover.getInputStream());
@@ -62,7 +58,7 @@ public class PackageAdd extends HttpServlet {
         String fileNameImgHover=PathAbsolute.getPath("Public/images/books/"+ Paths.get(imagehover.getSubmittedFileName()).getFileName().toString());
         System.out.println(fileNameImgHover);
         //save file
-        saveImage(imghoverBuff,Paths.get(imagehover.getSubmittedFileName()).getFileName().toString());
+        saveImage.saveImageForBook(imghoverBuff,Paths.get(imagehover.getSubmittedFileName()).getFileName().toString(),request);
 
         String name = request.getParameter("name");
         String description = request.getParameter("description");

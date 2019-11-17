@@ -67,7 +67,7 @@
                                 <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
                             </div>
                             <div class="tab-inn">
-                                <form action="<% PathAbsolute.getPath("Admin/UserAdd");%>"  accept-charset="UTF-8"  method="post">
+                                <form action="<% PathAbsolute.getPath("Admin/UserAdd");%>"  enctype="multipart/form-data" method="post">
                                     <div class="row">
                                         <div class="input-field col s6">
                                             <input id="first_name" name="firstname" type="text" class="validate">
@@ -94,7 +94,7 @@
                                     <div class="row file-field">
                                         <div class="btn">
                                             <span>File</span>
-                                            <input type="file" name="file" accept="image/*">
+                                            <input type="file" name="avatar" accept="image/*">
                                         </div>
                                         <div class="file-path-wrapper">
                                             <input class="file-path validate" type="text"
