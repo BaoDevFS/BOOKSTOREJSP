@@ -36,7 +36,7 @@ public class PackageAdd extends HttpServlet {
         database = new GetConnectDatabase();
     }
     private void saveImage(BufferedImage inp,String filename) throws IOException {
-        File file = new File(getServletContext().getRealPath("Public")+"/images/"+filename);
+        File file = new File(getServletContext().getRealPath("Public")+"/images/books/"+filename);
         System.out.println(file.getAbsolutePath());
        if(!file.exists()) file.createNewFile();
         ImageIO.write(inp,"png",new FileOutputStream(file));
@@ -47,7 +47,7 @@ public class PackageAdd extends HttpServlet {
         response.setContentType("text/html; charset=UTF-8");
         //
         Part image = request.getPart("image");
-        String fileNameImg=PathAbsolute.getPath("Public/images/product/"+ Paths.get(image.getSubmittedFileName()).getFileName().toString());
+        String fileNameImg=PathAbsolute.getPath("Public/images/books/"+ Paths.get(image.getSubmittedFileName()).getFileName().toString());
         System.out.println(fileNameImg);
         BufferedImage imgBuff = ImageIO.read(image.getInputStream());
         saveImage(imgBuff,Paths.get(image.getSubmittedFileName()).getFileName().toString());
@@ -56,7 +56,7 @@ public class PackageAdd extends HttpServlet {
         BufferedImage imghoverBuff = ImageIO.read(imagehover.getInputStream());
 
         //get path file save to server
-        String fileNameImgHover=PathAbsolute.getPath("Public/images/product/"+ Paths.get(imagehover.getSubmittedFileName()).getFileName().toString());
+        String fileNameImgHover=PathAbsolute.getPath("Public/images/books/"+ Paths.get(imagehover.getSubmittedFileName()).getFileName().toString());
         System.out.println(fileNameImgHover);
         //save file
         saveImage(imghoverBuff,Paths.get(imagehover.getSubmittedFileName()).getFileName().toString());

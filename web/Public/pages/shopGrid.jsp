@@ -3,9 +3,8 @@
 <%@ page import="vn.edu.nlu.control.GetListProductType" %>
 <%@ page import="vn.edu.nlu.fit.model.Products" %>
 <%@ page import="java.util.ArrayList" %>
-<!doctype html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html class="no-js" lang="zxx">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -24,13 +23,12 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="Public/css/bootstrap.min.css">
-    <link rel="stylesheet" href="Public/css/plugins.css">
-    <link rel="stylesheet" href="Public/css/style.css">
-
+    <link rel="stylesheet" type="text/css" href="Public/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="Public/css/plugins.css">
+    <link rel="stylesheet" type="text/css" href="Public/css/style.css">
     <!-- Cusom css -->
-    <link rel="stylesheet" href="Public/css/custom.css">
-
+    <link rel="stylesheet" type="text/css" href="Public/css/custom.css">
+    <link rel="stylesheet" href="Public/css/plugins/font-awesome.min.css">
     <!-- Modernizer js -->
     <script src="Public/js/vendor/modernizr-3.5.0.min.js"></script>
 </head>
@@ -200,10 +198,10 @@
                                 <!-- Start Single Product -->
                                 <div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
                                     <div class="product__thumb">
-                                        <a class="first__img" href="singleProduct.html"><img
-                                                src="<%=p.getString(3)%>" alt="product image"></a>
-                                        <a class="second__img animation1" href="singleProduct.html"><img
-                                                src="<%=p.getString(4)%>" alt="product image"></a>
+                                        <a class="first__img" href="singleProduct.html">
+                                            <img src="<%=p.getString(3)%>" class="abc" alt="product image"></a>
+                                        <a class="second__img animation1" href="singleProduct.html">
+                                            <img src="<%=p.getString(4)%>"class="abc" alt="product image"></a>
                                         <div class="hot__box">
                                             <span class="hot-label">BEST SALLER</span>
                                         </div>

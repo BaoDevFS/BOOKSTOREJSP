@@ -13,13 +13,13 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700" rel="stylesheet">
 
     <!-- FONT-AWESOME ICON CSS -->
-    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/font-awesome.min.css")%>">
+    <link rel="stylesheet"type="text/css" href="<%=PathAbsolute.getPath("admin/css/font-awesome.min.css")%>">
 
     <!--== ALL CSS FILES ==-->
-    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/style.css")%>">
-    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/mob.css")%>">
-    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/bootstrap.css")%>">
-    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/materialize.css")%>"/>
+    <link rel="stylesheet" type="text/css"href="<%=PathAbsolute.getPath("admin/css/style.css")%>">
+    <link rel="stylesheet" type="text/css"href="<%=PathAbsolute.getPath("admin/css/mob.css")%>">
+    <link rel="stylesheet" type="text/css"href="<%=PathAbsolute.getPath("admin/css/bootstrap.css")%>">
+    <link rel="stylesheet" type="text/css"href="<%=PathAbsolute.getPath("admin/css/materialize.css")%>"/>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
