@@ -1,3 +1,4 @@
+<%@ page import="vn.edu.nlu.control.PathAbsolute" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <html lang="en">
 <!-- Mirrored from rn53themes.net/themes/demo/lava-admin/userAdd.html by HTTrack Website Copier/3.x
@@ -32,10 +33,12 @@
 <body>
 <!--== MAIN CONTRAINER ==-->
 <%@ include file="include/header.jsp" %>
+<%--<jsp:include page="/Admin/Header"/>--%>
 <!--== BODY CONTNAINER ==-->
 <div class="container-fluid sb2">
     <div class="row">
         <%@ include file="include/inforAndLeftMenu.jsp" %>
+<%--    <jsp:include page="/Admin/InforAndLeftMenu"/>--%>
         <%! public String getStatus(int i) {
             System.out.println(i);
             if(i==1){

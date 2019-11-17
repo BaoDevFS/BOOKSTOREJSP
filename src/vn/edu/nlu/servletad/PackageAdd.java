@@ -2,6 +2,7 @@ package vn.edu.nlu.servletad;
 
 import vn.edu.nlu.control.GetListProductType;
 import vn.edu.nlu.control.PathAbsolute;
+import vn.edu.nlu.control.ResizeImage;
 import vn.edu.nlu.fit.model.Images;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
@@ -31,21 +32,23 @@ public class PackageAdd extends HttpServlet {
     public static int SIGNIN_SUCCESS = 1;
     public static int NOTHING = 2;
     int level = 1;
-
+    ResizeImage resizeImage;
     public PackageAdd() {
         database = new GetConnectDatabase();
+       resizeImage = new ResizeImage();
     }
     private void saveImage(BufferedImage inp,String filename) throws IOException {
         File file = new File(getServletContext().getRealPath("Public")+"/images/books/"+filename);
         System.out.println(file.getAbsolutePath());
        if(!file.exists()) file.createNewFile();
-        ImageIO.write(inp,"png",new FileOutputStream(file));
+        ImageIO.write(resizeImage.resizeImageForBook(inp),"jpg",new FileOutputStream(file));
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
         //
+
         Part image = request.getPart("image");
         String fileNameImg=PathAbsolute.getPath("Public/images/books/"+ Paths.get(image.getSubmittedFileName()).getFileName().toString());
         System.out.println(fileNameImg);

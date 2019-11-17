@@ -1,3 +1,5 @@
+<%@ page import="vn.edu.nlu.control.PathAbsolute" %>
+<%@ page import="vn.edu.nlu.fit.model.Users" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="container-fluid sb1">
     <div class="row">
@@ -18,11 +20,12 @@
         <!--== NOTIFICATION ==-->
         <div class="col-md-2 tab-hide">
         </div>
+        <%Users admin = (Users) session.getAttribute("admin");%>
         <!--== MY ACCCOUNT ==-->
         <div class="col-md-2 col-sm-3 col-xs-6">
             <!-- Dropdown Trigger -->
             <a class='waves-effect dropdown-button top-user-pro' href='#' data-activates='top-menu'><img
-                    src="<%=PathAbsolute.getPath("admin/images/user/6.png")%>" alt=""/>My Account<i class="fa fa-angle-down"
+                    src="<%=admin.getAvatar()%>" alt=""/>My Account<i class="fa fa-angle-down"
                                                                          aria-hidden="true"></i>
             </a>
 

@@ -10,6 +10,16 @@ public class Users {
     String passwork;
     String address;
     String phone;
+    String avatar;
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
     int group;
     String gender;
     int active;
