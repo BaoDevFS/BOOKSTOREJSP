@@ -4,7 +4,11 @@
 <%@ page import="vn.edu.nlu.fit.model.Products" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<<<<<<< HEAD
+<!doctype html>
+=======
 <!DOCTYPE html>
+>>>>>>> cc19b5718b35e0be513ba26d6a2f50f3d96138fe
 <html class="no-js" lang="zxx">
 <head>
     <meta charset="utf-8">
@@ -205,9 +209,9 @@
                     <div class="tab__container">
                         <div class="shop-grid tab-pane fade show active" id="nav-grid" role="tabpanel">
 
+                            <% for (Products pd : listPage) {
+                            %>
                             <div class="row">
-                                <% for (Products pd : listPage) {
-                                %>
                                 <% ResultSet p = (ResultSet) request.getAttribute("rs1");
                                     while (p.next()) {
                                 %>
@@ -279,7 +283,7 @@
                                             b = arr.size();
                                         }
                                 %>
-                                <li><a class="active" href="ShopGrid?start=<%=a%>&end=<%=b%>"><%=i%>
+                                <li><a class="active" href="ShopGrid?start=<%=a%>&end=<%=b%>"><%=listPage.toString()%>
                                 </a></li>
                                 <%
                                     }
