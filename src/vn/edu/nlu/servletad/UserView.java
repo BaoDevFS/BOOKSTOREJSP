@@ -24,9 +24,9 @@ public class UserView extends HttpServlet {
         String id= request.getParameter("id");
         try {
             Connection con = database.getConnectionSql();
-            Statement st = con.createStatement();
             String sql = "SELECT * from users where id="+id;
-            ResultSet rs = st.executeQuery(sql);
+            PreparedStatement st = con.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
             request.setAttribute("users",rs);
             RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/userView.jsp");
             requestDispatcher.forward(request,response);

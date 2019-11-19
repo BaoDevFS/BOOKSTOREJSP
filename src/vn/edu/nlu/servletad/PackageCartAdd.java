@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -31,9 +32,10 @@ public class PackageCartAdd extends HttpServlet {
         String name =  request.getParameter("name");
         try {
             Connection con = database.getConnectionSql();
-            Statement statement = con.createStatement();
-            String sql = "INSERT into booktypes(name,active) values (\"" + name + "\",1)";
-            System.out.println(sql);
+            String sql = "INSERT into booktypes(name,active) values (?,?)";
+            PreparedStatement statement = con.prepareStatement(sql);
+            statement.setString(1,name);
+            statement.setInt(2,1);
             int a = statement.executeUpdate(sql);
             if (a > 0) {
                 request.setAttribute("status", SIGNIN_SUCCESS);

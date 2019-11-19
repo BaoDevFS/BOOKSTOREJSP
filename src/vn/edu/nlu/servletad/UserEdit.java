@@ -58,9 +58,9 @@ public class UserEdit extends HttpServlet {
        id = request.getParameter("id");
         try {
             con= database.getConnectionSql();
-            Statement st = con.createStatement();
             String sql ="SELECT * from users where users.id="+id;
-            ResultSet rs = st.executeQuery(sql);
+            PreparedStatement st = con.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
             request.setAttribute("users",rs);
             RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/userEdit.jsp");
             requestDispatcher.forward(request,response);

@@ -13,10 +13,8 @@ import javax.servlet.http.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.nio.file.Paths;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+
 @WebServlet("/Admin/UserAdd")
 @MultipartConfig
 public class UserAdd extends HttpServlet {
@@ -47,18 +45,32 @@ public class UserAdd extends HttpServlet {
         String confirmemail = request.getParameter("confirmemail");
         try {
             Connection connection = database.getConnectionSql();
-            Statement statement =connection.createStatement();
-            String checkeMail = "SELECT users.email FROM users WHERE email="+"'"+email+"'";
-            ResultSet resultSet =statement.executeQuery(checkeMail);
+            String checkeMail = "SELECT users.email FROM users WHERE email=?";
+            PreparedStatement statement =connection.prepareStatement(checkeMail);
+            statement.setString(1,email);
+            ResultSet resultSet =statement.executeQuery();
             System.out.println(firstName+lastName+address);
             if(!resultSet.next()) {
                 String sql = "INSERT INTO users(avatar,name,fullname,email,phone,gender,address,password,active)" +
-                        "VALUES(" + "'" + avatars + "','"  + firstName + "','" + firstName + lastName + "','" + email + "','" + moblie + "','" + gender + "','" + address + "','" + password + "'," + 1 + ")";
-                int status = statement.executeUpdate(sql);
-                System.out.println(status);
-                request.setAttribute("status",SIGNIN_SUCCESS);
-                RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/userAdd.jsp");
-                requestDispatcher.forward(request,response);
+                        "VALUES(?,?,?,?,?,?,?,?,?)";
+                PreparedStatement pr = connection.prepareStatement(sql);
+                pr.setString(1,avatars);
+                pr.setString(2,firstName);
+                pr.setString(3,firstName+lastName);
+                pr.setString(4,email);
+                pr.setString(5,moblie);
+                pr.setString(6,gender);
+                pr.setString(7,address);
+                pr.setString(8,password);
+                pr.setInt(9,1);
+                int status = pr.executeUpdate();
+                if(status==1) {
+                    request.setAttribute("status", SIGNIN_SUCCESS);
+                    RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/userAdd.jsp");
+                    requestDispatcher.forward(request, response);
+                }else{
+                    response.sendRedirect(request.getContextPath()+"/Error404");
+                }
             }else{
                 request.setAttribute("status",EMAIL_EXITS);
                 RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/userAdd.jsp");

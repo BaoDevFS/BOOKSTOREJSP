@@ -23,7 +23,7 @@ public class Discount extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
-       response.getWriter().print("hẻ hẻ");
+        response.getWriter().print("hẻ hẻ");
 //        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/discount.jsp");
 //        requestDispatcher.forward(request,response);
     }

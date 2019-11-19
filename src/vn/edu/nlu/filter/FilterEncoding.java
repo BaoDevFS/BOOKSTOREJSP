@@ -13,7 +13,6 @@ public class FilterEncoding implements Filter {
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
-        resp.setContentType("text/html; charset=UTF-8");
         chain.doFilter(req, resp);
     }
 
