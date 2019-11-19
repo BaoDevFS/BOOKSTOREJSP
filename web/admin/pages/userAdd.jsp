@@ -4,31 +4,22 @@
 <!-- Mirrored from rn53themes.net/themes/demo/lava-admin/userAdd.html by HTTrack Website Copier/3.x
 [XR&CO'2014], Wed, 23 Oct 2019 13:21:50 GMT -->
 <head>
-    <title>Lava Material - Web Application and Website Multipurpose Admin Panel Template</title>
+    <title>User Add</title>
     <!--== META TAGS ==-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!--== FAV ICON ==-->
     <link rel="shortcut icon" href="<%=PathAbsolute.getPath("admin/images/fav.ico")%>">
-
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700" rel="stylesheet">
-
     <!-- FONT-AWESOME ICON CSS -->
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/font-awesome.min.css")%>">
-
     <!--== ALL CSS FILES ==-->
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/style.css")%>">
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/mob.css")%>">
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/bootstrap.css")%>">
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/materialize.css")%>"/>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
 </head>
 <body>
 <!--== MAIN CONTRAINER ==-->
@@ -38,7 +29,6 @@
 <div class="container-fluid sb2">
     <div class="row">
         <%@ include file="include/inforAndLeftMenu.jsp" %>
-<%--    <jsp:include page="/Admin/InforAndLeftMenu"/>--%>
         <%! public String getStatus(int i) {
             System.out.println(i);
             if(i==1){
@@ -68,6 +58,27 @@
                             </div>
                             <div class="tab-inn">
                                 <form action="<% PathAbsolute.getPath("Admin/UserAdd");%>"  enctype="multipart/form-data" method="post">
+                                    <div class="row file-field">
+                                        <div class="input-field col s6">
+                                            <div class="sb2-12">
+                                                <ul>
+                                                    <li>
+                                                        <img style="width: 100px;height: 100px" id="avatar" src="<%=PathAbsolute.getPath("admin/images/imgdefault.png")%>" alt="">
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <div class="btn">
+                                                <span>File</span>
+                                                <input type="file" id="file" name="avatar" accept="image/*">
+                                            </div>
+                                            <div class="file-path-wrapper">
+                                                <input class="file-path validate" type="text"
+                                                       placeholder="Upload avatar">
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="row">
                                         <div class="input-field col s6">
                                             <input id="first_name" name="firstname" type="text" class="validate">
@@ -91,22 +102,20 @@
                                             <label for="phone">Gender</label>
                                         </div>
                                     </div>
-                                    <div class="row file-field">
-                                        <div class="btn">
-                                            <span>File</span>
-                                            <input type="file" name="avatar" accept="image/*">
-                                        </div>
-                                        <div class="file-path-wrapper">
-                                            <input class="file-path validate" type="text"
-                                                   placeholder="Upload avatar">
-                                        </div>
-                                    </div>
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <input id="city" type="text" name="address" class="validate">
                                             <label for="city">Address</label>
                                         </div>
-
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <select name="group">
+                                                <option value="0">User</option>
+                                                <option value="1">Admin</option>
+                                            </select>
+                                            <label for="city">Group</label>
+                                        </div>
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s6">
@@ -163,10 +172,10 @@
 </section>
 
 <!--======== SCRIPT FILES =========-->
-<script src="admin/js/jquery.min.js"></script>
-<script src="admin/js/bootstrap.min.js"></script>
-<script src="admin/js/materialize.min.js"></script>
-<script src="admin/js/custom.js"></script>
+<%--<script src="admin/js/jquery.min.js"></script>--%>
+<%--<script src="admin/js/bootstrap.min.js"></script>--%>
+<%--<script src="admin/js/materialize.min.js"></script>--%>
+<%--<script src="admin/js/custom.js"></script>--%>
 
 <script src="<%=PathAbsolute.getPath("admin/js/jquery.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/bootstrap.min.js")%>"></script>
