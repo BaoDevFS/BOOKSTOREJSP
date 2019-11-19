@@ -234,15 +234,12 @@
                                         <div class="action">
                                             <div class="actions_inner">
                                                 <ul class="add_to_links">
-                                                    <li><a class="cart" href="cart.html"><i
-                                                            class="bi bi-shopping-bag4"></i></a></li>
+                                                    <li><a class="cart" href="cart.html"><i class="fa fa-shopping-bag"></i></a></li>
                                                     <li><a class="wishlist" href="wishList.html"><i
-                                                            class="bi bi-shopping-cart-full"></i></a></li>
-                                                    <li><a class="compare" href="#"><i class="bi bi-heart-beat"></i></a>
-                                                    </li>
+                                                            class="fa fa-heart"></i></a></li>
                                                     <li><a data-toggle="modal" title="Quick View"
                                                            class="quickview modal-view detail-link"
-                                                           href="#productmodal"><i class="bi bi-search"></i></a></li>
+                                                           href="#productmodal"><i class="fa fa-search"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
