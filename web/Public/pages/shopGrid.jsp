@@ -386,9 +386,9 @@
                                             ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate
                                             adipiscing cursus eu, suscipit id nulla.</p>
                                         <ul class="cart__action d-flex">
-                                            <li class="cart"><a href="cart.html">Add to cart</a></li>
-                                            <li class="wishlist"><a href="cart.html"></a></li>
-                                            <li class="compare"><a href="cart.html"></a></li>
+                                            <li class="cart"><a href="cart.jsp">Add to cart</a></li>
+                                            <li class="wishlist"><a href="wishlist.jsp"></a></li>
+                                            <li class="compare"><a href="#"></a></li>
                                         </ul>
 
                                     </div>
@@ -397,13 +397,13 @@
                                 <!-- Start Single Product -->
                                 <div class="list__view mt--40">
                                     <div class="thumb">
-                                        <a class="first__img" href="singleProduct.html"><img
+                                        <a class="first__img" href="singleProduct.jsp"><img
                                                 src="Public/images/product/4.jpg" alt="product images"></a>
-                                        <a class="second__img animation1" href="singleProduct.html"><img
+                                        <a class="second__img animation1" href="singleProduct.jsp"><img
                                                 src="Public/images/product/6.jpg" alt="product images"></a>
                                     </div>
                                     <div class="content">
-                                        <h2><a href="singleProduct.html">Watching You</a></h2>
+                                        <h2><a href="singleProduct.jsp">Watching You</a></h2>
                                         <ul class="rating d-flex">
                                             <li class="on"><i class="fa fa-star-o"></i></li>
                                             <li class="on"><i class="fa fa-star-o"></i></li>
@@ -421,9 +421,9 @@
                                             ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate
                                             adipiscing cursus eu, suscipit id nulla.</p>
                                         <ul class="cart__action d-flex">
-                                            <li class="cart"><a href="cart.html">Add to cart</a></li>
-                                            <li class="wishlist"><a href="cart.html"></a></li>
-                                            <li class="compare"><a href="cart.html"></a></li>
+                                            <li class="cart"><a href="cart.jsp">Add to cart</a></li>
+                                            <li class="wishlist"><a href="cart.jsp"></a></li>
+                                            <li class="compare"><a href="cart.jsp"></a></li>
                                         </ul>
 
                                     </div>
@@ -432,13 +432,13 @@
                                 <!-- Start Single Product -->
                                 <div class="list__view mt--40">
                                     <div class="thumb">
-                                        <a class="first__img" href="singleProduct.html"><img
+                                        <a class="first__img" href="singleProduct.jsp"><img
                                                 src="Public/images/product/5.jpg" alt="product images"></a>
-                                        <a class="second__img animation1" href="singleProduct.html"><img
+                                        <a class="second__img animation1" href="singleProduct.jsp"><img
                                                 src="Public/images/product/9.jpg" alt="product images"></a>
                                     </div>
                                     <div class="content">
-                                        <h2><a href="singleProduct.html">Court Wings Run</a></h2>
+                                        <h2><a href="singleProduct.jsp">Court Wings Run</a></h2>
                                         <ul class="rating d-flex">
                                             <li class="on"><i class="fa fa-star-o"></i></li>
                                             <li class="on"><i class="fa fa-star-o"></i></li>
@@ -456,9 +456,9 @@
                                             ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate
                                             adipiscing cursus eu, suscipit id nulla.</p>
                                         <ul class="cart__action d-flex">
-                                            <li class="cart"><a href="cart.html">Add to cart</a></li>
-                                            <li class="wishlist"><a href="cart.html"></a></li>
-                                            <li class="compare"><a href="cart.html"></a></li>
+                                            <li class="cart"><a href="cart.jsp">Add to cart</a></li>
+                                            <li class="wishlist"><a href="cart.jsp"></a></li>
+                                            <li class="compare"><a href="cart.jsp"></a></li>
                                         </ul>
                                     </div>
                                 </div>

@@ -20,11 +20,11 @@
                         </div>
                         <div class="footer__content">
                             <ul class="social__net social__net--2 d-flex justify-content-center">
-                                <li><a href="#"><i class="bi bi-facebook"></i></a></li>
-                                <li><a href="#"><i class="bi bi-google"></i></a></li>
-                                <li><a href="#"><i class="bi bi-twitter"></i></a></li>
-                                <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
-                                <li><a href="#"><i class="bi bi-youtube"></i></a></li>
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitch"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
                             </ul>
                             <ul class="mainmenu d-flex justify-content-center">
                                 <li><a href="Public/index.html">Trending</a></li>
