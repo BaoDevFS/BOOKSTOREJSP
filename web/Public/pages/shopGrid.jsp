@@ -4,11 +4,7 @@
 <%@ page import="vn.edu.nlu.fit.model.Products" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<<<<<<< HEAD
-<!doctype html>
-=======
 <!DOCTYPE html>
->>>>>>> cc19b5718b35e0be513ba26d6a2f50f3d96138fe
 <html class="no-js" lang="zxx">
 <head>
     <meta charset="utf-8">
@@ -40,17 +36,24 @@
 <body>
 <%
     GetListProductType listPr = new GetListProductType();
+    String type = request.getParameter("type");
+    ArrayList<Products> arr;
+    if(type !=null){
+        arr = listPr.getListCategories(type);
+    } else {
+       arr = listPr.getList();
+    }
 //    TacGiaDAOImpl tgDAO = new TacGiaDAOImpl();
-    ArrayList<Products> arr = listPr.getList();
-    int start = 0, end = 3;
-    if (arr.size() < 3) {
+
+    int start = 0, end = 6;
+    if (arr.size() < 6) {
         end = arr.size();
     }
     if (request.getParameter("start") != null) {
         start = Integer.parseInt(request.getParameter("start"));
     }
     if (request.getParameter("end") != null) {
-        start = Integer.parseInt(request.getParameter("end"));
+        end = Integer.parseInt(request.getParameter("end"));
     }
     ArrayList<Products> listPage = listPr.getListByPage(arr, start, end);
 %>
@@ -111,20 +114,16 @@
                             <ul>
                                 <% ResultSet rs = (ResultSet) request.getAttribute("rs");
                                     ResultSet rs1 = (ResultSet) request.getAttribute("rsCount");
-
                                     while (rs.next() && rs1.next()) {
                                 %>
-                                <%--                                <% --%>
-                                <%--                                    while (rs1.next()) {--%>
-                                <%--                                %>--%>
+
                                 <li><a href="<%=PathAbsolute.getPath("ShopGrid?type="+rs.getInt(1))%>">
                                     <%=rs.getString(2) %>
 
                                     <span>(<%=rs1.getInt(3) %>)</span>
-                                    <%--                                    <% } %>--%>
+                                    <% } %>
                                 </a></li>
 
-                                <% } %>
                             </ul>
                         </aside>
                         <aside class="wedget__categories pro--range">
@@ -151,6 +150,7 @@
                             <h3 class="wedget__title">Product Tags</h3>
                             <ul>
                                 <% ResultSet rsTag = (ResultSet) request.getAttribute("rs");
+                                    rsTag.first();
                                     while (rsTag.next()) {
                                 %>
 
@@ -158,17 +158,6 @@
                                     <%=rsTag.getString(2) %>
                                 </a></li>
                                 <%--                                <li><a href="#">Business</a></li>--%>
-                                <%--                                <li><a href="#">Cookbooks</a></li>--%>
-                                <%--                                <li><a href="#">Health & Fitness</a></li>--%>
-                                <%--                                <li><a href="#">History</a></li>--%>
-                                <%--                                <li><a href="#">Mystery</a></li>--%>
-                                <%--                                <li><a href="#">Inspiration</a></li>--%>
-                                <%--                                <li><a href="#">Religion</a></li>--%>
-                                <%--                                <li><a href="#">Fiction</a></li>--%>
-                                <%--                                <li><a href="#">Fantasy</a></li>--%>
-                                <%--                                <li><a href="#">Music</a></li>--%>
-                                <%--                                <li><a href="#">Toys</a></li>--%>
-                                <%--                                <li><a href="#">Hoodies</a></li>--%>
                                 <% } %>
                             </ul>
                         </aside>
@@ -209,36 +198,35 @@
                     <div class="tab__container">
                         <div class="shop-grid tab-pane fade show active" id="nav-grid" role="tabpanel">
 
-                            <% for (Products pd : listPage) {
-                            %>
                             <div class="row">
-                                <% ResultSet p = (ResultSet) request.getAttribute("rs1");
-                                    while (p.next()) {
+
+                                <% for (Products pd : listPage) {
                                 %>
                                 <!-- Start Single Product -->
                                 <div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
                                     <div class="product__thumb">
                                         <a class="first__img" href="singleProduct.html">
-                                            <img src="<%=p.getString(3)%>" class="abc" alt="product image"></a>
+                                            <img src="<%=pd.getImage()%>" class="abc" alt="product image"></a>
                                         <a class="second__img animation1" href="singleProduct.html">
-                                            <img src="<%=p.getString(4)%>"class="abc" alt="product image"></a>
+                                            <img src="<%=pd.getImage_hover()%>" class="abc" alt="product image"></a>
                                         <div class="hot__box">
                                             <span class="hot-label">BEST SALLER</span>
                                         </div>
                                     </div>
                                     <div class="product__content content--center">
-                                        <h4><a href="singleProduct.html"><%= p.getString(2)%>
+                                        <h4><a href="singleProduct.html"><%= pd.getName()%>
                                         </a></h4>
                                         <ul class="prize d-flex">
-                                            <li><%=p.getFloat(6)%>
+                                            <li><%=pd.getPrice()%>
                                             </li>
-                                            <li class="old_prize"><%=p.getFloat(5)%>
+                                            <li class="old_prize"><%=pd.getPrice_old()%>
                                             </li>
                                         </ul>
                                         <div class="action">
                                             <div class="actions_inner">
                                                 <ul class="add_to_links">
-                                                    <li><a class="cart" href="cart.html"><i class="fa fa-shopping-bag"></i></a></li>
+                                                    <li><a class="cart" href="cart.html"><i
+                                                            class="fa fa-shopping-bag"></i></a></li>
                                                     <li><a class="wishlist" href="wishList.html"><i
                                                             class="fa fa-heart"></i></a></li>
                                                     <li><a data-toggle="modal" title="Quick View"
@@ -259,31 +247,29 @@
                                     </div>
                                 </div>
                                 <!-- End Single Product -->
-                                <% } %>
+
                                 <% } %>
                             </div>
 
                             <ul class="wn__pagination">
                                 <%--                                <li class="active"><a href="#">1</a></li>--%>
-                                <%--                                <li><a href="#">2</a></li>--%>
-                                <%--                                <li><a href="#">3</a></li>--%>
-                                <%--                                <li><a href="#">4</a></li>--%>
                                 <%--                                <li><a href="#"><i class="zmdi zmdi-chevron-right"></i></a></li>--%>
 
                                 <%
                                     int a, b;
-                                    int soTrang = arr.size() / 3;
-                                    if (arr.size() * 3 < arr.size()) {
+                                    int soTrang = arr.size() / 6;
+                                    if (arr.size() % 6 > 0) {
                                         soTrang++;
                                     }
                                     for (int i = 1; i <= soTrang; i++) {
-                                        a = (i - 1) * 3;
-                                        b = i * 3;
+                                        a = (i - 1) * 6;
+                                        b = i * 6;
                                         if (b > arr.size()) {
                                             b = arr.size();
                                         }
                                 %>
-                                <li><a class="active" href="ShopGrid?start=<%=a%>&end=<%=b%>"><%=listPage.toString()%>
+<%--                                    PathAbsolute.getPath("ShopGrid?type="+i)--%>
+                                <li><a class="active" href="ShopGrid?start=<%=a%>&end=<%=b%>"><%=i%>
                                 </a></li>
                                 <%
                                     }
