@@ -17,10 +17,6 @@ import java.sql.Statement;
 public class Home extends HttpServlet {
 
 
-    public Home() {
-
-    }
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }

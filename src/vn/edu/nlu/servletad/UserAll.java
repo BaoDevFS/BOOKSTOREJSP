@@ -9,10 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+
 @WebServlet("/Admin/UserAll")
 public class UserAll extends HttpServlet {
     GetConnectDatabase getConnectDatabase;
@@ -34,8 +32,8 @@ public class UserAll extends HttpServlet {
         String sql = "Select * from users";
         try {
             connection =getConnectDatabase.getConnectionSql();
-            Statement statement =connection.createStatement();
-            ResultSet resultSet= statement.executeQuery(sql);
+            PreparedStatement statement =connection.prepareStatement(sql);
+            ResultSet resultSet= statement.executeQuery();
             request.setAttribute("list",resultSet);
             RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/userAll.jsp");
             requestDispatcher.forward(request,response);

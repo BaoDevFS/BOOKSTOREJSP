@@ -4,6 +4,7 @@
 <%@ page import="vn.edu.nlu.fit.model.Products" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html class="no-js" lang="zxx">
 <head>
     <meta charset="utf-8">
@@ -35,10 +36,7 @@
 <body>
 <%
     GetListProductType listPr = new GetListProductType();
-<<<<<<< HEAD
-=======
 //    TacGiaDAOImpl tgDAO = new TacGiaDAOImpl();
->>>>>>> dbacf17cb40b7c6a770557862365f083f02b1d02
     ArrayList<Products> arr = listPr.getList();
     int start = 0, end = 3;
     if (arr.size() < 3) {

@@ -9,10 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+
 @WebServlet("/Admin/PackageAll")
 public class PackageAll extends HttpServlet {
     GetConnectDatabase getConnectDatabase;
@@ -30,8 +28,8 @@ public class PackageAll extends HttpServlet {
         String sql = "SELECT t.id,t.image,t.name,t.price,a.name,t.id_type FROM books t JOIN book_authors b ON t.id=b.id_book JOIN authors a ON b.id_author= a.id";
         try {
             connection =getConnectDatabase.getConnectionSql();
-            Statement statement =connection.createStatement();
-            ResultSet resultSet= statement.executeQuery(sql);
+            PreparedStatement statement =connection.prepareStatement(sql);
+            ResultSet resultSet= statement.executeQuery();
             request.setAttribute("rs",resultSet);
         RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/packageAll.jsp");
         requestDispatcher.forward(request,response);

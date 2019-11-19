@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
 <!-- Mirrored from demo.hasthemes.com/boighor-preview/boighor-v3/faq.html by HTTrack Website Copier/3.x
