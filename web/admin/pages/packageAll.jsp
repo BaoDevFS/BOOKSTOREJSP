@@ -101,7 +101,7 @@
                                                 </a>
                                             </td>
                                             <td><%=rs.getString("price")%></td>
-                                            <td><%=rs.getString(4)%></td>
+                                            <td><%=rs.getString(5)%></td>
                                             <td>
                                                 <a href="<%=PathAbsolute.getPath("Admin/PackageEdit?id="+rs.getString("id"))%>"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                             </td>
@@ -111,7 +111,7 @@
                                                 </a>
                                             </td>
                                             <td>
-                                                <a href="<%=PathAbsolute.getPath("Admin/PackageEdit?id="+rs.getString("id"))%>"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                                <a href="<%=PathAbsolute.getPath("Admin/PackageEdit?id="+rs.getString("id")+"&type=products")%>"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                                             </td>
                                         </tr>
                                         <%}%>

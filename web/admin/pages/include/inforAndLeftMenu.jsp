@@ -1,13 +1,16 @@
 <%@ page import="vn.edu.nlu.control.PathAbsolute" %>
+<%@ page import="vn.edu.nlu.fit.model.Users" %>
+<%@ page import="vn.edu.nlu.control.GetUser" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="sb2-1">
     <!--== USER INFO ==-->
     <div class="sb2-12">
         <ul>
-            <li><img src="<%=PathAbsolute.getPath("admin/images/placeholder.jpg")%>" alt="">
+            <li><img src="<%=GetUser.getUser(session).getAvatar()%>" alt="">
             </li>
+
             <li>
-                <h5>Victoria Baker <span> Santa Ana, CA</span></h5>
+                <h5><%=GetUser.getUser(session).getFullname()%><span> <%=GetUser.getUser(session).getEmail()%></span></h5>
             </li>
             <li></li>
         </ul>

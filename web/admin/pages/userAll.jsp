@@ -1,6 +1,5 @@
 <%@ page import="java.sql.ResultSet" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Lava Material - Web Application and Website Multipurpose Admin Panel Template</title>
@@ -101,15 +100,17 @@
                                             <td><%= resultSet.getString("email")%>
                                             </td>
                                             <td>
-                                                <a href="<%= PathAbsolute.getPath("Admin/UserView")%>"><i class="fa fa-eye"
-                                                                                                    aria-hidden="true"></i></a>
+                                                <a href="<%= PathAbsolute.getPath("Admin/UserView?id="+resultSet.getString("id"))%>">
+                                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                                </a>
                                             </td>
                                             <td>
-                                                <a href="<%= PathAbsolute.getPath("Admin/UserEdit")%>"><i
-                                                        class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                                <a href="<%= PathAbsolute.getPath("Admin/UserEdit?id="+resultSet.getString("id"))%>">
+                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                                </a>
                                             </td>
                                             <td>
-                                                <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                                <a href="<%= PathAbsolute.getPath("Admin/Delete?id="+resultSet.getString("id")+"&type=users")%>"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                                             </td>
                                         </tr>
                                         <%}%>

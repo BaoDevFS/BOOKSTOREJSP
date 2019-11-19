@@ -15,7 +15,7 @@ public class GetConnectDatabase {
         String dbName ="book";
         String userName="root";
         String password="";
-        String connectionURL = "jdbc:mysql://" + hostName + ":3306/" + dbName;
+        String connectionURL = "jdbc:mysql://" + hostName + ":3306/" + dbName+"?useUnicode=true&characterEncoding=utf-8";
         Connection conn = DriverManager.getConnection(connectionURL, userName, password);
         return conn;
     }

@@ -72,7 +72,7 @@
                             <td><a href="<%= PathAbsolute.getPath("Admin/PackageCartEdit?id="+rs.getInt("id"))%>" class="sb2-2-1-edit"><i class="fa fa-pencil-square-o"
                                                                                       aria-hidden="true"></i></a>
                             </td>
-                            <td><a href="#" class="sb2-2-1-edit"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                            <td><a href="<%= PathAbsolute.getPath("Admin/Delete?id="+rs.getInt("id")+"&type=booktypes")%>" class="sb2-2-1-edit"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                             </td>
                         </tr>
                         <%}%>

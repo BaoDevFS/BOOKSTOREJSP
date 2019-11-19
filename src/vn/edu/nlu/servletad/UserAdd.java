@@ -1,19 +1,24 @@
 package vn.edu.nlu.servletad;
+import vn.edu.nlu.control.PathAbsolute;
+import vn.edu.nlu.control.SaveImage;
 import vn.edu.nlu.fit.model.Users;
 import vn.edu.nlu.git.database.GetConnectDatabase;
+
+import javax.imageio.ImageIO;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 @WebServlet("/Admin/UserAdd")
+@MultipartConfig
 public class UserAdd extends HttpServlet {
     GetConnectDatabase database;
     public static int EMAIL_EXITS=0;
@@ -26,24 +31,29 @@ public class UserAdd extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
-        response.setContentType("text/html; charset=UTF-8");
+        Part avatar = request.getPart("avatar");
+        SaveImage saveImage = new SaveImage();
+        String avatars= PathAbsolute.getPath("admin/images/user/"+ Paths.get(avatar.getSubmittedFileName()).getFileName().toString());
+        BufferedImage imghoverBuff = ImageIO.read(avatar.getInputStream());
+        saveImage.saveImageForUser(imghoverBuff,Paths.get(avatar.getSubmittedFileName()).getFileName().toString(),request);
         String firstName = request.getParameter("firstname");
         String lastName = request.getParameter("lastname");
         String moblie = request.getParameter("mobile");
         String gender = request.getParameter("gender");
         String address = request.getParameter("address");
-        String password = request.getParameter("password");
+        String password = request.getParameter("password").trim();
         String confirmpassword = request.getParameter("confirmpassword");
-        String email = request.getParameter("email");
+        String email = request.getParameter("email").trim();
         String confirmemail = request.getParameter("confirmemail");
         try {
             Connection connection = database.getConnectionSql();
             Statement statement =connection.createStatement();
             String checkeMail = "SELECT users.email FROM users WHERE email="+"'"+email+"'";
             ResultSet resultSet =statement.executeQuery(checkeMail);
+            System.out.println(firstName+lastName+address);
             if(!resultSet.next()) {
-                String sql = "INSERT INTO users(name,fullname,email,phone,gender,address,password,active )" +
-                        "VALUES(" + "'" + firstName + "','" + firstName + lastName + "','" + email + "','" + moblie + "','" + gender + "','" + address + "','" + password + "'," + 1 + ")";
+                String sql = "INSERT INTO users(avatar,name,fullname,email,phone,gender,address,password,active)" +
+                        "VALUES(" + "'" + avatars + "','"  + firstName + "','" + firstName + lastName + "','" + email + "','" + moblie + "','" + gender + "','" + address + "','" + password + "'," + 1 + ")";
                 int status = statement.executeUpdate(sql);
                 System.out.println(status);
                 request.setAttribute("status",SIGNIN_SUCCESS);
@@ -63,6 +73,9 @@ public class UserAdd extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
         request.setAttribute("status",NOTHING);
         RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/userAdd.jsp");
         requestDispatcher.forward(request,response);

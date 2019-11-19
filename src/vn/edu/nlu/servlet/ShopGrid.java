@@ -41,13 +41,13 @@ public class ShopGrid extends HttpServlet {
             request.setAttribute("rs", rs);
 
             connection = getConnectDatabase.getConnectionSql();
-            sql = ("select booktypes.id,booktypes.name,SUM(products.quantum) from products join  booktypes ON products.id_type=booktypes.id GROUP BY booktypes.id");
+            sql = ("select booktypes.id,booktypes.name,SUM(books.quantum) from books join  booktypes ON books.id_type=booktypes.id GROUP BY booktypes.id");
             PreparedStatement preCount = connection.prepareStatement(sql);
             ResultSet rsCount = preCount.executeQuery();
             request.setAttribute("rsCount", rsCount);
 
             connection = getConnectDatabase.getConnectionSql();
-            sql = "SELECT id, name, image, image_hover, price_old, price FROM products WHERE active = 1";
+            sql = "SELECT id, name, image, image_hover, price_old, price FROM books WHERE active = 1";
             if (type != null) sql += " and id_type = " + type;
             PreparedStatement pre1 = connection.prepareStatement(sql);
             ResultSet rs1 = pre1.executeQuery();

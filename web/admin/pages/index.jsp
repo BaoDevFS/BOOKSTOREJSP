@@ -13,13 +13,13 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700" rel="stylesheet">
 
     <!-- FONT-AWESOME ICON CSS -->
-    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/font-awesome.min.css")%>">
+    <link rel="stylesheet"type="text/css" href="<%=PathAbsolute.getPath("admin/css/font-awesome.min.css")%>">
 
     <!--== ALL CSS FILES ==-->
-    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/style.css")%>">
-    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/mob.css")%>">
-    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/bootstrap.css")%>">
-    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/materialize.css")%>"/>
+    <link rel="stylesheet" type="text/css"href="<%=PathAbsolute.getPath("admin/css/style.css")%>">
+    <link rel="stylesheet" type="text/css"href="<%=PathAbsolute.getPath("admin/css/mob.css")%>">
+    <link rel="stylesheet" type="text/css"href="<%=PathAbsolute.getPath("admin/css/bootstrap.css")%>">
+    <link rel="stylesheet" type="text/css"href="<%=PathAbsolute.getPath("admin/css/materialize.css")%>"/>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -48,13 +48,6 @@
         </div>
         <!--== NOTIFICATION ==-->
         <div class="col-md-2 tab-hide">
-            <!-- <div class="top-not-cen">-->
-            <!-- <a class='waves-effect btn-noti' href='#'><i class="fa fa-commenting-o"
-            aria-hidden="true"></i><span>5</span></a>-->
-            <!-- <a class='waves-effect btn-noti' href='#'><i class="fa fa-envelope-o"
-            aria-hidden="true"></i><span>5</span></a>-->
-            <!-- <a class='waves-effect btn-noti' href='#'><i class="fa fa-tag" aria-hidden="true"></i><span>5</span></a>-->
-            <!-- </div>-->
         </div>
         <!--== MY ACCCOUNT ==-->
         <div class="col-md-2 col-sm-3 col-xs-6">
@@ -65,21 +58,18 @@
 
             <!-- Dropdown Structure -->
             <ul id='top-menu' class='dropdown-content top-menu-sty'>
-                <li><a href="<%= PathAbsolute.getPath("Admin/Setting")%>" class="waves-effect"><i class="fa fa-cogs"
-                                                                               aria-hidden="true"></i>Admin
-                    Setting</a>
+                <li><a href="setting.html" class="waves-effect"><i class="fa fa-cogs" aria-hidden="true"></i>Admin Setting</a>
                 </li>
 
-                <li><a href="<%= PathAbsolute.getPath("Admin/PackageAll")%>" class="waves-effect"><i class="fa fa-umbrella"
-                                                                                   aria-hidden="true"></i> Tour Packages</a>
+                <li><a href="<%=PathAbsolute.getPath("Admin/PackageAll")%>" class="waves-effect"><i class="fa fa-book" aria-hidden="true"></i>Book</a>
                 </li>
-
-                <li><a href="<%= PathAbsolute.getPath("Admin/UserAdd")%>" class="waves-effect"><i class="fa fa-user-plus"
-                                                                                aria-hidden="true"></i>
-                    Add New User</a>
+                <li><a href="<%=PathAbsolute.getPath("Admin/UserAll")%>" class="waves-effect"><i class="fa fa-user"
+                                                                                                 aria-hidden="true"></i> User</a>
+                </li>
+                <li><a href="#" class="waves-effect"><i class="fa fa-undo" aria-hidden="true"></i> Backup Data</a>
                 </li>
                 <li class="divider"></li>
-                <li><a href="<%= PathAbsolute.getPath("Admin/LoginAdmin")%>" class="ho-dr-con-last waves-effect"><i class="fa fa-sign-in" aria-hidden="true"></i>Logout</a>
+                <li><a href="<%=PathAbsolute.getPath("Admin/Logout")%>" class="ho-dr-con-last waves-effect"><i class="fa fa-sign-in" aria-hidden="true"></i>Logout</a>
                 </li>
             </ul>
         </div>

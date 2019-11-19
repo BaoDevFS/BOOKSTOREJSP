@@ -16,9 +16,15 @@ import java.sql.Statement;
 @WebServlet("/Admin/DiscountEdit")
 public class DiscountEdit extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
         RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/discountEdit.jsp");
         requestDispatcher.forward(request,response);
     }

@@ -1,15 +1,18 @@
 package vn.edu.nlu.servletad;
-import vn.edu.nlu.fit.model.Users;
+
 import vn.edu.nlu.git.database.GetConnectDatabase;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 @WebServlet("/Admin/PackageCartEdit")
 public class PackageCartEdit extends HttpServlet {
@@ -23,17 +26,26 @@ public class PackageCartEdit extends HttpServlet {
          getConnect= new GetConnectDatabase();
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        String name = (String) request.getAttribute("name");
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
+        String name = (String) request.getParameter("name");
         try {
             con = getConnect.getConnectionSql();
-        Statement statement = con.createStatement();
-        String sql = "INSERT INTO booktypes(name) values ("+name+")where id="+id;
-        int a=statement.executeUpdate(sql);
+            String sql = "UPDATE booktypes set NAME= ? where booktypes.id =?";
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setString(1,name);
+            pre.setString(2,id);
+            int a=pre.executeUpdate();
+            System.out.println(a);
         if(a>0){
             request.setAttribute("status",SIGNIN_SUCCESS);
+            RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/packageCartEdit.jsp");
+            requestDispatcher.forward(request,response);
         }else{
             request.setAttribute("status",EMAIL_EXITS);
+            RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/packageCartEdit.jsp");
+            requestDispatcher.forward(request,response);
         }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -42,6 +54,9 @@ public class PackageCartEdit extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
         id = request.getParameter("id");
         request.setAttribute("status",NOTHING);
         try {

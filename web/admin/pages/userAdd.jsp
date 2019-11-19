@@ -1,4 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="vn.edu.nlu.control.PathAbsolute" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <html lang="en">
 <!-- Mirrored from rn53themes.net/themes/demo/lava-admin/userAdd.html by HTTrack Website Copier/3.x
 [XR&CO'2014], Wed, 23 Oct 2019 13:21:50 GMT -->
@@ -32,10 +33,12 @@
 <body>
 <!--== MAIN CONTRAINER ==-->
 <%@ include file="include/header.jsp" %>
+<%--<jsp:include page="/Admin/Header"/>--%>
 <!--== BODY CONTNAINER ==-->
 <div class="container-fluid sb2">
     <div class="row">
         <%@ include file="include/inforAndLeftMenu.jsp" %>
+<%--    <jsp:include page="/Admin/InforAndLeftMenu"/>--%>
         <%! public String getStatus(int i) {
             System.out.println(i);
             if(i==1){
@@ -64,7 +67,7 @@
                                 <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
                             </div>
                             <div class="tab-inn">
-                                <form action="<% PathAbsolute.getPath("Admin/UserAdd");%>"  method="post">
+                                <form action="<% PathAbsolute.getPath("Admin/UserAdd");%>"  enctype="multipart/form-data" method="post">
                                     <div class="row">
                                         <div class="input-field col s6">
                                             <input id="first_name" name="firstname" type="text" class="validate">
@@ -91,7 +94,7 @@
                                     <div class="row file-field">
                                         <div class="btn">
                                             <span>File</span>
-                                            <input type="file" name="file" accept="image/*">
+                                            <input type="file" name="avatar" accept="image/*">
                                         </div>
                                         <div class="file-path-wrapper">
                                             <input class="file-path validate" type="text"
@@ -164,14 +167,15 @@
 <script src="admin/js/bootstrap.min.js"></script>
 <script src="admin/js/materialize.min.js"></script>
 <script src="admin/js/custom.js"></script>
-<script src="admin/js/show.js"></script>
-<script >
-    <%= getStatus((int)request.getAttribute("status"))%>
-</script>
+
 <script src="<%=PathAbsolute.getPath("admin/js/jquery.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/bootstrap.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/materialize.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/custom.js")%>"></script>
+<script src="<%=PathAbsolute.getPath("admin/js/show.js")%>"></script>
+<script >
+    <%= getStatus((int)request.getAttribute("status"))%>
+</script>
 </body>
 
 
