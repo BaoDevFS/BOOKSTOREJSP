@@ -76,10 +76,11 @@
                             </div>
                             <div class="row">
                                 <div class="input-field col s6">
+                                    <img style="width: 300px;height: 300px" id="main" src="<%=PathAbsolute.getPath("admin/images/imgdefault.png")%>" alt="">
                                     <div class="file-field">
                                         <div class="btn">
                                             <span>File</span>
-                                            <input type="file" name="image" accept="image/*">
+                                            <input type="file" id="imgmain" name="image" accept="image/*">
                                         </div>
                                         <div class="file-path-wrapper">
                                             <input class="file-path validate" type="text"
@@ -88,10 +89,11 @@
                                     </div>
                                 </div>
                                 <div class="input-field col s6">
+                                    <img style="width: 300px;height: 300px" id="hover" src="<%=PathAbsolute.getPath("admin/images/imgdefault.png")%>" alt="">
                                 <div class="file-field">
                                     <div class="btn">
                                         <span>File</span>
-                                        <input type="file" name="imagehover" accept="image/*">
+                                        <input type="file" id="imghover" name="imagehover" accept="image/*">
                                     </div>
                                     <div class="file-path-wrapper">
                                         <input class="file-path validate" type="text"

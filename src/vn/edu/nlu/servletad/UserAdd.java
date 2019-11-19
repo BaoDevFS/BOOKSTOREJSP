@@ -39,6 +39,7 @@ public class UserAdd extends HttpServlet {
         String moblie = request.getParameter("mobile");
         String gender = request.getParameter("gender");
         String address = request.getParameter("address");
+        String group =request.getParameter("group");
         String password = request.getParameter("password").trim();
         String confirmpassword = request.getParameter("confirmpassword");
         String email = request.getParameter("email").trim();
@@ -51,8 +52,8 @@ public class UserAdd extends HttpServlet {
             ResultSet resultSet =statement.executeQuery();
             System.out.println(firstName+lastName+address);
             if(!resultSet.next()) {
-                String sql = "INSERT INTO users(avatar,name,fullname,email,phone,gender,address,password,active)" +
-                        "VALUES(?,?,?,?,?,?,?,?,?)";
+                String sql = "INSERT INTO users(avatar,name,fullname,email,phone,gender,address,password,active,group)" +
+                        "VALUES(?,?,?,?,?,?,?,?,?,?)";
                 PreparedStatement pr = connection.prepareStatement(sql);
                 pr.setString(1,avatars);
                 pr.setString(2,firstName);
@@ -63,6 +64,7 @@ public class UserAdd extends HttpServlet {
                 pr.setString(7,address);
                 pr.setString(8,password);
                 pr.setInt(9,1);
+                pr.setInt(10,Integer.parseInt(group));
                 int status = pr.executeUpdate();
                 if(status==1) {
                     request.setAttribute("status", SIGNIN_SUCCESS);

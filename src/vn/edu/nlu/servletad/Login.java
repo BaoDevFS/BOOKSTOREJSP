@@ -27,7 +27,7 @@ public class Login extends HttpServlet {
             PreparedStatement pr = connection.prepareStatement(sql);
             pr.setString(1,email);
             pr.setString(2,password);
-            pr.setInt(3,0);
+            pr.setInt(3,1);
             ResultSet st= pr.executeQuery();
             Users admin = new Users();
             if (st.next()){
