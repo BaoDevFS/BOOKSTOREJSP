@@ -67,4 +67,9 @@ public class GetListProductType {
         return list;
     }
 
+    public static void main(String[] args) {
+        GetListProductType g= new GetListProductType();
+        ArrayList<Products> l= g.getList();
+        System.out.println(g.getListByPage(l,3,6));
+    }
 }
