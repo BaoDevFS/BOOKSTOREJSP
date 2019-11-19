@@ -37,8 +37,18 @@
 <body>
 <%
     GetListProductType listPr = new GetListProductType();
-    TacGiaDAOImpl tgDAO = new TacGiaDAOImpl();
     ArrayList<Products> arr = listPr.getList();
+    int start = 0, end = 3;
+    if (arr.size() < 3) {
+        end = arr.size();
+    }
+    if (request.getParameter("start") != null) {
+        start = Integer.parseInt(request.getParameter("start"));
+    }
+    if (request.getParameter("end") != null) {
+        start = Integer.parseInt(request.getParameter("end"));
+    }
+    ArrayList<Products> listPage = listPr.getListByPage(arr, start, end);
 %>
 <!--[if lte IE 9]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
@@ -53,6 +63,7 @@
     <%@ include file="include/header.jsp" %>
     <!-- //Header -->
     <!-- Start Search Popup -->
+
     <div class="box-search-content search_active block-bg close__top">
         <form id="search_mini_form" class="minisearch" action="#">
             <div class="field__search">
@@ -193,7 +204,10 @@
                     </div>
                     <div class="tab__container">
                         <div class="shop-grid tab-pane fade show active" id="nav-grid" role="tabpanel">
+
                             <div class="row">
+                                <% for (Products pd : listPage) {
+                                %>
                                 <% ResultSet p = (ResultSet) request.getAttribute("rs1");
                                     while (p.next()) {
                                 %>
@@ -245,7 +259,9 @@
                                 </div>
                                 <!-- End Single Product -->
                                 <% } %>
+                                <% } %>
                             </div>
+
                             <ul class="wn__pagination">
                                 <%--                                <li class="active"><a href="#">1</a></li>--%>
                                 <%--                                <li><a href="#">2</a></li>--%>
@@ -253,18 +269,24 @@
                                 <%--                                <li><a href="#">4</a></li>--%>
                                 <%--                                <li><a href="#"><i class="zmdi zmdi-chevron-right"></i></a></li>--%>
 
-                                    <%
-                                        int soTrang = arr.size() / 8;
-                                        if (arr.size() % 8 != 0) {
-                                            soTrang++;
+                                <%
+                                    int a, b;
+                                    int soTrang = arr.size() / 3;
+                                    if (arr.size() * 3 < arr.size()) {
+                                        soTrang++;
+                                    }
+                                    for (int i = 1; i <= soTrang; i++) {
+                                        a = (i - 1) * 3;
+                                        b = i * 3;
+                                        if (b > arr.size()) {
+                                            b = arr.size();
                                         }
-                                        for (int i = 1; i <= soTrang; i++) {
-                                    %>
-                                    <li><a class="active" href="trangchu.jsp?page=<%=i%>"><%=i%>
-                                    </a></li>
-                                    <%
-                                        }
-                                    %>
+                                %>
+                                <li><a class="active" href="ShopGrid?start=<%=a%>&end=<%=b%>"><%=i%>
+                                </a></li>
+                                <%
+                                    }
+                                %>
 
                             </ul>
                         </div>

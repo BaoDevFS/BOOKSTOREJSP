@@ -17,6 +17,7 @@ import java.sql.*;
 public class ShopGrid extends HttpServlet {
     GetConnectDatabase getConnectDatabase;
     Connection connection;
+    String id_page;
 
     public ShopGrid() {
         this.getConnectDatabase = new GetConnectDatabase();
@@ -30,6 +31,7 @@ public class ShopGrid extends HttpServlet {
 //        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/shopGrid.jsp");
 //        requestDispatcher.forward(request,response);
 //        connection = null;
+        id_page = request.getParameter("page");
         String type = request.getParameter("type");
         try {
             connection = getConnectDatabase.getConnectionSql();
@@ -50,6 +52,12 @@ public class ShopGrid extends HttpServlet {
             PreparedStatement pre1 = connection.prepareStatement(sql);
             ResultSet rs1 = pre1.executeQuery();
             request.setAttribute("rs1", rs1);
+
+            connection = getConnectDatabase.getConnectionSql();
+            sql = "select * from products";
+            PreparedStatement pre2 = connection.prepareStatement(sql);
+            ResultSet rs2 = pre2.executeQuery();
+            request.setAttribute("rsPage", rs2);
 
             request.getRequestDispatcher("/Public/pages/shopGrid.jsp").forward(request, response);
         } catch (SQLException e) {

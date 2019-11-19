@@ -59,5 +59,12 @@ public class GetListProductType {
         }
         return arr;
     }
+    public ArrayList<Products> getListByPage(ArrayList<Products> arr, int start, int end) {
+        ArrayList<Products> list = new ArrayList<>();
+        for (int i = start; i < end; i++) {
+            list.add(arr.get(i));
+        }
+        return list;
+    }
 
 }
