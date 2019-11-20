@@ -47,17 +47,11 @@ public class ShopGrid extends HttpServlet {
             request.setAttribute("rsCount", rsCount);
 
             connection = getConnectDatabase.getConnectionSql();
-            sql = "SELECT id, name, image, image_hover, price_old, price FROM books WHERE active = 1";
+            sql = "SELECT * FROM books WHERE active = 1";
             if (type != null) sql += " and id_type = " + type;
             PreparedStatement pre1 = connection.prepareStatement(sql);
             ResultSet rs1 = pre1.executeQuery();
             request.setAttribute("rs1", rs1);
-
-            connection = getConnectDatabase.getConnectionSql();
-            sql = "select * from products";
-            PreparedStatement pre2 = connection.prepareStatement(sql);
-            ResultSet rs2 = pre2.executeQuery();
-            request.setAttribute("rsPage", rs2);
 
             request.getRequestDispatcher("/Public/pages/shopGrid.jsp").forward(request, response);
         } catch (SQLException e) {
