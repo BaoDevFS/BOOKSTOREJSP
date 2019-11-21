@@ -12,7 +12,7 @@ public class GetConnectDatabase {
             e.printStackTrace();
         }
         String hostName ="localhost";
-        String dbName ="book";
+        String dbName ="bqg";
         String userName="root";
         String password="";
         String connectionURL = "jdbc:mysql://" + hostName + ":3306/" + dbName+"?useUnicode=true&characterEncoding=utf-8";
