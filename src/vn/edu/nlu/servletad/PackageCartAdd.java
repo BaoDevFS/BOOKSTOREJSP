@@ -36,7 +36,7 @@ public class PackageCartAdd extends HttpServlet {
             PreparedStatement statement = con.prepareStatement(sql);
             statement.setString(1,name);
             statement.setInt(2,1);
-            int a = statement.executeUpdate(sql);
+            int a = statement.executeUpdate();
             if (a > 0) {
                 request.setAttribute("status", SIGNIN_SUCCESS);
                 RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/packageCartAdd.jsp");

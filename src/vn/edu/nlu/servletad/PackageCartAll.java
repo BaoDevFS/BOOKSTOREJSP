@@ -40,8 +40,7 @@ public class PackageCartAll extends HttpServlet {
             requestDispatcher.forward(request,response);
         } catch (SQLException e) {
             e.printStackTrace();
-            RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/packageCartAll.jsp");
-            requestDispatcher.forward(request,response);
+            response.sendRedirect(request.getContextPath()+"/Error404");
         }
 
     }

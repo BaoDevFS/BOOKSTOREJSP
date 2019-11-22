@@ -47,6 +47,10 @@
                         </li>
                         <li><a href="<%= PathAbsolute.getPath("Admin/PackageCartAdd")%>">Add Product Categories</a>
                         </li>
+                        <li><a href="<%= PathAbsolute.getPath("Admin/AuthorAll")%>">All Author</a>
+                        </li>
+                        <li><a href="<%= PathAbsolute.getPath("Admin/AuthorAdd")%>">Add New Author</a>
+                        </li>
                     </ul>
                 </div>
             </li>

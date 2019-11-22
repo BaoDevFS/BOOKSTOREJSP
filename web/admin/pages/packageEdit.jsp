@@ -145,7 +145,7 @@
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <textarea id="textarea1" name="description" content="<%=resultSet.getString(6)%>" value="<%=resultSet.getString(6)%>"class="materialize-textarea"><%=resultSet.getString(6)%></textarea>
+                                    <textarea id="textarea1" name="description" class="materialize-textarea"><%=resultSet.getString("description")%></textarea>
                                     <label for="textarea1">Product Descriptions:</label>
                                 </div>
                             </div>
@@ -162,11 +162,11 @@
                             </div>
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input id="Package-auth" name="year" type="text" value="<%=resultSet.getInt(8)%>" class="validate">
+                                    <input id="Package-auth" name="year" type="text" value="<%=resultSet.getInt("year")%>" class="validate">
                                     <label for="Package-auth">Public Year</label>
                                 </div>
                                 <div class="input-field col s6">
-                                    <input id="price" name="price" type="text" value="<%=resultSet.getString(4)%>"class="validate">
+                                    <input id="price" name="price" type="text" value="<%=resultSet.getString("price")%>"class="validate">
                                     <label for="Package-auth">Price</label>
                                 </div>
                             </div>

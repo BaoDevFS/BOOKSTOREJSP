@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/font-awesome.min.css")%>">
 
     <!--== ALL CSS FILES ==-->
+    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/jquery.dataTables.min.css")%>"/>
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/style.css")%>">
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/mob.css")%>">
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/bootstrap.css")%>">
@@ -70,52 +71,118 @@
 
                             </div>
                             <div class="tab-inn">
-                                <div class="table-responsive table-desi">
-                                    <table class="table table-hover">
-                                        <thead>
-                                        <tr>
-                                            <th>User</th>
-                                            <th>Name</th>
-                                            <th>Phone</th>
-                                            <th>Email</th>
-                                            <th>View</th>
-                                            <th>Edit</th>
-                                            <th>Delete</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <% ResultSet resultSet = (ResultSet) request.getAttribute("list");
-                                            while (resultSet.next()) {
-                                        %>
-                                        <tr>
-                                            <td><span class="list-img"><img src="<%= resultSet.getString("avatar")%>"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name"><%= resultSet.getString("name")%></span><span
-                                                    class="list-enq-city"><%= resultSet.getString("address")%></span></a>
-                                            </td>
-                                            <td><%= resultSet.getString("phone")%>
-                                            </td>
-                                            <td><%= resultSet.getString("email")%>
-                                            </td>
-                                            <td>
-                                                <a href="<%= PathAbsolute.getPath("Admin/UserView?id="+resultSet.getString("id"))%>">
-                                                    <i class="fa fa-eye" aria-hidden="true"></i>
-                                                </a>
-                                            </td>
-                                            <td>
-                                                <a href="<%= PathAbsolute.getPath("Admin/UserEdit?id="+resultSet.getString("id"))%>">
-                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                                                </a>
-                                            </td>
-                                            <td>
-                                                <a href="<%= PathAbsolute.getPath("Admin/Delete?id="+resultSet.getString("id")+"&type=users")%>"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                            </td>
-                                        </tr>
-                                        <%}%>
-                                        </tbody>
-                                    </table>
+                                <%--                                <div class="table-responsive table-desi">--%>
+                                <%--                                    <table class="table table-hover">--%>
+                                <%--                                        <thead>--%>
+                                <%--                                        <tr>--%>
+                                <%--                                            <th>User</th>--%>
+                                <%--                                            <th>Name</th>--%>
+                                <%--                                            <th>Phone</th>--%>
+                                <%--                                            <th>Email</th>--%>
+                                <%--                                            <th>View</th>--%>
+                                <%--                                            <th>Edit</th>--%>
+                                <%--                                            <th>Delete</th>--%>
+                                <%--                                        </tr>--%>
+                                <%--                                        </thead>--%>
+                                <%--                                        <tbody>--%>
+                                <%--                                        <% ResultSet resultSet = (ResultSet) request.getAttribute("list");--%>
+                                <%--                                            while (resultSet.next()) {--%>
+                                <%--                                        %>--%>
+                                <%--                                        <tr>--%>
+                                <%--                                            <td><span class="list-img"><img src="<%= resultSet.getString("avatar")%>"--%>
+                                <%--                                                                            alt=""></span>--%>
+                                <%--                                            </td>--%>
+                                <%--                                            <td><a href="#"><span--%>
+                                <%--                                                    class="list-enq-name"><%= resultSet.getString("name")%></span><span--%>
+                                <%--                                                    class="list-enq-city"><%= resultSet.getString("address")%></span></a>--%>
+                                <%--                                            </td>--%>
+                                <%--                                            <td><%= resultSet.getString("phone")%>--%>
+                                <%--                                            </td>--%>
+                                <%--                                            <td><%= resultSet.getString("email")%>--%>
+                                <%--                                            </td>--%>
+                                <%--                                            <td>--%>
+                                <%--                                                <a href="<%= PathAbsolute.getPath("Admin/UserView?id="+resultSet.getString("id"))%>">--%>
+                                <%--                                                    <i class="fa fa-eye" aria-hidden="true"></i>--%>
+                                <%--                                                </a>--%>
+                                <%--                                            </td>--%>
+                                <%--                                            <td>--%>
+                                <%--                                                <a href="<%= PathAbsolute.getPath("Admin/UserEdit?id="+resultSet.getString("id"))%>">--%>
+                                <%--                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>--%>
+                                <%--                                                </a>--%>
+                                <%--                                            </td>--%>
+                                <%--                                            <td>--%>
+                                <%--                                                <a href="<%= PathAbsolute.getPath("Admin/Delete?id="+resultSet.getString("id")+"&type=users")%>"><i class="fa fa-trash-o" aria-hidden="true"></i></a>--%>
+                                <%--                                            </td>--%>
+                                <%--                                        </tr>--%>
+                                <%--                                        <%}%>--%>
+                                <%--                                        </tbody>--%>
+                                <%--                                    </table>--%>
+                                <%--                                </div>--%>
+                                <div class="panel-wrapper collapse in">
+                                    <div class="panel-body">
+                                        <div class="table-wrap">
+                                            <div class="table-responsive">
+                                                <table id="datable_1" class="table table-hover display  pb-30">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>User</th>
+                                                        <th>Name</th>
+                                                        <th>Phone</th>
+                                                        <th>Email</th>
+                                                        <th>View</th>
+                                                        <th>Edit</th>
+                                                        <th>Delete</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tfoot>
+                                                    <tr>
+                                                        <th>User</th>
+                                                        <th>Name</th>
+                                                        <th>Phone</th>
+                                                        <th>Email</th>
+                                                        <th>View</th>
+                                                        <th>Edit</th>
+                                                        <th>Delete</th>
+                                                    </tr>
+                                                    </tfoot>
+                                                    <tbody>
+                                                    <% ResultSet resultSet = (ResultSet) request.getAttribute("list");
+                                                        while (resultSet.next()) {
+                                                    %>
+                                                    <tr>
+                                                        <td><span class="list-img"><img
+                                                                src="<%= resultSet.getString("avatar")%>"
+                                                                alt=""></span>
+                                                        </td>
+                                                        <td><a href="#"><span
+                                                                class="list-enq-name"><%= resultSet.getString("name")%></span><span
+                                                                class="list-enq-city"><%= resultSet.getString("address")%></span></a>
+                                                        </td>
+                                                        <td><%= resultSet.getString("phone")%>
+                                                        </td>
+                                                        <td><%= resultSet.getString("email")%>
+                                                        </td>
+                                                        <td>
+                                                            <a href="<%= PathAbsolute.getPath("Admin/UserView?id="+resultSet.getString("id"))%>">
+                                                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            <a href="<%= PathAbsolute.getPath("Admin/UserEdit?id="+resultSet.getString("id"))%>">
+                                                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            <a href="<%= PathAbsolute.getPath("Admin/Delete?id="+resultSet.getString("id")+"&type=users")%>"><i
+                                                                    class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <%}%>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -150,7 +217,18 @@
 <script src="<%=PathAbsolute.getPath("admin/js/bootstrap.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/materialize.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/custom.js")%>"></script>
-
+<script src="<%=PathAbsolute.getPath("admin/js/jquery.dataTables.min.js")%>"></script>
+<script>
+    $(document).ready(function () {
+        "use strict";
+        $('#datable_1').DataTable({
+            'columnDefs': [ {
+                'targets': [4,5,6], // column index (start from 0)
+                'orderable': false, // set orderable false for selected columns
+            }]});
+        $('#datable_2').DataTable({"lengthChange": false});
+    });
+</script>
 </body>
 
 

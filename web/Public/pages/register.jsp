@@ -10,20 +10,10 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" href="Public/css/bootstrap.min.css">
     <!--===============================================================================================-->
-    <!--===============================================================================================-->
-    <!-- <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">-->
-    <!--===============================================================================================-->
-    <!-- <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">-->
-    <!--===============================================================================================-->
-    <!-- <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">-->
-    <!--===============================================================================================-->
-    <!-- <link rel="stylesheet" type="text/css" href="css/util.css">-->
     <link rel="stylesheet" type="text/css" href="Public/css/main.css">
     <!-- <link rel="stylesheet" href="Public/font-awesome-4.7.0/css/font-awesome.css">-->
     <link rel="stylesheet" href="Public/css/plugins/font-awesome.min.css">
     <script src="Public/js/bootstrap.min.js"></script>
-
-
     <!--===============================================================================================-->
 </head>
 <body>

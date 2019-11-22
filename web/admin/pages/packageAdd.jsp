@@ -131,6 +131,12 @@
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
+                                    <input id="author" name="author" type="text" class="validate">
+                                    <label for="Package-auth">Author</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
                                     <input type="submit" class="waves-effect waves-light btn-large" value="Submit">
                                 </div>
                             </div>

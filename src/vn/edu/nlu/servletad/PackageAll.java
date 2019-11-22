@@ -25,7 +25,8 @@ public class PackageAll extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
-        String sql = "SELECT t.id,t.image,t.name,t.price,a.name,t.id_type FROM books t JOIN book_authors b ON t.id=b.id_book JOIN authors a ON b.id_author= a.id";
+//        String sql = "SELECT t.id,t.image,t.name,t.price,a.name,t.id_type FROM books t JOIN book_authors b ON t.id=b.id_book JOIN authors a ON b.id_author= a.id";
+        String sql ="select * from books";
         try {
             connection =getConnectDatabase.getConnectionSql();
             PreparedStatement statement =connection.prepareStatement(sql);
