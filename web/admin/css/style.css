@@ -457,9 +457,12 @@ a:hover {
 /* 2.LEFT MENU
 /*-------------------------------------------------------*/
 
+/*.left-sub-menu {} .left-sub-menu ul {*/
+/*    padding: 0px 0px 10px 40px;*/
+/*}*/
 .left-sub-menu {} .left-sub-menu ul {
-    padding: 0px 0px 10px 40px;
-}
+                      padding: 0px 0px 10px 0px;
+  }
 .left-sub-menu ul li {
     list-style-type: none;
 }

@@ -4,7 +4,7 @@
 <!-- Mirrored from rn53themes.net/themes/demo/lava-admin/userEdit.html by HTTrack Website Copier/3.x
 [XR&CO'2014], Wed, 23 Oct 2019 13:22:03 GMT -->
 <head>
-    <title>Lava Material - Web Application and Website Multipurpose Admin Panel Template</title>
+    <title>User Edit</title>
     <!--== META TAGS ==-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -40,9 +40,9 @@
         <div class="sb2-2">
             <div class="sb2-2-2">
                 <ul>
-                    <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                    <li><a href="<%=PathAbsolute.getPath("Admin/Index")%>"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
                     </li>
-                    <li class="active-bre"><a href="#"> Ui Form</a>
+                    <li class="active-bre"><a href="#"> User Edit</a>
                     </li>
                 </ul>
             </div>
@@ -52,20 +52,30 @@
                         <div class="box-inn-sp">
                             <div class="inn-title">
                                 <h4>Edit User Details</h4>
-                                <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
                             </div>
                             <div class="tab-inn">
-                                <form action="<% PathAbsolute.getPath("Admin/UserEdit");%>"  method="post">
+                                <form action="<% PathAbsolute.getPath("Admin/UserEdit");%>" enctype="multipart/form-data" method="post">
                                     <%ResultSet rs = (ResultSet) request.getAttribute("users");
                                     while (rs.next()){%>
                                     <div class="row file-field">
-                                        <div class="btn">
-                                            <span>File</span>
-                                            <input type="file" name="file" accept="image/*">
+                                    <div class="input-field col s6">
+                                        <div class="sb2-12">
+                                            <ul>
+                                                <li>
+                                                    <img style="width: 100px;height: 100px" id="avatar" src="<%=rs.getString("avatar")%>" alt="">
+                                                </li>
+                                            </ul>
                                         </div>
-                                        <div class="file-path-wrapper">
-                                            <input class="file-path validate" type="text"
-                                                   placeholder="Upload avatar">
+                                    </div>
+                                        <div class="input-field col s6">
+                                            <div class="btn">
+                                                <span>File</span>
+                                                <input type="file" id="file" name="avatar" accept="image/*">
+                                            </div>
+                                            <div class="file-path-wrapper">
+                                                <input class="file-path validate" type="text"
+                                                       placeholder="Upload avatar">
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="row">

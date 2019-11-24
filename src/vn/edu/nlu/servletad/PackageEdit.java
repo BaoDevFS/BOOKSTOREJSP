@@ -1,19 +1,27 @@
 package vn.edu.nlu.servletad;
 
 import vn.edu.nlu.control.GetListProductType;
+import vn.edu.nlu.control.PathAbsolute;
+import vn.edu.nlu.control.SaveImage;
 import vn.edu.nlu.fit.model.Products;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
+import javax.imageio.ImageIO;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.sql.*;
 
 @WebServlet("/Admin/PackageEdit")
+@MultipartConfig
 public class PackageEdit extends HttpServlet {
     GetConnectDatabase getConnectDatabase;
     Connection connection;
@@ -25,6 +33,12 @@ public class PackageEdit extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
+        Part avatar = request.getPart("avatar");
+        SaveImage saveImage = new SaveImage();
+        String avatars= PathAbsolute.getPath("Public/images/books/"+ Paths.get(avatar.getSubmittedFileName()).getFileName().toString());
+        BufferedImage imghoverBuff = ImageIO.read(avatar.getInputStream());
+        saveImage.saveImageForBook(imghoverBuff,Paths.get(avatar.getSubmittedFileName()).getFileName().toString(),request);
+
         String name = request.getParameter("name");
         String description = request.getParameter("description");
         String year = request.getParameter("year");
@@ -35,7 +49,7 @@ public class PackageEdit extends HttpServlet {
             String sql="UPDATE books SET name=?,image=?,description=?,price=?,year=?,price_old=? where id="+id;
             PreparedStatement pre = connection.prepareStatement(sql);
             pre.setString(1,name);
-            pre.setString(2,"");
+            pre.setString(2,avatars);
             pre.setString(3,description);
             pre.setString(4,price);
             pre.setInt(5,Integer.parseInt(year));
@@ -57,12 +71,17 @@ public class PackageEdit extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
-        id= Integer.parseInt(request.getParameter("id"));
+        try {
+            id = Integer.parseInt(request.getParameter("id"));
+        }catch (NumberFormatException e){
+            e.printStackTrace();
+            response.sendRedirect(request.getContextPath()+"/Admin/PackageAll");
+        }
         try {
             String sql = "SELECT * FROM books  WHERE id="+id;
             connection = getConnectDatabase.getConnectionSql();
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(sql);
+            PreparedStatement statement = connection.prepareStatement(sql);
+            ResultSet resultSet = statement.executeQuery();
             request.setAttribute("rs", resultSet);
 
             ResultSet resultSet2 =GetListProductType.getListProductType();
@@ -74,11 +93,12 @@ public class PackageEdit extends HttpServlet {
                 break;
                 }
             }
+            RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/packageEdit.jsp");
+            requestDispatcher.forward(request, response);
         }catch (SQLException e){
             e.printStackTrace();
             response.sendRedirect(request.getContextPath()+"/Error404");
         }
-        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/packageEdit.jsp");
-        requestDispatcher.forward(request, response);
+
     }
 }

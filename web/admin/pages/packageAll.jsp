@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/font-awesome.min.css")%>">
 
     <!--== ALL CSS FILES ==-->
-    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/jquery.dataTables.min.css")%>"/>
-    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/style.css")%>">
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/mob.css")%>">
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/bootstrap.css")%>">
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/materialize.css")%>"/>
+    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/jquery.dataTables.min.css")%>"/>
+    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/style.css")%>">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -123,16 +123,16 @@
                                                         <td><%=rs.getString("author")%>
                                                         </td>
                                                         <td>
-                                                            <a href="<%=PathAbsolute.getPath("Admin/PackageEdit?id="+rs.getString("id"))%>"><i
+                                                            <a class="sb2-2-1-edit" href="<%=PathAbsolute.getPath("SingleProduct?id="+rs.getString("id"))%>"><i
                                                                     class="fa fa-eye" aria-hidden="true"></i></a>
                                                         </td>
                                                         <td>
-                                                            <a href="<%=PathAbsolute.getPath("Admin/PackageEdit?id="+rs.getString("id"))%>">
+                                                            <a class="sb2-2-1-edit"href="<%=PathAbsolute.getPath("Admin/PackageEdit?id="+rs.getString("id"))%>">
                                                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                                             </a>
                                                         </td>
                                                         <td>
-                                                            <a href="<%=PathAbsolute.getPath("Admin/PackageEdit?id="+rs.getString("id")+"&type=products")%>"><i
+                                                            <a class="sb2-2-1-edit" href="<%=PathAbsolute.getPath("Admin/PackageEdit?id="+rs.getString("id")+"&type=products")%>"><i
                                                                     class="fa fa-trash-o" aria-hidden="true"></i></a>
                                                         </td>
                                                     </tr>

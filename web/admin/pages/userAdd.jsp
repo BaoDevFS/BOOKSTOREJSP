@@ -1,5 +1,6 @@
 <%@ page import="vn.edu.nlu.control.PathAbsolute" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+
 <html lang="en">
 <!-- Mirrored from rn53themes.net/themes/demo/lava-admin/userAdd.html by HTTrack Website Copier/3.x
 [XR&CO'2014], Wed, 23 Oct 2019 13:21:50 GMT -->
@@ -54,7 +55,6 @@
                         <div class="box-inn-sp">
                             <div class="inn-title">
                                 <h4>Add New User</h4>
-                                <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
                             </div>
                             <div class="tab-inn">
                                 <form action="<% PathAbsolute.getPath("Admin/UserAdd");%>"  enctype="multipart/form-data" method="post">

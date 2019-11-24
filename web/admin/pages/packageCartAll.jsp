@@ -17,10 +17,10 @@
 
     <!--== ALL CSS FILES ==-->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.20/af-2.3.4/datatables.min.css"/>
-     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/style.css")%>">
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/bootstrap.css")%>">
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/materialize.css")%>"/>
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/mob.css")%>">
+    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/style.css")%>">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/mob.css")%>">
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/bootstrap.css")%>">
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/materialize.css")%>"/>
+    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/impot.css")%>"/>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -58,22 +59,33 @@
                             <div class="tab-inn">
                                 <form>
                                     <div class="row">
+                                    <div class="input-field col s12">
+                                        <div class="sb2-12">
+                                            <ul>
+                                                <li>
+                                                    <img style="width: 100px;height: 100px" id="avatar" src="<%=rs.getString("avatar")%>" alt="">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="input-field col s6">
-                                            <input id="first_name" type="text" value="<%=rs.getString("name")%>" class="validate">
+                                            <input id="first_name" disabled="disabled" type="text" value="<%=rs.getString("name")%>" class="validate">
                                             <label for="first_name">First Name</label>
                                         </div>
                                         <div class="input-field col s6">
-                                            <input id="last_name" type="text" value="<%=rs.getString("fullname")%>" class="validate">
+                                            <input id="last_name" disabled="disabled"type="text" value="<%=rs.getString("fullname")%>" class="validate">
                                             <label for="last_name">Full Name</label>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s6">
-                                            <input id="cphone" type="text" value="<%=rs.getString("phone")%>" class="validate">
+                                            <input id="cphone"disabled="disabled" type="text" value="<%=rs.getString("phone")%>" class="validate">
                                             <label for="cphone">Phone</label>
                                         </div>
                                         <div class="input-field col s6">
-                                            <select name="gender">
+                                            <select disabled="disabled" name="gender">
                                                 <option value="<%=rs.getString("gender")%>" disabled selected><%=rs.getString("gender")%></option>
                                             </select>
                                             <label for="cphone">Gender</label>
@@ -81,28 +93,24 @@
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <input id="city" type="text" value="<%=rs.getString("address")%>" name="address" class="validate">
+                                            <input id="city"disabled="disabled" type="text" value="<%=rs.getString("address")%>" name="address" class="validate">
                                             <label for="city">Address</label>
                                         </div>
 
                                     </div>
                                     <div class="row">
-                                        <div class="input-field col s6">
-                                            <input id="password" type="password" value="<%=rs.getString("password")%>" class="validate">
+                                        <div class="input-field col s12">
+                                            <input id="password"type="text"disabled="disabled" value="<%=rs.getString("password")%>" class="validate">
                                             <label for="password">Password</label>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <input id="password1" type="password" value="<%=rs.getString("password")%>" class="validate">
-                                            <label for="password1">Confirm Password</label>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <input id="email" type="email" value="<%=rs.getString("email")%>" class="validate">
+                                            <input id="email" disabled="disabled" type="email" value="<%=rs.getString("email")%>" class="validate">
                                             <label for="email">Email</label>
                                         </div>
                                         <div class="input-field col s12">
-                                            <input id="email1" type="email" value="<%=rs.getString("email")%>" class="validate">
+                                            <input id="email1"disabled="disabled" type="email" value="<%=rs.getString("email")%>" class="validate">
                                             <label for="email1">Alternate Email</label>
                                         </div>
                                     </div>
@@ -142,7 +150,7 @@
 <script src="<%=PathAbsolute.getPath("admin/js/bootstrap.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/materialize.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/custom.js")%>"></script>
-
+<script src="<%=PathAbsolute.getPath("admin/js/show.js")%>"></script>
 </body>
 
 

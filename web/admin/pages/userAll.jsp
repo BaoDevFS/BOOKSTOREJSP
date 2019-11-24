@@ -17,10 +17,10 @@
 
     <!--== ALL CSS FILES ==-->
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/jquery.dataTables.min.css")%>"/>
-    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/style.css")%>">
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/mob.css")%>">
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/bootstrap.css")%>">
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/materialize.css")%>"/>
+    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/style.css")%>">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -50,7 +50,6 @@
                         <div class="box-inn-sp">
                             <div class="inn-title">
                                 <h4>User Details</h4>
-                                <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
                                 <a class="dropdown-button drop-down-meta" href="#" data-activates="dr-users"><i
                                         class="material-icons">more_vert</i></a>
                                 <ul id="dr-users" class="dropdown-content">
@@ -71,53 +70,7 @@
 
                             </div>
                             <div class="tab-inn">
-                                <%--                                <div class="table-responsive table-desi">--%>
-                                <%--                                    <table class="table table-hover">--%>
-                                <%--                                        <thead>--%>
-                                <%--                                        <tr>--%>
-                                <%--                                            <th>User</th>--%>
-                                <%--                                            <th>Name</th>--%>
-                                <%--                                            <th>Phone</th>--%>
-                                <%--                                            <th>Email</th>--%>
-                                <%--                                            <th>View</th>--%>
-                                <%--                                            <th>Edit</th>--%>
-                                <%--                                            <th>Delete</th>--%>
-                                <%--                                        </tr>--%>
-                                <%--                                        </thead>--%>
-                                <%--                                        <tbody>--%>
-                                <%--                                        <% ResultSet resultSet = (ResultSet) request.getAttribute("list");--%>
-                                <%--                                            while (resultSet.next()) {--%>
-                                <%--                                        %>--%>
-                                <%--                                        <tr>--%>
-                                <%--                                            <td><span class="list-img"><img src="<%= resultSet.getString("avatar")%>"--%>
-                                <%--                                                                            alt=""></span>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td><a href="#"><span--%>
-                                <%--                                                    class="list-enq-name"><%= resultSet.getString("name")%></span><span--%>
-                                <%--                                                    class="list-enq-city"><%= resultSet.getString("address")%></span></a>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td><%= resultSet.getString("phone")%>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td><%= resultSet.getString("email")%>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td>--%>
-                                <%--                                                <a href="<%= PathAbsolute.getPath("Admin/UserView?id="+resultSet.getString("id"))%>">--%>
-                                <%--                                                    <i class="fa fa-eye" aria-hidden="true"></i>--%>
-                                <%--                                                </a>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td>--%>
-                                <%--                                                <a href="<%= PathAbsolute.getPath("Admin/UserEdit?id="+resultSet.getString("id"))%>">--%>
-                                <%--                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>--%>
-                                <%--                                                </a>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td>--%>
-                                <%--                                                <a href="<%= PathAbsolute.getPath("Admin/Delete?id="+resultSet.getString("id")+"&type=users")%>"><i class="fa fa-trash-o" aria-hidden="true"></i></a>--%>
-                                <%--                                            </td>--%>
-                                <%--                                        </tr>--%>
-                                <%--                                        <%}%>--%>
-                                <%--                                        </tbody>--%>
-                                <%--                                    </table>--%>
-                                <%--                                </div>--%>
+
                                 <div class="panel-wrapper collapse in">
                                     <div class="panel-body">
                                         <div class="table-wrap">

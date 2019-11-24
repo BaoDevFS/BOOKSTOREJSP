@@ -1,8 +1,8 @@
 function show( i) {
     if(i==0){
-        alert("thêm thất bại!");
+        alert("Thêm thất bại.");
     }else{
-        alert("thêm thành công");
+        alert("Thêm thành công.");
     }
 }
 function readURL(input) {

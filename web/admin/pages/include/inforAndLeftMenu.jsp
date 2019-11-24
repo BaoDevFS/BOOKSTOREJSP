@@ -74,7 +74,7 @@
                     </ul>
                 </div>
             </li>
-            <li><a href="<%= PathAbsolute.getPath("Admin/LoginAdmin")%>" target="_blank"><i class="fa fa-sign-in"
+            <li><a href="<%= PathAbsolute.getPath("Admin/Login")%>" target="_blank"><i class="fa fa-sign-in"
                                                                                       aria-hidden="true"></i>Login</a>
             </li>
         </ul>
