@@ -120,7 +120,7 @@
                         <%--                        <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>--%>
                     </div>
                     <div class="bor">
-                        <form action="<%=PathAbsolute.getPath("Admin/PackageEdit")%>" method="post">
+                        <form action="<%=PathAbsolute.getPath("Admin/PackageEdit")%>" enctype="multipart/form-data" method="post">
                             <%ResultSet resultSet = (ResultSet) request.getAttribute("rs");%>
                             <%ResultSet resultSet2 = (ResultSet) request.getAttribute("booktype");
                             String typeName = (String) request.getAttribute("nametype");%>
@@ -130,22 +130,31 @@
                                     <input id="list-title" type="text" name="name" value="<%=resultSet.getString("name")%>" class="validate">
                                     <label for="list-title">Product Name</label>
                                 </div>
-                                <div class="input-field col s12">
-                                    <div class="file-field">
-                                        <div class="btn">
-                                            <span>File</span>
-                                            <input type="file" accept="image/*">
-                                        </div>
-                                        <div class="file-path-wrapper">
-                                            <input class="file-path validate" type="text"
-                                                   placeholder="Upload image book">
-                                        </div>
+                            </div>
+                            <div class="row file-field">
+                                <div class="input-field col s6">
+                                    <div class="sb2-12">
+                                        <ul>
+                                            <li>
+                                                <img style="width: 270px;height: 300px;border-radius: unset" id="avatar" src="<%=resultSet.getString("image")%>" alt="">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="input-field col s6">
+                                    <div class="btn">
+                                        <span>File</span>
+                                        <input type="file" id="file" name="avatar" accept="image/*">
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate" type="text"
+                                               placeholder="Upload avatar">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <textarea id="textarea1" name="description" content="<%=resultSet.getString(6)%>" value="<%=resultSet.getString(6)%>"class="materialize-textarea"><%=resultSet.getString(6)%></textarea>
+                                    <textarea id="textarea1" name="description" class="materialize-textarea"><%=resultSet.getString("description")%></textarea>
                                     <label for="textarea1">Product Descriptions:</label>
                                 </div>
                             </div>
@@ -162,12 +171,22 @@
                             </div>
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input id="Package-auth" name="year" type="text" value="<%=resultSet.getInt(8)%>" class="validate">
-                                    <label for="Package-auth">Public Year</label>
+                                    <input id="price" name="price" type="text" value="<%=resultSet.getString("price")%>"class="validate">
+                                    <label for="Package-auth">Price</label>
                                 </div>
                                 <div class="input-field col s6">
-                                    <input id="price" name="price" type="text" value="<%=resultSet.getString(4)%>"class="validate">
-                                    <label for="Package-auth">Price</label>
+                                    <input id="priceold" name="price" type="text" value="<%=resultSet.getString("price_old")%>"class="validate">
+                                    <label for="Package-auth">Price Old</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input id="author" name="year" type="text" value="<%=resultSet.getString("author")%>" class="validate">
+                                    <label >Author</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="Package-auth" name="year" type="text" value="<%=resultSet.getInt("year")%>" class="validate">
+                                    <label >Public Year</label>
                                 </div>
                             </div>
                             <%}%>

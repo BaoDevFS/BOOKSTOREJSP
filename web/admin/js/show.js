@@ -1,8 +1,8 @@
 function show( i) {
     if(i==0){
-        alert("thêm thất bại!");
+        alert("Thêm thất bại.");
     }else{
-        alert("thêm thành công");
+        alert("Thêm thành công.");
     }
 }
 function readURL(input) {
@@ -51,3 +51,11 @@ function readURL2(input) {
 $("#imghover").change(function() {
     readURL2(this);
 });
+"use strict";
+
+$(document).ready(function() {
+    "use strict";
+
+    $('#datable_1').DataTable();
+    $('#datable_2').DataTable({ "lengthChange": false});
+} );

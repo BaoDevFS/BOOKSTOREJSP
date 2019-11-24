@@ -65,9 +65,10 @@ public class PackageAdd extends HttpServlet {
         String booktype = request.getParameter("booktype");
         String year = request.getParameter("year");
         String price = request.getParameter("price");
+        String author = request.getParameter("author");
         try {
             request.setAttribute("booktype", GetListProductType.getListProductType());
-            String sql = "INSERT INTO books (name, image ,image_hover,description, price, year, id_type, active) VALUES (? , ? , ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO books (name, image ,image_hover,description, price, year, id_type, active,author) VALUES (? , ? , ?, ?, ?, ?, ?, ?, ?)";
             System.out.println(sql);
             Connection con = database.getConnectionSql();
             PreparedStatement pre = con.prepareStatement(sql);
@@ -80,6 +81,7 @@ public class PackageAdd extends HttpServlet {
             pre.setString(6, year);
             pre.setString(7, booktype);
             pre.setInt(8, 1);
+            pre.setString(9, author);
             int a=pre.executeUpdate();
             if(a==1){
             request.setAttribute("status", SIGNIN_SUCCESS);

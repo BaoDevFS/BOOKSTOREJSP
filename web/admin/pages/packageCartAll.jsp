@@ -16,10 +16,11 @@
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/font-awesome.min.css")%>">
 
     <!--== ALL CSS FILES ==-->
-    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/style.css")%>">
-    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/mob.css")%>">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.20/af-2.3.4/datatables.min.css"/>
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/bootstrap.css")%>">
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/materialize.css")%>"/>
+    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/mob.css")%>">
+    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/style.css")%>">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -40,44 +41,98 @@
                 <ul>
                     <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
                     </li>
-                    <li class="active-bre"><a href="#"> Package Categories</a>
+                    <li class="active-bre"><a href="#"> Product Categories</a>
                     </li>
                 </ul>
             </div>
             <div class="sb2-2-1">
                 <div class="inn-title">
-                    <h4>All Package Categories</h4>
+                    <h4>All Product Categories</h4>
 <%--                    <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>--%>
                     <%ResultSet rs = (ResultSet) request.getAttribute("list");%>
                 </div>
                 <div class="bor">
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Product Categories</th>
-                            <th>Date</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <%int i=0;%>
-                        <%while (rs.next()){i++;%>
+<%--                    <table class="table">--%>
+<%--                        <thead>--%>
+<%--                        <tr>--%>
+<%--                            <th>#</th>--%>
+<%--                            <th>Product Categories</th>--%>
+<%--                            <th>Date</th>--%>
+<%--                            <th>Edit</th>--%>
+<%--                            <th>Delete</th>--%>
+<%--                        </tr>--%>
+<%--                        </thead>--%>
+<%--                        <tbody>--%>
+<%--                        <%int i=0;%>--%>
+<%--                        <%while (rs.next()){i++;%>--%>
 
-                        <tr>
-                            <td><%=i%></td>
-                            <td><%=rs.getString("name")%></td>
-                            <td><%=rs.getString("created_at")%></td>
-                            <td><a href="<%= PathAbsolute.getPath("Admin/PackageCartEdit?id="+rs.getInt("id"))%>" class="sb2-2-1-edit"><i class="fa fa-pencil-square-o"
-                                                                                      aria-hidden="true"></i></a>
-                            </td>
-                            <td><a href="<%= PathAbsolute.getPath("Admin/Delete?id="+rs.getInt("id")+"&type=booktypes")%>" class="sb2-2-1-edit"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                            </td>
-                        </tr>
-                        <%}%>
-                        </tbody>
-                    </table>
+<%--                        <tr>--%>
+<%--                            <td><%=i%></td>--%>
+<%--                            <td><%=rs.getString("name")%></td>--%>
+<%--                            <td><%=rs.getString("created_at")%></td>--%>
+<%--                            <td><a href="<%= PathAbsolute.getPath("Admin/PackageCartEdit?id="+rs.getInt("id"))%>" class="sb2-2-1-edit"><i class="fa fa-pencil-square-o"--%>
+<%--                                                                                      aria-hidden="true"></i></a>--%>
+<%--                            </td>--%>
+<%--                            <td><a href="<%= PathAbsolute.getPath("Admin/Delete?id="+rs.getInt("id")+"&type=booktypes")%>" class="sb2-2-1-edit"><i class="fa fa-trash-o" aria-hidden="true"></i></a>--%>
+<%--                            </td>--%>
+<%--                        </tr>--%>
+<%--                        <%}%>--%>
+<%--                        </tbody>--%>
+<%--                    </table>--%>
+                    <div class="panel-wrapper collapse in">
+                        <div class="panel-body">
+                            <div class="table-wrap">
+                                <div class="table-responsive">
+                                    <table id="datable_1" class="table table-hover display  pb-30">
+                                        <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Product Type Name</th>
+                                            <th>Date</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                        </thead>
+                                        <tfoot>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Product Type Name</th>
+                                            <th>Date</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                        </tfoot>
+                                        <tbody>
+                                        <%int i = 0;%>
+                                        <%
+                                            while (rs.next()) {
+                                                i++;
+                                        %>
+
+                                        <tr>
+                                            <td><%=i%>
+                                            </td>
+                                            <td><%=rs.getString("name")%>
+                                            </td>
+                                            <td><%=rs.getString("created_at")%>
+                                            </td>
+                                            <td>
+                                                <a href="<%= PathAbsolute.getPath("Admin/PackageCartEdit?id="+rs.getInt("id"))%>"
+                                                   class="sb2-2-1-edit"><i class="fa fa-pencil-square-o"
+                                                                           aria-hidden="true"></i></a>
+                                            </td>
+                                            <td>
+                                                <a href="<%= PathAbsolute.getPath("Admin/Delete?id="+rs.getInt("id")+"&type=booktypes")%>"
+                                                   class="sb2-2-1-edit"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                            </td>
+                                        </tr>
+                                        <%}%>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -108,7 +163,18 @@
 <script src="<%=PathAbsolute.getPath("admin/js/bootstrap.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/materialize.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/custom.js")%>"></script>
-
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.20/af-2.3.4/datatables.min.js"></script>
+<script>
+    $(document).ready(function () {
+        "use strict";
+        $('#datable_1').DataTable({
+            'columnDefs': [ {
+                'targets': [3,4], // column index (start from 0)
+                'orderable': false, // set orderable false for selected columns
+            }]});
+        $('#datable_2').DataTable({"lengthChange": false});
+    });
+</script>
 </body>
 
 

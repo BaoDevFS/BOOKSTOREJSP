@@ -18,10 +18,11 @@
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/font-awesome.min.css")%>">
 
     <!--== ALL CSS FILES ==-->
-    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/style.css")%>">
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/mob.css")%>">
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/bootstrap.css")%>">
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/materialize.css")%>"/>
+    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/jquery.dataTables.min.css")%>"/>
+    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/style.css")%>">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -40,9 +41,9 @@
         <div class="sb2-2">
             <div class="sb2-2-2">
                 <ul>
-                    <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                    <li><a href="<%=PathAbsolute.getPath("Admin/Index")%>"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
                     </li>
-                    <li class="active-bre"><a href="#"> Ui Form</a>
+                    <li class="active-bre"><a href="#">All Product</a>
                     </li>
                 </ul>
             </div>
@@ -72,51 +73,75 @@
 
                             </div>
                             <div class="tab-inn">
-                                <div class="table-responsive table-desi">
-                                    <table class="table table-hover">
-                                        <thead>
-                                        <tr>
-                                            <th>Id</th>
-                                            <th>Img</th>
-                                            <th>ProductName</th>
-                                            <th>Price</th>
-                                            <th>Author</th>
-                                            <th>View</th>
-                                            <th>Edit</th>
-                                            <th>Delete</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <% ResultSet rs = (ResultSet) request.getAttribute("rs"); int i=0;
-                                        %>
-                                        <% while (rs.next()){
-                                        i++;%>
-                                        <tr>
-                                            <td><%= i%></td>
-                                            <td><span class="list-img"><img src="<%=rs.getString("image")%>" alt=""></span>
-                                            </td>
-                                            <td>
-                                                <a href="#">
-                                                <span class="list-enq-name"><%=rs.getString("name")%></span>
-                                                </a>
-                                            </td>
-                                            <td><%=rs.getString("price")%></td>
-                                            <td><%=rs.getString(5)%></td>
-                                            <td>
-                                                <a href="<%=PathAbsolute.getPath("Admin/PackageEdit?id="+rs.getString("id"))%>"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="<%=PathAbsolute.getPath("Admin/PackageEdit?id="+rs.getString("id"))%>">
-                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                                                </a>
-                                            </td>
-                                            <td>
-                                                <a href="<%=PathAbsolute.getPath("Admin/PackageEdit?id="+rs.getString("id")+"&type=products")%>"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                            </td>
-                                        </tr>
-                                        <%}%>
-                                        </tbody>
-                                    </table>
+                                <div class="panel-wrapper collapse in">
+                                    <div class="panel-body">
+                                        <div class="table-wrap">
+                                            <div class="table-responsive">
+                                                <table id="datable_1" class="table table-hover display  pb-30">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Id</th>
+                                                        <th>Img</th>
+                                                        <th>ProductName</th>
+                                                        <th>Price</th>
+                                                        <th>Author</th>
+                                                        <th>View</th>
+                                                        <th>Edit</th>
+                                                        <th>Delete</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tfoot>
+                                                    <tr>
+                                                        <th>Id</th>
+                                                        <th>Img</th>
+                                                        <th>ProductName</th>
+                                                        <th>Price</th>
+                                                        <th>Author</th>
+                                                        <th>View</th>
+                                                        <th>Edit</th>
+                                                        <th>Delete</th>
+                                                    </tr>
+                                                    </tfoot>
+                                                    <tbody>
+                                                    <% ResultSet rs = (ResultSet) request.getAttribute("rs");
+                                                        int i = 0;
+                                                    %>
+                                                    <% while (rs.next()) {
+                                                        i++;%>
+                                                    <tr>
+                                                        <td><%= i%>
+                                                        </td>
+                                                        <td><span class="list-img"><img style="width: 100px;height: 100px;border-radius: unset" src="<%=rs.getString("image")%>" alt=""></span>
+                                                        </td>
+                                                        <td>
+                                                            <a href="#">
+                                                                <span class="list-enq-name"><%=rs.getString("name")%></span>
+                                                            </a>
+                                                        </td>
+                                                        <td><%=rs.getString("price")%>
+                                                        </td>
+                                                        <td><%=rs.getString("author")%>
+                                                        </td>
+                                                        <td>
+                                                            <a class="sb2-2-1-edit" href="<%=PathAbsolute.getPath("SingleProduct?id="+rs.getString("id"))%>"><i
+                                                                    class="fa fa-eye" aria-hidden="true"></i></a>
+                                                        </td>
+                                                        <td>
+                                                            <a class="sb2-2-1-edit"href="<%=PathAbsolute.getPath("Admin/PackageEdit?id="+rs.getString("id"))%>">
+                                                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            <a class="sb2-2-1-edit" href="<%=PathAbsolute.getPath("Admin/PackageEdit?id="+rs.getString("id")+"&type=products")%>"><i
+                                                                    class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <%}%>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -151,7 +176,18 @@
 <script src="<%=PathAbsolute.getPath("admin/js/bootstrap.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/materialize.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/custom.js")%>"></script>
-
+<script src="<%=PathAbsolute.getPath("admin/js/jquery.dataTables.min.js")%>"></script>
+<script>
+    $(document).ready(function () {
+        "use strict";
+        $('#datable_1').DataTable({
+            'columnDefs': [ {
+                'targets': [5,6,7], // column index (start from 0)
+                'orderable': false, // set orderable false for selected columns
+            }]});
+        $('#datable_2').DataTable({"lengthChange": false});
+    });
+</script>
 </body>
 
 

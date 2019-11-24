@@ -457,9 +457,12 @@ a:hover {
 /* 2.LEFT MENU
 /*-------------------------------------------------------*/
 
+/*.left-sub-menu {} .left-sub-menu ul {*/
+/*    padding: 0px 0px 10px 40px;*/
+/*}*/
 .left-sub-menu {} .left-sub-menu ul {
-    padding: 0px 0px 10px 40px;
-}
+                      padding: 0px 0px 10px 0px;
+  }
 .left-sub-menu ul li {
     list-style-type: none;
 }
@@ -1106,3 +1109,378 @@ a:hover {
 .ad-hom-col-2 i{}
 .ad-hom-col-3 i{}
 .ad-hom-col-4 i{}
+.table > tbody > tr.active > td, .jsgrid-table > tbody > tr.active > td, .table > tbody > tr.active > th, .jsgrid-table > tbody > tr.active > th, .table > tbody > tr > td.active, .jsgrid-table > tbody > tr > td.active, .table > tbody > tr > th.active, .jsgrid-table > tbody > tr > th.active, .table > tfoot > tr.active > td, .jsgrid-table > tfoot > tr.active > td, .table > tfoot > tr.active > th, .jsgrid-table > tfoot > tr.active > th, .table > tfoot > tr > td.active, .jsgrid-table > tfoot > tr > td.active, .table > tfoot > tr > th.active, .jsgrid-table > tfoot > tr > th.active, .table > thead > tr.active > td, .jsgrid-table > thead > tr.active > td, .table > thead > tr.active > th, .jsgrid-table > thead > tr.active > th, .table > thead > tr > td.active, .jsgrid-table > thead > tr > td.active, .table > thead > tr > th.active, .jsgrid-table > thead > tr > th.active {
+    background: rgba(220, 220, 220, 0.08); }
+
+.table > tbody > tr.success > td, .jsgrid-table > tbody > tr.success > td, .table > tbody > tr.success > th, .jsgrid-table > tbody > tr.success > th, .table > tbody > tr > td.success, .jsgrid-table > tbody > tr > td.success, .table > tbody > tr > th.success, .jsgrid-table > tbody > tr > th.success, .table > tfoot > tr.success > td, .jsgrid-table > tfoot > tr.success > td, .table > tfoot > tr.success > th, .jsgrid-table > tfoot > tr.success > th, .table > tfoot > tr > td.success, .jsgrid-table > tfoot > tr > td.success, .table > tfoot > tr > th.success, .jsgrid-table > tfoot > tr > th.success, .table > thead > tr.success > td, .jsgrid-table > thead > tr.success > td, .table > thead > tr.success > th, .jsgrid-table > thead > tr.success > th, .table > thead > tr > td.success, .jsgrid-table > thead > tr > td.success, .table > thead > tr > th.success, .jsgrid-table > thead > tr > th.success {
+    background: rgba(9, 162, 117, 0.08); }
+
+.table > tbody > tr.info > td, .jsgrid-table > tbody > tr.info > td, .table > tbody > tr.info > th, .jsgrid-table > tbody > tr.info > th, .table > tbody > tr > td.info, .jsgrid-table > tbody > tr > td.info, .table > tbody > tr > th.info, .jsgrid-table > tbody > tr > th.info, .table > tfoot > tr.info > td, .jsgrid-table > tfoot > tr.info > td, .table > tfoot > tr.info > th, .jsgrid-table > tfoot > tr.info > th, .table > tfoot > tr > td.info, .jsgrid-table > tfoot > tr > td.info, .table > tfoot > tr > th.info, .jsgrid-table > tfoot > tr > th.info, .table > thead > tr.info > td, .jsgrid-table > thead > tr.info > td, .table > thead > tr.info > th, .jsgrid-table > thead > tr.info > th, .table > thead > tr > td.info, .jsgrid-table > thead > tr > td.info, .table > thead > tr > th.info, .jsgrid-table > thead > tr > th.info {
+    background: rgba(177, 0, 88, 0.08); }
+
+.table > tbody > tr.warning > td, .jsgrid-table > tbody > tr.warning > td, .table > tbody > tr.warning > th, .jsgrid-table > tbody > tr.warning > th, .table > tbody > tr > td.warning, .jsgrid-table > tbody > tr > td.warning, .table > tbody > tr > th.warning, .jsgrid-table > tbody > tr > th.warning, .table > tfoot > tr.warning > td, .jsgrid-table > tfoot > tr.warning > td, .table > tfoot > tr.warning > th, .jsgrid-table > tfoot > tr.warning > th, .table > tfoot > tr > td.warning, .jsgrid-table > tfoot > tr > td.warning, .table > tfoot > tr > th.warning, .jsgrid-table > tfoot > tr > th.warning, .table > thead > tr.warning > td, .jsgrid-table > thead > tr.warning > td, .table > thead > tr.warning > th, .jsgrid-table > thead > tr.warning > th, .table > thead > tr > td.warning, .jsgrid-table > thead > tr > td.warning, .table > thead > tr > th.warning, .jsgrid-table > thead > tr > th.warning {
+    background: rgba(242, 183, 1, 0.08); }
+
+.table > tbody > tr.danger > td, .jsgrid-table > tbody > tr.danger > td, .table > tbody > tr.danger > th, .jsgrid-table > tbody > tr.danger > th, .table > tbody > tr > td.danger, .jsgrid-table > tbody > tr > td.danger, .table > tbody > tr > th.danger, .jsgrid-table > tbody > tr > th.danger, .table > tfoot > tr.danger > td, .jsgrid-table > tfoot > tr.danger > td, .table > tfoot > tr.danger > th, .jsgrid-table > tfoot > tr.danger > th, .table > tfoot > tr > td.danger, .jsgrid-table > tfoot > tr > td.danger, .table > tfoot > tr > th.danger, .jsgrid-table > tfoot > tr > th.danger, .table > thead > tr.danger > td, .jsgrid-table > thead > tr.danger > td, .table > thead > tr.danger > th, .jsgrid-table > thead > tr.danger > th, .table > thead > tr > td.danger, .jsgrid-table > thead > tr > td.danger, .table > thead > tr > th.danger, .jsgrid-table > thead > tr > th.danger {
+    background: rgba(220, 0, 48, 0.08); }
+
+.table-responsive {
+    border: none; }
+.table-responsive .table, .table-responsive .jsgrid-table {
+    max-width: none;
+    -webkit-overflow-scrolling: touch !important; }
+
+.table, .jsgrid-table {
+    border-color: rgba(33, 33, 33, 0.1) !important; }
+
+.table > tbody > tr > td, .jsgrid-table > tbody > tr > td, .table > tbody > tr > th, .jsgrid-table > tbody > tr > th, .table > tfoot > tr > td, .jsgrid-table > tfoot > tr > td, .table > tfoot > tr > th, .jsgrid-table > tfoot > tr > th, .table > thead > tr > td, .jsgrid-table > thead > tr > td, .table > thead > tr > th, .jsgrid-table > thead > tr > th {
+    padding: 16px;
+    border-top: 1px solid rgba(33, 33, 33, 0.1);
+    vertical-align: middle; }
+
+.table > thead > tr > th, .jsgrid-table > thead > tr > th, .table > tfoot > tr > th, .jsgrid-table > tfoot > tr > th {
+    border-bottom: 2px solid rgba(33, 33, 33, 0.1) !important;
+    color: #212121;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase; }
+
+.table > tfoot > tr > th, .jsgrid-table > tfoot > tr > th {
+    border-bottom: 1px solid rgba(33, 33, 33, 0.1) !important; }
+
+.table-hover > tbody > tr:hover {
+    background-color: rgba(33, 33, 33, 0.05) !important; }
+
+.table-bordered {
+    border: 1px solid rgba(33, 33, 33, 0.1); }
+
+.table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > thead > tr > th {
+    border: 1px solid rgba(33, 33, 33, 0.1); }
+
+.table-striped > tbody > tr:nth-of-type(2n+1) {
+    background-color: rgba(33, 33, 33, 0.05); }
+
+.color-bg-table .table > caption + thead > tr:first-child > td, .color-bg-table .jsgrid-table > caption + thead > tr:first-child > td, .color-bg-table .table >
+caption + thead > tr:first-child > th, .color-bg-table .jsgrid-table >
+caption + thead > tr:first-child > th, .color-bg-table .table > colgroup + thead > tr:first-child > td, .color-bg-table .jsgrid-table > colgroup + thead > tr:first-child > td, .color-bg-table .table > colgroup + thead > tr:first-child > th, .color-bg-table .jsgrid-table > colgroup + thead > tr:first-child > th, .color-bg-table .table > thead:first-child > tr:first-child > td, .color-bg-table .jsgrid-table > thead:first-child > tr:first-child > td, .color-bg-table .table > thead:first-child > tr:first-child > th, .color-bg-table .jsgrid-table > thead:first-child > tr:first-child > th {
+    background: #09a275; }
+.color-bg-table .table > thead > tr > th, .color-bg-table .jsgrid-table > thead > tr > th {
+    color: #fff; }
+
+.bootstrap-table .fixed-table-container {
+    border: 1px solid rgba(33, 33, 33, 0.1);
+    border-radius: 0; }
+.bootstrap-table .fixed-table-container tbody td {
+    border: 1px solid rgba(33, 33, 33, 0.1); }
+
+.fixed-table-body .card-view {
+    background: transparent;
+    border: medium none;
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 0;
+    padding: 0; }
+.fixed-table-body .card-view .title {
+    font-weight: 400; }
+.fixed-table-body .card-view:hover {
+    box-shadow: none; }
+
+table.dataTable tbody tr {
+    background-color: transparent; }
+
+table.dataTable.display tbody tr.even > .sorting_1, table.dataTable.order-column.stripe tbody tr.even > .sorting_1 {
+    background-color: inherit; }
+
+table.dataTable.display.table-striped > tbody > tr:nth-of-type(2n+1) {
+    background: rgba(33, 33, 33, 0.05); }
+
+table.dataTable.order-column tbody tr > .sorting_1, table.dataTable.order-column tbody tr > .sorting_2, table.dataTable.order-column tbody tr > .sorting_3, table.dataTable.display tbody tr > .sorting_1, table.dataTable.display tbody tr > .sorting_2, table.dataTable.display tbody tr > .sorting_3, table.dataTable.display tbody tr.odd > .sorting_1, table.dataTable.order-column.stripe tbody tr.odd > .sorting_1, table.dataTable.stripe tbody tr.odd, table.dataTable.display tbody tr.odd, table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
+    background-color: inherit; }
+
+table.dataTable.display.table-striped tbody tr > .sorting_1,
+table.dataTable.display tbody tr:hover > .sorting_1, table.dataTable.order-column.hover tbody tr:hover > .sorting_1 {
+    background: transparent; }
+
+table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.dataTable.display tbody th, table.dataTable.display tbody td {
+    border-color: rgba(33, 33, 33, 0.1);
+    border-left: none;
+    border-bottom: none; }
+
+table.dataTable > tfoot > tr > th {
+    border-bottom: 0 solid rgba(33, 33, 33, 0.1) !important;
+    border-left: medium none !important; }
+
+table.dataTable {
+    border-right: medium none !important; }
+
+table.dataTable > caption + thead > tr:first-child > td, table.dataTable > caption + thead > tr:first-child > th, table.dataTable > colgroup + thead > tr:first-child > td, .table > colgroup + thead > tr:first-child > th, .jsgrid-table > colgroup + thead > tr:first-child > th, table.dataTable > thead:first-child > tr:first-child > td, table.dataTable > thead:first-child > tr:first-child > th {
+    border-left: medium none !important; }
+
+.dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_length {
+    margin-bottom: 30px; }
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter {
+    padding-top: 20px;
+    margin-bottom: 14px;
+    color: #878787; }
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_info {
+    padding-left: 15px; }
+.dataTables_wrapper .dataTables_info {
+    color: #878787; }
+.dataTables_wrapper .dataTables_filter {
+    padding-right: 15px; }
+.dataTables_wrapper .dataTables_filter input, .dataTables_wrapper .dataTables_length select {
+    height: 25px; }
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover, .dataTables_wrapper .dataTables_paginate .paginate_button:hover, .dataTables_wrapper .dataTables_paginate .paginate_button:active, .dataTables_wrapper .dataTables_paginate .paginate_button:focus {
+    background: #09a275;
+    border-color: #09a275;
+    color: #fff !important;
+    box-shadow: none; }
+
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+    color: #212121; }
+
+.sorting,
+.sorting_asc,
+.sorting_desc {
+    position: relative; }
+
+table.dataTable thead .sorting::after {
+    content: "\f0dc";
+    opacity: 0.2; }
+
+table.dataTable thead .sorting_asc::after {
+    content: "\f0de"; }
+
+table.dataTable thead .sorting_desc::after {
+    content: "\f0dd"; }
+
+table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after, table.dataTable thead .sorting_desc::after {
+    display: block;
+    font-family: FontAwesome;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    font-size: 14px; }
+
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc {
+    background: none;
+    border-left: medium none;
+    border-top: medium none; }
+
+.dt-buttons {
+    float: left; }
+.dt-buttons .dt-button {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px; }
+.dt-buttons .dt-button:hover {
+    color: #fff; }
+.dt-buttons .dt-button:last-child {
+    margin-right: 0; }
+
+table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child::before, table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child::before {
+    background-color: #09a275;
+    box-shadow: none; }
+
+table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child::before, table.dataTable.dtr-inline.collapsed > tbody > tr.parent > th:first-child::before {
+    background-color: #dc0030;
+    box-shadow: none; }
+
+table.footable > tbody > tr > td.footable-sortable, table.footable > tbody > tr > th.footable-sortable, table.footable > tfoot > tr > td.footable-sortable, table.footable > tfoot > tr > th.footable-sortable, table.footable > thead > tr > td.footable-sortable, table.footable > thead > tr > th.footable-sortable {
+    padding: 16px;
+    border-top: none; }
+
+table.footable > tr.footable-filtering > th,
+table.footable > thead > tr.footable-filtering > th {
+    border: none !important; }
+
+tr.footable-header > th {
+    border-top: none !important; }
+
+.footable-details.table, .footable-details.jsgrid-table {
+    background: transparent; }
+
+.footable-editing .btn.footable-edit, .footable-editing .wizard > .actions a.footable-edit, .wizard > .actions .footable-editing a.footable-edit, .footable-editing .dt-buttons .footable-edit.dt-button, .dt-buttons .footable-editing .footable-edit.dt-button, .footable-editing .tablesaw-sortable th.tablesaw-sortable-head button.footable-edit, .tablesaw-sortable th.tablesaw-sortable-head .footable-editing button.footable-edit, .footable-editing .sweet-alert button.footable-edit, .sweet-alert .footable-editing button.footable-edit, .footable-editing .owl-theme .owl-nav .footable-edit[class*="owl-"], .owl-theme .owl-nav .footable-editing .footable-edit[class*="owl-"], .footable-editing button.footable-edit.fc-agendaDay-button.fc-state-default.fc-corner-right,
+.footable-editing button.footable-edit.fc-month-button.fc-state-default.fc-corner-left,
+.footable-editing button.footable-edit.fc-agendaWeek-button, .footable-editing .footable-edit.fc-prev-button, .footable-editing .footable-edit.fc-next-button, .footable-editing .footable-edit.fc-today-button, .footable-editing .btn.footable-delete, .footable-editing .wizard > .actions a.footable-delete, .wizard > .actions .footable-editing a.footable-delete, .footable-editing .dt-buttons .footable-delete.dt-button, .dt-buttons .footable-editing .footable-delete.dt-button, .footable-editing .tablesaw-sortable th.tablesaw-sortable-head button.footable-delete, .tablesaw-sortable th.tablesaw-sortable-head .footable-editing button.footable-delete, .footable-editing .sweet-alert button.footable-delete, .sweet-alert .footable-editing button.footable-delete, .footable-editing .owl-theme .owl-nav .footable-delete[class*="owl-"], .owl-theme .owl-nav .footable-editing .footable-delete[class*="owl-"], .footable-editing button.footable-delete.fc-agendaDay-button.fc-state-default.fc-corner-right,
+.footable-editing button.footable-delete.fc-month-button.fc-state-default.fc-corner-left,
+.footable-editing button.footable-delete.fc-agendaWeek-button, .footable-editing .footable-delete.fc-prev-button, .footable-editing .footable-delete.fc-next-button, .footable-editing .footable-delete.fc-today-button {
+    background: transparent;
+    border: none !important; }
+.footable-editing .btn.footable-edit .fooicon.fooicon-pencil, .footable-editing .wizard > .actions a.footable-edit .fooicon.fooicon-pencil, .wizard > .actions .footable-editing a.footable-edit .fooicon.fooicon-pencil, .footable-editing .dt-buttons .footable-edit.dt-button .fooicon.fooicon-pencil, .dt-buttons .footable-editing .footable-edit.dt-button .fooicon.fooicon-pencil, .footable-editing .tablesaw-sortable th.tablesaw-sortable-head button.footable-edit .fooicon.fooicon-pencil, .tablesaw-sortable th.tablesaw-sortable-head .footable-editing button.footable-edit .fooicon.fooicon-pencil, .footable-editing .sweet-alert button.footable-edit .fooicon.fooicon-pencil, .sweet-alert .footable-editing button.footable-edit .fooicon.fooicon-pencil, .footable-editing .owl-theme .owl-nav .footable-edit[class*="owl-"] .fooicon.fooicon-pencil, .owl-theme .owl-nav .footable-editing .footable-edit[class*="owl-"] .fooicon.fooicon-pencil, .footable-editing button.footable-edit.fc-agendaDay-button.fc-state-default.fc-corner-right .fooicon.fooicon-pencil,
+.footable-editing button.footable-edit.fc-month-button.fc-state-default.fc-corner-left .fooicon.fooicon-pencil,
+.footable-editing button.footable-edit.fc-agendaWeek-button .fooicon.fooicon-pencil, .footable-editing .footable-edit.fc-prev-button .fooicon.fooicon-pencil, .footable-editing .footable-edit.fc-next-button .fooicon.fooicon-pencil, .footable-editing .footable-edit.fc-today-button .fooicon.fooicon-pencil, .footable-editing .btn.footable-delete .fooicon.fooicon-pencil, .footable-editing .wizard > .actions a.footable-delete .fooicon.fooicon-pencil, .wizard > .actions .footable-editing a.footable-delete .fooicon.fooicon-pencil, .footable-editing .dt-buttons .footable-delete.dt-button .fooicon.fooicon-pencil, .dt-buttons .footable-editing .footable-delete.dt-button .fooicon.fooicon-pencil, .footable-editing .tablesaw-sortable th.tablesaw-sortable-head button.footable-delete .fooicon.fooicon-pencil, .tablesaw-sortable th.tablesaw-sortable-head .footable-editing button.footable-delete .fooicon.fooicon-pencil, .footable-editing .sweet-alert button.footable-delete .fooicon.fooicon-pencil, .sweet-alert .footable-editing button.footable-delete .fooicon.fooicon-pencil, .footable-editing .owl-theme .owl-nav .footable-delete[class*="owl-"] .fooicon.fooicon-pencil, .owl-theme .owl-nav .footable-editing .footable-delete[class*="owl-"] .fooicon.fooicon-pencil, .footable-editing button.footable-delete.fc-agendaDay-button.fc-state-default.fc-corner-right .fooicon.fooicon-pencil,
+.footable-editing button.footable-delete.fc-month-button.fc-state-default.fc-corner-left .fooicon.fooicon-pencil,
+.footable-editing button.footable-delete.fc-agendaWeek-button .fooicon.fooicon-pencil, .footable-editing .footable-delete.fc-prev-button .fooicon.fooicon-pencil, .footable-editing .footable-delete.fc-next-button .fooicon.fooicon-pencil, .footable-editing .footable-delete.fc-today-button .fooicon.fooicon-pencil {
+    color: #09a275; }
+.footable-editing .btn.footable-edit .fooicon.fooicon-trash, .footable-editing .wizard > .actions a.footable-edit .fooicon.fooicon-trash, .wizard > .actions .footable-editing a.footable-edit .fooicon.fooicon-trash, .footable-editing .dt-buttons .footable-edit.dt-button .fooicon.fooicon-trash, .dt-buttons .footable-editing .footable-edit.dt-button .fooicon.fooicon-trash, .footable-editing .tablesaw-sortable th.tablesaw-sortable-head button.footable-edit .fooicon.fooicon-trash, .tablesaw-sortable th.tablesaw-sortable-head .footable-editing button.footable-edit .fooicon.fooicon-trash, .footable-editing .sweet-alert button.footable-edit .fooicon.fooicon-trash, .sweet-alert .footable-editing button.footable-edit .fooicon.fooicon-trash, .footable-editing .owl-theme .owl-nav .footable-edit[class*="owl-"] .fooicon.fooicon-trash, .owl-theme .owl-nav .footable-editing .footable-edit[class*="owl-"] .fooicon.fooicon-trash, .footable-editing button.footable-edit.fc-agendaDay-button.fc-state-default.fc-corner-right .fooicon.fooicon-trash,
+.footable-editing button.footable-edit.fc-month-button.fc-state-default.fc-corner-left .fooicon.fooicon-trash,
+.footable-editing button.footable-edit.fc-agendaWeek-button .fooicon.fooicon-trash, .footable-editing .footable-edit.fc-prev-button .fooicon.fooicon-trash, .footable-editing .footable-edit.fc-next-button .fooicon.fooicon-trash, .footable-editing .footable-edit.fc-today-button .fooicon.fooicon-trash, .footable-editing .btn.footable-delete .fooicon.fooicon-trash, .footable-editing .wizard > .actions a.footable-delete .fooicon.fooicon-trash, .wizard > .actions .footable-editing a.footable-delete .fooicon.fooicon-trash, .footable-editing .dt-buttons .footable-delete.dt-button .fooicon.fooicon-trash, .dt-buttons .footable-editing .footable-delete.dt-button .fooicon.fooicon-trash, .footable-editing .tablesaw-sortable th.tablesaw-sortable-head button.footable-delete .fooicon.fooicon-trash, .tablesaw-sortable th.tablesaw-sortable-head .footable-editing button.footable-delete .fooicon.fooicon-trash, .footable-editing .sweet-alert button.footable-delete .fooicon.fooicon-trash, .sweet-alert .footable-editing button.footable-delete .fooicon.fooicon-trash, .footable-editing .owl-theme .owl-nav .footable-delete[class*="owl-"] .fooicon.fooicon-trash, .owl-theme .owl-nav .footable-editing .footable-delete[class*="owl-"] .fooicon.fooicon-trash, .footable-editing button.footable-delete.fc-agendaDay-button.fc-state-default.fc-corner-right .fooicon.fooicon-trash,
+.footable-editing button.footable-delete.fc-month-button.fc-state-default.fc-corner-left .fooicon.fooicon-trash,
+.footable-editing button.footable-delete.fc-agendaWeek-button .fooicon.fooicon-trash, .footable-editing .footable-delete.fc-prev-button .fooicon.fooicon-trash, .footable-editing .footable-delete.fc-next-button .fooicon.fooicon-trash, .footable-editing .footable-delete.fc-today-button .fooicon.fooicon-trash {
+    color: #dc0030; }
+
+.footable-show .fooicon.fooicon-pencil {
+    padding-right: 6px; }
+
+.footable-filtering .checkbox {
+    margin-bottom: inherit;
+    margin-top: inherit;
+    min-height: inherit;
+    padding: 3px 20px !important;
+    font-family: "Roboto", sans-serif;
+    text-transform: capitalize; }
+.footable-filtering .checkbox input[type="checkbox"] {
+    opacity: 1; }
+.footable-filtering .checkbox label::before {
+    display: none; }
+
+.fooicon.fooicon-sort,
+.fooicon.fooicon-sort-asc,
+.fooicon.fooicon-sort-desc {
+    font-family: FontAwesome !important;
+    font-size: 14px; }
+
+.fooicon.fooicon-sort:before {
+    content: "\f0dc"; }
+
+.fooicon.fooicon-sort-asc:before {
+    content: "\f0de"; }
+
+.fooicon.fooicon-sort-desc:before {
+    content: "\f0dd"; }
+
+table.footable > tbody > tr.footable-empty > td {
+    font-size: 18px; }
+
+.jsgrid-row > .jsgrid-cell,
+.jsgrid-alt-row > .jsgrid-cell {
+    background: transparent;
+    border-color: rgba(33, 33, 33, 0.1); }
+
+.jsgrid-header-row > .jsgrid-header-cell {
+    background: inherit;
+    font-size: 12px;
+    color: #212121;
+    text-align: left;
+    text-transform: uppercase; }
+
+.jsgrid-filter-row > .jsgrid-cell, .jsgrid-header-row > .jsgrid-header-cell, .jsgrid-insert-row > .jsgrid-cell {
+    background: inherit;
+    border-bottom: 1px solid rgba(33, 33, 33, 0.1); }
+
+.jsgrid-edit-row > .jsgrid-cell, .jsgrid-filter-row > .jsgrid-cell, .jsgrid-grid-body, .jsgrid-grid-header, .jsgrid-header-row > .jsgrid-header-cell, .jsgrid-insert-row > .jsgrid-cell {
+    background: inherit;
+    border-color: rgba(33, 33, 33, 0.1); }
+
+.jsgrid-alt-row > .jsgrid-cell {
+    background: inherit; }
+
+.jsgrid-selected-row > .jsgrid-cell {
+    background: inherit;
+    border-color: rgba(33, 33, 33, 0.1); }
+
+.jsgrid-pager {
+    color: #212121; }
+.jsgrid-pager a {
+    color: #212121; }
+
+.jsgrid-align-center, .jsgrid-align-center input, .jsgrid-align-center select, .jsgrid-align-center textarea, .jsgrid-align-right, .jsgrid-align-right input, .jsgrid-align-right select, .jsgrid-align-right textarea {
+    text-align: left; }
+
+.jsgrid-pager-current-page, .jsgrid-pager-page a:hover, .jsgrid-pager-page a:active, .jsgrid-pager-page a:focus {
+    background: #09a275;
+    border: 1px solid #09a275;
+    color: #fff;
+    font-weight: 400; }
+
+.jsgrid-pager-page, .jsgrid-pager-page a {
+    padding: 5px 10px;
+    border: 1px solid transparent; }
+
+.tablesaw-swipe .tablesaw-cell-persist {
+    box-shadow: none;
+    border-right: inherit; }
+
+.tablesaw-sortable th.tablesaw-sortable-head button {
+    padding: 0;
+    border: none !important;
+    font-weight: normal;
+    font-size: 12px;
+    text-transform: uppercase; }
+
+.tablesaw {
+    margin-bottom: 0 !important; }
+.tablesaw thead {
+    background: transparent;
+    border: none; }
+.tablesaw thead tr:first-child th {
+    border-right: medium none;
+    padding: 16px !important; }
+.tablesaw td a {
+    color: #878787 !important; }
+.tablesaw td, .tablesaw tbody th {
+    vertical-align: middle;
+    font-size: inherit;
+    color: #878787 !important; }
+
+.tablesaw-toolbar {
+    font-size: 100%;
+    margin-bottom: 30px; }
+.tablesaw-toolbar label {
+    color: #212121;
+    display: block;
+    margin-right: 0;
+    padding: 0;
+    text-transform: uppercase; }
+
+.tablesaw-bar .btn-select select {
+    opacity: 1;
+    font-family: "Roboto", sans-serif;
+    color: #212121 !important;
+    font-size: 14px !important;
+    font-weight: 400;
+    text-transform: capitalize;
+    filter: alpha(opacity=1);
+    display: inline-block;
+    color: inherit;
+    background: transparent;
+    position: static; }
+
+.tablesaw-enhanced .tablesaw-bar .btn:hover, .tablesaw-enhanced .tablesaw-bar .wizard > .actions a:hover, .wizard > .actions .tablesaw-enhanced .tablesaw-bar a:hover, .tablesaw-enhanced .tablesaw-bar .dt-buttons .dt-button:hover, .dt-buttons .tablesaw-enhanced .tablesaw-bar .dt-button:hover, .tablesaw-enhanced .tablesaw-bar .tablesaw-sortable th.tablesaw-sortable-head button:hover, .tablesaw-sortable th.tablesaw-sortable-head .tablesaw-enhanced .tablesaw-bar button:hover, .tablesaw-enhanced .tablesaw-bar .sweet-alert button:hover, .sweet-alert .tablesaw-enhanced .tablesaw-bar button:hover, .tablesaw-enhanced .tablesaw-bar .owl-theme .owl-nav [class*="owl-"]:hover, .owl-theme .owl-nav .tablesaw-enhanced .tablesaw-bar [class*="owl-"]:hover, .tablesaw-enhanced .tablesaw-bar button.fc-agendaDay-button.fc-state-default.fc-corner-right:hover,
+.tablesaw-enhanced .tablesaw-bar button.fc-month-button.fc-state-default.fc-corner-left:hover,
+.tablesaw-enhanced .tablesaw-bar button.fc-agendaWeek-button:hover, .tablesaw-enhanced .tablesaw-bar .fc-prev-button:hover, .tablesaw-enhanced .tablesaw-bar .fc-next-button:hover, .tablesaw-enhanced .tablesaw-bar .fc-today-button:hover, .tablesaw-enhanced .tablesaw-bar .btn:focus, .tablesaw-enhanced .tablesaw-bar .wizard > .actions a:focus, .wizard > .actions .tablesaw-enhanced .tablesaw-bar a:focus, .tablesaw-enhanced .tablesaw-bar .dt-buttons .dt-button:focus, .dt-buttons .tablesaw-enhanced .tablesaw-bar .dt-button:focus, .tablesaw-enhanced .tablesaw-bar .tablesaw-sortable th.tablesaw-sortable-head button:focus, .tablesaw-sortable th.tablesaw-sortable-head .tablesaw-enhanced .tablesaw-bar button:focus, .tablesaw-enhanced .tablesaw-bar .sweet-alert button:focus, .sweet-alert .tablesaw-enhanced .tablesaw-bar button:focus, .tablesaw-enhanced .tablesaw-bar .owl-theme .owl-nav [class*="owl-"]:focus, .owl-theme .owl-nav .tablesaw-enhanced .tablesaw-bar [class*="owl-"]:focus, .tablesaw-enhanced .tablesaw-bar button.fc-agendaDay-button.fc-state-default.fc-corner-right:focus,
+.tablesaw-enhanced .tablesaw-bar button.fc-month-button.fc-state-default.fc-corner-left:focus,
+.tablesaw-enhanced .tablesaw-bar button.fc-agendaWeek-button:focus, .tablesaw-enhanced .tablesaw-bar .fc-prev-button:focus, .tablesaw-enhanced .tablesaw-bar .fc-next-button:focus, .tablesaw-enhanced .tablesaw-bar .fc-today-button:focus {
+    background: transparent; }
+
+.tablesaw-bar .tablesaw-toolbar .btn, .tablesaw-bar .tablesaw-toolbar .wizard > .actions a, .wizard > .actions .tablesaw-bar .tablesaw-toolbar a, .tablesaw-bar .tablesaw-toolbar .dt-buttons .dt-button, .dt-buttons .tablesaw-bar .tablesaw-toolbar .dt-button, .tablesaw-bar .tablesaw-toolbar .tablesaw-sortable th.tablesaw-sortable-head button, .tablesaw-sortable th.tablesaw-sortable-head .tablesaw-bar .tablesaw-toolbar button, .tablesaw-bar .tablesaw-toolbar .sweet-alert button, .sweet-alert .tablesaw-bar .tablesaw-toolbar button, .tablesaw-bar .tablesaw-toolbar .owl-theme .owl-nav [class*="owl-"], .owl-theme .owl-nav .tablesaw-bar .tablesaw-toolbar [class*="owl-"], .tablesaw-bar .tablesaw-toolbar button.fc-agendaDay-button.fc-state-default.fc-corner-right,
+.tablesaw-bar .tablesaw-toolbar button.fc-month-button.fc-state-default.fc-corner-left,
+.tablesaw-bar .tablesaw-toolbar button.fc-agendaWeek-button, .tablesaw-bar .tablesaw-toolbar .fc-prev-button, .tablesaw-bar .tablesaw-toolbar .fc-next-button, .tablesaw-bar .tablesaw-toolbar .fc-today-button {
+    font-size: 0 !important; }
+
+.btn.btn-small.btn-select, .wizard > .actions a.btn-small.btn-select, .dt-buttons .btn-small.btn-select.dt-button, .tablesaw-sortable th.tablesaw-sortable-head button.btn-small.btn-select, .sweet-alert button.btn-small.btn-select, .owl-theme .owl-nav .btn-small.btn-select[class*="owl-"], button.btn-small.btn-select.fc-agendaDay-button.fc-state-default.fc-corner-right,
+button.btn-small.btn-select.fc-month-button.fc-state-default.fc-corner-left,
+button.btn-small.btn-select.fc-agendaWeek-button, .btn-small.btn-select.fc-prev-button, .btn-small.btn-select.fc-next-button, .btn-small.btn-select.fc-today-button {
+    padding-left: 20px;
+    padding-right: 20px !important; }
+
+.tablesaw-bar .btn-select::after {
+    display: none; }
+
+.tablesaw-enhanced .tablesaw-bar .btn:active, .tablesaw-enhanced .tablesaw-bar .wizard > .actions a:active, .wizard > .actions .tablesaw-enhanced .tablesaw-bar a:active, .tablesaw-enhanced .tablesaw-bar .dt-buttons .dt-button:active, .dt-buttons .tablesaw-enhanced .tablesaw-bar .dt-button:active, .tablesaw-enhanced .tablesaw-bar .tablesaw-sortable th.tablesaw-sortable-head button:active, .tablesaw-sortable th.tablesaw-sortable-head .tablesaw-enhanced .tablesaw-bar button:active, .tablesaw-enhanced .tablesaw-bar .sweet-alert button:active, .sweet-alert .tablesaw-enhanced .tablesaw-bar button:active, .tablesaw-enhanced .tablesaw-bar .owl-theme .owl-nav [class*="owl-"]:active, .owl-theme .owl-nav .tablesaw-enhanced .tablesaw-bar [class*="owl-"]:active, .tablesaw-enhanced .tablesaw-bar button.fc-agendaDay-button.fc-state-default.fc-corner-right:active,
+.tablesaw-enhanced .tablesaw-bar button.fc-month-button.fc-state-default.fc-corner-left:active,
+.tablesaw-enhanced .tablesaw-bar button.fc-agendaWeek-button:active, .tablesaw-enhanced .tablesaw-bar .fc-prev-button:active, .tablesaw-enhanced .tablesaw-bar .fc-next-button:active, .tablesaw-enhanced .tablesaw-bar .fc-today-button:active {
+    background-image: none;
+    box-shadow: none !important; }
+
+.tablesaw-bar .btn select option, .tablesaw-bar .wizard > .actions a select option, .wizard > .actions .tablesaw-bar a select option, .tablesaw-bar .dt-buttons .dt-button select option, .dt-buttons .tablesaw-bar .dt-button select option, .tablesaw-bar .tablesaw-sortable th.tablesaw-sortable-head button select option, .tablesaw-sortable th.tablesaw-sortable-head .tablesaw-bar button select option, .tablesaw-bar .sweet-alert button select option, .sweet-alert .tablesaw-bar button select option, .tablesaw-bar .owl-theme .owl-nav [class*="owl-"] select option, .owl-theme .owl-nav .tablesaw-bar [class*="owl-"] select option, .tablesaw-bar button.fc-agendaDay-button.fc-state-default.fc-corner-right select option,
+.tablesaw-bar button.fc-month-button.fc-state-default.fc-corner-left select option,
+.tablesaw-bar button.fc-agendaWeek-button select option, .tablesaw-bar .fc-prev-button select option, .tablesaw-bar .fc-next-button select option, .tablesaw-bar .fc-today-button select option {
+    color: #212121;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400; }

@@ -52,7 +52,7 @@ public class UserAdd extends HttpServlet {
             ResultSet resultSet =statement.executeQuery();
             System.out.println(firstName+lastName+address);
             if(!resultSet.next()) {
-                String sql = "INSERT INTO users(avatar,name,fullname,email,phone,gender,address,password,active,group)" +
+                String sql = "INSERT INTO users(avatar,name,fullname,email,phone,gender,address,password,active,`group`)" +
                         "VALUES(?,?,?,?,?,?,?,?,?,?)";
                 PreparedStatement pr = connection.prepareStatement(sql);
                 pr.setString(1,avatars);

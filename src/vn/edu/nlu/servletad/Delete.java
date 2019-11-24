@@ -59,6 +59,16 @@ public class Delete extends HttpServlet {
                     e.printStackTrace();
                 }
                 break;
+            case "authors":
+                try {
+                    boolean status = rm.removeAuthor(id);
+                    if(status){
+                        response.sendRedirect(request.getContextPath()+"/Admin/AuthorAll");
+                    }
+                }catch (SQLException e){
+                    response.sendRedirect(request.getContextPath()+"/Error404");
+                    e.printStackTrace();
+                }
         }
 
     }
