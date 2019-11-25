@@ -11,7 +11,7 @@
  Target Server Version : 100134
  File Encoding         : 65001
 
- Date: 25/11/2019 13:41:02
+ Date: 25/11/2019 14:02:48
 */
 
 SET NAMES utf8mb4;
@@ -23,7 +23,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `authors`;
 CREATE TABLE `authors`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `active` tinyint(1) NULL DEFAULT 0,
   `created_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
   `updated_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
@@ -37,7 +37,7 @@ DROP TABLE IF EXISTS `bills`;
 CREATE TABLE `bills`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` datetime(6) NULL DEFAULT NULL,
-  `detail` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `detail` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
   `amount` int(20) NULL DEFAULT NULL,
   `active` tinyint(1) NULL DEFAULT 0,
   `created_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
@@ -73,21 +73,21 @@ CREATE TABLE `book_authors`  (
 DROP TABLE IF EXISTS `books`;
 CREATE TABLE `books`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `name` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
   `image` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
   `image_hover` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
   `description` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
-  `price_old` int(20) NULL DEFAULT NULL,
-  `price` float(20, 2) NULL DEFAULT NULL,
+  `price_old` decimal(20, 0) NULL DEFAULT NULL,
+  `price` decimal(20, 2) NULL DEFAULT NULL,
   `note` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `quantum` int(100) NULL DEFAULT NULL,
-  `year` year NULL DEFAULT NULL,
+  `year` int(4) NULL DEFAULT NULL,
   `active` tinyint(1) NULL DEFAULT 0,
   `rate` int(30) NULL DEFAULT NULL,
   `created_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
   `updated_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
   `id_type` int(11) NULL DEFAULT NULL,
-  `author` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `author` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `products_ibfk_1`(`id_type`) USING BTREE,
   CONSTRAINT `books_ibfk_1` FOREIGN KEY (`id_type`) REFERENCES `booktypes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -462,7 +462,7 @@ INSERT INTO `booktypes` VALUES (32, 'Medical', 1, '2019-11-22 22:51:49', '2019-1
 DROP TABLE IF EXISTS `cmts`;
 CREATE TABLE `cmts`  (
   `id` int(7) NOT NULL AUTO_INCREMENT,
-  `Content` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `Content` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
   `Email` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `Active` tinyint(1) NULL DEFAULT NULL,
   `Created_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP,
@@ -479,8 +479,8 @@ CREATE TABLE `contacts`  (
   `locate` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
   `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `phone` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `message` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `active` tinyblob NULL,
+  `message` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
+  `active` tinyint(1) NULL DEFAULT 0,
   `created_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
   `updated_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
   PRIMARY KEY (`id`) USING BTREE
@@ -496,9 +496,9 @@ CREATE TABLE `detailbill`  (
   `DateOfOrder` datetime(0) NULL DEFAULT NULL,
   `DeliveryDate` datetime(0) NULL DEFAULT NULL,
   `Status` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `Address` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `Address` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
   `Deliver` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `Active` tinyint(1) NULL DEFAULT NULL,
+  `Active` tinyint(1) NULL DEFAULT 0,
   `Created_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP,
   `Updated_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`Id`) USING BTREE
@@ -542,7 +542,7 @@ CREATE TABLE `distributor`  (
 DROP TABLE IF EXISTS `feedbacks`;
 CREATE TABLE `feedbacks`  (
   `id` int(11) NOT NULL,
-  `content` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `content` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
   `id_book` int(11) NULL DEFAULT NULL,
   `active` tinyint(1) NULL DEFAULT NULL,
   `created_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
@@ -560,7 +560,7 @@ CREATE TABLE `goodreceipts`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `dateimport` datetime(6) NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP(6),
   `quantum` int(20) NULL DEFAULT NULL,
-  `price` float(10, 2) NULL DEFAULT NULL,
+  `price` decimal(10, 2) NULL DEFAULT NULL,
   `acitve` tinyint(1) NULL DEFAULT 0,
   `updated_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP,
   `created_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP,
@@ -604,7 +604,7 @@ CREATE TABLE `invoice`  (
   `Id` int(7) NOT NULL AUTO_INCREMENT,
   `Status` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL COMMENT 'Trạng thái của hoá đơn',
   `Id_product` int(7) NULL DEFAULT NULL COMMENT 'Lấy thông tin của sp ra.',
-  `Total` float(255, 0) NULL DEFAULT NULL,
+  `Total` decimal(50, 0) NULL DEFAULT NULL,
   `Biller` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL COMMENT 'Người xuất hoá đơn',
   `DateOfInvoice` datetime(0) NULL DEFAULT NULL COMMENT 'Ngày xuất hoá đơn',
   PRIMARY KEY (`Id`) USING BTREE
@@ -617,10 +617,10 @@ DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `timeorder` datetime(6) NULL DEFAULT NULL,
-  `total` float(20, 2) NULL DEFAULT NULL,
+  `total` decimal(20, 2) NULL DEFAULT NULL,
   `status` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `address` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `note` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `address` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
+  `note` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
   `acitve` tinyint(1) NULL DEFAULT 0,
   `created_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
   `updated_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
@@ -636,8 +636,8 @@ CREATE TABLE `orders`  (
 DROP TABLE IF EXISTS `providers`;
 CREATE TABLE `providers`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `address` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `name` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
+  `address` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
   `phone` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `active` tinyint(1) NULL DEFAULT 0,
   `updated_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP,
@@ -653,7 +653,7 @@ CREATE TABLE `receiptdetails`  (
   `id_book` int(11) NOT NULL AUTO_INCREMENT,
   `id_import` int(11) NOT NULL,
   `quantum` int(100) NULL DEFAULT NULL,
-  `price` float(20, 2) NULL DEFAULT NULL,
+  `price` decimal(20, 2) NULL DEFAULT NULL,
   `active` tinyint(1) NULL DEFAULT 0,
   `updated_at` timestamp(0) NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP(0),
   `created_at` timestamp(0) NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP(0),
@@ -670,7 +670,7 @@ DROP TABLE IF EXISTS `shopping_carts`;
 CREATE TABLE `shopping_carts`  (
   `Id` int(7) NOT NULL AUTO_INCREMENT,
   `Id_product` int(7) NOT NULL COMMENT 'khoá ngoại, lấy thông tin sp đã thêm vào giỏ hàng',
-  `Total` float(255, 0) NULL DEFAULT NULL,
+  `Total` decimal(50, 0) NULL DEFAULT NULL,
   `Amount` int(255) NULL DEFAULT NULL,
   `Active` tinyint(1) NULL DEFAULT NULL,
   `Created_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP,
@@ -684,8 +684,8 @@ CREATE TABLE `shopping_carts`  (
 DROP TABLE IF EXISTS `slides`;
 CREATE TABLE `slides`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `image` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `content` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `image` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
+  `content` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
   `active` tinyint(1) NULL DEFAULT 0,
   `created_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
   `updated_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
@@ -704,12 +704,12 @@ INSERT INTO `slides` VALUES (2, 'Public/images/books/2.jpg', NULL, 1, '2019-11-1
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `name` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
   `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `avatar` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
-  `fullname` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `fullname` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
   `password` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `address` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `address` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
   `phone` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `group` int(3) NULL DEFAULT NULL COMMENT 'quyen user',
   `gender` enum('Male','Female') CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
