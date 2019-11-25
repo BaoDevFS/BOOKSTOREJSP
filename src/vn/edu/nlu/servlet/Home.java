@@ -28,13 +28,25 @@ public class Home extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession httpSession = request.getSession();
-        Users users = (Users) httpSession.getAttribute("user");
-        if (users != null) {
-            System.out.println(users.toString());
+//        HttpSession httpSession = request.getSession();
+//        Users users = (Users) httpSession.getAttribute("user");
+//        if (users != null) {
+//            System.out.println(users.toString());
+//        }
+//        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/Home.jsp");
+//        requestDispatcher.forward(request, response);
+        connection = null;
+        try {
+
+            connection = getConnectDatabase.getConnectionSql();
+            String sql = "Select * from books where active=1";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            request.setAttribute("rsHome", resultSet);
+            request.getRequestDispatcher("/Public/pages/Home.jsp").forward(request, response);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/Home.jsp");
-        requestDispatcher.forward(request, response);
 
 
     }
