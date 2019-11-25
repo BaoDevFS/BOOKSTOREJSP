@@ -38,15 +38,15 @@
     GetListProductType listPr = new GetListProductType();
     String type = request.getParameter("type");
     ArrayList<Products> arr;
-    if(type !=null){
+    if (type != null) {
         arr = listPr.getListCategories(type);
     } else {
-       arr = listPr.getList();
+        arr = listPr.getList();
     }
 //    TacGiaDAOImpl tgDAO = new TacGiaDAOImpl();
 
-    int start = 0, end = 6;
-    if (arr.size() < 6) {
+    int start = 0, end = 9;
+    if (arr.size() < 9) {
         end = arr.size();
     }
     if (request.getParameter("start") != null) {
@@ -116,8 +116,7 @@
                                     ResultSet rs1 = (ResultSet) request.getAttribute("rsCount");
                                     while (rs.next() && rs1.next()) {
                                 %>
-
-                                <li><a href="<%=PathAbsolute.getPath("ShopGrid?type="+rs.getInt(1))%>">
+                                <li><a href="<%=PathAbsolute.getPath("ShopGrid?type="+rs.getInt(1)) %>">
                                     <%=rs.getString(2) %>
 
                                     <span>(<%=rs1.getInt(3) %>)</span>
@@ -257,18 +256,18 @@
 
                                 <%
                                     int a, b;
-                                    int soTrang = arr.size() / 6;
-                                    if (arr.size() % 6 > 0) {
+                                    int soTrang = arr.size() / 9;
+                                    if (arr.size() % 9 > 0) {
                                         soTrang++;
                                     }
                                     for (int i = 1; i <= soTrang; i++) {
-                                        a = (i - 1) * 6;
-                                        b = i * 6;
+                                        a = (i - 1) * 9;
+                                        b = i * 9;
                                         if (b > arr.size()) {
                                             b = arr.size();
                                         }
                                 %>
-<%--                                    PathAbsolute.getPath("ShopGrid?type="+i)--%>
+                                <%--                                    PathAbsolute.getPath("ShopGrid?type="+i)--%>
                                 <li><a class="active" href="ShopGrid?start=<%=a%>&end=<%=b%>"><%=i%>
                                 </a></li>
                                 <%
