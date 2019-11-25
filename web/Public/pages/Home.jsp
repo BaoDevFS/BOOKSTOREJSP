@@ -587,8 +587,9 @@
                     </div>
                     <!-- Start Single Product -->
                 </div>
+                <!-- End Single Tab Content -->
             </div>
-            <!-- End Single Tab Content -->
+
         </div>
     </section>
     <!-- Start BEst Seller Area -->
@@ -3512,7 +3513,7 @@
     </section>
     <!-- Best Sale Area Area -->
     <!-- Footer Area -->
-    <%@ include file="include/footer.jsp"%>
+    <%@ include file="include/footer.jsp" %>
     <!-- //Footer Area -->
     <!-- QUICKVIEW PRODUCT -->
     <div id="quickview-wrapper">

@@ -5,34 +5,17 @@
  Source Server Type    : MySQL
  Source Server Version : 100134
  Source Host           : localhost:3306
- Source Schema         : bqg
+ Source Schema         : book
 
  Target Server Type    : MySQL
  Target Server Version : 100134
  File Encoding         : 65001
 
- Date: 22/11/2019 22:59:45
+ Date: 25/11/2019 13:41:02
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
-
--- ----------------------------
--- Table structure for admins
--- ----------------------------
-DROP TABLE IF EXISTS `admins`;
-CREATE TABLE `admins`  (
-  `id` int(7) NOT NULL AUTO_INCREMENT,
-  `username` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `password` varchar(8) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `email` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `level` int(10) NOT NULL,
-  `avatar` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `active` tinyint(1) NOT NULL DEFAULT 1,
-  `created_at` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `update_at` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for authors
@@ -45,7 +28,7 @@ CREATE TABLE `authors`  (
   `created_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
   `updated_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for bills
@@ -82,19 +65,6 @@ CREATE TABLE `book_authors`  (
   INDEX `id_author`(`id_author`) USING BTREE,
   CONSTRAINT `book_authors_ibfk_1` FOREIGN KEY (`id_book`) REFERENCES `books` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `book_authors_ibfk_2` FOREIGN KEY (`id_author`) REFERENCES `authors` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
-
--- ----------------------------
--- Table structure for book_types
--- ----------------------------
-DROP TABLE IF EXISTS `book_types`;
-CREATE TABLE `book_types`  (
-  `Id` int(7) NOT NULL AUTO_INCREMENT,
-  `Type` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `Active` tinyint(1) NULL DEFAULT NULL,
-  `Created_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP,
-  `Updated_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`Id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
@@ -517,33 +487,6 @@ CREATE TABLE `contacts`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
--- Table structure for custormers
--- ----------------------------
-DROP TABLE IF EXISTS `custormers`;
-CREATE TABLE `custormers`  (
-  `Id` int(7) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `Name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `Email` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `Address` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `Phone` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `Username` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL COMMENT 'tên đăng nhập',
-  `Pass` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `DateOfBirth` datetime(0) NULL DEFAULT NULL,
-  `Active` tinyint(1) NULL DEFAULT NULL,
-  `Updated_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP,
-  `Created_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
-
--- ----------------------------
--- Records of custormers
--- ----------------------------
-INSERT INTO `custormers` VALUES (1, 'Bảo', 'nguyennhubao999@gmail.com', 'Thủ Đức', '0396940321', 'special45', '12345678', '1999-05-21 10:22:29', 1, '2019-10-28 10:23:46', '2019-10-28 10:23:46');
-INSERT INTO `custormers` VALUES (2, 'Giang', 'giangnguyen@gmail.com', 'Thu Duc', '0945645454', 'special99', '12345678', '1999-05-21 10:22:29', 1, '2019-10-28 10:24:52', '2019-10-28 10:24:52');
-INSERT INTO `custormers` VALUES (3, 'dsa', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-10-28 10:27:40', '2019-10-28 10:27:40');
-INSERT INTO `custormers` VALUES (4, 'dsfds', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-10-28 10:28:02', '2019-10-28 10:28:02');
-
--- ----------------------------
 -- Table structure for detailbill
 -- ----------------------------
 DROP TABLE IF EXISTS `detailbill`;
@@ -685,56 +628,6 @@ CREATE TABLE `orders`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `id_user`(`id_user`) USING BTREE,
   CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
-
--- ----------------------------
--- Table structure for payments
--- ----------------------------
-DROP TABLE IF EXISTS `payments`;
-CREATE TABLE `payments`  (
-  `Id` int(7) NOT NULL AUTO_INCREMENT,
-  `Percent` int(255) NULL DEFAULT NULL COMMENT 'phần trăm đc giẢM',
-  `Fromdate` datetime(0) NULL DEFAULT NULL,
-  `End_date` datetime(0) NULL DEFAULT NULL,
-  `Active` tinyint(1) NULL DEFAULT NULL,
-  `Created_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP,
-  `Updated_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
-
--- ----------------------------
--- Table structure for producers
--- ----------------------------
-DROP TABLE IF EXISTS `producers`;
-CREATE TABLE `producers`  (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `address` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `email` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `phone` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `acitve` tinyint(1) NULL DEFAULT 0,
-  `created_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
-  `updated_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
-
--- ----------------------------
--- Table structure for products
--- ----------------------------
-DROP TABLE IF EXISTS `products`;
-CREATE TABLE `products`  (
-  `Id` int(7) NOT NULL AUTO_INCREMENT,
-  `Name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `Image` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `Content` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `Price` float(10, 2) NULL DEFAULT NULL,
-  `Author` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `Distributor` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL COMMENT 'nhà phân phối',
-  `Amount` int(255) NULL DEFAULT NULL COMMENT 'số lượng sách',
-  `Active` tinyint(1) NULL DEFAULT NULL,
-  `Updated_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP,
-  `Created_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`Id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
 
 -- ----------------------------

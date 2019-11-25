@@ -13,7 +13,6 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
-import com.mysql.cj.xdevapi.PreparableStatement;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
 public class ConvertToQuerySql {
