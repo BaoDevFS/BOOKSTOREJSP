@@ -5728,7 +5728,10 @@ input[type=checkbox]:not(:disabled).tabbed:focus ~ .lever::after {
 /* Select Field
    ========================================================================== */
 
-select {
+/*select {*/
+/*    display: none;*/
+/*}*/
+select[type="select"]{
     display: none;
 }
 select.browser-default {

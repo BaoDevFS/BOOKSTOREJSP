@@ -1,3 +1,5 @@
+<%@ page import="vn.edu.nlu.control.PathAbsolute" %>
+<%@ page import="vn.edu.nlu.control.GetUser" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en"><!-- Mirrored from rn53themes.net/themes/demo/lava-admin/ by HTTrack Website Copier/3.x
         [XR&CO'2014], Wed, 23 Oct 2019 13:20:17 GMT -->
@@ -16,10 +18,10 @@
     <link rel="stylesheet" type="text/css" href="<%=PathAbsolute.getPath("admin/css/font-awesome.min.css")%>">
 
     <!--== ALL CSS FILES ==-->
+    <link rel="stylesheet"  href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="<%=PathAbsolute.getPath("admin/css/mob.css")%>">
     <link rel="stylesheet" type="text/css" href="<%=PathAbsolute.getPath("admin/css/bootstrap.css")%>">
     <link rel="stylesheet" type="text/css" href="<%=PathAbsolute.getPath("admin/css/materialize.css")%>"/>
-    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/jquery.dataTables.min.css")%>"/>
     <link rel="stylesheet" type="text/css" href="<%=PathAbsolute.getPath("admin/css/style.css")%>">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -87,7 +89,6 @@
 <div class="container-fluid sb2">
     <div class="row">
         <%@ include file="include/inforAndLeftMenu.jsp" %>
-
         <!--== BODY INNER CONTAINER ==-->
         <div class="sb2-2">
             <!--== breadcrumbs ==-->
@@ -175,140 +176,6 @@
 
                             </div>
                             <div class="tab-inn">
-                                <%--                                <div class="table-responsive table-desi">--%>
-                                <%--                                    <table class="table table-hover">--%>
-                                <%--                                        <thead>--%>
-                                <%--                                        <tr>--%>
-                                <%--                                            <th>User</th>--%>
-                                <%--                                            <th>Name</th>--%>
-                                <%--                                            <th>Phone</th>--%>
-                                <%--                                            <th>Email</th>--%>
-                                <%--                                            <th>Country</th>--%>
-                                <%--                                            <th>Listings</th>--%>
-                                <%--                                            <th>Enquiry</th>--%>
-                                <%--                                            <th>Bookings</th>--%>
-                                <%--                                            <th>Reviews</th>--%>
-                                <%--                                        </tr>--%>
-                                <%--                                        </thead>--%>
-                                <%--                                        <tbody>--%>
-                                <%--                                        <tr>--%>
-                                <%--                                            <td><span class="list-img"><img src="admin/images/user/1.png" alt=""></span>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span--%>
-                                <%--                                                    class="list-enq-city">Illunois, United--%>
-                                <%--        States</span></a>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td>+01 3214 6522</td>--%>
-                                <%--                                            <td>chadengle@dummy.com</td>--%>
-                                <%--                                            <td>Australia</td>--%>
-                                <%--                                            <td>--%>
-                                <%--                                                <span class="label label-primary">02</span>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td>--%>
-                                <%--                                                <span class="label label-danger">12</span>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td>--%>
-                                <%--                                                <span class="label label-success">24</span>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td>--%>
-                                <%--                                                <span class="label label-info">36</span>--%>
-                                <%--                                            </td>--%>
-                                <%--                                        </tr>--%>
-                                <%--                                        <tr>--%>
-                                <%--                                            <td><span class="list-img"><img src="admin/images/user/2.png" alt=""></span>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span--%>
-                                <%--                                                    class="list-enq-city">Illunois, United--%>
-                                <%--        States</span></a>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td>+01 3214 6522</td>--%>
-                                <%--                                            <td>chadengle@dummy.com</td>--%>
-                                <%--                                            <td>Australia</td>--%>
-                                <%--                                            <td>--%>
-                                <%--                                                <span class="label label-primary">02</span>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td>--%>
-                                <%--                                                <span class="label label-danger">12</span>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td>--%>
-                                <%--                                                <span class="label label-success">24</span>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td>--%>
-                                <%--                                                <span class="label label-info">36</span>--%>
-                                <%--                                            </td>--%>
-                                <%--                                        </tr>--%>
-                                <%--                                        <tr>--%>
-                                <%--                                            <td><span class="list-img"><img src="admin/images/user/3.png" alt=""></span>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span--%>
-                                <%--                                                    class="list-enq-city">Illunois, United--%>
-                                <%--        States</span></a>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td>+01 3214 6522</td>--%>
-                                <%--                                            <td>chadengle@dummy.com</td>--%>
-                                <%--                                            <td>Australia</td>--%>
-                                <%--                                            <td>--%>
-                                <%--                                                <span class="label label-primary">02</span>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td>--%>
-                                <%--                                                <span class="label label-danger">12</span>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td>--%>
-                                <%--                                                <span class="label label-success">24</span>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td>--%>
-                                <%--                                                <span class="label label-info">36</span>--%>
-                                <%--                                            </td>--%>
-                                <%--                                        </tr>--%>
-                                <%--                                        <tr>--%>
-                                <%--                                            <td><span class="list-img"><img src="admin/images/user/4.png" alt=""></span>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span--%>
-                                <%--                                                    class="list-enq-city">Illunois, United--%>
-                                <%--        States</span></a>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td>+01 3214 6522</td>--%>
-                                <%--                                            <td>chadengle@dummy.com</td>--%>
-                                <%--                                            <td>Australia</td>--%>
-                                <%--                                            <td>--%>
-                                <%--                                                <span class="label label-primary">02</span>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td>--%>
-                                <%--                                                <span class="label label-danger">12</span>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td>--%>
-                                <%--                                                <span class="label label-success">24</span>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td>--%>
-                                <%--                                                <span class="label label-info">36</span>--%>
-                                <%--                                            </td>--%>
-                                <%--                                        </tr>--%>
-                                <%--                                        <tr>--%>
-                                <%--                                            <td><span class="list-img"><img src="admin/images/user/5.png" alt=""></span>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span--%>
-                                <%--                                                    class="list-enq-city">Illunois, United--%>
-                                <%--        States</span></a>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td>+01 3214 6522</td>--%>
-                                <%--                                            <td>chadengle@dummy.com</td>--%>
-                                <%--                                            <td>Australia</td>--%>
-                                <%--                                            <td>--%>
-                                <%--                                                <span class="label label-primary">02</span>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td>--%>
-                                <%--                                                <span class="label label-danger">12</span>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td>--%>
-                                <%--                                                <span class="label label-success">24</span>--%>
-                                <%--                                            </td>--%>
-                                <%--                                            <td>--%>
-                                <%--                                                <span class="label label-info">36</span>--%>
-                                <%--                                            </td>--%>
-                                <%--                                        </tr>--%>
-                                <%--                                        </tbody>--%>
-                                <%--                                    </table>--%>
-                                <%--                                </div> --%>
                                 <div class="panel-wrapper collapse in">
                                     <div class="panel-body">
                                         <div class="table-wrap">

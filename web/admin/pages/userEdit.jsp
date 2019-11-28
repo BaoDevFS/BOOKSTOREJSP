@@ -94,7 +94,7 @@
                                             <label for="phone">Mobile</label>
                                         </div>
                                         <div class="input-field col s6">
-                                            <select name="gender" >
+                                            <select type="select" name="gender" >
                                                 <option value="<%=rs.getString("gender")%>"  selected><%=rs.getString("gender")%></option>
                                                 <option value="Male">Male</option>
                                                 <option value="FeMale">FeMale</option>

@@ -95,7 +95,7 @@
                                             <label for="phone">Mobile</label>
                                         </div>
                                         <div class="input-field col s6">
-                                            <select name="gender">
+                                            <select type="select" name="gender">
                                                 <option value="Male">Male</option>
                                                 <option value="FeMale">FeMale</option>
                                             </select>
@@ -110,7 +110,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <select name="group">
+                                            <select type="select" name="group">
                                                 <option value="0">User</option>
                                                 <option value="1">Admin</option>
                                             </select>
