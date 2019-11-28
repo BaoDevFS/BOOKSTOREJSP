@@ -1484,3 +1484,9 @@ button.btn-small.btn-select.fc-agendaWeek-button, .btn-small.btn-select.fc-prev-
     color: #212121;
     font-family: "Roboto", sans-serif;
     font-weight: 400; }
+.view ,.edit ,.delete{
+    cursor: pointer;
+}
+.view,.edit ,.delete{
+    cursor: pointer;
+}

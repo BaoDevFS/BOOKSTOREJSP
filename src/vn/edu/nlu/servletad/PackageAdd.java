@@ -4,11 +4,9 @@ import vn.edu.nlu.control.GetListProductType;
 import vn.edu.nlu.control.PathAbsolute;
 import vn.edu.nlu.control.ResizeImage;
 import vn.edu.nlu.control.SaveImage;
-import vn.edu.nlu.fit.model.Images;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
 import javax.imageio.ImageIO;
-import javax.imageio.stream.FileImageOutputStream;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;

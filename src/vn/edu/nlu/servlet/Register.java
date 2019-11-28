@@ -102,7 +102,7 @@ public class Register extends HttpServlet {
         Connection cn = null;
         boolean result = false;
 //        String sql = "INSERT INTO users( id,name,  email,  password,  phone) values(?, ?, ?, ?)";
-        String sql ="INSERT INTO users( name,  email,  password,  phone) VALUES ("+"'"+acc.getName()+"',"+"'"+acc.getEmail()+"',"+"'"+acc.getPasswork()+"',"+"'"+acc.getPhone()+"'"+")";
+        String sql ="INSERT INTO users( name,  email,  password,  phone) VALUES ("+"'"+acc.getName()+"',"+"'"+acc.getEmail()+"',"+"'"+acc.getPassword()+"',"+"'"+acc.getPhone()+"'"+")";
         System.out.println(sql);
         try {
             cn = getConnectDatabase.getConnectionSql();

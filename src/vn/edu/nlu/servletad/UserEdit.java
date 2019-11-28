@@ -1,4 +1,5 @@
 package vn.edu.nlu.servletad;
+import org.apache.coyote.http11.Constants;
 import vn.edu.nlu.control.PathAbsolute;
 import vn.edu.nlu.control.SaveImage;
 import vn.edu.nlu.fit.model.Users;
@@ -27,10 +28,17 @@ public class UserEdit extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Part avatar = request.getPart("avatar");
-        SaveImage saveImage = new SaveImage();
-        String avatars= PathAbsolute.getPath("admin/images/user/"+ Paths.get(avatar.getSubmittedFileName()).getFileName().toString());
-        BufferedImage imghoverBuff = ImageIO.read(avatar.getInputStream());
-        saveImage.saveImageForUser(imghoverBuff,Paths.get(avatar.getSubmittedFileName()).getFileName().toString(),request);
+        String avatars= "";
+        String sql;
+        if(avatar.getSize()>0) {
+            SaveImage saveImage = new SaveImage();
+             avatars = PathAbsolute.getPath("admin/images/user/" + Paths.get(avatar.getSubmittedFileName()).getFileName().toString());
+            BufferedImage imghoverBuff = ImageIO.read(avatar.getInputStream());
+            saveImage.saveImageForUser(imghoverBuff, Paths.get(avatar.getSubmittedFileName()).getFileName().toString(), request);
+            sql="UPDATE users set name =?,email=?,fullname=?,password=?,address=?,phone=?,gender=?,avatar=? where id="+id;
+        }else{
+            sql="UPDATE users set name =?,email=?,fullname=?,password=?,address=?,phone=?,gender=? where id="+id;
+        }
         String firstName = request.getParameter("firstname");
         String fullname = request.getParameter("fullname");
         String moblie = request.getParameter("mobile");
@@ -40,7 +48,7 @@ public class UserEdit extends HttpServlet {
         String email = request.getParameter("email");
         try {
             con = database.getConnectionSql();
-            String sql="UPDATE users set name =?,email=?,fullname=?,password=?,address=?,phone=?,avatar=?,gender=?, avatar=? where id="+id;
+
             PreparedStatement pr = con.prepareStatement(sql);
             pr.setString(1, firstName);
             pr.setString(2,email);
@@ -48,10 +56,10 @@ public class UserEdit extends HttpServlet {
             pr.setString(4,password);
             pr.setString(5,address);
             pr.setString(6,moblie);
-            pr.setString(7,"");
-            pr.setString(8,gender);
-            pr.setString(9,avatars);
-
+            pr.setString(7,gender);
+            if(avatar.getSize()>0){
+                pr.setString(8,avatars);
+            }
             int a=pr.executeUpdate();
             System.out.println(a);
             if(a!=0){

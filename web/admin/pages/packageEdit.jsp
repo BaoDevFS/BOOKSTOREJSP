@@ -175,13 +175,13 @@
                                     <label for="Package-auth">Price</label>
                                 </div>
                                 <div class="input-field col s6">
-                                    <input id="priceold" name="price" type="text" value="<%=resultSet.getString("price_old")%>"class="validate">
+                                    <input id="priceold" name="price_old" type="text" value="<%=resultSet.getString("price_old")%>"class="validate">
                                     <label for="Package-auth">Price Old</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input id="author" name="year" type="text" value="<%=resultSet.getString("author")%>" class="validate">
+                                    <input id="author" name="author" type="text" value="<%=resultSet.getString("author")%>" class="validate">
                                     <label >Author</label>
                                 </div>
                                 <div class="input-field col s6">
@@ -227,6 +227,7 @@
 <script src="<%=PathAbsolute.getPath("admin/js/bootstrap.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/materialize.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/custom.js")%>"></script>
+<script src="<%=PathAbsolute.getPath("admin/js/show.js")%>"></script>
 
 </body>
 

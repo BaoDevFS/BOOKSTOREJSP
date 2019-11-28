@@ -13,15 +13,14 @@
 
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700" rel="stylesheet">
-
     <!-- FONT-AWESOME ICON CSS -->
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/font-awesome.min.css")%>">
-
-    <!--== ALL CSS FILES ==-->
-    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/style.css")%>">
-    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/mob.css")%>">
-    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/bootstrap.css")%>">
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/materialize.css")%>"/>
+    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/bootstrap.min.css")%>">
+    <%--    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/bootstrap.css")%>">--%>
+    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/mob.css")%>">
+    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/style.css")%>">
+    <!--== ALL CSS FILES ==-->
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -103,9 +102,21 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="input-field col s12">
-                                    <textarea id="textarea1" name="description" class="materialize-textarea"></textarea>
-                                    <label for="textarea1">Product Descriptions:</label>
+                                <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css'>
+                                <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css'>
+                                <link rel='stylesheet' href='https://cdn.quilljs.com/1.3.6/quill.bubble.css'>
+                                <link rel='stylesheet' href='https://cdn.quilljs.com/1.3.6/quill.snow.css'>
+                                <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/summernote/0.6.6/summernote.min.css'>
+                                <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/metisMenu.css")%>">
+                                <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/default-custom.css")%>" id="color">
+                                <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/colors.css")%>">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h3 class="card-title">Text Editor</h3>
+                                            <textarea class="form-control" name="description" id="code_preview0" style="height: 300px;"></textarea>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
@@ -168,10 +179,22 @@
 
 <!--======== SCRIPT FILES =========-->
 <script src="<%=PathAbsolute.getPath("admin/js/jquery.min.js")%>"></script>
+<%--<script src="<%=PathAbsolute.getPath("admin/js/jquery-3.2.1.min.js")%>"></script>--%>
 <script src="<%=PathAbsolute.getPath("admin/js/bootstrap.min.js")%>"></script>
-<script src="<%=PathAbsolute.getPath("admin/js/materialize.min.js")%>"></script>
-<script src="<%=PathAbsolute.getPath("admin/js/custom.js")%>"></script>
-<script src="<%=PathAbsolute.getPath("admin/js/show.js")%>"></script>
+<%--<script src="<%=PathAbsolute.getPath("admin/js/materialize.min.js")%>"></script>--%>
+<%--<script src="<%=PathAbsolute.getPath("admin/js/custom.js")%>"></script>--%>
+<%--<script src="<%=PathAbsolute.getPath("admin/js/show.js")%>"></script>--%>
+<script src="<%=PathAbsolute.getPath("admin/js/popper.min.js")%>"></script>
+<script src="<%=PathAbsolute.getPath("admin/js/metisMenu.js")%>"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js'></script>
+<script src='https://cdn.quilljs.com/1.3.6/quill.js'></script>
+<script src="<%=PathAbsolute.getPath("admin/js/jquery.cookie-1.4.1.min.js")%>"></script>
+<script src="<%=PathAbsolute.getPath("admin/js/color.js")%>"></script>
+<script src="<%=PathAbsolute.getPath("admin/js/main.js")%>"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/summernote/0.6.6/summernote.min.js'></script>
+<script src="<%=PathAbsolute.getPath("admin/js/text-editor-init.js")%>">
+</script>
 <script >
     <%= getStatus((int)request.getAttribute("status"))%>
 </script>

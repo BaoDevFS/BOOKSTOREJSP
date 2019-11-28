@@ -1,33 +1,50 @@
 package vn.edu.nlu.fit.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class Users {
+public class Users implements Serializable {
     int id;
     String name;
     String email;
+    String avatar;
     String fullname;
-    String passwork;
+    String password;
     String address;
     String phone;
-    String avatar;
-
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
-    }
-
     int group;
     String gender;
     int active;
     Date created_at;
     Date updated_at;
 
-    public Users() {
+    @Override
+    public String toString() {
+        return "Users{" +
+                "id:" + id +
+                ", name:'" + name + '\'' +
+                ", email:'" + email + '\'' +
+                ", avatar:'" + avatar + '\'' +
+                ", fullname:'" + fullname + '\'' +
+                ", password:'" + password + '\'' +
+                ", address:'" + address + '\'' +
+                ", phone:'" + phone + '\'' +
+                ", group:" + group +
+                ", gender:'" + gender + '\'' +
+                ", active:" + active +
+                ", created_at:" + created_at +
+                ", updated_at:" + updated_at +
+                '}';
+    }
 
+    public Users() {
+    }
+
+    public Users(String name, String email, String password, String phone) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
     }
 
     public int getId() {
@@ -54,6 +71,14 @@ public class Users {
         this.email = email;
     }
 
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
     public String getFullname() {
         return fullname;
     }
@@ -62,12 +87,12 @@ public class Users {
         this.fullname = fullname;
     }
 
-    public String getPasswork() {
-        return passwork;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPasswork(String passwork) {
-        this.passwork = passwork;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getAddress() {
@@ -126,12 +151,13 @@ public class Users {
         this.updated_at = updated_at;
     }
 
-    public Users(int id, String name, String email, String fullname, String passwork, String address, String phone, int group, String gender, int active, Date created_at, Date updated_at) {
+    public Users(int id, String name, String email, String avatar, String fullname, String password, String address, String phone, int group, String gender, int active, Date created_at, Date updated_at) {
         this.id = id;
         this.name = name;
         this.email = email;
+        this.avatar = avatar;
         this.fullname = fullname;
-        this.passwork = passwork;
+        this.password = password;
         this.address = address;
         this.phone = phone;
         this.group = group;
@@ -139,30 +165,5 @@ public class Users {
         this.active = active;
         this.created_at = created_at;
         this.updated_at = updated_at;
-    }
-
-    public Users(String name, String email, String password, String phone) {
-        this.name = name;
-        this.email = email;
-        this.passwork = password;
-        this.phone = phone;
-    }
-
-    @Override
-    public String toString() {
-        return "Users{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", fullname='" + fullname + '\'' +
-                ", passwork='" + passwork + '\'' +
-                ", address='" + address + '\'' +
-                ", phone='" + phone + '\'' +
-                ", group=" + group +
-                ", gender='" + gender + '\'' +
-                ", active=" + active +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
-                '}';
     }
 }

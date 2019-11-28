@@ -103,40 +103,40 @@
                                                     </tr>
                                                     </tfoot>
                                                     <tbody>
-                                                    <% ResultSet rs = (ResultSet) request.getAttribute("rs");
-                                                        int i = 0;
-                                                    %>
-                                                    <% while (rs.next()) {
-                                                        i++;%>
-                                                    <tr>
-                                                        <td><%= i%>
-                                                        </td>
-                                                        <td><span class="list-img"><img style="width: 100px;height: 100px;border-radius: unset" src="<%=rs.getString("image")%>" alt=""></span>
-                                                        </td>
-                                                        <td>
-                                                            <a href="#">
-                                                                <span class="list-enq-name"><%=rs.getString("name")%></span>
-                                                            </a>
-                                                        </td>
-                                                        <td><%=rs.getString("price")%>
-                                                        </td>
-                                                        <td><%=rs.getString("author")%>
-                                                        </td>
-                                                        <td>
-                                                            <a class="sb2-2-1-edit" href="<%=PathAbsolute.getPath("SingleProduct?id="+rs.getString("id"))%>"><i
-                                                                    class="fa fa-eye" aria-hidden="true"></i></a>
-                                                        </td>
-                                                        <td>
-                                                            <a class="sb2-2-1-edit"href="<%=PathAbsolute.getPath("Admin/PackageEdit?id="+rs.getString("id"))%>">
-                                                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                                                            </a>
-                                                        </td>
-                                                        <td>
-                                                            <a class="sb2-2-1-edit" href="<%=PathAbsolute.getPath("Admin/PackageEdit?id="+rs.getString("id")+"&type=products")%>"><i
-                                                                    class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                                        </td>
-                                                    </tr>
-                                                    <%}%>
+<%--                                                    <% ResultSet rs = (ResultSet) request.getAttribute("rs");--%>
+<%--                                                        int i = 0;--%>
+<%--                                                    %>--%>
+<%--                                                    <% while (rs.next()) {--%>
+<%--                                                        i++;%>--%>
+<%--                                                    <tr>--%>
+<%--                                                        <td><%= i%>--%>
+<%--                                                        </td>--%>
+<%--                                                        <td><span class="list-img"><img style="width: 100px;height: 100px;border-radius: unset" src="<%=rs.getString("image")%>" alt=""></span>--%>
+<%--                                                        </td>--%>
+<%--                                                        <td>--%>
+<%--                                                            <a href="#">--%>
+<%--                                                                <span class="list-enq-name"><%=rs.getString("name")%></span>--%>
+<%--                                                            </a>--%>
+<%--                                                        </td>--%>
+<%--                                                        <td><%=rs.getString("price")%>--%>
+<%--                                                        </td>--%>
+<%--                                                        <td><%=rs.getString("author")%>--%>
+<%--                                                        </td>--%>
+<%--                                                        <td>--%>
+<%--                                                            <a class="sb2-2-1-edit" href="<%=PathAbsolute.getPath("SingleProduct?id="+rs.getString("id"))%>"><i--%>
+<%--                                                                    class="fa fa-eye" aria-hidden="true"></i></a>--%>
+<%--                                                        </td>--%>
+<%--                                                        <td>--%>
+<%--                                                            <a class="sb2-2-1-edit"href="<%=PathAbsolute.getPath("Admin/PackageEdit?id="+rs.getString("id"))%>">--%>
+<%--                                                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>--%>
+<%--                                                            </a>--%>
+<%--                                                        </td>--%>
+<%--                                                        <td>--%>
+<%--                                                            <a class="sb2-2-1-edit" href="<%=PathAbsolute.getPath("Admin/PackageEdit?id="+rs.getString("id")+"&type=products")%>"><i--%>
+<%--                                                                    class="fa fa-trash-o" aria-hidden="true"></i></a>--%>
+<%--                                                        </td>--%>
+<%--                                                    </tr>--%>
+<%--                                                    <%}%>--%>
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -176,17 +176,79 @@
 <script src="<%=PathAbsolute.getPath("admin/js/bootstrap.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/materialize.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/custom.js")%>"></script>
-<script src="<%=PathAbsolute.getPath("admin/js/jquery.dataTables.min.js")%>"></script>
+<%--<script src="<%=PathAbsolute.getPath("admin/js/jquery.dataTables.min.js")%>"></script>--%>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script>
+    // <th>Id</th>
+    // <th>Img</th>
+    // <th>ProductName</th>
+    // <th>Price</th>
+    // <th>Author</th>
+    // <th>View</th>
+    // <th>Edit</th>
+    // <th>Delete</th>
     $(document).ready(function () {
-        "use strict";
-        $('#datable_1').DataTable({
-            'columnDefs': [ {
-                'targets': [5,6,7], // column index (start from 0)
-                'orderable': false, // set orderable false for selected columns
-            }]});
-        $('#datable_2').DataTable({"lengthChange": false});
+        var table = $('#datable_1').DataTable({
+            "ajax": {
+                "url": "http://localhost:8080/BookStore/Admin/AjaxProduct",
+                "dataType": "json",
+                "contentType": "application/json; charset=utf-8",
+                'dataSrc': 'products'
+            },
+            columns: [
+                {'mData': 'id'},
+                {   "orderable": false,
+                    "data": "image",
+                    "render": function(data, typet, row) {
+                        return '<img style="width: 100px;height: 100px" src='+data+' >';
+                    }
+                },
+                {'mData': 'name'},
+                {'mData': 'price'},
+                {'mData': 'author'},
+                {
+                    "orderable": false,
+                    "data": null,
+                    "defaultContent": "<a class='view' style='cursor: pointer'><i class=\"fa fa-eye\" aria-hidden=\"true\"></i></a>"
+                },
+                {
+                    "orderable": false,
+                    "data": null,
+                    "defaultContent": "<a class='edit' style='cursor: pointer'><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i></a>"
+                },
+                {
+                    "orderable": false,
+                    "data": null,
+                    "defaultContent": "<a class='delete' style='cursor: pointer'><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i></a>"
+                }
+            ]
+        });
+        $('#datable_1 tbody').on('click', 'a.delete', function () {
+            var row = table.row($(this).parents('tr'));
+            var data = row.data();
+            row.remove().draw();
+            $.ajax({
+                url: "http://localhost:8080/BookStore/Admin/Delete",
+                type: "get",
+                data: {id: data.id,type:'products'},
+                success: function (resultText) {
+                    table.ajax.reload();
+                }
+            });
+        });
+        $('#datable_1 tbody').on('click', 'a.view', function () {
+            var row = table.row($(this).parents('tr'));
+            var data = row.data();
+            window.location.href = "http://localhost:8080/BookStore/SingleProduct?id="+data.id;
+        });
+        $('#datable_1 tbody').on('click', 'a.edit', function () {
+            var row = table.row($(this).parents('tr'));
+            var data = row.data();
+            window.location.href = "http://localhost:8080/BookStore/Admin/PackageEdit?id="+data.id;
+        });
     });
+
 </script>
 </body>
 
