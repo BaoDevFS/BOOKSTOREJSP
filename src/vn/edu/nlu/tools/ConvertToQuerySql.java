@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 //package vn.edu.nlu.tools;
 //
 //import java.io.FileInputStream;
@@ -93,7 +92,6 @@
 //		c.processExeltoString();
 //	}
 //}
-=======
 package vn.edu.nlu.tools;
 
 import java.io.FileInputStream;
@@ -187,4 +185,3 @@ public class ConvertToQuerySql {
 		c.processExeltoString();
 	}
 }
->>>>>>> d37b5d15445f8cbe9083fedc9cb176c3b8dde9f1
