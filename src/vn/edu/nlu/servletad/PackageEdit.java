@@ -34,26 +34,35 @@ public class PackageEdit extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         Part avatar = request.getPart("avatar");
-        SaveImage saveImage = new SaveImage();
-        String avatars= PathAbsolute.getPath("Public/images/books/"+ Paths.get(avatar.getSubmittedFileName()).getFileName().toString());
-        BufferedImage imghoverBuff = ImageIO.read(avatar.getInputStream());
-        saveImage.saveImageForBook(imghoverBuff,Paths.get(avatar.getSubmittedFileName()).getFileName().toString(),request);
+        String sql; String avatars="";
 
+        if(avatar.getSize()>0) {
+            SaveImage saveImage = new SaveImage();
+            avatars= PathAbsolute.getPath("Public/images/books/" + Paths.get(avatar.getSubmittedFileName()).getFileName().toString());
+            BufferedImage imghoverBuff = ImageIO.read(avatar.getInputStream());
+            saveImage.saveImageForBook(imghoverBuff, Paths.get(avatar.getSubmittedFileName()).getFileName().toString(), request);
+            sql="UPDATE books SET name=?,description=?,price=?,year=?,price_old=?,author=?,image=? where id="+id;
+        }else{
+            sql="UPDATE books SET name=?,description=?,price=?,year=?,price_old=?,author=? where id="+id;
+        }
         String name = request.getParameter("name");
         String description = request.getParameter("description");
+        String author = request.getParameter("author");
         String year = request.getParameter("year");
         String price = request.getParameter("price");
-        System.out.println(year);
+        String price_old= request.getParameter("price_old");
         try {
             connection = getConnectDatabase.getConnectionSql();
-            String sql="UPDATE books SET name=?,image=?,description=?,price=?,year=?,price_old=? where id="+id;
-            PreparedStatement pre = connection.prepareStatement(sql);
+           PreparedStatement pre = connection.prepareStatement(sql);
             pre.setString(1,name);
-            pre.setString(2,avatars);
-            pre.setString(3,description);
-            pre.setString(4,price);
-            pre.setInt(5,Integer.parseInt(year));
-            pre.setString(6,"0");
+            pre.setString(2,description);
+            pre.setString(3,price);
+            pre.setInt(4,Integer.parseInt(year));
+            pre.setString(5,price_old);
+            pre.setString(6,author);
+            if(avatar.getSize()>0) {
+                pre.setString(7, avatars);
+            }
             int a=pre.executeUpdate();
             if(a>0){
                 response.sendRedirect(request.getContextPath()+"/Admin/PackageEdit?id="+id);
@@ -86,10 +95,12 @@ public class PackageEdit extends HttpServlet {
 
             ResultSet resultSet2 =GetListProductType.getListProductType();
             request.setAttribute("booktype", resultSet2);
+            resultSet.next();
             while (resultSet2.next()){
-                if(resultSet2.getInt(1)==id){
+                if(resultSet2.getInt(1)==resultSet.getInt("id_type")){
                         request.setAttribute("nametype",resultSet2.getString(2));
                         resultSet2.beforeFirst();
+                        resultSet.beforeFirst();
                 break;
                 }
             }

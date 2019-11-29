@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <%@ page import="java.sql.ResultSet" %><%--
+=======
+<%@ page import="vn.edu.nlu.control.PathAbsolute" %><%--
+>>>>>>> 08137f01405fa847beb417937cb82ab20a473c48
   Created by IntelliJ IDEA.
   User: WATERMELON
   Date: 10/28/2019
@@ -51,7 +55,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-6 col-lg-2">
                     <div class="logo">
-                        <a href="../index.html">
+                        <a href="<%=PathAbsolute.getPath("Home")%>">
                             <img src="Public/images/logo/logo.png" alt="logo Public/images">
                         </a>
                     </div>
@@ -59,7 +63,7 @@
                 <div class="col-lg-8 d-none d-lg-block">
                     <nav class="mainmenu__nav">
                         <ul class="meninmenu d-flex justify-content-start">
-                            <li class="drop with--one--item"><a href="../index.html">Home</a>
+                            <li class="drop with--one--item"><a href="<%=PathAbsolute.getPath("Home")%>">Home</a>
                             </li>
                             <li class="drop"><a href="http://localhost:8080/BookStore/ShopGrid">Shop</a>
 
@@ -232,7 +236,7 @@
                 <div class="col-lg-12 d-none">
                     <nav class="mobilemenu__nav">
                         <ul class="meninmenu">
-                            <li><a href="../index.html">Home</a>
+                            <li><a href="<%=PathAbsolute.getPath("Home")%>">Home</a>
                             </li>
                             <li><a href="http://localhost:8080/BookStore/ShopGrid">Shop</a>
                             </li>

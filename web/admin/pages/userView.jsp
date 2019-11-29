@@ -85,7 +85,7 @@
                                             <label for="cphone">Phone</label>
                                         </div>
                                         <div class="input-field col s6">
-                                            <select disabled="disabled" name="gender">
+                                            <select type="select" disabled="disabled" name="gender">
                                                 <option value="<%=rs.getString("gender")%>" disabled selected><%=rs.getString("gender")%></option>
                                             </select>
                                             <label for="cphone">Gender</label>
@@ -97,6 +97,22 @@
                                             <label for="city">Address</label>
                                         </div>
 
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <% String i =rs.getString("group");
+                                                System.out.println(i);
+                                            if(i=="0"){%>
+                                            <input id="group" disabled="disabled" type="email" value="User" class="validate">
+                                            <%}else {%>
+                                            <input id="group" disabled="disabled" type="email" value="Admin" class="validate">
+                                            <%}%>
+                                            <label for="city">Group</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input id="active" disabled="disabled" type="email" value="<%=rs.getString("active")%>" class="validate">
+                                            <label for="active">Active</label>
+                                        </div>
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s12">

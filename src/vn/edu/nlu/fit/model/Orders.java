@@ -3,9 +3,7 @@ import java.sql.Date;
 public class Orders{
 		int id ;
 		Date timeorder ;
-		String name ;
-		String phone ;
-		String email ;
+		 Double total ;
 		String status ;
 		String address ;
 		String note ;
