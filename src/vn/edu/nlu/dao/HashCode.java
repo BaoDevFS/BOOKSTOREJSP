@@ -5,7 +5,7 @@ import java.security.NoSuchAlgorithmException;
 
 public class HashCode {
     public static String hashCode(String txt) throws NoSuchAlgorithmException {
-        MessageDigest md = MessageDigest.getInstance("HashCode");
+        MessageDigest md = MessageDigest.getInstance("MD5");
         md.update(txt.getBytes());
         byte byteData[] = md.digest();
 
@@ -15,8 +15,7 @@ public class HashCode {
         }
         return sb.toString();
     }
-//
-//    public static void main(String[] args) throws NoSuchAlgorithmException {
-//		System.out.println(hashCode("1234"));
-//    }
+    public static void main(String[] args) throws NoSuchAlgorithmException {
+		System.out.println(hashCode("1234"));
+    }
 }

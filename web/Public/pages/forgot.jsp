@@ -49,17 +49,17 @@
         </span>
                 </div>
                 <div class="container-login100-form-btn">
-                    <button class="login100-form-btn">
-                        Continute <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                    <button class="login100-form-btn" onclick="">
+                        Send me new password <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
                     </button>
                 </div>
 
                 <div class="text-center p-t-12">
         <span class="txt1">
-        Tro ve
+        Back to
         </span>
                     <a class="txt2" href="forgot.jsp">
-                        Trang Chu / Home?
+                         Home?
                     </a>
                 </div>
 
