@@ -40,7 +40,8 @@
         <div class="sb2-2">
             <div class="sb2-2-2">
                 <ul>
-                    <li><a href="<%=PathAbsolute.getPath("Admin/Index")%>"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                    <li><a href="<%=PathAbsolute.getPath("Admin/Index")%>"><i class="fa fa-home" aria-hidden="true"></i>
+                        Home</a>
                     </li>
                     <li class="active-bre"><a href="#"> User Edit</a>
                     </li>
@@ -54,19 +55,23 @@
                                 <h4>Edit User Details</h4>
                             </div>
                             <div class="tab-inn">
-                                <form action="<% PathAbsolute.getPath("Admin/UserEdit");%>" enctype="multipart/form-data" method="post">
-                                    <%ResultSet rs = (ResultSet) request.getAttribute("users");
-                                    while (rs.next()){%>
+                                <form action="<% PathAbsolute.getPath("Admin/UserEdit");%>"
+                                      enctype="multipart/form-data" method="post">
+                                    <%
+                                        ResultSet rs = (ResultSet) request.getAttribute("users");
+                                        while (rs.next()) {
+                                    %>
                                     <div class="row file-field">
-                                    <div class="input-field col s6">
-                                        <div class="sb2-12">
-                                            <ul>
-                                                <li>
-                                                    <img style="width: 100px;height: 100px" id="avatar" src="<%=rs.getString("avatar")%>" alt="">
-                                                </li>
-                                            </ul>
+                                        <div class="input-field col s6">
+                                            <div class="sb2-12">
+                                                <ul>
+                                                    <li>
+                                                        <img style="width: 100px;height: 100px" id="avatar"
+                                                             src="<%=rs.getString("avatar")%>" alt="">
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
-                                    </div>
                                         <div class="input-field col s6">
                                             <div class="btn">
                                                 <span>File</span>
@@ -80,22 +85,26 @@
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s6">
-                                            <input id="first_name" name="firstname" value="<%=rs.getString("name")%>" type="text" class="validate">
+                                            <input id="first_name" name="firstname" value="<%=rs.getString("name")%>"
+                                                   type="text" class="validate">
                                             <label for="first_name">First Name</label>
                                         </div>
                                         <div class="input-field col s6">
-                                            <input id="last_name" type="text" value="<%=rs.getString("fullname")%>" name="fullname" class="validate">
+                                            <input id="last_name" type="text" value="<%=rs.getString("fullname")%>"
+                                                   name="fullname" class="validate">
                                             <label for="last_name">Full Name</label>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s6">
-                                            <input id="phone" type="number" value="<%=rs.getString("phone")%>" name="mobile" class="validate">
+                                            <input id="phone" type="number" value="<%=rs.getString("phone")%>"
+                                                   name="mobile" class="validate">
                                             <label for="phone">Mobile</label>
                                         </div>
                                         <div class="input-field col s6">
-                                            <select type="select" name="gender" >
-                                                <option value="<%=rs.getString("gender")%>"  selected><%=rs.getString("gender")%></option>
+                                            <select type="select" name="gender">
+                                                <option value="<%=rs.getString("gender")%>" selected><%=rs.getString("gender")%>
+                                                </option>
                                                 <option value="Male">Male</option>
                                                 <option value="FeMale">FeMale</option>
                                             </select>
@@ -105,25 +114,53 @@
 
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <input id="city" type="text" value="<%=rs.getString("address")%>" name="address" class="validate">
+                                            <input id="city" type="text" value="<%=rs.getString("address")%>"
+                                                   name="address" class="validate">
                                             <label for="city">Address</label>
                                         </div>
 
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s6">
-                                            <input id="password" type="password" value="<%=rs.getString("password")%> "name="password" class="validate">
+                                            <select type="select" name="group">
+                                                <%!public String getGroup(String a) {
+                                                    if (a.equals("0")) {
+                                                        return "User";
+                                                    } else {
+                                                        return "Admin";
+                                                    }
+                                                }
+                                                %>
+                                                <%String st = getGroup(rs.getString("group"));%>
+                                                <option value="<%=rs.getString("group")%>" selected> <%=st%> </option>
+                                                <option value="0">User</option>
+                                                <option value="1">Admin</option>
+                                            </select>
+                                            <label for="phone">Group</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input id="active" type="text" value="<%=rs.getString("active")%> "
+                                                   name="active" class="validate">
+                                            <label for="active">Active</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <input id="password" type="password" value="<%=rs.getString("password")%> "
+                                                   name="password" class="validate">
                                             <label for="password">Password</label>
                                         </div>
                                         <div class="input-field col s6">
-                                            <input id="password1" type="password" value="<%=rs.getString("password")%>" name="confirmpassword"
+                                            <input id="password1" type="password" value="<%=rs.getString("password")%>"
+                                                   name="confirmpassword"
                                                    class="validate">
                                             <label for="password1">Confirm Password</label>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <input id="email" type="email" value="<%=rs.getString("email")%>"name="email" class="validate">
+                                            <input id="email" type="email" value="<%=rs.getString("email")%>"
+                                                   name="email" class="validate">
                                             <label for="email">Email</label>
                                         </div>
                                     </div>

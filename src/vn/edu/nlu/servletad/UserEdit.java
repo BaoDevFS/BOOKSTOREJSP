@@ -35,9 +35,9 @@ public class UserEdit extends HttpServlet {
              avatars = PathAbsolute.getPath("admin/images/user/" + Paths.get(avatar.getSubmittedFileName()).getFileName().toString());
             BufferedImage imghoverBuff = ImageIO.read(avatar.getInputStream());
             saveImage.saveImageForUser(imghoverBuff, Paths.get(avatar.getSubmittedFileName()).getFileName().toString(), request);
-            sql="UPDATE users set name =?,email=?,fullname=?,password=?,address=?,phone=?,gender=?,avatar=? where id="+id;
+            sql="UPDATE users set name =?,email=?,fullname=?,password=?,address=?,phone=?,gender=?,group = ?,active= ?,avatar=? where id="+id;
         }else{
-            sql="UPDATE users set name =?,email=?,fullname=?,password=?,address=?,phone=?,gender=? where id="+id;
+            sql="UPDATE users set name =?,email=?,fullname=?,password=?,address=?,phone=?,gender=?,group = ?,active= ? where id="+id;
         }
         String firstName = request.getParameter("firstname");
         String fullname = request.getParameter("fullname");
@@ -46,9 +46,10 @@ public class UserEdit extends HttpServlet {
         String address = request.getParameter("address");
         String password = request.getParameter("password");
         String email = request.getParameter("email");
+        String group = request.getParameter("group");
+        String active = request.getParameter("active");
         try {
             con = database.getConnectionSql();
-
             PreparedStatement pr = con.prepareStatement(sql);
             pr.setString(1, firstName);
             pr.setString(2,email);
@@ -57,8 +58,10 @@ public class UserEdit extends HttpServlet {
             pr.setString(5,address);
             pr.setString(6,moblie);
             pr.setString(7,gender);
+            pr.setString(8,group);
+            pr.setString(9,active);
             if(avatar.getSize()>0){
-                pr.setString(8,avatars);
+                pr.setString(10,avatars);
             }
             int a=pr.executeUpdate();
             System.out.println(a);

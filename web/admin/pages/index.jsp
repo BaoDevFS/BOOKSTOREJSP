@@ -94,11 +94,11 @@
             <!--== breadcrumbs ==-->
             <div class="sb2-2-2">
                 <ul>
-                    <li><a href="<%= PathAbsolute.getPath("Index")%>"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                    <li><a href="<%= PathAbsolute.getPath("Admin/Index")%>"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
                     </li>
                     <li class="active-bre"><a href="#"> Dashboard</a>
                     </li>
-                    <li class="page-back"><a href="<%= PathAbsolute.getPath("Index")%>"><i class="fa fa-backward"
+                    <li class="page-back"><a href="<%= PathAbsolute.getPath("Admin/Index")%>"><i class="fa fa-backward"
                                                                                            aria-hidden="true"></i>
                         Back</a>
                     </li>
@@ -119,10 +119,11 @@
                         </li>
                         <li>
                             <div class="ad-hom-box ad-hom-box-2">
-                                <span class="ad-hom-col-com ad-hom-col-2"><i class="fa fa-usd"></i></span>
+                                <span class="ad-hom-col-com ad-hom-col-2"><i class="fa fa-book"></i></span>
                                 <div class="ad-hom-view-com">
-                                    <p><i class="fa fa-arrow-up up"></i> Earnings</p>
-                                    <h3>22,520</h3>
+                                    <p><i class="fa fa-arrow-up up"></i> Tootal Book</p>
+                                    <%int countBook= (int) request.getAttribute("countBook");%>
+                                    <h3><%=countBook%></h3>
                                 </div>
                             </div>
                         </li>
@@ -131,7 +132,8 @@
                                 <span class="ad-hom-col-com ad-hom-col-3"><i class="fa fa-address-card-o"></i></span>
                                 <div class="ad-hom-view-com">
                                     <p><i class="fa fa-arrow-up up"></i> Users</p>
-                                    <h3>22,520</h3>
+                                    <%int countUser= (int) request.getAttribute("countUser");%>
+                                    <h3><%=countUser%></h3>
                                 </div>
                             </div>
                         </li>
@@ -139,8 +141,9 @@
                             <div class="ad-hom-box ad-hom-box-4">
                                 <span class="ad-hom-col-com ad-hom-col-4"><i class="fa fa-envelope-open-o"></i></span>
                                 <div class="ad-hom-view-com">
-                                    <p><i class="fa fa-arrow-up up"></i> Enquiry</p>
-                                    <h3>22,520</h3>
+                                    <p><i class="fa fa-arrow-up up"></i> Booking</p>
+                                    <%int countBooking= (int) request.getAttribute("countBooking");%>
+                                    <h3><%=countBooking%></h3>
                                 </div>
                             </div>
                         </li>
