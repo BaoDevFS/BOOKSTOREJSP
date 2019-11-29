@@ -1,6 +1,6 @@
 package vn.edu.nlu.fit.model;
 import java.sql.Date;
-public class Sliders{
+public class Slides{
 		int id ;
 		String image ;
 		String content ;

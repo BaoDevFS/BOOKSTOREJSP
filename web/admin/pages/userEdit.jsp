@@ -94,7 +94,7 @@
                                             <label for="phone">Mobile</label>
                                         </div>
                                         <div class="input-field col s6">
-                                            <select name="gender" >
+                                            <select type="select" name="gender" >
                                                 <option value="<%=rs.getString("gender")%>"  selected><%=rs.getString("gender")%></option>
                                                 <option value="Male">Male</option>
                                                 <option value="FeMale">FeMale</option>
@@ -167,7 +167,7 @@
 <script src="<%=PathAbsolute.getPath("admin/js/bootstrap.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/materialize.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/custom.js")%>"></script>
-
+<script src="<%=PathAbsolute.getPath("admin/js/show.js")%>"></script>
 </body>
 
 

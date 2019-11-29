@@ -38,7 +38,7 @@ public class Login extends HttpServlet {
                 System.out.println("user");
                 user.setName(set.getString("name"));
                 user.setEmail(set.getString("email"));
-                user.setPasswork(set.getString("password"));
+                user.setPassword(set.getString("password"));
                 user.setGender(set.getString("gender"));
                 user.setAddress(set.getString("address"));
                 user.setPhone(set.getString("phone"));
@@ -47,7 +47,7 @@ public class Login extends HttpServlet {
             set.close();
             connection.close();
                 System.out.println(user.toString());
-                if (user.getEmail() != null && user.getPasswork() != null) {
+                if (user.getEmail() != null && user.getPassword() != null) {
                     System.out.println("LOGIN" + user.toString());
                     HttpSession session = request.getSession();
                     session.setAttribute("user", user);

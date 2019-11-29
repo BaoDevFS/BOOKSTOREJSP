@@ -36,7 +36,7 @@ public class Login extends HttpServlet {
                 admin.setName(st.getString("name"));
                 admin.setEmail(st.getString("email"));
                 admin.setAvatar(st.getString("avatar"));
-                admin.setPasswork(st.getString("password"));
+                admin.setPassword(st.getString("password"));
                 admin.setGender(st.getString("gender"));
                 admin.setAddress(st.getString("address"));
                 admin.setGroup(st.getInt("group"));
@@ -46,7 +46,7 @@ public class Login extends HttpServlet {
             st.close();
             connection.close();
             System.out.println(admin.toString());
-            if (admin.getEmail() != null && admin.getPasswork() != null) {
+            if (admin.getEmail() != null && admin.getPassword() != null) {
                 System.out.println("LOGINADMIN" + admin.toString());
                 HttpSession session = request.getSession();
                 session.setAttribute("admin", admin);

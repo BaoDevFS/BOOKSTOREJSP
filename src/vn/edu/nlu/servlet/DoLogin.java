@@ -42,7 +42,7 @@ public class DoLogin extends HttpServlet {
             while (set.next()) {
                 user.setActive(set.getInt("active"));
                 user.setEmail(set.getString("email"));
-                user.setPasswork(set.getString("password"));
+                user.setPassword(set.getString("password"));
             }
             set.close();
             connection.close();

@@ -70,7 +70,6 @@
 
                             </div>
                             <div class="tab-inn">
-
                                 <div class="panel-wrapper collapse in">
                                     <div class="panel-body">
                                         <div class="table-wrap">
@@ -126,8 +125,8 @@
                                                             </a>
                                                         </td>
                                                         <td>
-                                                            <a href="<%= PathAbsolute.getPath("Admin/Delete?id="+resultSet.getString("id")+"&type=users")%>"><i
-                                                                    class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                                                <a href="<%= PathAbsolute.getPath("Admin/Delete?id="+resultSet.getString("id")+"&type=users")%>">
+                                                                    <i class="fa fa-trash-o" aria-hidden="true"></i></a>
                                                         </td>
                                                     </tr>
                                                     <%}%>

@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/mob.css")%>">
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/bootstrap.css")%>">
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/materialize.css")%>"/>
-
+    <script src="https://cdn.ckeditor.com/ckeditor5/15.0.0/classic/ckeditor.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -154,13 +154,13 @@
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <textarea id="textarea1" name="description" class="materialize-textarea"><%=resultSet.getString("description")%></textarea>
-                                    <label for="textarea1">Product Descriptions:</label>
+                                    <textarea name="description" id="editor"><%=resultSet.getString("description")%></textarea>
+                                    <label for="editor">Product Descriptions:</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <select name="id_type" >
+                                    <select type="select" name="id_type" >
                                         <option   value="<%=resultSet.getInt("id_type")%>"  selected><%=typeName%></option>
                                         <%while (resultSet2.next()){%>
                                         <option value="<%=resultSet2.getInt("id")%>"><%=resultSet2.getString("name")%></option>
@@ -175,13 +175,13 @@
                                     <label for="Package-auth">Price</label>
                                 </div>
                                 <div class="input-field col s6">
-                                    <input id="priceold" name="price" type="text" value="<%=resultSet.getString("price_old")%>"class="validate">
+                                    <input id="priceold" name="price_old" type="text" value="<%=resultSet.getString("price_old")%>"class="validate">
                                     <label for="Package-auth">Price Old</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input id="author" name="year" type="text" value="<%=resultSet.getString("author")%>" class="validate">
+                                    <input id="author" name="author" type="text" value="<%=resultSet.getString("author")%>" class="validate">
                                     <label >Author</label>
                                 </div>
                                 <div class="input-field col s6">
@@ -227,6 +227,14 @@
 <script src="<%=PathAbsolute.getPath("admin/js/bootstrap.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/materialize.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/custom.js")%>"></script>
+<script src="<%=PathAbsolute.getPath("admin/js/show.js")%>"></script>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 
 </body>
 

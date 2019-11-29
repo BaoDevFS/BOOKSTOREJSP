@@ -6,8 +6,8 @@
     <display-name>BookStore</display-name>
     <welcome-file-list>
         <welcome-file>Home</welcome-file>
-        <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+<<<<<<< HEAD
 <!--    <context-param>-->
 <!--        <param-name>host</param-name>-->
 <!--        <param-value>your_stmp_server</param-value>-->
@@ -56,6 +56,8 @@
 <!--        <param-value>YOUR_PASSWORD</param-value>-->
 <!--    </context-param>-->
 
+=======
+>>>>>>> d37b5d15445f8cbe9083fedc9cb176c3b8dde9f1
 <!--    <filter>-->
 <!--        <filter-name>encoding</filter-name>-->
 <!--        <filter-class>vn.edu.nlu.filter.FilterEncoding</filter-class>-->

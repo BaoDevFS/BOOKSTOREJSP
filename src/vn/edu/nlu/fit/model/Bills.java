@@ -1,6 +1,6 @@
 package vn.edu.nlu.fit.model;
 import java.sql.Date;
-public class Invoices{
+public class Bills{
 		int id ;
 		Date date ;
 		String detail ;
