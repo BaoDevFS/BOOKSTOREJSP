@@ -1,6 +1,5 @@
-<<<<<<< HEAD
-<%@ page import="java.sql.ResultSet" %><%--
-=======
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="vn.edu.nlu.control.PathAbsolute" %><%--
 <%@ page import="vn.edu.nlu.control.PathAbsolute" %><%--
 >>>>>>> 08137f01405fa847beb417937cb82ab20a473c48
   Created by IntelliJ IDEA.
