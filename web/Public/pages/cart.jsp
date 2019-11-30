@@ -105,8 +105,7 @@
                                 </tr>
                                 <tr>
                                     <td class="product-thumbnail"><a href="#"><img
-                                            src="Public/images/product/sm-3/2.jpg" alt="product
-        img"></a></td>
+                                            src="Public/images/product/sm-3/2.jpg" alt="productimg"></a></td>
                                     <td class="product-name"><a href="#">Quisque fringilla</a></td>
                                     <td class="product-price"><span class="amount">$50.00</span></td>
                                     <td class="product-quantity"><input type="number" value="1"></td>
