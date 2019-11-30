@@ -3530,7 +3530,7 @@
                             <!-- Start product Public/images -->
                             <div class="product-Public/images">
                                 <div class="main-image Public/images">
-                                    <img alt="big Public/images" src="Public/images/product/big-img/1.jpg">
+                                    <img alt="big Public/images" src="Public/images/books/9780007371464.jpg">
                                 </div>
                             </div>
                             <!-- end product Public/images -->

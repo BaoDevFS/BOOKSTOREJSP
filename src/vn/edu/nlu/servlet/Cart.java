@@ -16,7 +16,7 @@ import java.sql.Statement;
 @WebServlet("/Cart")
 public class Cart extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
