@@ -64,6 +64,12 @@ public class Home extends HttpServlet {
             ResultSet rsSale = pSale.executeQuery();
             request.setAttribute("rsSale", rsSale);
 
+            String sqlMystery = "SELECT c.* FROM  `books` c where active=1 AND id_type=2";
+            PreparedStatement pMystery = connection.prepareStatement(sqlMystery);
+            ResultSet rsMystery = pBiographic.executeQuery();
+            request.setAttribute("rsMystery", rsMystery);
+
+
             request.getRequestDispatcher("/Public/pages/Home.jsp").forward(request, response);
         } catch (SQLException e) {
             e.printStackTrace();
