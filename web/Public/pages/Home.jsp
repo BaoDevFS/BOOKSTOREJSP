@@ -35,6 +35,7 @@
 
     <!-- Modernizer js -->
     <script src="Public/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="Public/js/vendor/jquery-3.2.1.min.js"></script>
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -442,8 +443,6 @@
                     <div class="product__indicator--4 arrows_style owl-carousel owl-theme">
                         <% ResultSet rsAll = (ResultSet) request.getAttribute("rsAll");
                             for (int i = 0; i < 15; i++) {
-
-
                         %>
                         <div class="single__product">
                             <!-- Start Single Product -->
@@ -473,7 +472,7 @@
                                         <div class="action">
                                             <div class="actions_inner">
                                                 <ul class="add_to_links">
-                                                    <li><a class="cart" href="http://localhost:8080/BookStore/Cart"><i
+                                                    <li><a class="cart <%=rsAll.getString("id")%>" onclick="addToCart(<%=rsAll.getString("id")%>);"><i
                                                             class="fa fa-shopping-cart"></i></a></li>
                                                     <li><a class="wishlist"
                                                            href="http://localhost:8080/BookStore/WishList"><i
@@ -482,7 +481,8 @@
                                                     </li>
                                                     <li><a data-toggle="modal" title="Quick View"
                                                            class="quickview modal-view detail-link"
-                                                           href="#productmodal"><i class="fa fa-search"></i></a></li>
+                                                           onclick="propupbook(<%=rsAll.getString("id")%>)"
+                                                          <%-- href="#productmodal"--%>><i class="fa fa-search"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -527,7 +527,7 @@
                                         <div class="action">
                                             <div class="actions_inner">
                                                 <ul class="add_to_links">
-                                                    <li><a class="cart" href="http://localhost:8080/BookStore/Cart"><i
+                                                    <li><a class="cart" onclick="addToCart(<%=rsAll.getString("id")%>)"><i
                                                             class="fa fa-shopping-cart"></i></a></li>
                                                     <li><a class="wishlist"
                                                            href="http://localhost:8080/BookStore/WishList"><i
@@ -536,7 +536,7 @@
                                                     </li>
                                                     <li><a data-toggle="modal" title="Quick View"
                                                            class="quickview modal-view detail-link"
-                                                           href="#productmodal"><i class="fa fa-search"></i></a></li>
+                                                           onclick="propupbook(<%=rsAll.getString("id")%>)"><i class="fa fa-search"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -595,7 +595,7 @@
                                         <div class="action">
                                             <div class="actions_inner">
                                                 <ul class="add_to_links">
-                                                    <li><a class="cart" href="http://localhost:8080/BookStore/Cart"><i
+                                                    <li><a class="cart" onclick="addToCart(<%=rsAll.getString("id")%>)"><i
                                                             class="fa fa-shopping-cart"></i></a></li>
                                                     <li><a class="wishlist"
                                                            href="http://localhost:8080/BookStore/WishList"><i
@@ -604,7 +604,7 @@
                                                     </li>
                                                     <li><a data-toggle="modal" title="Quick View"
                                                            class="quickview modal-view detail-link"
-                                                           href="#productmodal"><i class="fa fa-search"></i></a></li>
+                                                           onclick="propupbook(<%=rsAll.getString("id")%>)"><i class="fa fa-search"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -649,7 +649,7 @@
                                         <div class="action">
                                             <div class="actions_inner">
                                                 <ul class="add_to_links">
-                                                    <li><a class="cart" href="http://localhost:8080/BookStore/Cart"><i
+                                                    <li><a class="cart" onclick="addToCart(<%=rsAll.getString("id")%>)"><i
                                                             class="fa fa-shopping-cart"></i></a></li>
                                                     <li><a class="wishlist"
                                                            href="http://localhost:8080/BookStore/WishList"><i
@@ -658,7 +658,7 @@
                                                     </li>
                                                     <li><a data-toggle="modal" title="Quick View"
                                                            class="quickview modal-view detail-link"
-                                                           href="#productmodal"><i class="fa fa-search"></i></a></li>
+                                                           onclick="propupbook(<%=rsAll.getString("id")%>)"><i class="fa fa-search"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -718,7 +718,7 @@
                                         <div class="action">
                                             <div class="actions_inner">
                                                 <ul class="add_to_links">
-                                                    <li><a class="cart" href="http://localhost:8080/BookStore/Cart"><i
+                                                    <li><a class="cart" onclick="addToCart(<%=rsAll.getString("id")%>)"><i
                                                             class="fa fa-shopping-cart"></i></a></li>
                                                     <li><a class="wishlist"
                                                            href="http://localhost:8080/BookStore/WishList"><i
@@ -727,7 +727,7 @@
                                                     </li>
                                                     <li><a data-toggle="modal" title="Quick View"
                                                            class="quickview modal-view detail-link"
-                                                           href="#productmodal"><i class="fa fa-search"></i></a></li>
+                                                           onclick="propupbook(<%=rsAll.getString("id")%>)"><i class="fa fa-search"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -772,7 +772,7 @@
                                         <div class="action">
                                             <div class="actions_inner">
                                                 <ul class="add_to_links">
-                                                    <li><a class="cart" href="http://localhost:8080/BookStore/Cart"><i
+                                                    <li><a class="cart" onclick="addToCart(<%=rsAll.getString("id")%>)"><i
                                                             class="fa fa-shopping-cart"></i></a></li>
                                                     <li><a class="wishlist"
                                                            href="http://localhost:8080/BookStore/WishList"><i
@@ -781,7 +781,7 @@
                                                     </li>
                                                     <li><a data-toggle="modal" title="Quick View"
                                                            class="quickview modal-view detail-link"
-                                                           href="#productmodal"><i class="fa fa-search"></i></a></li>
+                                                           onclick="propupbook(<%=rsAll.getString("id")%>)"><i class="fa fa-search"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -841,7 +841,7 @@
                                         <div class="action">
                                             <div class="actions_inner">
                                                 <ul class="add_to_links">
-                                                    <li><a class="cart" href="http://localhost:8080/BookStore/Cart"><i
+                                                    <li><a class="cart" onclick="addToCart(<%=rsAll.getString("id")%>)"><i
                                                             class="fa fa-shopping-cart"></i></a></li>
                                                     <li><a class="wishlist"
                                                            href="http://localhost:8080/BookStore/WishList"><i
@@ -850,7 +850,7 @@
                                                     </li>
                                                     <li><a data-toggle="modal" title="Quick View"
                                                            class="quickview modal-view detail-link"
-                                                           href="#productmodal"><i class="fa fa-search"></i></a></li>
+                                                           onclick="propupbook(<%=rsAll.getString("id")%>)"><i class="fa fa-search"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -895,7 +895,7 @@
                                         <div class="action">
                                             <div class="actions_inner">
                                                 <ul class="add_to_links">
-                                                    <li><a class="cart" href="http://localhost:8080/BookStore/Cart"><i
+                                                    <li><a class="cart" onclick="addToCart(<%=rsAll.getString("id")%>)"><i
                                                             class="fa fa-shopping-cart"></i></a></li>
                                                     <li><a class="wishlist"
                                                            href="http://localhost:8080/BookStore/WishList"><i
@@ -904,7 +904,7 @@
                                                     </li>
                                                     <li><a data-toggle="modal" title="Quick View"
                                                            class="quickview modal-view detail-link"
-                                                           href="#productmodal"><i class="fa fa-search"></i></a></li>
+                                                           onclick="propupbook(<%=rsAll.getString("id")%>)"><i class="fa fa-search"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -963,7 +963,7 @@
                                         <div class="action">
                                             <div class="actions_inner">
                                                 <ul class="add_to_links">
-                                                    <li><a class="cart" href="http://localhost:8080/BookStore/Cart"><i
+                                                    <li><a class="cart" onclick="addToCart(<%=rsAll.getString("id")%>)"><i
                                                             class="fa fa-shopping-cart"></i></a></li>
                                                     <li><a class="wishlist"
                                                            href="http://localhost:8080/BookStore/WishList"><i
@@ -972,7 +972,7 @@
                                                     </li>
                                                     <li><a data-toggle="modal" title="Quick View"
                                                            class="quickview modal-view detail-link"
-                                                           href="#productmodal"><i class="fa fa-search"></i></a></li>
+                                                           onclick="propupbook(<%=rsAll.getString("id")%>)"><i class="fa fa-search"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -1017,7 +1017,7 @@
                                         <div class="action">
                                             <div class="actions_inner">
                                                 <ul class="add_to_links">
-                                                    <li><a class="cart" href="http://localhost:8080/BookStore/Cart"><i
+                                                    <li><a class="cart" onclick="addToCart(<%=rsAll.getString("id")%>)"><i
                                                             class="fa fa-shopping-cart"></i></a></li>
                                                     <li><a class="wishlist"
                                                            href="http://localhost:8080/BookStore/WishList"><i
@@ -1026,7 +1026,7 @@
                                                     </li>
                                                     <li><a data-toggle="modal" title="Quick View"
                                                            class="quickview modal-view detail-link"
-                                                           href="#productmodal"><i class="fa fa-search"></i></a></li>
+                                                           onclick="propupbook(<%=rsAll.getString("id")%>)"><i class="fa fa-search"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -1152,13 +1152,16 @@
                     <div class="action">
                         <div class="actions_inner">
                             <ul class="add_to_links">
-                                <li><a class="cart" href="http://localhost:8080/BookStore/Cart"><i
+                                <li><a class="cart" onclick="addToCart(<%=rsSeller.getString("id")%>)"><i
                                         class="fa fa-shopping-cart"></i></a></li>
-                                <li><a class="wishlist" href="http://localhost:8080/BookStore/WishList"><i
+                                <li><a class="wishlist"
+                                       href="http://localhost:8080/BookStore/WishList"><i
                                         class="fa fa-heart"></i></a></li>
-                                <li><a class="compare" href="#"><i class="fa fa-hashtag"></i></a></li>
-                                <li><a data-toggle="modal" title="Quick View" class="quickview modal-view detail-link"
-                                       href="#productmodal"><i class="fa fa-search"></i></a></li>
+                                <li><a class="compare" href="#"><i class="fa fa-hashtag"></i></a>
+                                </li>
+                                <li><a data-toggle="modal" title="Quick View"
+                                       class="quickview modal-view detail-link"
+                                       onclick="propupbook(<%=rsSeller.getString("id")%>)"><i class="fa fa-search"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -1218,48 +1221,33 @@
     <!-- QUICKVIEW PRODUCT -->
     <div id="quickview-wrapper">
         <!-- Modal -->
-        <div class="modal fade" id="productmodal" tabindex="-1" role="dialog">
+        <div class="modal fade" id="productmodal" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal__container" role="document">
                 <div class="modal-content">
                     <div class="modal-header modal__header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                aria-hidden="true">&times;</span></button>
+                                 aria-hidden="true">&times;</span></button>
                     </div>
-                    <div class="modal-body">
+                    <div  id="madal-body" class="modal-body">
                         <div class="modal-product">
-                            <div class="maincontent bg--white pt--80 pb--55">
+                            <div class="maincontent bg--white pb--55">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-lg-9 col-12">
+                                        <div class="col-lg-12 col-12">
                                             <div class="wn__single__product">
                                                 <div class="row">
                                                     <div class="col-lg-6 col-12">
                                                         <div class="wn__fotorama__wrapper">
                                                             <div class="fotorama wn__fotorama__action"
                                                                  data-nav="thumbs">
-                                                                <a href="Public/images/1.html"><img
-                                                                        src="Public/images/product/1.jpg"
-                                                                        alt=""></a>
-                                                                <a href="Public/images/2.jpg"><img
-                                                                        src="Public/images/product/2.jpg" alt=""></a>
-                                                                <a href="Public/images/3.jpg"><img
-                                                                        src="Public/images/product/3.jpg" alt=""></a>
-                                                                <a href="Public/images/4.jpg"><img
-                                                                        src="Public/images/product/4.jpg" alt=""></a>
-                                                                <a href="Public/images/5.jpg"><img
-                                                                        src="Public/images/product/5.jpg" alt=""></a>
-                                                                <a href="Public/images/6.jpg"><img
-                                                                        src="Public/images/product/6.jpg" alt=""></a>
-                                                                <a href="Public/images/7.jpg"><img
-                                                                        src="Public/images/product/7.jpg" alt=""></a>
-                                                                <a href="Public/images/8.jpg"><img
-                                                                        src="Public/images/product/8.jpg" alt=""></a>
+                                                                <a  href="Public/images/1.html">
+                                                                    <img id="imageBook" src=""></a>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-12">
                                                         <div class="product__info__main">
-                                                            <h1>Chaz Kangeroo Hoodie</h1>
+                                                            <h1 id="nameBook">Chaz Kangeroo Hoodie</h1>
                                                             <div class="product-reviews-summary d-flex">
                                                                 <ul class="rating-summary d-flex">
                                                                     <li><i class="zmdi zmdi-star-outline"></i></li>
@@ -1272,19 +1260,9 @@
                                                                 </ul>
                                                             </div>
                                                             <div class="price-box">
-                                                                <span>$52.00</span>
+                                                                <span id="priceBook"></span>
                                                             </div>
-                                                            <div class="product__overview">
-                                                                <p>Ideal for cold-weather training or work outdoors, the
-                                                                    Chaz Hoodie promises
-                                                                    superior warmth with every wear.
-                                                                    Thick material blocks out the wind as ribbed cuffs
-                                                                    and bottom band seal in
-                                                                    body heat.</p>
-                                                                <p>Ideal for cold-weather training or work outdoors, the
-                                                                    Chaz Hoodie promises
-                                                                    superior warmth with every wear.
-                                                                </p>
+                                                            <div id="descriptionBook" class="product__overview">
                                                             </div>
                                                             <div class="box-tocart d-flex">
                                                                 <span>Qty</span>
@@ -1302,8 +1280,7 @@
                                                             </div>
                                                             <div class="product_meta">
                                                              <span class="posted_in">Categories:
-                                                                 <a href="#">Adventure</a>,
-                                                             <a href="#">Kids' Music</a>
+                                                                 <a id="typeBook" href="#"></a>,
                                                              </span>
                                                             </div>
                                                             <div class="product-share">
@@ -1345,6 +1322,22 @@
             </div>
         </div>
     </div>
+    <div id="quickview-wrapper">
+        <!-- Modal -->
+        <div class="modal fade" id="success" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal__container" role="document">
+                <div class="modal-content" style="margin-top: 22%">
+                   <%-- <div class="modal-header modal__header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    </div>--%>
+                    <div  class="modal-body" style="margin: auto;font-size: 20px" >
+                       Thêm thành công.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- END QUICKVIEW PRODUCT -->
 </div>
 <!-- //Main wrapper -->
@@ -1355,7 +1348,8 @@
 <script src="Public/js/bootstrap.min.js"></script>
 <script src="Public/js/plugins.js"></script>
 <script src="Public/js/active.js"></script>
-
+<script src="Public/js/addToCart.js"></script>
+<script src="Public/js/animationforcart.js"></script>
 </body>
 
 <!-- Mirrored from demo.hasthemes.com/boighor-preview/boighor-v3/index.html by HTTrack Website Copier/3.x

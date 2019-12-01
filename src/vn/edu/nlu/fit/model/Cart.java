@@ -18,7 +18,17 @@ public class Cart {
         }
     }
     public Cart() {
+        productCart = new ArrayList<>();
     }
+
+    @Override
+    public String toString() {
+        return "Cart{" +
+                "productCart=" + productCart +
+                ", totalCart=" + totalCart +
+                '}';
+    }
+
     public ArrayList<ProductCart> getProductCart() {
         return productCart;
     }
@@ -39,9 +49,11 @@ public class Cart {
                     // else chinh sua quantity da co
                     if(quantity==0) {
                         productCart.get(i).setQuantity(productCart.get(i).getQuantity() + 1);
+                        countTotalCart();
                         return;
                     }else{
                         productCart.get(i).setQuantity(quantity);
+                        countTotalCart();
                         return;
                     }
                 }
@@ -67,6 +79,9 @@ public class Cart {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        countTotalCart();
+    }
+    public void addProduct(String id){
 
     }
     public void setProductCart(ArrayList<ProductCart> productCart) {

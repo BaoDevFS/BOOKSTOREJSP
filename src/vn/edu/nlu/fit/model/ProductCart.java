@@ -3,7 +3,7 @@ package vn.edu.nlu.fit.model;
 public class ProductCart {
     Books books;
     int quantity=1;
-    double total;
+    double total=0;
     int id;
 
     public int getId() {

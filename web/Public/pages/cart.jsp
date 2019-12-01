@@ -1,3 +1,6 @@
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="vn.edu.nlu.fit.model.ProductCart" %>
+<%@ page import="vn.edu.nlu.fit.model.Cart" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
@@ -93,33 +96,20 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <%
+                                    Cart cart = (Cart) request.getAttribute("cart");
+                                    ArrayList<ProductCart> listbook = cart.getProductCart();
+                                    for (ProductCart p:listbook) {
+                                %>
                                 <tr>
-                                    <td class="product-thumbnail"><a href="#"><img src="Public/images/product/sm-3/1.jpg" alt="productimg"></a></td>
-                                    <td class="product-name"><a href="#">Natoque penatibus</a></td>
-                                    <td class="product-price"><span class="amount">$165.00</span></td>
-                                    <td class="product-quantity"><input type="number" value="1"></td>
-                                    <td class="product-subtotal">$165.00</td>
-                                    <td class="product-remove"><a href="#">X</a></td>
+                                    <td class="product-thumbnail"><a href="#"><img src="<%=p.getBooks().getImage()%>" alt="productimg"></a></td>
+                                    <td class="product-name"><a href="#"><%=p.getBooks().getName()%></a></td>
+                                    <td class="product-price"><span class="amount">$<%=p.getBooks().getPrice()%></span></td>
+                                    <td class="product-quantity"><input type="number" value="<%=p.getQuantity()%>"></td>
+                                    <td class="product-subtotal">$<%=p.getTotal()%></td>
+                                    <td class="product-remove"><a class="delete" href="">X</a></td>
                                 </tr>
-                                <tr>
-                                    <td class="product-thumbnail"><a href="#"><img
-                                            src="Public/images/product/sm-3/2.jpg" alt="productimg"></a></td>
-                                    <td class="product-name"><a href="#">Quisque fringilla</a></td>
-                                    <td class="product-price"><span class="amount">$50.00</span></td>
-                                    <td class="product-quantity"><input type="number" value="1"></td>
-                                    <td class="product-subtotal">$50.00</td>
-                                    <td class="product-remove"><a href="#">X</a></td>
-                                </tr>
-                                <tr>
-                                    <td class="product-thumbnail"><a href="#"><img
-                                            src="Public/images/product/sm-3/3.jpg" alt="product
-        img"></a></td>
-                                    <td class="product-name"><a href="#">Vestibulum suscipit</a></td>
-                                    <td class="product-price"><span class="amount">$50.00</span></td>
-                                    <td class="product-quantity"><input type="number" value="1"></td>
-                                    <td class="product-subtotal">$50.00</td>
-                                    <td class="product-remove"><a href="#">X</a></td>
-                                </tr>
+                                <%}%>
                                 </tbody>
                             </table>
                         </div>
@@ -143,13 +133,13 @@
                                 <li>Sub Total</li>
                             </ul>
                             <ul class="cart__total__tk">
-                                <li>$70</li>
-                                <li>$70</li>
+                                <li>$<%=cart.getTotalCart()%></li>
+                                <li>$0</li>
                             </ul>
                         </div>
                         <div class="cart__total__amount">
                             <span>Grand Total</span>
-                            <span>$140</span>
+                            <span>$<%=cart.getTotalCart()%></span>
                         </div>
                     </div>
                 </div>
@@ -184,8 +174,9 @@
     $(document).ready(function () {
         var table = $('#datable_1').DataTable({
             "ajax": {
-                "url": "http://localhost:8080/BookStore/Admin/AjaxProduct",
+                "url": "http://localhost:8080/BookStore/Cart",
                 "dataType": "json",
+                method:"post",
                 "contentType": "application/json; charset=utf-8",
                 'dataSrc': 'products'
             },
