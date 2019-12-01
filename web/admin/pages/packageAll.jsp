@@ -103,40 +103,7 @@
                                                     </tr>
                                                     </tfoot>
                                                     <tbody>
-<%--                                                    <% ResultSet rs = (ResultSet) request.getAttribute("rs");--%>
-<%--                                                        int i = 0;--%>
-<%--                                                    %>--%>
-<%--                                                    <% while (rs.next()) {--%>
-<%--                                                        i++;%>--%>
-<%--                                                    <tr>--%>
-<%--                                                        <td><%= i%>--%>
-<%--                                                        </td>--%>
-<%--                                                        <td><span class="list-img"><img style="width: 100px;height: 100px;border-radius: unset" src="<%=rs.getString("image")%>" alt=""></span>--%>
-<%--                                                        </td>--%>
-<%--                                                        <td>--%>
-<%--                                                            <a href="#">--%>
-<%--                                                                <span class="list-enq-name"><%=rs.getString("name")%></span>--%>
-<%--                                                            </a>--%>
-<%--                                                        </td>--%>
-<%--                                                        <td><%=rs.getString("price")%>--%>
-<%--                                                        </td>--%>
-<%--                                                        <td><%=rs.getString("author")%>--%>
-<%--                                                        </td>--%>
-<%--                                                        <td>--%>
-<%--                                                            <a class="sb2-2-1-edit" href="<%=PathAbsolute.getPath("SingleProduct?id="+rs.getString("id"))%>"><i--%>
-<%--                                                                    class="fa fa-eye" aria-hidden="true"></i></a>--%>
-<%--                                                        </td>--%>
-<%--                                                        <td>--%>
-<%--                                                            <a class="sb2-2-1-edit"href="<%=PathAbsolute.getPath("Admin/PackageEdit?id="+rs.getString("id"))%>">--%>
-<%--                                                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>--%>
-<%--                                                            </a>--%>
-<%--                                                        </td>--%>
-<%--                                                        <td>--%>
-<%--                                                            <a class="sb2-2-1-edit" href="<%=PathAbsolute.getPath("Admin/PackageEdit?id="+rs.getString("id")+"&type=products")%>"><i--%>
-<%--                                                                    class="fa fa-trash-o" aria-hidden="true"></i></a>--%>
-<%--                                                        </td>--%>
-<%--                                                    </tr>--%>
-<%--                                                    <%}%>--%>
+
                                                     </tbody>
                                                 </table>
                                             </div>
