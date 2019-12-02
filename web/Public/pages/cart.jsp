@@ -84,9 +84,10 @@
                 <div class="col-md-12 col-sm-12 ol-lg-12">
                     <form action="#">
                         <div class="table-content wnro__table table-responsive">
-                            <table id="table">
+                            <table id="table" class="table table-hover display  pb-30">
                                 <thead>
                                 <tr class="title-top">
+                                    <th class="product-remove" style="width: 60px;">Id</th>
                                     <th class="product-thumbnail">Image</th>
                                     <th class="product-name">Product</th>
                                     <th class="product-price">Price</th>
@@ -96,20 +97,20 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <%
-                                    Cart cart = (Cart) request.getAttribute("cart");
-                                    ArrayList<ProductCart> listbook = cart.getProductCart();
-                                    for (ProductCart p:listbook) {
-                                %>
-                                <tr>
-                                    <td class="product-thumbnail"><a href="#"><img src="<%=p.getBooks().getImage()%>" alt="productimg"></a></td>
-                                    <td class="product-name"><a href="#"><%=p.getBooks().getName()%></a></td>
-                                    <td class="product-price"><span class="amount">$<%=p.getBooks().getPrice()%></span></td>
-                                    <td class="product-quantity"><input type="number" value="<%=p.getQuantity()%>"></td>
-                                    <td class="product-subtotal">$<%=p.getTotal()%></td>
-                                    <td class="product-remove"><a class="delete" href="">X</a></td>
-                                </tr>
-                                <%}%>
+<%--                                <%--%>
+<%--                                    Cart cart = (Cart) request.getAttribute("cart");--%>
+<%--                                    ArrayList<ProductCart> listbook = cart.getProductCart();--%>
+<%--                                    for (ProductCart p:listbook) {--%>
+<%--                                %>--%>
+<%--                                <tr>--%>
+<%--                                    <td class="product-thumbnail"><a href="#"><img src="<%=p.getBooks().getImage()%>" alt="productimg"></a></td>--%>
+<%--                                    <td class="product-name"><a href="#"><%=p.getBooks().getName()%></a></td>--%>
+<%--                                    <td class="product-price"><span class="amount">$<%=p.getBooks().getPrice()%></span></td>--%>
+<%--                                    <td class="product-quantity"><input type="number" value="<%=p.getQuantity()%>"></td>--%>
+<%--                                    <td class="product-subtotal">$<%=p.getTotal()%></td>--%>
+<%--                                    <td class="product-remove"><a class="delete" href="">X</a></td>--%>
+<%--                                </tr>--%>
+<%--                                <%}%>--%>
                                 </tbody>
                             </table>
                         </div>
@@ -133,13 +134,13 @@
                                 <li>Sub Total</li>
                             </ul>
                             <ul class="cart__total__tk">
-                                <li>$<%=cart.getTotalCart()%></li>
-                                <li>$0</li>
+<%--                                <li>$<%=cart.getTotalCart()%></li>--%>
+<%--                                <li>$0</li>--%>
                             </ul>
                         </div>
                         <div class="cart__total__amount">
-                            <span>Grand Total</span>
-                            <span>$<%=cart.getTotalCart()%></span>
+<%--                            <span>Grand Total</span>--%>
+<%--                            <span>$<%=cart.getTotalCart()%></span>--%>
                         </div>
                     </div>
                 </div>
@@ -172,75 +173,95 @@
     // <th>Edit</th>
     // <th>Delete</th>
     $(document).ready(function () {
-        var table = $('#datable_1').DataTable({
+        var table = $('#table').DataTable({
+            "searching": false,   // Search Box will Be Disabled
+            "ordering": false,    // Ordering (Sorting on Each Column)will Be Disabled
+            "info": false,         // Will show "1 to n of n entries" Text at bottom
+            "lengthChange": false,
             "ajax": {
                 "url": "http://localhost:8080/BookStore/Cart",
                 "dataType": "json",
                 method:"post",
-                "contentType": "application/json; charset=utf-8",
-                'dataSrc': 'products'
+                'dataSrc': 'productCart'
             },
             columns: [
+
+                {   "orderable": false,
+                    "className":"product-id",
+                    "data": "id",
+                    "render": function(data, typet, row) {
+                        return data;
+                    }
+                },
                 {   "orderable": false,
                     "className":"product-thumbnail",
-                    "data": "image",
+                    "data": "books",
                     "render": function(data, typet, row) {
-                        return '<a href="#"><img style="width: 100px;height: 100px" src='+data+' alt="productimg"></a>';
+                        return '<a href="#"><img width="100px"  height="100px" src='+data.image+' alt="productimg"></a>';
                     }
                 },
                 {   "orderable": false,
                     "className":"product-name",
-                    "data": "name",
+                    "data": "books",
                     "render": function(data, typet, row) {
-                        return '<a href="#">'+data+'</a>';
+                        return '<a href="#">'+data.name+'</a>';
                     }
                 },
-                {   "orderable": false,
+                {
                     "className":"product-price",
-                    "data": "price",
+                    "data": "books",
                     "render": function(data, typet, row) {
-                        return '<span class="amount">$'+data+'</span>';
+                        return '<span class="amount">$'+data.price+'</span>';
                     }
-                },
-                {   "orderable": false,
+                },{   "orderable": false,
                     "className":"product-quantity",
+                    "data": "quantity",
                     "render": function(data, typet, row) {
-                        return '<input type="number" value="1">';
+                        return '<input type="number" value="'+data+'">';
                     }
-                },
-                {   "orderable": false,
+                },{   "orderable": false,
                     "className":"product-subtotal",
-                    "data": "price",
+                    "data": "total",
                     "render": function(data, typet, row) {
-
+                        return '$'+data;
                     }
-                },
-
-
+                }
+                ,{   "orderable": false,
+                    "className":"product-remove",
+                    "data": "total",
+                    "render": function(data, typet, row) {
+                        return '<a class="delete" style="cursor: pointer">X</a>';
+                    }
+                }
             ]
         });
-        $('#datable_1 tbody').on('click', 'a.delete', function () {
+        $('#table tbody').on('click', 'a.delete', function () {
             var row = table.row($(this).parents('tr'));
             var data = row.data();
             row.remove().draw();
+            console.log(data.id);
             $.ajax({
-                url: "http://localhost:8080/BookStore/Admin/Delete",
-                type: "get",
-                data: {id: data.id,type:'products'},
-                success: function (resultText) {
+                url: "http://localhost:8080/BookStore/Cart",
+                type: "post",
+                data: {id: data.id},
+                complete: function (resultText) {
                     table.ajax.reload();
                 }
             });
         });
-        $('#datable_1 tbody').on('click', 'a.view', function () {
+        $('#table tbody').on('change', 'input', function () {
             var row = table.row($(this).parents('tr'));
             var data = row.data();
-            window.location.href = "http://localhost:8080/BookStore/SingleProduct?id="+data.id;
-        });
-        $('#datable_1 tbody').on('click', 'a.edit', function () {
-            var row = table.row($(this).parents('tr'));
-            var data = row.data();
-            window.location.href = "http://localhost:8080/BookStore/Admin/PackageEdit?id="+data.id;
+            // get data input
+            var quantity=$(this).val();
+            $.ajax({
+                url: "http://localhost:8080/BookStore/Cart",
+                type: "post",
+                data: {id: data.id,quantity:quantity},
+                complete: function (resultText) {
+                    table.ajax.reload();
+                }
+            });
         });
     });
 

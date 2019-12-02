@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class Cart {
     private ArrayList<ProductCart> productCart;
     private double totalCart;
+    int quanty=0;
     public void countTotalCart(){
         totalCart=0;
         for (ProductCart p: productCart) {
@@ -28,7 +29,15 @@ public class Cart {
                 ", totalCart=" + totalCart +
                 '}';
     }
-
+    public void removeProductCart(int id){
+        for (int i=0;i<productCart.size();i++){
+            if(productCart.get(i).getId()==id){
+                productCart.remove(i);
+                countTotalCart();
+                break;
+            }
+        }
+    }
     public ArrayList<ProductCart> getProductCart() {
         return productCart;
     }
@@ -41,6 +50,7 @@ public class Cart {
         this.totalCart = totalCart;
     }
     public void addProductCart(int id,int quantity){
+        quanty=quantity;
         for (int i=0;i<productCart.size();i++){
             // if id da co thi tang quantity len 1
             //else them ms book vao
@@ -58,6 +68,7 @@ public class Cart {
                     }
                 }
         }
+        // add new product and quatity no quantity and have quantity
         GetConnectDatabase getCon = new GetConnectDatabase();
         try {
             Connection connection = getCon.getConnectionSql();
@@ -74,7 +85,12 @@ public class Cart {
                 ProductCart productC = new ProductCart();
                 productC.setBooks(books);
                 productC.updateTotal();
+                //if have quatity do setquanity
+                if(quanty!=0){
+                   productC.setQuantity(quanty);
+                }
                 productCart.add(productC);
+
             }
         } catch (SQLException e) {
             e.printStackTrace();
