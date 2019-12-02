@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <header id="wn__header" class="oth-page header__area header__absolute sticky__header">
     <div class="container-fluid">
@@ -27,7 +26,7 @@
                 <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
                     <li class="shop_search"><a class="search__active" href="#"></a></li>
                     <li class="wishlist"><a href="http://localhost:8080/BookStore/WishList"></a></li>
-                    <li class="shopcart"><a class="cartbox_active" href="#"><span class="product_qun">3</span></a>
+                    <li class="shopcart"><a class="cartbox_active" href="#"><span class="product_qun"><%--3--%></span></a>
                         <!-- Start Shopping Cart -->
                         <div class="block-minicart minicart__active">
                             <div class="minicart-content-wrapper">
@@ -35,120 +34,120 @@
                                     <span>close</span>
                                 </div>
                                 <div class="items-total d-flex justify-content-between">
-                                    <span>3 items</span>
+                                    <span id="quantity"><%--3 items--%></span>
                                     <span>Cart Subtotal</span>
                                 </div>
                                 <div class="total_amount text-right">
-                                    <span>$66.00</span>
+                                    <span id="total"><%--$66.00--%></span>
                                 </div>
                                 <div class="mini_action checkout">
                                     <a class="checkout__btn" href="http://localhost:8080/BookStore/Checkout">Go to Checkout</a>
                                 </div>
                                 <div class="single__items">
                                     <div class="miniproduct" >
-                                        <div class="item01 d-flex">
-                                            <div class="thumb">
-                                                <a href="http://localhost:8080/BookStore/SingleProduct">
-                                                    <img style="width: 50px" src="Public/images/product/sm-img/1.jpg" alt="product images">
-                                                </a>
-                                            </div>
-                                            <div class="content">
-                                                <h6><a href="http://localhost:8080/BookStore/SingleProduct">Voyage Yoga Bag</a></h6>
-                                                <span class="prize">$30.00</span>
-                                                <div class="product_prize d-flex justify-content-between">
-                                                    <span class="qun">Qty: 01</span>
-                                                    <ul class="d-flex justify-content-end option">
-                                                        <li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>
-                                                        <li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item01 d-flex mt--20">
-                                            <div class="thumb">
-                                                <a href="http://localhost:8080/BookStore/SingleProduct">
-                                                    <img style="width: 50px" src="Public/images/product/sm-img/3.jpg" alt="product images"></a>
-                                            </div>
-                                            <div class="content">
-                                                <h6><a href="http://localhost:8080/BookStore/SingleProduct">Impulse Duffle</a></h6>
-                                                <span class="prize">$40.00</span>
-                                                <div class="product_prize d-flex justify-content-between">
-                                                    <span class="qun">Qty: 03</span>
-                                                    <ul class="d-flex justify-content-end">
-                                                        <li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>
-                                                        <li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item01 d-flex mt--20">
-                                            <div class="thumb">
-                                                <a href="http://localhost:8080/BookStore/SingleProduct">
-                                                    <img style="width: 50px" src="Public/images/product/sm-img/2.jpg" alt="product images"></a>
-                                            </div>
-                                            <div class="content">
-                                                <h6><a href="http://localhost:8080/BookStore/SingleProduct">Compete Track Tote</a></h6>
-                                                <span class="prize">$40.00</span>
-                                                <div class="product_prize d-flex justify-content-between">
-                                                    <span class="qun">Qty: 03</span>
-                                                    <ul class="d-flex justify-content-end">
-                                                        <li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>
-                                                        <li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item01 d-flex mt--20">
-                                            <div class="thumb">
-                                                <a href="http://localhost:8080/BookStore/SingleProduct">
-                                                    <img style="width: 50px" src="Public/images/product/sm-img/2.jpg" alt="product images"></a>
-                                            </div>
-                                            <div class="content">
-                                                <h6><a href="http://localhost:8080/BookStore/SingleProduct">Compete Track Tote</a></h6>
-                                                <span class="prize">$40.00</span>
-                                                <div class="product_prize d-flex justify-content-between">
-                                                    <span class="qun">Qty: 03</span>
-                                                    <ul class="d-flex justify-content-end">
-                                                        <li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>
-                                                        <li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item01 d-flex mt--20">
-                                            <div class="thumb">
-                                                <a href="http://localhost:8080/BookStore/SingleProduct">
-                                                    <img style="width: 50px" src="Public/images/product/sm-img/2.jpg" alt="product images"></a>
-                                            </div>
-                                            <div class="content">
-                                                <h6><a href="http://localhost:8080/BookStore/SingleProduct">Compete Track Tote</a></h6>
-                                                <span class="prize">$40.00</span>
-                                                <div class="product_prize d-flex justify-content-between">
-                                                    <span class="qun">Qty: 03</span>
-                                                    <ul class="d-flex justify-content-end">
-                                                        <li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>
-                                                        <li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item01 d-flex mt--20">
-                                            <div class="thumb">
-                                                <a href="http://localhost:8080/BookStore/SingleProduct">
-                                                    <img style="width: 50px" src="Public/images/product/sm-img/2.jpg" alt="product images"></a>
-                                            </div>
-                                            <div class="content">
-                                                <h6><a href="http://localhost:8080/BookStore/SingleProduct">Compete Track Tote</a></h6>
-                                                <span class="prize">$40.00</span>
-                                                <div class="product_prize d-flex justify-content-between">
-                                                    <span class="qun">Qty: 03</span>
-                                                    <ul class="d-flex justify-content-end">
-                                                        <li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>
-                                                        <li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
+<%--                                        <div class="item01 d-flex">--%>
+<%--                                            <div class="thumb">--%>
+<%--                                                <a href="http://localhost:8080/BookStore/SingleProduct">--%>
+<%--                                                    <img style="width: 50px" src="Public/images/product/sm-img/1.jpg" alt="product images">--%>
+<%--                                                </a>--%>
+<%--                                            </div>--%>
+<%--                                            <div class="content">--%>
+<%--                                                <h6><a href="http://localhost:8080/BookStore/SingleProduct">Voyage Yoga Bag</a></h6>--%>
+<%--                                                <span class="prize">$30.00</span>--%>
+<%--                                                <div class="product_prize d-flex justify-content-between">--%>
+<%--                                                    <span class="qun">Qty: 01</span>--%>
+<%--                                                    <ul class="d-flex justify-content-end option">--%>
+<%--                                                        <li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>--%>
+<%--                                                        <li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>--%>
+<%--                                                    </ul>--%>
+<%--                                                </div>--%>
+<%--                                            </div>--%>
+<%--                                        </div>--%>
+<%--                                        <div class="item01 d-flex mt--20">--%>
+<%--                                            <div class="thumb">--%>
+<%--                                                <a href="http://localhost:8080/BookStore/SingleProduct">--%>
+<%--                                                    <img style="width: 50px" src="Public/images/product/sm-img/3.jpg" alt="product images"></a>--%>
+<%--                                            </div>--%>
+<%--                                            <div class="content">--%>
+<%--                                                <h6><a href="http://localhost:8080/BookStore/SingleProduct">Impulse Duffle</a></h6>--%>
+<%--                                                <span class="prize">$40.00</span>--%>
+<%--                                                <div class="product_prize d-flex justify-content-between">--%>
+<%--                                                    <span class="qun">Qty: 03</span>--%>
+<%--                                                    <ul class="d-flex justify-content-end">--%>
+<%--                                                        <li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>--%>
+<%--                                                        <li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>--%>
+<%--                                                    </ul>--%>
+<%--                                                </div>--%>
+<%--                                            </div>--%>
+<%--                                        </div>--%>
+<%--                                        <div class="item01 d-flex mt--20">--%>
+<%--                                            <div class="thumb">--%>
+<%--                                                <a href="http://localhost:8080/BookStore/SingleProduct">--%>
+<%--                                                    <img style="width: 50px" src="Public/images/product/sm-img/2.jpg" alt="product images"></a>--%>
+<%--                                            </div>--%>
+<%--                                            <div class="content">--%>
+<%--                                                <h6><a href="http://localhost:8080/BookStore/SingleProduct">Compete Track Tote</a></h6>--%>
+<%--                                                <span class="prize">$40.00</span>--%>
+<%--                                                <div class="product_prize d-flex justify-content-between">--%>
+<%--                                                    <span class="qun">Qty: 03</span>--%>
+<%--                                                    <ul class="d-flex justify-content-end">--%>
+<%--                                                        <li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>--%>
+<%--                                                        <li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>--%>
+<%--                                                    </ul>--%>
+<%--                                                </div>--%>
+<%--                                            </div>--%>
+<%--                                        </div>--%>
+<%--                                        <div class="item01 d-flex mt--20">--%>
+<%--                                            <div class="thumb">--%>
+<%--                                                <a href="http://localhost:8080/BookStore/SingleProduct">--%>
+<%--                                                    <img style="width: 50px" src="Public/images/product/sm-img/2.jpg" alt="product images"></a>--%>
+<%--                                            </div>--%>
+<%--                                            <div class="content">--%>
+<%--                                                <h6><a href="http://localhost:8080/BookStore/SingleProduct">Compete Track Tote</a></h6>--%>
+<%--                                                <span class="prize">$40.00</span>--%>
+<%--                                                <div class="product_prize d-flex justify-content-between">--%>
+<%--                                                    <span class="qun">Qty: 03</span>--%>
+<%--                                                    <ul class="d-flex justify-content-end">--%>
+<%--                                                        <li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>--%>
+<%--                                                        <li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>--%>
+<%--                                                    </ul>--%>
+<%--                                                </div>--%>
+<%--                                            </div>--%>
+<%--                                        </div>--%>
+<%--                                        <div class="item01 d-flex mt--20">--%>
+<%--                                            <div class="thumb">--%>
+<%--                                                <a href="http://localhost:8080/BookStore/SingleProduct">--%>
+<%--                                                    <img style="width: 50px" src="Public/images/product/sm-img/2.jpg" alt="product images"></a>--%>
+<%--                                            </div>--%>
+<%--                                            <div class="content">--%>
+<%--                                                <h6><a href="http://localhost:8080/BookStore/SingleProduct">Compete Track Tote</a></h6>--%>
+<%--                                                <span class="prize">$40.00</span>--%>
+<%--                                                <div class="product_prize d-flex justify-content-between">--%>
+<%--                                                    <span class="qun">Qty: 03</span>--%>
+<%--                                                    <ul class="d-flex justify-content-end">--%>
+<%--                                                        <li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>--%>
+<%--                                                        <li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>--%>
+<%--                                                    </ul>--%>
+<%--                                                </div>--%>
+<%--                                            </div>--%>
+<%--                                        </div>--%>
+<%--                                        <div class="item01 d-flex mt--20">--%>
+<%--                                            <div class="thumb">--%>
+<%--                                                <a href="http://localhost:8080/BookStore/SingleProduct">--%>
+<%--                                                    <img style="width: 50px" src="Public/images/product/sm-img/2.jpg" alt="product images"></a>--%>
+<%--                                            </div>--%>
+<%--                                            <div class="content">--%>
+<%--                                                <h6><a href="http://localhost:8080/BookStore/SingleProduct">Compete Track Tote</a></h6>--%>
+<%--                                                <span class="prize">$40.00</span>--%>
+<%--                                                <div class="product_prize d-flex justify-content-between">--%>
+<%--                                                    <span class="qun">Qty: 03</span>--%>
+<%--                                                    <ul class="d-flex justify-content-end">--%>
+<%--                                                        <li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>--%>
+<%--                                                        <li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>--%>
+<%--                                                    </ul>--%>
+<%--                                                </div>--%>
+<%--                                            </div>--%>
+<%--                                        </div>--%>
                                     </div>
                                 </div>
                                 <div class="mini_action cart">

@@ -97,20 +97,6 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-<%--                                <%--%>
-<%--                                    Cart cart = (Cart) request.getAttribute("cart");--%>
-<%--                                    ArrayList<ProductCart> listbook = cart.getProductCart();--%>
-<%--                                    for (ProductCart p:listbook) {--%>
-<%--                                %>--%>
-<%--                                <tr>--%>
-<%--                                    <td class="product-thumbnail"><a href="#"><img src="<%=p.getBooks().getImage()%>" alt="productimg"></a></td>--%>
-<%--                                    <td class="product-name"><a href="#"><%=p.getBooks().getName()%></a></td>--%>
-<%--                                    <td class="product-price"><span class="amount">$<%=p.getBooks().getPrice()%></span></td>--%>
-<%--                                    <td class="product-quantity"><input type="number" value="<%=p.getQuantity()%>"></td>--%>
-<%--                                    <td class="product-subtotal">$<%=p.getTotal()%></td>--%>
-<%--                                    <td class="product-remove"><a class="delete" href="">X</a></td>--%>
-<%--                                </tr>--%>
-<%--                                <%}%>--%>
                                 </tbody>
                             </table>
                         </div>
@@ -134,13 +120,13 @@
                                 <li>Sub Total</li>
                             </ul>
                             <ul class="cart__total__tk">
-<%--                                <li>$<%=cart.getTotalCart()%></li>--%>
-<%--                                <li>$0</li>--%>
+                                <li id="totalli"></li>
+                                <li>$0</li>
                             </ul>
                         </div>
                         <div class="cart__total__amount">
-<%--                            <span>Grand Total</span>--%>
-<%--                            <span>$<%=cart.getTotalCart()%></span>--%>
+                            <span>Grand Total</span>
+                            <span id="totalsp"></span>
                         </div>
                     </div>
                 </div>
@@ -163,16 +149,10 @@
 <script src="Public/js/active.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="Public/js/carttoheader.js"></script>
 <script>
-    // <th>Id</th>
-    // <th>Img</th>
-    // <th>ProductName</th>
-    // <th>Price</th>
-    // <th>Author</th>
-    // <th>View</th>
-    // <th>Edit</th>
-    // <th>Delete</th>
     $(document).ready(function () {
+        let total;
         var table = $('#table').DataTable({
             "searching": false,   // Search Box will Be Disabled
             "ordering": false,    // Ordering (Sorting on Each Column)will Be Disabled
@@ -182,7 +162,13 @@
                 "url": "http://localhost:8080/BookStore/Cart",
                 "dataType": "json",
                 method:"post",
-                'dataSrc': 'productCart'
+                'dataSrc': 'productCart',
+                complete:function (data) {
+                    var json =JSON.parse(data.responseText);
+                    $('#totalli').text('$'+json.totalCart);
+                    $('#totalsp').text('$'+json.totalCart);
+
+                }
             },
             columns: [
 

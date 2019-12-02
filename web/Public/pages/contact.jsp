@@ -312,7 +312,7 @@
 </script>
 
 <script src="Public/js/active.js"></script>
-
+<script src="Public/js/carttoheader.js"></script>
 </body>
 
 <!-- Mirrored from demo.hasthemes.com/boighor-preview/boighor-v3/contact.html by HTTrack Website Copier/3.x

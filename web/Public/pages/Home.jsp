@@ -47,7 +47,7 @@
 <!-- Main wrapper -->
 <div class="wrapper" id="wrapper">
     <!-- Header -->
-    <%@ include file="include/header.jsp" %>
+<%--    <%@ include file="include/header.jsp" %>--%>
     <header id="wn__header" class="header__area header__absolute sticky__header">
         <div class="container-fluid">
             <div class="row">
@@ -74,7 +74,7 @@
                     <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
                         <li class="shop_search"><a class="search__active" href="#"></a></li>
                         <li class="wishlist"><a href="http://localhost:8080/BookStore/WishList"></a></li>
-                        <li class="shopcart"><a class="cartbox_active" href="#"><span class="product_qun">3</span></a>
+                        <li class="shopcart"><a class="cartbox_active" href="#"><span class="product_qun"><%--3--%></span></a>
                             <!-- Start Shopping Cart -->
                             <div class="block-minicart minicart__active">
                                 <div class="minicart-content-wrapper">
@@ -82,11 +82,11 @@
                                         <span>close</span>
                                     </div>
                                     <div class="items-total d-flex justify-content-between">
-                                        <span>3 items</span>
+                                        <span id="quantity"><%--3 items--%></span>
                                         <span>Cart Subtotal</span>
                                     </div>
                                     <div class="total_amount text-right">
-                                        <span>$66.00</span>
+                                        <span id="total"><%--$66.00--%></span>
                                     </div>
                                     <div class="mini_action checkout">
                                         <a class="checkout__btn" href="http://localhost:8080/BookStore/Cart">Go to
@@ -94,7 +94,7 @@
                                     </div>
                                     <div class="single__items">
                                         <div class="miniproduct">
-                                            <div class="item01 d-flex">
+                                           <%-- <div class="item01 d-flex">
                                                 <div class="thumb">
                                                     <a href="product-details.html"><img
                                                             src="Public/images/product/sm-img/1.jpg"
@@ -147,7 +147,7 @@
                                                         </ul>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div>--%>
                                         </div>
                                     </div>
                                     <div class="mini_action cart">
@@ -1350,6 +1350,7 @@
 <script src="Public/js/active.js"></script>
 <script src="Public/js/addToCart.js"></script>
 <script src="Public/js/animationforcart.js"></script>
+<script src="Public/js/carttoheader.js"></script>
 </body>
 
 <!-- Mirrored from demo.hasthemes.com/boighor-preview/boighor-v3/index.html by HTTrack Website Copier/3.x

@@ -1080,7 +1080,7 @@ Copier/3.x [XR&CO'2014], Thu, 12 Sep 2019 08:49:15 GMT -->
 <script src="Public/js/bootstrap.min.js"></script>
 <script src="Public/js/plugins.js"></script>
 <script src="Public/js/active.js"></script>
-
+<script src="Public/js/carttoheader.js"></script>
 </body>
 
 <!-- Mirrored from demo.hasthemes.com/boighor-preview/boighor-v3/singleProduct.html by HTTrack Website
