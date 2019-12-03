@@ -7,6 +7,7 @@ function addToCart(id) {
         },
         complete:function (data) {
             console.log("helo")
+            drawCart();
             $('#success').modal('show');
         }
     });
