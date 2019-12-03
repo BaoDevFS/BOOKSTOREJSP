@@ -1,3 +1,6 @@
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="vn.edu.nlu.fit.model.ProductCart" %>
+<%@ page import="vn.edu.nlu.fit.model.Cart" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
@@ -81,9 +84,10 @@
                 <div class="col-md-12 col-sm-12 ol-lg-12">
                     <form action="#">
                         <div class="table-content wnro__table table-responsive">
-                            <table>
+                            <table id="table" class="table table-hover display  pb-30">
                                 <thead>
                                 <tr class="title-top">
+                                    <th class="product-remove" style="width: 60px;">Id</th>
                                     <th class="product-thumbnail">Image</th>
                                     <th class="product-name">Product</th>
                                     <th class="product-price">Price</th>
@@ -93,36 +97,6 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td class="product-thumbnail"><a href="#"><img
-                                            src="Public/images/product/sm-3/1.jpg" alt="product
-        img"></a></td>
-                                    <td class="product-name"><a href="#">Natoque penatibus</a></td>
-                                    <td class="product-price"><span class="amount">$165.00</span></td>
-                                    <td class="product-quantity"><input type="number" value="1"></td>
-                                    <td class="product-subtotal">$165.00</td>
-                                    <td class="product-remove"><a href="#">X</a></td>
-                                </tr>
-                                <tr>
-                                    <td class="product-thumbnail"><a href="#"><img
-                                            src="Public/images/product/sm-3/2.jpg" alt="product
-        img"></a></td>
-                                    <td class="product-name"><a href="#">Quisque fringilla</a></td>
-                                    <td class="product-price"><span class="amount">$50.00</span></td>
-                                    <td class="product-quantity"><input type="number" value="1"></td>
-                                    <td class="product-subtotal">$50.00</td>
-                                    <td class="product-remove"><a href="#">X</a></td>
-                                </tr>
-                                <tr>
-                                    <td class="product-thumbnail"><a href="#"><img
-                                            src="Public/images/product/sm-3/3.jpg" alt="product
-        img"></a></td>
-                                    <td class="product-name"><a href="#">Vestibulum suscipit</a></td>
-                                    <td class="product-price"><span class="amount">$50.00</span></td>
-                                    <td class="product-quantity"><input type="number" value="1"></td>
-                                    <td class="product-subtotal">$50.00</td>
-                                    <td class="product-remove"><a href="#">X</a></td>
-                                </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -146,13 +120,13 @@
                                 <li>Sub Total</li>
                             </ul>
                             <ul class="cart__total__tk">
-                                <li>$70</li>
-                                <li>$70</li>
+                                <li id="totalli"></li>
+                                <li>$0</li>
                             </ul>
                         </div>
                         <div class="cart__total__amount">
                             <span>Grand Total</span>
-                            <span>$140</span>
+                            <span id="totalsp"></span>
                         </div>
                     </div>
                 </div>
@@ -173,6 +147,110 @@
 <script src="Public/js/bootstrap.min.js"></script>
 <script src="Public/js/plugins.js"></script>
 <script src="Public/js/active.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="Public/js/carttoheader.js"></script>
+<script>
+    $(document).ready(function () {
+        let total;
+        var table = $('#table').DataTable({
+            "searching": false,   // Search Box will Be Disabled
+            "ordering": false,    // Ordering (Sorting on Each Column)will Be Disabled
+            "info": false,         // Will show "1 to n of n entries" Text at bottom
+            "lengthChange": false,
+            "ajax": {
+                "url": "http://localhost:8080/BookStore/Cart",
+                "dataType": "json",
+                method:"post",
+                'dataSrc': 'productCart',
+                complete:function (data) {
+                    var json =JSON.parse(data.responseText);
+                    $('#totalli').text('$'+json.totalCart);
+                    $('#totalsp').text('$'+json.totalCart);
 
+                }
+            },
+            columns: [
+
+                {   "orderable": false,
+                    "className":"product-id",
+                    "data": "id",
+                    "render": function(data, typet, row) {
+                        return data;
+                    }
+                },
+                {   "orderable": false,
+                    "className":"product-thumbnail",
+                    "data": "books",
+                    "render": function(data, typet, row) {
+                        return '<a href="#"><img width="100px"  height="100px" src='+data.image+' alt="productimg"></a>';
+                    }
+                },
+                {   "orderable": false,
+                    "className":"product-name",
+                    "data": "books",
+                    "render": function(data, typet, row) {
+                        return '<a href="#">'+data.name+'</a>';
+                    }
+                },
+                {
+                    "className":"product-price",
+                    "data": "books",
+                    "render": function(data, typet, row) {
+                        return '<span class="amount">$'+data.price+'</span>';
+                    }
+                },{   "orderable": false,
+                    "className":"product-quantity",
+                    "data": "quantity",
+                    "render": function(data, typet, row) {
+                        return '<input type="number" value="'+data+'">';
+                    }
+                },{   "orderable": false,
+                    "className":"product-subtotal",
+                    "data": "total",
+                    "render": function(data, typet, row) {
+                        return '$'+data;
+                    }
+                }
+                ,{   "orderable": false,
+                    "className":"product-remove",
+                    "data": "total",
+                    "render": function(data, typet, row) {
+                        return '<a class="delete" style="cursor: pointer">X</a>';
+                    }
+                }
+            ]
+        });
+        $('#table tbody').on('click', 'a.delete', function () {
+            var row = table.row($(this).parents('tr'));
+            var data = row.data();
+            row.remove().draw();
+            console.log(data.id);
+            $.ajax({
+                url: "http://localhost:8080/BookStore/Cart",
+                type: "post",
+                data: {id: data.id},
+                complete: function (resultText) {
+                    table.ajax.reload();
+                }
+            });
+        });
+        $('#table tbody').on('change', 'input', function () {
+            var row = table.row($(this).parents('tr'));
+            var data = row.data();
+            // get data input
+            var quantity=$(this).val();
+            $.ajax({
+                url: "http://localhost:8080/BookStore/Cart",
+                type: "post",
+                data: {id: data.id,quantity:quantity},
+                complete: function (resultText) {
+                    table.ajax.reload();
+                }
+            });
+        });
+    });
+
+</script>
 </body>
 </html>
