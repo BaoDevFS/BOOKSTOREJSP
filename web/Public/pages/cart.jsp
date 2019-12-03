@@ -87,7 +87,8 @@
                             <table id="table" class="table table-hover display  pb-30">
                                 <thead>
                                 <tr class="title-top">
-                                    <th class="product-remove" style="width: 60px;">Id</th>
+                                    <th class="product-remove" style="width: 60px;">#</th>
+                                    <th class="product-remove" style="width: 60px;">ID</th>
                                     <th class="product-thumbnail">Image</th>
                                     <th class="product-name">Product</th>
                                     <th class="product-price">Price</th>
@@ -171,7 +172,12 @@
                 }
             },
             columns: [
-
+                {   "orderable": false,
+                    "className":"null",
+                    "render": function(data, typet, row) {
+                        return '';
+                    }
+                },
                 {   "orderable": false,
                     "className":"product-id",
                     "data": "id",
@@ -219,8 +225,26 @@
                         return '<a class="delete" style="cursor: pointer">X</a>';
                     }
                 }
-            ]
+            ],
+            columnDefs:[
+                { "targets": [ 1 ],
+                    "visible":false
+                },
+               {
+                    "targets": [ 0 ],
+                    "searchable": false,
+                    "orderable": false,
+                }
+            ],
+            "order": [[ 4, 'asc' ]]
         });
+        table.on( 'draw.dt', function () {
+                var PageInfo = $('#table').DataTable().page.info();
+                table.column(0, { page: 'current' }).nodes().each( function (cell, i) {
+                    cell.innerHTML = i + 1 + PageInfo.start;
+                } );
+        } ).draw();
+
         $('#table tbody').on('click', 'a.delete', function () {
             var row = table.row($(this).parents('tr'));
             var data = row.data();
@@ -231,6 +255,7 @@
                 type: "post",
                 data: {id: data.id},
                 complete: function (resultText) {
+                    drawCart();
                     table.ajax.reload();
                 }
             });
@@ -240,17 +265,22 @@
             var data = row.data();
             // get data input
             var quantity=$(this).val();
+            if(quantity<=0){
+                console.log(quantity);
+                $(this).val('1');
+                quantity=1;
+            }
             $.ajax({
                 url: "http://localhost:8080/BookStore/Cart",
                 type: "post",
                 data: {id: data.id,quantity:quantity},
                 complete: function (resultText) {
+                    drawCart();
                     table.ajax.reload();
                 }
             });
         });
     });
-
 </script>
 </body>
 </html>
