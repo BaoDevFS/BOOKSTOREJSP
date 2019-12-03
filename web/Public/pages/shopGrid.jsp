@@ -3,6 +3,7 @@
 <%@ page import="vn.edu.nlu.control.GetListProductType" %>
 <%@ page import="vn.edu.nlu.fit.model.Products" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="vn.edu.nlu.tools.Pagination" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
@@ -33,29 +34,44 @@
     <!-- Modernizer js -->
     <script src="Public/js/vendor/modernizr-3.5.0.min.js"></script>
 </head>
+<style>
+    .wn__pagination li .active{
+        /*text-decoration: underline;*/
+        color: brown;
+        border: 1px solid #d4d0d0;
+    }
+
+</style>
 <body>
 <%
     GetListProductType listPr = new GetListProductType();
-    String type = request.getParameter("type");
     ArrayList<Products> arr;
-    if (type != null) {
-        arr = listPr.getListCategories(type);
+
+    int type = 1;
+    if (request.getParameter("type") != null) {
+        try {
+            type = Integer.parseInt(request.getParameter("type"));
+            arr = listPr.getListCategories(type);
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
     } else {
         arr = listPr.getList();
     }
-//    TacGiaDAOImpl tgDAO = new TacGiaDAOImpl();
+    int paramPage = 1;
+    if (request.getParameter("page") != null) {
+        try {
+            paramPage = Integer.parseInt(request.getParameter("page"));
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+    }
+    ArrayList<Products> listPage = listPr.getListCategories(type);
+    //phan trang
+    String link = "ShopGrid?type=" + type;
+    Pagination pagination = new Pagination(200, 20, 4, paramPage);
+    String showPagination = pagination.showPagination(link);
 
-    int start = 0, end = 9;
-    if (arr.size() < 9) {
-        end = arr.size();
-    }
-    if (request.getParameter("start") != null) {
-        start = Integer.parseInt(request.getParameter("start"));
-    }
-    if (request.getParameter("end") != null) {
-        end = Integer.parseInt(request.getParameter("end"));
-    }
-    ArrayList<Products> listPage = listPr.getListByPage(arr, start, end);
 %>
 <!--[if lte IE 9]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
@@ -201,6 +217,7 @@
 
                                 <% for (Products pd : listPage) {
                                 %>
+
                                 <!-- Start Single Product -->
                                 <div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
                                     <div class="product__thumb">
@@ -249,32 +266,7 @@
 
                                 <% } %>
                             </div>
-
-                            <ul class="wn__pagination">
-                                <%--                                <li class="active"><a href="#">1</a></li>--%>
-                                <%--                                <li><a href="#"><i class="zmdi zmdi-chevron-right"></i></a></li>--%>
-
-                                <%
-                                    int a, b;
-                                    int soTrang = arr.size() / 9;
-                                    if (arr.size() % 9 > 0) {
-                                        soTrang++;
-                                    }
-                                    for (int i = 1; i <= soTrang; i++) {
-                                        a = (i - 1) * 9;
-                                        b = i * 9;
-                                        if (b > arr.size()) {
-                                            b = arr.size();
-                                        }
-                                %>
-                                <%--                                    PathAbsolute.getPath("ShopGrid?type="+i)--%>
-                                <li><a class="active" href="ShopGrid?start=<%=a%>&end=<%=b%>"><%=i%>
-                                </a></li>
-                                <%
-                                    }
-                                %>
-
-                            </ul>
+                            <%= showPagination%>
                         </div>
                         <div class="shop-grid tab-pane fade" id="nav-list" role="tabpanel">
                             <div class="list__view__wrapper">

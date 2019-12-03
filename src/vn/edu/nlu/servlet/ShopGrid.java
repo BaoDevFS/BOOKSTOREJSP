@@ -56,7 +56,6 @@ public class ShopGrid extends HttpServlet {
             request.getRequestDispatcher("/Public/pages/shopGrid.jsp").forward(request, response);
         } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println("bảo ");
         }
     }
 }

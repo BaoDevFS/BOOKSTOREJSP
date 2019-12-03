@@ -56,11 +56,11 @@ public class GetListProductType {
         return arr;
     }
 
-    public ArrayList<Products> getListCategories(String type) {
+    public ArrayList<Products> getListCategories(int type, int currentPage, int itemPerPage) {
         ArrayList<Products> arr = new ArrayList<>();
         Connection cn = null;
         String sql = "select * from books WHERE active = 1 ";
-        if (type != null) {
+        if (type != 0) {
             sql += "and id_type= " + type;
         }
         try {
@@ -90,17 +90,8 @@ public class GetListProductType {
         return arr;
     }
 
-    public ArrayList<Products> getListByPage(ArrayList<Products> arr, int start, int end) {
-        ArrayList<Products> list = new ArrayList<>();
-        for (int i = start; i < end; i++) {
-            list.add(arr.get(i));
-        }
-        return list;
-    }
-
     public static void main(String[] args) {
         GetListProductType g = new GetListProductType();
         ArrayList<Products> l = g.getList();
-        System.out.println(g.getListCategories("2"));
     }
 }
