@@ -11,7 +11,7 @@
  Target Server Version : 100134
  File Encoding         : 65001
 
- Date: 25/11/2019 14:09:25
+ Date: 03/12/2019 11:16:47
 */
 
 SET NAMES utf8mb4;
@@ -28,7 +28,239 @@ CREATE TABLE `authors`  (
   `created_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
   `updated_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 229 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of authors
+-- ----------------------------
+INSERT INTO `authors` VALUES (1, 'Robert Macfarlane', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (2, 'DK Eyewitness', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (3, 'Stephanie Butland', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (4, 'Philip Street', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (5, 'Epic Games', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (6, 'Wizards of the Coast', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (7, 'Lorraine Cink', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (8, 'Joanna Moorhead', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (9, 'Wendy Jelbert', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (10, 'DK', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (11, 'Carmen C. Bambach', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (12, 'Martin Gayford', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (13, 'Victoria Louise Howard', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (14, 'Mirrorpix', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (15, 'Jackie Barrass', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (16, 'Eilidh Muldoon', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (17, 'Iain Fraser', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (18, 'Mark Cortes Favis', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (19, 'Kathy Cano-Murillo', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (20, 'Jerald Hull', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (21, 'Mark Cocker', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (22, 'Andy Smart', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (23, 'LILY ALLEN', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (24, 'Laura Cumming', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (25, 'Diarmaid MacCulloch', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (26, 'Eleanor Morgan', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (27, 'Emma Brockes', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (28, 'Mark Bowden', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (29, 'Ron Kovic', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (30, 'Darcey Steinke', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (31, 'William Miller', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (32, 'James Lovelock', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (33, 'Kenney Jones', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (34, 'Duncan Hamilton', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (35, 'Kate Moore', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (36, 'Phil Lancaster', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (37, 'Camas Davis', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (38, 'Henry Hitchings', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (39, 'Damien Lewis', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (40, 'Axel Lindén', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (41, 'Terry Deary', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (42, 'Jan Eldredge', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (43, 'James Nicol', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (44, 'R.L. Stine', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (45, 'R. L. Stine', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (46, 'Victoria Schwab', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (47, 'Katy Birchall', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (48, 'Damaris Young', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (49, 'Lou Kuenzler', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (50, 'Veronica Cossanteli', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (51, 'Harriet Muncaster', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (52, 'Hugh Jassburn', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (53, 'J. K. Rowling', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (54, 'Chika Miyata', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (55, 'Alan Lee', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (56, 'Mark Linley', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (57, 'Chronicle Books', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (58, 'MIND', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (59, 'Bridget Elworthy', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (60, 'Scholastic', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (61, 'Dr. Michelle Dickinson', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (62, 'Alex Horne', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (63, 'Chris Alexander', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (64, 'Stephanie Bower', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (65, 'James Alexander', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (66, 'Adult Coloring Books', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (67, 'Erinna Lee', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (68, 'THOMAS PAVITTE', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (69, 'James Patterson', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (70, 'Alex North', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (71, 'Peter Robinson', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (72, 'David Baldacci', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (73, 'Quintin Jardine', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (74, 'Karin Slaughter', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (75, 'Mike Maden', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (76, 'Louise Penny', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (77, 'Lesley Pearse', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (78, 'Elin Hilderbrand', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (79, 'Sandra Brown', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (80, 'Flynn Berry', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (81, 'M. W. Craven', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (82, 'Andrew Martin', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (83, 'Gilly MacMillan', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (84, 'Felicity McLean', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (85, 'Jo Spain', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (86, 'Martin Walker', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (87, 'Paul French', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (88, 'Luiza Sauma', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (89, 'Henry Firth', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (90, 'Felicity Cloake', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (91, 'Tony Kitous', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (92, 'Anna Jones', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (93, 'Giorgio Locatelli', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (94, 'Simon Rogan', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (95, 'Marcus Wareing', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (96, 'Yotam Ottolenghi', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (97, 'Rick Stein', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (98, 'Jamie Oliver', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (99, 'Shamil Thakrar', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (100, 'René Redzepi', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (101, 'Antoni Porowski', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (102, 'Vicky Bennison', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (103, 'Meera Sodha', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (104, 'Peter Margaritis', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (105, 'Stuart Robertson', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (106, 'Jay Wertz', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (107, 'Chris McNab', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (108, 'John Antal', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (109, 'Philippe Bauduin', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (110, 'Leo Marriott', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (111, 'Dr David Rogers', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (112, 'Christophe Daguet', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (113, 'Patrick Bousquet', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (114, 'Gerard Colonel Legout', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (115, 'Georges Bernage', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (116, 'George Forty', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (117, 'Anne Glenconner', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (118, 'Alana Langan', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (119, 'David Wilkinson', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (120, 'Kate Herd', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (121, 'Bree Claffey', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (122, 'Simon Griffiths', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (123, 'Georgina Reid', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (124, 'Jaqui Cameron', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (125, 'Fleur McHarg', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (126, 'Cecilia Hewlett with Paul', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (127, 'Mrs Hinch', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (128, 'Eckhart Tolle', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (129, 'Anthony William', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (130, 'Meik Wiking', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (131, 'Robert C. Martin', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (132, 'Jon Duckett', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (133, 'Gayle Laakmann McDowell', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (134, 'Andrew Hunt', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (135, 'Cathy O\'neil', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (136, 'Erich Gamma', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (137, 'Gregory Zuckerman', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (138, 'Steve McConnell', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (139, 'Eric Freeman', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (140, 'Charles Petzold', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (141, 'Martin Kleppmann', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (142, 'Martin Fowler', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (143, 'Douglas Crockford', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (144, 'Al Sweigart', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (145, 'Seth Godin', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (146, 'Frederick P. Brooks Jr.', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (147, 'Joshua Bloch', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (148, 'Adam Kay', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (149, 'Craig Challen', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (150, 'Daniel Kahneman', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (151, 'Jordan B. Peterson', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (152, 'Oliver Sacks', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (153, 'Viktor E. Frankl', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (154, 'Russ Harris', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (155, 'Paul Kalanithi', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (156, 'Michael Pollan', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (157, 'Michael Greger', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (158, 'The School of Life', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (159, 'Philippa Perry', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (160, 'Keri Smith', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (161, 'Nessa Carey', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (162, 'Johanna Basford', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (163, 'Atul Gawande', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (164, 'Lucy Wolfe', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (165, 'Gary Thomas', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (166, 'Tom Chatfield', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (167, 'Mike Wallace', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (168, 'Angela Boland', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (169, 'Zina O\'Leary', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (170, 'Christopher Hart', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (171, 'Diana Ridley', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (172, 'David E. Gray', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (173, 'Andy Kirk', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (174, 'Andy Field', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (175, 'John W. Creswell', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (176, 'Neil J. Salkind', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (177, 'Robert Thomas', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (178, 'Uwe Flick', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (179, 'Erin Ruel', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (180, 'Ranjit Kumar', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (181, 'Claire Largan', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (182, 'John Carreyrou', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (183, 'Yuval Noah Harari', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (184, 'Sun Tzu', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (185, 'Doug Stillinger', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (186, 'Pat Murphy', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (187, 'Ashlee Vance', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (188, 'Neil Degrasse Tyson', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (189, 'Serhii Plokhy', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (190, 'Randall Munroe', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (191, 'Nir Eyal', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (192, 'Matthew Evans', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (193, 'Katrina van Grouw', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (194, 'Sandor Ellix Katz', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (195, 'Simon Winchester', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (196, 'Chris Hadfield', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (197, 'Tom Wolfe', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (198, 'Charles Massy', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (199, 'Gina McIntyre', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (200, 'Antoine de Saint-Exupery', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (201, 'R. J. Palacio', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (202, 'Gareth Moore', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (203, 'Roald Dahl', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (204, 'David Walliams', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (205, 'Suzanne Collins', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (206, 'Kate Pankhurst', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (207, 'Benjamin Alire Saenz', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (208, 'Ransom Riggs', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (209, 'John Green', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (210, 'Sarah J. Maas', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (211, 'Thomas Crump', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (212, 'Colm O\'Callaghan', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (213, 'Bruce LaFontaine', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (214, 'Des Molloy', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (215, 'Peter Fitzsimons', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (216, 'Jason Barlow', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (217, 'Holger Matthes', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (218, 'David Beaty', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (219, 'Norman Ferguson', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (220, 'James Hamilton-Paterson', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (221, 'George Bradshaw', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (222, 'Martin Roach', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (223, 'Federal Aviation Administration', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (224, 'Tom Newton', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (225, 'Mike King', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (226, 'Jason Plato', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (227, 'Julian Holland', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (228, 'Lonely Planet', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
 
 -- ----------------------------
 -- Table structure for bills
@@ -96,18 +328,8 @@ CREATE TABLE `books`  (
 -- ----------------------------
 -- Records of books
 -- ----------------------------
-INSERT INTO `books` VALUES (1, 'Robin Parrish', 'http://localhost:8080/BookStore/Public/images/books/2.jpg', 'http://localhost:8080/BookStore/Public/images/books/4.jpg', NULL, 25, 35.00, NULL, 23, NULL, 1, 3, '2019-11-14 20:28:27', '2019-11-14 20:28:27', 1, NULL);
-INSERT INTO `books` VALUES (2, 'The Remainng', 'http://localhost:8080/BookStore/Public/images/books/4.jpg', 'http://localhost:8080/BookStore/Public/images/books/2.jpg', NULL, 25, 35.00, NULL, 23, NULL, 1, 2, '2019-11-20 01:05:18', '2019-11-20 01:05:18', 2, NULL);
-INSERT INTO `books` VALUES (3, 'Ali Smith', 'http://localhost:8080/BookStore/Public/images/product/2.jpg', 'http://localhost:8080/BookStore/Public/images/product/4.jpg', NULL, 220, 111.00, NULL, 12, NULL, 1, 3, '2019-11-20 01:05:12', '2019-11-20 01:05:12', 1, NULL);
-INSERT INTO `books` VALUES (4, 'Blood In Water', 'http://localhost:8080/BookStore/Public/images/product/2.jpg', 'http://localhost:8080/BookStore/Public/images/books/2.jpg', NULL, 123, 123.00, NULL, 24, NULL, 1, 4, '2019-11-20 01:05:22', '2019-11-20 01:05:22', 3, NULL);
-INSERT INTO `books` VALUES (5, 'Watching You', 'http://localhost:8080/BookStore/Public/images/books/4.jpg', 'http://localhost:8080/BookStore/Public/images/books/2.jpg', NULL, 140, 145.00, NULL, 30, NULL, 1, 2, '2019-11-20 01:05:30', '2019-11-20 01:05:30', 4, NULL);
-INSERT INTO `books` VALUES (6, 'Robin Parrish', 'http://localhost:8080/BookStore/Public/images/books/2.jpg', 'http://localhost:8080/BookStore/Public/images/books/4.jpg', NULL, 25, 35.00, NULL, 23, NULL, 1, 3, '2019-11-21 20:34:41', '2019-11-21 20:34:41', 1, NULL);
-INSERT INTO `books` VALUES (7, 'The Remainng', 'http://localhost:8080/BookStore/Public/images/books/4.jpg', 'http://localhost:8080/BookStore/Public/images/books/2.jpg', NULL, 25, 35.00, NULL, 23, NULL, 1, 3, '2019-11-21 20:34:41', '2019-11-21 20:34:41', 2, NULL);
-INSERT INTO `books` VALUES (8, 'Ali Smith', 'http://localhost:8080/BookStore/Public/images/product/2.jpg', 'http://localhost:8080/BookStore/Public/images/product/4.jpg', NULL, 220, 111.00, NULL, 12, NULL, 1, 1, '2019-11-21 20:34:41', '2019-11-21 20:34:41', 1, NULL);
-INSERT INTO `books` VALUES (9, 'Blood In Water', 'http://localhost:8080/BookStore/Public/images/product/2.jpg', 'http://localhost:8080/BookStore/Public/images/books/2.jpg', NULL, 123, 123.00, NULL, 24, NULL, 1, 1, '2019-11-21 20:34:41', '2019-11-21 20:34:41', 3, NULL);
 INSERT INTO `books` VALUES (10, 'Watching You', 'http://localhost:8080/BookStore/Public/images/books/4.jpg', 'http://localhost:8080/BookStore/Public/images/books/2.jpg', NULL, 140, 145.00, NULL, 30, NULL, 1, 1, '2019-11-21 20:34:41', '2019-11-21 20:34:41', 4, NULL);
 INSERT INTO `books` VALUES (11, 'The Lost Words: Spell Songs', 'http://localhost:8080/BookStore/Public/images/books/9781527239616.jpg', 'http://localhost:8080/BookStore/Public/images/books/9781527239616.jpg', 'Spell Songs is a musical companion piece to The Lost Words: A Spell Book by author Robert Macfarlane and artist Jackie Morris. This CD is accompanied by sumptuous illustrations from Jackie Morris, new spells by Robert Macfarlane, enlightening thoughts by Robert, Jackie and Spell Singer Karine Polwart as well as stunning photography by Elly Lucas. In 2018 Folk by the Oak Festival commissioned Spell Songs because of their love of The Lost Words. \n<br> \n<br> Spell Songs comprises eight remarkable musicians whose music engages deeply with landscape and nature; musicians who are perfectly placed to respond to the creatures, art and language of The Lost Words. They spent a week in Herefordshire bringing this music together in the company of Jackie Morris. Art inspired music and music inspired art. Jackie Morris immersed herself in the musical residency where she generously created new iconesque artwork of each musician and their instruments portrayed in an unexpected and enchanting way. These stunning new artworks accompany the CD.\n<br> \n<br> Spell Songs allowed these acclaimed and diverse musicians to weave together elements of British folk music, Senegalese folk traditions, and experimental and classical music to create an inspiring new body of work. \n<br> \n<br> Here are 14 songs which capture the essence of The Lost Words book. Spoken voice, whispers, accents, dialects, native languages, proverbs, sayings, birdsong, river chatter and insect hum all increase the intimacy of the musical world conjured by the songs. Inspired by the words, art and ethos of The Lost Words book, each musician brings new imaginings, embellishments and diversions which are rooted in personal experience, a deep respect for the natural world, protest at the loss of nature and its language and an appreciation for wildness and beauty. \n<br> \n<br> In February 2019 Spell Songs enjoyed standing ovations at sell-out performances in major venues across the UK culminating at The Queen Elizabeth Hall at the Southbank Centre, London. Spell Songs was a highlight of The Hay International Literary Festival 2019 and in August 2019 they were invited to perform at the BBCs Lost Words Prom in the Royal Albert Hall. They will continue to tour each year.\n<br> There are songs here that would live with me for the rest of my years, even if Id had no part in their making., Robert Macfarlane\n<br> \n<a class=read-more>show more</a>', 0, 27.03, NULL, 10, 2019, 1, NULL, '2019-11-21 21:47:30', '2019-11-21 21:47:30', 1, 'Robert Macfarlane');
-INSERT INTO `books` VALUES (12, 'Be More Japan', 'http://localhost:8080/BookStore/Public/images/books/9780241385586.jpg', 'http://localhost:8080/BookStore/Public/images/books/9780241385586.jpg', 'Whether youre dreaming about your first journey, revisiting the trip of a lifetime or simply in love with all things Japan, Be More Japan will transport you to this fascinating country. \n<br> \n<br> Dive into the thrilling and serene world of Shinto monks, street food vendors, anime characters, Okinawan centenarians, technological innovators, J-Pop megastars, ancient philosophers, onsen dwellers and so many more.\n<br> \n<br> There are so many ways to fall in love with Japan. Its home to one of the worlds most unique cultures: a perfectly balanced celebration of past traditions; the vibrancy of now and the need to look fearlessly into the future. \n<br> \n<br> From architecture to martial arts; from ramen to robots; kawaii to Kusama; ikigai to ikebana; towering skyscrapers to shrines - Be More Japan uncovers the art and creativity behind modern Japanese living through its kaleidoscope of contrasting places, people and practices.\n<br> \n<br> With beautiful design throughout and with each page alive with facts, history and inspiration, Be More Japan invites you to absorb a little Japanese wisdom into your daily life.\n<br> \n<a class=read-more>show more</a>', 0, 25.91, NULL, 10, 2019, 1, NULL, '2019-11-21 21:47:30', '2019-11-21 21:47:30', 1, 'DK Eyewitness');
 INSERT INTO `books` VALUES (13, 'The Woman in the Photograph', 'http://localhost:8080/BookStore/Public/images/books/9781785768965.jpg', 'http://localhost:8080/BookStore/Public/images/books/9781785768965.jpg', 'An empowering, thought-provoking feminist novel that will change the way you see the world. Perfect for fans of Elizabeth Day, Claire Fuller and Joanna Cannon.\n<br> \n<br> 1968. Veronica Moon, a junior photographer for a local newspaper, is frustrated by her (male) colleagues failure to take her seriously. And then she meets Leonie on the picket line of the Ford factory at Dagenham. So begins a tumultuous, passionate and intoxicating friendship. Leonie is ahead of her time and fighting for womens equality with everything she has. She offers Veronica an exciting, free life at the dawn of a great change.\n<br> \n<br> Fifty years later, Leonie is gone, and Veronica leads a reclusive life. Her groundbreaking career was cut short by one of the most famous photographs of the twentieth century.\n<br> \n<br> Now, that controversial picture hangs as the centrepiece of a new feminist exhibition curated by Leonies niece. Long-repressed memories of Veronicas extraordinary life begin to stir. Its time to break her silence, and step back into the light.\n<br> \n<br> Praise for The Woman in the Photograph:\n<br> \n<br> Imaginative and moving novel - a must-read for any feminist\n<br> Katie Fforde\n<br> \n<br> I absolutely loved The Woman in the Photograph, a compelling,original and thought-provoking look at feminism and the power of female friendships\n<br> Sarah Franklin\n<br> \n<br> What a glorious combination: Stephanies warm intelligence brought to bear on the complexities of second-wave feminism. I ate the book up\n<br> Shelley Harris\n<br> \n<br> Refreshing and thought-provoking . . . a stirring exploration of female friendship and the fight for equality\n<br> Carys Bray\n<br> \n<br> Brilliantly researched, thought-provoking, and written straight from the heart, this is undoubtedly Butlands best book yet\n<br> Lancashire Evening Post\n<br> \n<a class=read-more>show more</a>', 0, 12.97, NULL, 10, 2019, 1, NULL, '2019-11-21 21:47:30', '2019-11-21 21:47:30', 1, 'Stephanie Butland');
 INSERT INTO `books` VALUES (14, 'Shell Life on the Seashore', 'http://localhost:8080/BookStore/Public/images/books/9780571354450.jpg', 'http://localhost:8080/BookStore/Public/images/books/9780571354450.jpg', 'Armed with this intrepid survey, we can see a brave new world down there on the beach ... Exquisite revelation, of the most wonderful, watery kind. - Philip Hoare\n<br> \n<br> For many, the highlights of seaside holidays are rockpooling and gathering the glorious array of shells left strewn on the beach after the receding tide. Attracted by the infinite variety of shapes and colours, visitors can never resist making a souvenir collection of their own - but little do they suspect the fascinating lives of the animals who once occupied them. \n<br> \n<br> What if each shell had a story of its own to tell us, if only we knew the language? Mr Streets delightful, informative guide uncovers the secret history of each common shell, revealing not only which marine creature once inhabited it but the unique challenges of its watery habitat it had to solve. \n<br> \n<br> From barnacles to oysters, cockles to sea slugs, winkles to carnivorous snails, molluscs and lesser-known members of the octopus family, Shell Life on the Seashore is the essential primer for recognising and collecting both these curious specimens and the empties they leave behind - and will greatly increase the old-fashioned pleasures of a coastal holiday for all the family.\n<br> \n<a class=read-more>show more</a>', 17, 13.13, NULL, 10, 2019, 1, NULL, '2019-11-21 21:47:30', '2019-11-21 21:47:30', 1, 'Philip Street');
 INSERT INTO `books` VALUES (15, 'FORTNITE Official: How to Draw', 'http://localhost:8080/BookStore/Public/images/books/9781472265289.jpg', 'http://localhost:8080/BookStore/Public/images/books/9781472265289.jpg', 'Draw your favorite Outfits, vehicles, weapons, and more with Epic Games ONLY official how to draw book including tips to make your sketches as epic as your in-game achievements and featuring the authentic Fortnite holographic seal.\n<br> \n<br> Learn how to draw 35 of the games most popular icons-including Outfits, weapons, building materials, and vehicles. In easy-to-follow stages, youll go step-by-step from rough sketch to detailed finish.\n<br> \n<br> INCLUDES:\n<br> \n<br> * 16 iconic Outfits\n<br> * 8 fearsome weapons\n<br> * The craziest in-game vehicles\n<br> * Drawing guide\n<br> * Top art tips, including advanced shading and texture techniques\n<br> \n<br> Whether youre a complete novice or an experienced artist, this book will inspire you to pick up a pencil and get sketching! LETS GO!\n<br> \n<a class=read-more>show more</a>', 0, 11.05, NULL, 10, 2019, 1, NULL, '2019-11-21 21:47:30', '2019-11-21 21:47:30', 1, 'Epic Games');
@@ -154,7 +376,7 @@ INSERT INTO `books` VALUES (55, 'A Witch Alone', 'http://localhost:8080/BookStor
 INSERT INTO `books` VALUES (56, 'A Witch Come True', 'http://localhost:8080/BookStore/Public/images/books/9781910655986.jpg', 'http://localhost:8080/BookStore/Public/images/books/9781910655986.jpg', 'The war is over and Arianwyn has discovered the secret of the quiet\n<br> glyphs, but her troubles are far from over. Her day-to-day work\n<br> as Lulls witch is tricky enough: winter has set in, bringing bad\n<br> weather, ice imps and befuddling Yule traditions. But when Arianwyns\n<br> grandmother is abducted by the traitor on the Council, our\n<br> witch faces her greatest challenge yet. What really makes a witch\n<br> come true? Our lovable heroine is about to find out ...\n<br> \n<a class=read-more>show more</a>', 0, 9.26, NULL, 10, 2019, 1, NULL, '2019-11-21 21:47:30', '2019-11-21 21:47:30', 3, 'James Nicol');
 INSERT INTO `books` VALUES (57, 'Attack of the Jack-O\'-Lanterns', 'http://localhost:8080/BookStore/Public/images/books/9781407191850.jpg', 'http://localhost:8080/BookStore/Public/images/books/9781407191850.jpg', 'PUMPKIN POWER!\n<br> Nothing beats Halloween. Its Drew Brockmans\n<br> favorite holiday. And this year will be awesome. Much better than\n<br> last year. Or the year Lee and Tabby played that joke. A nasty\n<br> practical joke on Drew and her best friend, Walker.\n<br> \n<br> \n<br> Yes, this year Drew and Walker have a plan. A plan\n<br> for revenge. It involves\n<br> two scary pumpkin heads.\n<br> \n<br> \n<br> But somethings gone wrong. Way wrong.\n<br> \n<br> \n<br> \n<br> Because the pumpkin heads are a little too scary.\n<br> \n<br> \n<br> A little too real. \n<br> \n<br> \n<br> With strange hissing voices. And flames shooting out of their\n<br> faces...\n<br> \n<a class=read-more>show more</a>', 8, 6.20, NULL, 10, 2018, 1, NULL, '2019-11-21 21:47:30', '2019-11-21 21:47:30', 3, 'R.L. Stine');
 INSERT INTO `books` VALUES (58, 'The Headless Ghost', 'http://localhost:8080/BookStore/Public/images/books/9781407191898.jpg', 'http://localhost:8080/BookStore/Public/images/books/9781407191898.jpg', 'THEYVE GOT A REAL HEAD START.\n<br> \n<br> Everyone knows about Hill House. Its the biggest tourist attraction\n<br> in town. Thats because its haunted. Haunted by the ghost of\n<br> a thirteen-year-old boy. A boy with no head!\n<br> \n<br> Duane and Stephanie love Hill House. Its dark. And creepy. And totally\n<br> scary.\n<br> \n<br> Still, theyve never actually seen the ghost. Until the night they\n<br> decide to go on a search. A search for his head.\n<br> \n<a class=read-more>show more</a>', 8, 6.20, NULL, 10, 2018, 1, NULL, '2019-11-21 21:47:30', '2019-11-21 21:47:30', 3, 'R.L. Stine');
-INSERT INTO `books` VALUES (59, 'Most Wanted: Son of Slappy', 'http://localhost:8080/BookStore/Public/images/books/9781407178844.jpg', 'http://localhost:8080/BookStore/Public/images/books/9781407178844.jpg', 'The evil puppet you hate to love is back for a brand\n<br> new scare.\n<br> Jackson Stander is every parents dream.\n<br> \n<br> \n<br> He doesnt get into trouble, he always does his homework, and\n<br> he never, ever lies. His teachers all trust him\n<br> completely. He even volunteers at the local Youth Center.\n<br> \n<br> \n<br> But that was all before Jackson came across an evil\n<br> ventriloquist dummy. \n<br> \n<br> \n<br> Now he must deal with Slappy wreaking havoc on his family and\n<br> friends.\n<br> \n<br> \n<br> Jackson will soon see that two Slappys are not better than one!\n<br> \n<a class=read-more>show more</a>', 8, 6.63, NULL, 10, 2017, 1, NULL, '2019-11-21 21:47:30', '2019-11-21 21:47:30', 3, 'R. L. Stine');
+INSERT INTO `books` VALUES (59, 'Most Wanted: Son of Slappy', 'http://localhost:8080/BookStore/Public/images/books/9781407178844.jpg', 'http://localhost:8080/BookStore/Public/images/books/9781407178844.jpg', 'The evil puppet you hate to love is back for a brand\r\n<br> new scare.\r\n<br> Jackson Stander is every parents dream.\r\n<br> \r\n<br> \r\n<br> He doesnt get into trouble, he always does his homework, and\r\n<br> he never, ever lies. His teachers all trust him\r\n<br> completely. He even volunteers at the local Youth Center.\r\n<br> \r\n<br> \r\n<br> But that was all before Jackson came across an evil\r\n<br> ventriloquist dummy. \r\n<br> \r\n<br> \r\n<br> Now he must deal with Slappy wreaking havoc on his family and\r\n<br> friends.\r\n<br> \r\n<br> \r\n<br> Jackson will soon see that two Slappys are not better than one!\r\n<br> \r\n<a class=read-more>show more</a>', 8, 16.63, NULL, 10, 2017, 1, NULL, '2019-11-28 15:43:04', '2019-11-28 15:43:04', 3, 'R. L. Stine');
 INSERT INTO `books` VALUES (60, 'Goosebumps: Most Wanted: The Haunter', 'http://localhost:8080/BookStore/Public/images/books/9781407186399.jpg', 'http://localhost:8080/BookStore/Public/images/books/9781407186399.jpg', 'Sammy Baker is a quiet kid who wishes he wasnt so shy\n<br> and timid. He is frightened but eager to prove he can be brave.\n<br> \n<br> On Halloween night, he follows his friends to the Marple House,\n<br> an abandoned mansion on the other side of town.\n<br> \n<br> \n<br> Just past midnight, he feels a cold tingle atthe\n<br> back of his neck. \n<br> \n<br> \n<br> The cold seeps down, a heavy chill he has never felt before.\n<br> \n<br> \n<br> \n<br> Soon, his whole head feels like a block of ice. Hes about to\n<br> scream-but the cold feeling vanishes.\n<br> \n<br> \n<br> Sammy doesnt realize that he has just met The Haunter,\n<br> and that his nightmares are only just beginning.\n<br> \n<a class=read-more>show more</a>', 8, 6.89, NULL, 10, 2018, 1, NULL, '2019-11-21 21:47:30', '2019-11-21 21:47:30', 3, 'R.L. Stine');
 INSERT INTO `books` VALUES (61, 'Goosebumps: Most Wanted: How I Met My Monster', 'http://localhost:8080/BookStore/Public/images/books/9781407178868.jpg', 'http://localhost:8080/BookStore/Public/images/books/9781407178868.jpg', 'Noah Bienstock cant help being so shy and nervous; hes\n<br> always been like that. \n<br> His best friend, Lissa Gardener, lives in the same building, but\n<br> aside from her, Noah isnt very popular.\n<br> \n<br> \n<br> So when he learns that the new student in his class\n<br> is also his neighbor, Noahs excited to have a new person\n<br> to hang out with.\n<br> \n<br> \n<br> But as the boys spend more time together, Noah starts to worryall\n<br> over again.\n<br> \n<br> \n<br> Is there something strange about his new friend?\n<br> \n<a class=read-more>show more</a>', 6, 5.70, NULL, 10, 2017, 1, NULL, '2019-11-21 21:47:30', '2019-11-21 21:47:30', 3, 'R. L. Stine');
 INSERT INTO `books` VALUES (62, 'Goosebumps The Movie 2: Junior Novelization', 'http://localhost:8080/BookStore/Public/images/books/9781338299571.jpg', 'http://localhost:8080/BookStore/Public/images/books/9781338299571.jpg', 'Slappys back! The demented dummy and all his creepy pals are back\n<br> for this sequel to the hit 2015 Goosebumps movie. Scholastics\n<br> junior novelization has all the chills, thrills, and laugh-out-loud\n<br> horror of the new movie, due in theaters October 12, 2018.\n<br> \n<br> Includes eight pages of color photos from the movie.\n<br> \n<a class=read-more>show more</a>', 7, 6.47, NULL, 10, 2018, 1, NULL, '2019-11-21 21:47:30', '2019-11-21 21:47:30', 3, 'R.L. Stine');
@@ -366,7 +588,6 @@ INSERT INTO `books` VALUES (267, 'The Fault in Our Stars', 'http://localhost:808
 INSERT INTO `books` VALUES (268, 'Harry Potter and the Chamber of Secrets', 'http://localhost:8080/BookStore/Public/images/books/9781408845653.jpg', 'http://localhost:8080/BookStore/Public/images/books/9781408845653.jpg', 'Prepare to be spellbound by Jim Kay\'s dazzling full-colour illustrations in this stunning new edition of J.K. Rowling\'s Harry Potter and the Chamber of Secrets. Breathtaking scenes, dark themes and unforgettable characters - including Dobby and Gilderoy Lockhart - await inside this fully illustrated edition. With paint, pencil and pixels, award-winning illustrator Jim Kay conjures the wizarding world as we have never seen it before. Fizzing with magic and brimming with humour, this inspired reimagining will captivate fans and new readers alike, as Harry and his friends, now in their second year at Hogwarts School of Witchcraft and Wizardry, seek out a legendary chamber and the deadly secret that lies at its heart ...\n<br> \n<a class=\"read-more\">show more</a>', 0, 46.53, NULL, 10, 2016, 1, NULL, '2019-11-25 14:09:03', '2019-11-25 14:09:03', 3, 'J. K. Rowling');
 INSERT INTO `books` VALUES (269, 'Throne of Glass', 'http://localhost:8080/BookStore/Public/images/books/9781408832332.jpg', 'http://localhost:8080/BookStore/Public/images/books/9781408832332.jpg', 'The book that started the phenomenon. Sarah J. Maas\'s global #1 bestselling THRONE OF GLASS series has taken the world by storm.\n<br> \n<br> Meet Celaena Sardothien.\n<br> Beautiful. Deadly. Destined for greatness.\n<br> \n<br> In the dark, filthy salt mines of Endovier, an eighteen-year-old girl is serving a life sentence. She is a trained assassin, the best of her kind, but she made a fatal mistake. She got caught.\n<br> \n<br> Young Captain Westfall offers her a deal: her freedom in return for one huge sacrifice. Celaena must represent the prince in a to-the-death tournament - fighting the most gifted thieves and assassins in the land. Live or die, Celaena will be free. Win or lose, she is about to discover her true destiny. But will her assassin\'s heart be melted?\n<br> \n<a class=\"read-more\">show more</a>', 11, 10.38, NULL, 10, 2015, 1, NULL, '2019-11-25 14:09:03', '2019-11-25 14:09:03', 3, 'Sarah J. Maas');
 INSERT INTO `books` VALUES (270, 'Looking for Alaska', 'http://localhost:8080/BookStore/Public/images/books/9780142402511.jpg', 'http://localhost:8080/BookStore/Public/images/books/9780142402511.jpg', 'NOW A HULU ORIGINAL SERIES! The award-winning, genre-defining debut from John Green, the #1 bestselling author of Turtles All the Way Down and The Fault in Our Stars\n<br> \n<br> \n<br> Winner of the Michael L. Printz Award - A Los Angeles Times Book Prize Finalist - A New York Times Bestseller - A USA Today Bestseller - NPR\'s Top Ten Best-Ever Teen Novels - TIME magazine\'s 100 Best Young Adult Novels of All Time - A PBS Great American Read Selection - Millions of copies sold! \n<br> First drink. First prank. First friend. First love. Last words. Miles Halter is fascinated by famous last words--and tired of his safe life at home. He leaves for boarding school to seek what the dying poet François Rabelais called the \"Great Perhaps.\" Much awaits Miles at Culver Creek, including Alaska Young, who will pull Miles into her labyrinth and catapult him into the Great Perhaps. \n<br> \n<br> Looking for Alaska brilliantly chronicles the indelible impact one life can have on another. A modern classic, this stunning debut marked #1 bestselling author John Green\'s arrival as a groundbreaking new voice in contemporary fiction. Newly updated edition includes a brand-new Readers\' Guide featuring a Q&amp;A with author John Green\n<br> \n<a class=\"read-more\">show more</a>', 0, 12.82, NULL, 10, 2007, 1, NULL, '2019-11-25 14:09:03', '2019-11-25 14:09:03', 3, 'John Green');
-INSERT INTO `books` VALUES (271, 'The Right Stuff', 'http://localhost:8080/BookStore/Public/images/books/9780099479376.jpg', 'http://localhost:8080/BookStore/Public/images/books/9780099479376.jpg', 'A wildly vivid and entertaining chronicle of America\'s manned space program, from the author of The Electric Kool-Aid Acid Test\n<br> \n<br> `What is it\' asks Tom Wolfe, `that makes a man willing to sit on top of an enormous Roman Candle...and wait for someone to light the fuse?\' Arrogance? Stupidity? Bravery? Courage? Or, simply, that quality we call \'the right stuff\'?\n<br> \n<br> A monument to the men who battled to beat the Russians into space, The Right Stuff is a voyage into the mythology of the American space program, and a dizzying dive into the sweat, fear, beauty and danger of being on the white-hot edge of history in the making.\n<br> \n<br> `Tom Wolfe at his very best... Learned, cheeky, risky, touching, tough, compassionate, nostalgic, worshipful, jingoistic...The Right Stuff is superb\' - New York Times Book Review\n<br> \n<a class=\"read-more\">show more</a>', 20, 6.71, NULL, 10, 2011, 1, NULL, '2019-11-25 14:09:03', '2019-11-25 14:09:03', 4, 'Tom Wolfe');
 INSERT INTO `books` VALUES (272, 'A Brief History of the Age of Steam', 'http://localhost:8080/BookStore/Public/images/books/9781845295530.jpg', 'http://localhost:8080/BookStore/Public/images/books/9781845295530.jpg', 'In 1710 an obscure Devon ironmonger Thomas Newcomen invented a machine with a pump driven by coal, used to extract water from mines. Over the next two hundred years the steam engine would be at the heart of the industrial revolution that changed the fortunes of nations.\n<br> \n<br> Passionately written and insightful, A Brief History of the Age of Steam reveals not just the lives of the great\n<br> inventors such as Watts, Stephenson and Brunel but also tells a narrative that reaches from the US to the expansion of China, India and South America and shows how the steam engine changed the world.\n<br> \n<a class=\"read-more\">show more</a>', 17, 5.72, NULL, 10, 2007, 1, NULL, '2019-11-25 14:09:03', '2019-11-25 14:09:03', 4, 'Thomas Crump');
 INSERT INTO `books` VALUES (273, 'Irish Traction: Iarnrod Eireann', 'http://localhost:8080/BookStore/Public/images/books/9781445688442.jpg', 'http://localhost:8080/BookStore/Public/images/books/9781445688442.jpg', 'Over the years, the Republic of Ireland\'s railways have fascinated rail enthusiasts. This was mainly due to underinvestment in the system from Iarnrod Eireann and the Irish government, which left many lines and locations still very much in the past as far as infrastructure was concerned, giving them a certain appeal to British rail fans. This eventually changed from around 2005, when long overdue investment began to materialise. This book documents the last years leading up to this change.\n<br> \n<br> It shows the rolling stock and infrastructure that was on offer throughout the Iarnrod Eireann system, featuring Class 071, 121, 141, 181 and 201 American-built locomotives, various BREL-built coaches and Spanish and Japanese-built diesel rail cars. Also featured are the many freight services that operated in the country, including beet, Guinness, cement, timber, lead and zinc ore and liner trains.\n<br> \n<a class=\"read-more\">show more</a>', 19, 17.42, NULL, 10, 2019, 1, NULL, '2019-11-25 14:09:04', '2019-11-25 14:09:04', 4, 'Colm O\'Callaghan');
 INSERT INTO `books` VALUES (274, 'Luxury Cars Coloring Book', 'http://localhost:8080/BookStore/Public/images/books/9780486444369.jpg', 'http://localhost:8080/BookStore/Public/images/books/9780486444369.jpg', 'Imagine yourself behind the wheel of a Porsche 911 GT2 Twin-Turbo Coupe! Here are the cars most of us just dream about -- sleek, fast, fabulous machines that cost a small fortune! Thirty precisely and accurately rendered illustrations portray the legendary luxury cars that race through our imaginations: Mercedes-Benz SLR McLaren Coupe, BMW Z8 Convertible, Maserati Spyder 2-door Convertible/Roadster, Rolls-Royce Phantom 4-door Sedan, Jaguar XJ220, Bugatti EB 110S 2-door Coupe, and other automotive marvels.\n<br> Detailed captions provide specs and other information (including top speed and acceleration time). And they come in any colors you choose to make them!\n<br> \n<a class=\"read-more\">show more</a>', 0, 5.25, NULL, 10, 2005, 1, NULL, '2019-11-25 14:09:04', '2019-11-25 14:09:04', 4, 'Bruce LaFontaine');
@@ -719,11 +940,12 @@ CREATE TABLE `users`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `id`(`id`, `email`) USING BTREE,
   INDEX `email`(`email`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'quyen@gmail.com', 'lelamphuongquyen@gmail.com', '', 'Lê Lâm Phương Quyên', 'quyen ', 'Nhà đá', '0394570754', 1, 'Male', 1, '2019-11-22 20:29:10', '2019-11-22 20:29:10');
+INSERT INTO `users` VALUES (1, 'Bảo', 'nguyennhubao999@gmail.com', 'http://localhost:8080/BookStore/admin/images/user/img1.jpg', 'Bảo Nguyễn', 'special45  ', '103, thủ Đức, Linh Xuân', '0396940321', 1, 'Male', 1, '2019-11-29 09:28:28', '2019-11-29 09:28:28');
+INSERT INTO `users` VALUES (2, 'Quỳnh', 'vuthinhuquynh1010@gmail.com', NULL, NULL, 'special45', NULL, '0396940321', NULL, 'Male', 0, '2019-11-28 22:49:59', '2019-11-28 22:49:59');
 
 SET FOREIGN_KEY_CHECKS = 1;
