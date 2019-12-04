@@ -23,7 +23,7 @@ public class ProductCart {
                 '}';
     }
     public void updateTotal(){
-        total= books.getPrice()*quantity;
+        total=(double) Math.round((books.getPrice()*quantity * 100)/100) ;
     }
     public Books getBooks() {
         return books;
