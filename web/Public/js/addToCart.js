@@ -22,8 +22,7 @@ function propupbook(id) {
         },
         dataType: 'json',
         success: function (data) {
-            console.log(data);
-            $('#imageBook').attr("src",data.image);
+            $('#imageBook').html('<img  src="'+data.image+'">');
             $('#nameBook').text(data.name);
             $('#priceBook').text("$"+data.price);
             $('#descriptionBook').text(data.description);
