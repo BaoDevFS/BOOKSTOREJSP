@@ -1,4 +1,4 @@
-package vn.edu.nlu.control;
+package vn.edu.nlu.dao;
 
 import vn.edu.nlu.fit.model.Products;
 import vn.edu.nlu.git.database.GetConnectDatabase;
@@ -56,7 +56,7 @@ public class GetListProductType {
         return arr;
     }
 
-    public ArrayList<Products> getListCategories(int type, int currentPage, int itemPerPage) {
+    public ArrayList<Products> getListCategories(int type) {
         ArrayList<Products> arr = new ArrayList<>();
         Connection cn = null;
         String sql = "select * from books WHERE active = 1 ";
@@ -93,5 +93,6 @@ public class GetListProductType {
     public static void main(String[] args) {
         GetListProductType g = new GetListProductType();
         ArrayList<Products> l = g.getList();
+        System.out.println(l.size());
     }
 }
