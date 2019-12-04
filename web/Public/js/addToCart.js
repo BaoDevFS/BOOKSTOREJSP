@@ -12,7 +12,7 @@ function addToCart(id) {
     });
 }
 var i=0;
- function addToCart(id,quantum) {
+ function addToCartShow(id,quantum) {
     $.ajax({
         url: "http://localhost:8080/BookStore/Cart",
         type: "post",

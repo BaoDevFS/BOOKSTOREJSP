@@ -1167,7 +1167,7 @@
                                                                        value="1" title="Qty" min="1" type="number">
                                                                 <div class="addtocart__actions">
                                                                     <button class="tocart" type="submit"
-                                                                            title="Add to Cart"><a onclick="addToCart(getidshow(),$('#qty').val());"> Add to
+                                                                            title="Add to Cart"><a onclick="addToCartShow(getidshow(),$('#qty').val());"> Add to
                                                                         Cart</a>
                                                                     </button>
                                                                 </div>
