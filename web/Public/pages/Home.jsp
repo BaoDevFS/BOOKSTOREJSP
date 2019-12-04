@@ -959,8 +959,7 @@
                                                     </li>
                                                     <li><a data-toggle="modal" title="Quick View"
                                                            class="quickview modal-view detail-link"
-                                                           onclick="propupbook(<%=rsCook.getString("id")%>)"><i
-                                                            class="fa fa-search"></i></a></li>
+                                                           onclick="propupbook(<%=rsCook.getString("id")%>)"><i class="fa fa-search"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -1139,10 +1138,8 @@
                                                 <div class="row">
                                                     <div class="col-lg-6 col-12">
                                                         <div class="wn__fotorama__wrapper">
-
                                                             <a id="imageBook" href="Public/images/1.html">
                                                             </a>
-
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-12">
@@ -1170,7 +1167,7 @@
                                                                        value="1" title="Qty" min="1" type="number">
                                                                 <div class="addtocart__actions">
                                                                     <button class="tocart" type="submit"
-                                                                            title="Add to Cart"><a onclick="addToCart(<%=rsCook.getString("id")%>);"> Add to
+                                                                            title="Add to Cart"><a onclick="addToCart(getidshow(),$('#qty').val());"> Add to
                                                                         Cart</a>
                                                                     </button>
                                                                 </div>
