@@ -12,7 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
 import java.io.IOException;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 @WebServlet("/DoLogin")
 public class DoLogin extends HttpServlet {
@@ -32,11 +35,9 @@ public class DoLogin extends HttpServlet {
         String passWord = request.getParameter("pass");
         try {
             connection = getConnectDatabase.getConnectionSql();
-            String sql ="SELECT * FROM users WHERE users.email=? and users.password=?";
-            PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setString(1,userName.trim());
-            statement.setString(2,passWord.trim());
-            ResultSet set = statement.executeQuery();
+            Statement statement = connection.createStatement();
+            String sql = "SELECT * FROM users WHERE users.email=" + "'" + userName + "'" + " AND users.password=" + "'" + passWord + "'";
+            ResultSet set = statement.executeQuery(sql);
             user = new Users();
             while (set.next()) {
                 user.setActive(set.getInt("active"));
@@ -59,6 +60,6 @@ public class DoLogin extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
-        doPost(request,response);
+        doPost(request, response);
     }
 }
