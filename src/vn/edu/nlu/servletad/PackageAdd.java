@@ -1,6 +1,6 @@
 package vn.edu.nlu.servletad;
 
-import vn.edu.nlu.control.GetListProductType;
+import vn.edu.nlu.dao.GetListProductType;
 import vn.edu.nlu.control.PathAbsolute;
 import vn.edu.nlu.control.ResizeImage;
 import vn.edu.nlu.control.SaveImage;
@@ -21,7 +21,6 @@ import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 @WebServlet("/Admin/PackageAdd")
 @MultipartConfig
