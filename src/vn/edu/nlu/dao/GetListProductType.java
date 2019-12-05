@@ -1,5 +1,6 @@
 package vn.edu.nlu.dao;
 
+import vn.edu.nlu.fit.model.Booktypes;
 import vn.edu.nlu.fit.model.Products;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
@@ -56,31 +57,18 @@ public class GetListProductType {
         return arr;
     }
 
-    public ArrayList<Products> getListCategories(int type) {
-        ArrayList<Products> arr = new ArrayList<>();
+    public ArrayList<Booktypes> getListCategories() {
+        ArrayList<Booktypes> arr = new ArrayList<>();
         Connection cn = null;
-        String sql = "select * from books WHERE active = 1 ";
-        if (type != 0) {
-            sql += "and id_type= " + type;
-        }
+        String sql = "select * from booktypes WHERE active = 1 ";
         try {
             cn = getConnectDatabase.getConnectionSql();
             PreparedStatement pre = cn.prepareStatement(sql);
             ResultSet rs = pre.executeQuery();
             while (rs.next()) {
-                Products s = new Products();
+                Booktypes s = new Booktypes();
                 s.setId(rs.getInt(1));
                 s.setName(rs.getString(2));
-                s.setImage(rs.getString(3));
-                s.setImage_hover(rs.getString(4));
-                s.setDescription(rs.getString(5));
-                s.setPrice_old(rs.getFloat(6));
-                s.setPrice(rs.getFloat(7));
-                s.setNote(rs.getString(8));
-                s.setQuantum(rs.getInt(9));
-                s.setYear(rs.getInt(10));
-                s.setActive(rs.getInt(11));
-                s.setId_type(rs.getInt(15));
                 arr.add(s);
             }
             cn.close();
