@@ -66,7 +66,7 @@ public class BookDAO {
 
     public static void main(String[] args) throws SQLException {
         BookDAO bt = new BookDAO();
-        ArrayList<Products> l = bt.getListCategoriesAndPage(1, 2, 9);
+        ArrayList<Products> l = bt.getListCategoriesAndPage(0, 10, 12);
         for (Products b : l) {
             System.out.println(b.getId() + "," + b.getName());
         }
