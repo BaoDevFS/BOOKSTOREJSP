@@ -1,11 +1,8 @@
 <%@ page import="vn.edu.nlu.control.PathAbsolute" %>
 <%@ page import="java.sql.ResultSet" %>
-<%@ page import="vn.edu.nlu.dao.GetListProductType" %>
 <%@ page import="vn.edu.nlu.fit.model.Products" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="vn.edu.nlu.tools.Pagination" %>
-<%@ page import="vn.edu.nlu.dao.BooksTypeDAO" %>
-<%@ page import="vn.edu.nlu.fit.model.Booktypes" %>
 <%@ page import="vn.edu.nlu.dao.BookDAO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -47,9 +44,7 @@
 </style>
 <body>
 <%
-    BooksTypeDAO booksTypeDAO = new BooksTypeDAO();
     BookDAO bd = new BookDAO();
-
     int type = 1;
     if (request.getParameter("type") != null) {
         try {
