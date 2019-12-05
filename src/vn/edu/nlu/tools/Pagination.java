@@ -13,9 +13,9 @@ public class Pagination {
     public Pagination(int totalItems, int totalItemPerPage, int pageRange, int currentPage) {
         this.totalItems = totalItems;
         this.totalItemPerPage = totalItemPerPage;
-        pageRange = (pageRange % 2 == 0) ? ++pageRange : pageRange;
+        pageRange = (pageRange % 2 == 0 ) ? pageRange++ : pageRange;
         this.pageRange = pageRange;
-        this.totalPage = (int) Math.ceil(this.totalItems / this.totalItemPerPage);
+        this.totalPage = (pageRange/2 !=0)?(int) (Math.ceil(this.totalItems / this.totalItemPerPage))+1:(int) Math.ceil(this.totalItems / this.totalItemPerPage);
 //      tra ve giá trị kép nhỏ nhất (gần nhất với vô cực âm) lớn hơn hoặc bằng đối số và bằng một số nguyên toán học
         this.currentPage = currentPage;
     }
@@ -65,14 +65,13 @@ public class Pagination {
         String pre = "";
         String next = "";
         String listPages = "";
-        if (this.totalPage > 1) {
-            pre = "<li><a ><<</a></li>";
+        if (this.totalPage > 1 ) {
             if (this.currentPage > 1) {
-                pre = "<li><a href=\"" + link + "&page=" + (this.currentPage + 1) + "\"><<</a></li>";
+                pre = "<li><a href=\"" + link + "page=" + (this.currentPage - 1) + "\"><<</a></li>";
             }
             next = "<li><a >>></a></li>";
             if (this.currentPage < this.totalPage) {
-                next = "<li><a a href=\"" + link + "&page=" + (this.currentPage + 1) + "\">>></a></li>";
+                next = "<li><a a href=\"" + link + "page=" + (this.currentPage + 1) + "\">>></a></li>";
             }
             int start;
             int end;
@@ -94,7 +93,7 @@ public class Pagination {
                 if (this.currentPage == i) {
                     listPages += "<li><a class=\"active\">" + i + "</a></li>";
                 } else {
-                    listPages += "<li><a a href=\"" + link + "&page=" + (this.currentPage + 1) + "\">" + i + "</a></li>";
+                    listPages += "<li><a a href=\"" + link + "page=" + i + "\">" + i + "</a></li>";
                 }
             }
             pagination = "<ul class=\"wn__pagination\">" + pre + listPages + next + "</ul>";

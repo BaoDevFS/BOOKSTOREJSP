@@ -1,9 +1,12 @@
 <%@ page import="vn.edu.nlu.control.PathAbsolute" %>
 <%@ page import="java.sql.ResultSet" %>
-<%@ page import="vn.edu.nlu.control.GetListProductType" %>
+<%@ page import="vn.edu.nlu.dao.GetListProductType" %>
 <%@ page import="vn.edu.nlu.fit.model.Products" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="vn.edu.nlu.tools.Pagination" %>
+<%@ page import="vn.edu.nlu.dao.BooksTypeDAO" %>
+<%@ page import="vn.edu.nlu.fit.model.Booktypes" %>
+<%@ page import="vn.edu.nlu.dao.BookDAO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
@@ -35,7 +38,7 @@
     <script src="Public/js/vendor/modernizr-3.5.0.min.js"></script>
 </head>
 <style>
-    .wn__pagination li .active{
+    .wn__pagination li .active {
         /*text-decoration: underline;*/
         color: brown;
         border: 1px solid #d4d0d0;
@@ -44,19 +47,16 @@
 </style>
 <body>
 <%
-    GetListProductType listPr = new GetListProductType();
-    ArrayList<Products> arr;
+    BooksTypeDAO booksTypeDAO = new BooksTypeDAO();
+    BookDAO bd = new BookDAO();
 
     int type = 1;
     if (request.getParameter("type") != null) {
         try {
             type = Integer.parseInt(request.getParameter("type"));
-            arr = listPr.getListCategories(type);
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
-    } else {
-        arr = listPr.getList();
     }
     int paramPage = 1;
     if (request.getParameter("page") != null) {
@@ -66,11 +66,19 @@
             e.printStackTrace();
         }
     }
-    ArrayList<Products> listPage = listPr.getListCategories(type);
+    String link;
+    if (request.getParameter("type") != null) {
+        link = "ShopGrid?type=" + type + "&";
+    } else {
+        link = "ShopGrid?";
+    }
     //phan trang
-    String link = "ShopGrid?type=" + type;
-    Pagination pagination = new Pagination(200, 20, 4, paramPage);
+    int amountItem = bd.countProductByType(type);
+
+
+    Pagination pagination = new Pagination(amountItem, 9, 4, paramPage);
     String showPagination = pagination.showPagination(link);
+    ArrayList<Products> listProducts = bd.getListCategoriesAndPage(type, pagination.getCurrentPage(), pagination.getTotalItemPerPage());
 
 %>
 <!--[if lte IE 9]>
@@ -128,15 +136,14 @@
                         <aside class="wedget__categories poroduct--cat">
                             <h3 class="wedget__title">Product Categories</h3>
                             <ul>
-                                <% ResultSet rs = (ResultSet) request.getAttribute("rs");
+                                <% for (Booktypes b : booksTypeDAO.getListBooktypes()) {
                                     ResultSet rs1 = (ResultSet) request.getAttribute("rsCount");
-                                    while (rs.next() && rs1.next()) {
+                                    while (rs1.next()) {
                                 %>
-                                <li><a href="<%=PathAbsolute.getPath("ShopGrid?type="+rs.getInt(1)) %>">
-                                    <%=rs.getString(2) %>
-
+                                <li><a href="<%=PathAbsolute.getPath("ShopGrid?type="+b.getId()) %>">
+                                    <%=b.getName() %>
                                     <span>(<%=rs1.getInt(3) %>)</span>
-                                    <% } %>
+                                    <% }} %>
                                 </a></li>
 
                             </ul>
@@ -215,7 +222,8 @@
 
                             <div class="row">
 
-                                <% for (Products pd : listPage) {
+                                <%
+                                    for (Products pd : listProducts) {
                                 %>
 
                                 <!-- Start Single Product -->
@@ -266,7 +274,7 @@
 
                                 <% } %>
                             </div>
-                            <%= showPagination%>
+
                         </div>
                         <div class="shop-grid tab-pane fade" id="nav-list" role="tabpanel">
                             <div class="list__view__wrapper">
@@ -446,6 +454,7 @@
                                 <!-- End Single Product -->
                             </div>
                         </div>
+                        <%= showPagination%>
                     </div>
                 </div>
             </div>

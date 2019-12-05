@@ -28,7 +28,7 @@ public class ShopGrid extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/shopGrid.jsp");
+
 //        requestDispatcher.forward(request,response);
 //        connection = null;
         id_page = request.getParameter("page");
@@ -52,8 +52,8 @@ public class ShopGrid extends HttpServlet {
             PreparedStatement pre1 = connection.prepareStatement(sql);
             ResultSet rs1 = pre1.executeQuery();
             request.setAttribute("rs1", rs1);
-
-            request.getRequestDispatcher("/Public/pages/shopGrid.jsp").forward(request, response);
+            RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/shopGrid.jsp");
+            requestDispatcher.forward(request, response);
         } catch (SQLException e) {
             e.printStackTrace();
         }
