@@ -17,7 +17,15 @@ public class BookDAO {
     public int countProductByType(int type) throws SQLException {
         int count = 0;
         cn = getConnectDatabase.getConnectionSql();
+<<<<<<< HEAD
         String sql = "select  COUNT(id) as soluong from books WHERE active = 1 " + " and id_type=" + type;
+=======
+
+        String sql = "select  COUNT(id) as soluong from books WHERE active = 1 ";
+        if (type != 0) {
+            sql += "and id_type= " + type;
+        }
+>>>>>>> 1fc8c3e59c03194effa2fb1620601d684218d7c6
         PreparedStatement ps = cn.prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
         if (rs.next()) {
@@ -30,12 +38,20 @@ public class BookDAO {
     public ArrayList<Products> getListCategoriesAndPage(int type, int currentPage, int itemPerPage) {
         ArrayList<Products> arr = new ArrayList<>();
         cn = null;
+<<<<<<< HEAD
         int position = (currentPage == 0) ? 0 : (currentPage - 1) * itemPerPage;
         String sql;
         if (type > 0) {
             sql = "select * from books WHERE active = 1  " + "and id_type=" + type + " LIMIT " + position + "," + itemPerPage;
         } else {
             sql = "select * from books WHERE active = 1  " + " LIMIT " + position + "," + itemPerPage;
+=======
+        int position = (currentPage - 1) * itemPerPage;
+        String sql = "select * from books WHERE active = 1  " + " LIMIT " + position + "," + itemPerPage;
+        System.out.println(sql);
+        if (type != 0) {
+            sql = "select * from books WHERE active = 1  " + "and id_type=" + type + " LIMIT " + position + "," + itemPerPage;
+>>>>>>> 1fc8c3e59c03194effa2fb1620601d684218d7c6
         }
         try {
             cn = getConnectDatabase.getConnectionSql();
@@ -66,9 +82,18 @@ public class BookDAO {
 
     public static void main(String[] args) throws SQLException {
         BookDAO bt = new BookDAO();
+<<<<<<< HEAD
         ArrayList<Products> l = bt.getListCategoriesAndPage(1, 2, 9);
         for (Products b : l) {
             System.out.println(b.getId() + "," + b.getName());
         }
+=======
+        ArrayList<Products> l = bt.getListCategoriesAndPage(1, 1, 16);
+        System.out.println(l.size());
+        for (Products b : l) {
+            System.out.println(b.getId() + "," + b.getName());
+        }
+        System.out.println(bt.countProductByType(0));
+>>>>>>> 1fc8c3e59c03194effa2fb1620601d684218d7c6
     }
 }
