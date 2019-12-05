@@ -1,9 +1,8 @@
 package vn.edu.nlu.servletad;
 
-import vn.edu.nlu.control.GetListProductType;
+import vn.edu.nlu.dao.GetListProductType;
 import vn.edu.nlu.control.PathAbsolute;
 import vn.edu.nlu.control.SaveImage;
-import vn.edu.nlu.fit.model.Products;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
 import javax.imageio.ImageIO;

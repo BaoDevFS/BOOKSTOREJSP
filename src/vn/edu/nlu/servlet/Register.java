@@ -37,7 +37,7 @@ public class Register extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
-        String fullName = request.getParameter("username");
+        String userName = request.getParameter("username");
         String password = request.getParameter("password");
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
@@ -48,11 +48,12 @@ public class Register extends HttpServlet {
         }
         try {
 //            password = HashCode.hashCode(password);
-            user = new Users(fullName, email,password , phone);
+            user = new Users(userName, email,password , phone);
             user.setId(9);
             user.setActive(0);
+            boolean hasUser = checkUser(userName);
             boolean isExistEmail = checkRegister_email(email);
-            if (isExistEmail) {
+            if (isExistEmail || hasUser) {
                 RequestDispatcher rp = getServletContext().getRequestDispatcher("/Public/pages/register.jsp");
                 rp.forward(request, response);
             } else {
@@ -68,12 +69,39 @@ public class Register extends HttpServlet {
         }
     }
 
+    public boolean checkUser(String name) {
+        Connection cn = null;
+        boolean result = false;
+        String sql = "SELECT * FROM users WHERE users.name =?";
+        try {
+            cn = getConnectDatabase.getConnectionSql();
+            PreparedStatement pre = cn.prepareStatement(sql);
+            pre.setString(1, name);
+            ResultSet rs = pre.executeQuery();
+            while (rs.next()) {
+                result = true;
+                break;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                cn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return result;
+    }
+
     public boolean checkRegister_email(String email) {
+        Connection cn = null;
         boolean result = false;
         String sql = "SELECT * FROM users WHERE users.email =?";
         try {
-            connection = getConnectDatabase.getConnectionSql();
-            PreparedStatement pre = connection.prepareStatement(sql);
+            cn = getConnectDatabase.getConnectionSql();
+            PreparedStatement pre = cn.prepareStatement(sql);
             pre.setString(1, email);
             ResultSet rs = pre.executeQuery();
             while (rs.next()) {
@@ -84,7 +112,7 @@ public class Register extends HttpServlet {
             e.printStackTrace();
         } finally {
             try {
-                connection.close();
+                cn.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -94,17 +122,23 @@ public class Register extends HttpServlet {
     }
 
     public boolean register(Users acc) {
+//		Connection cn = ConnectDB.getConnection();
+        Connection cn = null;
         boolean result = false;
-        String sql = "INSERT INTO users(name,  email,  password,  phone) values(?, ?, ?, ?)";
+//        String sql = "INSERT INTO users( id,name,  email,  password,  phone) values(?, ?, ?, ?)";
+        String sql ="INSERT INTO users( name,  email,  password,  phone) VALUES ("+"'"+acc.getName()+"',"+"'"+acc.getEmail()+"',"+"'"+acc.getPassword()+"',"+"'"+acc.getPhone()+"'"+")";
         System.out.println(sql);
         try {
-            connection = getConnectDatabase.getConnectionSql();
-            PreparedStatement pre = connection.prepareStatement(sql);
-            pre.setString(1,acc.getName());
-            pre.setString(2, acc.getEmail());
-            pre.setString(3, acc.getPassword());
-            pre.setString(4, acc.getPhone());
-            int i = pre.executeUpdate();
+            cn = getConnectDatabase.getConnectionSql();
+            Statement st = cn.createStatement();
+//            PreparedStatement pre = cn.prepareStatement(sql);
+//
+//            pre.setInt(1, acc.getId());
+//            pre.setString(2, acc.getEmail());
+//            pre.setString(3, acc.getPasswork());
+//            pre.setString(4, acc.getPhone());
+
+            int i = st.executeUpdate(sql);
             if (i > 0) {
                 result = true;
             }
@@ -112,7 +146,7 @@ public class Register extends HttpServlet {
             e.printStackTrace();
         } finally {
             try {
-                connection.close();
+                cn.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }

@@ -12,7 +12,7 @@ function addToCart(id) {
     });
 }
 var i=0;
- function addToCartShow(id,quantum) {
+function addToCartShow(id,quantum) {
     $.ajax({
         url: "http://localhost:8080/BookStore/Cart",
         type: "post",
@@ -29,16 +29,15 @@ function getidshow() {
 }
 
 function propupbook(id) {
-     i=id;
+    i=id;
     $.ajax({
         url: "http://localhost:8080/BookStore/AjaxBookMini",
         method: "get",
         data:{
-          id:id
+            id:id
         },
         dataType: 'json',
         success: function (data) {
-
             $('#imageBook').html('<img  src="'+data.image+'">');
             $('#nameBook').text(data.name);
             $('#priceBook').text("$"+data.price);
