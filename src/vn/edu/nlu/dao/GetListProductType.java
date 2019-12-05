@@ -57,8 +57,15 @@ public class GetListProductType {
         return arr;
     }
 
+<<<<<<< HEAD
     public ArrayList<Booktypes> getListCategories() {
         ArrayList<Booktypes> arr = new ArrayList<>();
+=======
+<<<<<<< HEAD:src/vn/edu/nlu/dao/GetListProductType.java
+=======
+    public ArrayList<Products> getListCategories(int type) {
+        ArrayList<Products> arr = new ArrayList<>();
+>>>>>>> af80c5d0f4af59d908e4f9edbc13d882ad009ed3
         Connection cn = null;
         String sql = "select * from booktypes WHERE active = 1 ";
         try {
@@ -78,6 +85,7 @@ public class GetListProductType {
         return arr;
     }
 
+>>>>>>> 1fc8c3e59c03194effa2fb1620601d684218d7c6:src/vn/edu/nlu/control/GetListProductType.java
     public static void main(String[] args) {
         GetListProductType g = new GetListProductType();
         ArrayList<Products> l = g.getList();

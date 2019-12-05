@@ -27,6 +27,13 @@ public class ShopGrid extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+<<<<<<< HEAD
+=======
+
+//        requestDispatcher.forward(request,response);
+//        connection = null;
+//        id_page = request.getParameter("page");
+>>>>>>> af80c5d0f4af59d908e4f9edbc13d882ad009ed3
         String type = request.getParameter("type");
         String page = request.getParameter("page");
         int idType = 0;
@@ -57,6 +64,16 @@ public class ShopGrid extends HttpServlet {
 
             connection = getConnectDatabase.getConnectionSql();
 
+<<<<<<< HEAD
+            connection = getConnectDatabase.getConnectionSql();
+            sql = "SELECT * FROM books WHERE active = 1";
+            if (type != null) sql += " and id_type = " + type;
+            PreparedStatement pre1 = connection.prepareStatement(sql);
+            ResultSet rs1 = pre1.executeQuery();
+            request.setAttribute("rs1", rs1);
+            RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/shopGrid.jsp");
+            requestDispatcher.forward(request, response);
+=======
             sql = "select * from books WHERE active = 1 ";
 
 
@@ -91,6 +108,7 @@ public class ShopGrid extends HttpServlet {
             requestDispatcher.forward(request, response);
 
 
+>>>>>>> 1fc8c3e59c03194effa2fb1620601d684218d7c6
         } catch (SQLException e) {
             e.printStackTrace();
 

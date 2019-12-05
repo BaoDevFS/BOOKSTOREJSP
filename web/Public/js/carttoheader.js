@@ -1,6 +1,6 @@
 $(document).ready(function () {
     drawCart();
-})
+});
 
 function drawCart() {
     $.ajax({
@@ -12,10 +12,10 @@ function drawCart() {
             $('#total').text('$' + json.totalCart);
             $('#quantity').text(json.productCart.length + ' items');
             $('.product_qun').text(json.productCart.length);
-            var line;
+            var line='';
             for (var i = 0; i < json.productCart.length; i++) {
                 var product = json.productCart[i];
-                line += '<div class="item01 d-flex mt--20">\n' +
+                line += '<div id="'+product.books.id+' class="item01 d-flex mt--20">\n' +
                     '    <div class="thumb">\n' +
                     '        <a href="http://localhost:8080/BookStore/SingleProduct">\n' +
                     '            <img style="width: 50px" src="' + product.books.image + '" alt="product images"></a>\n' +
@@ -34,6 +34,19 @@ function drawCart() {
                     '</div>';
             }
             $('.miniproduct').html(line);
+        }
+    });
+}
+
+
+function hidenRow(id) {
+    $('#'+id).addClass('hiden');
+    $.ajax({
+        url: "http://localhost:8080/BookStore/Cart",
+        type: "post",
+        data: {id: id},
+        complete: function (resultText) {
+            drawCart();
         }
     });
 }
