@@ -91,10 +91,10 @@ Copier/3.x [XR&CO'2014], Thu, 12 Sep 2019 08:49:15 GMT -->
                                         <a href="Public/images/2.jpg"><img src="Public/images/product/2.jpg" alt=""></a>
                                         <a href="Public/images/3.jpg"><img src="Public/images/product/3.jpg" alt=""></a>
                                         <a href="Public/images/4.jpg"><img src="Public/images/product/4.jpg" alt=""></a>
-<%--                                        <a href="Public/images/5.jpg"><img src="Public/images/product/5.jpg" alt=""></a>--%>
-<%--                                        <a href="Public/images/6.jpg"><img src="Public/images/product/6.jpg" alt=""></a>--%>
-<%--                                        <a href="Public/images/7.jpg"><img src="Public/images/product/7.jpg" alt=""></a>--%>
-<%--                                        <a href="Public/images/8.jpg"><img src="Public/images/product/8.jpg" alt=""></a>--%>
+                                        <a href="Public/images/5.jpg"><img src="Public/images/product/5.jpg" alt=""></a>
+                                        <a href="Public/images/6.jpg"><img src="Public/images/product/6.jpg" alt=""></a>
+                                        <a href="Public/images/7.jpg"><img src="Public/images/product/7.jpg" alt=""></a>
+                                        <a href="Public/images/8.jpg"><img src="Public/images/product/8.jpg" alt=""></a>
                                     </div>
                                 </div>
                             </div>

@@ -16,8 +16,6 @@ import java.sql.Statement;
 @WebServlet("/SingleProduct")
 public class SingleProduct extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

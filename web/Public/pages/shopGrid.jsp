@@ -47,7 +47,6 @@
 </style>
 <body>
 <%
-<<<<<<< HEAD
     BooksTypeDAO booksTypeDAO = new BooksTypeDAO();
     BookDAO bd = new BookDAO();
 
@@ -80,47 +79,7 @@
     Pagination pagination = new Pagination(amountItem, 9, 4, paramPage);
     String showPagination = pagination.showPagination(link);
     ArrayList<Products> listProducts = bd.getListCategoriesAndPage(type, pagination.getCurrentPage(), pagination.getTotalItemPerPage());
-=======
-    GetListProductType listPr = new GetListProductType();
-    BooksTypeDAO booksTypeDAO = new BooksTypeDAO();
-    BookDAO bd = new BookDAO();
-    int type = 1;
-//    if (request.getParameter("type") != null) {
-//        try {
-//            type = Integer.parseInt(request.getParameter("type"));
-//        } catch (NumberFormatException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//    int paramPage = 1;
-//    if (request.getParameter("page") != null) {
-//        try {
-//            paramPage = Integer.parseInt(request.getParameter("page"));
-//        } catch (NumberFormatException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//    ArrayList<Products> listPage = listPr.getListCategories(type);
-//    ArrayList<Products> listProducts =  new ArrayList<>();
-//    ResultSet rsB=(ResultSet) request.getAttribute("book");
-//    while (rsB.next()){
-//        listProducts.add(rsB)
-//    }
-    //phan trang
->>>>>>> 1fc8c3e59c03194effa2fb1620601d684218d7c6
 
-//    String link = "ShopGrid" ;
-//    if (type != 0) {
-//        link = "ShopGrid?type=" + type;
-//    }
-//    int amountItem = bd.countProductByType(type);
-//    System.out.println("amount" + amountItem);
-//    Pagination pagination = new Pagination(amountItem, 9, 4, paramPage);
-//    String showPagination = pagination.showPagination(link);
-//    ArrayList<Products> listProducts = bd.getListCategoriesAndPage(type, pagination.getCurrentPage(), pagination.getTotalItemPerPage());
-//    for (Products b : listProducts) {
-//        System.out.println(b.getId() + "," + b.getName());
-//    }
 %>
 <!--[if lte IE 9]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
@@ -177,25 +136,14 @@
                         <aside class="wedget__categories poroduct--cat">
                             <h3 class="wedget__title">Product Categories</h3>
                             <ul>
-                                <% for (Booktypes b : booksTypeDAO.getListBooktypes()) {
-<<<<<<< HEAD
+                                <% ResultSet rs = (ResultSet) request.getAttribute("rs");
                                     ResultSet rs1 = (ResultSet) request.getAttribute("rsCount");
-                                    while (rs1.next()) {
+                                    while (rs.next()&& rs1.next()) {
                                 %>
-                                <li><a href="<%=PathAbsolute.getPath("ShopGrid?type="+b.getId()) %>">
-                                    <%=b.getName() %>
+                                <li><a href="<%=PathAbsolute.getPath("ShopGrid?type="+rs.getInt(1))%>">
+                                    <%=rs.getString(2) %>
                                     <span>(<%=rs1.getInt(3) %>)</span>
-                                    <% }} %>
-=======
-//                                    ResultSet rs1 = (ResultSet) request.getAttribute("rsCount");
-//                                   while (rs1.next()) {
-                                %>
-                                <li><a href="<%=PathAbsolute.getPath("ShopGrid?type="+b.getId()) %>">
-                                    <%=b.getName() %>
-
-                                    <%--                                    <span>(<%=rs1.getInt(3) %>)</span>--%>
                                     <% } %>
->>>>>>> 1fc8c3e59c03194effa2fb1620601d684218d7c6
                                 </a></li>
 
                             </ul>
@@ -275,41 +223,27 @@
                             <div class="row">
 
                                 <%
-<<<<<<< HEAD
                                     for (Products pd : listProducts) {
-=======
-                                    ResultSet pd = (ResultSet) request.getAttribute("book");
-                                    Integer currentPage = (Integer) request.getAttribute("currentPage");
-                                    int i = -1;
-                                    int start = currentPage * 9 - 9;
-                                    while (pd.next()) {
-                                        i++;
-                                        if (i < start) {
-                                            continue;
-                                        }
-                                        if (i >= currentPage * 9) break;
-
->>>>>>> 1fc8c3e59c03194effa2fb1620601d684218d7c6
                                 %>
 
                                 <!-- Start Single Product -->
                                 <div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
                                     <div class="product__thumb">
                                         <a class="first__img" href="singleProduct.html">
-                                            <img src="<%=pd.getString("image")%>" class="abc" alt="product image"></a>
+                                            <img src="<%=pd.getImage()%>" class="abc" alt="product image"></a>
                                         <a class="second__img animation1" href="singleProduct.html">
-                                            <img src="<%=pd.getString("image_hover")%>" class="abc" alt="product image"></a>
+                                            <img src="<%=pd.getImage_hover()%>" class="abc" alt="product image"></a>
                                         <div class="hot__box">
                                             <span class="hot-label">BEST SALLER</span>
                                         </div>
                                     </div>
                                     <div class="product__content content--center">
-                                        <h4><a href="singleProduct.html"><%= pd.getString("name")%>
+                                        <h4><a href="singleProduct.html"><%= pd.getName()%>
                                         </a></h4>
                                         <ul class="prize d-flex">
-                                            <li><%=pd.getFloat("price")%>
+                                            <li><%=pd.getPrice()%>
                                             </li>
-                                            <li class="old_prize"><%=pd.getFloat("price_old")%>
+                                            <li class="old_prize"><%=pd.getPrice_old()%>
                                             </li>
                                         </ul>
                                         <div class="action">
@@ -340,10 +274,6 @@
 
                                 <% } %>
                             </div>
-<<<<<<< HEAD
-=======
-                            <%--                            <%= showPagination%>--%>
->>>>>>> 1fc8c3e59c03194effa2fb1620601d684218d7c6
 
                         </div>
                         <div class="shop-grid tab-pane fade" id="nav-list" role="tabpanel">
@@ -524,64 +454,7 @@
                                 <!-- End Single Product -->
                             </div>
                         </div>
-<<<<<<< HEAD
                         <%= showPagination%>
-=======
-
-
-                        <ul class="wn__pagination">
-
-
-                            <%
-                                Integer nOfPages = (Integer) request.getAttribute("nOfPages");
-                                Integer idType = (Integer) request.getAttribute("idType");
-                                Integer currentPage1 = (Integer) request.getAttribute("currentPage");
-                                int start1 = currentPage1;
-                                String url = "ShopGrid?type=" + idType + "&page=";
-                                if (idType == 0) {
-                                    url = "ShopGrid?page=";
-                                }
-                                if ((currentPage1) == nOfPages) {
-                                    start1 = currentPage1 - 2;
-                                }
-                                if (start1 <= 0) {
-                                    start1 = 2;
-                                }
-                                System.out.println(start1);
-                                if (currentPage1 % 2 == 0) { %>
-                            <li class="shop-pagination"><a
-                                    href="<%= PathAbsolute.getPath(url + (start1-1) ) %>"><%= start1 - 1  %>
-                            </a></li>
-                            <li class="shop-pagination"><a
-                                    href="<%=  PathAbsolute.getPath(url+ (start1) ) %>"><%=start1  %>
-                            </a></li>
-
-                            <% } else {
-
-                            %>
-                            <li class="shop-pagination"><a
-                                    href="<%=  PathAbsolute.getPath(url + (start1) ) %>"><%= start1  %>
-                            </a></li>
-                            <li class="shop-pagination"><a
-                                    href="<%=  PathAbsolute.getPath(url + (start1+1) ) %>"><%=start1 + 1  %>
-                            </a></li>
-                            <% }
-                                if (currentPage1 == nOfPages) {
-                            %>
-
-                            <li class="shop-pagination"><a
-                                    href="<%=  PathAbsolute.getPath(url + (start1) ) %>"><i
-                                    class="fa fa-caret-right"></i></a></li>
-                            <% } else {
-                            %>
-                            <li class="shop-pagination"><a
-                                    href="<%=  PathAbsolute.getPath(url + (start1+1) ) %>"><i
-                                    class="fa fa-caret-right"></i></a></li>
-                            <% }
-                            %>
-                        </ul>
-
->>>>>>> 1fc8c3e59c03194effa2fb1620601d684218d7c6
                     </div>
                 </div>
             </div>
