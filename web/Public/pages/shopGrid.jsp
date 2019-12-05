@@ -1,18 +1,12 @@
 <%@ page import="vn.edu.nlu.control.PathAbsolute" %>
-<<<<<<< HEAD
 <%@ page import="java.sql.ResultSet" %>
-=======
-<%@ page import="vn.edu.nlu.dao.BookDAO" %>
 <%@ page import="vn.edu.nlu.dao.GetListProductType" %>
->>>>>>> 1ff440bc4655757b72b8cd8adcc281597052f51f
 <%@ page import="vn.edu.nlu.fit.model.Products" %>
-<%@ page import="vn.edu.nlu.tools.Pagination" %>
-<<<<<<< HEAD
-<%@ page import="vn.edu.nlu.dao.BookDAO" %>
-=======
-<%@ page import="java.sql.ResultSet" %>
 <%@ page import="java.util.ArrayList" %>
->>>>>>> 1ff440bc4655757b72b8cd8adcc281597052f51f
+<%@ page import="vn.edu.nlu.tools.Pagination" %>
+<%@ page import="vn.edu.nlu.dao.BooksTypeDAO" %>
+<%@ page import="vn.edu.nlu.fit.model.Booktypes" %>
+<%@ page import="vn.edu.nlu.dao.BookDAO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
@@ -53,11 +47,9 @@
 </style>
 <body>
 <%
+    BooksTypeDAO booksTypeDAO = new BooksTypeDAO();
     BookDAO bd = new BookDAO();
-<<<<<<< HEAD
-=======
-    GetListProductType listProductType = new GetListProductType();
->>>>>>> 1ff440bc4655757b72b8cd8adcc281597052f51f
+
     int type = 1;
     if (request.getParameter("type") != null) {
         try {
@@ -75,15 +67,13 @@
         }
     }
     String link;
-    int amountItem ;
     if (request.getParameter("type") != null) {
         link = "ShopGrid?type=" + type + "&";
-        amountItem = bd.countProductByType(type);
     } else {
         link = "ShopGrid?";
-        amountItem=listProductType.getList().size();
     }
     //phan trang
+    int amountItem = bd.countProductByType(type);
 
 
     Pagination pagination = new Pagination(amountItem, 9, 4, paramPage);
@@ -148,7 +138,7 @@
                             <ul>
                                 <% ResultSet rs = (ResultSet) request.getAttribute("rs");
                                     ResultSet rs1 = (ResultSet) request.getAttribute("rsCount");
-                                    while (rs.next() && rs1.next()) {
+                                    while (rs.next()&& rs1.next()) {
                                 %>
                                 <li><a href="<%=PathAbsolute.getPath("ShopGrid?type="+rs.getInt(1))%>">
                                     <%=rs.getString(2) %>
