@@ -17,7 +17,6 @@ import java.sql.*;
 public class ShopGrid extends HttpServlet {
     GetConnectDatabase getConnectDatabase;
     Connection connection;
-    String id_page;
 
     public ShopGrid() {
         this.getConnectDatabase = new GetConnectDatabase();
@@ -28,14 +27,15 @@ public class ShopGrid extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+<<<<<<< HEAD
+=======
 
 //        requestDispatcher.forward(request,response);
 //        connection = null;
 //        id_page = request.getParameter("page");
+>>>>>>> af80c5d0f4af59d908e4f9edbc13d882ad009ed3
         String type = request.getParameter("type");
-//        String search = request.getParameter("selectSearch");
         String page = request.getParameter("page");
-//        response.getWriter().println(page);
         int idType = 0;
         int pageNum = 1;
 
@@ -77,30 +77,27 @@ public class ShopGrid extends HttpServlet {
             sql = "select * from books WHERE active = 1 ";
 
 
-
             if (idType != 0) {
                 sql += "and id_type= " + idType;
             }
-//            else if(search != null) {
-//                sql += " and search =" + search;
-//            }
             PreparedStatement pst2 = connection.prepareStatement(sql);
-
-//            response.getWriter().println(sql);
 
             ResultSet book = pst2.executeQuery();
             book.last();
             int rows = book.getRow();
             book.beforeFirst();
-//            System.out.println("gjhjhiu" + rows);
 
-            int nOfPages = rows / 9;
+            int nOfPages = rows / 12;
 
-            if (nOfPages % 9 > 0) {
+            if (nOfPages % 12 > 0) {
                 nOfPages++;
             }
-            System.out.println(nOfPages);
+            connection = getConnectDatabase.getConnectionSql();
+            sql = ("select booktypes.id,booktypes.name,SUM(books.quantum) from books join  booktypes ON books.id_type=booktypes.id GROUP BY booktypes.id");
+            PreparedStatement preCount = connection.prepareStatement(sql);
+            ResultSet rsCount = preCount.executeQuery();
 
+            request.setAttribute("rsCount", rsCount);
 
             request.setAttribute("book", book);
             request.setAttribute("currentPage", pageNum);
@@ -116,30 +113,6 @@ public class ShopGrid extends HttpServlet {
             e.printStackTrace();
 
         }
-//        try {
-////            connection = getConnectDatabase.getConnectionSql();
-////            String sql = "SELECT id, name FROM booktypes WHERE active = 1";
-////            PreparedStatement pre = connection.prepareStatement(sql);
-////            ResultSet rs = pre.executeQuery();
-////            request.setAttribute("rs", rs);
-//
-//            connection = getConnectDatabase.getConnectionSql();
-//            sql = ("select booktypes.id,booktypes.name,SUM(books.quantum) from books join  booktypes ON books.id_type=booktypes.id GROUP BY booktypes.id");
-//            PreparedStatement preCount = connection.prepareStatement(sql);
-//            ResultSet rsCount = preCount.executeQuery();
-//            request.setAttribute("rsCount", rsCount);
-//
-//            connection = getConnectDatabase.getConnectionSql();
-//            sql = "SELECT * FROM books WHERE active = 1";
-//            if (type != null) sql += " and id_type = " + type;
-//            PreparedStatement pre1 = connection.prepareStatement(sql);
-//            ResultSet rs1 = pre1.executeQuery();
-//            request.setAttribute("rs1", rs1);
-//            RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/shopGrid.jsp");
-//            requestDispatcher.forward(request, response);
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
     }
 
 }

@@ -1,12 +1,7 @@
 <%@ page import="vn.edu.nlu.control.PathAbsolute" %>
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="vn.edu.nlu.dao.GetListProductType" %>
-<%@ page import="vn.edu.nlu.fit.model.Products" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="vn.edu.nlu.tools.Pagination" %>
-<%@ page import="vn.edu.nlu.dao.BooksTypeDAO" %>
 <%@ page import="vn.edu.nlu.fit.model.Booktypes" %>
-<%@ page import="vn.edu.nlu.dao.BookDAO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
@@ -46,6 +41,8 @@
 
 </style>
 <body>
+<<<<<<< HEAD
+=======
 <%
 <<<<<<< HEAD
     BooksTypeDAO booksTypeDAO = new BooksTypeDAO();
@@ -122,6 +119,7 @@
 //        System.out.println(b.getId() + "," + b.getName());
 //    }
 %>
+>>>>>>> af80c5d0f4af59d908e4f9edbc13d882ad009ed3
 <!--[if lte IE 9]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
         href="https://browsehappy.com/">upgrade
@@ -169,6 +167,8 @@
     </div>
     <!-- End Bradcaump area -->
     <!-- Start Shop Page -->
+<<<<<<< HEAD
+=======
     <div class="page-shop-sidebar left--sidebar bg--white section-padding--lg">
         <div class="container">
             <div class="row">
@@ -587,6 +587,7 @@
             </div>
         </div>
     </div>
+>>>>>>> af80c5d0f4af59d908e4f9edbc13d882ad009ed3
     <!-- End Shop Page -->
     <!-- Footer Area -->
     <%@ include file="include/footer.jsp" %>
