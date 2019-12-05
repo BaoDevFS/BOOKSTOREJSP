@@ -28,26 +28,15 @@ public class Home extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        HttpSession httpSession = request.getSession();
-//        Users users = (Users) httpSession.getAttribute("user");
-//        if (users != null) {
-//            System.out.println(users.toString());
-//        }
-//        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/Home.jsp");
-//        requestDispatcher.forward(request, response);
         connection = null;
         try {
-
             connection = getConnectDatabase.getConnectionSql();
+
             String sql = "SELECT c.* FROM `receiptdetails` a join `goodreceipts` b on b.id= a.id_import Join `books` c on a.id_book= c.id where (DATE(CURDATE()) - dateimport)<30; ";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
-            request.setAttribute("rsHome", resultSet);
+            request.setAttribute("rsNew", resultSet);
 
-            String sqlIcon = "SELECT * FROM `icons` WHERE active=1;";
-            PreparedStatement preparedStatementIcon = connection.prepareStatement(sqlIcon);
-            ResultSet resultSetIcon = preparedStatementIcon.executeQuery();
-            request.setAttribute("rsIcon", resultSetIcon);
 
             String sqlAllBook = "SELECT c.* FROM  `books` c where active=1;";
             PreparedStatement preparedStatementAll = connection.prepareStatement(sqlAllBook);
