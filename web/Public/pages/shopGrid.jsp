@@ -6,6 +6,9 @@
 <%@ page import="vn.edu.nlu.tools.Pagination" %>
 <%@ page import="vn.edu.nlu.fit.model.Booktypes" %>
 <%@ page import="vn.edu.nlu.dao.BookDAO" %>
+<%@ page import="java.util.Collections" %>
+<%@ page import="java.util.Collections" %>
+<%@ page import="java.util.Comparator" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
@@ -74,9 +77,19 @@
         amountItem = getListProductType.getList().size();
     }
     //phan trang
-    Pagination pagination = new Pagination(amountItem, 12, 3, paramPage);
+    Pagination pagination = new Pagination(amountItem, 9, 3, paramPage);
     String showPagination = pagination.showPagination(link);
-    ArrayList<Products> listProducts = bd.getListCategoriesAndPage(type, pagination.getCurrentPage(), pagination.getTotalItemPerPage());
+
+    ArrayList<Products> listProducts;
+    if (request.getParameter("type") != null) {
+        link = "ShopGrid?type=" + type + "&";
+        amountItem = bd.countProductByType(type);
+        listProducts = bd.getListCategoriesAndPage(type, pagination.getCurrentPage(), pagination.getTotalItemPerPage());
+    } else {
+        link = "ShopGrid?";
+        amountItem = getListProductType.getList().size();
+        listProducts = bd.sort(bd.getListCategoriesAndPage(0, pagination.getCurrentPage(), pagination.getTotalItemPerPage()));
+    }
 
 %>
 <!--[if lte IE 9]>
@@ -169,13 +182,14 @@
                         <aside class="wedget__categories poroduct--tag">
                             <h3 class="wedget__title">Product Tags</h3>
                             <ul>
-                                <% ResultSet rsTag = (ResultSet) request.getAttribute("rs");
-                                    rsTag.first();
+                                <% ResultSet rsTag = (ResultSet) request.getAttribute("rsTag");
+//                                    rsTag.first();
+
                                     while (rsTag.next()) {
                                 %>
 
                                 <li><a href="<%=PathAbsolute.getPath("ShopGrid?type="+rsTag.getInt(1))%>">
-                                    <%=rsTag.getString(2) %>
+                                    <%=(rsTag.getString(2).length() < 30) ? rsTag.getString(2) : rsTag.getString(2).substring(0, 28) %>
                                 </a></li>
                                 <%--                                <li><a href="#">Business</a></li>--%>
                                 <% } %>
@@ -200,7 +214,7 @@
                                     <a class="nav-item nav-link" data-toggle="tab" href="#nav-list" role="tab"><i
                                             class="fa fa-list"></i></a>
                                 </div>
-                                <p>Showing 1–12 of 40 results</p>
+                                <p>Showing 1–9 of <%=getListProductType.getList().size() %> results</p>
                                 <div class="orderby__wrapper">
                                     <span>Sort By</span>
                                     <select class="shot__byselect">
@@ -239,9 +253,9 @@
                                         <h4><a href="singleProduct.html"><%= pd.getName()%>
                                         </a></h4>
                                         <ul class="prize d-flex">
-                                            <li><%=pd.getPrice()%>
+                                            <li>$<%=pd.getPrice()%>
                                             </li>
-                                            <li class="old_prize"><%=pd.getPrice_old()%>
+                                            <li class="old_prize">$<%=pd.getPrice_old()%>
                                             </li>
                                         </ul>
                                         <div class="action">
@@ -276,16 +290,19 @@
                         </div>
                         <div class="shop-grid tab-pane fade" id="nav-list" role="tabpanel">
                             <div class="list__view__wrapper">
+                                <%
+                                    for (Products pd : bd.sort(listProducts)) {
+                                %>
                                 <!-- Start Single Product -->
                                 <div class="list__view">
                                     <div class="thumb">
                                         <a class="first__img" href="singleProduct.html"><img
-                                                src="Public/images/product/1.jpg" alt="product images"></a>
+                                                src="<%=pd.getImage()%>" alt="product images"></a>
                                         <a class="second__img animation1" href="singleProduct.html"><img
-                                                src="Public/images/product/2.jpg" alt="product images"></a>
+                                                src="<%=pd.getImage_hover()%>" alt="product images"></a>
                                     </div>
                                     <div class="content">
-                                        <h2><a href="singleProduct.html">Ali Smith</a></h2>
+                                        <h2><a href="singleProduct.html"><%=pd.getName()%></a></h2>
                                         <ul class="rating d-flex">
                                             <li class="on"><i class="fa fa-star-o"></i></li>
                                             <li class="on"><i class="fa fa-star-o"></i></li>
@@ -295,13 +312,12 @@
                                             <li><i class="fa fa-star-o"></i></li>
                                         </ul>
                                         <ul class="prize__box">
-                                            <li>$111.00</li>
-                                            <li class="old__prize">$220.00</li>
+                                            <li>$<%=pd.getPrice()%></li>
+                                            <li class="old__prize">$<%=pd.getPrice_old()%></li>
                                         </ul>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue
-                                            nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi
-                                            ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate
-                                            adipiscing cursus eu, suscipit id nulla.</p>
+
+                                        <p><%=pd.getDescription()%></p>
+
                                         <ul class="cart__action d-flex">
                                             <li class="cart"><a href="cart.html">Add to cart</a></li>
                                             <li class="wishlist"><a href="cart.html"></a></li>
@@ -311,147 +327,10 @@
                                     </div>
                                 </div>
                                 <!-- End Single Product -->
-                                <!-- Start Single Product -->
-                                <div class="list__view mt--40">
-                                    <div class="thumb">
-                                        <a class="first__img" href="singleProduct.html"><img
-                                                src="Public/images/product/2.jpg" alt="product images"></a>
-                                        <a class="second__img animation1" href="singleProduct.html"><img
-                                                src="Public/images/product/4.jpg" alt="product images"></a>
-                                    </div>
-                                    <div class="content">
-                                        <h2><a href="singleProduct.html">Blood In Water</a></h2>
-                                        <ul class="rating d-flex">
-                                            <li class="on"><i class="fa fa-star-o"></i></li>
-                                            <li class="on"><i class="fa fa-star-o"></i></li>
-                                            <li class="on"><i class="fa fa-star-o"></i></li>
-                                            <li class="on"><i class="fa fa-star-o"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        <ul class="prize__box">
-                                            <li>$111.00</li>
-                                            <li class="old__prize">$220.00</li>
-                                        </ul>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue
-                                            nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi
-                                            ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate
-                                            adipiscing cursus eu, suscipit id nulla.</p>
-                                        <ul class="cart__action d-flex">
-                                            <li class="cart"><a href="cart.html">Add to cart</a></li>
-                                            <li class="wishlist"><a href="cart.html"></a></li>
-                                            <li class="compare"><a href="cart.html"></a></li>
-                                        </ul>
-
-                                    </div>
-                                </div>
-                                <!-- End Single Product -->
-                                <!-- Start Single Product -->
-                                <div class="list__view mt--40">
-                                    <div class="thumb">
-                                        <a class="first__img" href="singleProduct.html"><img
-                                                src="Public/images/product/3.jpg" alt="product images"></a>
-                                        <a class="second__img animation1" href="singleProduct.html"><img
-                                                src="Public/images/product/6.jpg" alt="product images"></a>
-                                    </div>
-                                    <div class="content">
-                                        <h2><a href="singleProduct.html">Madeness Overated</a></h2>
-                                        <ul class="rating d-flex">
-                                            <li class="on"><i class="fa fa-star-o"></i></li>
-                                            <li class="on"><i class="fa fa-star-o"></i></li>
-                                            <li class="on"><i class="fa fa-star-o"></i></li>
-                                            <li class="on"><i class="fa fa-star-o"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        <ul class="prize__box">
-                                            <li>$111.00</li>
-                                            <li class="old__prize">$220.00</li>
-                                        </ul>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue
-                                            nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi
-                                            ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate
-                                            adipiscing cursus eu, suscipit id nulla.</p>
-                                        <ul class="cart__action d-flex">
-                                            <li class="cart"><a href="cart.jsp">Add to cart</a></li>
-                                            <li class="wishlist"><a href="wishlist.jsp"></a></li>
-                                            <li class="compare"><a href="#"></a></li>
-                                        </ul>
-
-                                    </div>
-                                </div>
-                                <!-- End Single Product -->
-                                <!-- Start Single Product -->
-                                <div class="list__view mt--40">
-                                    <div class="thumb">
-                                        <a class="first__img" href="singleProduct.jsp"><img
-                                                src="Public/images/product/4.jpg" alt="product images"></a>
-                                        <a class="second__img animation1" href="singleProduct.jsp"><img
-                                                src="Public/images/product/6.jpg" alt="product images"></a>
-                                    </div>
-                                    <div class="content">
-                                        <h2><a href="singleProduct.jsp">Watching You</a></h2>
-                                        <ul class="rating d-flex">
-                                            <li class="on"><i class="fa fa-star-o"></i></li>
-                                            <li class="on"><i class="fa fa-star-o"></i></li>
-                                            <li class="on"><i class="fa fa-star-o"></i></li>
-                                            <li class="on"><i class="fa fa-star-o"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        <ul class="prize__box">
-                                            <li>$111.00</li>
-                                            <li class="old__prize">$220.00</li>
-                                        </ul>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue
-                                            nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi
-                                            ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate
-                                            adipiscing cursus eu, suscipit id nulla.</p>
-                                        <ul class="cart__action d-flex">
-                                            <li class="cart"><a href="cart.jsp">Add to cart</a></li>
-                                            <li class="wishlist"><a href="cart.jsp"></a></li>
-                                            <li class="compare"><a href="cart.jsp"></a></li>
-                                        </ul>
-
-                                    </div>
-                                </div>
-                                <!-- End Single Product -->
-                                <!-- Start Single Product -->
-                                <div class="list__view mt--40">
-                                    <div class="thumb">
-                                        <a class="first__img" href="singleProduct.jsp"><img
-                                                src="Public/images/product/5.jpg" alt="product images"></a>
-                                        <a class="second__img animation1" href="singleProduct.jsp"><img
-                                                src="Public/images/product/9.jpg" alt="product images"></a>
-                                    </div>
-                                    <div class="content">
-                                        <h2><a href="singleProduct.jsp">Court Wings Run</a></h2>
-                                        <ul class="rating d-flex">
-                                            <li class="on"><i class="fa fa-star-o"></i></li>
-                                            <li class="on"><i class="fa fa-star-o"></i></li>
-                                            <li class="on"><i class="fa fa-star-o"></i></li>
-                                            <li class="on"><i class="fa fa-star-o"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        <ul class="prize__box">
-                                            <li>$111.00</li>
-                                            <li class="old__prize">$220.00</li>
-                                        </ul>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue
-                                            nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi
-                                            ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate
-                                            adipiscing cursus eu, suscipit id nulla.</p>
-                                        <ul class="cart__action d-flex">
-                                            <li class="cart"><a href="cart.jsp">Add to cart</a></li>
-                                            <li class="wishlist"><a href="cart.jsp"></a></li>
-                                            <li class="compare"><a href="cart.jsp"></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!-- End Single Product -->
+                                <% } %>
                             </div>
                         </div>
+                        <br>
                         <%= showPagination%>
                     </div>
                 </div>

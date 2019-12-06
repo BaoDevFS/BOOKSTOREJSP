@@ -8,6 +8,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class BookDAO {
     GetConnectDatabase getConnectDatabase = new GetConnectDatabase();
@@ -64,11 +66,29 @@ public class BookDAO {
         return arr;
     }
 
+    public ArrayList<Products> sort(ArrayList<Products> list) {
+        ArrayList<Products> rs = list;
+        Collections.sort(rs, new Comparator<Products>() {
+            @Override
+            public int compare(Products o1, Products o2) {
+                return o1.getName().compareTo(o2.getName());
+            }
+        });
+        return rs;
+    }
+
+
     public static void main(String[] args) throws SQLException {
         BookDAO bt = new BookDAO();
-        ArrayList<Products> l = bt.getListCategoriesAndPage(0, 10, 12);
-        for (Products b : l) {
-            System.out.println(b.getId() + "," + b.getName());
+        ArrayList<Products> l = bt.getListCategoriesAndPage(0, 25, 12);
+//        for (Products b : l) {
+//            System.out.println(b.getId() + "," + b.getName());
+//        }
+//        System.out.println(bt.sort(l));
+        ArrayList<Products> l1 = bt.sort(l);
+        for (Products b : l1) {
+            String r = (b.getDescription().length() > 30) ? b.getDescription().substring(0, 30) : b.getDescription();
+            System.out.println(b.getId() + "," + r);
         }
     }
 }
