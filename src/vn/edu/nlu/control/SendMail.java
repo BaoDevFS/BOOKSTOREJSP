@@ -1,39 +1,37 @@
 package vn.edu.nlu.control;
 
-import javax.mail.Message;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
+import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
 public class SendMail {
-    String mailTo;
     String mailFrom="BookStoreBQG@gmail.com";
     EnCodeBase64 enCodeBase64;
-    public SendMail(String mailTo){
-        this.mailTo=mailTo;
-        sendMail();
+    Session mailSession;
+    public SendMail(){
+        setUp();
     }
-    public void sendMail(){
+    private void setUp(){
+        String host = "smtp.gmail.com";
+        String pass = "special45";
+        Properties props = System.getProperties();
+        props.put("mail.smtp.host", host);
+        props.put("mail.transport.protocol", "smtp");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.user", mailFrom);
+        props.put("mail.password", pass);
+        props.put("mail.port", "465");
+        mailSession = Session.getInstance(props, new javax.mail.Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(mailFrom, pass);
+            }
+        });
+    }
+    public void sendMailVerify(String mailTo){
         try{
-            String host = "smtp.gmail.com";
-            String pass = "special45";
-            Properties props = System.getProperties();
-            props.put("mail.smtp.host", host);
-            props.put("mail.transport.protocol", "smtp");
-            props.put("mail.smtp.auth", "true");
-            props.put("mail.smtp.starttls.enable", "true");
-            props.put("mail.user", mailFrom);
-            props.put("mail.password", pass);
-            props.put("mail.port", "465");
-            Session mailSession = Session.getInstance(props, new javax.mail.Authenticator() {
-                @Override
-                protected PasswordAuthentication getPasswordAuthentication() {
-                    return new PasswordAuthentication(mailFrom, pass);
-                }
-            });
             enCodeBase64 = new EnCodeBase64();
             MimeMessage message = new MimeMessage(mailSession);
             message.setFrom(new InternetAddress(mailFrom));
@@ -46,5 +44,19 @@ public class SendMail {
         catch(Exception e){
             System.out.println(e.getMessage());
         }
+    }
+    public void sendMailRecoverPassWord(String mailTo){
+        enCodeBase64 = new EnCodeBase64();
+        try {
+            MimeMessage message = new MimeMessage(mailSession);
+            message.setFrom(new InternetAddress(mailFrom));
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(mailTo));
+            message.setSubject("Reset Your BookStoreBQG Account Password");
+            message.setText("Click to link recover password: "+"http://localhost:8080/BookStore/ResetPassword?token="+enCodeBase64.enCode(mailTo));
+            Transport.send(message);
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }
+
     }
 }

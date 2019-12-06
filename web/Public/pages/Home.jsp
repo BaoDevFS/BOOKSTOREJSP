@@ -318,7 +318,7 @@
                                         <li><a class="compare" href="#"><i class="fa fa-hashtag"></i></a></li>
                                         <li><a data-toggle="modal" title="Quick View"
                                                class="quickview modal-view detail-link"
-                                               onclick="singleBook(<%=rsNew.getString("id")%>)"
+                                               onclick="propupbook(<%=rsNew.getString("id")%>)"
                                         <%-- href="#productmodal"--%>><i class="fa fa-search"></i></a></li>
                                     </ul>
 
@@ -1283,8 +1283,8 @@
 <script src="Public/js/plugins.js"></script>
 <script src="Public/js/active.js"></script>
 <script src="Public/js/animationforcart.js"></script>
-<script src="Public/js/carttoheader.js"></script>
 <script src="Public/js/addToCart.js"></script>
+<script src="Public/js/carttoheader.js"></script>
 </body>
 
 <!-- Mirrored from demo.hasthemes.com/boighor-preview/boighor-v3/index.html by HTTrack Website Copier/3.x

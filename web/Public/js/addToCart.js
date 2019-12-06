@@ -38,27 +38,6 @@ function propupbook(id) {
         },
         dataType: 'json',
         success: function (data) {
-
-            $('#imageBook').html('<img  src="'+data.image+'">');
-            $('#nameBook').text(data.name);
-            $('#priceBook').text("$"+data.price);
-            $('#descriptionBook').text(data.description);
-            $('#typeBook').text(data.booktype);
-            $('#productmodal').modal('show');
-        }
-    });
-}
-function singleBook(id) {
-    i=id;
-    $.ajax({
-        url: "http://localhost:8080/BookStore/AjaxBookMini",
-        method: "get",
-        data:{
-            id:id
-        },
-        dataType: 'json',
-        success: function (data) {
-
             $('#imageBook').html('<img  src="'+data.image+'">');
             $('#nameBook').text(data.name);
             $('#priceBook').text("$"+data.price);

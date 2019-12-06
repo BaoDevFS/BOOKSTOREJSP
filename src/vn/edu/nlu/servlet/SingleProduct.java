@@ -39,7 +39,7 @@ public class SingleProduct extends HttpServlet {
             ResultSet rsCategory = preparedStatement.executeQuery();
             request.setAttribute("rsCategory", rsCategory);
 
-            sql = ("select booktypes.id,booktypes.name,SUM(books.quantum) from books join  booktypes ON books.id_type=booktypes.id GROUP BY booktypes.id");
+            sql = ("select booktypes.id,booktypes.name,count(books.quantum) from books join  booktypes ON books.id_type=booktypes.id GROUP BY booktypes.id");
             PreparedStatement preCount = connection.prepareStatement(sql);
             ResultSet rsCount = preCount.executeQuery();
             request.setAttribute("rsCount", rsCount);
