@@ -21,6 +21,14 @@ public class Books{
 	public Books() {
 	}
 
+	public Books(int id,String name, String image, double price, String author) {
+		this.id= id;
+		this.name = name;
+		this.image = image;
+		this.price = price;
+		this.author = author;
+	}
+
 	public int getId() {
 		return id;
 	}

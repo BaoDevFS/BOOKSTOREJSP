@@ -44,21 +44,6 @@
     <!-- Header -->
     <%@ include file="include/header.jsp" %>
     <!-- //Header -->
-    <!-- Start Search Popup -->
-    <div class="box-search-content search_active block-bg close__top">
-        <form id="search_mini_form" class="minisearch" action="#">
-            <div class="field__search">
-                <input type="text" placeholder="Search entire store herePublic.">
-                <div class="action">
-                    <a href="#"><i class="zmdi zmdi-search"></i></a>
-                </div>
-            </div>
-        </form>
-        <div class="close__wrap">
-            <span>close</span>
-        </div>
-    </div>
-    <!-- End Search Popup -->
     <!-- Start Bradcaump area -->
     <div class="ht__bradcaump__area bg-image--5">
         <div class="container">
@@ -120,6 +105,9 @@
 <script src="Public/js/plugins.js"></script>
 <script src="Public/js/active.js"></script>
 <script src="Public/js/carttoheader.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="Public/js/search.js"></script>
 </body>
 
 <!-- Mirrored from demo.hasthemes.com/boighor-preview/boighor-v3/error404.html by HTTrack Website Copier/3.x
