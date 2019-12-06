@@ -290,9 +290,9 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                         <div class="product__thumb">
-                            <a class="first__img" onclick="singleBook(<%=rsNew.getString("id")%>)"><img
+                            <a class="first__img" href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsNew.getString("id")%>"><img
                                     src="<%=rsNew.getString(3)%>" alt="product image"></a>
-                            <a class="second__img animation1" onclick="singleBook(<%=rsNew.getString("id")%>)"><img
+                            <a class="second__img animation1" href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsNew.getString("id")%>"><img
                                     src="<%=rsNew.getString(4)%>" alt="product image"></a>
                             <div class="hot__box">
                                 <span class="hot-label"><%=rsNew.getString(8)%></span>
