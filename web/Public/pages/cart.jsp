@@ -1,6 +1,3 @@
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="vn.edu.nlu.fit.model.ProductCart" %>
-<%@ page import="vn.edu.nlu.fit.model.Cart" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
@@ -44,21 +41,6 @@
     <!-- Header -->
     <%@ include file="include/header.jsp" %>
     <!-- //Header -->
-    <!-- Start Search Popup -->
-    <div class="box-search-content search_active block-bg close__top">
-        <form id="search_mini_form" class="minisearch" action="#">
-            <div class="field__search">
-                <input type="text" placeholder="Search entire store here...">
-                <div class="action">
-                    <a href="#"><i class="zmdi zmdi-search"></i></a>
-                </div>
-            </div>
-        </form>
-        <div class="close__wrap">
-            <span>close</span>
-        </div>
-    </div>
-    <!-- End Search Popup -->
     <!-- Start Bradcaump area -->
     <div class="ht__bradcaump__area bg-image--3">
         <div class="container">
@@ -161,61 +143,67 @@
             "ajax": {
                 "url": "http://localhost:8080/BookStore/Cart",
                 "dataType": "json",
-                method:"post",
+                method: "post",
                 'dataSrc': 'productCart',
-                complete:function (data) {
-                    var json =JSON.parse(data.responseText);
-                    $('#totalli').text('$'+json.totalCart);
-                    $('#totalsp').text('$'+json.totalCart);
+                complete: function (data) {
+                    var json = JSON.parse(data.responseText);
+                    $('#totalli').text('$' + json.totalCart);
+                    $('#totalsp').text('$' + json.totalCart);
 
                 }
             },
             columns: [
 
-                {   "orderable": false,
-                    "className":"product-id",
+                {
+                    "orderable": false,
+                    "className": "product-id",
                     "data": "id",
-                    "render": function(data, typet, row) {
+                    "render": function (data, typet, row) {
                         return data;
                     }
                 },
-                {   "orderable": false,
-                    "className":"product-thumbnail",
+                {
+                    "orderable": false,
+                    "className": "product-thumbnail",
                     "data": "books",
-                    "render": function(data, typet, row) {
-                        return '<a href="#"><img width="100px"  height="100px" src='+data.image+' alt="productimg"></a>';
-                    }
-                },
-                {   "orderable": false,
-                    "className":"product-name",
-                    "data": "books",
-                    "render": function(data, typet, row) {
-                        return '<a href="#">'+data.name+'</a>';
+                    "render": function (data, typet, row) {
+                        return '<a href="#"><img width="100px"  height="100px" src=' + data.image + ' alt="productimg"></a>';
                     }
                 },
                 {
-                    "className":"product-price",
+                    "orderable": false,
+                    "className": "product-name",
                     "data": "books",
-                    "render": function(data, typet, row) {
-                        return '<span class="amount">$'+data.price+'</span>';
+                    "render": function (data, typet, row) {
+                        return '<a href="#">' + data.name + '</a>';
                     }
-                },{   "orderable": false,
-                    "className":"product-quantity",
+                },
+                {
+                    "className": "product-price",
+                    "data": "books",
+                    "render": function (data, typet, row) {
+                        return '<span class="amount">$' + data.price + '</span>';
+                    }
+                }, {
+                    "orderable": false,
+                    "className": "product-quantity",
                     "data": "quantity",
-                    "render": function(data, typet, row) {
-                        return '<input type="number" value="'+data+'">';
+                    "render": function (data, typet, row) {
+                        return '<input type="number" value="' + data + '">';
                     }
-                },{   "orderable": false,
-                    "className":"product-subtotal",
+                }, {
+                    "orderable": false,
+                    "className": "product-subtotal",
                     "data": "total",
-                    "render": function(data, typet, row) {
-                        return '$'+data;
+                    "render": function (data, typet, row) {
+                        return '$' + data;
                     }
                 }
-                ,{   "orderable": false,
-                    "className":"product-remove",
+                , {
+                    "orderable": false,
+                    "className": "product-remove",
                     "data": "total",
-                    "render": function(data, typet, row) {
+                    "render": function (data, typet, row) {
                         return '<a class="delete" style="cursor: pointer">X</a>';
                     }
                 }
@@ -239,11 +227,11 @@
             var row = table.row($(this).parents('tr'));
             var data = row.data();
             // get data input
-            var quantity=$(this).val();
+            var quantity = $(this).val();
             $.ajax({
                 url: "http://localhost:8080/BookStore/Cart",
                 type: "post",
-                data: {id: data.id,quantity:quantity},
+                data: {id: data.id, quantity: quantity},
                 complete: function (resultText) {
                     table.ajax.reload();
                 }
@@ -252,5 +240,6 @@
     });
 
 </script>
+<script src="Public/js/search.js"></script>
 </body>
 </html>

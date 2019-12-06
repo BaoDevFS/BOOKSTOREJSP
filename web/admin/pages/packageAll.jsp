@@ -143,7 +143,6 @@
 <script src="<%=PathAbsolute.getPath("admin/js/bootstrap.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/materialize.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/custom.js")%>"></script>
-<%--<script src="<%=PathAbsolute.getPath("admin/js/jquery.dataTables.min.js")%>"></script>--%>
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script>
@@ -152,6 +151,7 @@
             "ajax": {
                 "url": "http://localhost:8080/BookStore/Admin/AjaxProduct",
                 "dataType": "json",
+                method:"get",
                 "contentType": "application/json; charset=utf-8",
                 'dataSrc': 'products'
             },

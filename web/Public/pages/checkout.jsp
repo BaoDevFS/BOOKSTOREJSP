@@ -387,6 +387,7 @@
 <script src="Public/js/plugins.js"></script>
 <script src="Public/js/active.js"></script>
 <script src="Public/js/carttoheader.js"></script>
+<script src="Public/js/search.js"></script>
 </body>
 
 </html>

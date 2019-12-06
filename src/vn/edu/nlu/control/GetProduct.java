@@ -25,8 +25,8 @@ public class GetProduct {
             product.setImage(rs.getString("image"));
             product.setImage_hover(rs.getString("image_hover"));
             product.setDescription(rs.getString("description"));
-            product.setPrice(Double.parseDouble(rs.getString("price")));
-            product.setPrice_old(Double.parseDouble(rs.getString("price_old")));
+            product.setPrice(rs.getDouble("price"));
+            product.setPrice_old(rs.getDouble("price_old"));
             product.setYear(rs.getInt("year"));
             product.setActive(rs.getInt("active"));
             product.setId_type(rs.getInt("id_type"));
