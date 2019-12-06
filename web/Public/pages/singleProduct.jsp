@@ -345,7 +345,7 @@ Copier/3.x [XR&CO'2014], Thu, 12 Sep 2019 08:49:15 GMT -->
                                         <div class="action">
                                             <div class="actions_inner">
                                                 <ul class="add_to_links">
-                                                    <li><a class="cart" href="cart.html"><i
+                                                    <li><a class="cart" onclick="addToCart(<%=rsRe.getString("id")%>)"><i
                                                             class="fa fa-shopping-cart"></i></a></li>
                                                     <li><a class="wishlist" href="wishList.html"><i
                                                             class="fa fa-heart"></i></a></li>
