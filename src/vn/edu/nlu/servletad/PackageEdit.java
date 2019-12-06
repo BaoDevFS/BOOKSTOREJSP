@@ -1,8 +1,8 @@
 package vn.edu.nlu.servletad;
 
-import vn.edu.nlu.dao.GetListProductType;
 import vn.edu.nlu.control.PathAbsolute;
 import vn.edu.nlu.control.SaveImage;
+import vn.edu.nlu.dao.GetListProductType;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
 import javax.imageio.ImageIO;
@@ -17,7 +17,10 @@ import javax.servlet.http.Part;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.nio.file.Paths;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 @WebServlet("/Admin/PackageEdit")
 @MultipartConfig

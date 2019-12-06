@@ -1,7 +1,5 @@
 package vn.edu.nlu.servlet;
 
-import vn.edu.nlu.control.EmailUtility;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

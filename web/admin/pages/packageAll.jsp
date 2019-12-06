@@ -1,4 +1,3 @@
-<%@ page import="java.sql.ResultSet" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <!-- Mirrored from rn53themes.net/themes/demo/lava-admin/packageAll.html by HTTrack Website Copier/3.x

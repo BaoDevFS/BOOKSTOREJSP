@@ -1,7 +1,7 @@
 package vn.edu.nlu.servletad;
+
 import vn.edu.nlu.control.PathAbsolute;
 import vn.edu.nlu.control.SaveImage;
-import vn.edu.nlu.fit.model.Users;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
 import javax.imageio.ImageIO;
@@ -9,11 +9,17 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.nio.file.Paths;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 @WebServlet("/Admin/UserAdd")
 @MultipartConfig

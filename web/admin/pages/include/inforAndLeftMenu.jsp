@@ -1,6 +1,5 @@
-<%@ page import="vn.edu.nlu.control.PathAbsolute" %>
-<%@ page import="vn.edu.nlu.fit.model.Users" %>
 <%@ page import="vn.edu.nlu.control.GetUser" %>
+<%@ page import="vn.edu.nlu.control.PathAbsolute" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="sb2-1">
     <!--== USER INFO ==-->

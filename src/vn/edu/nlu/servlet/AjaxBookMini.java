@@ -2,7 +2,6 @@ package vn.edu.nlu.servlet;
 
 import com.google.gson.Gson;
 import vn.edu.nlu.fit.model.BookMini;
-import vn.edu.nlu.fit.model.Books;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
 import javax.servlet.ServletException;

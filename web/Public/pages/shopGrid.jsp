@@ -1,14 +1,10 @@
 <%@ page import="vn.edu.nlu.control.PathAbsolute" %>
-<%@ page import="java.sql.ResultSet" %>
+<%@ page import="vn.edu.nlu.dao.BookDAO" %>
 <%@ page import="vn.edu.nlu.dao.GetListProductType" %>
 <%@ page import="vn.edu.nlu.fit.model.Products" %>
-<%@ page import="java.util.ArrayList" %>
 <%@ page import="vn.edu.nlu.tools.Pagination" %>
-<%@ page import="vn.edu.nlu.fit.model.Booktypes" %>
-<%@ page import="vn.edu.nlu.dao.BookDAO" %>
-<%@ page import="java.util.Collections" %>
-<%@ page import="java.util.Collections" %>
-<%@ page import="java.util.Comparator" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
