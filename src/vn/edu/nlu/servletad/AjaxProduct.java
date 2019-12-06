@@ -2,8 +2,8 @@ package vn.edu.nlu.servletad;
 
 import com.google.gson.Gson;
 import vn.edu.nlu.control.GetProduct;
-import vn.edu.nlu.control.GetUser;
-import vn.edu.nlu.fit.model.*;
+import vn.edu.nlu.fit.model.Books;
+import vn.edu.nlu.fit.model.ProductJsonObject;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -1,5 +1,3 @@
-<%@ page import="vn.edu.nlu.control.PathAbsolute" %>
-<%@ page import="vn.edu.nlu.control.GetUser" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en"><!-- Mirrored from rn53themes.net/themes/demo/lava-admin/ by HTTrack Website Copier/3.x
         [XR&CO'2014], Wed, 23 Oct 2019 13:20:17 GMT -->
