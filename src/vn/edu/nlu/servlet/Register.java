@@ -58,7 +58,8 @@ public class Register extends HttpServlet {
                 rp.forward(request, response);
             } else {
                 if(register(user)){
-                    SendMail sendMail = new SendMail(user.getEmail());
+                    SendMail sendMail = new SendMail();
+                    sendMail.sendMailVerify(user.getEmail());
                     response.getWriter().print("Check email verify acccount");
                 }else {
                     response.sendRedirect(request.getContextPath() + "/Login");
