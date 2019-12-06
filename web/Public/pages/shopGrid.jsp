@@ -104,35 +104,6 @@
     <!-- Header -->
     <%@ include file="include/header.jsp" %>
     <!-- //Header -->
-    <!-- Start Search Popup -->
-<%--    <div class="box-search-content search_active block-bg close__top">--%>
-<%--        <form id="search_mini_form" class="minisearch" action="#">--%>
-<%--            <div class="field__search">--%>
-<%--                <input type="text" id="key" placeholder="Search entire store here...">--%>
-<%--                <div class="action">--%>
-<%--                    <a onclick="changes()"><i class="zmdi zmdi-search"></i></a>--%>
-<%--                </div>--%>
-<%--                <div class="single__items">--%>
-<%--                    <table id="search" class="table table-hover display  pb-30">--%>
-<%--                        <thead>--%>
-<%--                        <tr class="title-top">--%>
-<%--                            <th class="product-thumbnail">Image</th>--%>
-<%--                            <th class="product-name">Product</th>--%>
-<%--                            <th class="product-price">Price</th>--%>
-<%--                            <th class="product-remove">Author</th>--%>
-<%--                        </tr>--%>
-<%--                        </thead>--%>
-<%--                        <tbody id="tbodysearch">--%>
-<%--                        </tbody>--%>
-<%--                    </table>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--        </form>--%>
-<%--        <div class="close__wrap">--%>
-<%--            <span>close</span>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-    <!-- End Search Popup -->
     <!-- Start Bradcaump area -->
     <div class="ht__bradcaump__area bg-image--6">
         <div class="container">
