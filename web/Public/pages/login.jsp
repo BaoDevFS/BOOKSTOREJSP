@@ -20,8 +20,8 @@
     <!--===============================================================================================-->
     <!-- <link rel="stylesheet" type="text/css" href="css/util.css">-->
     <link rel="stylesheet" type="text/css" href="Public/css/main.css">
-    <!-- <link rel="stylesheet" href="Public/font-awesome-4.7.0/css/font-awesome.css">-->
     <link rel="stylesheet" href="Public/css/plugins/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="Public/font-awesome-4.7.0/css/font-awesome.css">-->
 
     <!--===============================================================================================-->
 </head>

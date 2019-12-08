@@ -24,7 +24,6 @@ public class Register extends HttpServlet {
     Users user;
 
     public Register() {
-        super();
         getConnectDatabase = new GetConnectDatabase();
     }
 
@@ -37,30 +36,45 @@ public class Register extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
-        String userName = request.getParameter("username");
+        String userName = request.getParameter("username")==null?"": request.getParameter("username");
         String password = request.getParameter("password");
-        String email = request.getParameter("email");
-        String phone = request.getParameter("phone");
-        try {
-            password = HashCode.hashCode(password);
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
+        String repassword = request.getParameter("repassword");
+        String email = request.getParameter("email")==null?"": request.getParameter("email");
+        String phone = request.getParameter("phone")==null?"": request.getParameter("phone");
+//        try {
+//            password = HashCode.hashCode(password);
+//        } catch (NoSuchAlgorithmException e) {
+//            e.printStackTrace();
+//        }
+        if (password == "" || repassword == "") {
+            System.out.println(password+"=="+repassword);
+            request.setAttribute("message", "Password invalid!");
+            RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/register.jsp");
+            requestDispatcher.forward(request, response);
+            return;
+        }
+        if (!password.equals(repassword)) {
+            System.out.println(password+"!="+repassword);
+            request.setAttribute("message", "Repassword not same!");
+            RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/register.jsp");
+            requestDispatcher.forward(request, response);
+            return;
         }
         try {
 //            password = HashCode.hashCode(password);
             user = new Users(userName, email,password , phone);
-            user.setId(9);
-            user.setActive(0);
-            boolean hasUser = checkUser(userName);
             boolean isExistEmail = checkRegister_email(email);
-            if (isExistEmail || hasUser) {
+            if (isExistEmail) {
+                request.setAttribute("message", "Email already exit!");
                 RequestDispatcher rp = getServletContext().getRequestDispatcher("/Public/pages/register.jsp");
                 rp.forward(request, response);
             } else {
                 if(register(user)){
                     SendMail sendMail = new SendMail();
                     sendMail.sendMailVerify(user.getEmail());
-                    response.getWriter().print("Check email verify acccount");
+                    response.getWriter().write("<div style=\"width: 100%;height: 50px\">\n" +
+                            "<h6 style=\"padding: 10px;text-align: center;font-size: 20px;\">Check email verify acccount!</h6>\n" +
+                            "</div>");
                 }else {
                     response.sendRedirect(request.getContextPath() + "/Login");
                 }
@@ -68,32 +82,6 @@ public class Register extends HttpServlet {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public boolean checkUser(String name) {
-        Connection cn = null;
-        boolean result = false;
-        String sql = "SELECT * FROM users WHERE users.name =?";
-        try {
-            cn = getConnectDatabase.getConnectionSql();
-            PreparedStatement pre = cn.prepareStatement(sql);
-            pre.setString(1, name);
-            ResultSet rs = pre.executeQuery();
-            while (rs.next()) {
-                result = true;
-                break;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                cn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-
-        return result;
     }
 
     public boolean checkRegister_email(String email) {
@@ -123,37 +111,23 @@ public class Register extends HttpServlet {
     }
 
     public boolean register(Users acc) {
-//		Connection cn = ConnectDB.getConnection();
-        Connection cn = null;
         boolean result = false;
-//        String sql = "INSERT INTO users( id,name,  email,  password,  phone) values(?, ?, ?, ?)";
-        String sql ="INSERT INTO users( name,  email,  password,  phone) VALUES ("+"'"+acc.getName()+"',"+"'"+acc.getEmail()+"',"+"'"+acc.getPassword()+"',"+"'"+acc.getPhone()+"'"+")";
-        System.out.println(sql);
         try {
-            cn = getConnectDatabase.getConnectionSql();
-            Statement st = cn.createStatement();
-//            PreparedStatement pre = cn.prepareStatement(sql);
-//
-//            pre.setInt(1, acc.getId());
-//            pre.setString(2, acc.getEmail());
-//            pre.setString(3, acc.getPasswork());
-//            pre.setString(4, acc.getPhone());
-
-            int i = st.executeUpdate(sql);
+            connection = getConnectDatabase.getConnectionSql();
+            String sql = "INSERT  INTO users (name,email,password,phone) values (? , ?, ?, ?)";
+            PreparedStatement pre = connection.prepareStatement(sql);
+            pre.setString(1,acc.getName());
+            pre.setString(2,acc.getEmail());
+            pre.setString(3,acc.getPassword());
+            pre.setString(4,acc.getPhone());
+            int i = pre.executeUpdate();
             if (i > 0) {
                 result = true;
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                cn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
         }
-
-        return result;
+            return result;
     }
 
 }

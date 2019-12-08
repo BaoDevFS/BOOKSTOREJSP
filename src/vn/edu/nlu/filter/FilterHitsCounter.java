@@ -12,7 +12,6 @@ public class FilterHitsCounter implements Filter {
 
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
         HttpServletRequest request = (HttpServletRequest) req;
-        System.out.println(request.getServletPath());
         chain.doFilter(req, resp);
     }
 

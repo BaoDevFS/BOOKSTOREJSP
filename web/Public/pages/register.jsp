@@ -29,8 +29,18 @@
         <span class="login100-form-title">
         Member Register
         </span>
+                <%!
+                public String getMessage(String s){
+                    if(s==null){
+                        return "";
+                    }else {
+                        return s;
+                    }
+                }
+                %>
+                <span class="hiden" style="color: red;"><%=getMessage((String) request.getAttribute("message"))%></span>
                 <div class="wrap-input100 validate-input" data-validate="Valid user is required: Anh">
-                    <input class="input100" type="text" name="username" placeholder="UserName">
+                    <input class="input100" type="text" name="username" placeholder="Name">
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
         <i class="fa fa-user"></i>
@@ -58,13 +68,13 @@
         <i class="fa fa-lock" aria-hidden="true"></i>
         </span>
                 </div>
-                <%--                <div class="wrap-input100 validate-input" data-validate="Password is required: same password">--%>
-                <%--                    <input class="input100" type="password" name="repassword" placeholder="Retype Password">--%>
-                <%--                    <span class="focus-input100"></span>--%>
-                <%--                    <span class="symbol-input100">--%>
-                <%--							<i class="fa fa-lock" aria-hidden="true"></i>--%>
-                <%--						</span>--%>
-                <%--                </div>--%>
+                <div class="wrap-input100 validate-input" data-validate="Password is required: same password">
+                    <input class="input100" type="password" name="repassword" placeholder="Retype Password">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                							<i class="fa fa-lock" aria-hidden="true"></i>
+                						</span>
+                </div>
 
                 <div class="container-login100-form-btn">
                     <button class="login100-form-btn">

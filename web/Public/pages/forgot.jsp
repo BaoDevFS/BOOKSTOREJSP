@@ -41,6 +41,17 @@
         <img src="Public/images/icons/lock.png" alt="IMG">
         Forgot Password
         </span>
+                <%!
+                    public String getmesage(String s){
+                        if (s != null) {
+                            return  s;
+                        }else {
+                            return "";
+                        }
+                    }
+
+                %>
+                <span style="color: red;padding-left: 27%;"><%=getmesage((String) request.getAttribute("message"))%></span>
                 <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
                     <input class="input100" type="text" name="email" placeholder="Email">
                     <span class="focus-input100"></span>
@@ -58,7 +69,7 @@
         <span class="txt1">
         Back to
         </span>
-                    <a class="txt2" href="forgot.jsp">
+                    <a class="txt2" href="http://localhost:8080/BookStore/">
                         Home?
                     </a>
                 </div>

@@ -1,5 +1,7 @@
 package vn.edu.nlu.control;
 
+import vn.edu.nlu.dao.HashCode;
+
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -45,14 +47,16 @@ public class SendMail {
             System.out.println(e.getMessage());
         }
     }
-    public void sendMailRecoverPassWord(String mailTo){
-        enCodeBase64 = new EnCodeBase64();
+    public void sendMailRecoverPassWord(String mailTo,String token){
         try {
             MimeMessage message = new MimeMessage(mailSession);
             message.setFrom(new InternetAddress(mailFrom));
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(mailTo));
             message.setSubject("Reset Your BookStoreBQG Account Password");
-            message.setText("Click to link recover password: "+"http://localhost:8080/BookStore/ResetPassword?token="+enCodeBase64.enCode(mailTo));
+            String mesag="If you don't want to change your password or didn't request this, please ignore and delete this message.\n" +
+                    "Thank you,\n" +
+                    "The BookStoreBQG Team";
+            message.setText("Click to link reset password: "+"http://localhost:8080/BookStore/ResetPassword?token="+token+"\n"+mesag);
             Transport.send(message);
         } catch (MessagingException e) {
             e.printStackTrace();
