@@ -30,6 +30,9 @@
     <link rel="stylesheet" href="Public/css/custom.css">
 
     <script src="Public/js/vendor/modernizr-3.5.0.min.js"></script>
+<%--    <script src="Public/js/vendor/jquery-3.2.1.min.js"></script>--%>
+<%--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>--%>
+<%--    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>--%>
     <!-- Modernizer js -->
 </head>
 <body>
@@ -652,6 +655,7 @@
 <script src="Public/js/bootstrap.min.js"></script>
 <script src="Public/js/plugins.js"></script>
 <script src="Public/js/active.js"></script>
+<%--<script src="https://code.jquery.com/jquery-3.3.1.js"></script>--%>
 <script src="Public/js/animationforcart.js"></script>
 <script src="Public/js/addToCart.js"></script>
 <script src="Public/js/carttoheader.js"></script>
