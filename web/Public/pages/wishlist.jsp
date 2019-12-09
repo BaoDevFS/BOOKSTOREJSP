@@ -80,6 +80,7 @@
                                 <table id="wishlist">
                                     <thead>
                                     <tr>
+                                        <th class="product-id">#</th>
                                         <th class="product-id">ID</th>
                                         <th class="product-thumbnail">IMG</th>
                                         <th class="product-name"><span class="nobr">Product Name</span></th>
@@ -139,7 +140,12 @@
                 }
             },
             columns: [
-
+                {   "orderable": false,
+                    "className":"null",
+                    "render": function(data, typet, row) {
+                        return '';
+                    }
+                },
                 {
                     "orderable": false,
                     "className": "product-id",
@@ -199,8 +205,24 @@
                         // <i class="fas fa-trash-alt"></i>
                     }
                 }
-            ]
+            ], columnDefs:[
+                { "targets": [ 1 ],
+                    "visible":false
+                },
+                {
+                    "targets": [ 0 ],
+                    "searchable": false,
+                    "orderable": false,
+                }
+            ],
+            "order": [[ 4, 'asc' ]]
         });
+        table.on( 'draw.dt', function () {
+            var PageInfo = $('#wishlist').DataTable().page.info();
+            table.column(0, { page: 'current' }).nodes().each( function (cell, i) {
+                cell.innerHTML = i + 1 + PageInfo.start;
+            } );
+        } ).draw();
         $('#wishlist tbody').on('click', 'a.delete', function () {
             var row = table.row($(this).parents('tr'));
             var data = row.data();

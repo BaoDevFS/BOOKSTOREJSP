@@ -55,9 +55,14 @@ function addToWishList(id) {
         method: "get",
         data: {
             id: id
-
         },
         complete:function (data) {
+            var json  = JSON.parse(data.responseText);
+            if(json.status==1){
+                $('#statusWishlist').text("Added to wishlist");
+            }else{
+                $('#statusWishlist').text("Had in wishlist ");
+            }
             $('#success').modal('show');
         }
     });
