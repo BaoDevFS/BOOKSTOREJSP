@@ -31,6 +31,14 @@
     <!-- Modernizer js -->
     <script src="Public/js/vendor/modernizr-3.5.0.min.js"></script>
 </head>
+<style>
+    .row th{
+        padding-left: 35px;
+    }
+    .row td {
+        padding-left: 37px;
+    }
+</style>
 <body>
 <!--[if lte IE 9]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
@@ -186,7 +194,9 @@
                     "orderable": false,
                     /*"className": "product-add-to-cart",*/
                     "render": function (data, typet, row) {
-                        return '<a class="addtocard"><i class="fa fa-cart-arrow-down fa-2x"></i></a>';
+                        return '<a class="addtocard"><i class="fas fa-shopping-cart"></i></a>';
+                        // <i class="fas fa-shopping-cart"></i>
+                        // <i class="fas fa-trash-alt"></i>
                     }
                 }
             ]
