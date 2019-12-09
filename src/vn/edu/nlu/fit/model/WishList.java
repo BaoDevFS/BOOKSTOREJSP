@@ -53,7 +53,6 @@ public class WishList {
                 ProductWishlist productC = new ProductWishlist();
                 productC.setBooks(books);
                 productWishlist.add(productC);
-
             }
         } catch (SQLException e) {
             e.printStackTrace();

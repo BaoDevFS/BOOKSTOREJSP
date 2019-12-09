@@ -1253,7 +1253,7 @@
                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                  aria-hidden="true">&times;</span></button>
                      </div>--%>
-                    <div class="modal-body" style="margin: auto;font-size: 20px">
+                    <div  id="statusWishlist" class="modal-body" style="margin: auto;font-size: 20px">
                         Thêm thành công.
                     </div>
                 </div>
