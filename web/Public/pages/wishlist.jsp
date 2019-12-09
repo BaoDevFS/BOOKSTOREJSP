@@ -194,7 +194,7 @@
                     "orderable": false,
                     /*"className": "product-add-to-cart",*/
                     "render": function (data, typet, row) {
-                        return '<a class="addtocard"><i class="fas fa-shopping-cart"></i></a>';
+                        return '<a class="addtocard"><i class="fa fa-shopping-cart fa-2x"></i></a>';
                         // <i class="fas fa-shopping-cart"></i>
                         // <i class="fas fa-trash-alt"></i>
                     }
