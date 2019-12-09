@@ -11,7 +11,9 @@ function addToCart(id) {
         }
     });
 }
+
 var i=0;
+
 function addToCartShow(id,quantum) {
     $.ajax({
         url: "http://localhost:8080/BookStore/Cart",
@@ -47,3 +49,16 @@ function propupbook(id) {
         }
     });
 }
+function addToWishList(id) {
+    $.ajax({
+        url: "http://localhost:8080/BookStore/AjaxWishList",
+        method: "get",
+        data: {
+            id: id
+        },
+        complete:function (data) {
+            $('#success').modal('show');
+        }
+    });
+}
+

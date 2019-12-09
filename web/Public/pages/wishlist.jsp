@@ -69,48 +69,20 @@
                     <div class="wishlist-content">
                         <form action="#">
                             <div class="wishlist-table wnro__table table-responsive">
-                                <table>
+                                <table id="wishlist">
                                     <thead>
                                     <tr>
-                                        <th class="product-remove"></th>
-                                        <th class="product-thumbnail"></th>
+                                        <th class="product-id">ID</th>
+                                        <th class="product-thumbnail">IMG</th>
                                         <th class="product-name"><span class="nobr">Product Name</span></th>
                                         <th class="product-price"><span class="nobr"> Unit Price </span></th>
-                                        <th class="product-stock-stauts"><span class="nobr"> Stock Status </span></th>
+                                        <th class="product-stock-status"><span class="nobr"> Stock Status </span></th>
+                                        <th class="product-remove"></th>
                                         <th class="product-add-to-cart"></th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td class="product-remove"><a href="#">×</a></td>
-                                        <td class="product-thumbnail"><a href="#"><img
-                                                src="Public/images/product/sm-3/1.jpg" alt=""></a></td>
-                                        <td class="product-name"><a href="#">Natoque penatibus</a></td>
-                                        <td class="product-price"><span class="amount">$165.00</span></td>
-                                        <td class="product-stock-status"><span class="wishlist-in-stock">In Stock</span>
-                                        </td>
-                                        <td class="product-add-to-cart"><a href="#"> Add to Cart</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="product-remove"><a href="#">×</a></td>
-                                        <td class="product-thumbnail"><a href="#"><img
-                                                src="Public/images/product/sm-3/2.jpg" alt=""></a></td>
-                                        <td class="product-name"><a href="#">Quisque fringilla</a></td>
-                                        <td class="product-price"><span class="amount">$50.00</span></td>
-                                        <td class="product-stock-status"><span class="wishlist-in-stock">In Stock</span>
-                                        </td>
-                                        <td class="product-add-to-cart"><a href="#"> Add to Cart</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="product-remove"><a href="#">×</a></td>
-                                        <td class="product-thumbnail"><a href="#"><img
-                                                src="Public/images/product/sm-3/3.jpg" alt=""></a></td>
-                                        <td class="product-name"><a href="#">Quisque fringilla</a></td>
-                                        <td class="product-price"><span class="amount">$65.00</span></td>
-                                        <td class="product-stock-status"><span class="wishlist-in-stock">In Stock</span>
-                                        </td>
-                                        <td class="product-add-to-cart"><a href="#"> Add to Cart</a></td>
-                                    </tr>
+
                                     </tbody>
                                 </table>
                             </div>
@@ -129,15 +101,115 @@
 <!-- //Main wrapper -->
 
 <!-- JS Files -->
-<script src="Public/js/vendor/jquery-3.2.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="Public/js/popper.min.js"></script>
 <script src="Public/js/bootstrap.min.js"></script>
 <script src="Public/js/plugins.js"></script>
 <script src="Public/js/active.js"></script>
 <script src="Public/js/carttoheader.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script src="Public/js/search.js"></script>
+<script>
+    $(document).ready(function () {
+        let total;
+        var table = $('#wishlist').DataTable({
+            "searching": false,   // Search Box will Be Disabled
+            "ordering": false,    // Ordering (Sorting on Each Column)will Be Disabled
+            "info": false,         // Will show "1 to n of n entries" Text at bottom
+            "lengthChange": false,
+            "ajax": {
+                "url": "http://localhost:8080/BookStore/WishList",
+                "dataType": "json",
+                method: "post",
+                'dataSrc': 'productWishlist',
+                complete: function (data) {
+                    console.log(data.id);
+                    // var json = JSON.parse(data[0]);
+                    // $('#totalli').text('$' + json.totalCart);
+                    // $('#totalsp').text('$' + json.totalCart);
+
+                }
+            },
+            columns: [
+
+                {
+                    "orderable": false,
+                    "className": "product-id",
+                    "data": "id",
+                    "render": function (data, typet, row) {
+                        return data;
+                    }
+                },
+                {
+                    "orderable": false,
+                    "className": "product-thumbnail",
+                    "data": "books",
+                    "render": function (data, typet, row) {
+                        return '<a href="#"><img width="100px"  height="100px" src=' + data.image + ' alt="productimg"></a>';
+                    }
+                },
+                {
+                    "orderable": false,
+                    "className": "product-name",
+                    "data": "books",
+                    "render": function (data, typet, row) {
+                        return '<a href="#">' + data.name + '</a>';
+                    }
+                },
+                {
+                    "className": "product-price",
+                    "data": "books",
+                    "render": function (data, typet, row) {
+                        return '<span class="amount">$' + data.price + '</span>';
+                    }
+                }, {
+                    "orderable": false,
+                    "className": "product-stock-status",
+                    "data": "books",
+                    "render": function (data, typet, row) {
+                        if(data.active==1){
+                            return "In stock"
+                        }else{
+                            return "Out stock"
+                        }
+                    }
+                }
+                , {
+                    "orderable": false,
+                    // "className": "product-remove",
+                    "render": function (data, typet, row) {
+                        return '<a class="delete" style="cursor: pointer"><i class="fa fa-trash fa-2x"></i></a>';
+                    }
+
+                },
+                {
+                    "orderable": false,
+                    /*"className": "product-add-to-cart",*/
+                    "render": function (data, typet, row) {
+                        return '<a class="addtocard"><i class="fa fa-cart-arrow-down fa-2x"></i></a>';
+                    }
+                }
+            ]
+        });
+        $('#wishlist tbody').on('click', 'a.delete', function () {
+            var row = table.row($(this).parents('tr'));
+            var data = row.data();
+            row.remove().draw();
+            console.log(data.id);
+            $.ajax({
+                url: "http://localhost:8080/BookStore/WishList",
+                type: "post",
+                data: {id: data.id},
+                complete: function (resultText) {
+                    table.ajax.reload();
+                }
+            });
+        });
+        drawCart();
+        sea();
+    });
+
+</script>
 </body>
 
 <!-- Mirrored from demo.hasthemes.com/boighor-preview/boighor-v3/wishList.html by HTTrack Website Copier/3.x
