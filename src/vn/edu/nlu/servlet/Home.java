@@ -55,8 +55,18 @@ public class Home extends HttpServlet {
 
             String sqlMystery = "SELECT c.* FROM  `books` c where active=1 AND id_type=2";
             PreparedStatement pMystery = connection.prepareStatement(sqlMystery);
-            ResultSet rsMystery = pBiographic.executeQuery();
+            ResultSet rsMystery = pMystery.executeQuery();
             request.setAttribute("rsMystery", rsMystery);
+
+            String sqlChildren = "SELECT c.* FROM  `books` c where active=1 AND id_type=25";
+            PreparedStatement pChildren = connection.prepareStatement(sqlChildren);
+            ResultSet rsChildren = pChildren.executeQuery();
+            request.setAttribute("rsChildren", rsChildren);
+
+            String sqlCook = "SELECT c.* FROM  `books` c where active=1 AND id_type=3";
+            PreparedStatement pCook = connection.prepareStatement(sqlCook);
+            ResultSet rsCook = pCook.executeQuery();
+            request.setAttribute("rsCook", rsCook);
 
 
             request.getRequestDispatcher("/Public/pages/Home.jsp").forward(request, response);

@@ -46,18 +46,23 @@ public class SingleProduct extends HttpServlet {
 
             String sqlBook = "SELECT * from books where active=1 and id=?";
             PreparedStatement pre = connection.prepareStatement(sqlBook);
-            pre.setInt(1,(Integer.parseInt(id)));
+            pre.setInt(1, (Integer.parseInt(id)));
             ResultSet rsB = pre.executeQuery();
             rsB.next();
-            String type= rsB.getString("id_type");
+            String type = rsB.getString("id_type");
             rsB.beforeFirst();
             request.setAttribute("rsB", rsB);
 
-            String sqlRelated= "SELECT * FROM BOOKS WHERE active=1 and id_type= ? LIMIT 0,10";
-            PreparedStatement prRe= connection.prepareStatement(sqlRelated);
-            prRe.setInt(1,Integer.parseInt(type));
-            ResultSet rsRe= prRe.executeQuery();
-            request.setAttribute("rsRe",rsRe);
+            String sqlRelated = "SELECT * FROM BOOKS WHERE active=1 and id_type= ? LIMIT 0,10";
+            PreparedStatement prRe = connection.prepareStatement(sqlRelated);
+            prRe.setInt(1, Integer.parseInt(type));
+            ResultSet rsRe = prRe.executeQuery();
+            request.setAttribute("rsRe", rsRe);
+
+            String sqlbSell = "Select * from books where active=1 limit 0,15";
+            PreparedStatement prSell = connection.prepareStatement(sqlbSell);
+            ResultSet rsSell = prSell.executeQuery();
+            request.setAttribute("rsSell", rsSell);
 
             request.getRequestDispatcher("/Public/pages/singleProduct.jsp").forward(request, response);
         } catch (SQLException e) {
