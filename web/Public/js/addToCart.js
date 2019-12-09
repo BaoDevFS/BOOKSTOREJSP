@@ -1,4 +1,3 @@
-jQuery.noConflict();
 function addToCart(id) {
     $.ajax({
         url: "http://localhost:8080/BookStore/AjaxCart",
