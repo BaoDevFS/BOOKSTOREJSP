@@ -1249,6 +1249,7 @@
 <script src="Public/js/bootstrap.min.js"></script>
 <script src="Public/js/plugins.js"></script>
 <script src="Public/js/active.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="Public/js/animationforcart.js"></script>
 <script src="Public/js/addToCart.js"></script>
 <script src="Public/js/carttoheader.js"></script>
