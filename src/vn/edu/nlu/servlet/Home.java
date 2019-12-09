@@ -19,6 +19,7 @@ public class Home extends HttpServlet {
     GetConnectDatabase getConnectDatabase;
 
     public Home() {
+
         this.getConnectDatabase = new GetConnectDatabase();
     }
 
