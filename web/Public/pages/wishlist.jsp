@@ -109,14 +109,14 @@
 <!-- //Main wrapper -->
 
 <!-- JS Files -->
-<script src="Public/js/vendor/jquery-3.2.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="Public/js/popper.min.js"></script>
 <script src="Public/js/bootstrap.min.js"></script>
 <script src="Public/js/plugins.js"></script>
 <script src="Public/js/active.js"></script>
 <script src="Public/js/carttoheader.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="Public/js/search.js"></script>
 <script>
     $(document).ready(function () {
         let total;
@@ -215,11 +215,11 @@
                 }
             });
         });
-
+        drawCart();
+        sea();
     });
 
 </script>
-<script src="Public/js/search.js"></script>
 </body>
 
 <!-- Mirrored from demo.hasthemes.com/boighor-preview/boighor-v3/wishList.html by HTTrack Website Copier/3.x

@@ -1,6 +1,3 @@
-$(document).ready(function () {
- drawCart();
-});
 function drawCart() {
     $.ajax({
         url: "http://localhost:8080/BookStore/Cart",

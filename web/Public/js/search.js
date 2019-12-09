@@ -1,6 +1,6 @@
 var table1;
 let keys="ab";
-$(document).ready(function () {
+function sea() {
      table1 = $('#search').DataTable({
         "searching": false,   // Search Box will Be Disabled
         "ordering": false,    // Ordering (Sorting on Each Column)will Be Disabled
@@ -38,7 +38,7 @@ $(document).ready(function () {
             }
         }
     });
-});
+};
 $('#key').change(function () {
     keys=$('#key').val();
     console.log(keys);
