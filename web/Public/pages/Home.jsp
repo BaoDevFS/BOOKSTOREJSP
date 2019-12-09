@@ -35,7 +35,7 @@
 
     <!-- Modernizer js -->
     <script src="Public/js/vendor/modernizr-3.5.0.min.js"></script>
-<%--    <script src="Public/js/vendor/jquery-3.2.1.min.js"></script>--%>
+    <%--    <script src="Public/js/vendor/jquery-3.2.1.min.js"></script>--%>
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -264,9 +264,11 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                         <div class="product__thumb">
-                            <a class="first__img" href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsNew.getString("id")%>"><img
+                            <a class="first__img"
+                               href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsNew.getString("id")%>"><img
                                     src="<%=rsNew.getString(3)%>" alt="product image"></a>
-                            <a class="second__img animation1" href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsNew.getString("id")%>"><img
+                            <a class="second__img animation1"
+                               href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsNew.getString("id")%>"><img
                                     src="<%=rsNew.getString(4)%>" alt="product image"></a>
                             <div class="hot__box">
                                 <span class="hot-label"><%=rsNew.getString(8)%></span>
@@ -287,7 +289,8 @@
                                     <ul class="add_to_links">
                                         <li><a class="cart" onclick="addToCart(<%=rsNew.getString("id")%>)"><i
                                                 class="fa fa-shopping-cart"></i></a></li>
-                                        <li><a class="wishlist" href="http://localhost:8080/BookStore/WishList"><i
+                                        <li><a class="wishlist"
+                                               onclick="addToWishList(<%=rsNew.getString("id")%>)"><i
                                                 class="fa fa-heart"></i></a></li>
                                         <li><a class="compare" href="#"><i class="fa fa-hashtag"></i></a></li>
                                         <li><a data-toggle="modal" title="Quick View"
@@ -380,7 +383,8 @@
                             <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                                 <div class="product product__style--3">
                                     <div class="product__thumb">
-                                        <a class="first__img" href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsAll.getString("id")%>"><img
+                                        <a class="first__img"
+                                           href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsAll.getString("id")%>"><img
                                                 src="<%=rsAll.getString(3)%>" alt="product image"></a>
                                         <a class="second__img animation1"
                                            href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsAll.getString("id")%>"><img
@@ -405,9 +409,9 @@
                                                     <li><a class="cart <%=rsAll.getString("id")%>"
                                                            onclick="addToCart(<%=rsAll.getString("id")%>);"><i
                                                             class="fa fa-shopping-cart"></i></a></li>
-                                                    <li><a class="wishlist"
-                                                           href="http://localhost:8080/BookStore/WishList"><i
-                                                            class="fa fa-heart"></i></a></li>
+                                                    <li><a class="wishlist <%=rsAll.getString("id")%>"
+                                                           onclick="addToWishList(<%=rsAll.getString("id")%>)">
+                                                        <i class="fa fa-heart"></i></a></li>
                                                     <li><a class="compare" href="#"><i class="fa fa-hashtag"></i></a>
                                                     </li>
                                                     <li><a data-toggle="modal" title="Quick View"
@@ -436,7 +440,8 @@
                             <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                                 <div class="product product__style--3">
                                     <div class="product__thumb">
-                                        <a class="first__img" href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsAll.getString("id")%>"><img
+                                        <a class="first__img"
+                                           href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsAll.getString("id")%>"><img
                                                 src="<%=rsAll.getString(3)%>" alt="product image"></a>
                                         <a class="second__img animation1"
                                            href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsAll.getString("id")%>"><img
@@ -460,9 +465,9 @@
                                                 <ul class="add_to_links">
                                                     <li><a class="cart" onclick="addToCart(<%=rsAll.getString("id")%>)"><i
                                                             class="fa fa-shopping-cart"></i></a></li>
-                                                    <li><a class="wishlist"
-                                                           href="http://localhost:8080/BookStore/WishList"><i
-                                                            class="fa fa-heart"></i></a></li>
+                                                    <li><a class="wishlist  <%=rsAll.getString("id")%>"
+                                                           onclick="addToWishList(<%=rsAll.getString("id")%>)"
+                                                    ><i class="fa fa-heart"></i></a></li>
                                                     <li><a class="compare" href="#"><i class="fa fa-hashtag"></i></a>
                                                     </li>
                                                     <li><a data-toggle="modal" title="Quick View"
@@ -526,10 +531,11 @@
                                         <div class="action">
                                             <div class="actions_inner">
                                                 <ul class="add_to_links">
-                                                    <li><a class="cart" onclick="addToCart(<%=rsBiographic.getString("id")%>)"><i
+                                                    <li><a class="cart"
+                                                           onclick="addToCart(<%=rsBiographic.getString("id")%>)"><i
                                                             class="fa fa-shopping-cart"></i></a></li>
                                                     <li><a class="wishlist"
-                                                           href="http://localhost:8080/BookStore/WishList"><i
+                                                           onclick="addToWishList(<%=rsBiographic.getString("id")%>)"><i
                                                             class="fa fa-heart"></i></a></li>
                                                     <li><a class="compare" href="#"><i class="fa fa-hashtag"></i></a>
                                                     </li>
@@ -559,7 +565,8 @@
                             <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                                 <div class="product product__style--3">
                                     <div class="product__thumb">
-                                        <a class="first__img" href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsBiographic.getString("id")%>"><img
+                                        <a class="first__img"
+                                           href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsBiographic.getString("id")%>"><img
                                                 src="<%=rsBiographic.getString(3)%>" alt="product image"></a>
                                         <a class="second__img animation1"
                                            href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsBiographic.getString("id")%>"><img
@@ -581,7 +588,8 @@
                                         <div class="action">
                                             <div class="actions_inner">
                                                 <ul class="add_to_links">
-                                                    <li><a class="cart" onclick="addToCart(<%=rsBiographic.getString("id")%>)"><i
+                                                    <li><a class="cart"
+                                                           onclick="addToCart(<%=rsBiographic.getString("id")%>)"><i
                                                             class="fa fa-shopping-cart"></i></a></li>
                                                     <li><a class="wishlist"
                                                            href="http://localhost:8080/BookStore/WishList"><i
@@ -628,7 +636,8 @@
                             <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                                 <div class="product product__style--3">
                                     <div class="product__thumb">
-                                        <a class="first__img" href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsMystery.getString("id")%>"><img
+                                        <a class="first__img"
+                                           href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsMystery.getString("id")%>"><img
                                                 src="<%=rsMystery.getString(3)%>" alt="product image"></a>
                                         <a class="second__img animation1"
                                            href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsMystery.getString("id")%>"><img
@@ -650,7 +659,8 @@
                                         <div class="action">
                                             <div class="actions_inner">
                                                 <ul class="add_to_links">
-                                                    <li><a class="cart" onclick="addToCart(<%=rsMystery.getString("id")%>)"><i
+                                                    <li><a class="cart"
+                                                           onclick="addToCart(<%=rsMystery.getString("id")%>)"><i
                                                             class="fa fa-shopping-cart"></i></a></li>
                                                     <li><a class="wishlist"
                                                            href="http://localhost:8080/BookStore/WishList"><i
@@ -683,7 +693,8 @@
                             <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                                 <div class="product product__style--3">
                                     <div class="product__thumb">
-                                        <a class="first__img" href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsMystery.getString("id")%>"><img
+                                        <a class="first__img"
+                                           href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsMystery.getString("id")%>"><img
                                                 src="<%=rsMystery.getString(3)%>" alt="product image"></a>
                                         <a class="second__img animation1"
                                            href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsMystery.getString("id")%>"><img
@@ -705,7 +716,8 @@
                                         <div class="action">
                                             <div class="actions_inner">
                                                 <ul class="add_to_links">
-                                                    <li><a class="cart" onclick="addToCart(<%=rsMystery.getString("id")%>)"><i
+                                                    <li><a class="cart"
+                                                           onclick="addToCart(<%=rsMystery.getString("id")%>)"><i
                                                             class="fa fa-shopping-cart"></i></a></li>
                                                     <li><a class="wishlist"
                                                            href="http://localhost:8080/BookStore/WishList"><i
@@ -749,7 +761,8 @@
                             <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                                 <div class="product product__style--3">
                                     <div class="product__thumb">
-                                        <a class="first__img" href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsChildren.getString("id")%>"><img
+                                        <a class="first__img"
+                                           href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsChildren.getString("id")%>"><img
                                                 src="<%=rsChildren.getString(3)%>" alt="product image"></a>
                                         <a class="second__img animation1"
                                            href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsChildren.getString("id")%>"><img
@@ -771,7 +784,8 @@
                                         <div class="action">
                                             <div class="actions_inner">
                                                 <ul class="add_to_links">
-                                                    <li><a class="cart" onclick="addToCart(<%=rsChildren.getString("id")%>)"><i
+                                                    <li><a class="cart"
+                                                           onclick="addToCart(<%=rsChildren.getString("id")%>)"><i
                                                             class="fa fa-shopping-cart"></i></a></li>
                                                     <li><a class="wishlist"
                                                            href="http://localhost:8080/BookStore/WishList"><i
@@ -804,7 +818,8 @@
                             <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                                 <div class="product product__style--3">
                                     <div class="product__thumb">
-                                        <a class="first__img" href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsChildren.getString("id")%>"><img
+                                        <a class="first__img"
+                                           href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsChildren.getString("id")%>"><img
                                                 src="<%=rsChildren.getString(3)%>" alt="product image"></a>
                                         <a class="second__img animation1"
                                            href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsChildren.getString("id")%>"><img
@@ -826,7 +841,8 @@
                                         <div class="action">
                                             <div class="actions_inner">
                                                 <ul class="add_to_links">
-                                                    <li><a class="cart" onclick="addToCart(<%=rsChildren.getString("id")%>)"><i
+                                                    <li><a class="cart"
+                                                           onclick="addToCart(<%=rsChildren.getString("id")%>)"><i
                                                             class="fa fa-shopping-cart"></i></a></li>
                                                     <li><a class="wishlist"
                                                            href="http://localhost:8080/BookStore/WishList"><i
@@ -862,7 +878,7 @@
                 <!-- Start Single Tab Content -->
                 <div class="row single__tab tab-pane fade" id="nav-cook" role="tabpanel">
                     <div class="product__indicator--4 arrows_style owl-carousel owl-theme">
-                        <% ResultSet rsCook= (ResultSet) request.getAttribute("rsCook");
+                        <% ResultSet rsCook = (ResultSet) request.getAttribute("rsCook");
                             for (int i = 0; i < 15; i++) {
                         %>
                         <div class="single__product">
@@ -871,7 +887,8 @@
                             <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                                 <div class="product product__style--3">
                                     <div class="product__thumb">
-                                        <a class="first__img" href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsCook.getString("id")%>"><img
+                                        <a class="first__img"
+                                           href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsCook.getString("id")%>"><img
                                                 src="<%=rsCook.getString(3)%>" alt="product image"></a>
                                         <a class="second__img animation1"
                                            href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsCook.getString("id")%>"><img
@@ -893,7 +910,8 @@
                                         <div class="action">
                                             <div class="actions_inner">
                                                 <ul class="add_to_links">
-                                                    <li><a class="cart" onclick="addToCart(<%=rsCook.getString("id")%>)"><i
+                                                    <li><a class="cart"
+                                                           onclick="addToCart(<%=rsCook.getString("id")%>)"><i
                                                             class="fa fa-shopping-cart"></i></a></li>
                                                     <li><a class="wishlist"
                                                            href="http://localhost:8080/BookStore/WishList"><i
@@ -926,7 +944,8 @@
                             <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                                 <div class="product product__style--3">
                                     <div class="product__thumb">
-                                        <a class="first__img" href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsCook.getString("id")%>"><img
+                                        <a class="first__img"
+                                           href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsCook.getString("id")%>"><img
                                                 src="<%=rsCook.getString(3)%>" alt="product image"></a>
                                         <a class="second__img animation1"
                                            href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsCook.getString("id")%>"><img
@@ -948,7 +967,8 @@
                                         <div class="action">
                                             <div class="actions_inner">
                                                 <ul class="add_to_links">
-                                                    <li><a class="cart" onclick="addToCart(<%=rsCook.getString("id")%>)"><i
+                                                    <li><a class="cart"
+                                                           onclick="addToCart(<%=rsCook.getString("id")%>)"><i
                                                             class="fa fa-shopping-cart"></i></a></li>
                                                     <li><a class="wishlist"
                                                            href="http://localhost:8080/BookStore/WishList"><i
@@ -1077,7 +1097,8 @@
             %>
             <div class="product product__style--3">
                 <div class="product__thumb">
-                    <a class="first__img" href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsSeller.getString("id")%>"><img
+                    <a class="first__img"
+                       href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsSeller.getString("id")%>"><img
                             src="<%=rsSeller.getString(3)%>" alt="product image"></a>
                 </div>
                 <div class="product__content content--center">
@@ -1139,7 +1160,7 @@
                                                     <div class="col-lg-6 col-12">
                                                         <div class="wn__fotorama__wrapper">
 
-                                                            <a href="Public/images/1.html" id="imageBook" >
+                                                            <a href="Public/images/1.html" id="imageBook">
                                                             </a>
 
                                                         </div>
