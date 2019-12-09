@@ -62,7 +62,7 @@ public class Cart {
                         countTotalCart();
                         return;
                     }else{
-                        productCart.get(i).setQuantity(quantity);
+                        productCart.get(i).setQuantity(quantity+productCart.get(i).getQuantity());
                         countTotalCart();
                         return;
                     }

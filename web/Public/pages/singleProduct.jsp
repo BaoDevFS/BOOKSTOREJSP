@@ -30,10 +30,6 @@
     <link rel="stylesheet" href="Public/css/custom.css">
 
     <script src="Public/js/vendor/modernizr-3.5.0.min.js"></script>
-<<<<<<< HEAD
-=======
-<%--    <script src="Public/js/vendor/jquery-3.2.1.min.js"></script>--%>
->>>>>>> 5306202e467f8ac4b9f8008f6a0f2fa25aeb1989
     <!-- Modernizer js -->
 </head>
 <body>
