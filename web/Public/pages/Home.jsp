@@ -35,7 +35,7 @@
 
     <!-- Modernizer js -->
     <script src="Public/js/vendor/modernizr-3.5.0.min.js"></script>
-    <script src="Public/js/vendor/jquery-3.2.1.min.js"></script>
+<%--    <script src="Public/js/vendor/jquery-3.2.1.min.js"></script>--%>
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -197,33 +197,7 @@
         </div>
     </header>
     <!-- //Header -->
-    <!-- Start Search Popup -->
-<%--    <div class="brown--color box-search-content search_active block-bg close__top">--%>
-<%--        <form id="search_mini_form" class="minisearch" action="#">--%>
-<%--            <div class="field__search" style="top: 7%">--%>
-<%--                <input type="text" id="key"  name="search" placeholder="Search entire store here...">--%>
-<%--                <div class="action">--%>
-<%--                    <a href="http://localhost:8080/BookStore/Search"><i class="zmdi zmdi-search"></i></a>--%>
-<%--                </div>--%>
-<%--                <div class="single__items">--%>
-<%--                    <div class="searchproduct" >--%>
-<%--                        <div class="item01 d-flex">--%>
-<%--                            <div class="thumb">--%>
-<%--                                <a href="http://localhost:8080/BookStore/SingleProduct">--%>
-<%--                                    <img style="width: 50px" src="Public/images/product/sm-img/1.jpg" alt="product images">--%>
-<%--                                </a>--%>
-<%--                            </div>--%>
-<%--                                <div class="m-2 d-flex mt--20"><a href="http://localhost:8080/BookStore/SingleProduct">Voyage Yoga Bag</a></div>--%>
 
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--        </form>--%>
-<%--        <div class="close__wrap">--%>
-<%--            <span>close</span>--%>
-<%--        </div>--%>
-<%--    </div>--%>
 
     <!-- End Search Popup -->
     <!-- Start Slider area -->

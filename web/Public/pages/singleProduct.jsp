@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Shop-Single | Bookshop Responsive Bootstrap4 Template</title>
+    <title>Shop-Single | BookBQG Store</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -399,7 +399,8 @@
                                             <a href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsSell.getString("id")%>">robin
                                                 parrish</a></h4>
                                         <ul class="prize d-flex">
-                                            <li>$35.00</li>
+                                            <li>$<%=rsSell.getString(4)%>
+                                            </li>
                                             <li class="old_prize">$35.00</li>
                                         </ul>
                                         <div class="action">
