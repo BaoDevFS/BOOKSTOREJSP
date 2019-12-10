@@ -29,25 +29,6 @@
     <!-- Modernizer js -->
     <script src="Public/js/vendor/modernizr-3.5.0.min.js"></script>
 </head>
-<style>
-    @media screen and (max-width: 991px) and (min-width: 768px) {
-        section {
-            margin-top: 120px !important;
-        }
-    }
-
-    @media screen and (max-width: 574px) {
-        section {
-            margin-top: 75px !important;
-        }
-    }
-
-    @media screen and (min-width: 990px) and (min-width: 767px) {
-        section {
-            margin-top: 75px !important;
-        }
-    }
-</style>
 <body>
 <!--[if lte IE 9]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
@@ -79,18 +60,14 @@
     </div>
     <!-- End Bradcaump area -->
     <!-- Start Contact Area -->
-    <section class="wn_contact_area bg--white pb--80">
+    <section class="wn_contact_area bg--white pt--80 pb--80">
         
         <div class="google__map pb--80">
             <div class="container">
                 <div class="row">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.1838778934994!2d106.78950011413946!3d10.87361496036719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d89fa954afe1%3A0x88d5b16c74d98a38!2zR2nhuqNuZyDEkMaw4budbmcgVMaw4budbmcgVmksIMSQSCBOw7RuZyBMw6Jt!5e0!3m2!1svi!2s!4v1575782434974!5m2!1svi!2s"
-                            width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                 </div>
             </div>
         </div>
-
-        <div class="container mb-3">
             <div class="row">
                 <div class="col-lg-8 col-12">
                     <div class="contact-form-wrap">
@@ -186,7 +163,16 @@
 <script src="Public/js/plugins.js"></script>
 <!-- Google Map js -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmGmeot5jcjdaJTvfCmQPfzeoG_pABeWo"></script>
+<script>
+    // When the window has finished loading create our google map below
+    google.maps.event.addDomListener(window, 'load', init);
 
+    function init() {
+        // Basic options for a simple Google Map
+        // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+        var mapOptions = {
+            // How zoomed in you want the map to start at (always required)
+            zoom: 12,
 
 <script src="Public/js/active.js"></script>
 <script src="Public/js/carttoheader.js"></script>

@@ -55,6 +55,7 @@ function addToWishList(id) {
         method: "get",
         data: {
             id: id
+
         },
         complete:function (data) {
             $('#success').modal('show');

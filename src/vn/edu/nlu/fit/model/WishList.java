@@ -64,7 +64,7 @@ public class WishList {
 
     }
 
-    public void setProductWishlist(ArrayList<ProductWishlist> ProductWishlist) {
-        this.productWishlist = ProductWishlist;
+    public void setProductWishlist(ArrayList<ProductWishlist> productWishlist) {
+        this.productWishlist = productWishlist;
     }
 }

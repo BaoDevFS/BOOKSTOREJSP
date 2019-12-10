@@ -1,3 +1,6 @@
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="vn.edu.nlu.fit.model.ProductCart" %>
+<%@ page import="vn.edu.nlu.fit.model.Cart" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
@@ -41,6 +44,21 @@
     <!-- Header -->
     <%@ include file="include/header.jsp" %>
     <!-- //Header -->
+    <!-- Start Search Popup -->
+    <div class="box-search-content search_active block-bg close__top">
+        <form id="search_mini_form" class="minisearch" action="#">
+            <div class="field__search">
+                <input type="text" placeholder="Search entire store here...">
+                <div class="action">
+                    <a href="#"><i class="zmdi zmdi-search"></i></a>
+                </div>
+            </div>
+        </form>
+        <div class="close__wrap">
+            <span>close</span>
+        </div>
+    </div>
+    <!-- End Search Popup -->
     <!-- Start Bradcaump area -->
     <div class="ht__bradcaump__area bg-image--3">
         <div class="container">
@@ -69,7 +87,8 @@
                             <table id="table" class="table table-hover display  pb-30">
                                 <thead>
                                 <tr class="title-top">
-                                    <th class="product-remove" style="width: 60px;">Id</th>
+                                    <th class="product-remove" style="width: 60px;">#</th>
+                                    <th class="product-remove" style="width: 60px;">ID</th>
                                     <th class="product-thumbnail">Image</th>
                                     <th class="product-name">Product</th>
                                     <th class="product-price">Price</th>
@@ -129,8 +148,8 @@
 <script src="Public/js/bootstrap.min.js"></script>
 <script src="Public/js/plugins.js"></script>
 <script src="Public/js/active.js"></script>
-<script src="Public/js/carttoheader.js"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="Public/js/carttoheader.js"></script>
 <script src="Public/js/search.js"></script>
 <script>
     $(function () {
@@ -143,72 +162,89 @@
             "ajax": {
                 "url": "http://localhost:8080/BookStore/Cart",
                 "dataType": "json",
-                method: "post",
+                method:"post",
                 'dataSrc': 'productCart',
-                complete: function (data) {
-                    var json = JSON.parse(data.responseText);
-                    $('#totalli').text('$' + json.totalCart);
-                    $('#totalsp').text('$' + json.totalCart);
+                complete:function (data) {
+                    var json =JSON.parse(data.responseText);
+                    $('#totalli').text('$'+json.totalCart);
+                    $('#totalsp').text('$'+json.totalCart);
 
                 }
             },
             columns: [
-
-                {
-                    "orderable": false,
-                    "className": "product-id",
+                {   "orderable": false,
+                    "className":"null",
+                    "render": function(data, typet, row) {
+                        return '';
+                    }
+                },
+                {   "orderable": false,
+                    "className":"product-id",
                     "data": "id",
-                    "render": function (data, typet, row) {
+                    "render": function(data, typet, row) {
                         return data;
                     }
                 },
-                {
-                    "orderable": false,
-                    "className": "product-thumbnail",
+                {   "orderable": false,
+                    "className":"product-thumbnail",
                     "data": "books",
-                    "render": function (data, typet, row) {
-                        return '<a href="#"><img width="100px"  height="100px" src=' + data.image + ' alt="productimg"></a>';
+                    "render": function(data, typet, row) {
+                        return '<a href="#"><img width="100px"  height="100px" src='+data.image+' alt="productimg"></a>';
+                    }
+                },
+                {   "orderable": false,
+                    "className":"product-name",
+                    "data": "books",
+                    "render": function(data, typet, row) {
+                        return '<a href="#">'+data.name+'</a>';
                     }
                 },
                 {
-                    "orderable": false,
-                    "className": "product-name",
+                    "className":"product-price",
                     "data": "books",
-                    "render": function (data, typet, row) {
-                        return '<a href="#">' + data.name + '</a>';
+                    "render": function(data, typet, row) {
+                        return '<span class="amount">$'+data.price+'</span>';
                     }
-                },
-                {
-                    "className": "product-price",
-                    "data": "books",
-                    "render": function (data, typet, row) {
-                        return '<span class="amount">$' + data.price + '</span>';
-                    }
-                }, {
-                    "orderable": false,
-                    "className": "product-quantity",
+                },{   "orderable": false,
+                    "className":"product-quantity",
                     "data": "quantity",
-                    "render": function (data, typet, row) {
-                        return '<input type="number" value="' + data + '">';
+                    "render": function(data, typet, row) {
+                        return '<input type="number" value="'+data+'">';
                     }
-                }, {
-                    "orderable": false,
-                    "className": "product-subtotal",
+                },{   "orderable": false,
+                    "className":"product-subtotal",
                     "data": "total",
-                    "render": function (data, typet, row) {
-                        return '$' + data;
+                    "render": function(data, typet, row) {
+                        return '$'+data;
                     }
                 }
-                , {
-                    "orderable": false,
-                    "className": "product-remove",
+                ,{   "orderable": false,
+                    "className":"product-remove",
                     "data": "total",
-                    "render": function (data, typet, row) {
+                    "render": function(data, typet, row) {
                         return '<a class="delete" style="cursor: pointer">X</a>';
                     }
                 }
-            ]
+            ],
+            columnDefs:[
+                { "targets": [ 1 ],
+                    "visible":false
+                },
+               {
+                    "targets": [ 0 ],
+                    "searchable": false,
+                    "orderable": false,
+                }
+            ],
+            "order": [[ 4, 'asc' ]]
         });
+        table.on( 'draw.dt', function () {
+                var PageInfo = $('#table').DataTable().page.info();
+                table.column(0, { page: 'current' }).nodes().each( function (cell, i) {
+                    cell.innerHTML = i + 1 + PageInfo.start;
+                } );
+        } ).draw();
+
         $('#table tbody').on('click', 'a.delete', function () {
             var row = table.row($(this).parents('tr'));
             var data = row.data();
@@ -219,6 +255,7 @@
                 type: "post",
                 data: {id: data.id},
                 complete: function (resultText) {
+                    drawCart();
                     table.ajax.reload();
                 }
             });
@@ -227,12 +264,18 @@
             var row = table.row($(this).parents('tr'));
             var data = row.data();
             // get data input
-            var quantity = $(this).val();
+            var quantity=$(this).val();
+            if(quantity<=0){
+                console.log(quantity);
+                $(this).val('1');
+                quantity=1;
+            }
             $.ajax({
                 url: "http://localhost:8080/BookStore/Cart",
                 type: "post",
-                data: {id: data.id, quantity: quantity},
+                data: {id: data.id,quantity:quantity},
                 complete: function (resultText) {
+                    drawCart();
                     table.ajax.reload();
                 }
             });
@@ -240,8 +283,6 @@
         drawCart();
         sea();
     });
-
 </script>
-
 </body>
 </html>
