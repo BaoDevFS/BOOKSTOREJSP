@@ -2,7 +2,7 @@ package vn.edu.nlu.fit.model;
 
 public class ProductCart {
     Books books;
-    int quantity=1;
+    int quantity=0;
     double total=0;
     int id;
 
@@ -23,6 +23,7 @@ public class ProductCart {
                 '}';
     }
     public void updateTotal(){
+        if(quantity==0) quantity=1;
         double tmp= books.getPrice()*quantity;
         total= (double) Math.round(tmp*100)/100;
     }

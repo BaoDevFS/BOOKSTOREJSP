@@ -1,6 +1,7 @@
 package vn.edu.nlu.servlet;
 
 import com.google.gson.Gson;
+import vn.edu.nlu.fit.model.ProductWishlist;
 import vn.edu.nlu.fit.model.WishList;
 
 import javax.servlet.ServletException;
@@ -35,11 +36,20 @@ public class AjaxWishList extends HttpServlet {
             String json = gson.toJson(wishlist);
             out.print(json);
         } else {
+            for (ProductWishlist list : wishlist.getProductWishlist()) {
+                if (Integer.parseInt(id) == list.getId()) {
+                    PrintWriter out = response.getWriter();
+                    out.write("{\"status\":\"0\"}");
+                    return;
+                }
+            }
             wishlist.addProductWishlist(Integer.parseInt(id));
         }
         // subbmit to session
         System.out.println(wishlist.toString());
         session.setAttribute("wishlist", wishlist);
+        PrintWriter out = response.getWriter();
+        out.write("{\"status\":\"1\"}");
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

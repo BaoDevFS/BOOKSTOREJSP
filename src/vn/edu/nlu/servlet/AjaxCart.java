@@ -48,7 +48,6 @@ public class AjaxCart extends HttpServlet {
                 cart.addProductCart(Integer.parseInt(id),Integer.parseInt(quantity));
             }
             // subbmit to session
-            System.out.println(cart.toString());
             session.setAttribute("cart",cart);
         }
     }

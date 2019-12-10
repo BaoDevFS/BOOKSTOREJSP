@@ -35,10 +35,8 @@ public class Login extends HttpServlet {
             ResultSet set =statement.executeQuery(sql);
             user= new Users();
             while (set.next()){
-                System.out.println("user");
                 user.setName(set.getString("name"));
                 user.setEmail(set.getString("email"));
-                user.setPassword(set.getString("password"));
                 user.setGender(set.getString("gender"));
                 user.setAddress(set.getString("address"));
                 user.setPhone(set.getString("phone"));
@@ -47,7 +45,7 @@ public class Login extends HttpServlet {
             set.close();
             connection.close();
                 System.out.println(user.toString());
-                if (user.getEmail() != null && user.getPassword() != null) {
+                if (user.getEmail() != null ) {
                     System.out.println("LOGIN" + user.toString());
                     HttpSession session = request.getSession();
                     session.setAttribute("user", user);
