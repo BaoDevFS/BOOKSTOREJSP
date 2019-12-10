@@ -16,7 +16,7 @@ function addToCart(id) {
                     console.log(json);
                 }catch (e) {
                     console.log(e);
-                    // window.location.replace("http://localhost:8080/BookStore/Login")
+                    window.location.replace("http://localhost:8080/BookStore/Login")
                 }
             }
 
