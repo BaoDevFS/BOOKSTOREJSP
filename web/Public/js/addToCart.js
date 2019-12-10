@@ -1,13 +1,25 @@
 function addToCart(id) {
     $.ajax({
-        url: "http://localhost:8080/BookStore/AjaxCart",
-        method: "get",
+        url: "http://localhost:8080/BookStore/Cart",
+        method: "post",
         data: {
-            id: id
+            id: id, quantity: 0
         },
         complete:function (data) {
-            drawCart();
-            $('#success').modal('show');
+            console.log(data);
+            if(data.responseText==""){
+                drawCart();
+                $('#success').modal('show');
+            }else{
+                try{
+                    var json = JSON.parse(data.responseText);
+                    console.log(json);
+                }catch (e) {
+                    console.log(e);
+                    // window.location.replace("http://localhost:8080/BookStore/Login")
+                }
+            }
+
         }
     });
 }
