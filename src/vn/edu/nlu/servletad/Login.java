@@ -1,5 +1,6 @@
 package vn.edu.nlu.servletad;
 
+import vn.edu.nlu.control.ValidateParameter;
 import vn.edu.nlu.fit.model.Users;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
@@ -24,8 +25,8 @@ public class Login extends HttpServlet {
         database = new GetConnectDatabase();
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String email = request.getParameter("email");
-        String password= request.getParameter("password");
+        String email = ValidateParameter.validateParameter(request,"email");
+        String password= ValidateParameter.validateParameter(request,"password");
         try {
             connection = database.getConnectionSql();
             String sql ="SELECT * from users where email=? and password=? and `group` =? and active= 1";
@@ -36,26 +37,24 @@ public class Login extends HttpServlet {
             ResultSet st= pr.executeQuery();
             Users admin = new Users();
             if (st.next()){
-                admin.setId(st.getInt("id"));
-                admin.setFullname(st.getString("fullname"));
-                admin.setName(st.getString("name"));
                 admin.setEmail(st.getString("email"));
+                admin.setFullname(st.getString("fullname"));
                 admin.setAvatar(st.getString("avatar"));
-                admin.setPassword(st.getString("password"));
-                admin.setGender(st.getString("gender"));
-                admin.setAddress(st.getString("address"));
                 admin.setGroup(st.getInt("group"));
-                admin.setPhone(st.getString("phone"));
-                admin.setActive(st.getInt("active"));
             }
             st.close();
             connection.close();
-            System.out.println(admin.toString());
-            if (admin.getEmail() != null && admin.getPassword() != null) {
-                System.out.println("LOGINADMIN" + admin.toString());
+            if (admin.getEmail() != null ) {
+                System.out.println("LOGINADMIN");
                 HttpSession session = request.getSession();
                 session.setAttribute("admin", admin);
-                response.sendRedirect(request.getContextPath() + "/Admin/Index");
+                String url = (String) session.getAttribute("urlAd");
+                if(url==null) {
+                    response.sendRedirect(request.getContextPath() + "/Admin/Index");
+                }else {
+                    session.removeAttribute("urlAd");
+                    response.sendRedirect(url);
+                }
             } else {
                 request.setAttribute("status",1);
                 RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/login.jsp");

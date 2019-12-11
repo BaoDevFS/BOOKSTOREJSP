@@ -31,12 +31,10 @@ public class Search extends HttpServlet {
         response.setContentType("text/html; charset=UTF-8");
         response.setContentType("application/json");
         String key = request.getParameter("tukhoa");
-        System.out.println("key+"+key);
         try {
             connection = getConnectDatabase.getConnectionSql();
             String sql ="select * from books where name like '%"+key+"%' or author like '%"+key+"%'";
             PreparedStatement pre = connection.prepareStatement(sql);
-            System.out.println(pre.toString());
             ResultSet rs = pre.executeQuery();
             ArrayList<Books> books = new ArrayList<>();
             while (rs.next()){
