@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-﻿
 <%@ page import="vn.edu.nlu.control.PathAbsolute" %>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Login</title>
@@ -22,8 +22,6 @@
     <link rel="stylesheet" type="text/css" href="Public/css/main.css">
     <link rel="stylesheet" href="Public/css/plugins/font-awesome.min.css">
     <!-- <link rel="stylesheet" href="Public/font-awesome-4.7.0/css/font-awesome.css">-->
-
-    <!--===============================================================================================-->
 </head>
 <body>
 <%! public String getStatus(int i) {

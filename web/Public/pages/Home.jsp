@@ -53,7 +53,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-6 col-lg-2">
                     <div class="logo">
-                        <a href="../index.html">
+                        <a href="http://localhost:8080/BookStore">
                             <img src="Public/images/logo/logo.png" alt="logo Public/images">
                         </a>
                     </div>
@@ -61,7 +61,7 @@
                 <div class="col-lg-8 d-none d-lg-block">
                     <nav class="mainmenu__nav">
                         <ul class="meninmenu d-flex justify-content-start">
-                            <li class="drop with--one--item"><a href="../index.html">Home</a>
+                            <li class="drop with--one--item"><a href="http://localhost:8080/BookStore">Home</a>
                             </li>
                             <li class="drop"><a href="http://localhost:8080/BookStore/ShopGrid">Shop</a>
 
