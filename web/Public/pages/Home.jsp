@@ -292,7 +292,6 @@
                                         <li><a class="wishlist"
                                                onclick="addToWishList(<%=rsNew.getString("id")%>)"><i
                                                 class="fa fa-heart"></i></a></li>
-                                        <li><a class="compare" href="#"><i class="fa fa-hashtag"></i></a></li>
                                         <li><a data-toggle="modal" title="Quick View"
                                                class="quickview modal-view detail-link"
                                                onclick="propupbook(<%=rsNew.getString("id")%>)"
@@ -412,8 +411,6 @@
                                                     <li><a class="wishlist <%=rsAll.getString("id")%>"
                                                            onclick="addToWishList(<%=rsAll.getString("id")%>)">
                                                         <i class="fa fa-heart"></i></a></li>
-                                                    <li><a class="compare" href="#"><i class="fa fa-hashtag"></i></a>
-                                                    </li>
                                                     <li><a data-toggle="modal" title="Quick View"
                                                            class="quickview modal-view detail-link"
                                                            onclick="propupbook(<%=rsAll.getString("id")%>)"
@@ -468,8 +465,6 @@
                                                     <li><a class="wishlist  <%=rsAll.getString("id")%>"
                                                            onclick="addToWishList(<%=rsAll.getString("id")%>)"
                                                     ><i class="fa fa-heart"></i></a></li>
-                                                    <li><a class="compare" href="#"><i class="fa fa-hashtag"></i></a>
-                                                    </li>
                                                     <li><a data-toggle="modal" title="Quick View"
                                                            class="quickview modal-view detail-link"
                                                            onclick="propupbook(<%=rsAll.getString("id")%>)"><i
@@ -537,8 +532,6 @@
                                                     <li><a class="wishlist"
                                                            onclick="addToWishList(<%=rsBiographic.getString("id")%>)"><i
                                                             class="fa fa-heart"></i></a></li>
-                                                    <li><a class="compare" href="#"><i class="fa fa-hashtag"></i></a>
-                                                    </li>
                                                     <li><a data-toggle="modal" title="Quick View"
                                                            class="quickview modal-view detail-link"
                                                            onclick="propupbook(<%=rsBiographic.getString("id")%>)"><i
@@ -594,8 +587,6 @@
                                                     <li><a class="wishlist"
                                                            href="http://localhost:8080/BookStore/WishList"><i
                                                             class="fa fa-heart"></i></a></li>
-                                                    <li><a class="compare" href="#"><i class="fa fa-hashtag"></i></a>
-                                                    </li>
                                                     <li><a data-toggle="modal" title="Quick View"
                                                            class="quickview modal-view detail-link"
                                                            onclick="propupbook(<%=rsBiographic.getString("id")%>)"><i
@@ -665,8 +656,7 @@
                                                     <li><a class="wishlist"
                                                            href="http://localhost:8080/BookStore/WishList"><i
                                                             class="fa fa-heart"></i></a></li>
-                                                    <li><a class="compare" href="#"><i class="fa fa-hashtag"></i></a>
-                                                    </li>
+
                                                     <li><a data-toggle="modal" title="Quick View"
                                                            class="quickview modal-view detail-link"
                                                            onclick="propupbook(<%=rsMystery.getString("id")%>)"><i
@@ -722,8 +712,7 @@
                                                     <li><a class="wishlist"
                                                            href="http://localhost:8080/BookStore/WishList"><i
                                                             class="fa fa-heart"></i></a></li>
-                                                    <li><a class="compare" href="#"><i class="fa fa-hashtag"></i></a>
-                                                    </li>
+
                                                     <li><a data-toggle="modal" title="Quick View"
                                                            class="quickview modal-view detail-link"
                                                            onclick="propupbook(<%=rsMystery.getString("id")%>)"><i
@@ -790,8 +779,7 @@
                                                     <li><a class="wishlist"
                                                            href="http://localhost:8080/BookStore/WishList"><i
                                                             class="fa fa-heart"></i></a></li>
-                                                    <li><a class="compare" href="#"><i class="fa fa-hashtag"></i></a>
-                                                    </li>
+
                                                     <li><a data-toggle="modal" title="Quick View"
                                                            class="quickview modal-view detail-link"
                                                            onclick="propupbook(<%=rsChildren.getString("id")%>)"><i
@@ -847,8 +835,7 @@
                                                     <li><a class="wishlist"
                                                            href="http://localhost:8080/BookStore/WishList"><i
                                                             class="fa fa-heart"></i></a></li>
-                                                    <li><a class="compare" href="#"><i class="fa fa-hashtag"></i></a>
-                                                    </li>
+
                                                     <li><a data-toggle="modal" title="Quick View"
                                                            class="quickview modal-view detail-link"
                                                            onclick="propupbook(<%=rsChildren.getString("id")%>)"><i
@@ -916,8 +903,6 @@
                                                     <li><a class="wishlist"
                                                            href="http://localhost:8080/BookStore/WishList"><i
                                                             class="fa fa-heart"></i></a></li>
-                                                    <li><a class="compare" href="#"><i class="fa fa-hashtag"></i></a>
-                                                    </li>
                                                     <li><a data-toggle="modal" title="Quick View"
                                                            class="quickview modal-view detail-link"
                                                            onclick="propupbook(<%=rsCook.getString("id")%>)"><i
@@ -973,8 +958,6 @@
                                                     <li><a class="wishlist"
                                                            href="http://localhost:8080/BookStore/WishList"><i
                                                             class="fa fa-heart"></i></a></li>
-                                                    <li><a class="compare" href="#"><i class="fa fa-hashtag"></i></a>
-                                                    </li>
                                                     <li><a data-toggle="modal" title="Quick View"
                                                            class="quickview modal-view detail-link"
                                                            onclick="propupbook(<%=rsCook.getString("id")%>)"><i
@@ -1110,8 +1093,6 @@
                                 <li><a class="wishlist"
                                        href="http://localhost:8080/BookStore/WishList"><i
                                         class="fa fa-heart"></i></a></li>
-                                <li><a class="compare" href="#"><i class="fa fa-hashtag"></i></a>
-                                </li>
                                 <li><a data-toggle="modal" title="Quick View"
                                        class="quickview modal-view detail-link"
                                        onclick="propupbook(<%=rsSeller.getString("id")%>)"><i class="fa fa-search"></i></a>
@@ -1197,7 +1178,6 @@
                                                                 </div>
                                                                 <div class="product-addto-links clearfix">
                                                                     <a class="wishlist" href="#"></a>
-                                                                    <a class="compare" href="#"></a>
                                                                 </div>
                                                             </div>
                                                             <div class="product_meta">
