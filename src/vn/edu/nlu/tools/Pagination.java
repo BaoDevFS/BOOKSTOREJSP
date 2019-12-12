@@ -93,7 +93,7 @@ public class Pagination {
                 if (this.currentPage == i) {
                     listPages += "<li><a class=\"active\">" + i + "</a></li>";
                 } else {
-                    listPages += "<li><a a href=\"" + link + "page=" + i + "\">" + i + "</a></li>";
+                    listPages += "<li><a  href=\"" + link + "page=" + i + "\">" + i + "</a></li>";
                 }
             }
             pagination = "<ul class=\"wn__pagination\">" + pre + listPages + next + "</ul>";

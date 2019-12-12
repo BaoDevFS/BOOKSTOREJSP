@@ -124,22 +124,6 @@
                                     </div>
                                     <div class="switcher-currency">
                                         <strong class="label switcher-label">
-                                            <span>Language</span>
-                                        </strong>
-                                        <div class="switcher-options">
-                                            <div class="switcher-currency-trigger">
-                                                <span class="currency-trigger">English01</span>
-                                                <ul class="switcher-dropdown">
-                                                    <li>English02</li>
-                                                    <li>English03</li>
-                                                    <li>English04</li>
-                                                    <li>English05</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="switcher-currency">
-                                        <strong class="label switcher-label">
                                             <span>Select Store</span>
                                         </strong>
                                         <div class="switcher-options">
@@ -941,7 +925,7 @@
                                     </div>
                                     <div class="product__content content--center content--center">
                                         <h4>
-                                            <a href="http://localhost:8080/BookStore/SingleProducthttp://localhost:8080/BookStore/SingleProduct?id=<%=rsCook.getString("id")%>"><%=rsAll.getString(2)%>
+                                            <a href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsCook.getString("id")%>"><%=rsAll.getString(2)%>
                                             </a></h4>
                                         <ul class="prize d-flex">
                                             <li>$<%=rsCook.getString(7)%>
