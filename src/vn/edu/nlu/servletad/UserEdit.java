@@ -40,9 +40,9 @@ public class UserEdit extends HttpServlet {
              avatars = PathAbsolute.getPath("admin/images/user/" + Paths.get(avatar.getSubmittedFileName()).getFileName().toString());
             BufferedImage imghoverBuff = ImageIO.read(avatar.getInputStream());
             saveImage.saveImageForUser(imghoverBuff, Paths.get(avatar.getSubmittedFileName()).getFileName().toString(), request);
-            sql="UPDATE users set name =?,email=?,fullname=?,password=?,address=?,phone=?,gender=?,group = ?,active= ?,avatar=? where id="+id;
+            sql="UPDATE users set `name` =?,email=?,fullname=?,password=?,address=?,phone=?,gender=?,`group` = ?,active= ?,avatar=? where id="+id;
         }else{
-            sql="UPDATE users set name =?,email=?,fullname=?,password=?,address=?,phone=?,gender=?,group = ?,active= ? where id="+id;
+            sql="UPDATE users set `name` =?,email=?,fullname=?,password=?,address=?,phone=?,gender=?,`group` = ?,active= ? where id="+id;
         }
         String firstName = request.getParameter("firstname");
         String fullname = request.getParameter("fullname");

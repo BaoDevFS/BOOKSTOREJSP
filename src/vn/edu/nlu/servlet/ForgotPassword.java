@@ -2,6 +2,7 @@ package vn.edu.nlu.servlet;
 
 import vn.edu.nlu.control.EnCodeBase64;
 import vn.edu.nlu.control.SendMail;
+import vn.edu.nlu.control.ValidateParameter;
 import vn.edu.nlu.dao.HashCode;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
@@ -31,7 +32,7 @@ public class ForgotPassword extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String email = request.getParameter("email");
+        String email = ValidateParameter.validateParameter(request,"email");
         SendMail sendMail = new SendMail();
         GetConnectDatabase getConnectDatabase = new GetConnectDatabase();
         try {

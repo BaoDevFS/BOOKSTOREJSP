@@ -23,7 +23,9 @@ public class FilterUrlAdmin implements Filter {
         }
         HttpSession session = request.getSession();
         Users admin = (Users) session.getAttribute("admin");
-        if(admin==null||admin.getEmail()==null||admin.getPassword()==null){
+        String url = request.getContextPath()+request.getServletPath();
+        if(admin==null||admin.getEmail()==null){
+            session.setAttribute("urlAd",url);
             response.sendRedirect(request.getContextPath()+"/Admin/Login");
         }else {
             chain.doFilter(req, resp);

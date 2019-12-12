@@ -7,19 +7,18 @@ function addToCart(id) {
         },
         complete:function (data) {
             console.log(data);
-            if(data.responseText==""){
+            // if(data.responseText==""){
                 drawCart();
                 $('#success').modal('show');
-            }else{
-                try{
-                    var json = JSON.parse(data.responseText);
-                    console.log(json);
-                }catch (e) {
-                    console.log(e);
-                    window.location.replace("http://localhost:8080/BookStore/Login")
-                }
-            }
-
+            // }else{
+            //     try{
+            //         var json = JSON.parse(data.responseText);
+            //         console.log(json);
+            //     }catch (e) {
+            //         console.log(e);
+            //         window.location.replace("http://localhost:8080/BookStore/Login");
+            //     }
+            // }
         }
     });
 }

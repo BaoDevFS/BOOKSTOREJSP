@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter(filterName = "FilterUserLogin",urlPatterns = {"/Cart","/Checkout"})
+@WebFilter(filterName = "FilterUserLogin",urlPatterns = {"/Checkout"})
 public class FilterUserLogin implements Filter {
     public void destroy() {
     }
@@ -19,9 +19,11 @@ public class FilterUserLogin implements Filter {
         HttpServletResponse response = (HttpServletResponse) resp;
         HttpSession session = request.getSession();
         Users users = (Users) session.getAttribute("user");
+        String url = request.getContextPath()+request.getServletPath();
         if(users!=null&& users.getEmail()!=null){
             chain.doFilter(req, resp);
         }else{
+            session.setAttribute("url",url);
             response.sendRedirect(request.getContextPath() + "/Login");
         }
     }

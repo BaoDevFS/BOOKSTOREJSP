@@ -1,5 +1,6 @@
 package vn.edu.nlu.servlet;
 
+import vn.edu.nlu.control.ValidateParameter;
 import vn.edu.nlu.fit.model.Users;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
@@ -11,10 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+
 @WebServlet("/Login")
 public class Login extends HttpServlet {
     GetConnectDatabase getConnectDatabase;
@@ -24,32 +23,36 @@ public class Login extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String userName = request.getParameter("email");
-        String passWord = request.getParameter("pass");
+        String email = ValidateParameter.validateParameter(request,"email");
+        String passWord = ValidateParameter.validateParameter(request,"pass");
         Users user;
         try {
             connection = getConnectDatabase.getConnectionSql();
-            Statement statement = connection.createStatement();
-            String sql = "SELECT * FROM users WHERE users.email="+"'"+userName+"'"+" AND users.password="+"'"+passWord+"'"+"AND users.active=1";
-            System.out.println(sql);
-            ResultSet set =statement.executeQuery(sql);
+            String sql= "select  * from  users where email=? and password=? and active=1";
+            PreparedStatement pre = connection.prepareStatement(sql);
+            pre.setString(1,email);
+            pre.setString(2,passWord);
+            ResultSet set =pre.executeQuery();
             user= new Users();
             while (set.next()){
+                user.setId(set.getInt("id"));
                 user.setName(set.getString("name"));
                 user.setEmail(set.getString("email"));
-                user.setGender(set.getString("gender"));
-                user.setAddress(set.getString("address"));
-                user.setPhone(set.getString("phone"));
-                user.setActive(set.getInt("active"));
+                user.setAvatar(set.getString("avatar"));
             }
             set.close();
             connection.close();
-                System.out.println(user.toString());
                 if (user.getEmail() != null ) {
-                    System.out.println("LOGIN" + user.toString());
+                    System.out.println("LOGIN User" );
                     HttpSession session = request.getSession();
                     session.setAttribute("user", user);
-                    response.sendRedirect(request.getContextPath() + "/Home");
+                    String url = (String) session.getAttribute("url");
+                    if(url==null) {
+                        response.sendRedirect(request.getContextPath() + "/Home");
+                    }else {
+                        session.removeAttribute("url");
+                        response.sendRedirect(url);
+                    }
                 } else {
                     request.setAttribute("status",1);
                     RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/login.jsp");
