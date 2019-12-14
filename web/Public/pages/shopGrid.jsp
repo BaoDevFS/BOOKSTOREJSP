@@ -87,8 +87,6 @@
         listProducts = bd.sort(bd.getListCategoriesAndPage(0, pagination.getCurrentPage(), pagination.getTotalItemPerPage()));
     }
     String sortSelected = request.getParameter("sortPrice1");
-    if(session.getAttribute("nav-list") != null)
-        link+= "#nav-list";
 
 %>
 <!--[if lte IE 9]>
