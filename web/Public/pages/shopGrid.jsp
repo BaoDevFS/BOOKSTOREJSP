@@ -86,6 +86,9 @@
         amountItem = getListProductType.getList().size();
         listProducts = bd.sort(bd.getListCategoriesAndPage(0, pagination.getCurrentPage(), pagination.getTotalItemPerPage()));
     }
+    String sortSelected = request.getParameter("sortPrice1");
+    if(session.getAttribute("nav-list") != null)
+        link+= "#nav-list";
 
 %>
 <!--[if lte IE 9]>
@@ -189,21 +192,19 @@
                         <div class="col-lg-12">
                             <div class="shop__list__wrapper d-flex flex-wrap flex-md-nowrap justify-content-between">
                                 <div class="shop__list nav justify-content-center" role="tablist">
-                                    <a class="nav-item nav-link active" data-toggle="tab" href="#nav-grid" role="tab"><i
+                                    <a class="active"  href="#nav-grid" onclick="setNavType('gird')" name="nav-grid"  ><i
                                             class="fa fa-th"></i></a>
-                                    <a class="nav-item nav-link" data-toggle="tab" href="#nav-list" role="tab"><i
+
+                                    <a class="tab" href="#nav-list" onclick="setNavType('list')" name="nav-list"><i
                                             class="fa fa-list"></i></a>
                                 </div>
                                 <p>Showing 1–9 of <%=getListProductType.getList().size() %> results</p>
                                 <div class="orderby__wrapper">
                                     <span>Sort By</span>
-                                    <select class="shot__byselect">
-                                        <option>Default sorting</option>
-                                        <option>HeadPhone</option>
-                                        <option>Furniture</option>
-                                        <option>Jewellery</option>
-                                        <option>Handmade</option>
-                                        <option>Kids</option>
+                                    <select class="shot__byselect" name="sort">
+                                        <option name="sortName">Default sorting by name</option>
+                                        <option name="sortPrice1">Price from low to high </option>
+                                        <option name="sortPrice2">Price from  high to low </option>
                                     </select>
                                 </div>
                             </div>
@@ -427,6 +428,46 @@
         drawCart();
         sea();
     });
+    $(document).ready(function(){
+        $(".nav a").click(function(){
+            $(this).tab('show');
+        });
+    });
+</script>
+<script>
+    <%
+    String navType=(String) session.getAttribute("navType");
+    if(navType==null) navType="";
+    %>
+    setActive();
+    function setActive() {
+        if('<%=navType%>'=='list'){
+            console.log("active List")
+            $('a[name="nav-grid"]').removeClass('active');
+            $('a[name="nav-list"]').addClass('active');
+            $('#nav-grid').removeClass("show active");
+            $('#nav-list').addClass("show active");
+        }
+    }
+    function setNavType(type) {
+        if(type=="list") {
+            console.log("list");
+            $.ajax({
+                url: "http://localhost:8080/BookStore/ShopGrid",
+                method: "POST",
+                data: {
+                    navType: "list"
+                }
+            });
+        }else{
+            console.log("gird");
+            $.ajax({
+                url: "http://localhost:8080/BookStore/ShopGrid",
+                method: "POST",
+            });
+        }
+    }
+
 </script>
 </body>
 

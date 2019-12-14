@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -25,7 +26,16 @@ public class ShopGrid extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
+        String navType =request.getParameter("navType");
+        HttpSession session = request.getSession();
+        if(navType==null){
+            System.out.println("gird");
+            session.removeAttribute("navType");
+        }else {
+            System.out.println("list");
+            session.setAttribute("navType","list");
+        }
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -49,7 +59,7 @@ public class ShopGrid extends HttpServlet {
             request.setAttribute("rsCount", rsCount);
 
             connection = getConnectDatabase.getConnectionSql();
-             sql = "SELECT id_type, name FROM books WHERE active = 1 and rate>=3";
+            sql = "SELECT id_type, name FROM books WHERE active = 1 and rate>=3";
             PreparedStatement preTag = connection.prepareStatement(sql);
             ResultSet rsTag = preTag.executeQuery();
             request.setAttribute("rsTag", rsTag);
@@ -66,5 +76,7 @@ public class ShopGrid extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
     }
+
 }
