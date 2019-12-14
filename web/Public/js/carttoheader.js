@@ -8,22 +8,22 @@ function drawCart() {
             $('#total').text('$' + json.totalCart);
             $('#quantity').text(json.productCart.length + ' items');
             $('.product_qun').text(json.productCart.length);
-            var line='';
+            var line = '';
             for (var i = 0; i < json.productCart.length; i++) {
                 var product = json.productCart[i];
-                line += '<div id="'+product.books.id+'" class="item01 d-flex">\n' +
+                line += '<div id="' + product.books.id + '" class="item01 d-flex">\n' +
                     '                                            <div class="thumb">\n' +
-                    '                                                <a href="http://localhost:8080/BookStore/SingleProduct?id='+product.books.id+'">\n' +
+                    '                                                <a href="http://localhost:8080/BookStore/SingleProduct?id=' + product.books.id + '">\n' +
                     '                                                    <img style="width: 50px" src="' + product.books.image + '" alt="product images"></a>\n' +
                     '                                            </div>\n' +
                     '                                            <div class="content">\n' +
-                    '                                                <h6><a href="http://localhost:8080/BookStore/SingleProduct?id='+product.books.id+'">' + product.books.name + '</a></h6>\n' +
+                    '                                                <h6><a href="http://localhost:8080/BookStore/SingleProduct?id=' + product.books.id + '">' + product.books.name + '</a></h6>\n' +
                     '                                                <span class="prize">$' + product.books.price + '</span>\n' +
                     '                                                <div class="product_prize d-flex justify-content-between">\n' +
                     '                                                    <span class="qun">Qty:' + product.quantity + '</span>\n' +
                     '                                                    <ul class="d-flex justify-content-end">\n' +
                     '                                                        <li><a href="http://localhost:8080/BookStore/Cart"><i class="zmdi zmdi-settings"></i></a></li>\n' +
-                    '                                                        <li><a onclick="hidenRow('+product.books.id+')"><i class="zmdi zmdi-delete"></i></a></li>\n' +
+                    '                                                        <li><a onclick="hidenRow(' + product.books.id + ')"><i class="zmdi zmdi-delete"></i></a></li>\n' +
                     '                                                    </ul>\n' +
                     '                                                </div>\n' +
                     '                                            </div>\n' +
@@ -33,8 +33,9 @@ function drawCart() {
         }
     });
 }
+
 function hidenRow(id) {
-    $('#'+id).addClass('hiden');
+    $('#' + id).addClass('hiden');
     $.ajax({
         url: "http://localhost:8080/BookStore/Cart",
         type: "post",
@@ -44,3 +45,14 @@ function hidenRow(id) {
         }
     });
 }
+
+$('.cartbox_active').hover(function (e) {
+    e.preventDefault();
+    // $('.minicart__active').toggleClass('is-visible');
+    $('.minicart__active').addClass('is-visible');
+});
+$('.minicart__active').mouseleave(function (e) {
+    e.preventDefault();
+    console.log("dasas");
+    $('.minicart__active').removeClass('is-visible');
+})
