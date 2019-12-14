@@ -45,24 +45,6 @@
                                 </div>
                                 <div class="single__items">
                                     <div class="miniproduct" >
-<%--                                        <div class="item01 d-flex">--%>
-<%--                                            <div class="thumb">--%>
-<%--                                                <a href="http://localhost:8080/BookStore/SingleProduct">--%>
-<%--                                                    <img style="width: 50px" src="Public/images/product/sm-img/1.jpg" alt="product images">--%>
-<%--                                                </a>--%>
-<%--                                            </div>--%>
-<%--                                            <div class="content">--%>
-<%--                                                <h6><a href="http://localhost:8080/BookStore/SingleProduct">Voyage Yoga Bag</a></h6>--%>
-<%--                                                <span class="prize">$30.00</span>--%>
-<%--                                                <div class="product_prize d-flex justify-content-between">--%>
-<%--                                                    <span class="qun">Qty: 01</span>--%>
-<%--                                                    <ul class="d-flex justify-content-end option">--%>
-<%--                                                        <li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>--%>
-<%--                                                        <li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>--%>
-<%--                                                    </ul>--%>
-<%--                                                </div>--%>
-<%--                                            </div>--%>
-<%--                                        </div>--%>
                                     </div>
                                 </div>
                                 <div class="mini_action cart">
@@ -75,20 +57,6 @@
                     <li class="setting__bar__icon"><a class="setting__active" href="#"></a>
                         <div class="searchbar__content setting__block">
                             <div class="content-inner">
-                                <div class="switcher-currency">
-                                    <strong class="label switcher-label">
-                                        <span>Language</span>
-                                    </strong>
-                                    <div class="switcher-options">
-                                        <div class="switcher-currency-trigger">
-                                            <span class="currency-trigger">English01</span>
-                                            <ul class="switcher-dropdown">
-                                                <li>English02</li>
-                                                <li>English03</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="switcher-currency">
                                     <strong class="label switcher-label">
                                         <span>My Account</span>
