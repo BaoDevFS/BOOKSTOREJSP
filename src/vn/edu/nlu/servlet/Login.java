@@ -66,6 +66,8 @@ public class Login extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("status",0);
+        HttpSession session = request.getSession();
+        session.removeAttribute("user");
         RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/login.jsp");
         requestDispatcher.forward(request,response);
     }
