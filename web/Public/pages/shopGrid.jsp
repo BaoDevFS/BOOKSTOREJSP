@@ -73,9 +73,15 @@
         amountItem = getListProductType.getList().size();
     }
     //phan trang
-    Pagination pagination = new Pagination(amountItem, 9, 3, paramPage);
+    Pagination pagination;
+    HttpSession session1 = request.getSession();
+    if (session1.getAttribute("list") != null) {
+        pagination = new Pagination(amountItem, 6, 3, paramPage);
+    } else
+        pagination = new Pagination(amountItem, 9, 3, paramPage);
     String showPagination = pagination.showPagination(link);
-
+    System.out.println(session1.getAttribute("list"));
+    System.out.println(session1.getAttribute("nav-list"));
     ArrayList<Products> listProducts;
     if (request.getParameter("type") != null) {
         link = "ShopGrid?type=" + type + "&";
@@ -190,7 +196,7 @@
                         <div class="col-lg-12">
                             <div class="shop__list__wrapper d-flex flex-wrap flex-md-nowrap justify-content-between">
                                 <div class="shop__list nav justify-content-center" role="tablist">
-                                    <a class="active"  href="#nav-grid" onclick="setNavType('gird')" name="nav-grid"  ><i
+                                    <a class="active" href="#nav-grid" onclick="setNavType('gird')" name="nav-grid"><i
                                             class="fa fa-th"></i></a>
 
                                     <a class="tab" href="#nav-list" onclick="setNavType('list')" name="nav-list"><i
@@ -201,8 +207,8 @@
                                     <span>Sort By</span>
                                     <select class="shot__byselect" name="sort">
                                         <option name="sortName">Default sorting by name</option>
-                                        <option name="sortPrice1">Price from low to high </option>
-                                        <option name="sortPrice2">Price from  high to low </option>
+                                        <option name="sortPrice1">Price from low to high</option>
+                                        <option name="sortPrice2">Price from high to low</option>
                                     </select>
                                 </div>
                             </div>
@@ -281,7 +287,8 @@
                                                 src="<%=pd.getImage_hover()%>" alt="product images"></a>
                                     </div>
                                     <div class="content">
-                                        <h2><a href="singleProduct.html"><%=pd.getName()%></a></h2>
+                                        <h2><a href="singleProduct.html"><%=pd.getName()%>
+                                        </a></h2>
                                         <ul class="rating d-flex">
                                             <li class="on"><i class="fa fa-star-o"></i></li>
                                             <li class="on"><i class="fa fa-star-o"></i></li>
@@ -291,11 +298,18 @@
                                             <li><i class="fa fa-star-o"></i></li>
                                         </ul>
                                         <ul class="prize__box">
-                                            <li>$<%=pd.getPrice()%></li>
-                                            <li class="old__prize">$<%=pd.getPrice_old()%></li>
+                                            <li>$<%=pd.getPrice()%>
+                                            </li>
+                                            <li class="old__prize">$<%=pd.getPrice_old()%>
+                                            </li>
                                         </ul>
-
-                                        <p><%=pd.getDescription()%></p>
+                                        <%
+                                            String a = pd.getDescription();
+                                            if (a == null)
+                                                a = "";
+                                        %>
+                                        <p><%=(a.length() > 200) ? pd.getDescription().substring(0, 200) : pd.getDescription()%>
+                                        </p>
 
                                         <ul class="cart__action d-flex">
                                             <li class="cart"><a href="cart.html">Add to cart</a></li>
@@ -426,8 +440,8 @@
         drawCart();
         sea();
     });
-    $(document).ready(function(){
-        $(".nav a").click(function(){
+    $(document).ready(function () {
+        $(".nav a").click(function () {
             $(this).tab('show');
         });
     });
@@ -438,8 +452,9 @@
     if(navType==null) navType="";
     %>
     setActive();
+
     function setActive() {
-        if('<%=navType%>'=='list'){
+        if ('<%=navType%>' == 'list') {
             console.log("active List")
             $('a[name="nav-grid"]').removeClass('active');
             $('a[name="nav-list"]').addClass('active');
@@ -447,8 +462,9 @@
             $('#nav-list').addClass("show active");
         }
     }
+
     function setNavType(type) {
-        if(type=="list") {
+        if (type == "list") {
             console.log("list");
             $.ajax({
                 url: "http://localhost:8080/BookStore/ShopGrid",
@@ -457,7 +473,7 @@
                     navType: "list"
                 }
             });
-        }else{
+        } else {
             console.log("gird");
             $.ajax({
                 url: "http://localhost:8080/BookStore/ShopGrid",
