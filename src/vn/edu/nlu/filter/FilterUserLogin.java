@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter(filterName = "FilterUserLogin",urlPatterns = {"/Checkout"})
+@WebFilter(filterName = "FilterUserLogin",urlPatterns = {"/Checkout","/UserProfile"})
 public class FilterUserLogin implements Filter {
     public void destroy() {
     }

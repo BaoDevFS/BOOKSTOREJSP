@@ -547,4 +547,23 @@
 
 
 })(jQuery);
-
+// acivte for userprofile
+$('.profile').click(function () {
+    $('.profile').addClass('active');
+    $('.password').removeClass('active');
+    $('.logout').removeClass('active');
+    $('.editprofle').removeClass('hidden');
+    $('.changpassword').addClass('hidden');
+});
+$('.password').click(function () {
+    $('.profile').removeClass('active');
+    $('.password').addClass('active');
+    $('.logout').removeClass('active');
+    $('.editprofle').addClass('hidden');
+    $('.changpassword').removeClass('hidden');
+});
+$('.logout').click(function () {
+    $('.profile').removeClass('active');
+    $('.password').removeClass('active');
+    $('.logout').addClass('active');
+});
