@@ -19,7 +19,7 @@
     <link rel="shortcut icon" href="Public/images/favicon.ico">
     <link rel="apple-touch-icon" href="Public/images/icon.png">
 
-    <!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
+    <!-- Google font (font-family: 'Roboto', sans-serif; Popp ins ; Satisfy) -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,600i,700,700i,800"
           rel="stylesheet">
@@ -74,14 +74,14 @@
     }
     //phan trang
     Pagination pagination;
-    HttpSession session1 = request.getSession();
-    if (session1.getAttribute("list") != null) {
+//    HttpSession session1 = request.getSession();
+    String navType =request.getParameter("navType");
+    if (session.getAttribute(navType).equals("list")) {
         pagination = new Pagination(amountItem, 6, 3, paramPage);
-    } else
+    } else {
         pagination = new Pagination(amountItem, 9, 3, paramPage);
+    }
     String showPagination = pagination.showPagination(link);
-    System.out.println(session1.getAttribute("list"));
-    System.out.println(session1.getAttribute("nav-list"));
     ArrayList<Products> listProducts;
     if (request.getParameter("type") != null) {
         link = "ShopGrid?type=" + type + "&";
