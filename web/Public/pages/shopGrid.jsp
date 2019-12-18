@@ -5,6 +5,7 @@
 <%@ page import="vn.edu.nlu.tools.Pagination" %>
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="vn.edu.nlu.servlet.ShopGrid" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
@@ -73,13 +74,14 @@
         amountItem = getListProductType.getList().size();
     }
     //phan trang
+    ShopGrid shop = new ShopGrid();
     Pagination pagination;
-//    HttpSession session1 = request.getSession();
-    String navType =request.getParameter("navType");
-    if (session.getAttribute(navType).equals("list")) {
-        pagination = new Pagination(amountItem, 6, 3, paramPage);
+    System.out.println("session + " + session.getAttribute("navType"));
+    System.out.println("command + " + shop.getCommand());
+    if ("list".equals(session.getAttribute("navType")) || shop.getCommand().equals("list")) {
+        pagination = new Pagination(amountItem, 4, 3, paramPage);
     } else {
-        pagination = new Pagination(amountItem, 9, 3, paramPage);
+        pagination = new Pagination(amountItem, 6, 3, paramPage);
     }
     String showPagination = pagination.showPagination(link);
     ArrayList<Products> listProducts;
@@ -92,7 +94,6 @@
         amountItem = getListProductType.getList().size();
         listProducts = bd.sort(bd.getListCategoriesAndPage(0, pagination.getCurrentPage(), pagination.getTotalItemPerPage()));
     }
-    String sortSelected = request.getParameter("sortPrice1");
 
 %>
 <!--[if lte IE 9]>
@@ -460,6 +461,7 @@
             $('a[name="nav-list"]').addClass('active');
             $('#nav-grid').removeClass("show active");
             $('#nav-list').addClass("show active");
+
         }
     }
 

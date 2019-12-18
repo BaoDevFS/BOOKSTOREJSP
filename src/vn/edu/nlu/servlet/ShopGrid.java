@@ -20,20 +20,32 @@ public class ShopGrid extends HttpServlet {
     GetConnectDatabase getConnectDatabase;
     Connection connection;
     String id_page;
+    String command = "gird";
+
+    public String getCommand() {
+        return command;
+    }
+
+    public void setCommand(String command) {
+        this.command = command;
+    }
 
     public ShopGrid() {
         this.getConnectDatabase = new GetConnectDatabase();
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String navType =request.getParameter("navType");
+        String navType = request.getParameter("navType");
         HttpSession session = request.getSession();
-        if(navType==null){
+        if (navType == null) {
             System.out.println("gird");
-            session.removeAttribute("navType");
-        }else {
+            this.command = "gird";
+//            session.removeAttribute("navType");
+            session.setAttribute("navType", "gird");
+        } else {
+            this.command = "list";
             System.out.println("list");
-            session.setAttribute("navType","list");
+            session.setAttribute("navType", "list");
         }
 
     }
@@ -79,4 +91,8 @@ public class ShopGrid extends HttpServlet {
 
     }
 
+    public static void main(String[] args) {
+        ShopGrid s= new ShopGrid();
+        System.out.println(s.getCommand());
+    }
 }
