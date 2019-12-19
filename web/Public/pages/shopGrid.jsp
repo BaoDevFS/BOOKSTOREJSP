@@ -78,11 +78,11 @@
     Pagination pagination;
     System.out.println("session + " + session.getAttribute("navType"));
     System.out.println("command + " + shop.getCommand());
-    if ("list".equals(session.getAttribute("navType")) || shop.getCommand().equals("list")) {
-        pagination = new Pagination(amountItem, 4, 3, paramPage);
-    } else {
-        pagination = new Pagination(amountItem, 6, 3, paramPage);
+    if("list".equals(session.getAttribute("navType"))){
+        shop.setCommand("list");
     }
+    System.out.println("setcommand + " + shop.getCommand());
+    pagination = new Pagination(amountItem, 9, 3, paramPage);
     String showPagination = pagination.showPagination(link);
     ArrayList<Products> listProducts;
     if (request.getParameter("type") != null) {
@@ -203,13 +203,13 @@
                                     <a class="tab" href="#nav-list" onclick="setNavType('list')" name="nav-list"><i
                                             class="fa fa-list"></i></a>
                                 </div>
-                                <p>Showing 1–9 of <%=getListProductType.getList().size() %> results</p>
+                                <p>Showing 1–<%=(shop.getCommand().equals("gird")?9:4) %> of <%=getListProductType.getList().size() %> results</p>
                                 <div class="orderby__wrapper">
                                     <span>Sort By</span>
                                     <select class="shot__byselect" name="sort">
                                         <option name="sortName">Default sorting by name</option>
-                                        <option name="sortPrice1">Price from low to high</option>
-                                        <option name="sortPrice2">Price from high to low</option>
+<%--                                        <option type="submit" name="sortPrice1" onclick="" >Price from low to high</option>--%>
+<%--                                        <option name="sortPrice2">Price from high to low</option>--%>
                                     </select>
                                 </div>
                             </div>
@@ -227,16 +227,16 @@
                                 <!-- Start Single Product -->
                                 <div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
                                     <div class="product__thumb">
-                                        <a class="first__img" href="singleProduct.html">
+                                        <a class="first__img" href="http://localhost:8080/BookStore/SingleProduct?id=<%=pd.getId()%>">
                                             <img src="<%=pd.getImage()%>" class="abc" alt="product image"></a>
-                                        <a class="second__img animation1" href="singleProduct.html">
+                                        <a class="second__img animation1" href="http://localhost:8080/BookStore/SingleProduct?id=<%=pd.getId()%>">
                                             <img src="<%=pd.getImage_hover()%>" class="abc" alt="product image"></a>
                                         <div class="hot__box">
                                             <span class="hot-label">BEST SALLER</span>
                                         </div>
                                     </div>
                                     <div class="product__content content--center">
-                                        <h4><a href="singleProduct.html"><%= pd.getName()%>
+                                        <h4><a href="http://localhost:8080/BookStore/SingleProduct?id=<%=pd.getId()%>"><%= pd.getName()%>
                                         </a></h4>
                                         <ul class="prize d-flex">
                                             <li>$<%=pd.getPrice()%>
@@ -245,17 +245,23 @@
                                             </li>
                                         </ul>
                                         <div class="action">
+
                                             <div class="actions_inner">
+
                                                 <ul class="add_to_links">
-                                                    <li><a class="cart" href="cart.html"><i
-                                                            class="fa fa-shopping-bag"></i></a></li>
-                                                    <li><a class="wishlist" href="wishList.html"><i
+                                                    <li><a class="cart" onclick="addToCart(<%=pd.getId()%>)"><i
+                                                            class="fa fa-shopping-cart"></i></a></li>
+                                                    <li><a class="wishlist"
+                                                           onclick="addToWishList(<%=pd.getId()%>)"><i
                                                             class="fa fa-heart"></i></a></li>
                                                     <li><a data-toggle="modal" title="Quick View"
                                                            class="quickview modal-view detail-link"
-                                                           href="#productmodal"><i class="fa fa-search"></i></a></li>
+                                                           onclick="propupbook(<%=pd.getId()%>)"
+                                                    <%-- href="#productmodal"--%>><i class="fa fa-search"></i></a></li>
                                                 </ul>
+
                                             </div>
+
                                         </div>
                                         <div class="product__hover--content">
                                             <ul class="rating d-flex">
@@ -277,18 +283,20 @@
                         <div class="shop-grid tab-pane fade" id="nav-list" role="tabpanel">
                             <div class="list__view__wrapper">
                                 <%
-                                    for (Products pd : bd.sort(listProducts)) {
+                                    //                                    for (Products pd : bd.sort(listProducts)) {
+                                    for (int i = 0; i < (listProducts.size() > 4 ? 4 : listProducts.size()); i++) {
+                                        Products pd = listProducts.get(i);
                                 %>
                                 <!-- Start Single Product -->
-                                <div class="list__view">
+                                <div class="list__view mb-3">
                                     <div class="thumb">
-                                        <a class="first__img" href="singleProduct.html"><img
+                                        <a class="first__img" href="http://localhost:8080/BookStore/SingleProduct?id=<%=pd.getId()%>"><img
                                                 src="<%=pd.getImage()%>" alt="product images"></a>
-                                        <a class="second__img animation1" href="singleProduct.html"><img
+                                        <a class="second__img animation1" href="http://localhost:8080/BookStore/SingleProduct?id=<%=pd.getId()%>"><img
                                                 src="<%=pd.getImage_hover()%>" alt="product images"></a>
                                     </div>
                                     <div class="content">
-                                        <h2><a href="singleProduct.html"><%=pd.getName()%>
+                                        <h2><a href="http://localhost:8080/BookStore/SingleProduct?id=<%=pd.getId()%>"><%=pd.getName()%>
                                         </a></h2>
                                         <ul class="rating d-flex">
                                             <li class="on"><i class="fa fa-star-o"></i></li>
@@ -313,9 +321,9 @@
                                         </p>
 
                                         <ul class="cart__action d-flex">
-                                            <li class="cart"><a href="cart.html">Add to cart</a></li>
-                                            <li class="wishlist"><a href="cart.html"></a></li>
-                                            <li class="compare"><a href="cart.html"></a></li>
+                                            <li class="cart"><a onclick="addToCart(<%=pd.getId()%>)">Add to cart</a></li>
+                                            <li class="wishlist"><a  onclick="addToWishList(<%=pd.getId()%>)"></a></li>
+<%--                                            <li class="compare"><a href="cart.html"></a></li>--%>
                                         </ul>
 
                                     </div>
@@ -338,85 +346,118 @@
     <!-- QUICKVIEW PRODUCT -->
     <div id="quickview-wrapper">
         <!-- Modal -->
-        <div class="modal fade" id="productmodal" tabindex="-1" role="dialog">
+        <div class="modal fade" id="productmodal" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal__container" role="document">
                 <div class="modal-content">
                     <div class="modal-header modal__header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                 aria-hidden="true">&times;</span></button>
                     </div>
-                    <div class="modal-body">
+                    <div id="madal-body" class="modal-body">
                         <div class="modal-product">
-                            <!-- Start product images -->
-                            <div class="product-images">
-                                <div class="main-image images">
-                                    <img alt="big images" src="Public/images/product/big-img/1.jpg">
-                                </div>
-                            </div>
-                            <!-- end product images -->
-                            <div class="product-info">
-                                <h1>Simple Fabric Bags</h1>
-                                <div class="rating__and__review">
-                                    <ul class="rating">
-                                        <li><span class="ti-star"></span></li>
-                                        <li><span class="ti-star"></span></li>
-                                        <li><span class="ti-star"></span></li>
-                                        <li><span class="ti-star"></span></li>
-                                        <li><span class="ti-star"></span></li>
-                                    </ul>
-                                    <div class="review">
-                                        <a href="#">4 customer reviews</a>
+                            <div class="maincontent bg--white pb--55">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-12">
+                                            <div class="wn__single__product">
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-12">
+                                                        <div class="wn__fotorama__wrapper">
+
+                                                            <a href="Public/images/1.html" id="imageBook">
+                                                            </a>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-12">
+                                                        <div class="product__info__main">
+                                                            <h1 id="nameBook">Chaz Kangeroo Hoodie</h1>
+                                                            <div class="product-reviews-summary d-flex">
+                                                                <ul class="rating-summary d-flex">
+                                                                    <li><i class="zmdi zmdi-star-outline"></i></li>
+                                                                    <li><i class="zmdi zmdi-star-outline"></i></li>
+                                                                    <li><i class="zmdi zmdi-star-outline"></i></li>
+                                                                    <li class="off"><i
+                                                                            class="zmdi zmdi-star-outline"></i></li>
+                                                                    <li class="off"><i
+                                                                            class="zmdi zmdi-star-outline"></i></li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="price-box">
+                                                                <span id="priceBook"></span>
+                                                            </div>
+                                                            <div id="descriptionBook" class="product__overview">
+                                                            </div>
+                                                            <div class="box-tocart d-flex">
+                                                                <span>Qty</span>
+                                                                <input id="qty" class="input-text qty" name="qty"
+                                                                       value="1" title="Qty" min="1" type="number">
+                                                                <div class="addtocart__actions">
+                                                                    <button class="tocart" type="submit"
+                                                                            title="Add to Cart"><a
+                                                                            onclick="addToCartShow(getidshow(),$('#qty').val());">Add
+                                                                        to Cart</a>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="product-addto-links clearfix">
+                                                                    <a class="wishlist" href="#"></a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="product_meta">
+                                                             <span class="posted_in">Categories:
+                                                                 <a id="typeBook" href="#"></a>,
+                                                             </span>
+                                                            </div>
+                                                            <div class="product-share">
+                                                                <ul>
+                                                                    <li class="categories-title">Share :</li>
+                                                                    <li>
+                                                                        <a href="#">
+                                                                            <i class="icon-social-twitter icons"></i>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">
+                                                                            <i class="icon-social-tumblr icons"></i>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">
+                                                                            <i class="icon-social-facebook icons"></i>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">
+                                                                            <i class="icon-social-linkedin icons"></i>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="price-box-3">
-                                    <div class="s-price-box">
-                                        <span class="new-price">$17.20</span>
-                                        <span class="old-price">$45.00</span>
-                                    </div>
-                                </div>
-                                <div class="quick-desc">
-                                    Designed for simplicity and made from high quality materials. Its sleek geometry and
-                                    material combinations creates a modern look.
-                                </div>
-                                <div class="select__color">
-                                    <h2>Select color</h2>
-                                    <ul class="color__list">
-                                        <li class="red"><a title="Red" href="#">Red</a></li>
-                                        <li class="gold"><a title="Gold" href="#">Gold</a></li>
-                                        <li class="orange"><a title="Orange" href="#">Orange</a></li>
-                                        <li class="orange"><a title="Orange" href="#">Orange</a></li>
-                                    </ul>
-                                </div>
-                                <div class="select__size">
-                                    <h2>Select size</h2>
-                                    <ul class="color__list">
-                                        <li class="l__size"><a title="L" href="#">L</a></li>
-                                        <li class="m__size"><a title="M" href="#">M</a></li>
-                                        <li class="s__size"><a title="S" href="#">S</a></li>
-                                        <li class="xl__size"><a title="XL" href="#">XL</a></li>
-                                        <li class="xxl__size"><a title="XXL" href="#">XXL</a></li>
-                                    </ul>
-                                </div>
-                                <div class="social-sharing">
-                                    <div class="widget widget_socialsharing_widget">
-                                        <h3 class="widget-title-modal">Share this product</h3>
-                                        <ul class="social__net social__net--2 d-flex justify-content-start">
-                                            <li class="facebook"><a href="#" class="rss social-icon"><i
-                                                    class="zmdi zmdi-rss"></i></a></li>
-                                            <li class="linkedin"><a href="#" class="linkedin social-icon"><i
-                                                    class="zmdi zmdi-linkedin"></i></a></li>
-                                            <li class="pinterest"><a href="#" class="pinterest social-icon"><i
-                                                    class="zmdi zmdi-pinterest"></i></a></li>
-                                            <li class="tumblr"><a href="#" class="tumblr social-icon"><i
-                                                    class="zmdi zmdi-tumblr"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="addtocart-btn">
-                                    <a href="#">Add to cart</a>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="quickview-wrapper">
+        <!-- Modal -->
+        <div class="modal fade" id="success" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal__container" role="document">
+                <div class="modal-content" style="margin-top: 22%">
+                    <%-- <div class="modal-header modal__header">
+                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                 aria-hidden="true">&times;</span></button>
+                     </div>--%>
+                    <div  id="statusWishlist" class="modal-body" style="margin: auto;font-size: 20px">
+                        Added to cart
                     </div>
                 </div>
             </div>

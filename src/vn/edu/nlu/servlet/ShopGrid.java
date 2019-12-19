@@ -92,7 +92,7 @@ public class ShopGrid extends HttpServlet {
     }
 
     public static void main(String[] args) {
-        ShopGrid s= new ShopGrid();
+        ShopGrid s = new ShopGrid();
         System.out.println(s.getCommand());
     }
 }
