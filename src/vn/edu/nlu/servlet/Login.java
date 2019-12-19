@@ -1,6 +1,7 @@
 package vn.edu.nlu.servlet;
 
 import vn.edu.nlu.control.ValidateParameter;
+import vn.edu.nlu.dao.HashCode;
 import vn.edu.nlu.fit.model.Users;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 
 @WebServlet("/Login")
@@ -27,6 +29,7 @@ public class Login extends HttpServlet {
         String passWord = ValidateParameter.validateParameter(request,"pass");
         Users user;
         try {
+            passWord = HashCode.hashCode(passWord);
             connection = getConnectDatabase.getConnectionSql();
             String sql= "select  * from  users where email=? and password=? and active=1";
             PreparedStatement pre = connection.prepareStatement(sql);
@@ -58,7 +61,7 @@ public class Login extends HttpServlet {
                     RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/login.jsp");
                     requestDispatcher.forward(request, response);
                 }
-        } catch (SQLException e) {
+        } catch (SQLException | NoSuchAlgorithmException e) {
             e.printStackTrace();
             response.sendRedirect(request.getContextPath()+"/Error404");
         }

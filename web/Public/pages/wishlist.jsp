@@ -38,6 +38,9 @@
     .row td {
         padding-left: 37px;
     }
+    div#wishlist_paginate{
+        display: none;
+    }
 </style>
 <body>
 <!--[if lte IE 9]>
@@ -46,7 +49,7 @@
 <![endif]-->
 
 <!-- Main wrapper -->
-<div class="wrapper" id="wrapper">
+<div class="wrapper" id="wrapper ">
 
     <!-- Header -->
     <%@ include file="include/header.jsp" %>
