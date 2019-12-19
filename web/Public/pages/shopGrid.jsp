@@ -78,7 +78,7 @@
     Pagination pagination;
     System.out.println("session + " + session.getAttribute("navType"));
     System.out.println("command + " + shop.getCommand());
-    if("list".equals(session.getAttribute("navType"))){
+    if ("list".equals(session.getAttribute("navType"))) {
         shop.setCommand("list");
     }
     System.out.println("setcommand + " + shop.getCommand());
@@ -171,13 +171,11 @@
                             <h3 class="wedget__title">Product Tags</h3>
                             <ul>
                                 <% ResultSet rsTag = (ResultSet) request.getAttribute("rsTag");
-//                                    rsTag.first();
-
                                     while (rsTag.next()) {
                                 %>
 
                                 <li><a href="<%=PathAbsolute.getPath("ShopGrid?type="+rsTag.getInt(1))%>">
-                                    <%=(rsTag.getString(2).length() < 30) ? rsTag.getString(2) : rsTag.getString(2).substring(0, 28) %>
+                                    <%=rsTag.getString("name")%>
                                 </a></li>
                                 <%--                                <li><a href="#">Business</a></li>--%>
                                 <% } %>
@@ -203,13 +201,14 @@
                                     <a class="tab" href="#nav-list" onclick="setNavType('list')" name="nav-list"><i
                                             class="fa fa-list"></i></a>
                                 </div>
-                                <p>Showing 1–<%=(shop.getCommand().equals("gird")?9:4) %> of <%=getListProductType.getList().size() %> results</p>
+                                <p>Showing 1–<%=(shop.getCommand().equals("gird") ? 9 : 4) %>
+                                    of <%=getListProductType.getList().size() %> results</p>
                                 <div class="orderby__wrapper">
                                     <span>Sort By</span>
                                     <select class="shot__byselect" name="sort">
                                         <option name="sortName">Default sorting by name</option>
-<%--                                        <option type="submit" name="sortPrice1" onclick="" >Price from low to high</option>--%>
-<%--                                        <option name="sortPrice2">Price from high to low</option>--%>
+                                        <%--                                        <option type="submit" name="sortPrice1" onclick="" >Price from low to high</option>--%>
+                                        <%--                                        <option name="sortPrice2">Price from high to low</option>--%>
                                     </select>
                                 </div>
                             </div>
@@ -227,17 +226,20 @@
                                 <!-- Start Single Product -->
                                 <div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
                                     <div class="product__thumb">
-                                        <a class="first__img" href="http://localhost:8080/BookStore/SingleProduct?id=<%=pd.getId()%>">
+                                        <a class="first__img"
+                                           href="http://localhost:8080/BookStore/SingleProduct?id=<%=pd.getId()%>">
                                             <img src="<%=pd.getImage()%>" class="abc" alt="product image"></a>
-                                        <a class="second__img animation1" href="http://localhost:8080/BookStore/SingleProduct?id=<%=pd.getId()%>">
+                                        <a class="second__img animation1"
+                                           href="http://localhost:8080/BookStore/SingleProduct?id=<%=pd.getId()%>">
                                             <img src="<%=pd.getImage_hover()%>" class="abc" alt="product image"></a>
                                         <div class="hot__box">
                                             <span class="hot-label">BEST SALLER</span>
                                         </div>
                                     </div>
                                     <div class="product__content content--center">
-                                        <h4><a href="http://localhost:8080/BookStore/SingleProduct?id=<%=pd.getId()%>"><%= pd.getName()%>
-                                        </a></h4>
+                                        <h4>
+                                            <a href="http://localhost:8080/BookStore/SingleProduct?id=<%=pd.getId()%>"><%= pd.getName()%>
+                                            </a></h4>
                                         <ul class="prize d-flex">
                                             <li>$<%=pd.getPrice()%>
                                             </li>
@@ -290,14 +292,17 @@
                                 <!-- Start Single Product -->
                                 <div class="list__view mb-3">
                                     <div class="thumb">
-                                        <a class="first__img" href="http://localhost:8080/BookStore/SingleProduct?id=<%=pd.getId()%>"><img
+                                        <a class="first__img"
+                                           href="http://localhost:8080/BookStore/SingleProduct?id=<%=pd.getId()%>"><img
                                                 src="<%=pd.getImage()%>" alt="product images"></a>
-                                        <a class="second__img animation1" href="http://localhost:8080/BookStore/SingleProduct?id=<%=pd.getId()%>"><img
+                                        <a class="second__img animation1"
+                                           href="http://localhost:8080/BookStore/SingleProduct?id=<%=pd.getId()%>"><img
                                                 src="<%=pd.getImage_hover()%>" alt="product images"></a>
                                     </div>
                                     <div class="content">
-                                        <h2><a href="http://localhost:8080/BookStore/SingleProduct?id=<%=pd.getId()%>"><%=pd.getName()%>
-                                        </a></h2>
+                                        <h2>
+                                            <a href="http://localhost:8080/BookStore/SingleProduct?id=<%=pd.getId()%>"><%=pd.getName()%>
+                                            </a></h2>
                                         <ul class="rating d-flex">
                                             <li class="on"><i class="fa fa-star-o"></i></li>
                                             <li class="on"><i class="fa fa-star-o"></i></li>
@@ -321,9 +326,10 @@
                                         </p>
 
                                         <ul class="cart__action d-flex">
-                                            <li class="cart"><a onclick="addToCart(<%=pd.getId()%>)">Add to cart</a></li>
-                                            <li class="wishlist"><a  onclick="addToWishList(<%=pd.getId()%>)"></a></li>
-<%--                                            <li class="compare"><a href="cart.html"></a></li>--%>
+                                            <li class="cart"><a onclick="addToCart(<%=pd.getId()%>)">Add to cart</a>
+                                            </li>
+                                            <li class="wishlist"><a onclick="addToWishList(<%=pd.getId()%>)"></a></li>
+                                            <%--                                            <li class="compare"><a href="cart.html"></a></li>--%>
                                         </ul>
 
                                     </div>
@@ -456,7 +462,7 @@
                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                  aria-hidden="true">&times;</span></button>
                      </div>--%>
-                    <div  id="statusWishlist" class="modal-body" style="margin: auto;font-size: 20px">
+                    <div id="statusWishlist" class="modal-body" style="margin: auto;font-size: 20px">
                         Added to cart
                     </div>
                 </div>
