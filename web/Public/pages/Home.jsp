@@ -1214,7 +1214,7 @@
                                  aria-hidden="true">&times;</span></button>
                      </div>--%>
                     <div  id="statusWishlist" class="modal-body" style="margin: auto;font-size: 20px">
-                        Thêm thành công.
+                        Added to cart
                     </div>
                 </div>
             </div>

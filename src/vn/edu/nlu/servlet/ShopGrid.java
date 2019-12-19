@@ -71,7 +71,7 @@ public class ShopGrid extends HttpServlet {
             request.setAttribute("rsCount", rsCount);
 
             connection = getConnectDatabase.getConnectionSql();
-            sql = "SELECT id_type, name FROM books WHERE active = 1 and rate>=3";
+            sql = "SELECT books.id_type, booktypes.`name`FROM books JOIN booktypes ON books.id_type=booktypes.id WHERE books.active = 1 and books.rate>=3 GROUP BY books.id_type;";
             PreparedStatement preTag = connection.prepareStatement(sql);
             ResultSet rsTag = preTag.executeQuery();
             request.setAttribute("rsTag", rsTag);

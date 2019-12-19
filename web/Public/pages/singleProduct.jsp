@@ -631,7 +631,7 @@
             <div class="modal-dialog modal__container" role="document">
                 <div class="modal-content" style="margin-top: 22%">
                     <div class="modal-body" style="margin: auto;font-size: 20px">
-                        Thêm thành công.
+                        Added to cart
                     </div>
                 </div>
             </div>
