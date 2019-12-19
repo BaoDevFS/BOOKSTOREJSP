@@ -2,6 +2,7 @@ package vn.edu.nlu.servletad;
 
 import vn.edu.nlu.control.PathAbsolute;
 import vn.edu.nlu.control.SaveImage;
+import vn.edu.nlu.dao.HashCode;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
 import javax.imageio.ImageIO;
@@ -16,6 +17,7 @@ import javax.servlet.http.Part;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -51,6 +53,7 @@ public class UserAdd extends HttpServlet {
         String email = request.getParameter("email").trim();
         String confirmemail = request.getParameter("confirmemail");
         try {
+            password = HashCode.hashCode(password);
             Connection connection = database.getConnectionSql();
             String checkeMail = "SELECT users.email FROM users WHERE email=?";
             PreparedStatement statement =connection.prepareStatement(checkeMail);
@@ -84,7 +87,7 @@ public class UserAdd extends HttpServlet {
                 RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/userAdd.jsp");
                 requestDispatcher.forward(request,response);
             }
-        } catch (SQLException e) {
+        } catch (SQLException | NoSuchAlgorithmException e) {
             e.printStackTrace();
             request.setAttribute("status",EMAIL_EXITS);
             RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/userAdd.jsp");
