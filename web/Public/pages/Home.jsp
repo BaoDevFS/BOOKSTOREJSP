@@ -259,7 +259,7 @@
                             </div>
                         </div>
                         <div class="product__content content--center">
-                            <h4><a href="http://localhost:8080/BookStore/SingleProduct"><%=rsNew.getString(2)%>
+                            <h4><a href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsNew.getString("id")%>"><%=rsNew.getString(2)%>
                             </a></h4>
                             <ul class="prize d-flex">
                                 <li>$<%=rsNew.getFloat(7)%>

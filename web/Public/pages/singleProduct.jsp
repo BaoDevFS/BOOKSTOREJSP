@@ -30,9 +30,9 @@
     <link rel="stylesheet" href="Public/css/custom.css">
 
     <script src="Public/js/vendor/modernizr-3.5.0.min.js"></script>
-<%--    <script src="Public/js/vendor/jquery-3.2.1.min.js"></script>--%>
-<%--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>--%>
-<%--    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>--%>
+    <%--    <script src="Public/js/vendor/jquery-3.2.1.min.js"></script>--%>
+    <%--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>--%>
+    <%--    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>--%>
     <!-- Modernizer js -->
 </head>
 <body>
@@ -81,13 +81,6 @@
                                     <div class="fotorama wn__fotorama__action" data-nav="thumbs">
                                         <a href="Public/images/1.html"><img src="<%=rsB.getString(3)%>"
                                                                             alt=""></a>
-                                        <%--                                        <a href="Public/images/2.jpg"><img src="Public/images/product/2.jpg" alt=""></a>--%>
-                                        <%--                                        <a href="Public/images/3.jpg"><img src="Public/images/product/3.jpg" alt=""></a>--%>
-                                        <%--                                        <a href="Public/images/4.jpg"><img src="Public/images/product/4.jpg" alt=""></a>--%>
-                                        <%--                                        <a href="Public/images/5.jpg"><img src="Public/images/product/5.jpg" alt=""></a>--%>
-                                        <%--                                        <a href="Public/images/6.jpg"><img src="Public/images/product/6.jpg" alt=""></a>--%>
-                                        <%--                                        <a href="Public/images/7.jpg"><img src="Public/images/product/7.jpg" alt=""></a>--%>
-                                        <%--                                        <a href="Public/images/8.jpg"><img src="Public/images/product/8.jpg" alt=""></a>--%>
                                     </div>
                                 </div>
                             </div>
@@ -127,7 +120,7 @@
                                             </button>
                                         </div>
                                         <div class="product-addto-links clearfix">
-                                            <a class="wishlist" href="#"></a>
+                                            <a class="wishlist" onclick="addToWishList(<%=rsB.getString("id")%>)"></a>
                                             <a class="compare" href="#"></a>
                                         </div>
                                     </div>
@@ -344,10 +337,9 @@
                                                     <li><a class="cart"
                                                            onclick="addToCart(<%=rsRe.getString("id")%>)"><i
                                                             class="fa fa-shopping-cart"></i></a></li>
-                                                    <li><a class="wishlist" href="wishList.html"><i
+                                                    <li><a class="wishlist"
+                                                           onclick="addToWishList(<%=rsRe.getString("id")%>)"><i
                                                             class="fa fa-heart"></i></a></li>
-                                                    <li><a class="compare" href="#"><i class="fa fa-hashtag"></i></a>
-                                                    </li>
                                                     <li><a data-toggle="modal" title="Quick View"
                                                            class="quickview modal-view detail-link"
                                                            onclick="propupbook(<%=rsRe.getString("id")%>)"><i
@@ -390,20 +382,21 @@
                                                 src="<%=rsSell.getString(3)%>" alt="product image"></a>
                                         <a class="second__img animation1"
                                            href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsSell.getString("id")%>"><img
-                                                src="<%=rsSell.getString(3)%>" alt="product
-        image"></a>
+                                                src="<%=rsSell.getString(4)%>" alt="product image"></a>
                                         <div class="hot__box">
                                             <span class="hot-label">BEST SALLER</span>
                                         </div>
                                     </div>
                                     <div class="product__content content--center">
                                         <h4>
-                                            <a href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsSell.getString("id")%>">robin
-                                                parrish</a></h4>
+                                            <a href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsSell.getString("id")%>">
+                                                <%=rsSell.getString(2)%>
+                                            </a></h4>
                                         <ul class="prize d-flex">
-                                            <li>$<%=rsSell.getString(4)%>
+                                            <li>$<%=rsSell.getString(7)%>
                                             </li>
-                                            <li class="old_prize">$35.00</li>
+                                            <li class="old_prize">$<%=rsSell.getString(6)%>
+                                            </li>
                                         </ul>
                                         <div class="action">
                                             <div class="actions_inner">
@@ -411,10 +404,8 @@
                                                     <li><a class="cart"
                                                            onclick="addToCart(<%=rsSell.getString("id")%>)"><i
                                                             class="fa fa-shopping-cart"></i></a></li>
-                                                    <li><a class="wishlist" href="wishList.html"><i
-                                                            class="fa fa-heart"></i></a></li>
-                                                    <li><a class="compare" href="#"><i class="fa fa-hashtag"></i></a>
-                                                    </li>
+                                                    <li><a class="wishlist" ><i
+                                                            onclick="addToWishList(<%=rsRe.getString("id")%>)"   class="fa fa-heart"></i></a></li>
                                                     <li><a data-toggle="modal" title="Quick View"
                                                            class="quickview modal-view detail-link"
                                                            onclick="propupbook(<%=rsSell.getString("id")%>)"><i
@@ -655,7 +646,6 @@
 <script src="Public/js/bootstrap.min.js"></script>
 <script src="Public/js/plugins.js"></script>
 <script src="Public/js/active.js"></script>
-<%--<script src="https://code.jquery.com/jquery-3.3.1.js"></script>--%>
 <script src="Public/js/animationforcart.js"></script>
 <script src="Public/js/addToCart.js"></script>
 <script src="Public/js/carttoheader.js"></script>
