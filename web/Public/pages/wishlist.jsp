@@ -38,6 +38,9 @@
     .row td {
         padding-left: 37px;
     }
+    div#wishlist_paginate{
+        display: none;
+    }
 </style>
 <body>
 <!--[if lte IE 9]>
