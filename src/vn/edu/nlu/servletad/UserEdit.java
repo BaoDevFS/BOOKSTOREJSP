@@ -2,6 +2,7 @@ package vn.edu.nlu.servletad;
 
 import vn.edu.nlu.control.PathAbsolute;
 import vn.edu.nlu.control.SaveImage;
+import vn.edu.nlu.dao.HashCode;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
 import javax.imageio.ImageIO;
@@ -16,6 +17,7 @@ import javax.servlet.http.Part;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -54,6 +56,7 @@ public class UserEdit extends HttpServlet {
         String group = request.getParameter("group");
         String active = request.getParameter("active");
         try {
+            password = HashCode.hashCode(password);
             con = database.getConnectionSql();
             PreparedStatement pr = con.prepareStatement(sql);
             pr.setString(1, firstName);
@@ -75,7 +78,7 @@ public class UserEdit extends HttpServlet {
             }else {
                 response.sendRedirect(request.getContextPath()+"/Admin/UserEdit?id="+id);
             }
-        } catch (SQLException e) {
+        } catch (SQLException | NoSuchAlgorithmException e) {
             e.printStackTrace();
             response.sendRedirect(request.getContextPath()+"/Error404");
         }

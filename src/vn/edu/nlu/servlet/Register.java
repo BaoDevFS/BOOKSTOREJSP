@@ -61,7 +61,7 @@ public class Register extends HttpServlet {
             return;
         }
         try {
-//            password = HashCode.hashCode(password);
+            password = HashCode.hashCode(password);
             user = new Users(userName, email,password , phone);
             boolean isExistEmail = checkRegister_email(email);
             if (isExistEmail) {
@@ -79,7 +79,7 @@ public class Register extends HttpServlet {
                     response.sendRedirect(request.getContextPath() + "/Login");
                 }
             }
-        } catch (IOException e) {
+        } catch (IOException | NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
     }
