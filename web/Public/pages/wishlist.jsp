@@ -49,7 +49,7 @@
 <![endif]-->
 
 <!-- Main wrapper -->
-<div class="wrapper" id="wrapper">
+<div class="wrapper" id="wrapper ">
 
     <!-- Header -->
     <%@ include file="include/header.jsp" %>
