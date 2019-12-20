@@ -55,7 +55,7 @@
                     <div class="bradcaump__inner text-center">
                         <h2 class="bradcaump-title">Shop Single</h2>
                         <nav class="bradcaump-content">
-                            <a class="breadcrumb_item" href="Public/index.html">Home</a>
+                            <a class="breadcrumb_item" href="/Home">Home</a>
                             <span class="brd-separetor">/</span>
                             <span class="breadcrumb_item active">Shop Single</span>
                         </nav>
@@ -404,8 +404,9 @@
                                                     <li><a class="cart"
                                                            onclick="addToCart(<%=rsSell.getString("id")%>)"><i
                                                             class="fa fa-shopping-cart"></i></a></li>
-                                                    <li><a class="wishlist" ><i
-                                                            onclick="addToWishList(<%=rsRe.getString("id")%>)"   class="fa fa-heart"></i></a></li>
+                                                    <li><a class="wishlist"><i
+                                                            onclick="addToWishList(<%=rsSell.getString("id")%>)"
+                                                            class="fa fa-heart"></i></a></li>
                                                     <li><a data-toggle="modal" title="Quick View"
                                                            class="quickview modal-view detail-link"
                                                            onclick="propupbook(<%=rsSell.getString("id")%>)"><i
