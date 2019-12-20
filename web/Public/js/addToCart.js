@@ -5,11 +5,12 @@ function addToCart(id) {
         data: {
             id: id, quantity: 0
         },
-        complete:function (data) {
+        complete: function (data) {
             console.log(data);
             // if(data.responseText==""){
-                drawCart();
-                $('#success').modal('show');
+            drawCart();
+            $('#statusWishlist').text("Added to cart");
+            $('#success').modal('show');
             // }else{
             //     try{
             //         var json = JSON.parse(data.responseText);
@@ -23,15 +24,16 @@ function addToCart(id) {
     });
 }
 
-var i=0;
+var i = 0;
 
-function addToCartShow(id,quantum) {
+function addToCartShow(id, quantum) {
     $.ajax({
         url: "http://localhost:8080/BookStore/Cart",
         type: "post",
-        data: {id: id,quantity:quantum},
+        data: {id: id, quantity: quantum},
         complete: function (resultText) {
             drawCart();
+            $('#statusWishlist').text("Added to cart");
             $('#success').modal('show');
         }
     });
@@ -42,24 +44,25 @@ function getidshow() {
 }
 
 function propupbook(id) {
-    i=id;
+    i = id;
     $.ajax({
         url: "http://localhost:8080/BookStore/AjaxBookMini",
         method: "get",
-        data:{
-            id:id
+        data: {
+            id: id
         },
         dataType: 'json',
         success: function (data) {
-            $('#imageBook').html('<img  src="'+data.image+'">');
+            $('#imageBook').html('<img  src="' + data.image + '">');
             $('#nameBook').text(data.name);
-            $('#priceBook').text("$"+data.price);
+            $('#priceBook').text("$" + data.price);
             $('#descriptionBook').text(data.description);
             $('#typeBook').text(data.booktype);
             $('#productmodal').modal('show');
         }
     });
 }
+
 function addToWishList(id) {
     $.ajax({
         url: "http://localhost:8080/BookStore/AjaxWishList",
@@ -67,11 +70,11 @@ function addToWishList(id) {
         data: {
             id: id
         },
-        complete:function (data) {
-            var json  = JSON.parse(data.responseText);
-            if(json.status==1){
+        complete: function (data) {
+            var json = JSON.parse(data.responseText);
+            if (json.status == 1) {
                 $('#statusWishlist').text("Added to wishlist");
-            }else{
+            } else {
                 $('#statusWishlist').text("Had in wishlist ");
             }
             $('#success').modal('show');

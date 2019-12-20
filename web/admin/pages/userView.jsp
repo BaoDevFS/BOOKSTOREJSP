@@ -116,7 +116,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <input id="password"type="text"disabled="disabled" value="<%=rs.getString("password")%>" class="validate">
+                                            <input id="password"type="password"disabled="disabled" value="<%=rs.getString("password")%>" class="validate">
                                             <label for="password">Password</label>
                                         </div>
                                     </div>

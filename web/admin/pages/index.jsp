@@ -52,7 +52,7 @@
         <div class="col-md-2 tab-hide">
         </div>
         <!--== MY ACCCOUNT ==-->
-        <div class="col-md-2 col-sm-3 col-xs-6">
+        <div class="col-md-2 col-sm-3 col-xs-6 ">
             <!-- Dropdown Trigger -->
             <a class='waves-effect dropdown-button top-user-pro' href='<%=PathAbsolute.getPath("Admin/Index")%>'
                data-activates='top-menu'>

@@ -1,6 +1,7 @@
 package vn.edu.nlu.servletad;
 
 import vn.edu.nlu.control.ValidateParameter;
+import vn.edu.nlu.dao.HashCode;
 import vn.edu.nlu.fit.model.Users;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -28,6 +30,7 @@ public class Login extends HttpServlet {
         String email = ValidateParameter.validateParameter(request,"email");
         String password= ValidateParameter.validateParameter(request,"password");
         try {
+            password = HashCode.hashCode(password);
             connection = database.getConnectionSql();
             String sql ="SELECT * from users where email=? and password=? and `group` =? and active= 1";
             PreparedStatement pr = connection.prepareStatement(sql);
@@ -60,7 +63,7 @@ public class Login extends HttpServlet {
                 RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/login.jsp");
                 requestDispatcher.forward(request,response);
             }
-        } catch (SQLException e) {
+        } catch (SQLException | NoSuchAlgorithmException e) {
             response.sendRedirect(request.getContextPath()+"/Error404");
             e.printStackTrace();
         }

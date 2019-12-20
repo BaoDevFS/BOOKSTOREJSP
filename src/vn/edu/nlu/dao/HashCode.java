@@ -16,6 +16,6 @@ public class HashCode {
         return sb.toString();
     }
     public static void main(String[] args) throws NoSuchAlgorithmException {
-		System.out.println(hashCode("1234"));
+		System.out.println(hashCode("special45"));
     }
 }

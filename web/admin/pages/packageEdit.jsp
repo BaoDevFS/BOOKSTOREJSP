@@ -3,7 +3,7 @@
 <html lang="en"><!-- Mirrored from rn53themes.net/themes/demo/lava-admin/packageEdit.html by HTTrack Website
         Copier/3.x [XR&CO'2014], Wed, 23 Oct 2019 13:22:03 GMT -->
 <head>
-    <title>Lava Material - Web Application and Website Multipurpose Admin Panel Template</title>
+    <title>Product Edit</title>
     <!--== META TAGS ==-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
