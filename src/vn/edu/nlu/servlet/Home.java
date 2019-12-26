@@ -69,7 +69,6 @@ public class Home extends HttpServlet {
             ResultSet rsCook = pCook.executeQuery();
             request.setAttribute("rsCook", rsCook);
 
-
             request.getRequestDispatcher("/Public/pages/Home.jsp").forward(request, response);
         } catch (SQLException e) {
             e.printStackTrace();

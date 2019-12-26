@@ -189,14 +189,14 @@
                     "className":"product-thumbnail",
                     "data": "books",
                     "render": function(data, typet, row) {
-                        return '<a href="#"><img width="100px"  height="100px" src='+data.image+' alt="productimg"></a>';
+                        return '<a href="http://localhost:8080/BookStore/SingleProduct?id='+data.id+'"><img width="100px"  height="100px" src='+data.image+' alt="productimg"></a>';
                     }
                 },
                 {   "orderable": false,
                     "className":"product-name",
                     "data": "books",
                     "render": function(data, typet, row) {
-                        return '<a href="#">'+data.name+'</a>';
+                        return '<a href="http://localhost:8080/BookStore/SingleProduct?id='+data.id+'">'+data.name+'</a>';
                     }
                 },
                 {

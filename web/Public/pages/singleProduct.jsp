@@ -55,7 +55,7 @@
                     <div class="bradcaump__inner text-center">
                         <h2 class="bradcaump-title">Shop Single</h2>
                         <nav class="bradcaump-content">
-                            <a class="breadcrumb_item" href="Public/index.html">Home</a>
+                            <a class="breadcrumb_item" href="/Home">Home</a>
                             <span class="brd-separetor">/</span>
                             <span class="breadcrumb_item active">Shop Single</span>
                         </nav>
@@ -101,12 +101,8 @@
                                         <span>$<%=rsB.getString(7)%></span>
                                     </div>
                                     <div class="product__overview">
-                                        <p>Ideal for cold-weather training or work outdoors, the Chaz Hoodie promises
-                                            superior warmth with every wear.
-                                            Thick material blocks out the wind as ribbed cuffs and bottom band seal in
-                                            body heat.</p>
-                                        <p>Ideal for cold-weather training or work outdoors, the Chaz Hoodie promises
-                                            superior warmth with every wear.
+                                        <p><%=rsB.getString("description").substring(0,40)%></p>
+                                        <p><%=rsB.getString("description").substring(41,60)%>
                                         </p>
                                     </div>
                                     <div class="box-tocart d-flex">
@@ -169,26 +165,7 @@
                             <!-- Start Single Tab Content -->
                             <div class="pro__tab_label tab-pane fade show active" id="nav-details" role="tabpanel">
                                 <div class="description__attribute">
-                                    <p>Ideal for cold-weather training or work outdoors, the Chaz Hoodie promises
-                                        superior warmth with every wear.
-                                        Thick material blocks out the wind as ribbed cuffs and bottom band seal in body
-                                        heat.Ideal for cold-weather
-                                        training or work outdoors, the Chaz Hoodie promises superior warmth with every
-                                        wear. Thick material blocks out
-                                        the wind as ribbed cuffs and bottom band seal in body heat.Ideal for
-                                        cold-weather training or work outdoors, the
-                                        Chaz Hoodie promises superior warmth with every wear. Thick material blocks out
-                                        the wind as ribbed cuffs and
-                                        bottom band seal in body heat.Ideal for cold-weather training or work outdoors,
-                                        the Chaz Hoodie promises
-                                        superior warmth with every wear. Thick material blocks out the wind as ribbed
-                                        cuffs and bottom band seal in body
-                                        heat.</p>
-                                    <ul>
-                                        <li>• Two-tone gray heather hoodie.</li>
-                                        <li>• Drawstring-adjustable hood.</li>
-                                        <li>• Machine wash/dry.</li>
-                                    </ul>
+                                    <p><%=rsB.getString("description")%>.</p>
                                 </div>
                             </div>
                             <!-- End Single Tab Content -->
@@ -403,8 +380,9 @@
                                                     <li><a class="cart"
                                                            onclick="addToCart(<%=rsSell.getString("id")%>)"><i
                                                             class="fa fa-shopping-cart"></i></a></li>
-                                                    <li><a class="wishlist" ><i
-                                                            onclick="addToWishList(<%=rsSell.getString("id")%>)"   class="fa fa-heart"></i></a></li>
+                                                    <li><a class="wishlist"><i
+                                                            onclick="addToWishList(<%=rsSell.getString("id")%>)"
+                                                            class="fa fa-heart"></i></a></li>
                                                     <li><a data-toggle="modal" title="Quick View"
                                                            class="quickview modal-view detail-link"
                                                            onclick="propupbook(<%=rsSell.getString("id")%>)"><i
@@ -442,9 +420,8 @@
                                 <li><a href="<%=PathAbsolute.getPath("ShopGrid?type="+rsCategory.getInt(1))%>">
                                     <%=rsCategory.getString(2) %>
                                     <span>(<%=rsCount.getInt(3) %>)</span>
-                                    <% } %>
                                 </a></li>
-
+                                <% } %>
                             </ul>
                         </aside>
                         <aside class="wedget__categories pro--range">
@@ -466,14 +443,6 @@
                                     </form>
                                 </div>
                             </div>
-                        </aside>
-                        <aside class="wedget__categories poroduct--compare">
-                            <h3 class="wedget__title">Compare</h3>
-                            <ul>
-                                <li><a href="#">x</a><a href="#">Condimentum posuere</a></li>
-                                <li><a href="#">x</a><a href="#">Condimentum posuere</a></li>
-                                <li><a href="#">x</a><a href="#">Dignissim venenatis</a></li>
-                            </ul>
                         </aside>
                         <aside class="wedget__categories poroduct--tag">
                             <h3 class="wedget__title">Product Tags</h3>
@@ -576,7 +545,8 @@
                                                                     </button>
                                                                 </div>
                                                                 <div class="product-addto-links clearfix">
-                                                                    <a class="wishlist" onclick="addToWishList(getidshow())"></a>
+                                                                    <a class="wishlist"
+                                                                       onclick="addToWishList(getidshow())"></a>
                                                                 </div>
                                                             </div>
                                                             <div class="product_meta">
