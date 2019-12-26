@@ -78,8 +78,7 @@
                         <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim
                             placerat facer
                             possim assum. </p>
-                        <form id="contact-form" action="https://demo.hasthemes.com/boighor-preview/boighor-v3/mail.php"
-                              method="post">
+                        <form id="contact-form" action="http://localhost:8080/BookStore/Contact" method="post">
                             <div class="single-contact-form space-between">
                                 <input type="text" name="firstname" placeholder="First Name*">
                                 <input type="text" name="lastname" placeholder="Last Name*">

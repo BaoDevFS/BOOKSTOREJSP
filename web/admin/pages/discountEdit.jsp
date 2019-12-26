@@ -161,8 +161,14 @@
 <script src="<%=PathAbsolute.getPath("admin/js/bootstrap.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/materialize.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/custom.js")%>"></script>
-
+<script src="<%=PathAbsolute.getPath("admin/js/active.js")%>"></script>
+<script>
+    $(document).ready(function () {
+        activeMenu();
+    });
+</script>
 </body>
+
 
 
 <!-- Mirrored from rn53themes.net/themes/demo/lava-admin/discountEdit.html by HTTrack Website Copier/3.x

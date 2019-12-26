@@ -1,5 +1,6 @@
 package vn.edu.nlu.servletad;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,8 +17,7 @@ public class Discount extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
-        response.getWriter().print("hẻ hẻ");
-//        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/discount.jsp");
-//        requestDispatcher.forward(request,response);
+        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/admin/pages/discount.jsp");
+        requestDispatcher.forward(request,response);
     }
 }

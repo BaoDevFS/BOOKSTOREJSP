@@ -204,6 +204,12 @@
 <%--<script src='https://cdnjs.cloudflare.com/ajax/libs/summernote/0.6.6/summernote.min.js'></script>--%>
 <%--<script src="<%=PathAbsolute.getPath("admin/js/text-editor-init.js")%>">--%>
 <%--</script>--%>
+<script src="<%=PathAbsolute.getPath("admin/js/active.js")%>"></script>
+<script>
+    $(document).ready(function () {
+        activeMenu();
+    });
+</script>
 <script>
     <%= getStatus((int)request.getAttribute("status"))%>
     ClassicEditor
