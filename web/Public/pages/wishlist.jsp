@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>My Wishlist |  BookBGQ Store</title>
+    <title>My Wishlist | BookBGQ Store</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -32,13 +32,15 @@
     <script src="Public/js/vendor/modernizr-3.5.0.min.js"></script>
 </head>
 <style>
-    .row th{
+    .row th {
         padding-left: 35px;
     }
+
     .row td {
         padding-left: 37px;
     }
-    div#wishlist_paginate{
+
+    div#wishlist_paginate {
         display: none;
     }
 </style>
@@ -143,9 +145,10 @@
                 }
             },
             columns: [
-                {   "orderable": false,
-                    "className":"null",
-                    "render": function(data, typet, row) {
+                {
+                    "orderable": false,
+                    "className": "null",
+                    "render": function (data, typet, row) {
                         return '';
                     }
                 },
@@ -162,7 +165,7 @@
                     "className": "product-thumbnail",
                     "data": "books",
                     "render": function (data, typet, row) {
-                        return '<a href="#"><img width="100px"  height="100px" src=' + data.image + ' alt="productimg"></a>';
+                        return '<a href="http://localhost:8080/BookStore/SingleProduct?id=' + data.id + '"><img width="100px"  height="100px" src=' + data.image + ' alt="productimg"></a>';
                     }
                 },
                 {
@@ -170,7 +173,7 @@
                     "className": "product-name",
                     "data": "books",
                     "render": function (data, typet, row) {
-                        return '<a href="#">' + data.name + '</a>';
+                        return '<a href="http://localhost:8080/BookStore/SingleProduct?id=' + data.id + '">' + data.name + '</a>';
                     }
                 },
                 {
@@ -184,9 +187,9 @@
                     "className": "product-stock-status",
                     "data": "books",
                     "render": function (data, typet, row) {
-                        if(data.active==1){
+                        if (data.active == 1) {
                             return "In stock"
-                        }else{
+                        } else {
                             return "Out stock"
                         }
                     }
@@ -197,7 +200,6 @@
                     "render": function (data, typet, row) {
                         return '<a class="delete" style="cursor: pointer"><i class="fa fa-trash fa-2x"></i></a>';
                     }
-
                 },
                 {
                     "orderable": false,
@@ -208,24 +210,25 @@
                         // <i class="fas fa-trash-alt"></i>
                     }
                 }
-            ], columnDefs:[
-                { "targets": [ 1 ],
-                    "visible":false
+            ], columnDefs: [
+                {
+                    "targets": [1],
+                    "visible": false
                 },
                 {
-                    "targets": [ 0 ],
+                    "targets": [0],
                     "searchable": false,
                     "orderable": false,
                 }
             ],
-            "order": [[ 4, 'asc' ]]
+            "order": [[4, 'asc']]
         });
-        table.on( 'draw.dt', function () {
+        table.on('draw.dt', function () {
             var PageInfo = $('#wishlist').DataTable().page.info();
-            table.column(0, { page: 'current' }).nodes().each( function (cell, i) {
+            table.column(0, {page: 'current'}).nodes().each(function (cell, i) {
                 cell.innerHTML = i + 1 + PageInfo.start;
-            } );
-        } ).draw();
+            });
+        }).draw();
         $('#wishlist tbody').on('click', 'a.delete', function () {
             var row = table.row($(this).parents('tr'));
             var data = row.data();
