@@ -66,10 +66,16 @@
                 </div>
             </li>
             <li><a href="javascript:void(0)" class="collapsible-header booking"><i class="fa fa-ticket" aria-hidden="true"></i>
-                Booking & Enquiry</a>
+                Booking & Contact</a>
                 <div class="collapsible-body left-sub-menu contentbooking">
                     <ul>
-                        <li class="bookingproduct" ><a href="<%= PathAbsolute.getPath("Admin/PackageBookingAll")%>">Product</a>
+                        <li class="bookingproduct">
+                            <a href="<%= PathAbsolute.getPath("Admin/PackageBookingAll")%>">Product</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="contactproduct">
+                            <a href="<%= PathAbsolute.getPath("Admin/Contact")%>">Contact</a>
                         </li>
                     </ul>
                 </div>
