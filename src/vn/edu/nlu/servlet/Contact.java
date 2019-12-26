@@ -44,13 +44,9 @@ public class Contact extends HttpServlet {
             pre.setString(7, subject);
             int status = pre.executeUpdate();
             if (status == 1) {
-                request.setAttribute("status",1);
-                RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/contact.jsp");
-                requestDispatcher.forward(request, response);
+                response.getWriter().write("Send success");
             } else {
-                request.setAttribute("status",0);
-                RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/contact.jsp");
-                requestDispatcher.forward(request, response);
+                response.getWriter().write("Send message not success! Try again.");
             }
         } catch (SQLException e) {
             e.printStackTrace();

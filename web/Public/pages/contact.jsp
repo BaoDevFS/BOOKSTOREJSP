@@ -150,7 +150,18 @@
     <!-- Footer Area -->
     <%@ include file="include/footer.jsp" %>
     <!-- //Footer Area -->
-
+    <div id="quickview-wrapper">
+        <!-- Modal -->
+        <div class="modal fade" id="success" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal__container" role="document">
+                <div class="modal-content" style="margin-top: 22%">
+                    <div id="statusWishlist" class="modal-body" style="margin: auto;font-size: 20px">
+                       <i class="fa fa-check-circle fa-5x" style="color: green"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- //Main wrapper -->
 
@@ -281,12 +292,11 @@
         });
     }
 </script>
-
 <script src="Public/js/active.js"></script>
 <script src="Public/js/carttoheader.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script src="Public/js/search.js"></script>
+<script src="Public/js/show.js"></script>
 <script>
     $(function () {
         drawCart();
