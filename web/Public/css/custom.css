@@ -193,13 +193,13 @@
     font-size: 13px;
     width: 20px; }
 .widget .menu-advanced li.active {
-    background-color: #009f8b; }
+    background-color: #016fe4; }
 .widget .menu-advanced li.active a {
     color: #fff; }
 .widget .menu-advanced li.active a .fa {
     color: #fff; }
 .widget .menu-advanced li.active:hover {
-    background-color: #009f8b; }
+    background-color: #0f50e4; }
 .widget .menu-advanced li.active:after {
     color: #fff; }
 .widget .menu-advanced li:after {

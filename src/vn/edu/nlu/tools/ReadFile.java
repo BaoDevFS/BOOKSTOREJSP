@@ -178,7 +178,7 @@ public class ReadFile {
 	}
 
 	public static void main(String[] args) {
-		ReadFile read = new ReadFile("D:\\00_HK1_3\\LTW\\BOOKSTOREJSP\\database\\book.sql");
+//		ReadFile read = new ReadFile("D:\\00_HK1_3\\LTW\\BOOKSTOREJSP\\database\\book.sql");
 //	System.out.println(System.getProperty("user.dir"));
 //	System.out.println(read.getNameTable("CREATE TABLE `importcoupons`  ("));
 //	System.out.println(read.indentificationFotter(" PRIMARY KEY (`id`) USING BTREE,"));

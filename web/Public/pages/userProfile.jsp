@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Contact |  BookBGQ Store</title>
+    <title>User profile |  BookBGQ Store</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -99,7 +99,7 @@
                             <div class="background-white p20 mb30">
                                 <h3 class="page-title">
                                     Contact Information <i id="contact" class="fa fa-check hidden" style="color: green"></i>
-                                    <a onclick="editinfor('contact')" class="btn btn-primary btn-xs pull-right">Save</a>
+                                    <a onclick="editinfor('contact')" class="btn btn-primary btn-xs pull-right text-white">Save</a>
                                 </h3>
 
                                 <div class="row">
@@ -137,7 +137,7 @@
                             <div class="background-white p20 mb30">
                                 <h3 class="page-title">
                                     Address <i id="address" class="fa fa-check hidden" style="color: green"></i>
-                                    <a onclick="editinfor('address')" class="btn btn-primary btn-xs pull-right">Save</a>
+                                    <a onclick="editinfor('address')" class="btn btn-primary btn-xs pull-right text-white">Save</a>
                                 </h3>
 
                                 <div class="row">
@@ -151,7 +151,7 @@
                             <div class="background-white p20 mb30">
                                 <h3 class="page-title">
                                     Biography
-                                    <a  class="btn btn-primary btn-xs pull-right">Save</a>
+                                    <a  class="btn btn-primary btn-xs pull-right text-white">Save</a>
                                 </h3>
 
                                 <textarea class="form-control" rows="7"></textarea>

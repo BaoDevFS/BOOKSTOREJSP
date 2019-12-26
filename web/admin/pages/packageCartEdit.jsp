@@ -73,7 +73,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input type="submit" class="waves-effect waves-light btn-large" value="Submit">
+                            <input type="submit" class="waves-effect waves-light btn-primary " style="padding: 10px">
                         </div>
                     </div>
                 </form>

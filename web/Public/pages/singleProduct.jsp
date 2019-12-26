@@ -121,7 +121,6 @@
                                         </div>
                                         <div class="product-addto-links clearfix">
                                             <a class="wishlist" onclick="addToWishList(<%=rsB.getString("id")%>)"></a>
-                                            <a class="compare" href="#"></a>
                                         </div>
                                     </div>
                                     <div class="product_meta">
@@ -578,8 +577,8 @@
                                                                     </button>
                                                                 </div>
                                                                 <div class="product-addto-links clearfix">
-                                                                    <a class="wishlist" href="#"></a>
-                                                                    <a class="compare" href="#"></a>
+                                                                    <a class="wishlist"
+                                                                       onclick="addToWishList(getidshow())"></a>
                                                                 </div>
                                                             </div>
                                                             <div class="product_meta">
@@ -631,7 +630,7 @@
         <div class="modal fade" id="success" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal__container" role="document">
                 <div class="modal-content" style="margin-top: 22%">
-                    <div class="modal-body" style="margin: auto;font-size: 20px">
+                    <div id="statusWishlist" class="modal-body" style="margin: auto;font-size: 20px">
                         Added to cart
                     </div>
                 </div>
