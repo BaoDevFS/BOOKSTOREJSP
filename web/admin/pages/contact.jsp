@@ -136,6 +136,9 @@
         "use strict";
         activeMenu();
         var table = $('#datable_1').DataTable({
+            "ordering": false,
+            "lengthChange": false,
+            "info": false,
             "ajax": {
                 "url": "http://localhost:8080/BookStore/Admin/AjaxContact",
                 "dataType": "json",
