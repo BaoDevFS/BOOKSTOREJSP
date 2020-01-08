@@ -65,9 +65,11 @@ public class SingleProduct extends HttpServlet {
             request.setAttribute("rsSell", rsSell);
 
             request.getRequestDispatcher("/Public/pages/singleProduct.jsp").forward(request, response);
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
     }
+
 }
