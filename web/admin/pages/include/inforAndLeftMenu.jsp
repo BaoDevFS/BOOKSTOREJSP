@@ -9,7 +9,8 @@
             </li>
 
             <li>
-                <h5><%=GetUser.getUser(session).getFullname()%><span> <%=GetUser.getUser(session).getEmail()%></span></h5>
+                <h5><%=GetUser.getUser(session).getFullname()%><span> <%=GetUser.getUser(session).getEmail()%></span>
+                </h5>
             </li>
             <li></li>
         </ul>
@@ -18,63 +19,70 @@
     <div class="sb2-13">
         <ul class="collapsible" data-collapsible="accordion">
 
-            <li><a href="<%= PathAbsolute.getPath("Admin/Index")%>" class="menu-active"><i class="fa fa-bar-chart"
-                                                                                          aria-hidden="true"></i>
+            <li><a href="<%= PathAbsolute.getPath("Admin/Index")%>" class="dashboard">
+                <i class="fa fa-bar-chart" aria-hidden="true"></i>
                 Dashboard</a>
             </li>
-            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-user" aria-hidden="true"></i>
+            <li><a href="javascript:void(0)" class="collapsible-header users"><i class="fa fa-user" aria-hidden="true"></i>
                 Users</a>
-                <div class="collapsible-body left-sub-menu">
+                <div class="collapsible-body left-sub-menu contentuser">
                     <ul>
-                        <li><a href="<%= PathAbsolute.getPath("Admin/UserAll")%>">All Users</a>
+                        <li class="userall"><a href="<%= PathAbsolute.getPath("Admin/UserAll")%>">All Users</a>
                         </li>
-                        <li><a href="<%= PathAbsolute.getPath("Admin/UserAdd")%>">Add New user</a>
+                        <li class="useradd"><a href="<%= PathAbsolute.getPath("Admin/UserAdd")%>">Add New user</a>
                         </li>
                     </ul>
                 </div>
             </li>
-            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-umbrella"
-                                                                           aria-hidden="true"></i>
-                Productss</a>
-                <div class="collapsible-body left-sub-menu">
+            <li><a href="javascript:void(0)" class="collapsible-header products">
+                <i class="fa fa-umbrella" aria-hidden="true"></i>
+                Products</a>
+                <div class="collapsible-body left-sub-menu contentproduct">
                     <ul>
-                        <li><a href="<%= PathAbsolute.getPath("Admin/PackageAll")%>">All Products</a>
+                        <li class="allproducts"><a href="<%= PathAbsolute.getPath("Admin/PackageAll")%>">All Products</a>
                         </li>
-                        <li><a href="<%= PathAbsolute.getPath("Admin/PackageAdd")%>">Add New Product</a>
+                        <li class="addproducts"><a href="<%= PathAbsolute.getPath("Admin/PackageAdd")%>">Add New Product</a>
                         </li>
-                        <li><a href="<%= PathAbsolute.getPath("Admin/PackageCartAll")%>">All Product Categories</a>
+                        <li class="allcategories"><a href="<%= PathAbsolute.getPath("Admin/PackageCartAll")%>">All Product Categories</a>
                         </li>
-                        <li><a href="<%= PathAbsolute.getPath("Admin/PackageCartAdd")%>">Add Product Categories</a>
+                        <li class="addcategories" ><a href="<%= PathAbsolute.getPath("Admin/PackageCartAdd")%>">Add Product Categories</a>
                         </li>
-                        <li><a href="<%= PathAbsolute.getPath("Admin/AuthorAll")%>">All Author</a>
+                        <li class="allauthor"><a href="<%= PathAbsolute.getPath("Admin/AuthorAll")%>">All Author</a>
                         </li>
-                        <li><a href="<%= PathAbsolute.getPath("Admin/AuthorAdd")%>">Add New Author</a>
+                        <li class="addauthor"><a href="<%= PathAbsolute.getPath("Admin/AuthorAdd")%>">Add New Author</a>
                         </li>
                     </ul>
                 </div>
             </li>
-            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-usd" aria-hidden="true"></i>
+            <li><a href="javascript:void(0)" class="collapsible-header discounts"><i class="fa fa-usd" aria-hidden="true"></i>
                 Discounts</a>
-                <div class="collapsible-body left-sub-menu">
+                <div class="collapsible-body left-sub-menu contentdiscount">
                     <ul>
-                        <li><a href="<%= PathAbsolute.getPath("Admin/Discount")%>">All Discounts</a>
+                        <li class="alldiscounts"><a href="<%= PathAbsolute.getPath("Admin/Discount")%>">All Discounts</a>
                         </li>
-                        <li><a href="<%= PathAbsolute.getPath("Admin/DiscountAdd")%>">Add New Discounts</a>
+                        <li class="adddiscounts"><a href="<%= PathAbsolute.getPath("Admin/DiscountAdd")%>">Add New Discounts</a>
                         </li>
                     </ul>
                 </div>
             </li>
-            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-ticket" aria-hidden="true"></i>
-                Booking & Enquiry</a>
-                <div class="collapsible-body left-sub-menu">
+            <li><a href="javascript:void(0)" class="collapsible-header booking"><i class="fa fa-ticket" aria-hidden="true"></i>
+                Booking & Contact</a>
+                <div class="collapsible-body left-sub-menu contentbooking">
                     <ul>
-                        <li><a href="<%= PathAbsolute.getPath("Admin/PackageBookingAll")%>">Product</a>
+                        <li class="bookingproduct">
+                            <a href="<%= PathAbsolute.getPath("Admin/PackageBookingAll")%>">Product</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="contactproduct">
+                            <a href="<%= PathAbsolute.getPath("Admin/Contact")%>">Contact</a>
                         </li>
                     </ul>
                 </div>
             </li>
-            <li><a href="<%= PathAbsolute.getPath("Admin/Login")%>" target="_blank"><i class="fa fa-sign-in"
-                                                                                      aria-hidden="true"></i>Logout</a>
+            <li><a href="<%= PathAbsolute.getPath("Admin/Login")%>" target="_blank">
+                <i class="fa fa-sign-in" aria-hidden="true"></i>
+                Logout</a>
             </li>
         </ul>
     </div>

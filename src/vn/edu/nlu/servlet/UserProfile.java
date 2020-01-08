@@ -2,6 +2,7 @@ package vn.edu.nlu.servlet;
 
 import vn.edu.nlu.control.ValidateParameter;
 import vn.edu.nlu.dao.GetUser;
+import vn.edu.nlu.dao.HashCode;
 import vn.edu.nlu.fit.model.Users;
 
 import javax.servlet.RequestDispatcher;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -75,9 +77,9 @@ public class UserProfile extends HttpServlet {
             try {
                 if (resultSet.next()) {
                     // check password same password
-                    if (oldPassword.equals(resultSet.getString("password"))){
+                    if (HashCode.hashCode(oldPassword).equals(resultSet.getString("password"))){
                         if(newPassword.equals(confirmPassword)){
-                            resultSet.updateString("password",newPassword);
+                            resultSet.updateString("password",HashCode.hashCode(newPassword));
                             resultSet.updateRow();
                             resultSet.beforeFirst();
                             response.getWriter().write("{\"message\":\"Change password success\"}");
@@ -89,6 +91,8 @@ public class UserProfile extends HttpServlet {
                     }
                 }
             } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (NoSuchAlgorithmException e) {
                 e.printStackTrace();
             }
         }

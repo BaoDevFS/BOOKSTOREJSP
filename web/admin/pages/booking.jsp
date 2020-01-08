@@ -1,9 +1,8 @@
+<%@ page import="java.sql.ResultSet" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
-<!-- Mirrored from rn53themes.net/themes/demo/lava-admin/packageAll.html by HTTrack Website Copier/3.x
-[XR&CO'2014], Wed, 23 Oct 2019 13:21:49 GMT -->
 <head>
-    <title>ListProduct</title>
+    <title>Booking All</title>
     <!--== META TAGS ==-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -17,11 +16,11 @@
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/font-awesome.min.css")%>">
 
     <!--== ALL CSS FILES ==-->
+    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/style.css")%>">
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/mob.css")%>">
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/bootstrap.css")%>">
     <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/materialize.css")%>"/>
-    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/jquery.dataTables.min.css")%>"/>
-    <link rel="stylesheet" href="<%=PathAbsolute.getPath("admin/css/style.css")%>">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -40,9 +39,9 @@
         <div class="sb2-2">
             <div class="sb2-2-2">
                 <ul>
-                    <li><a href="<%=PathAbsolute.getPath("Admin/Index")%>"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                    <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
                     </li>
-                    <li class="active-bre"><a href="#">All Product</a>
+                    <li class="active-bre"><a href="#"> Package Booking Enquiry</a>
                     </li>
                 </ul>
             </div>
@@ -51,7 +50,8 @@
                     <div class="col-md-12">
                         <div class="box-inn-sp">
                             <div class="inn-title">
-                                <h4>All Product</h4>
+                                <h4>Package Booking Enquiry</h4>
+                                <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
                                 <a class="dropdown-button drop-down-meta" href="#" data-activates="dr-users"><i
                                         class="material-icons">more_vert</i></a>
                                 <ul id="dr-users" class="dropdown-content">
@@ -72,42 +72,36 @@
 
                             </div>
                             <div class="tab-inn">
-                                <div class="panel-wrapper collapse in">
-                                    <div class="panel-body">
-                                        <div class="table-wrap">
-                                            <div class="table-responsive">
-                                                <table id="datable_1" class="table table-hover display  pb-30">
-                                                    <thead>
-                                                    <tr>
-                                                        <th>Id</th>
-                                                        <th>Img</th>
-                                                        <th>ProductName</th>
-                                                        <th>Price</th>
-                                                        <th>Author</th>
-                                                        <th>View</th>
-                                                        <th>Edit</th>
-                                                        <th>Delete</th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tfoot>
-                                                    <tr>
-                                                        <th>Id</th>
-                                                        <th>Img</th>
-                                                        <th>ProductName</th>
-                                                        <th>Price</th>
-                                                        <th>Author</th>
-                                                        <th>View</th>
-                                                        <th>Edit</th>
-                                                        <th>Delete</th>
-                                                    </tr>
-                                                    </tfoot>
-                                                    <tbody>
+                                <div class="table-responsive table-desi">
+                                    <table id="datable_1" class="table table-hover display  pb-30">
+                                        <thead>
+                                        <tr>
+                                            <th>User</th>
+                                            <th>Name</th>
+                                            <th>Phone</th>
+                                            <th>Email</th>
+                                            <th>View</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                        </thead>
+                                        <tfoot>
+                                        <tr>
+                                            <th>User</th>
+                                            <th>Name</th>
+                                            <th>Phone</th>
+                                            <th>Email</th>
+                                            <th>View</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                        </tfoot>
+                                        <tbody>
 
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -142,11 +136,12 @@
 <script src="<%=PathAbsolute.getPath("admin/js/bootstrap.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/materialize.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/custom.js")%>"></script>
+<script src="<%=PathAbsolute.getPath("admin/js/active.js")%>"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-<script src="<%=PathAbsolute.getPath("admin/js/active.js")%>"></script>
 <script>
     $(document).ready(function () {
+        activeMenu();
         var table = $('#datable_1').DataTable({
             "ajax": {
                 "url": "http://localhost:8080/BookStore/Admin/AjaxProduct",
@@ -206,13 +201,11 @@
             var data = row.data();
             window.location.href = "http://localhost:8080/BookStore/Admin/PackageEdit?id="+data.id;
         });
-        activeMenu();
     });
-
 </script>
 </body>
 
 
-<!-- Mirrored from rn53themes.net/themes/demo/lava-admin/packageAll.html by HTTrack Website Copier/3.x
-[XR&CO'2014], Wed, 23 Oct 2019 13:21:49 GMT -->
+<!-- Mirrored from rn53themes.net/themes/demo/lava-admin/packageBookingAll.html by HTTrack Website Copier/3.x
+[XR&CO'2014], Wed, 23 Oct 2019 13:21:53 GMT -->
 </html>

@@ -110,6 +110,12 @@
 <script >
     <%= getStatus((int)request.getAttribute("status"))%>
 </script>
+<script src="<%=PathAbsolute.getPath("admin/js/active.js")%>"></script>
+<script>
+    $(document).ready(function () {
+        activeMenu();
+    });
+</script>
 </body>
 
 

@@ -733,10 +733,10 @@ $(function() {
       // Make sure that the formMessages div has the 'success' class.
       $(formMessages).removeClass('error');
       $(formMessages).addClass('success');
-
       // Set the message text.
       $(formMessages).text(response);
-
+      $(formMessages).css("color","green");
+      $(formMessages).css("font-size","15px");
       // Clear the form.
       $('#contact-form input,#contact-form textarea').val('');
     })

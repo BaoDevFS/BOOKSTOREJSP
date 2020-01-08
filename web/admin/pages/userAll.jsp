@@ -170,6 +170,7 @@
 <script src="<%=PathAbsolute.getPath("admin/js/materialize.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/custom.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/jquery.dataTables.min.js")%>"></script>
+<script src="<%=PathAbsolute.getPath("admin/js/active.js")%>"></script>
 <script>
     $(document).ready(function () {
         "use strict";
@@ -179,6 +180,7 @@
                 'orderable': false, // set orderable false for selected columns
             }]});
         $('#datable_2').DataTable({"lengthChange": false});
+        activeMenu();
     });
 </script>
 </body>

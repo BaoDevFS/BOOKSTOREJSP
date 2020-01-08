@@ -1490,3 +1490,6 @@ button.btn-small.btn-select.fc-agendaWeek-button, .btn-small.btn-select.fc-prev-
 .view,.edit ,.delete{
     cursor: pointer;
 }
+.menu-active a{
+    color: white !important;
+}

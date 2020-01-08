@@ -47,7 +47,7 @@ public class Cart {
     }
 
     public double getTotalCart() {
-        return totalCart;
+        return  Math.round(totalCart*100)/100;
     }
 
     public void setTotalCart(double totalCart) {

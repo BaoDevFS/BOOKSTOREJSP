@@ -234,7 +234,12 @@
             console.error( error );
         } );
 </script>
-
+<script src="<%=PathAbsolute.getPath("admin/js/active.js")%>"></script>
+<script>
+    $(document).ready(function () {
+        activeMenu();
+    });
+</script>
 </body>
 
 
