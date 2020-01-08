@@ -105,7 +105,6 @@
 
 <!-- Main wrapper -->
 <div class="wrapper" id="wrapper">
-
     <!-- Header -->
     <%@ include file="include/header.jsp" %>
     <!-- //Header -->
@@ -128,7 +127,7 @@
     </div>
     <!-- End Bradcaump area -->
     <!-- Start main Content -->
-    <div class="maincontent bg--white pt--80 pb--55">
+    <div class="maincontent bg--white pt--30 pb--25">
         <div class="container">
             <div class="row">
                 <% ResultSet rsB = (ResultSet) request.getAttribute("rsB");
@@ -193,22 +192,22 @@
                                             <li class="categories-title">Share :</li>
                                             <li>
                                                 <a href="#">
-                                                    <i class="icon-social-twitter icons"></i>
+                                                    <i class="fa fa-twitter"></i>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#">
-                                                    <i class="icon-social-tumblr icons"></i>
+                                                    <i class="fa fa-tumblr"></i>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#">
-                                                    <i class="icon-social-facebook icons"></i>
+                                                    <i class="fa fa-facebook"></i>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#">
-                                                    <i class="icon-social-linkedin icons"></i>
+                                                    <i class="fa fa-linkedin"></i>
                                                 </a>
                                             </li>
                                         </ul>
@@ -327,7 +326,7 @@
                             <!-- End Single Tab Content -->
                         </div>
                     </div>
-                    <div class="wn__related__product pt--80 pb--50">
+                    <div class="wn__related__product pt--30 pb--20">
                         <div class="section__title text-center">
                             <h2 class="title__be--2">Related Products</h2>
                         </div>
@@ -612,22 +611,22 @@
                                                                     <li class="categories-title">Share :</li>
                                                                     <li>
                                                                         <a href="#">
-                                                                            <i class="icon-social-twitter icons"></i>
+                                                                            <i class="fa fa-twitter"></i>
                                                                         </a>
                                                                     </li>
                                                                     <li>
                                                                         <a href="#">
-                                                                            <i class="icon-social-tumblr icons"></i>
+                                                                            <i class="fa fa-tumblr"></i>
                                                                         </a>
                                                                     </li>
                                                                     <li>
                                                                         <a href="#">
-                                                                            <i class="icon-social-facebook icons"></i>
+                                                                            <i class="fa fa-facebook"></i>
                                                                         </a>
                                                                     </li>
                                                                     <li>
                                                                         <a href="#">
-                                                                            <i class="icon-social-linkedin icons"></i>
+                                                                            <i class="fa fa-linkedin"></i>
                                                                         </a>
                                                                     </li>
                                                                 </ul>
@@ -683,18 +682,20 @@
             id = 'star' + f + (r % f ? 'half' : '')
         id && (document.getElementById(id).checked = !0)
     }
-    function activeStar(id,st) {
-        $('#'+id).children().each(function (index, value) {
+
+    function activeStar(id, st) {
+        $('#' + id).children().each(function (index, value) {
             if (index >= st) return;
             console.log(index);
             $(this).removeClass("off");
         });
     }
+
     <%
                                        for (Feedbacks fd : Feedbacks.getListFeedbackByIDProduct(Integer.parseInt(request.getParameter("id")))
                                        ) {
                                    %>
-    activeStar(<%=fd.getId()%>,<%=fd.getRate()%>);
+    activeStar(<%=fd.getId()%>, <%=fd.getRate()%>);
     <%}%>
 </script>
 </body>
