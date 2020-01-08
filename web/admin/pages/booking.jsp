@@ -1,3 +1,4 @@
+<%@ page import="java.sql.ResultSet" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
@@ -72,215 +73,33 @@
                             </div>
                             <div class="tab-inn">
                                 <div class="table-responsive table-desi">
-                                    <table class="table table-hover">
+                                    <table id="datable_1" class="table table-hover display  pb-30">
                                         <thead>
                                         <tr>
                                             <th>User</th>
-                                            <th>Package</th>
+                                            <th>Name</th>
                                             <th>Phone</th>
                                             <th>Email</th>
-                                            <th>Message</th>
+                                            <th>View</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                            <th>Delete</th>
                                         </tr>
                                         </thead>
+                                        <tfoot>
+                                        <tr>
+                                            <th>User</th>
+                                            <th>Name</th>
+                                            <th>Phone</th>
+                                            <th>Email</th>
+                                            <th>View</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                        </tfoot>
                                         <tbody>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/1.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name">Domestic Help Services</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>+91 32111 65412</td>
-                                            <td>enquiry@mail.com</td>
-                                            <td>Australia</td>
-                                            <td>It is a long established fact that a reader will be distracted by the
-                                                readable content of a page when
-                                                looking at its layout.
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/2.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span class="list-enq-name">Home Appliances Repair & Services</span><span
-                                                    class="list-enq-city">Illunois, United States</span></a>
-                                            </td>
-                                            <td>+91 32111 65412</td>
-                                            <td>enquiry@mail.com</td>
-                                            <td>Australia</td>
-                                            <td>It is a long established fact that a reader will be distracted by the
-                                                readable content of a page when
-                                                looking at its layout.
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/3.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span class="list-enq-name">Packers and Movers</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>+91 32111 65412</td>
-                                            <td>enquiry@mail.com</td>
-                                            <td>Australia</td>
-                                            <td>It is a long established fact that a reader will be distracted by the
-                                                readable content of a page when
-                                                looking at its layout.
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/4.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name">Security System Dealers</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>+91 32111 65412</td>
-                                            <td>enquiry@mail.com</td>
-                                            <td>Australia</td>
-                                            <td>It is a long established fact that a reader will be distracted by the
-                                                readable content of a page when
-                                                looking at its layout.
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/5.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name">Skin Care & Treatment</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>+91 32111 65412</td>
-                                            <td>enquiry@mail.com</td>
-                                            <td>Australia</td>
-                                            <td>It is a long established fact that a reader will be distracted by the
-                                                readable content of a page when
-                                                looking at its layout.
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/1.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name">Domestic Help Services</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>+91 32111 65412</td>
-                                            <td>enquiry@mail.com</td>
-                                            <td>Australia</td>
-                                            <td>It is a long established fact that a reader will be distracted by the
-                                                readable content of a page when
-                                                looking at its layout.
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/1.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name">Domestic Help Services</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>+91 32111 65412</td>
-                                            <td>enquiry@mail.com</td>
-                                            <td>Australia</td>
-                                            <td>It is a long established fact that a reader will be distracted by the
-                                                readable content of a page when
-                                                looking at its layout.
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/2.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span class="list-enq-name">Home Appliances Repair & Services</span><span
-                                                    class="list-enq-city">Illunois, United States</span></a>
-                                            </td>
-                                            <td>+91 32111 65412</td>
-                                            <td>enquiry@mail.com</td>
-                                            <td>Australia</td>
-                                            <td>It is a long established fact that a reader will be distracted by the
-                                                readable content of a page when
-                                                looking at its layout.
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/3.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span class="list-enq-name">Packers and Movers</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>+91 32111 65412</td>
-                                            <td>enquiry@mail.com</td>
-                                            <td>Australia</td>
-                                            <td>It is a long established fact that a reader will be distracted by the
-                                                readable content of a page when
-                                                looking at its layout.
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/4.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name">Security System Dealers</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>+91 32111 65412</td>
-                                            <td>enquiry@mail.com</td>
-                                            <td>Australia</td>
-                                            <td>It is a long established fact that a reader will be distracted by the
-                                                readable content of a page when
-                                                looking at its layout.
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/5.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name">Skin Care & Treatment</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>+91 32111 65412</td>
-                                            <td>enquiry@mail.com</td>
-                                            <td>Australia</td>
-                                            <td>It is a long established fact that a reader will be distracted by the
-                                                readable content of a page when
-                                                looking at its layout.
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/1.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name">Domestic Help Services</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>+91 32111 65412</td>
-                                            <td>enquiry@mail.com</td>
-                                            <td>Australia</td>
-                                            <td>It is a long established fact that a reader will be distracted by the
-                                                readable content of a page when
-                                                looking at its layout.
-                                            </td>
-                                        </tr>
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -318,9 +137,70 @@
 <script src="<%=PathAbsolute.getPath("admin/js/materialize.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/custom.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/active.js")%>"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready(function () {
         activeMenu();
+        var table = $('#datable_1').DataTable({
+            "ajax": {
+                "url": "http://localhost:8080/BookStore/Admin/AjaxProduct",
+                "dataType": "json",
+                method:"get",
+                "contentType": "application/json; charset=utf-8",
+                'dataSrc': 'products'
+            },
+            columns: [
+                {'mData': 'id'},
+                {   "orderable": false,
+                    "data": "image",
+                    "render": function(data, typet, row) {
+                        return '<img style="width: 100px;height: 100px" src='+data+' >';
+                    }
+                },
+                {'mData': 'name'},
+                {'mData': 'price'},
+                {'mData': 'author'},
+                {
+                    "orderable": false,
+                    "data": null,
+                    "defaultContent": "<a class='view' style='cursor: pointer'><i class=\"fa fa-eye\" aria-hidden=\"true\"></i></a>"
+                },
+                {
+                    "orderable": false,
+                    "data": null,
+                    "defaultContent": "<a class='edit' style='cursor: pointer'><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i></a>"
+                },
+                {
+                    "orderable": false,
+                    "data": null,
+                    "defaultContent": "<a class='delete' style='cursor: pointer'><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i></a>"
+                }
+            ]
+        });
+        $('#datable_1 tbody').on('click', 'a.delete', function () {
+            var row = table.row($(this).parents('tr'));
+            var data = row.data();
+            row.remove().draw();
+            $.ajax({
+                url: "http://localhost:8080/BookStore/Admin/Delete",
+                type: "get",
+                data: {id: data.id,type:'products'},
+                success: function (resultText) {
+                    table.ajax.reload();
+                }
+            });
+        });
+        $('#datable_1 tbody').on('click', 'a.view', function () {
+            var row = table.row($(this).parents('tr'));
+            var data = row.data();
+            window.location.href = "http://localhost:8080/BookStore/SingleProduct?id="+data.id;
+        });
+        $('#datable_1 tbody').on('click', 'a.edit', function () {
+            var row = table.row($(this).parents('tr'));
+            var data = row.data();
+            window.location.href = "http://localhost:8080/BookStore/Admin/PackageEdit?id="+data.id;
+        });
     });
 </script>
 </body>
