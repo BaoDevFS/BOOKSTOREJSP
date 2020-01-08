@@ -3,6 +3,7 @@ package vn.edu.nlu.servletad;
 import vn.edu.nlu.control.PathAbsolute;
 import vn.edu.nlu.control.ResizeImage;
 import vn.edu.nlu.control.SaveImage;
+import vn.edu.nlu.control.ValidateParameter;
 import vn.edu.nlu.dao.GetListProductType;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
@@ -57,12 +58,12 @@ public class PackageAdd extends HttpServlet {
         //save file
         saveImage.saveImageForBook(imghoverBuff,Paths.get(imagehover.getSubmittedFileName()).getFileName().toString(),request);
 
-        String name = request.getParameter("name");
-        String description = request.getParameter("description");
-        String booktype = request.getParameter("booktype");
-        String year = request.getParameter("year");
-        String price = request.getParameter("price");
-        String author = request.getParameter("author");
+        String name = ValidateParameter.validateParameter(request,"name");
+        String description = ValidateParameter.validateParameter(request,"description");
+        String booktype = ValidateParameter.validateParameter(request,"booktype");
+        String year = ValidateParameter.validateParameter(request,"year");
+        String price = ValidateParameter.validateParameter(request,"price");
+        String author = ValidateParameter.validateParameter(request,"author");
         try {
             request.setAttribute("booktype", GetListProductType.getListProductType());
             String sql = "INSERT INTO books (name, image ,image_hover,description, price, year, id_type, active,author) VALUES (? , ? , ?, ?, ?, ?, ?, ?, ?)";
