@@ -65,7 +65,7 @@
                                         <div class="switcher-currency-trigger">
                                             <div class="setting__menu">
                                                 <span><a href="http://localhost:8080/BookStore/UserProfile">My Account</a></span>
-                                                <span><a href="http://localhost:8080/BookStore/Wishlist">My Wishlist</a></span>
+                                                <span><a href="http://localhost:8080/BookStore/WishList">My WishList</a></span>
                                                 <span><a href="http://localhost:8080/BookStore/Login">Sign In</a></span>
                                                 <span><a href="http://localhost:8080/BookStore/Register">Create An Account</a></span>
                                             </div>

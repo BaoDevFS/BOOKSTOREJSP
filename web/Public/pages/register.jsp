@@ -90,7 +90,7 @@
                 </div>
 
                 <div class="text-center p-t-136">
-                    <a class="txt2 txt-login" href="#">
+                    <a class="txt2 txt-login" href="http://localhost:8080/BookStore/Login">
                         Log In
                         <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
                     </a>
