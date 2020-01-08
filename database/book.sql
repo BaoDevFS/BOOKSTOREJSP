@@ -11,7 +11,7 @@
  Target Server Version : 100134
  File Encoding         : 65001
 
- Date: 08/01/2020 16:11:50
+ Date: 08/01/2020 17:39:35
 */
 
 SET NAMES utf8mb4;
@@ -793,7 +793,7 @@ CREATE TABLE `orders`  (
   `status` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `address` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
   `note` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
-  `acitve` tinyint(1) NULL DEFAULT 1,
+  `active` tinyint(1) NULL DEFAULT 1,
   `created_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
   `updated_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
   `id_user` int(11) NULL DEFAULT NULL,
@@ -923,6 +923,6 @@ CREATE TABLE `users`  (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'Bao', 'nguyennhubao999@gmail.com', 'http://localhost:8080/BookStore/admin/images/user/IMG_20191124_222417.jpg', 'Bảo Nguyễn', '9f53a69c347753fd5a2e95ae1079c322', '107, thủ Đức, Linh Xuân', '0396940321', 1, 'Male', 1, '2019-12-20 09:04:29', '2019-12-20 09:04:29', NULL);
+INSERT INTO `users` VALUES (1, 'Bao', 'nguyennhubao999@gmail.com', 'http://localhost:8080/BookStore/admin/images/user/IMG_20191124_222417.jpg', 'Bảo Nguyễn', '89f6d953386e8964d4d041ccee0523ea', '107, thủ Đức, Linh Xuân', '0396940321', 1, 'Male', 1, '2019-12-20 09:04:29', '2019-12-20 09:04:29', NULL);
 
 SET FOREIGN_KEY_CHECKS = 1;
