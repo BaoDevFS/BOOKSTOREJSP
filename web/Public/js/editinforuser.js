@@ -45,3 +45,47 @@ function editinfor(type) {
     });
 
 }
+$(document).on("change", "#imgmain",function () {
+    var form = new FormData();
+    form.append('avatar',$('#imgmain')[0].files[0]);
+    $.ajax({
+        url: "http://localhost:8080/BookStore/UserProfile",
+        method: "post",
+        data: form,
+        enctype: 'multipart/form-data',
+        processData: false,  // tell jQuery not to process the data
+        contentType: false,
+        success: function (data) {
+            var json = JSON.parse(data);
+            console.log(json.message);
+            if(json.message=="1"){
+                console.log("sucs")
+            }else if(json.message=="0"){
+                console.log("fa")
+            }else{
+                console.log("nothing")
+            }
+        }
+    });
+});
+function sendImage() {
+    var form = new FormData();
+    form.append('type',"avatar")
+    form.append('avatar',$('imgmain').prop('files')[0]);
+    $.ajax({
+        url: "http://localhost:8080/BookStore/UserProfile",
+        method: "post",
+        data: form,
+        success: function (data) {
+            var json = JSON.parse(data);
+            console.log(json.message);
+            if(json.message=="1"){
+                console.log("sucs")
+            }else if(json.message=="0"){
+                console.log("fa")
+            }else{
+                console.log("nothing")
+            }
+        }
+    })
+}

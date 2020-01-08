@@ -1,23 +1,27 @@
 package vn.edu.nlu.servlet;
 
+import vn.edu.nlu.control.PathAbsolute;
+import vn.edu.nlu.control.SaveImage;
 import vn.edu.nlu.control.ValidateParameter;
 import vn.edu.nlu.dao.GetUser;
 import vn.edu.nlu.dao.HashCode;
 import vn.edu.nlu.fit.model.Users;
 
+import javax.imageio.ImageIO;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @WebServlet("/UserProfile")
+@MultipartConfig
 public class UserProfile extends HttpServlet {
     GetUser getUser;
     int id;
@@ -30,7 +34,7 @@ public class UserProfile extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
-        String type = request.getParameter("type");
+        String type = ValidateParameter.validateParameter(request,"type");
         System.out.println(type);
         System.out.println(resultSet.toString());
         if (type.equals("contact")) {
@@ -54,7 +58,8 @@ public class UserProfile extends HttpServlet {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-        } else if (type.equals("address")) {
+        }
+        else if (type.equals("address")) {
             String address = ValidateParameter.validateParameter(request, "address");
             System.out.println(address);
             try {
@@ -69,7 +74,7 @@ public class UserProfile extends HttpServlet {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-        } else {
+        } else if(type.equals("password")) {
             String oldPassword = ValidateParameter.validateParameter(request, "oldPassword").trim();
             String newPassword = ValidateParameter.validateParameter(request, "newPassword").trim();
             String confirmPassword = ValidateParameter.validateParameter(request, "rePassword").trim();
@@ -93,6 +98,27 @@ public class UserProfile extends HttpServlet {
             } catch (SQLException e) {
                 e.printStackTrace();
             } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+            }
+        }
+        else {
+            System.out.println("avatar cahnge");
+            Part avatar = request.getPart("avatar");
+            System.out.println(avatar.getName());
+            SaveImage saveImage = new SaveImage();
+            String avatars= PathAbsolute.getPath("admin/images/user/"+ Paths.get(avatar.getSubmittedFileName()).getFileName().toString());
+            BufferedImage imghoverBuff = ImageIO.read(avatar.getInputStream());
+            saveImage.saveImageForUser(imghoverBuff,Paths.get(avatar.getSubmittedFileName()).getFileName().toString(),request);
+            try {
+                if (resultSet.next()) {
+                    resultSet.updateString("avatar", avatars);
+                    resultSet.updateRow();
+                    resultSet.beforeFirst();
+                    response.getWriter().write("{\"message\":\"1\"}");
+                }else {
+                    response.getWriter().write("{\"message\":\"0\"}");
+                }
+            } catch (SQLException e) {
                 e.printStackTrace();
             }
         }

@@ -70,10 +70,18 @@
                         <div class="sidebar">
                             <div class="widget">
                                 <div class="user-photo">
-                                    <a href="#">
-                                        <img style="height: 200px;width: 200px" src="<%=rs.getString("avatar")%>" alt="User Photo">
-                                        <span class="user-photo-action">Click here to reupload</span>
-                                    </a>
+<%--                                        <img style="height: 200px;width: 200px" src="<%=rs.getString("avatar")%>" alt="User Photo">--%>
+<%--                                        <span class="user-photo-action">Click here to reupload</span>--%>
+                                    <div class="input-field col s6">
+                                        <img style="width: 200px;height: 200px" id="main"
+                                             src="<%=rs.getString("avatar")%>" alt="">
+                                        <div class="file-field">
+                                            <div style="width: 100%" class="btn">
+                                                <span>File</span>
+                                                <input type="file" id="imgmain" name="image" accept="image/*">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div><!-- /.user-photo -->
                             </div><!-- /.widget -->
 
@@ -213,6 +221,7 @@
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script src="Public/js/search.js"></script>
 <script src="Public/js/editinforuser.js"></script>
+<script src="Public/js/show.js"></script>
 <script>
     $(function () {
         drawCart();
