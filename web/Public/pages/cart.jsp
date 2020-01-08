@@ -105,7 +105,10 @@
                     <div class="cartbox__btn">
                         <ul class="cart__btn__list d-flex flex-wrap flex-md-nowrap flex-lg-nowrap justify-content-between">
                             <li><a href="#">Coupon Code</a></li>
-                            <li><a href="http://localhost:8080/BookStore/SingleProduct">Apply Code</a></li>
+                            <li><a >Apply Code</a>
+                                <input id="code" >
+                                <i class="fa fa-check-circle" style="color: greenyellow;font-size: 21px"></i>
+                            </li>
                             <li><a href="http://localhost:8080/BookStore/ShopGrid">Update Cart</a></li>
                             <li><a href="http://localhost:8080/BookStore/Checkout">Check Out</a></li>
                         </ul>

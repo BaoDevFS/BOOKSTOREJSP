@@ -30,6 +30,6 @@ public class MoveImage {
     public static void main(String[] args) throws ClassNotFoundException {
        File file = new File(System.getProperty("user.dir")+"\\web\\Public\\images\\books");
         File[] files = file.listFiles();
-        System.out.println(files.length);
+        System.out.println(file.getAbsolutePath());
     }
 }

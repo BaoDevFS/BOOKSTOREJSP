@@ -38,13 +38,21 @@ public class Checkout extends HttpServlet {
             connection = connectDatabase.getConnectionSql();
             String sql = "INSERT into orders(name,phone,email,address,id_user,total,status) values (?,?,?,?,?,?,?)";
             HttpSession session = request.getSession();
+            Cart cart = (Cart) session.getAttribute("cart");
+            if(cart==null) cart= new Cart();
+            if(cart.getProductCart().size()==0){
+                request.setAttribute("status","1");
+                RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/checkout.jsp");
+                requestDispatcher.forward(request, response);
+                return;
+            }
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, firstName + " " + lastName);
             ps.setString(2, phone);
             ps.setString(3, email);
             ps.setString(4, address);
             ps.setInt(5, ((Users) session.getAttribute("user")).getId());
-            ps.setDouble(6,((Cart) session.getAttribute("cart")).getTotalCart());
+            ps.setDouble(6,cart.getTotalCart());
             ps.setString(7,"chua xu ly");
             ps.executeUpdate();
             String sql2 = "SELECT id from orders where id_user=? ORDER BY created_at DESC";
@@ -55,7 +63,7 @@ public class Checkout extends HttpServlet {
                 int idOder = rs.getInt("id");
                 String sql3 = "INSERT into detailorders (id_book, id_order,quantum,active)VALUES (?,?,?,1)";
                 ps = connection.prepareStatement(sql3);
-                for (ProductCart pc : (((Cart) session.getAttribute("cart")).getProductCart())) {
+                for (ProductCart pc : cart.getProductCart()) {
                     ps.setInt(1, pc.getId());
                     ps.setInt(2, idOder);
                     ps.setInt(3, pc.getQuantity());
