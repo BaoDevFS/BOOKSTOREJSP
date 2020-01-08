@@ -1,5 +1,6 @@
 package vn.edu.nlu.servletad;
 
+import vn.edu.nlu.control.ValidateParameter;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
 import javax.servlet.RequestDispatcher;
@@ -28,7 +29,7 @@ public class PackageCartAdd extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
-        String name =  request.getParameter("name");
+        String name =  ValidateParameter.validateParameter(request,"name");
         try {
             Connection con = database.getConnectionSql();
             String sql = "INSERT into booktypes(name,active) values (?,?)";

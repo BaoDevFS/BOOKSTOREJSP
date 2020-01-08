@@ -2,6 +2,7 @@ package vn.edu.nlu.servletad;
 
 import vn.edu.nlu.control.PathAbsolute;
 import vn.edu.nlu.control.SaveImage;
+import vn.edu.nlu.control.ValidateParameter;
 import vn.edu.nlu.dao.HashCode;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
@@ -42,16 +43,16 @@ public class UserAdd extends HttpServlet {
         String avatars= PathAbsolute.getPath("admin/images/user/"+ Paths.get(avatar.getSubmittedFileName()).getFileName().toString());
         BufferedImage imghoverBuff = ImageIO.read(avatar.getInputStream());
         saveImage.saveImageForUser(imghoverBuff,Paths.get(avatar.getSubmittedFileName()).getFileName().toString(),request);
-        String firstName = request.getParameter("firstname");
-        String lastName = request.getParameter("lastname");
-        String moblie = request.getParameter("mobile");
-        String gender = request.getParameter("gender");
-        String address = request.getParameter("address");
-        String group =request.getParameter("group");
-        String password = request.getParameter("password").trim();
-        String confirmpassword = request.getParameter("confirmpassword");
-        String email = request.getParameter("email").trim();
-        String confirmemail = request.getParameter("confirmemail");
+        String firstName = ValidateParameter.validateParameter(request,"firstname");
+        String lastName = ValidateParameter.validateParameter(request,"lastname");
+        String moblie = ValidateParameter.validateParameter(request,"mobile");
+        String gender = ValidateParameter.validateParameter(request,"gender");
+        String address = ValidateParameter.validateParameter(request,"address");
+        String group =ValidateParameter.validateParameter(request,"group");
+        String password = ValidateParameter.validateParameter(request,"password").trim();
+        String confirmpassword = ValidateParameter.validateParameter(request,"confirmpassword");
+        String email = ValidateParameter.validateParameter(request,"email").trim();
+        String confirmemail = ValidateParameter.validateParameter(request,"confirmemail");
         try {
             password = HashCode.hashCode(password);
             Connection connection = database.getConnectionSql();

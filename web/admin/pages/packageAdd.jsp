@@ -49,11 +49,11 @@
         <div class="sb2-2">
             <div class="sb2-2-2">
                 <ul>
-                    <li><a href="admin/index.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                    <li><a href="http://localhost:8080/BookStore/Admin/Index"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
                     </li>
                     <li class="active-bre"><a href="#"> Add New Package</a>
                     </li>
-                    <li class="page-back"><a href="admin/index.html"><i class="fa fa-backward" aria-hidden="true"></i>
+                    <li class="page-back"><a href="http://localhost:8080/BookStore/Admin/Index"><i class="fa fa-backward" aria-hidden="true"></i>
                         Back</a>
                     </li>
                 </ul>
