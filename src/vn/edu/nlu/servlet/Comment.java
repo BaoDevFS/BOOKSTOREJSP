@@ -19,7 +19,7 @@ public class Comment extends HttpServlet {
         String name = request.getParameter("nickname");
         String review = request.getParameter("review");
         try {
-            String sql = "INSERT feedbacks  VALUES (?,?,?,?,?,?,?);";
+            String sql = "INSERT  feedbacks VALUES (?,?,?,?,?,?,?);";
             PreparedStatement pre =  new GetConnectDatabase().getConnectionSql().prepareStatement(sql);
 //            lay id bang vi tri cuoi trong db feebacks - start
             String sql_id = "SELECT COUNT(*) as sum FROM feedbacks;";

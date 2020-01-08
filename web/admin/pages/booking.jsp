@@ -76,26 +76,30 @@
                                     <table id="datable_1" class="table table-hover display  pb-30">
                                         <thead>
                                         <tr>
-                                            <th>User</th>
+                                            <th>id</th>
                                             <th>Name</th>
                                             <th>Phone</th>
                                             <th>Email</th>
-                                            <th>View</th>
-                                            <th>Edit</th>
-                                            <th>Delete</th>
-                                            <th>Delete</th>
+                                            <th>Address</th>
+                                            <th>ListBook</th>
+                                            <th>Price</th>
+                                            <th>Status</th>
+                                            <th style="width: 50px !important;">Edit</th>
+                                            <th style="width: 50px !important;">Delete</th>
                                         </tr>
                                         </thead>
                                         <tfoot>
                                         <tr>
-                                            <th>User</th>
+                                            <th>id</th>
                                             <th>Name</th>
                                             <th>Phone</th>
                                             <th>Email</th>
-                                            <th>View</th>
-                                            <th>Edit</th>
-                                            <th>Delete</th>
-                                            <th>Delete</th>
+                                            <th>Address</th>
+                                            <th>ListBook</th>
+                                            <th>Price</th>
+                                            <th>Status</th>
+                                            <th style="width: 50px !important;">Edit</th>
+                                            <th style="width: 50px !important;">Delete</th>
                                         </tr>
                                         </tfoot>
                                         <tbody>
@@ -144,28 +148,44 @@
         activeMenu();
         var table = $('#datable_1').DataTable({
             "ajax": {
-                "url": "http://localhost:8080/BookStore/Admin/AjaxProduct",
+                "url": "http://localhost:8080/BookStore/Admin/AjaxBooking",
                 "dataType": "json",
                 method:"get",
                 "contentType": "application/json; charset=utf-8",
-                'dataSrc': 'products'
+                'dataSrc': 'orders',
+                // success:function (data) {
+                //     console.log(data);
+                // }
             },
             columns: [
                 {'mData': 'id'},
-                {   "orderable": false,
-                    "data": "image",
-                    "render": function(data, typet, row) {
-                        return '<img style="width: 100px;height: 100px" src='+data+' >';
-                    }
-                },
-                {'mData': 'name'},
-                {'mData': 'price'},
-                {'mData': 'author'},
+                // {   "orderable": false,
+                //     "data": "id",
+                //     "render": function(data, typet, row) {
+                //     console.log(data);
+                //         return data;
+                //     }
+                // },
+                {'mData':'name'},
+                {'mData': 'phone'},
+                {'mData': 'email'},
+                {'mData': 'address'},
                 {
                     "orderable": false,
-                    "data": null,
-                    "defaultContent": "<a class='view' style='cursor: pointer'><i class=\"fa fa-eye\" aria-hidden=\"true\"></i></a>"
+                    "data": 'listBook',
+                    'render':function (data,type,row) {
+
+                        var x="<ul>";
+                        for (i in data){
+                            x+="<li style='list-style-type: circle'>"+data[i].books.name+"</li>"
+                        }
+                        x+="</ul>"
+                        return x;
+                    }
                 },
+                {'mData':'total'}
+                ,
+                {'mData':'status'},
                 {
                     "orderable": false,
                     "data": null,
@@ -176,7 +196,14 @@
                     "data": null,
                     "defaultContent": "<a class='delete' style='cursor: pointer'><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i></a>"
                 }
+            ],columnDefs:[
+                {
+                    "targets": [0],
+                    "visible":false,
+                    "searchable": false
+                }
             ]
+
         });
         $('#datable_1 tbody').on('click', 'a.delete', function () {
             var row = table.row($(this).parents('tr'));
@@ -185,7 +212,7 @@
             $.ajax({
                 url: "http://localhost:8080/BookStore/Admin/Delete",
                 type: "get",
-                data: {id: data.id,type:'products'},
+                data: {id: data.id,type:'orders'},
                 success: function (resultText) {
                     table.ajax.reload();
                 }

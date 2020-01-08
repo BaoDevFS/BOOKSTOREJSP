@@ -1,3 +1,4 @@
+<%@ page import="java.sql.ResultSet" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <!-- Mirrored from rn53themes.net/themes/demo/lava-admin/discountEdit.html by HTTrack Website Copier/3.x
@@ -52,76 +53,36 @@
                 <div class="box-inn-sp">
                     <div class="inn-title">
                         <h4>Discount Edit</h4>
-                        <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
+                        <%ResultSet rs = (ResultSet) request.getAttribute("rs");
+                        %>
                     </div>
                     <div class="bor">
-                        <form>
+                        <%if (rs.next()){%>
+                        <form action="http://localhost:8080/BookStore/Admin/DiscountEdit" method="post">
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="list-title" type="text" value="Blog Post Name" class="validate">
+                                    <input id="list-title" name="name" type="text" value="<%=rs.getString("name")%>" class="validate">
                                     <label for="list-title">Discount Name</label>
                                 </div>
-                                <div class="input-field col s12">
-                                    <input id="post-auth" type="text" value="$240" class="validate">
-                                    <label for="post-auth">Discount Price</label>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input id="list-title1" name="code" type="text" value="<%=rs.getString("code")%>" class="validate">
+                                    <label for="list-title1">Discount Code</label>
                                 </div>
-                                <div class="input-field col s12">
-                                    <div class="file-field">
-                                        <div class="btn">
-                                            <span>File</span>
-                                            <input type="file">
-                                        </div>
-                                        <div class="file-path-wrapper">
-                                            <input class="file-path validate" type="text"
-                                                   placeholder="Upload Blog Banner">
-                                        </div>
-                                    </div>
+                                <div class="input-field col s6">
+                                    <input id="post-auth1" type="text" value="<%=rs.getString("value")%>"name="value" class="validate">
+                                    <label for="post-auth1">Discount Value</label>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="input-field col s12">
-        <textarea id="textarea1" class="materialize-textarea">It is a long established fact that a reader will be
-        distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that
-        it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making
-        it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
-        their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
-        Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and
-        the like).</textarea>
-                                    <label for="textarea1">Blog Descriptions:</label>
+                                <div class="input-field col s6">
+                                    <input id="list-title2" type="text" value="<%=rs.getString("date_start")%>" name="startday" class="validate">
+                                    <label for="list-title2">Discount StartDay(21/05/1999)</label>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <select multiple>
-                                        <option value="" disabled selected>Choose Category</option>
-                                        <option value="1">Hotels</option>
-                                        <option value="2">Educations</option>
-                                        <option value="3">Medical</option>
-                                        <option value="3">Health</option>
-                                        <option value="3">Fitness</option>
-                                        <option value="3">Tution</option>
-                                        <option value="3">Software</option>
-                                        <option value="3">Wedding</option>
-                                        <option value="3">Party</option>
-                                        <option value="3">Spa/Club</option>
-                                    </select>
-                                    <label>Select Category</label>
-                                </div>
-                                <div class="input-field col s12">
-                                    <select multiple>
-                                        <option value="" disabled selected>Choose Category</option>
-                                        <option value="1">Hotels</option>
-                                        <option value="2">Educations</option>
-                                        <option value="3">Medical</option>
-                                        <option value="3">Health</option>
-                                        <option value="3">Fitness</option>
-                                        <option value="3">Tution</option>
-                                        <option value="3">Software</option>
-                                        <option value="3">Wedding</option>
-                                        <option value="3">Party</option>
-                                        <option value="3">Spa/Club</option>
-                                    </select>
-                                    <label>Select Sub Category</label>
+                                <div class="input-field col s6">
+                                    <input id="post-auth3" type="text" value="<%=rs.getString("date_end")%>" name="endday" class="validate">
+                                    <label for="post-auth3">Discount EndDate(21/05/1999)</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -130,6 +91,7 @@
                                 </div>
                             </div>
                         </form>
+                        <%}%>
                     </div>
                 </div>
             </div>

@@ -2,7 +2,10 @@ package vn.edu.nlu.servletad;
 
 import com.google.gson.Gson;
 import vn.edu.nlu.control.GetProduct;
+import vn.edu.nlu.dao.GetListBooking;
+import vn.edu.nlu.fit.model.BookingJsonObject;
 import vn.edu.nlu.fit.model.Books;
+import vn.edu.nlu.fit.model.Orders;
 import vn.edu.nlu.fit.model.ProductJsonObject;
 
 import javax.servlet.ServletException;
@@ -15,7 +18,7 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-@WebServlet("/AjaxBooking")
+@WebServlet("/Admin/AjaxBooking")
 public class AjaxBooking extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -29,17 +32,12 @@ public class AjaxBooking extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
         response.setContentType("application/json");
-        GetProduct getProduct = new GetProduct();
+        GetListBooking listBooking = new GetListBooking();
         PrintWriter out = response.getWriter();
         Gson gson = new Gson();
-        try {
-            ArrayList<Books> products = getProduct.getAllProduct();
-            ProductJsonObject productJson = new ProductJsonObject();
-            productJson.setProducts(products);
-            String json = gson.toJson(productJson);
-            out.print(json);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        BookingJsonObject bk = new BookingJsonObject();
+        bk.setOrders(listBooking.getListBooking());
+        String json = gson.toJson(bk);
+        out.print(json);
     }
 }

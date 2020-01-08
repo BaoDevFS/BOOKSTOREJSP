@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.sql.ResultSet" %><%--
   Created by IntelliJ IDEA.
   User: WATERMELON
   Date: 11/13/2019
@@ -59,7 +59,6 @@
                         <div class="box-inn-sp">
                             <div class="inn-title">
                                 <h4>All Discounts</h4>
-                                <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
                                 <a class="dropdown-button drop-down-meta" href="#" data-activates="dr-users"><i
                                         class="material-icons">more_vert</i></a>
                                 <ul id="dr-users" class="dropdown-content">
@@ -84,257 +83,49 @@
                                     <table class="table table-hover">
                                         <thead>
                                         <tr>
-                                            <th>User</th>
-                                            <th>event</th>
-                                            <th>Offers</th>
-                                            <th>Date</th>
-                                            <th>Country</th>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Code</th>
+                                            <th>Value</th>
+                                            <th>DateStart</th>
+                                            <th>DateEnd</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
                                         </tr>
                                         </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/1.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name">Domestic Help Services</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>50%</td>
-                                            <td>18 may, 2018</td>
-                                            <td>Australia</td>
-                                            <td>
-                                                <a href="discountEdit.html"><i class="fa fa-pencil-square-o"
-                                                                               aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/1.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name">Domestic Help Services</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>50%</td>
-                                            <td>18 may, 2018</td>
-                                            <td>Australia</td>
-                                            <td>
-                                                <a href="discountEdit.html"><i class="fa fa-pencil-square-o"
-                                                                               aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/1.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name">Domestic Help Services</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>50%</td>
-                                            <td>18 may, 2018</td>
-                                            <td>Australia</td>
-                                            <td>
-                                                <a href="discountEdit.html"><i class="fa fa-pencil-square-o"
-                                                                               aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/1.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name">Domestic Help Services</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>50%</td>
-                                            <td>18 may, 2018</td>
-                                            <td>Australia</td>
-                                            <td>
-                                                <a href="discountEdit.html"><i class="fa fa-pencil-square-o"
-                                                                               aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/1.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name">Domestic Help Services</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>50%</td>
-                                            <td>18 may, 2018</td>
-                                            <td>Australia</td>
-                                            <td>
-                                                <a href="discountEdit.html"><i class="fa fa-pencil-square-o"
-                                                                               aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/1.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name">Domestic Help Services</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>50%</td>
-                                            <td>18 may, 2018</td>
-                                            <td>Australia</td>
-                                            <td>
-                                                <a href="discountEdit.html"><i class="fa fa-pencil-square-o"
-                                                                               aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/1.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name">Domestic Help Services</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>50%</td>
-                                            <td>18 may, 2018</td>
-                                            <td>Australia</td>
-                                            <td>
-                                                <a href="discountEdit.html"><i class="fa fa-pencil-square-o"
-                                                                               aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/1.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name">Domestic Help Services</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>50%</td>
-                                            <td>18 may, 2018</td>
-                                            <td>Australia</td>
-                                            <td>
-                                                <a href="discountEdit.html"><i class="fa fa-pencil-square-o"
-                                                                               aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/1.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name">Domestic Help Services</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>50%</td>
-                                            <td>18 may, 2018</td>
-                                            <td>Australia</td>
-                                            <td>
-                                                <a href="discountEdit.html"><i class="fa fa-pencil-square-o"
-                                                                               aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/1.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name">Domestic Help Services</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>50%</td>
-                                            <td>18 may, 2018</td>
-                                            <td>Australia</td>
-                                            <td>
-                                                <a href="discountEdit.html"><i class="fa fa-pencil-square-o"
-                                                                               aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/1.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name">Domestic Help Services</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>50%</td>
-                                            <td>18 may, 2018</td>
-                                            <td>Australia</td>
-                                            <td>
-                                                <a href="discountEdit.html"><i class="fa fa-pencil-square-o"
-                                                                               aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="list-img"><img src="admin/images/listing/1.jpg"
-                                                                            alt=""></span>
-                                            </td>
-                                            <td><a href="#"><span
-                                                    class="list-enq-name">Domestic Help Services</span><span
-                                                    class="list-enq-city">Illunois,
-        United States</span></a>
-                                            </td>
-                                            <td>50%</td>
-                                            <td>18 may, 2018</td>
-                                            <td>Australia</td>
-                                            <td>
-                                                <a href="discountEdit.html"><i class="fa fa-pencil-square-o"
-                                                                               aria-hidden="true"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                            </td>
-                                        </tr>
-                                        </tbody>
+                                       <tbody>
+                                       <%ResultSet rs = (ResultSet) request.getAttribute("rs");%>
+                                       <%int i = 0;%>
+                                       <%
+                                           while (rs.next()) {
+                                               i++;
+                                       %>
+
+                                       <tr>
+                                           <td><%=i%>
+                                           </td>
+                                           <td><%=rs.getString("name")%>
+                                           </td>
+                                           <td><%=rs.getString("code")%>
+                                           </td>
+                                           <td><%=rs.getString("value")%>
+                                           </td>
+                                           <td><%=rs.getString("date_start")%>
+                                           </td>
+                                           <td><%=rs.getString("date_end")%>
+                                           </td>
+                                           <td>
+                                               <a href="<%= PathAbsolute.getPath("Admin/DiscountEdit?id="+rs.getInt("id"))%>"
+                                                  class="sb2-2-1-edit"><i class="fa fa-pencil-square-o"
+                                                                          aria-hidden="true"></i></a>
+                                           </td>
+                                           <td>
+                                               <a href="<%= PathAbsolute.getPath("Admin/Delete?id="+rs.getInt("id")+"&type=discounts")%>"
+                                                  class="sb2-2-1-edit"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                           </td>
+                                       </tr>
+                                       <%}%>
+                                       </tbody>
                                     </table>
                                 </div>
                             </div>
