@@ -29,17 +29,21 @@ public class BookDAO {
         return count;
     }
 
-    public ArrayList<Products> getListCategoriesAndPage(int type, int currentPage, int itemPerPage) {
+    public ArrayList<Products> getListCategoriesAndPage(int type, int currentPage, int itemPerPage, String paramSort) {
         ArrayList<Products> arr = new ArrayList<>();
         cn = null;
         int position = (currentPage == 0) ? 0 : (currentPage - 1) * itemPerPage;
         String sql;
+//        paramSort=null;
         if (type > 0) {
-            sql = "select * from books WHERE active = 1  " + "and id_type=" + type + " LIMIT " + position + "," + itemPerPage;
+            sql = "select * from books WHERE active = 1  " + "and id_type=" + type + " ORDER BY " + paramSort + " ASC"+
+            " LIMIT " + position + "," + itemPerPage;
+
         } else {
-            sql = "select * from books WHERE active = 1  " + " LIMIT " + position + "," + itemPerPage;
+            sql = "select * from books WHERE active = 1  "  + "ORDER BY " + paramSort + " ASC"+ " LIMIT " + position + "," + itemPerPage;
         }
         try {
+            System.out.println(sql);
             cn = getConnectDatabase.getConnectionSql();
             PreparedStatement pre = cn.prepareStatement(sql);
             ResultSet rs = pre.executeQuery();
@@ -80,15 +84,20 @@ public class BookDAO {
 
     public static void main(String[] args) throws SQLException {
         BookDAO bt = new BookDAO();
-        ArrayList<Products> l = bt.getListCategoriesAndPage(0, 25, 12);
+//        ArrayList<Products> l = bt.getListCategoriesAndPage(0, 25, 12, null);
 //        for (Products b : l) {
 //            System.out.println(b.getId() + "," + b.getName());
 //        }
 //        System.out.println(bt.sort(l));
-        ArrayList<Products> l1 = bt.sort(l);
-        for (Products b : l1) {
-            String r = (b.getDescription().length() > 30) ? b.getDescription().substring(0, 30) : b.getDescription();
-            System.out.println(b.getId() + "," + r);
+//        for (Products b : l) {
+//            String r = (b.getDescription().length() > 30) ? b.getDescription().substring(0, 30) : b.getDescription();
+//            System.out.println(b.getId() + "," + r);
+//        }
+        String s="http://localhost:8080/BookStore/ShopGrid?type=1&page=2&page=2";
+        if(s.contains("page")){
+            System.out.println(s.lastIndexOf("page"));
+
+            System.out.println(s.substring(0,s.indexOf("page=")));
         }
     }
 }
