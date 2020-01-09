@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 import java.util.Stack;
 
-public class GetConnectDatabase implements  ConnectionPool {
+public class GetConnectDatabase implements ConnectionPool {
     //Thong tin account truy cap db.
     private String username;
     private String password;
@@ -20,38 +20,45 @@ public class GetConnectDatabase implements  ConnectionPool {
     private Stack<Connection> pool;
 
     public GetConnectDatabase() {
-        Properties p = new Properties();
-        try {
-            p.load(Thread.currentThread().getContextClassLoader()
-                    .getResourceAsStream("database_info.properties"));
-            this.username = p.getProperty("USER");
-            this.password = p.getProperty("PASSWORD");
-            this.url = p.getProperty("URL");
-            // Thong tin chinh dieu khien
-            this.driver = "com.mysql.jdbc.Driver";
-            // Khoi tao Stack lưu cac connection
-            this.pool = new Stack<Connection>();
-            // load JDBC driver
-            Class.forName(this.driver).newInstance();
-        } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+//        Properties p = new Properties();
+//        try {
+//            p.load(Thread.currentThread().getContextClassLoader()
+//                    .getResourceAsStream("database_info.properties"));
+//            this.username = p.getProperty("USER");
+//            this.password = p.getProperty("PASSWORD");
+//            this.url = p.getProperty("URL");
+//            // Thong tin chinh dieu khien
+//            this.driver = "com.mysql.jdbc.Driver";
+//            // Khoi tao Stack lưu cac connection
+//            this.pool = new Stack<Connection>();
+//            // load JDBC driver
+//            Class.forName(this.driver).newInstance();
+//        } catch (FileNotFoundException e) {
+//            // TODO Auto-generated catch block
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            // TODO Auto-generated catch block
+//            e.printStackTrace();
+//        } catch (InstantiationException e) {
+//            // TODO Auto-generated catch block
+//            e.printStackTrace();
+//        } catch (IllegalAccessException e) {
+//            // TODO Auto-generated catch block
+//            e.printStackTrace();
+//        } catch (ClassNotFoundException e) {
+//            // TODO Auto-generated catch block
+//            e.printStackTrace();
+//        }
     }
 
     public Connection getConnectionSql() throws SQLException {
+//        if (this.pool.isEmpty()) {
+//            return (Connection) DriverManager.getConnection(this.url, this.username,
+//                    this.password);
+//        } else {
+//            return (Connection) this.pool.pop();
+//        }
+//    }
         try {
             Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException e) {
@@ -68,11 +75,33 @@ public class GetConnectDatabase implements  ConnectionPool {
 
     @Override
     public void releaseConnection(Connection connection) throws SQLException {
-
+        this.pool.push(connection);
     }
 
     @Override
     public void refreshConnectionPool() {
+        while (!pool.empty()) {
+            try {
+                pool.pop().close();
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+    }
 
+    public static void main(String[] args) {
+        ConnectionPool cp = new GetConnectDatabase();
+        try {
+            Connection con = cp.getConnectionSql();
+            if (con != null) {
+                System.out.println(con);
+            } else {
+                System.out.println("connection is null");
+            }
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 }
