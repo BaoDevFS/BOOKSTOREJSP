@@ -106,9 +106,9 @@ public class UserProfile extends HttpServlet {
             Part avatar = request.getPart("avatar");
             System.out.println(avatar.getName());
             SaveImage saveImage = new SaveImage();
-            String avatars= PathAbsolute.getPath("admin/images/user/"+ Paths.get(avatar.getSubmittedFileName()).getFileName().toString());
+            String avatars= PathAbsolute.getPath("admin/images/user/"+ Paths.get(avatar.getName()).getFileName().toString());
             BufferedImage imghoverBuff = ImageIO.read(avatar.getInputStream());
-            saveImage.saveImageForUser(imghoverBuff,Paths.get(avatar.getSubmittedFileName()).getFileName().toString(),request);
+            saveImage.saveImageForUser(imghoverBuff,Paths.get(avatar.getName()).getFileName().toString(),request);
             try {
                 if (resultSet.next()) {
                     resultSet.updateString("avatar", avatars);

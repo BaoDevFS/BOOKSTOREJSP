@@ -40,9 +40,9 @@ public class UserEdit extends HttpServlet {
         String sql;
         if(avatar.getSize()>0) {
             SaveImage saveImage = new SaveImage();
-             avatars = PathAbsolute.getPath("admin/images/user/" + Paths.get(avatar.getSubmittedFileName()).getFileName().toString());
+             avatars = PathAbsolute.getPath("admin/images/user/" + Paths.get(avatar.getName()).getFileName().toString());
             BufferedImage imghoverBuff = ImageIO.read(avatar.getInputStream());
-            saveImage.saveImageForUser(imghoverBuff, Paths.get(avatar.getSubmittedFileName()).getFileName().toString(), request);
+            saveImage.saveImageForUser(imghoverBuff, Paths.get(avatar.getName()).getFileName().toString(), request);
             sql="UPDATE users set `name` =?,email=?,fullname=?,address=?,phone=?,gender=?,`group` = ?,active= ?,avatar=? where id="+id;
         }else{
             sql="UPDATE users set `name` =?,email=?,fullname=?,address=?,phone=?,gender=?,`group` = ?,active= ? where id="+id;

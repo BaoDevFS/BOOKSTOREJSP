@@ -40,9 +40,9 @@ public class UserAdd extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         Part avatar = request.getPart("avatar");
         SaveImage saveImage = new SaveImage();
-        String avatars= PathAbsolute.getPath("admin/images/user/"+ Paths.get(avatar.getSubmittedFileName()).getFileName().toString());
+        String avatars= PathAbsolute.getPath("admin/images/user/"+ Paths.get(avatar.getName()).getFileName().toString());
         BufferedImage imghoverBuff = ImageIO.read(avatar.getInputStream());
-        saveImage.saveImageForUser(imghoverBuff,Paths.get(avatar.getSubmittedFileName()).getFileName().toString(),request);
+        saveImage.saveImageForUser(imghoverBuff,Paths.get(avatar.getName()).getFileName().toString(),request);
         String firstName = ValidateParameter.validateParameter(request,"firstname");
         String lastName = ValidateParameter.validateParameter(request,"lastname");
         String moblie = ValidateParameter.validateParameter(request,"mobile");
