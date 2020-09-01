@@ -38,7 +38,7 @@
         <div class="sb2-2">
             <div class="sb2-2-2">
                 <ul>
-                    <li><a href="http://localhost:8080/BookStore/Admin/Index"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                    <li><a href="/Admin/Index"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
                     </li>
                     <li class="active-bre"><a href="#"> Contact</a>
                     </li>
@@ -140,7 +140,7 @@
             "lengthChange": false,
             "info": false,
             "ajax": {
-                "url": "http://localhost:8080/BookStore/Admin/AjaxContact",
+                "url": "/Admin/AjaxContact",
                 "dataType": "json",
                 method:"get",
                 "contentType": "application/json; charset=utf-8",

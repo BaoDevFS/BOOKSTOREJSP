@@ -205,7 +205,7 @@
                                                     <span><a href="#">Compare Product</a></span>
                                                     <span><a href="#">My Account</a></span>
                                                     <span><a href="#">My Wishlist</a></span>
-                                                    <span><a href="http://localhost:8080/BookStore/Login">Sign In</a></span>
+                                                    <span><a href="/Login">Sign In</a></span>
                                                     <span><a href="#">Create An Account</a></span>
                                                 </div>
                                             </div>

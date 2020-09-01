@@ -117,7 +117,7 @@
                     <div class="customer_details">
                         <h3>Billing details</h3>
                         <div class="customar__field">
-                            <form action="http://localhost:8080/BookStore/Checkout" method="post">
+                            <form action="/Checkout" method="post">
                                 <div class="margin_between">
                                     <div class="input_box space_between">
                                         <label>First name <span>*</span></label>
@@ -152,39 +152,7 @@
                             </form>
                         </div>
                     </div>
-                    <%--                    <div class="customer_details mt--20">--%>
-                    <%--                        <div class="differt__address">--%>
-                    <%--                            <input name="ship_to_different_address" value="1" type="checkbox">--%>
-                    <%--                            <span>Ship to a different address ?</span>--%>
-                    <%--                        </div>--%>
-                    <%--                        <div class="customar__field differt__form mt--40">--%>
-                    <%--                            <div class="margin_between">--%>
-                    <%--                                <div class="input_box space_between">--%>
-                    <%--                                    <label>First name <span>*</span></label>--%>
-                    <%--                                    <input name="firstName" type="text">--%>
-                    <%--                                </div>--%>
-                    <%--                                <div class="input_box space_between">--%>
-                    <%--                                    <label>last name <span>*</span></label>--%>
-                    <%--                                    <input name="lastName" type="text">--%>
-                    <%--                                </div>--%>
-                    <%--                            </div>--%>
-                    <%--                            <div class="input_box">--%>
-                    <%--                                <label>Address <span>*</span></label>--%>
-                    <%--                                <input name="address" type="text">--%>
-                    <%--                            </div>--%>
-                    <%--                            <div class="margin_between">--%>
-                    <%--                                <div class="input_box space_between">--%>
-                    <%--                                    <label>Phone <span>*</span></label>--%>
-                    <%--                                    <input name="phone" type="text">--%>
-                    <%--                                </div>--%>
 
-                    <%--                                <div class="input_box space_between">--%>
-                    <%--                                    <label>Email address <span>*</span></label>--%>
-                    <%--                                    <input name="email" type="email">--%>
-                    <%--                                </div>--%>
-                    <%--                            </div>--%>
-                    <%--                        </div>--%>
-                    <%--                    </div>--%>
                 </div>
                 <div class="col-lg-6 col-12 md-mt-40 sm-mt-40">
                     <div class="wn__order__box">

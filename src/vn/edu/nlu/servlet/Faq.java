@@ -2,7 +2,6 @@ package vn.edu.nlu.servlet;
 
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

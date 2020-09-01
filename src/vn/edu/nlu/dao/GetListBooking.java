@@ -36,7 +36,7 @@ public class GetListBooking {
                 orders.setId_user(rs.getInt("id_user"));
                 orders.setTotal(rs.getDouble("total"));
                 orders.setStatus(rs.getString("status"));
-                orders.setNote(rs.getString("note"));
+                orders.setNote(rs.getString("note")==null?"":rs.getString("note"));
                 ar.add(orders);
             }
             for (int i = 0; i < ar.size(); i++) {

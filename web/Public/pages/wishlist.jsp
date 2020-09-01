@@ -132,7 +132,7 @@
             "info": false,         // Will show "1 to n of n entries" Text at bottom
             "lengthChange": false,
             "ajax": {
-                "url": "http://localhost:8080/BookStore/WishList",
+                "url": "/WishList",
                 "dataType": "json",
                 method: "post",
                 'dataSrc': 'productWishlist',
@@ -165,7 +165,7 @@
                     "className": "product-thumbnail",
                     "data": "books",
                     "render": function (data, typet, row) {
-                        return '<a href="http://localhost:8080/BookStore/SingleProduct?id=' + data.id + '"><img width="100px"  height="100px" src=' + data.image + ' alt="productimg"></a>';
+                        return '<a href="/SingleProduct?id=' + data.id + '"><img width="100px"  height="100px" src=' + data.image + ' alt="productimg"></a>';
                     }
                 },
                 {
@@ -173,7 +173,7 @@
                     "className": "product-name",
                     "data": "books",
                     "render": function (data, typet, row) {
-                        return '<a href="http://localhost:8080/BookStore/SingleProduct?id=' + data.id + '">' + data.name + '</a>';
+                        return '<a href="/SingleProduct?id=' + data.id + '">' + data.name + '</a>';
                     }
                 },
                 {
@@ -235,7 +235,7 @@
             row.remove().draw();
             console.log(data.id);
             $.ajax({
-                url: "http://localhost:8080/BookStore/WishList",
+                url: "/WishList",
                 type: "post",
                 data: {id: data.id},
                 complete: function (resultText) {

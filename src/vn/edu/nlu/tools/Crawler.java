@@ -180,7 +180,7 @@
 //		Element ditails = ditail.first();
 //		String imgText = ditails.getElementsByClass("book-img").attr("src");
 //		saveImage(imgText);
-//		String pathImg="http://localhost:8080/BookStore/Public/images/books"+imgText.substring(imgText.lastIndexOf("/"));
+//		String pathImg="/Public/images/books"+imgText.substring(imgText.lastIndexOf("/"));
 //		cell =row.createCell(4, CellType.STRING);
 //		cell.setCellValue(pathImg);
 //

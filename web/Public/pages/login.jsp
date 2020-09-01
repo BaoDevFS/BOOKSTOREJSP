@@ -39,7 +39,7 @@
             <div class="login100-pic js-tilt" data-tilt>
                 <img src="Public/images/img-01.png" alt="IMG">
             </div>
-            <form class="login100-form validate-form" method="post" action="http://localhost:8080/BookStore/Login">
+            <form class="login100-form validate-form" method="post" action="/Login">
         <span class="login100-form-title">
         Member Login
         </span>
@@ -71,7 +71,7 @@
         <span class="txt1">
         Forgot
         </span>
-                    <a class="txt2" href="http://localhost:8080/BookStore/ForgotPassword">
+                    <a class="txt2" href="/ForgotPassword">
                         Username / Password?
                     </a>
                 </div>

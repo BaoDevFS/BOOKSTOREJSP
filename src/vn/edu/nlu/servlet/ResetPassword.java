@@ -59,12 +59,12 @@ public class ResetPassword extends HttpServlet {
                     rs.updateString("password",password);
                     rs.updateRow();
                     response.getWriter().write("<div style=\"width: 100%;height: 50px\">\n" +
-                            "<h6 style=\"padding: 10px;text-align: center;font-size: 20px;\">Set password success. <a href=\"http://localhost:8080/BookStore/Login\">Click do login </a></h6>\n" +
+                            "<h6 style=\"padding: 10px;text-align: center;font-size: 20px;\">Set password success. <a href=\"/Login\">Click do login </a></h6>\n" +
                             "</div>");
                     return;
                 } else {
                     response.getWriter().write("<div style=\"width: 100%;height: 50px\">\n" +
-                            "<h6 style=\"padding: 10px;text-align: center;font-size: 20px;\">Resset password fail. <a href=\"http://localhost:8080/BookStore/ForgotPassword\"></a>Try Again Or Contact Admin for assistance.</h6>\n" +
+                            "<h6 style=\"padding: 10px;text-align: center;font-size: 20px;\">Resset password fail. <a href=\"/ForgotPassword\"></a>Try Again Or Contact Admin for assistance.</h6>\n" +
                             "</div>");
                     return;
                 }

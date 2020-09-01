@@ -25,7 +25,7 @@
                 <img src="Public/images/img-01.png" alt="IMG">
             </div>
 
-            <form class="login100-form validate-form" method="post" action="http://localhost:8080/BookStore/Register">
+            <form class="login100-form validate-form" method="post" action="/Register">
         <span class="login100-form-title">
         Member Register
         </span>

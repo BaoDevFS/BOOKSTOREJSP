@@ -27,7 +27,7 @@ function editinfor(type) {
     }
 
     $.ajax({
-        url: "http://localhost:8080/BookStore/UserProfile",
+        url: "/UserProfile",
         method: "post",
         data: x,
         success: function (data) {

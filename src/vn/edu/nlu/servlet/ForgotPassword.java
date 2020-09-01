@@ -1,6 +1,5 @@
 package vn.edu.nlu.servlet;
 
-import vn.edu.nlu.control.EnCodeBase64;
 import vn.edu.nlu.control.SendMail;
 import vn.edu.nlu.control.ValidateParameter;
 import vn.edu.nlu.dao.HashCode;

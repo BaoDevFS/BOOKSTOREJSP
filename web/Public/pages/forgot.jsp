@@ -36,7 +36,7 @@
             </div>
 
             <form class="login100-form validate-form" method="post"
-                  action="http://localhost:8080/BookStore/ForgotPassword">
+                  action="/ForgotPassword">
         <span class="login100-form-title">
         <img src="Public/images/icons/lock.png" alt="IMG">
         Forgot Password
@@ -69,7 +69,7 @@
         <span class="txt1">
         Back to
         </span>
-                    <a class="txt2" href="http://localhost:8080/BookStore/">
+                    <a class="txt2" href="/">
                         Home?
                     </a>
                 </div>

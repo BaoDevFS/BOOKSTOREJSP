@@ -1,4 +1,3 @@
-<%@ page import="java.sql.ResultSet" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
@@ -76,26 +75,26 @@
                                     <table id="datable_1" class="table table-hover display  pb-30">
                                         <thead>
                                         <tr>
-                                            <th>User</th>
                                             <th>Name</th>
+                                            <th>Address</th>
                                             <th>Phone</th>
                                             <th>Email</th>
-                                            <th>View</th>
-                                            <th>Edit</th>
-                                            <th>Delete</th>
-                                            <th>Delete</th>
+                                            <th>Status</th>
+                                            <th>TotalPrice</th>
+                                            <th>Note</th>
+                                            <th>Done</th>
                                         </tr>
                                         </thead>
                                         <tfoot>
                                         <tr>
-                                            <th>User</th>
                                             <th>Name</th>
+                                            <th>Address</th>
                                             <th>Phone</th>
                                             <th>Email</th>
-                                            <th>View</th>
-                                            <th>Edit</th>
-                                            <th>Delete</th>
-                                            <th>Delete</th>
+                                            <th>Status</th>
+                                            <th>TotalPrice</th>
+                                            <th>Note</th>
+                                            <th>Done</th>
                                         </tr>
                                         </tfoot>
                                         <tbody>
@@ -136,71 +135,65 @@
 <script src="<%=PathAbsolute.getPath("admin/js/bootstrap.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/materialize.min.js")%>"></script>
 <script src="<%=PathAbsolute.getPath("admin/js/custom.js")%>"></script>
-<script src="<%=PathAbsolute.getPath("admin/js/active.js")%>"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="<%=PathAbsolute.getPath("admin/js/active.js")%>"></script>
 <script>
     $(document).ready(function () {
-        activeMenu();
         var table = $('#datable_1').DataTable({
             "ajax": {
-                "url": "http://localhost:8080/BookStore/Admin/AjaxProduct",
+                "url": "/AjaxBooking",
                 "dataType": "json",
                 method:"get",
                 "contentType": "application/json; charset=utf-8",
-                'dataSrc': 'products'
+                dataSrc: 'list'
             },
             columns: [
-                {'mData': 'id'},
-                {   "orderable": false,
-                    "data": "image",
-                    "render": function(data, typet, row) {
-                        return '<img style="width: 100px;height: 100px" src='+data+' >';
-                    }
-                },
+                // {'mData': 'id'},
+                // {   "orderable": false,
+                //     "data": "image",
+                //     "render": function(data, typet, row) {
+                //         return '<img style="width: 100px;height: 100px" src='+data+' >';
+                //     }
+                // },
                 {'mData': 'name'},
-                {'mData': 'price'},
-                {'mData': 'author'},
+                {'mData': 'address'},
+                {'mData': 'phone'},
+                {'mData': 'email'},
+                {'mData': 'status'},
+                {'mData': 'total'},
+                {'mData': 'note'},
                 {
                     "orderable": false,
                     "data": null,
-                    "defaultContent": "<a class='view' style='cursor: pointer'><i class=\"fa fa-eye\" aria-hidden=\"true\"></i></a>"
-                },
-                {
-                    "orderable": false,
-                    "data": null,
-                    "defaultContent": "<a class='edit' style='cursor: pointer'><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i></a>"
-                },
-                {
-                    "orderable": false,
-                    "data": null,
-                    "defaultContent": "<a class='delete' style='cursor: pointer'><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i></a>"
+                    "defaultContent": "<a class='delete' style='cursor: pointer'><i class=\"fa fa-check-circle\" aria-hidden=\"true\"></i></a>"
                 }
             ]
         });
-        $('#datable_1 tbody').on('click', 'a.delete', function () {
-            var row = table.row($(this).parents('tr'));
-            var data = row.data();
-            row.remove().draw();
-            $.ajax({
-                url: "http://localhost:8080/BookStore/Admin/Delete",
-                type: "get",
-                data: {id: data.id,type:'products'},
-                success: function (resultText) {
-                    table.ajax.reload();
-                }
-            });
-        });
-        $('#datable_1 tbody').on('click', 'a.view', function () {
-            var row = table.row($(this).parents('tr'));
-            var data = row.data();
-            window.location.href = "http://localhost:8080/BookStore/SingleProduct?id="+data.id;
-        });
-        $('#datable_1 tbody').on('click', 'a.edit', function () {
-            var row = table.row($(this).parents('tr'));
-            var data = row.data();
-            window.location.href = "http://localhost:8080/BookStore/Admin/PackageEdit?id="+data.id;
-        });
+        // $('#datable_1 tbody').on('click', 'a.delete', function () {
+        //     var row = table.row($(this).parents('tr'));
+        //     var data = row.data();
+        //     row.remove().draw();
+        //     $.ajax({
+        //         url: "/Admin/Delete",
+        //         type: "get",
+        //         data: {id: data.id,type:'products'},
+        //         success: function (resultText) {
+        //             table.ajax.reload();
+        //         }
+        //     });
+        // });
+        // $('#datable_1 tbody').on('click', 'a.view', function () {
+        //     var row = table.row($(this).parents('tr'));
+        //     var data = row.data();
+        //     window.location.href = "/SingleProduct?id="+data.id;
+        // });
+        // $('#datable_1 tbody').on('click', 'a.edit', function () {
+        //     var row = table.row($(this).parents('tr'));
+        //     var data = row.data();
+        //     window.location.href = "/Admin/PackageEdit?id="+data.id;
+        // });
+        activeMenu();
     });
 </script>
 </body>

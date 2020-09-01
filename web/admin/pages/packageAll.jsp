@@ -149,7 +149,7 @@
     $(document).ready(function () {
         var table = $('#datable_1').DataTable({
             "ajax": {
-                "url": "http://localhost:8080/BookStore/Admin/AjaxProduct",
+                "url": "/Admin/AjaxProduct",
                 "dataType": "json",
                 method:"get",
                 "contentType": "application/json; charset=utf-8",
@@ -188,7 +188,7 @@
             var data = row.data();
             row.remove().draw();
             $.ajax({
-                url: "http://localhost:8080/BookStore/Admin/Delete",
+                url: "/Admin/Delete",
                 type: "get",
                 data: {id: data.id,type:'products'},
                 success: function (resultText) {
@@ -199,12 +199,12 @@
         $('#datable_1 tbody').on('click', 'a.view', function () {
             var row = table.row($(this).parents('tr'));
             var data = row.data();
-            window.location.href = "http://localhost:8080/BookStore/SingleProduct?id="+data.id;
+            window.location.href = "/SingleProduct?id="+data.id;
         });
         $('#datable_1 tbody').on('click', 'a.edit', function () {
             var row = table.row($(this).parents('tr'));
             var data = row.data();
-            window.location.href = "http://localhost:8080/BookStore/Admin/PackageEdit?id="+data.id;
+            window.location.href = "/Admin/PackageEdit?id="+data.id;
         });
         activeMenu();
     });

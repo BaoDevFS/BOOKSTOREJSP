@@ -2,7 +2,6 @@ package vn.edu.nlu.servletad;
 
 import vn.edu.nlu.control.PathAbsolute;
 import vn.edu.nlu.control.SaveImage;
-import vn.edu.nlu.dao.HashCode;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
 import javax.imageio.ImageIO;
@@ -17,7 +16,6 @@ import javax.servlet.http.Part;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.nio.file.Paths;
-import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -39,9 +37,9 @@ public class UserEdit extends HttpServlet {
         String sql;
         if(avatar.getSize()>0) {
             SaveImage saveImage = new SaveImage();
-             avatars = PathAbsolute.getPath("admin/images/user/" + Paths.get(avatar.getSubmittedFileName()).getFileName().toString());
+             avatars = PathAbsolute.getPath("admin/images/user/" + Paths.get(avatar.getName()).getFileName().toString());
             BufferedImage imghoverBuff = ImageIO.read(avatar.getInputStream());
-            saveImage.saveImageForUser(imghoverBuff, Paths.get(avatar.getSubmittedFileName()).getFileName().toString(), request);
+            saveImage.saveImageForUser(imghoverBuff, Paths.get(avatar.getName()).getFileName().toString(), request);
             sql="UPDATE users set `name` =?,email=?,fullname=?,address=?,phone=?,gender=?,`group` = ?,active= ?,avatar=? where id="+id;
         }else{
             sql="UPDATE users set `name` =?,email=?,fullname=?,address=?,phone=?,gender=?,`group` = ?,active= ? where id="+id;

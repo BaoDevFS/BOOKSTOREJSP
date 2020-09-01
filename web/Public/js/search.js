@@ -9,7 +9,7 @@ function sea() {
          "scrollY":        "400px",
          "scrollCollapse": true,
         "ajax": {
-            url: "http://localhost:8080/BookStore/Search",
+            url: "/Search",
             method: "get",
             dataSrc:"listBooks",
             data:function (d) {
@@ -25,7 +25,7 @@ function sea() {
                 $.each(data.listBook,function (a,b) {
                     console.log(b.id);
                     x+='<tr role="row" class="odd">\n' +
-                        '                    <td class=" product-thumbnail"><a href="http://localhost:8080/BookStore/SingleProduct?id='+b.id+'"><img width="100px" height="100px"\n' +
+                        '                    <td class=" product-thumbnail"><a href="/SingleProduct?id='+b.id+'"><img width="100px" height="100px"\n' +
                         '                src="'+b.image+'"\n' +
                         '                alt="productimg"></a></td>\n' +
                         '                <td class="white product-name"><a class="white" href="#">'+b.name+'</a></td>\n' +

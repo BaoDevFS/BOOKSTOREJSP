@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-4 col-sm-4 col-7 col-lg-2">
                 <div class="logo">
-                    <a href="http://localhost:8080/BookStore/ ">
+                    <a href="/">
                         <img src="Public/images/logo/logo.png" alt="logo images">
                     </a>
                 </div>
@@ -12,20 +12,20 @@
             <div class="col-lg-8 d-none d-lg-block">
                 <nav class="mainmenu__nav">
                     <ul class="meninmenu d-flex justify-content-start">
-                        <li class="drop with--one--item"><a href="http://localhost:8080/BookStore/">Home</a>
+                        <li class="drop with--one--item"><a href="/">Home</a>
 
                         </li>
-                        <li class="drop"><a href="http://localhost:8080/BookStore/ShopGrid">Shop</a>
+                        <li class="drop"><a href="/ShopGrid">Shop</a>
 
                         </li>
-                        <li><a href="http://localhost:8080/BookStore/Contact">Contact</a></li>
+                        <li><a href="/Contact">Contact</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="col-md-8 col-sm-8 col-5 col-lg-2">
                 <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
                     <li class="shop_search"><a class="search__active" href="#"></a></li>
-                    <li class="wishlist"><a href="http://localhost:8080/BookStore/WishList"></a></li>
+                    <li class="wishlist"><a href="/WishList"></a></li>
                     <li class="shopcart"><a class="cartbox_active" href="#"><span class="product_qun"><%--3--%></span></a>
                         <!-- Start Shopping Cart -->
                         <div class="block-minicart minicart__active">
@@ -41,14 +41,14 @@
                                     <span id="total"><%--$66.00--%></span>
                                 </div>
                                 <div class="mini_action checkout">
-                                    <a class="checkout__btn" href="http://localhost:8080/BookStore/Checkout">Go to Checkout</a>
+                                    <a class="checkout__btn" href="/Checkout">Go to Checkout</a>
                                 </div>
                                 <div class="single__items">
                                     <div class="miniproduct" >
                                     </div>
                                 </div>
                                 <div class="mini_action cart">
-                                    <a class="cart__btn" href="http://localhost:8080/BookStore/Cart">View and edit cart</a>
+                                    <a class="cart__btn" href="/Cart">View and edit cart</a>
                                 </div>
                             </div>
                         </div>
@@ -64,10 +64,10 @@
                                     <div class="switcher-options">
                                         <div class="switcher-currency-trigger">
                                             <div class="setting__menu">
-                                                <span><a href="http://localhost:8080/BookStore/UserProfile">My Account</a></span>
-                                                <span><a href="http://localhost:8080/BookStore/Wishlist">My Wishlist</a></span>
-                                                <span><a href="http://localhost:8080/BookStore/Login">Sign In</a></span>
-                                                <span><a href="http://localhost:8080/BookStore/Register">Create An Account</a></span>
+                                                <span><a href="/UserProfile">My Account</a></span>
+                                                <span><a href="/Wishlist">My Wishlist</a></span>
+                                                <span><a href="/Login">Sign In</a></span>
+                                                <span><a href="/Register">Create An Account</a></span>
                                             </div>
                                         </div>
                                     </div>
@@ -83,13 +83,13 @@
             <div class="col-lg-12 d-none">
                 <nav class="mobilemenu__nav">
                     <ul class="meninmenu">
-                        <li><a href="http://localhost:8080/BookStore/">Home</a>
+                        <li><a href="/">Home</a>
 
                         </li>
-                        <li><a href="http://localhost:8080/BookStore/ShopGrid">Shop</a>
+                        <li><a href="/ShopGrid">Shop</a>
 
                         </li>
-                        <li><a href="http://localhost:8080/BookStore/Contact">Contact</a></li>
+                        <li><a href="/Contact">Contact</a></li>
                     </ul>
                 </nav>
             </div>

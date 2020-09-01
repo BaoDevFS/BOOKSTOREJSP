@@ -1,6 +1,6 @@
 function addToCart(id) {
     $.ajax({
-        url: "http://localhost:8080/BookStore/Cart",
+        url: "/Cart",
         method: "post",
         data: {
             id: id, quantity: 0
@@ -17,7 +17,7 @@ function addToCart(id) {
             //         console.log(json);
             //     }catch (e) {
             //         console.log(e);
-            //         window.location.replace("http://localhost:8080/BookStore/Login");
+            //         window.location.replace("/Login");
             //     }
             // }
         }
@@ -28,7 +28,7 @@ var i = 0;
 
 function addToCartShow(id, quantum) {
     $.ajax({
-        url: "http://localhost:8080/BookStore/Cart",
+        url: "/Cart",
         type: "post",
         data: {id: id, quantity: quantum},
         complete: function (resultText) {
@@ -46,7 +46,7 @@ function getidshow() {
 function propupbook(id) {
     i = id;
     $.ajax({
-        url: "http://localhost:8080/BookStore/AjaxBookMini",
+        url: "/AjaxBookMini",
         method: "get",
         data: {
             id: id
@@ -65,7 +65,7 @@ function propupbook(id) {
 
 function addToWishList(id) {
     $.ajax({
-        url: "http://localhost:8080/BookStore/AjaxWishList",
+        url: "/AjaxWishList",
         method: "get",
         data: {
             id: id

@@ -1,6 +1,5 @@
 package vn.edu.nlu.fit.model;
 
-import java.sql.Date;
 import java.util.ArrayList;
 
 public class Orders {
@@ -11,7 +10,7 @@ public class Orders {
     String email;
     String status;
     String address;
-    String note;
+    String note="";
     int acitve;
 	ArrayList<ProductCart> listBook;
 

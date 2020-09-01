@@ -1,6 +1,7 @@
 package vn.edu.nlu.control;
 
 import vn.edu.nlu.fit.model.Books;
+import vn.edu.nlu.fit.model.Orders;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
 import java.sql.Connection;
@@ -35,4 +36,5 @@ public class GetProduct {
         }
         return  products;
     }
+
 }

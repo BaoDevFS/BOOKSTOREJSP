@@ -1,6 +1,3 @@
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="vn.edu.nlu.fit.model.ProductCart" %>
-<%@ page import="vn.edu.nlu.fit.model.Cart" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
@@ -105,9 +102,9 @@
                     <div class="cartbox__btn">
                         <ul class="cart__btn__list d-flex flex-wrap flex-md-nowrap flex-lg-nowrap justify-content-between">
                             <li><a href="#">Coupon Code</a></li>
-                            <li><a href="http://localhost:8080/BookStore/SingleProduct">Apply Code</a></li>
-                            <li><a href="http://localhost:8080/BookStore/ShopGrid">Update Cart</a></li>
-                            <li><a href="http://localhost:8080/BookStore/Checkout">Check Out</a></li>
+                            <li><a href="/SingleProduct">Apply Code</a></li>
+                            <li><a href="/ShopGrid">Update Cart</a></li>
+                            <li><a href="/Checkout">Check Out</a></li>
                         </ul>
                     </div>
                 </div>
@@ -160,7 +157,7 @@
             "info": false,         // Will show "1 to n of n entries" Text at bottom
             "lengthChange": false,
             "ajax": {
-                "url": "http://localhost:8080/BookStore/Cart",
+                "url": "/Cart",
                 "dataType": "json",
                 method:"post",
                 'dataSrc': 'productCart',
@@ -189,14 +186,14 @@
                     "className":"product-thumbnail",
                     "data": "books",
                     "render": function(data, typet, row) {
-                        return '<a href="http://localhost:8080/BookStore/SingleProduct?id='+data.id+'"><img width="100px"  height="100px" src='+data.image+' alt="productimg"></a>';
+                        return '<a href="/SingleProduct?id='+data.id+'"><img width="100px"  height="100px" src='+data.image+' alt="productimg"></a>';
                     }
                 },
                 {   "orderable": false,
                     "className":"product-name",
                     "data": "books",
                     "render": function(data, typet, row) {
-                        return '<a href="http://localhost:8080/BookStore/SingleProduct?id='+data.id+'">'+data.name+'</a>';
+                        return '<a href="/SingleProduct?id='+data.id+'">'+data.name+'</a>';
                     }
                 },
                 {
@@ -251,7 +248,7 @@
             row.remove().draw();
             console.log(data.id);
             $.ajax({
-                url: "http://localhost:8080/BookStore/Cart",
+                url: "/Cart",
                 type: "post",
                 data: {id: data.id},
                 complete: function (resultText) {
@@ -271,7 +268,7 @@
                 quantity=1;
             }
             $.ajax({
-                url: "http://localhost:8080/BookStore/Cart",
+                url: "/Cart",
                 type: "post",
                 data: {id: data.id,quantity:quantity},
                 complete: function (resultText) {

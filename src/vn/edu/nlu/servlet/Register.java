@@ -1,5 +1,6 @@
 package vn.edu.nlu.servlet;
 
+import vn.edu.nlu.control.GreneratePublicPrivateKey;
 import vn.edu.nlu.control.SendMail;
 import vn.edu.nlu.dao.HashCode;
 import vn.edu.nlu.fit.model.Users;
@@ -13,7 +14,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 
 @WebServlet("/Register")
@@ -22,9 +26,11 @@ public class Register extends HttpServlet {
     GetConnectDatabase getConnectDatabase;
     Connection connection;
     Users user;
+    GreneratePublicPrivateKey grenerateKey;
 
     public Register() {
         getConnectDatabase = new GetConnectDatabase();
+        grenerateKey = new GreneratePublicPrivateKey();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -36,25 +42,25 @@ public class Register extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
-        String userName = request.getParameter("username")==null?"": request.getParameter("username");
+        String userName = request.getParameter("username") == null ? "" : request.getParameter("username");
         String password = request.getParameter("password");
         String repassword = request.getParameter("repassword");
-        String email = request.getParameter("email")==null?"": request.getParameter("email");
-        String phone = request.getParameter("phone")==null?"": request.getParameter("phone");
+        String email = request.getParameter("email") == null ? "" : request.getParameter("email");
+        String phone = request.getParameter("phone") == null ? "" : request.getParameter("phone");
 //        try {
 //            password = HashCode.hashCode(password);
 //        } catch (NoSuchAlgorithmException e) {
 //            e.printStackTrace();
 //        }
         if (password == "" || repassword == "") {
-            System.out.println(password+"=="+repassword);
+            System.out.println(password + "==" + repassword);
             request.setAttribute("message", "Password invalid!");
             RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/register.jsp");
             requestDispatcher.forward(request, response);
             return;
         }
         if (!password.equals(repassword)) {
-            System.out.println(password+"!="+repassword);
+            System.out.println(password + "!=" + repassword);
             request.setAttribute("message", "Repassword not same!");
             RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/register.jsp");
             requestDispatcher.forward(request, response);
@@ -62,20 +68,23 @@ public class Register extends HttpServlet {
         }
         try {
             password = HashCode.hashCode(password);
-            user = new Users(userName, email,password , phone);
+            user = new Users(userName, email, password, phone);
             boolean isExistEmail = checkRegister_email(email);
             if (isExistEmail) {
                 request.setAttribute("message", "Email already exit!");
                 RequestDispatcher rp = getServletContext().getRequestDispatcher("/Public/pages/register.jsp");
                 rp.forward(request, response);
             } else {
-                if(register(user)){
+                grenerateKey.generateKey(2048);
+                String pathFilePrivateKey = grenerateKey.saveKey(grenerateKey.getPrivateKey(), user.getEmail() + "Private.key", request);
+                String pathFilePublicKey = grenerateKey.saveKey(grenerateKey.getPublicKey(),user.getEmail()+"Public.key",request);
+                if (register(user,grenerateKey.getPublicKey())) {
                     SendMail sendMail = new SendMail();
-                    sendMail.sendMailVerify(user.getEmail());
+                    sendMail.sendMailVerify(user.getEmail(),pathFilePrivateKey,pathFilePublicKey);
                     response.getWriter().write("<div style=\"width: 100%;height: 50px\">\n" +
                             "<h6 style=\"padding: 10px;text-align: center;font-size: 20px;\">Check email verify acccount!</h6>\n" +
                             "</div>");
-                }else {
+                } else {
                     response.sendRedirect(request.getContextPath() + "/Login");
                 }
             }
@@ -110,16 +119,17 @@ public class Register extends HttpServlet {
         return result;
     }
 
-    public boolean register(Users acc) {
+    public boolean register(Users acc,String publicKey) {
         boolean result = false;
         try {
             connection = getConnectDatabase.getConnectionSql();
-            String sql = "INSERT  INTO users (name,email,password,phone) values (? , ?, ?, ?)";
+            String sql = "INSERT  INTO users (name,email,password,phone,public_key) values (? , ?, ?, ?,?)";
             PreparedStatement pre = connection.prepareStatement(sql);
-            pre.setString(1,acc.getName());
-            pre.setString(2,acc.getEmail());
-            pre.setString(3,acc.getPassword());
-            pre.setString(4,acc.getPhone());
+            pre.setString(1, acc.getName());
+            pre.setString(2, acc.getEmail());
+            pre.setString(3, acc.getPassword());
+            pre.setString(4, acc.getPhone());
+            pre.setString(5, publicKey);
             int i = pre.executeUpdate();
             if (i > 0) {
                 result = true;
@@ -127,7 +137,7 @@ public class Register extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-            return result;
+        return result;
     }
 
 }

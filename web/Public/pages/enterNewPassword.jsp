@@ -71,7 +71,7 @@
                 <div class="m-auto col-lg-6 col-12">
                     <div class="my__account__wrapper">
                         <h3 class="account__title" style="text-align: center; padding-bottom: 42px;">New password</h3>
-                        <form action="http://localhost:8080/BookStore/ResetPassword" method="post">
+                        <form action="/ResetPassword" method="post">
                             <%!
                                 public String getMessage(String s){
                                     if(s==null){

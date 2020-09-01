@@ -254,7 +254,7 @@
     $(document).ready(function () {
         var table = $('#datable_1').DataTable({
             "ajax": {
-                "url": "http://localhost:8080/BookStore/Admin/AjaxUser",
+                "url": "/Admin/AjaxUser",
                 "dataType": "json",
                 "contentType": "application/json; charset=utf-8",
                 'dataSrc': 'users'
@@ -286,7 +286,7 @@
             var data = row.data();
             row.remove().draw();
             $.ajax({
-                url: "http://localhost:8080/BookStore/Admin/Delete",
+                url: "/Admin/Delete",
                 type: "get",
                 data: {id: data.id,type:'users'},
                 success: function (resultText) {
@@ -297,12 +297,12 @@
         $('#datable_1 tbody').on('click', 'a.view', function () {
             var row = table.row($(this).parents('tr'));
             var data = row.data();
-            window.location.href = "http://localhost:8080/BookStore/Admin/UserView?id="+data.id;
+            window.location.href = "/Admin/UserView?id="+data.id;
         });
         $('#datable_1 tbody').on('click', 'a.edit', function () {
             var row = table.row($(this).parents('tr'));
             var data = row.data();
-            window.location.href = "http://localhost:8080/BookStore/Admin/UserEdit?id="+data.id;
+            window.location.href = "/Admin/UserEdit?id="+data.id;
         });
         activeMenu();
     });

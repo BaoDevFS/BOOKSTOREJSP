@@ -40,9 +40,9 @@ public class PackageEdit extends HttpServlet {
 
         if(avatar.getSize()>0) {
             SaveImage saveImage = new SaveImage();
-            avatars= PathAbsolute.getPath("Public/images/books/" + Paths.get(avatar.getSubmittedFileName()).getFileName().toString());
+            avatars= PathAbsolute.getPath("Public/images/books/" + Paths.get(avatar.getName()).getFileName().toString());
             BufferedImage imghoverBuff = ImageIO.read(avatar.getInputStream());
-            saveImage.saveImageForBook(imghoverBuff, Paths.get(avatar.getSubmittedFileName()).getFileName().toString(), request);
+            saveImage.saveImageForBook(imghoverBuff, Paths.get(avatar.getName()).getFileName().toString(), request);
             sql="UPDATE books SET name=?,description=?,price=?,year=?,price_old=?,author=?,image=? where id="+id;
         }else{
             sql="UPDATE books SET name=?,description=?,price=?,year=?,price_old=?,author=? where id="+id;

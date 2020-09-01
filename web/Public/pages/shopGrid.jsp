@@ -2,10 +2,10 @@
 <%@ page import="vn.edu.nlu.dao.BookDAO" %>
 <%@ page import="vn.edu.nlu.dao.GetListProductType" %>
 <%@ page import="vn.edu.nlu.fit.model.Products" %>
+<%@ page import="vn.edu.nlu.servlet.ShopGrid" %>
 <%@ page import="vn.edu.nlu.tools.Pagination" %>
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="vn.edu.nlu.servlet.ShopGrid" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
@@ -227,10 +227,10 @@
                                 <div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
                                     <div class="product__thumb">
                                         <a class="first__img"
-                                           href="http://localhost:8080/BookStore/SingleProduct?id=<%=pd.getId()%>">
+                                           href="/SingleProduct?id=<%=pd.getId()%>">
                                             <img src="<%=pd.getImage()%>" class="abc" alt="product image"></a>
                                         <a class="second__img animation1"
-                                           href="http://localhost:8080/BookStore/SingleProduct?id=<%=pd.getId()%>">
+                                           href="/SingleProduct?id=<%=pd.getId()%>">
                                             <img src="<%=pd.getImage_hover()%>" class="abc" alt="product image"></a>
                                         <div class="hot__box">
                                             <span class="hot-label">BEST SALLER</span>
@@ -238,7 +238,7 @@
                                     </div>
                                     <div class="product__content content--center">
                                         <h4>
-                                            <a href="http://localhost:8080/BookStore/SingleProduct?id=<%=pd.getId()%>"><%= pd.getName()%>
+                                            <a href="/SingleProduct?id=<%=pd.getId()%>"><%= pd.getName()%>
                                             </a></h4>
                                         <ul class="prize d-flex">
                                             <li>$<%=pd.getPrice()%>
@@ -293,15 +293,15 @@
                                 <div class="list__view mb-3">
                                     <div class="thumb">
                                         <a class="first__img"
-                                           href="http://localhost:8080/BookStore/SingleProduct?id=<%=pd.getId()%>"><img
+                                           href="/SingleProduct?id=<%=pd.getId()%>"><img
                                                 src="<%=pd.getImage()%>" alt="product images"></a>
                                         <a class="second__img animation1"
-                                           href="http://localhost:8080/BookStore/SingleProduct?id=<%=pd.getId()%>"><img
+                                           href="/SingleProduct?id=<%=pd.getId()%>"><img
                                                 src="<%=pd.getImage_hover()%>" alt="product images"></a>
                                     </div>
                                     <div class="content">
                                         <h2>
-                                            <a href="http://localhost:8080/BookStore/SingleProduct?id=<%=pd.getId()%>"><%=pd.getName()%>
+                                            <a href="/SingleProduct?id=<%=pd.getId()%>"><%=pd.getName()%>
                                             </a></h2>
                                         <ul class="rating d-flex">
                                             <li class="on"><i class="fa fa-star-o"></i></li>
@@ -516,7 +516,7 @@
         if (type == "list") {
             console.log("list");
             $.ajax({
-                url: "http://localhost:8080/BookStore/ShopGrid",
+                url: "/ShopGrid",
                 method: "POST",
                 data: {
                     navType: "list"
@@ -525,7 +525,7 @@
         } else {
             console.log("gird");
             $.ajax({
-                url: "http://localhost:8080/BookStore/ShopGrid",
+                url: "/ShopGrid",
                 method: "POST",
             });
         }

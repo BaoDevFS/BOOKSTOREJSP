@@ -288,10 +288,10 @@
                                 <div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
                                     <div class="product__thumb">
                                         <a class="first__img"
-                                           href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsRe.getString("id")%>"><img
+                                           href="/SingleProduct?id=<%=rsRe.getString("id")%>"><img
                                                 src="<%=rsRe.getString(3)%>" alt="product image"></a>
                                         <a class="second__img animation1"
-                                           href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsRe.getString("id")%>"><img
+                                           href="/SingleProduct?id=<%=rsRe.getString("id")%>"><img
                                                 src="<%=rsRe.getString(4)%>" alt="product image"></a>
                                         <div class="hot__box">
                                             <span class="hot-label">BEST SALLER</span>
@@ -299,7 +299,7 @@
                                     </div>
                                     <div class="product__content content--center">
                                         <h4>
-                                            <a href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsRe.getString("id")%>"><%=rsRe.getString(2)%>
+                                            <a href="/SingleProduct?id=<%=rsRe.getString("id")%>"><%=rsRe.getString(2)%>
                                             </a></h4>
                                         <ul class="prize d-flex">
                                             <li>$<%=rsRe.getString(6)%>
@@ -354,10 +354,10 @@
                                 <div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
                                     <div class="product__thumb">
                                         <a class="first__img"
-                                           href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsSell.getString("id")%>"><img
+                                           href="/SingleProduct?id=<%=rsSell.getString("id")%>"><img
                                                 src="<%=rsSell.getString(3)%>" alt="product image"></a>
                                         <a class="second__img animation1"
-                                           href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsSell.getString("id")%>"><img
+                                           href="/SingleProduct?id=<%=rsSell.getString("id")%>"><img
                                                 src="<%=rsSell.getString(4)%>" alt="product image"></a>
                                         <div class="hot__box">
                                             <span class="hot-label">BEST SALLER</span>
@@ -365,7 +365,7 @@
                                     </div>
                                     <div class="product__content content--center">
                                         <h4>
-                                            <a href="http://localhost:8080/BookStore/SingleProduct?id=<%=rsSell.getString("id")%>">
+                                            <a href="/SingleProduct?id=<%=rsSell.getString("id")%>">
                                                 <%=rsSell.getString(2)%>
                                             </a></h4>
                                         <ul class="prize d-flex">

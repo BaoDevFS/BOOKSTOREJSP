@@ -43,19 +43,19 @@ public class PackageAdd extends HttpServlet {
         //
         SaveImage saveImage = new SaveImage();
         Part image = request.getPart("image");
-        String fileNameImg=PathAbsolute.getPath("Public/images/books/"+ Paths.get(image.getSubmittedFileName()).getFileName().toString());
+        String fileNameImg=PathAbsolute.getPath("Public/images/books/"+ Paths.get(image.getName()).getFileName().toString());
         System.out.println(fileNameImg);
         BufferedImage imgBuff = ImageIO.read(image.getInputStream());
-        saveImage.saveImageForBook(imgBuff,Paths.get(image.getSubmittedFileName()).getFileName().toString(),request);
+        saveImage.saveImageForBook(imgBuff,Paths.get(image.getName()).getFileName().toString(),request);
        //get file from form
         Part imagehover = request.getPart("imagehover");
         BufferedImage imghoverBuff = ImageIO.read(imagehover.getInputStream());
 
         //get path file save to server
-        String fileNameImgHover=PathAbsolute.getPath("Public/images/books/"+ Paths.get(imagehover.getSubmittedFileName()).getFileName().toString());
+        String fileNameImgHover=PathAbsolute.getPath("Public/images/books/"+ Paths.get(imagehover.getName()).getFileName().toString());
         System.out.println(fileNameImgHover);
         //save file
-        saveImage.saveImageForBook(imghoverBuff,Paths.get(imagehover.getSubmittedFileName()).getFileName().toString(),request);
+        saveImage.saveImageForBook(imghoverBuff,Paths.get(imagehover.getName()).getFileName().toString(),request);
 
         String name = request.getParameter("name");
         String description = request.getParameter("description");

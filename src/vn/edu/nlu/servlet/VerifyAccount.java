@@ -41,7 +41,7 @@ public class VerifyAccount extends HttpServlet {
             statement = connection.createStatement();
             int num =statement.executeUpdate(changeActiveAccount);
             if(num>0){
-                response.sendRedirect("http://localhost:8080/BookStore/Login");
+                response.sendRedirect("/Login");
             }
         } catch (SQLException e) {
             e.printStackTrace();
