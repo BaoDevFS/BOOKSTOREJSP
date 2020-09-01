@@ -1,5 +1,6 @@
 package vn.edu.nlu.servletad;
 
+import vn.edu.nlu.control.ValidateParameter;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
 import javax.servlet.RequestDispatcher;
@@ -29,7 +30,7 @@ public class PackageCartEdit extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
-        String name = (String) request.getParameter("name");
+        String name = ValidateParameter.validateParameter(request,"name");
         try {
             con = getConnect.getConnectionSql();
             String sql = "UPDATE booktypes set NAME= ? where booktypes.id =?";

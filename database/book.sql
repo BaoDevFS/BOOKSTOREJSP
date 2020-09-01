@@ -11,7 +11,7 @@
  Target Server Version : 100134
  File Encoding         : 65001
 
- Date: 08/01/2020 17:39:35
+ Date: 08/01/2020 22:46:20
 */
 
 SET NAMES utf8mb4;
@@ -28,7 +28,7 @@ CREATE TABLE `authors`  (
   `created_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
   `updated_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 229 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 230 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of authors
@@ -261,6 +261,7 @@ INSERT INTO `authors` VALUES (225, 'Mike King', 1, '2019-11-24 10:47:48', '2019-
 INSERT INTO `authors` VALUES (226, 'Jason Plato', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
 INSERT INTO `authors` VALUES (227, 'Julian Holland', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
 INSERT INTO `authors` VALUES (228, 'Lonely Planet', 1, '2019-11-24 10:47:48', '2019-11-24 10:47:48');
+INSERT INTO `authors` VALUES (229, 'duyen', 1, '2020-01-08 22:18:48', '2020-01-08 22:18:48');
 
 -- ----------------------------
 -- Table structure for bills
@@ -312,7 +313,7 @@ CREATE TABLE `books`  (
 -- ----------------------------
 -- Records of books
 -- ----------------------------
-INSERT INTO `books` VALUES (10, 'Watching You', 'http://localhost:8080/BookStore/Public/images/books/4.jpg', 'http://localhost:8080/BookStore/Public/images/books/2.jpg', NULL, 200.00, 145.00, 'new', 30, 2018, 1, 3, '2019-12-20 00:32:21', '2019-12-20 00:32:21', 4, NULL);
+INSERT INTO `books` VALUES (10, 'Watching You', 'http://localhost:8080/BookStore/Public/images/books/4.jpg', 'http://localhost:8080/BookStore/Public/images/books/2.jpg', 'awdawdwaddawdawdwaaaaaaaaaaaaaa', 200.00, 145.00, 'new', 30, 2018, 1, 3, '2020-01-08 21:31:18', '2020-01-08 21:31:18', 4, NULL);
 INSERT INTO `books` VALUES (11, 'The Lost Words: Spell Songs', 'http://localhost:8080/BookStore/Public/images/books/9781527239616.jpg', 'http://localhost:8080/BookStore/Public/images/books/9781527239616.jpg', 'Spell Songs is a musical companion piece to The Lost Words: A Spell Book by author Robert Macfarlane and artist Jackie Morris. This CD is accompanied by sumptuous illustrations from Jackie Morris, new spells by Robert Macfarlane, enlightening thoughts by Robert, Jackie and Spell Singer Karine Polwart as well as stunning photography by Elly Lucas. In 2018 Folk by the Oak Festival commissioned Spell Songs because of their love of The Lost Words. \n<br> \n<br> Spell Songs comprises eight remarkable musicians whose music engages deeply with landscape and nature; musicians who are perfectly placed to respond to the creatures, art and language of The Lost Words. They spent a week in Herefordshire bringing this music together in the company of Jackie Morris. Art inspired music and music inspired art. Jackie Morris immersed herself in the musical residency where she generously created new iconesque artwork of each musician and their instruments portrayed in an unexpected and enchanting way. These stunning new artworks accompany the CD.\n<br> \n<br> Spell Songs allowed these acclaimed and diverse musicians to weave together elements of British folk music, Senegalese folk traditions, and experimental and classical music to create an inspiring new body of work. \n<br> \n<br> Here are 14 songs which capture the essence of The Lost Words book. Spoken voice, whispers, accents, dialects, native languages, proverbs, sayings, birdsong, river chatter and insect hum all increase the intimacy of the musical world conjured by the songs. Inspired by the words, art and ethos of The Lost Words book, each musician brings new imaginings, embellishments and diversions which are rooted in personal experience, a deep respect for the natural world, protest at the loss of nature and its language and an appreciation for wildness and beauty. \n<br> \n<br> In February 2019 Spell Songs enjoyed standing ovations at sell-out performances in major venues across the UK culminating at The Queen Elizabeth Hall at the Southbank Centre, London. Spell Songs was a highlight of The Hay International Literary Festival 2019 and in August 2019 they were invited to perform at the BBCs Lost Words Prom in the Royal Albert Hall. They will continue to tour each year.\n<br> There are songs here that would live with me for the rest of my years, even if Id had no part in their making., Robert Macfarlane\n<br> \n<a class=read-more>show more</a>', 40.00, 27.03, 'new', 10, 2019, 1, 3, '2019-12-20 00:32:21', '2019-12-20 00:32:21', 1, 'Robert Macfarlane');
 INSERT INTO `books` VALUES (13, 'The Woman in the Photograph', 'http://localhost:8080/BookStore/Public/images/books/9781785768965.jpg', 'http://localhost:8080/BookStore/Public/images/books/9781785768965.jpg', 'An empowering, thought-provoking feminist novel that will change the way you see the world. Perfect for fans of Elizabeth Day, Claire Fuller and Joanna Cannon.\n<br> \n<br> 1968. Veronica Moon, a junior photographer for a local newspaper, is frustrated by her (male) colleagues failure to take her seriously. And then she meets Leonie on the picket line of the Ford factory at Dagenham. So begins a tumultuous, passionate and intoxicating friendship. Leonie is ahead of her time and fighting for womens equality with everything she has. She offers Veronica an exciting, free life at the dawn of a great change.\n<br> \n<br> Fifty years later, Leonie is gone, and Veronica leads a reclusive life. Her groundbreaking career was cut short by one of the most famous photographs of the twentieth century.\n<br> \n<br> Now, that controversial picture hangs as the centrepiece of a new feminist exhibition curated by Leonies niece. Long-repressed memories of Veronicas extraordinary life begin to stir. Its time to break her silence, and step back into the light.\n<br> \n<br> Praise for The Woman in the Photograph:\n<br> \n<br> Imaginative and moving novel - a must-read for any feminist\n<br> Katie Fforde\n<br> \n<br> I absolutely loved The Woman in the Photograph, a compelling,original and thought-provoking look at feminism and the power of female friendships\n<br> Sarah Franklin\n<br> \n<br> What a glorious combination: Stephanies warm intelligence brought to bear on the complexities of second-wave feminism. I ate the book up\n<br> Shelley Harris\n<br> \n<br> Refreshing and thought-provoking . . . a stirring exploration of female friendship and the fight for equality\n<br> Carys Bray\n<br> \n<br> Brilliantly researched, thought-provoking, and written straight from the heart, this is undoubtedly Butlands best book yet\n<br> Lancashire Evening Post\n<br> \n<a class=read-more>show more</a>', 15.00, 12.97, 'new', 10, 2019, 1, 3, '2019-12-20 00:32:21', '2019-12-20 00:32:21', 1, 'Stephanie Butland');
 INSERT INTO `books` VALUES (14, 'Shell Life on the Seashore', 'http://localhost:8080/BookStore/Public/images/books/9780571354450.jpg', 'http://localhost:8080/BookStore/Public/images/books/9780571354450.jpg', 'Armed with this intrepid survey, we can see a brave new world down there on the beach ... Exquisite revelation, of the most wonderful, watery kind. - Philip Hoare\n<br> \n<br> For many, the highlights of seaside holidays are rockpooling and gathering the glorious array of shells left strewn on the beach after the receding tide. Attracted by the infinite variety of shapes and colours, visitors can never resist making a souvenir collection of their own - but little do they suspect the fascinating lives of the animals who once occupied them. \n<br> \n<br> What if each shell had a story of its own to tell us, if only we knew the language? Mr Streets delightful, informative guide uncovers the secret history of each common shell, revealing not only which marine creature once inhabited it but the unique challenges of its watery habitat it had to solve. \n<br> \n<br> From barnacles to oysters, cockles to sea slugs, winkles to carnivorous snails, molluscs and lesser-known members of the octopus family, Shell Life on the Seashore is the essential primer for recognising and collecting both these curious specimens and the empties they leave behind - and will greatly increase the old-fashioned pleasures of a coastal holiday for all the family.\n<br> \n<a class=read-more>show more</a>', 17.00, 13.13, 'new', 10, 2019, 1, 3, '2019-12-20 00:32:21', '2019-12-20 00:32:21', 1, 'Philip Street');
@@ -710,9 +711,29 @@ CREATE TABLE `detailorders`  (
 -- ----------------------------
 -- Records of detailorders
 -- ----------------------------
-INSERT INTO `detailorders` VALUES (11, 12, 1, 1, '2020-01-08 15:04:11', '2020-01-08 15:04:11');
-INSERT INTO `detailorders` VALUES (13, 12, 1, 1, '2020-01-08 15:04:11', '2020-01-08 15:04:11');
-INSERT INTO `detailorders` VALUES (17, 12, 1, 1, '2020-01-08 15:04:11', '2020-01-08 15:04:11');
+INSERT INTO `detailorders` VALUES (10, 13, 1, 1, '2020-01-08 20:20:46', '2020-01-08 20:20:46');
+INSERT INTO `detailorders` VALUES (11, 13, 1, 1, '2020-01-08 20:20:46', '2020-01-08 20:20:46');
+INSERT INTO `detailorders` VALUES (13, 13, 1, 1, '2020-01-08 20:20:46', '2020-01-08 20:20:46');
+INSERT INTO `detailorders` VALUES (11, 14, 1, 1, '2020-01-08 20:50:14', '2020-01-08 20:50:14');
+INSERT INTO `detailorders` VALUES (13, 14, 1, 1, '2020-01-08 20:50:14', '2020-01-08 20:50:14');
+INSERT INTO `detailorders` VALUES (17, 14, 1, 1, '2020-01-08 20:50:14', '2020-01-08 20:50:14');
+
+-- ----------------------------
+-- Table structure for discounts
+-- ----------------------------
+DROP TABLE IF EXISTS `discounts`;
+CREATE TABLE `discounts`  (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `code` varchar(25) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `value` double(255, 0) NULL DEFAULT NULL,
+  `date_start` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `date_end` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `active` tinyint(1) NULL DEFAULT NULL,
+  `created_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
+  `updated_at` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for faqs
@@ -743,14 +764,22 @@ DROP TABLE IF EXISTS `feedbacks`;
 CREATE TABLE `feedbacks`  (
   `id` int(11) NOT NULL,
   `content` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `date` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `rate` int(255) NULL DEFAULT NULL,
   `id_book` int(11) NULL DEFAULT NULL,
   `active` tinyint(1) NULL DEFAULT NULL,
-  `created_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
-  `updated_at` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `id_book`(`id_book`) USING BTREE,
   CONSTRAINT `feedbacks_ibfk_1` FOREIGN KEY (`id_book`) REFERENCES `books` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of feedbacks
+-- ----------------------------
+INSERT INTO `feedbacks` VALUES (0, 'qqqq', 'fấdfsa', '2020-01-08', 3, 218, 1);
+INSERT INTO `feedbacks` VALUES (1, 'ádasd', 'fvgbnm,', '2020-01-08', 3, 218, 1);
+INSERT INTO `feedbacks` VALUES (2, 'dawdawdw', 'dfdgfh', '2020-01-08', 5, 14, 1);
 
 -- ----------------------------
 -- Table structure for goodreceipts
@@ -803,12 +832,13 @@ CREATE TABLE `orders`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `id_user`(`id_user`) USING BTREE,
   CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of orders
 -- ----------------------------
-INSERT INTO `orders` VALUES (12, 60.00, 'chua xu ly', '103, duong so 4, phuong linh xuan , quan thu duc', NULL, 1, '2020-01-08 15:04:11', '2020-01-08 15:04:11', 1, 'Bao Nguyen', '0911521408', 'nguyennhubao999@gmail.com');
+INSERT INTO `orders` VALUES (13, 185.00, 'chua xu ly', 'KTX KHU B- DHQG', NULL, 1, '2020-01-08 20:20:45', '2020-01-08 20:20:45', 2, 'Quỳnh Vũ', '8426473627647823676', 'nguyenhubao999@gmail.com');
+INSERT INTO `orders` VALUES (14, 60.00, 'chua xu ly', 'KTX KHU B- DHQG', NULL, 1, '2020-01-08 20:50:14', '2020-01-08 20:50:14', 2, 'Quỳnh Vũ', '0394570754', 'quyen@gmail.com');
 
 -- ----------------------------
 -- Table structure for providers
@@ -918,11 +948,12 @@ CREATE TABLE `users`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `id`(`id`, `email`) USING BTREE,
   INDEX `email`(`email`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'Bao', 'nguyennhubao999@gmail.com', 'http://localhost:8080/BookStore/admin/images/user/IMG_20191124_222417.jpg', 'Bảo Nguyễn', '89f6d953386e8964d4d041ccee0523ea', '107, thủ Đức, Linh Xuân', '0396940321', 1, 'Male', 1, '2019-12-20 09:04:29', '2019-12-20 09:04:29', NULL);
+INSERT INTO `users` VALUES (1, 'Bao', 'nguyennhubao999@gmail.com', 'http://localhost:8080/BookStore/admin/images/user/IMG_20191124_222417.jpg', 'Bảo Nguyễn', '9f53a69c347753fd5a2e95ae1079c322', '107, thủ Đức, Linh Xuân', '0396940321', 1, 'Male', 1, '2019-12-20 09:04:29', '2019-12-20 09:04:29', NULL);
+INSERT INTO `users` VALUES (2, 'Bao', 'nguyenhubao999@gmail.com', NULL, NULL, '9f53a69c347753fd5a2e95ae1079c322', NULL, '0396940321', NULL, 'Male', 1, '2020-01-08 20:19:15', '2020-01-08 20:19:15', NULL);
 
 SET FOREIGN_KEY_CHECKS = 1;

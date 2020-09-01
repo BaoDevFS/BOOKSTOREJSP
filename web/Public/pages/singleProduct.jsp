@@ -1,5 +1,6 @@
 <%@ page import="vn.edu.nlu.control.PathAbsolute" %>
 <%@ page import="java.sql.ResultSet" %>
+<%@ page import="vn.edu.nlu.fit.model.Feedbacks" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
@@ -30,11 +31,72 @@
     <link rel="stylesheet" href="Public/css/custom.css">
 
     <script src="Public/js/vendor/modernizr-3.5.0.min.js"></script>
-    <%--    <script src="Public/js/vendor/jquery-3.2.1.min.js"></script>--%>
-    <%--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>--%>
-    <%--    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>--%>
-    <!-- Modernizer js -->
+
 </head>
+<style>
+    @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+    /*reset css*/
+    div, label {
+        margin: 0;
+        padding: 0;
+    }
+
+    /*body {*/
+    /*    margin: 20px;*/
+    /*}*/
+
+    h1 {
+        font-size: 1.5em;
+        margin: 10px;
+    }
+
+    /****** Style Star Rating Widget *****/
+    #rating {
+        border: none;
+        float: left;
+    }
+
+    #rating > input {
+        display: none;
+    }
+
+    /*ẩn input radio - vì chúng ta đã có label là GUI*/
+    #rating > label:before {
+        margin: 5px;
+        font-size: 1.25em;
+        font-family: FontAwesome;
+        display: inline-block;
+        content: "\f005";
+    }
+
+    /*1 ngôi sao*/
+    #rating > .half:before {
+        content: "\f089";
+        position: absolute;
+    }
+
+    /*0.5 ngôi sao*/
+    #rating > label {
+        color: #ddd;
+        float: right;
+    }
+
+    /*float:right để lật ngược các ngôi sao lại đúng theo thứ tự trong thực tế*/
+    /*thêm màu cho sao đã chọn và các ngôi sao phía trước*/
+    #rating > input:checked ~ label,
+    #rating:not(:checked) > label:hover,
+    #rating:not(:checked) > label:hover ~ label {
+        color: #FFD700;
+    }
+
+    /* Hover vào các sao phía trước ngôi sao đã chọn*/
+    #rating > input:checked + label:hover,
+    #rating > input:checked ~ label:hover,
+    #rating > label:hover ~ input:checked ~ label,
+    #rating > input:checked ~ label:hover ~ label {
+        color: #FFED85;
+    }
+</style>
 <body>
 <!--[if lte IE 9]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
@@ -43,7 +105,6 @@
 
 <!-- Main wrapper -->
 <div class="wrapper" id="wrapper">
-
     <!-- Header -->
     <%@ include file="include/header.jsp" %>
     <!-- //Header -->
@@ -66,7 +127,7 @@
     </div>
     <!-- End Bradcaump area -->
     <!-- Start main Content -->
-    <div class="maincontent bg--white pt--80 pb--55">
+    <div class="maincontent bg--white pt--30 pb--25">
         <div class="container">
             <div class="row">
                 <% ResultSet rsB = (ResultSet) request.getAttribute("rsB");
@@ -101,8 +162,9 @@
                                         <span>$<%=rsB.getString(7)%></span>
                                     </div>
                                     <div class="product__overview">
-                                        <p><%=rsB.getString("description").substring(0,40)%></p>
-                                        <p><%=rsB.getString("description").substring(41,60)%>
+                                        <p><%=rsB.getString("description").substring(0, 140)%>
+                                        </p>
+                                        <p><%=rsB.getString("description").substring(141, 260)%>
                                         </p>
                                     </div>
                                     <div class="box-tocart d-flex">
@@ -120,32 +182,32 @@
                                         </div>
                                     </div>
                                     <div class="product_meta">
-        <span class="posted_in">Categories:
-        <a href="#">Adventure</a>,
-        <a href="#">Kids' Music</a>
-        </span>
+                                        <span class="posted_in">Categories:
+                                    <a href="#">Adventure</a>,
+                                        <a href="#">Kids' Music</a>
+                                        </span>
                                     </div>
                                     <div class="product-share">
                                         <ul>
                                             <li class="categories-title">Share :</li>
                                             <li>
                                                 <a href="#">
-                                                    <i class="icon-social-twitter icons"></i>
+                                                    <i class="fa fa-twitter"></i>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#">
-                                                    <i class="icon-social-tumblr icons"></i>
+                                                    <i class="fa fa-tumblr"></i>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#">
-                                                    <i class="icon-social-facebook icons"></i>
+                                                    <i class="fa fa-facebook"></i>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#">
-                                                    <i class="icon-social-linkedin icons"></i>
+                                                    <i class="fa fa-linkedin"></i>
                                                 </a>
                                             </li>
                                         </ul>
@@ -163,118 +225,108 @@
                         </div>
                         <div class="tab__container">
                             <!-- Start Single Tab Content -->
-                            <div class="pro__tab_label tab-pane fade show active" id="nav-details" role="tabpanel">
-                                <div class="description__attribute">
-                                    <p><%=rsB.getString("description")%>.</p>
-                                </div>
-                            </div>
-                            <!-- End Single Tab Content -->
-                            <!-- Start Single Tab Content -->
                             <div class="pro__tab_label tab-pane fade" id="nav-review" role="tabpanel">
                                 <div class="review__attribute">
                                     <h1>Customer Reviews</h1>
-                                    <h2>Hastech</h2>
+                                    <%
+                                        for (Feedbacks fd : Feedbacks.getListFeedbackByIDProduct(Integer.parseInt(request.getParameter("id")))
+                                        ) {
+                                    %>
+                                    <h5><%=fd.getNickname()%>
+                                    </h5>
                                     <div class="review__ratings__type d-flex">
                                         <div class="review-ratings">
                                             <div class="rating-summary d-flex">
-                                                <span>Quality</span>
-                                                <ul class="rating d-flex">
-                                                    <li><i class="zmdi zmdi-star"></i></li>
-                                                    <li><i class="zmdi zmdi-star"></i></li>
-                                                    <li><i class="zmdi zmdi-star"></i></li>
-                                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="rating-summary d-flex">
-                                                <span>Price</span>
-                                                <ul class="rating d-flex">
-                                                    <li><i class="zmdi zmdi-star"></i></li>
-                                                    <li><i class="zmdi zmdi-star"></i></li>
-                                                    <li><i class="zmdi zmdi-star"></i></li>
-                                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="rating-summary d-flex">
                                                 <span>value</span>
-                                                <ul class="rating d-flex">
-                                                    <li><i class="zmdi zmdi-star"></i></li>
-                                                    <li><i class="zmdi zmdi-star"></i></li>
-                                                    <li><i class="zmdi zmdi-star"></i></li>
+                                                <ul id="<%=fd.getId()%>" class="rating d-flex">
+                                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
+                                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
+                                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
                                                     <li class="off"><i class="zmdi zmdi-star"></i></li>
                                                     <li class="off"><i class="zmdi zmdi-star"></i></li>
                                                 </ul>
                                             </div>
                                         </div>
                                         <div class="review-content">
-                                            <p>Hastech</p>
-                                            <p>Review by Hastech</p>
-                                            <p>Posted on 11/6/2018</p>
+                                            <p>Posted on <%=fd.getDate()%>
+                                            </p>
                                         </div>
                                     </div>
+                                    <div class="review__ratings__type d-flex">
+                                        <p><%=fd.getContent()%>
+                                        </p>
+                                    </div>
+                                    <%}%>
                                 </div>
-                                <div class="review-fieldset">
-                                    <h2>You're reviewing:</h2>
-                                    <h3>Chaz Kangeroo Hoodie</h3>
-                                    <div class="review-field-ratings">
-                                        <div class="product-review-table">
-                                            <div class="review-field-rating d-flex">
-                                                <span>Quality</span>
-                                                <ul class="rating d-flex">
-                                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                                </ul>
+                                <form action="http://localhost:8080/BookStore/Comment" method="post">
+                                    <div class="review-fieldset">
+                                        <h2>You're reviewing:</h2>
+                                        <h3>Chaz Kangeroo Hoodie</h3>
+                                        <div class="review-field-ratings">
+                                            <div class="product-review-table">
+                                                <div class="review-field-rating d-flex">
+                                                    <span>Value</span>
+                                                    <ul class="rating d-flex">
+                                                        <div id="rating">
+                                                            <input type="radio" id="star5" name="rating" value="5"/>
+                                                            <label class="full" for="star5"
+                                                                   title="Awesome - 5 stars"></label>
+
+
+                                                            <input type="radio" id="star4" name="rating" value="4"/>
+                                                            <label class="full" for="star4"
+                                                                   title="Pretty good - 4 stars"></label>
+
+                                                            <input type="radio" id="star3" name="rating" value="3"/>
+                                                            <label class="full" for="star3"
+                                                                   title="Meh - 3 stars"></label>
+
+
+                                                            <input type="radio" id="star2" name="rating" value="2"/>
+                                                            <label class="full" for="star2"
+                                                                   title="Kinda bad - 2 stars"></label>
+
+                                                            <input type="radio" id="star1" name="rating" value="1"/>
+                                                            <label class="full" for="star1"
+                                                                   title="Sucks big time - 1 star"></label>
+
+                                                        </div>
+                                                    </ul>
+                                                </div>
                                             </div>
-                                            <div class="review-field-rating d-flex">
-                                                <span>Price</span>
-                                                <ul class="rating d-flex">
-                                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                                </ul>
+                                        </div>
+                                        <div class="review_form_field">
+                                            <input type="text" hidden value="<%=request.getParameter("id")%>" name="id">
+                                            <div class="input__box">
+                                                <span>Nickname</span>
+                                                <input id="nickname_field" type="text" name="nickname">
                                             </div>
-                                            <div class="review-field-rating d-flex">
-                                                <span>Value</span>
-                                                <ul class="rating d-flex">
-                                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                                </ul>
+                                            <div class="input__box">
+                                                <span>Summary</span>
+                                                <input id="summery_field" type="text" name="summery">
+                                            </div>
+                                            <div class="input__box">
+                                                <span>Review</span>
+                                                <textarea name="review"></textarea>
+                                            </div>
+                                            <div class="review-form-actions">
+                                                <button type="submit">Submit Review</button>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="review_form_field">
-                                        <div class="input__box">
-                                            <span>Nickname</span>
-                                            <input id="nickname_field" type="text" name="nickname">
-                                        </div>
-                                        <div class="input__box">
-                                            <span>Summary</span>
-                                            <input id="summery_field" type="text" name="summery">
-                                        </div>
-                                        <div class="input__box">
-                                            <span>Review</span>
-                                            <textarea name="review"></textarea>
-                                        </div>
-                                        <div class="review-form-actions">
-                                            <button>Submit Review</button>
-                                        </div>
-                                    </div>
+                                </form>
+                            </div>
+                            <!-- End Single Tab Content -->
+                            <!-- Start Single Tab Content -->
+                            <div class="pro__tab_label tab-pane fade show active" id="nav-details" role="tabpanel">
+                                <div class="description__attribute">
+                                    <p><%=rsB.getString("description")%>.</p>
                                 </div>
                             </div>
                             <!-- End Single Tab Content -->
                         </div>
                     </div>
-                    <div class="wn__related__product pt--80 pb--50">
+                    <div class="wn__related__product pt--30 pb--20">
                         <div class="section__title text-center">
                             <h2 class="title__be--2">Related Products</h2>
                         </div>
@@ -559,22 +611,22 @@
                                                                     <li class="categories-title">Share :</li>
                                                                     <li>
                                                                         <a href="#">
-                                                                            <i class="icon-social-twitter icons"></i>
+                                                                            <i class="fa fa-twitter"></i>
                                                                         </a>
                                                                     </li>
                                                                     <li>
                                                                         <a href="#">
-                                                                            <i class="icon-social-tumblr icons"></i>
+                                                                            <i class="fa fa-tumblr"></i>
                                                                         </a>
                                                                     </li>
                                                                     <li>
                                                                         <a href="#">
-                                                                            <i class="icon-social-facebook icons"></i>
+                                                                            <i class="fa fa-facebook"></i>
                                                                         </a>
                                                                     </li>
                                                                     <li>
                                                                         <a href="#">
-                                                                            <i class="icon-social-linkedin icons"></i>
+                                                                            <i class="fa fa-linkedin"></i>
                                                                         </a>
                                                                     </li>
                                                                 </ul>
@@ -624,6 +676,27 @@
         drawCart();
         sea();
     });
+
+    function calcRate(r) {
+        const f = ~~r,//Tương tự Math.floor(r)
+            id = 'star' + f + (r % f ? 'half' : '')
+        id && (document.getElementById(id).checked = !0)
+    }
+
+    function activeStar(id, st) {
+        $('#' + id).children().each(function (index, value) {
+            if (index >= st) return;
+            console.log(index);
+            $(this).removeClass("off");
+        });
+    }
+
+    <%
+                                       for (Feedbacks fd : Feedbacks.getListFeedbackByIDProduct(Integer.parseInt(request.getParameter("id")))
+                                       ) {
+                                   %>
+    activeStar(<%=fd.getId()%>, <%=fd.getRate()%>);
+    <%}%>
 </script>
 </body>
 </html>

@@ -2,6 +2,7 @@ package vn.edu.nlu.servletad;
 
 import vn.edu.nlu.control.PathAbsolute;
 import vn.edu.nlu.control.SaveImage;
+import vn.edu.nlu.control.ValidateParameter;
 import vn.edu.nlu.dao.HashCode;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 

@@ -13,11 +13,11 @@ public class SaveImage {
         resizeImage = new ResizeImage();
     }
     private void copyImageForBook(String src,String fileName){
-        String des = "D:\\00_HK1_3\\LTW\\BOOKSTOREJSP\\web\\Public\\images\\books\\"+fileName;
+        String des = System.getProperty("user.dir")+"\\web\\Public\\images\\books\\"+fileName;
         MoveImage.copyImage(src,des);
     }
     private void copyImageForUser(String src,String fileName){
-        String des = "D:\\00_HK1_3\\LTW\\BOOKSTOREJSP\\web\\admin\\images\\user\\"+fileName;
+        String des = System.getProperty("user.dir")+"\\web\\Public\\images\\user\\"+fileName;
         MoveImage.copyImage(src,des);
     }
     public void saveImageForBook(BufferedImage inp, String filename, HttpServletRequest request) throws IOException {

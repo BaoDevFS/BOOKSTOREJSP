@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Register |  BookBGQ Store</title>
+    <title>Register | BookBGQ Store</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
@@ -30,13 +30,13 @@
         Member Register
         </span>
                 <%!
-                public String getMessage(String s){
-                    if(s==null){
-                        return "";
-                    }else {
-                        return s;
+                    public String getMessage(String s) {
+                        if (s == null) {
+                            return "";
+                        } else {
+                            return s;
+                        }
                     }
-                }
                 %>
                 <span class="hiden" style="color: red;"><%=getMessage((String) request.getAttribute("message"))%></span>
                 <div class="wrap-input100 validate-input" data-validate="Valid user is required: Anh">
@@ -90,7 +90,7 @@
                 </div>
 
                 <div class="text-center p-t-136">
-                    <a class="txt2 txt-login" href="#">
+                    <a class="txt2 txt-login" href="http://localhost:8080/BookStore/Login">
                         Log In
                         <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
                     </a>

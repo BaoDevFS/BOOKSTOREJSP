@@ -2,6 +2,7 @@ package vn.edu.nlu.servletad;
 
 import vn.edu.nlu.control.PathAbsolute;
 import vn.edu.nlu.control.SaveImage;
+import vn.edu.nlu.control.ValidateParameter;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
 import javax.imageio.ImageIO;
@@ -44,15 +45,15 @@ public class UserEdit extends HttpServlet {
         }else{
             sql="UPDATE users set `name` =?,email=?,fullname=?,address=?,phone=?,gender=?,`group` = ?,active= ? where id="+id;
         }
-        String firstName = request.getParameter("firstname");
-        String fullname = request.getParameter("fullname");
-        String moblie = request.getParameter("mobile");
-        String gender = request.getParameter("gender");
-        String address = request.getParameter("address");
+        String firstName = ValidateParameter.validateParameter(request,"firstname");
+        String fullname = ValidateParameter.validateParameter(request,"fullname");
+        String moblie = ValidateParameter.validateParameter(request,"mobile");
+        String gender = ValidateParameter.validateParameter(request,"gender");
+        String address = ValidateParameter.validateParameter(request,"address");
 //        String password = request.getParameter("password");
-        String email = request.getParameter("email");
-        String group = request.getParameter("group");
-        String active = request.getParameter("active");
+        String email = ValidateParameter.validateParameter(request,"email");
+        String group = ValidateParameter.validateParameter(request,"group");
+        String active = ValidateParameter.validateParameter(request,"active");
         try {
 //            password = HashCode.hashCode(password);
             con = database.getConnectionSql();

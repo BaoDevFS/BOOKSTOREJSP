@@ -168,7 +168,14 @@
                     "data": null,
                     "defaultContent": "<a class='delete' style='cursor: pointer'><i class=\"fa fa-check-circle\" aria-hidden=\"true\"></i></a>"
                 }
+            ],columnDefs:[
+                {
+                    "targets": [0],
+                    "visible":false,
+                    "searchable": false
+                }
             ]
+
         });
         // $('#datable_1 tbody').on('click', 'a.delete', function () {
         //     var row = table.row($(this).parents('tr'));

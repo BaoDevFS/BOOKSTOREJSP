@@ -55,67 +55,31 @@
                         <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
                     </div>
                     <div class="bor">
-                        <form>
+                        <form action="http://localhost:8080/BookStore/Admin/DiscountAdd" method="post">
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="list-title" type="text" value="" class="validate">
+                                    <input id="list-title" name="name" type="text" value="" class="validate">
                                     <label for="list-title">Discount Name</label>
                                 </div>
-                                <div class="input-field col s12">
-                                    <input id="post-auth" type="text" value="" class="validate">
-                                    <label for="post-auth">Discount Price</label>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input id="list-title1" name="code" type="text" value="" class="validate">
+                                    <label for="list-title1">Discount Code</label>
                                 </div>
-                                <div class="input-field col s12">
-                                    <div class="file-field">
-                                        <div class="btn">
-                                            <span>File</span>
-                                            <input type="file">
-                                        </div>
-                                        <div class="file-path-wrapper">
-                                            <input class="file-path validate" type="text"
-                                                   placeholder="Upload Blog Banner">
-                                        </div>
-                                    </div>
+                                <div class="input-field col s6">
+                                    <input id="post-auth1" type="text" value=""name="value" class="validate">
+                                    <label for="post-auth1">Discount Value</label>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="input-field col s12">
-                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                    <label for="textarea1">Blog Descriptions:</label>
+                                <div class="input-field col s6">
+                                    <input id="list-title2" type="text" value="" name="startday" class="validate">
+                                    <label for="list-title2">Discount StartDay(21/05/1999)</label>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <select multiple>
-                                        <option value="" disabled selected>Choose Category</option>
-                                        <option value="1">Hotels</option>
-                                        <option value="2">Educations</option>
-                                        <option value="3">Medical</option>
-                                        <option value="3">Health</option>
-                                        <option value="3">Fitness</option>
-                                        <option value="3">Tution</option>
-                                        <option value="3">Software</option>
-                                        <option value="3">Wedding</option>
-                                        <option value="3">Party</option>
-                                        <option value="3">Spa/Club</option>
-                                    </select>
-                                    <label>Select Category</label>
-                                </div>
-                                <div class="input-field col s12">
-                                    <select multiple>
-                                        <option value="" disabled selected>Choose Category</option>
-                                        <option value="1">Hotels</option>
-                                        <option value="2">Educations</option>
-                                        <option value="3">Medical</option>
-                                        <option value="3">Health</option>
-                                        <option value="3">Fitness</option>
-                                        <option value="3">Tution</option>
-                                        <option value="3">Software</option>
-                                        <option value="3">Wedding</option>
-                                        <option value="3">Party</option>
-                                        <option value="3">Spa/Club</option>
-                                    </select>
-                                    <label>Select Sub Category</label>
+                                <div class="input-field col s6">
+                                    <input id="post-auth3" type="text" value="" name="endday" class="validate">
+                                    <label for="post-auth3">Discount EndDate(21/05/1999)</label>
                                 </div>
                             </div>
                             <div class="row">

@@ -69,6 +69,29 @@ public class Delete extends HttpServlet {
                     response.sendRedirect(request.getContextPath()+"/Error404");
                     e.printStackTrace();
                 }
+                break;
+            case "orders":
+                try {
+                    boolean status = rm.removeOrder(id);
+                    if(status){
+                        response.sendRedirect(request.getContextPath()+"/Admin/PackageBookingAll");
+                    }
+                }catch (SQLException e){
+                    response.sendRedirect(request.getContextPath()+"/Error404");
+                    e.printStackTrace();
+                }
+                break;
+            case "discounts":
+                try {
+                    boolean status = rm.removeDiscount(id);
+                    if(status){
+                        response.sendRedirect(request.getContextPath()+"/Admin/Discount");
+                    }
+                }catch (SQLException e){
+                    response.sendRedirect(request.getContextPath()+"/Error404");
+                    e.printStackTrace();
+                }
+                break;
         }
 
     }

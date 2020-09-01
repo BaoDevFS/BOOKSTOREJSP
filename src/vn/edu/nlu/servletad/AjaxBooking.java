@@ -1,11 +1,8 @@
 package vn.edu.nlu.servletad;
 
 import com.google.gson.Gson;
-import vn.edu.nlu.control.GetProduct;
 import vn.edu.nlu.dao.GetListBooking;
 import vn.edu.nlu.fit.model.BookingJsonObject;
-import vn.edu.nlu.fit.model.Books;
-import vn.edu.nlu.fit.model.ProductJsonObject;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,10 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.ArrayList;
 
-@WebServlet("/AjaxBooking")
+@WebServlet("/Admin/AjaxBooking")
 public class AjaxBooking extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

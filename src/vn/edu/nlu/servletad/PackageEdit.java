@@ -2,6 +2,7 @@ package vn.edu.nlu.servletad;
 
 import vn.edu.nlu.control.PathAbsolute;
 import vn.edu.nlu.control.SaveImage;
+import vn.edu.nlu.control.ValidateParameter;
 import vn.edu.nlu.dao.GetListProductType;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
@@ -47,12 +48,12 @@ public class PackageEdit extends HttpServlet {
         }else{
             sql="UPDATE books SET name=?,description=?,price=?,year=?,price_old=?,author=? where id="+id;
         }
-        String name = request.getParameter("name");
-        String description = request.getParameter("description");
-        String author = request.getParameter("author");
-        String year = request.getParameter("year");
-        String price = request.getParameter("price");
-        String price_old= request.getParameter("price_old");
+        String name = ValidateParameter.validateParameter(request,"name");
+        String description = ValidateParameter.validateParameter(request,"description");
+        String author = ValidateParameter.validateParameter(request,"author");
+        String year = ValidateParameter.validateParameter(request,"year");
+        String price = ValidateParameter.validateParameter(request,"price");
+        String price_old= ValidateParameter.validateParameter(request,"price_old");
         try {
             connection = getConnectDatabase.getConnectionSql();
            PreparedStatement pre = connection.prepareStatement(sql);

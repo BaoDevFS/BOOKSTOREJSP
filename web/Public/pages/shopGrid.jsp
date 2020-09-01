@@ -85,14 +85,16 @@
     pagination = new Pagination(amountItem, 9, 3, paramPage);
     String showPagination = pagination.showPagination(link);
     ArrayList<Products> listProducts;
+    String paramSort = request.getParameter("name");
     if (request.getParameter("type") != null) {
         link = "ShopGrid?type=" + type + "&";
         amountItem = bd.countProductByType(type);
-        listProducts = bd.getListCategoriesAndPage(type, pagination.getCurrentPage(), pagination.getTotalItemPerPage());
+        listProducts = bd.getListCategoriesAndPage(type, pagination.getCurrentPage(), pagination.getTotalItemPerPage(), paramSort);
     } else {
         link = "ShopGrid?";
         amountItem = getListProductType.getList().size();
-        listProducts = bd.sort(bd.getListCategoriesAndPage(0, pagination.getCurrentPage(), pagination.getTotalItemPerPage()));
+//        listProducts = bd.sort(bd.getListCategoriesAndPage(0, pagination.getCurrentPage(), pagination.getTotalItemPerPage()));
+        listProducts = bd.getListCategoriesAndPage(0, pagination.getCurrentPage(), pagination.getTotalItemPerPage(), paramSort);
     }
 
 %>
@@ -205,10 +207,11 @@
                                     of <%=getListProductType.getList().size() %> results</p>
                                 <div class="orderby__wrapper">
                                     <span>Sort By</span>
-                                    <select class="shot__byselect" name="sort">
-                                        <option name="sortName">Default sorting by name</option>
-                                        <%--                                        <option type="submit" name="sortPrice1" onclick="" >Price from low to high</option>--%>
-                                        <%--                                        <option name="sortPrice2">Price from high to low</option>--%>
+                                    <select class="shot__byselect" name="sort" id="sort" onchange="getSort()">
+                                        <option name="sortName" value="name">Default</option>
+                                        <option name="sortName" value="name">Sort by name</option>
+                                        <option type="submit" name="sortPrice1" value="price">Sort by price
+                                        </option>
                                     </select>
                                 </div>
                             </div>
@@ -531,6 +534,24 @@
         }
     }
 
+    function getSort() {
+
+        var getHref = window.location.href.replace("&name=name","");
+        getHref=getHref.replace("&name=price","");
+        getHref=getHref.replace("?name=price","");
+        getHref=getHref.replace("?name=name","");
+        var temp = document.getElementById("sort").value;
+
+        // trường hợp chứa name
+            if (getHref.includes("type") || getHref.includes("page")) {
+                window.location.replace(getHref + "&name=" + document.getElementById("sort").value);
+            }else {
+                window.location.replace(getHref + "?name=" + document.getElementById("sort").value);
+            // }
+           //trường hợp chưa chứa name
+           //      window.location.
+        }
+    }
 </script>
 </body>
 
