@@ -142,7 +142,7 @@
     $(document).ready(function () {
         var table = $('#datable_1').DataTable({
             "ajax": {
-                "url": "/AjaxBooking",
+                "url": "/Admin/AjaxBooking",
                 "dataType": "json",
                 method:"get",
                 "contentType": "application/json; charset=utf-8",
