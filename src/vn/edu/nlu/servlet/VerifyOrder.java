@@ -1,7 +1,11 @@
 package vn.edu.nlu.servlet;
 
+import com.google.gson.Gson;
+import vn.edu.nlu.control.RSAFile;
 import vn.edu.nlu.control.ValidateParameter;
+import vn.edu.nlu.dao.GetBooking;
 import vn.edu.nlu.fit.model.Cart;
+import vn.edu.nlu.fit.model.Orders;
 import vn.edu.nlu.fit.model.Users;
 import vn.edu.nlu.git.database.GetConnectDatabase;
 
@@ -13,18 +17,41 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.security.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Base64;
 
 @WebServlet("/VerifyOrder")
 public class VerifyOrder extends HttpServlet {
     private GetConnectDatabase connectDatabase;
     private Connection connection;
-
+    private GetBooking getBooking;
+    private Gson gson;
+    private RSAFile rsaFile;
     public VerifyOrder() {
         connectDatabase = new GetConnectDatabase();
+        getBooking = new GetBooking();
+    }
+    private boolean checkSignature(int idOrder,String publicKey,String sign){
+        Orders orders = getBooking.getBooking(idOrder);
+        gson = new Gson();
+        String json = gson.toJson(orders);
+        System.out.println(json);
+        rsaFile = new RSAFile();
+        PublicKey pub;
+        try {
+            pub = rsaFile.getPublicKey(publicKey);
+            Signature signature = Signature.getInstance("SHA256withRSA");
+            signature.initVerify(pub);
+            signature.update(json.getBytes());
+            return  signature.verify(Base64.getDecoder().decode(sign));
+        } catch (NoSuchAlgorithmException | InvalidKeyException | SignatureException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -33,12 +60,22 @@ public class VerifyOrder extends HttpServlet {
         try {
             connection = connectDatabase.getConnectionSql();
             HttpSession session = request.getSession();
-            String sql2 = "SELECT id from orders where id_user=? AND active=0 ORDER BY created_at DESC";
+            String sql2 = "SELECT d.id , u.public_key from orders d JOIN users u ON d.id_user = u.id where d.id_user=? AND d.active=0 ORDER BY d.created_at DESC LIMIT 1";
             PreparedStatement ps2 = connection.prepareStatement(sql2);
             ps2.setInt(1, ((Users) session.getAttribute("user")).getId());
             ResultSet rs = ps2.executeQuery();
             if (rs.next()) {
                 int idOrder = rs.getInt(1);
+                String publicKey =rs.getString(2);
+                //TODO
+                // kiem tra chu ki co dung hay k
+                if(!checkSignature(idOrder,publicKey,signature)){
+                    request.setAttribute("status", "3");
+                    request.setAttribute("mes","Chữ kí không đúng");
+                    RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/verifyOrder.jsp");
+                    requestDispatcher.forward(request, response);
+                    return;
+                }
                 String sql3 = "UPDATE orders SET signature=?,active=1 where id=?";
                 ps2 = connection.prepareStatement(sql3);
                 ps2.setString(1, signature);

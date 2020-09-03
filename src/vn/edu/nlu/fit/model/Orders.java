@@ -1,5 +1,6 @@
 package vn.edu.nlu.fit.model;
 
+import java.sql.Date;
 import java.util.ArrayList;
 
 public class Orders {
@@ -12,18 +13,7 @@ public class Orders {
     String address;
     String note="";
     int acitve;
-	ArrayList<ProductCart> listBook;
-
-	public ArrayList<ProductCart> getListBook() {
-		return listBook;
-	}
-
-	public void setListBook(ArrayList<ProductCart> listBook) {
-		this.listBook = listBook;
-	}
-
-	public Orders() {
-	}
+    Date date;
 
 	@Override
 	public String toString() {
@@ -37,9 +27,48 @@ public class Orders {
 				", address='" + address + '\'' +
 				", note='" + note + '\'' +
 				", acitve=" + acitve +
+				", date=" + date +
+				", listBook=" + listBook +
 				", id_user=" + id_user +
 				'}';
 	}
+
+	public Orders(int id, Double total, String name, String phone, String email, String status, String address, String note, int acitve, Date date, ArrayList<ProductCart> listBook, int id_user) {
+		this.id = id;
+		this.total = total;
+		this.name = name;
+		this.phone = phone;
+		this.email = email;
+		this.status = status;
+		this.address = address;
+		this.note = note;
+		this.acitve = acitve;
+		this.date = date;
+		this.listBook = listBook;
+		this.id_user = id_user;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	ArrayList<ProductCart> listBook;
+
+	public ArrayList<ProductCart> getListBook() {
+		return listBook;
+	}
+
+	public void setListBook(ArrayList<ProductCart> listBook) {
+		this.listBook = listBook;
+	}
+
+	public Orders() {
+	}
+
 
 	public int getId() {
 		return id;
@@ -122,4 +151,5 @@ public class Orders {
 	}
 
 	int id_user;
+
 }

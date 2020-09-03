@@ -42,9 +42,11 @@ public class Login extends HttpServlet {
             user= new Users();
             while (set.next()){
                 user.setId(set.getInt("id"));
-                user.setName(set.getString("name"));
-                user.setEmail(set.getString("email"));
-                user.setAvatar(set.getString("avatar"));
+                user.setName(ValidateParameter.validateString(set.getString("name")));
+                user.setEmail(ValidateParameter.validateString(set.getString("email")));
+                user.setAvatar(ValidateParameter.validateString(set.getString("avatar")));
+                user.setAddress(ValidateParameter.validateString(set.getString("address")));
+                user.setPhone(ValidateParameter.validateString(set.getString("phone")));
             }
             set.close();
             connection.close();

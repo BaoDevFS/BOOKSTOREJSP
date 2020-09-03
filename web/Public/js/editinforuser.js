@@ -49,7 +49,7 @@ $(document).on("change", "#imgmain",function () {
     var form = new FormData();
     form.append('avatar',$('#imgmain')[0].files[0]);
     $.ajax({
-        url: "http://localhost:8080/BookStore/UserProfile",
+        url: "/UserProfile",
         method: "post",
         data: form,
         enctype: 'multipart/form-data',
@@ -73,7 +73,7 @@ function sendImage() {
     form.append('type',"avatar")
     form.append('avatar',$('imgmain').prop('files')[0]);
     $.ajax({
-        url: "http://localhost:8080/BookStore/UserProfile",
+        url: "/UserProfile",
         method: "post",
         data: form,
         success: function (data) {
@@ -89,3 +89,45 @@ function sendImage() {
         }
     })
 }
+function getOtp() {
+    $('.before').addClass("hidden");
+    $('.after').removeClass("hidden");
+    $.ajax(
+        {
+            url:"/GetOTP",
+            method:"GET",
+            complete:function (data) {
+                var json = JSON.parse(data.responseText);
+                if(json.mes=="1"){
+
+                }else{
+                    $('.before').removeClass("hidden");
+                    $('.after').addClass("hidden");
+                }
+            }
+        }
+    );
+}
+function verifyCode() {
+    var code =$('input[name="code"]').val()
+    $.ajax({
+       url:"/GetOTP",
+        method:"POST",
+        data:{
+           code:code
+        },
+        complete:function (data) {
+           console.log(data);
+            var json = JSON.parse(data.responseText);
+            console.log(json);
+            // 1 la thanh cong
+            if(json.mes=="1"){
+                $('.changpassword').removeClass('hidden');
+                $('.authenticar').addClass('hidden');
+            }else{
+                $('.verify_error').removeClass('hidden');
+            }
+        }
+    });
+}
+$('input[name="submit"]').on('click',verifyCode);

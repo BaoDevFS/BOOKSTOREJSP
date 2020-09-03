@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>User profile |  BookBGQ Store</title>
+    <title>User profile | BookBGQ Store</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -60,7 +60,7 @@
         </div>
     </div>
     <% ResultSet rs = (ResultSet) request.getAttribute("rs");
-    if(rs.next()){
+        if (rs.next()) {
     %>
     <div class="main">
         <div class="main-inner">
@@ -70,8 +70,8 @@
                         <div class="sidebar">
                             <div class="widget">
                                 <div class="user-photo">
-<%--                                        <img style="height: 200px;width: 200px" src="<%=rs.getString("avatar")%>" alt="User Photo">--%>
-<%--                                        <span class="user-photo-action">Click here to reupload</span>--%>
+                                    <%--                                        <img style="height: 200px;width: 200px" src="<%=rs.getString("avatar")%>" alt="User Photo">--%>
+                                    <%--                                        <span class="user-photo-action">Click here to reupload</span>--%>
                                     <div class="input-field col s6">
                                         <img style="width: 200px;height: 200px" id="main"
                                              src="<%=rs.getString("avatar")%>" alt="">
@@ -88,9 +88,10 @@
                             <div class="widget">
 
                                 <ul class="menu-advanced">
-                                    <li class="profile active"><a ><i class="fa fa-user"></i> Edit Profile</a></li>
+                                    <li class="profile active"><a><i class="fa fa-user"></i> Edit Profile</a></li>
                                     <li class="password"><a><i class="fa fa-key"></i> Password</a></li>
-                                    <li class="logout "><a href="<%=PathAbsolute.getPath("Login")%>"><i class="fa fa-sign-out"></i>
+                                    <li class="logout "><a href="<%=PathAbsolute.getPath("Login")%>"><i
+                                            class="fa fa-sign-out"></i>
                                         Logout</a></li>
                                 </ul>
                             </div><!-- /.widget -->
@@ -106,34 +107,41 @@
 
                             <div class="background-white p20 mb30">
                                 <h3 class="page-title">
-                                    Contact Information <i id="contact" class="fa fa-check hidden" style="color: green"></i>
-                                    <a onclick="editinfor('contact')" class="btn btn-primary btn-xs pull-right text-white">Save</a>
+                                    Contact Information <i id="contact" class="fa fa-check hidden"
+                                                           style="color: green"></i>
+                                    <a onclick="editinfor('contact')"
+                                       class="btn btn-primary btn-xs pull-right text-white">Save</a>
                                 </h3>
 
                                 <div class="row">
                                     <div class="form-group col-sm-6">
                                         <label>Name</label>
-                                        <input type="text" class="form-control" name="name" value="<%=rs.getString("name")%>">
+                                        <input type="text" class="form-control" name="name"
+                                               value="<%=rs.getString("name")%>">
                                     </div><!-- /.form-group -->
 
                                     <div class="form-group col-sm-6">
                                         <label>Full name</label>
-                                        <input type="text" class="form-control" name="fullname" value="<%=rs.getString("fullname")%>">
+                                        <input type="text" class="form-control" name="fullname"
+                                               value="<%=rs.getString("fullname")%>">
                                     </div><!-- /.form-group -->
 
                                     <div class="form-group col-sm-6">
                                         <label>E-mail</label>
-                                        <input type="text" class="form-control" name="email" disabled value="<%=rs.getString("email")%>">
+                                        <input type="text" class="form-control" name="email" disabled
+                                               value="<%=rs.getString("email")%>">
                                     </div><!-- /.form-group -->
 
                                     <div class="form-group col-sm-6">
                                         <label>Phone</label>
-                                        <input type="text" class="form-control" name="phone" value="<%=rs.getString("phone")%>">
+                                        <input type="text" class="form-control" name="phone"
+                                               value="<%=rs.getString("phone")%>">
                                     </div>
                                     <div class="form-group col-sm-6">
                                         <label>Gender</label>
                                         <select type="select" class="form-control" name="gender">
-                                            <option value="<%=rs.getString("gender")%>" selected><%=rs.getString("gender")%>
+                                            <option value="<%=rs.getString("gender")%>"
+                                                    selected><%=rs.getString("gender")%>
                                             </option>
                                             <option value="Male">Male</option>
                                             <option value="FeMale">Female</option>
@@ -145,13 +153,15 @@
                             <div class="background-white p20 mb30">
                                 <h3 class="page-title">
                                     Address <i id="address" class="fa fa-check hidden" style="color: green"></i>
-                                    <a onclick="editinfor('address')" class="btn btn-primary btn-xs pull-right text-white">Save</a>
+                                    <a onclick="editinfor('address')"
+                                       class="btn btn-primary btn-xs pull-right text-white">Save</a>
                                 </h3>
 
                                 <div class="row">
                                     <div class="form-group col-sm-12">
                                         <label>Address</label>
-                                        <input type="text" class="form-control" name="address" value="<%=rs.getString("address")%>">
+                                        <input type="text" class="form-control" name="address"
+                                               value="<%=rs.getString("address")%>">
                                     </div><!-- /.form-group -->
                                 </div><!-- /.row -->
                             </div>
@@ -159,7 +169,7 @@
                             <div class="background-white p20 mb30">
                                 <h3 class="page-title">
                                     Biography
-                                    <a  class="btn btn-primary btn-xs pull-right text-white">Save</a>
+                                    <a class="btn btn-primary btn-xs pull-right text-white">Save</a>
                                 </h3>
 
                                 <textarea class="form-control" rows="7"></textarea>
@@ -190,18 +200,57 @@
                                                id="rePassword">
                                     </div>
 
-                                    <button onclick="editinfor('password')"  class="btn btn-primary pull-right m-auto">Change</button>
+                                    <button onclick="editinfor('password')" class="btn btn-primary pull-right m-auto">
+                                        Change
+                                    </button>
                                 </div>
                             </div>
                         </div><!-- /.content -->
+                        <div class="content ml-md-3 ml-lg-3 ml-sm-3 authenticar hidden">
+                            <div class="page-title">
+                                <h1>AUTHENTICATOR</h1>
+                            </div>
+                            <div class="content-item__main">
+                                <div class="content-item--ipage__main">
+                                    <div class="content__sendinfo" id="J-sendinfo">
+                                        <div class="content__sendinfo-before before">Ấn nút Lấy mã ở dưới để nhận được mã xác
+                                            nhận qua email.
+                                        </div>
+                                        <div class="content__sendinfo-after after hidden">Một mã xác nhận đã được gửi cho bạn
+                                            qua Email. Vui lòng điền mã để xác nhận tài khoản của bạn. Quá trình này có
+                                            thể mất một vài phút.
+                                        </div>
+                                    </div>
+                                    <div class="content__form">
+                                            <div class="content__phone">
+                                                <div class="content__phone-icon"></div>
+                                                <div class="content__phone-num"><%=rs.getString("email")%></div>
+                                            </div>
+                                            <div class="content__form-otpcode d-flex align-items-center">
+                                                <div class="content__form-input ">
+                                                    <input type="tel" maxlength="6" name="code" class="content__form-input-widget J-validated-field"
+                                                           placeholder="Mã xác thực">
+                                                </div>
+                                                <button onclick="getOtp()" class="content__form-getotp"
+                                                   id="J-getotp-trigger">
+                                                    <div class="content__form-getotp-before">Lấy mã</div>
+                                                </button>
+                                            </div>
+                                            <div class="verify_error hidden" >Mã xác thực không chính xác.</div>
+                                            <div class="content__submit-wrap">
+                                                <input type="submit" name="submit" class="content__submit" value="XÁC NHẬN"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div><!-- /.col-* -->
                 </div><!-- /.row -->
             </div><!-- /.container -->
         </div><!-- /.main-inner -->
     </div>
     <%
-    }
-    rs.beforeFirst();
+        }
+        rs.beforeFirst();
     %>
     <!-- Footer Area -->
     <%@ include file="include/footer.jsp" %>

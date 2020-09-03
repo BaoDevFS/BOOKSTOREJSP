@@ -560,7 +560,8 @@ $('.password').click(function () {
     $('.password').addClass('active');
     $('.logout').removeClass('active');
     $('.editprofle').addClass('hidden');
-    $('.changpassword').removeClass('hidden');
+    // $('.changpassword').removeClass('hidden');
+    $('.authenticar').removeClass('hidden');
 });
 $('.logout').click(function () {
     $('.profile').removeClass('active');

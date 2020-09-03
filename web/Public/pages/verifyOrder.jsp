@@ -126,23 +126,29 @@
         drawCart();
         sea();
     });
-    function show( id) {
+    function show( id,mes) {
         if(id==1){
             $('#statusWishlist').text("Order fail.");
             $('#success').modal('show');
-        }else {
+        }else if(id==3){
+            $('#statusWishlist').text("Order fail.<br/>"+mes);
+            $('#success').modal('show');
+        }
+        else {
             $('#statusWishlist').text("Order Success.");
             $('#success').modal('show');
         }
     }
-    <%! public String show(int id){
+    <%! public String show(int id,String mes){
         if(id==1){
-            return "show(1)";
+            return "show(1,'mes')";
         }else if(id==0){
-            return "show(0)";
+            return "show(0,'mes')";
+        }else if(id==3){
+            return "show(3,'"+mes+"')";
         }else return "";
     }%>
-    <%=show(Integer.parseInt((String) request.getAttribute("status")))%>
+    <%=show(Integer.parseInt((String) request.getAttribute("status")),(String) request.getAttribute("mes"))%>
 </script>
 </body>
 

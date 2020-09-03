@@ -2,7 +2,6 @@ package vn.edu.nlu.control;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.*;
-import java.nio.charset.Charset;
 import java.security.*;
 import java.util.Base64;
 
@@ -38,26 +37,27 @@ public class GreneratePublicPrivateKey {
             e.printStackTrace();
         }
     }
-    public String saveKey(String key, String filename, HttpServletRequest request){
-        File file = new File(request.getServletContext().getRealPath("Public")+"/keystore/"+filename);
-        if(!file.exists()) {
-            try {
-                file.createNewFile();
-                copyFile(key,file);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return  file.getAbsolutePath();
+
+    public String saveKey(String key, String filename, HttpServletRequest request) {
+        File file = new File(request.getServletContext().getRealPath("Public") + "/keystore/" + filename);
+        copyFile(key, file);
+        return file.getAbsolutePath();
     }
-    private  boolean copyFile(String key, File desFile) {
+
+    private boolean copyFile(String key, File desFile) {
         try {
-            PrintWriter printWriter = new PrintWriter(new OutputStreamWriter(new FileOutputStream(desFile), Charset.forName("UTF-8")));
-            printWriter.write(key);
-            printWriter.flush();
-            printWriter.close();
+            ByteArrayInputStream in = new ByteArrayInputStream(key.getBytes());
+            FileOutputStream out = new FileOutputStream(desFile);
+            byte[] ibuf = new byte[1024];
+            int length;
+            while ((length = in.read(ibuf)) != -1) {
+                out.write(ibuf,0,length);
+                out.flush();
+            }
+            out.close();
+            in.close();
             return true;
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
             return false;
         }

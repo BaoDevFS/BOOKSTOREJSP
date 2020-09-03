@@ -1,6 +1,7 @@
 <%@ page import="vn.edu.nlu.fit.model.Cart" %>
 <%@ page import="vn.edu.nlu.fit.model.ProductCart" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="vn.edu.nlu.fit.model.Users" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
@@ -118,29 +119,25 @@
                         <h3>Billing details</h3>
                         <div class="customar__field">
                             <form action="/Checkout" method="post">
-                                <div class="margin_between">
-                                    <div class="input_box space_between">
-                                        <label>First name <span>*</span></label>
-                                        <input name="firstName" type="text">
-                                    </div>
-                                    <div class="input_box space_between">
-                                        <label>last name <span>*</span></label>
-                                        <input name="lastName" type="text">
-                                    </div>
+                                <%Users users = (Users) session.getAttribute("user");
+                                    System.out.println(users);%>
+                                <div class="input_box">
+                                    <label>Full name <span>*</span></label>
+                                    <input name="firstName" type="text" value="<%=users.getName()%>">
                                 </div>
                                 <div class="input_box">
                                     <label>Address <span>*</span></label>
-                                    <input name="address" type="text">
+                                    <input name="address" type="text"  value="<%=users.getAddress()%>">
                                 </div>
                                 <div class="margin_between">
                                     <div class="input_box space_between">
                                         <label>Phone <span>*</span></label>
-                                        <input name="phone" type="text">
+                                        <input name="phone" type="text"  value="<%=users.getPhone()%>">
                                     </div>
 
                                     <div class="input_box space_between">
-                                        <label>Email address <span>*</span></label>
-                                        <input name="email" type="email">
+                                        <label>Email <span>*</span></label>
+                                        <input name="email" type="email"  value="<%=users.getEmail()%>">
                                     </div>
                                 </div>
                                 <div class="margin_between">
@@ -260,15 +257,17 @@
         drawCart();
         sea();
     });
-    function show( id) {
-        if(id==1){
+
+    function show(id) {
+        if (id == 1) {
             $('#statusWishlist').text("Order fail.");
             $('#success').modal('show');
-        }else {
+        } else {
             $('#statusWishlist').text("Order Success.");
             $('#success').modal('show');
         }
     }
+
     <%! public String show(int id){
         if(id==1){
             return "show(1)";

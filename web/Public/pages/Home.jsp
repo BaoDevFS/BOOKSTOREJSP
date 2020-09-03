@@ -114,7 +114,7 @@
                                             <div class="switcher-currency-trigger">
                                                 <div class="setting__menu">
                                                     <span><a href="/UserProfile">My Account</a></span>
-                                                    <span><a href="/Wishlist">My Wishlist</a></span>
+                                                    <span><a href="/WishList">My Wishlist</a></span>
                                                     <span><a href="/Login">Sign In</a></span>
                                                     <span><a href="/Register">Create An Account</a></span>
                                                 </div>

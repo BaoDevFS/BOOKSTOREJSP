@@ -36,7 +36,11 @@ public class UserProfile extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         String type = ValidateParameter.validateParameter(request,"type");
         System.out.println(type);
-        System.out.println(resultSet.toString());
+        try {
+            resultSet = getUser.getUserById(id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         if (type.equals("contact")) {
             String firstName = ValidateParameter.validateParameter(request, "name");
             String fullname = ValidateParameter.validateParameter(request, "fullname");
@@ -78,9 +82,13 @@ public class UserProfile extends HttpServlet {
             String oldPassword = ValidateParameter.validateParameter(request, "oldPassword").trim();
             String newPassword = ValidateParameter.validateParameter(request, "newPassword").trim();
             String confirmPassword = ValidateParameter.validateParameter(request, "rePassword").trim();
-            System.out.println(newPassword+"-"+confirmPassword);
             try {
                 if (resultSet.next()) {
+                    String opt =resultSet.getString("otp");
+                    if(opt==null||!opt.equals("0")){
+                        response.getWriter().write("{\"message\":\"Can't change password, Need verify.\"}");
+                        return;
+                    }
                     // check password same password
                     if (HashCode.hashCode(oldPassword).equals(resultSet.getString("password"))){
                         if(newPassword.equals(confirmPassword)){

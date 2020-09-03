@@ -385,3 +385,31 @@ input[type="search"] {
     text-transform: uppercase;
     transition: all 0.4s ease 0s;
 }
+.content__form-getotp {
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid currentColor;
+    color: #EE2A2B;
+    position: relative;
+    border-radius: 4px;
+    width: 80px;
+    -webkit-transition: color 0.3s,border-color 0.3s,background-color 0.3s;
+    transition: color 0.3s,border-color 0.3s,background-color 0.3s;
+}
+.content__form-input-widget {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: #a8adb7;
+    border: 1px solid rgba(53, 76, 96, 0.2);
+    width: 100%;
+    display: block;
+    color: rgba(53, 76, 96, 1);
+    -webkit-transition: border-color 0.3s;
+    transition: border-color 0.3s;
+    border-radius: 4px;
+    height: 34px;
+    padding: 5px 10px;
+}

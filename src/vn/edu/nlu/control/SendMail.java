@@ -84,4 +84,19 @@ public class SendMail {
         }
 
     }
+    public void sendOtp(String mailTo,String otp){
+        try {
+            MimeMessage message = new MimeMessage(mailSession);
+            message.setFrom(new InternetAddress(mailFrom));
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(mailTo));
+            message.setSubject("Verify change password");
+            String mesag="If you don't want to change your password or didn't request this, please ignore and delete this message.\n" +
+                    "Thank you,\n" +
+                    "The BookStoreBQG Team";
+            message.setText("Your code: "+otp+"\n"+mesag);
+            Transport.send(message);
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }
+    }
 }
