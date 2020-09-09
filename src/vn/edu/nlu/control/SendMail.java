@@ -35,6 +35,35 @@ public class SendMail {
             }
         });
     }
+    public void sendMailChangeKey(String mailTo,String pathFilePrivateKey,String pathFilePublicKey){
+        try{
+            MimeMessage message = new MimeMessage(mailSession);
+            message.setFrom(new InternetAddress(mailFrom));
+            // To get the array of addresses
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(mailTo));
+            message.setSubject("Change key");
+            Multipart multipartKey = new MimeMultipart();
+            MimeBodyPart messageBodyPartPrivatekey = new MimeBodyPart();
+            String fileNamePrivate = "privatekey.key";
+            DataSource sourcePrivate = new FileDataSource(pathFilePrivateKey);
+            messageBodyPartPrivatekey.setDataHandler(new DataHandler(sourcePrivate));
+            messageBodyPartPrivatekey.setFileName(fileNamePrivate);
+            multipartKey.addBodyPart(messageBodyPartPrivatekey);
+
+            MimeBodyPart messageBodyPartPublickey = new MimeBodyPart();
+            String fileNamePublic = "publickey.key";
+            DataSource sourcePublic = new FileDataSource(pathFilePublicKey);
+            messageBodyPartPublickey.setDataHandler(new DataHandler(sourcePublic));
+            messageBodyPartPublickey.setFileName(fileNamePublic);
+            multipartKey.addBodyPart(messageBodyPartPublickey);
+
+            message.setContent(multipartKey);
+            Transport.send(message);
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
     public void sendMailVerify(String mailTo,String pathFilePrivateKey,String pathFilePublicKey){
         try{
             enCodeBase64 = new EnCodeBase64();

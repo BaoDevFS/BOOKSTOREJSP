@@ -551,17 +551,33 @@
 $('.profile').click(function () {
     $('.profile').addClass('active');
     $('.password').removeClass('active');
+    $('.key').removeClass('active');
     $('.logout').removeClass('active');
     $('.editprofle').removeClass('hidden');
     $('.changpassword').addClass('hidden');
+    $('.changekey').addClass('hidden');
 });
 $('.password').click(function () {
-    $('.profile').removeClass('active');
     $('.password').addClass('active');
+    $('.profile').removeClass('active');
+    $('.key').removeClass('active');
     $('.logout').removeClass('active');
     $('.editprofle').addClass('hidden');
     // $('.changpassword').removeClass('hidden');
+    $('.changekey').addClass('hidden');
     $('.authenticar').removeClass('hidden');
+    $('.authenticarchangekey').addClass('hidden');
+});
+$('.key').click(function () {
+    $('.profile').removeClass('active');
+    $('.password').removeClass('active');
+    $('.key').addClass('active');
+    $('.logout').removeClass('active');
+    $('.editprofle').addClass('hidden');
+    $('.changpassword').addClass('hidden');
+    $('.changekey').addClass('hidden');
+    $('.authenticarchangekey').removeClass('hidden');
+    $('.authenticar').addClass('hidden');
 });
 $('.logout').click(function () {
     $('.profile').removeClass('active');

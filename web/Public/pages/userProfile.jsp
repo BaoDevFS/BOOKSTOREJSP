@@ -90,6 +90,7 @@
                                 <ul class="menu-advanced">
                                     <li class="profile active"><a><i class="fa fa-user"></i> Edit Profile</a></li>
                                     <li class="password"><a><i class="fa fa-key"></i> Password</a></li>
+                                    <li class="key"><a><i class="fa fa-key"></i> ChangeKey</a></li>
                                     <li class="logout "><a href="<%=PathAbsolute.getPath("Login")%>"><i
                                             class="fa fa-sign-out"></i>
                                         Logout</a></li>
@@ -206,6 +207,41 @@
                                 </div>
                             </div>
                         </div><!-- /.content -->
+                        <div class="content ml-md-3 ml-lg-3 ml-sm-3 changekey hidden">
+                            <div class="page-title">
+                                <h1>Change Key</h1>
+                            </div>
+<%--                            <div class="background-white p20 mb30">--%>
+<%--                                <h5 id="passwordChange" style="color: red"></h5>--%>
+<%--                                <div class="row">--%>
+<%--                                    <div class="form-group col-sm-12">--%>
+<%--                                        <label for="passwordOld">Old Password</label>--%>
+<%--                                        <input type="password" class="form-control" name="passwordOld"--%>
+<%--                                               id="passwordOld">--%>
+<%--                                    </div>--%>
+
+<%--                                    <div class="form-group col-sm-12">--%>
+<%--                                        <label for="newPassword">New password</label>--%>
+<%--                                        <input type="password" class="form-control" name="newPassword"--%>
+<%--                                               id="newPassword">--%>
+<%--                                    </div>--%>
+<%--                                    <div class="form-group col-sm-12">--%>
+<%--                                        <label for="rePassword">Retype password</label>--%>
+<%--                                        <input type="password" class="form-control" name="rePassword"--%>
+<%--                                               id="rePassword">--%>
+<%--                                    </div>--%>
+
+<%--                                    <button onclick="editinfor('password')" class="btn btn-primary pull-right m-auto">--%>
+<%--                                        Change--%>
+<%--                                    </button>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+                        </div>
+                        <div class="content ml-md-3 ml-lg-3 ml-sm-3 mes hidden">
+                            <div class="page-title">
+                                <h1>Check email to get new key!</h1>
+                            </div>
+                        </div>
                         <div class="content ml-md-3 ml-lg-3 ml-sm-3 authenticar hidden">
                             <div class="page-title">
                                 <h1>AUTHENTICATOR</h1>
@@ -243,6 +279,44 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="content ml-md-3 ml-lg-3 ml-sm-3 authenticarchangekey hidden">
+                            <div class="page-title">
+                                <h1>AUTHENTICATOR FOR CHANGE KEY</h1>
+                            </div>
+                            <div class="content-item__main">
+                                <div class="content-item--ipage__main">
+                                    <div class="content__sendinfo">
+                                        <div class="content__sendinfo-before before">Ấn nút Lấy mã ở dưới để nhận được mã xác
+                                            nhận qua email.
+                                        </div>
+                                        <div class="content__sendinfo-after after hidden">Một mã xác nhận đã được gửi cho bạn
+                                            qua Email. Vui lòng điền mã để xác nhận tài khoản của bạn. Quá trình này có
+                                            thể mất một vài phút.
+                                        </div>
+                                    </div>
+                                    <div class="content__form">
+                                        <div class="content__phone">
+                                            <div class="content__phone-icon"></div>
+                                            <div class="content__phone-num"><%=rs.getString("email")%></div>
+                                        </div>
+                                        <div class="content__form-otpcode d-flex align-items-center">
+                                            <div class="content__form-input ">
+                                                <input type="tel" maxlength="6" name="code" id="submitkey" class="content__form-input-widget J-validated-field"
+                                                       placeholder="Mã xác thực">
+                                            </div>
+                                            <button onclick="getOtp()" class="content__form-getotp"
+                                                    >
+                                                <div class="content__form-getotp-before">Lấy mã</div>
+                                            </button>
+                                        </div>
+                                        <div class="verify_error hidden" >Mã xác thực không chính xác.</div>
+                                        <div class="content__submit-wrap">
+                                            <input type="submit" id="buttonconfirm" class="content__submit" value="XÁC NHẬN"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div><!-- /.col-* -->
                 </div><!-- /.row -->
             </div><!-- /.container -->

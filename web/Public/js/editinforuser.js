@@ -111,13 +111,14 @@ function getOtp() {
 function verifyCode() {
     var code =$('input[name="code"]').val()
     $.ajax({
-       url:"/GetOTP",
+        url:"/GetOTP",
         method:"POST",
         data:{
-           code:code
+            code:code,
+            type:'0'
         },
         complete:function (data) {
-           console.log(data);
+            console.log(data);
             var json = JSON.parse(data.responseText);
             console.log(json);
             // 1 la thanh cong
@@ -130,4 +131,29 @@ function verifyCode() {
         }
     });
 }
+function verifyCodeForKey() {
+    var code =$('#submitkey').val()
+    $.ajax({
+        url:"/GetOTP",
+        method:"POST",
+        data:{
+            code:code,
+            type:'1'
+        },
+        complete:function (data) {
+            console.log(data);
+            var json = JSON.parse(data.responseText);
+            console.log(json);
+            // 1 la thanh cong
+            if(json.mes=="1"){
+                $('.mes').removeClass('hidden');
+                $('.authenticarchangekey').addClass('hidden');
+            }else{
+                $('.verify_error').removeClass('hidden');
+            }
+        }
+    });
+}
+
 $('input[name="submit"]').on('click',verifyCode);
+$('#buttonconfirm').on('click',verifyCodeForKey);

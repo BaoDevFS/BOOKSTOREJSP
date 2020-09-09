@@ -17,6 +17,8 @@ public class Users implements Serializable {
     int active;
     Date created_at;
     Date updated_at;
+    String old_key;
+    String public_key;
 
     @Override
     public String toString() {
@@ -45,6 +47,22 @@ public class Users implements Serializable {
         this.email = email;
         this.password = password;
         this.phone = phone;
+    }
+
+    public String getPublic_key() {
+        return public_key;
+    }
+
+    public void setPublic_key(String public_key) {
+        this.public_key = public_key;
+    }
+
+    public String getOld_key() {
+        return old_key;
+    }
+
+    public void setOld_key(String old_key) {
+        this.old_key = old_key;
     }
 
     public int getId() {
@@ -151,7 +169,7 @@ public class Users implements Serializable {
         this.updated_at = updated_at;
     }
 
-    public Users(int id, String name, String email, String avatar, String fullname, String password, String address, String phone, int group, String gender, int active, Date created_at, Date updated_at) {
+    public Users(int id, String name, String email, String avatar, String fullname, String password, String address, String phone, int group, String gender, int active, Date created_at, Date updated_at, String old_key, String public_key) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -165,5 +183,7 @@ public class Users implements Serializable {
         this.active = active;
         this.created_at = created_at;
         this.updated_at = updated_at;
+        this.old_key = old_key;
+        this.public_key = public_key;
     }
 }
