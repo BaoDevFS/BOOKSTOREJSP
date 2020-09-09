@@ -31,11 +31,13 @@ public class VerifyOrder extends HttpServlet {
     private GetBooking getBooking;
     private Gson gson;
     private RSAFile rsaFile;
+
     public VerifyOrder() {
         connectDatabase = new GetConnectDatabase();
         getBooking = new GetBooking();
     }
-    private boolean checkSignature(int idOrder,String publicKey,String sign){
+
+    private boolean checkSignature(int idOrder, String publicKey, String sign) {
         Orders orders = getBooking.getBooking(idOrder);
         gson = new Gson();
         String json = gson.toJson(orders);
@@ -47,7 +49,7 @@ public class VerifyOrder extends HttpServlet {
             Signature signature = Signature.getInstance("SHA256withRSA");
             signature.initVerify(pub);
             signature.update(json.getBytes());
-            return  signature.verify(Base64.getDecoder().decode(sign));
+            return signature.verify(Base64.getDecoder().decode(sign));
         } catch (NoSuchAlgorithmException | InvalidKeyException | SignatureException e) {
             e.printStackTrace();
             return false;
@@ -56,22 +58,24 @@ public class VerifyOrder extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String signature = ValidateParameter.validateParameter(request, "signature");
+        String otp = ValidateParameter.validateParameter(request, "otp");
         System.out.println(signature);
         try {
             connection = connectDatabase.getConnectionSql();
             HttpSession session = request.getSession();
-            String sql2 = "SELECT d.id , u.public_key from orders d JOIN users u ON d.id_user = u.id where d.id_user=? AND d.active=0 ORDER BY d.created_at DESC LIMIT 1";
+            String sql2 = "SELECT d.id , u.public_key from orders d JOIN users u ON d.id_user = u.id where d.id_user=? AND d.active=0 AND u.otp=? ORDER BY d.created_at DESC LIMIT 1";
             PreparedStatement ps2 = connection.prepareStatement(sql2);
             ps2.setInt(1, ((Users) session.getAttribute("user")).getId());
+            ps2.setString(2,otp);
             ResultSet rs = ps2.executeQuery();
             if (rs.next()) {
                 int idOrder = rs.getInt(1);
-                String publicKey =rs.getString(2);
+                String publicKey = rs.getString(2);
                 //TODO
                 // kiem tra chu ki co dung hay k
-                if(!checkSignature(idOrder,publicKey,signature)){
+                if (!checkSignature(idOrder, publicKey, signature)) {
                     request.setAttribute("status", "3");
-                    request.setAttribute("mes","Chữ kí không đúng");
+                    request.setAttribute("mes", "Chữ kí không đúng");
                     RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/verifyOrder.jsp");
                     requestDispatcher.forward(request, response);
                     return;
@@ -86,8 +90,11 @@ public class VerifyOrder extends HttpServlet {
                 RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/verifyOrder.jsp");
                 requestDispatcher.forward(request, response);
             } else {
-                // order k co active =0 thi tra ve trang checkout
-                response.sendRedirect(request.getContextPath()+"/Checkout");
+                request.setAttribute("status", "3");
+                request.setAttribute("mes", "Mã OTP không đúng!");
+                RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/verifyOrder.jsp");
+                requestDispatcher.forward(request, response);
+                return;
             }
 
         } catch (SQLException e) {
@@ -102,10 +109,10 @@ public class VerifyOrder extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // kieem tra cart null thi chuyen trang gio hang
         HttpSession session = request.getSession();
-        Cart cart =(Cart) session.getAttribute("cart");
-        if(cart==null||cart.getProductCart().size()==0){
+        Cart cart = (Cart) session.getAttribute("cart");
+        if (cart == null || cart.getProductCart().size() == 0) {
             response.sendRedirect(request.getContextPath() + "/ShopGrid");
-        }else {
+        } else {
             request.setAttribute("status", "2");
             RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Public/pages/verifyOrder.jsp");
             requestDispatcher.forward(request, response);

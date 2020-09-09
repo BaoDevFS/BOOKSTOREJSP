@@ -2,6 +2,7 @@ package vn.edu.nlu.servlet;
 
 import com.google.gson.Gson;
 import vn.edu.nlu.control.RSAFile;
+import vn.edu.nlu.control.SendMail;
 import vn.edu.nlu.dao.GetBooking;
 import vn.edu.nlu.fit.model.Cart;
 import vn.edu.nlu.fit.model.Orders;
@@ -17,16 +18,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.ByteArrayInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.nio.charset.Charset;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Random;
 
 @WebServlet("/GenerateBillFile")
 public class GenerateBillFile extends HttpServlet {
@@ -37,8 +36,9 @@ public class GenerateBillFile extends HttpServlet {
     private Gson gson;
     private RSAFile rsaFile;
     private GetBooking getBooking;
-
+   private SendMail sendMail;
     public GenerateBillFile() {
+        sendMail = new SendMail();
         connectDatabase = new GetConnectDatabase();
         getBooking = new GetBooking();
     }
@@ -52,11 +52,13 @@ public class GenerateBillFile extends HttpServlet {
         try {
             connection = connectDatabase.getConnectionSql();
             HttpSession session = request.getSession();
+            int userid =((Users) session.getAttribute("user")).getId();
+            sendOtp(connection,userid,((Users) session.getAttribute("user")).getEmail());
             // moa hoa bang publickey
             // get public key
             String sql4 = "SELECT d.id , u.public_key from orders d JOIN users u ON d.id_user = u.id where d.id_user=? AND d.active=0 ORDER BY d.created_at DESC LIMIT 1";
             PreparedStatement ps = connection.prepareStatement(sql4);
-            ps.setInt(1, ((Users) session.getAttribute("user")).getId());
+            ps.setInt(1,userid );
             ResultSet rsPublicKey = ps.executeQuery();
             //neu co thi lay publickey
             if (rsPublicKey.next()) {
@@ -84,4 +86,32 @@ public class GenerateBillFile extends HttpServlet {
             e.printStackTrace();
         }
     }
+    private String generateOTP() {
+        int leftLimit = 48; // numeral '0'
+        int rightLimit = 58; // letter 'z'
+        int targetStringLength = 6;
+        Random random = new Random();
+
+        String generatedString = random.ints(leftLimit, rightLimit + 1)
+                .filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))
+                .limit(targetStringLength)
+                .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+                .toString();
+
+        return generatedString;
+    }
+    public void sendOtp(Connection connection,int userid,String email) throws SQLException {
+        // cap nhat opt xuong db
+        String sql = "UPDATE users SET otp=? where id=?";
+        PreparedStatement pre = connection.prepareStatement(sql);
+        String otp = generateOTP();
+        pre.setString(1, otp);
+        // get id user from session
+        pre.setInt(2, userid);
+        int st = pre.executeUpdate();
+        if (st == 1) {
+            sendMail.sendOtp(email, otp);
+        }
+    }
+
 }

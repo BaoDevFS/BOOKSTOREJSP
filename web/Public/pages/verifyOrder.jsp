@@ -76,6 +76,10 @@
                             <label class="col-3">Signature bill<span>*</span></label>
                             <input name="signature" class="col-9" type="signature">
                         </div>
+                        <div class="input_box space_between d-flex">
+                            <label class="col-3">OTP<span>*</span></label>
+                            <input name="otp" class="col-9" type="otp">
+                        </div>
                         <div class="margin_between mt--20">
                             <div class="input_box space-between d-flex justify-content-end" >
                                 <button class="btncheckout" type="submit">Submit
@@ -131,7 +135,7 @@
             $('#statusWishlist').text("Order fail.");
             $('#success').modal('show');
         }else if(id==3){
-            $('#statusWishlist').text("Order fail.<br/>"+mes);
+            $('#statusWishlist').html("Order fail.<br/>"+mes);
             $('#success').modal('show');
         }
         else {
